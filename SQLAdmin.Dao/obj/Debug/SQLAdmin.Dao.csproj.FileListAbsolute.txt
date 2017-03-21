@@ -1,0 +1,7 @@
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Dao\bin\Debug\SQLAdmin.Dao.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Dao\bin\Debug\SQLAdmin.Dao.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Dao\bin\Debug\SQLAdmin.Domain.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Dao\bin\Debug\SQLAdmin.Domain.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Dao\obj\Debug\SQLAdmin.Dao.csprojResolveAssemblyReference.cache
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Dao\obj\Debug\SQLAdmin.Dao.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Dao\obj\Debug\SQLAdmin.Dao.pdb

@@ -1,0 +1,3 @@
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.UITest\obj\Debug\App.baml
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.UITest\obj\Debug\App.g.cs
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.UITest\obj\Debug\MMS.UITest_MarkupCompile.cache

@@ -1,0 +1,70 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MMS.UI.Default">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/MMS.UI;Component/Default/Resource/Resource.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <ControlTemplate x:Key="CalendarTemplate" TargetType="{x:Type local:Calendar}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="22" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Height="22" Grid.Row="0">
+                <TextBox IsReadOnly="True" BorderBrush="Gray" BorderThickness="1" Height="22" Text="2016/04/12 16:00" VerticalContentAlignment="Center" />
+                <Image Source="/MMS.UI;Component/Default/Calendar/Images/Calendar.png" VerticalAlignment="Center" HorizontalAlignment="Right" Width="18" Height="18" Cursor="Hand" x:Name="calendarBtn" />
+            </Grid>
+            <Border x:Name="calendarChoose" Visibility="Collapsed" Grid.Row="1" BorderBrush="#718bb7" BorderThickness="1" Width="175" Height="173" VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="23" />
+                        <RowDefinition Height="16" />
+                        <RowDefinition Height="108" />
+                        <RowDefinition Height="26" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Background="#203F77">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="15" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="15" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" BorderThickness="0" BorderBrush="#203f77" Template="{StaticResource Calendar_left_btn}" Cursor="Hand" />
+                        <TextBlock Grid.Column="1" Text="Apr 2016" Foreground="#fff" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <Button Grid.Column="2" BorderThickness="0" BorderBrush="#203f77" Template="{StaticResource Calendar_right_btn}" Cursor="Hand" />
+                    </Grid>
+                    <Border Grid.Row="1" BorderBrush="#718bb7" BorderThickness="0,1,0,1">
+                        <StackPanel Background="#D8E4F2" Orientation="Horizontal">
+                            <TextBlock Text="Sun" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="10" Width="25" Height="16" />
+                            <TextBlock Text="Mon" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="10" Width="25" Height="16" />
+                            <TextBlock Text="Tue" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="10" Width="25" Height="16" />
+                            <TextBlock Text="Wed" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="10" Width="25" Height="16" />
+                            <TextBlock Text="Thu" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="10" Width="25" Height="16" />
+                            <TextBlock Text="Fri" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="10" Width="25" Height="16" />
+                            <TextBlock Text="Sat" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="10" Width="25" Height="16" />
+                        </StackPanel>
+                    </Border>
+                    <ItemsControl Grid.Row="2" x:Name="timeBox" Margin="2,0,0,0">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <HierarchicalDataTemplate ItemsSource="{Binding Path=Children}">
+                                <TextBlock Text="{Binding Day}" FontSize="10" Foreground="#000" Width="24" Height="18" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </HierarchicalDataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <Border Grid.Row="3" BorderBrush="#718bb7" BorderThickness="0,1,0,1">
+                        <Grid Background="#C7D8ED">
+
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <Style x:Key="CalendarStyle" TargetType="{x:Type local:Calendar}">
+        <Setter Property="Template"  Value="{StaticResource CalendarTemplate}" />
+    </Style>
+</ResourceDictionary>

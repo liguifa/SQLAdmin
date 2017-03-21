@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - SQLAdmin</title>
+    @*<link href="~/Static/Content/global.css" rel="stylesheet" />*@
+    <link href="~/Static/Content/themes/gray/easyui.css" rel="stylesheet" />
+    <script src="~/Static/Scripts/jquery-1.11.3.min.js"></script>
+    <script src="~/Static/Scripts/jquery.easyui-1.4.5.min.js"></script>
+</head>
+<body class="easyui-layout">
+    <div data-options="region:'north'" style="height:55px;"></div>
+    <div data-options="region:'south',title:'South Title',split:true" style="height:100px;"></div>
+    <div data-options="region:'east',iconCls:'icon-reload',title:'East',split:true" style="width:100px;"></div>
+    <div data-options="region:'west',title:'West',split:true" style="width:168px;">
+        <ul id="tt" class="easyui-tree">
+            <li>
+                <span>Folder</span>
+                <ul>
+                    <li>
+                        <span>Sub Folder 1</span>
+                        <ul>
+                            <li>
+                                <span><a href="#">File 11</a></span>
+                            </li>
+                            <li>
+                                <span>File 12</span>
+                            </li>
+                            <li>
+                                <span>File 13</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>File 2</span>
+                    </li>
+                    <li>
+                        <span>File 3</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span>File21</span>
+            </li>
+        </ul>  
+    </div>
+    <div data-options="region:'center',title:'center title'" style="padding:5px;background:#eee;">
+        @RenderBody()
+    </div>
+</body> 
+</html>

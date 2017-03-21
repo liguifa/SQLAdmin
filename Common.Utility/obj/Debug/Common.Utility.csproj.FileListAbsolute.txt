@@ -1,0 +1,14 @@
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Utility\bin\Debug\log4net.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Utility\bin\Debug\Common.Utility.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Utility\bin\Debug\Common.Utility.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Utility\bin\Debug\MMS.Config.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Utility\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Utility\bin\Debug\Logger.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Utility\bin\Debug\MMS.Config.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Utility\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Utility\bin\Debug\Logger.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Utility\obj\Debug\Common.Utility.csprojResolveAssemblyReference.cache
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Utility\obj\Debug\Common.Utility.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Utility\obj\Debug\Common.Utility.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Utility\bin\Debug\Common.Cryptogram.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Utility\bin\Debug\Common.Cryptogram.pdb

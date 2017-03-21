@@ -1,0 +1,9 @@
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.TimerService\bin\Debug\MMS.TimerService.exe.config
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.TimerService\bin\Debug\MMS.TimerService.exe
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.TimerService\bin\Debug\MMS.TimerService.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.TimerService\obj\Debug\SQLAdmin.TimerService.csprojResolveAssemblyReference.cache
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.TimerService\obj\Debug\MMS.TimerService.ProjectInstaller.resources
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.TimerService\obj\Debug\MMS.TimerService.TimerService.resources
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.TimerService\obj\Debug\SQLAdmin.TimerService.csproj.GenerateResource.Cache
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.TimerService\obj\Debug\MMS.TimerService.exe
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.TimerService\obj\Debug\MMS.TimerService.pdb

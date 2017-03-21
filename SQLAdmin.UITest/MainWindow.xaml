@@ -1,0 +1,10 @@
+﻿<Window x:Class="MMS.UITest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:MMS.UI.Default;assembly=MMS.UI"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <src:Calendar />
+        <TextBox Height="45" />
+    </StackPanel>
+</Window>

@@ -1,0 +1,163 @@
+c:\users\gfli\documents\visual studio 2013\Projects\Mongo Management Studio\MMS.UI\obj\Debug\Resource\Resource.baml
+c:\users\gfli\documents\visual studio 2013\Projects\Mongo Management Studio\MMS.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+c:\users\gfli\documents\visual studio 2013\Projects\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.Properties.Resources.resources
+c:\users\gfli\documents\visual studio 2013\Projects\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.csproj.GenerateResource.Cache
+C:\Users\gfli\documents\visual studio 2013\Projects\Mongo Management Studio\MMS.UI\obj\Debug\Window\Default\DefaultWindow.baml
+C:\Users\gfli\documents\visual studio 2013\Projects\Mongo Management Studio\MMS.UI\obj\Debug\Generic.baml
+C:\Users\gfli\documents\visual studio 2013\Projects\Mongo Management Studio\MMS.UI\obj\Debug\Window\Default\DefaultWindow.g.cs
+C:\Users\gfli\documents\visual studio 2013\Projects\Mongo Management Studio\MMS.UI\bin\Debug\MMS.UI.dll
+C:\Users\gfli\documents\visual studio 2013\Projects\Mongo Management Studio\MMS.UI\bin\Debug\MMS.UI.pdb
+C:\Users\gfli\documents\visual studio 2013\Projects\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.cache
+C:\Users\gfli\documents\visual studio 2013\Projects\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.lref
+C:\Users\gfli\documents\visual studio 2013\Projects\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.g.resources
+C:\Users\gfli\documents\visual studio 2013\Projects\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.dll
+C:\Users\gfli\documents\visual studio 2013\Projects\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.pdb
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\bin\Debug\MMS.UI.dll
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\bin\Debug\MMS.UI.pdb
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.cache
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.lref
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.g.resources
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.Properties.Resources.resources
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.csproj.GenerateResource.Cache
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.dll
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.pdb
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\obj\Debug\Generic.baml
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.csprojResolveAssemblyReference.cache
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\obj\Debug\Default\Resource\Resource.baml
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\obj\Debug\Default\Window\DefaultWindow.g.cs
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\obj\Debug\ElegantBlack\Window\ElegantBlackWindow.baml
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio\Mongo Management Studio\MMS.UI\obj\Debug\Default\Window\DefaultWindow.baml
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\bin\Debug\MMS.UI.dll
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\bin\Debug\MMS.UI.pdb
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Resource\Resource.baml
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.cache
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.lref
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Connection\Connection.baml
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Explorer\Explorer.baml
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Menu\Menu.baml
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Table\Table.baml
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Tabs\Tabs.baml
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\Themes\Generic.baml
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Window\Window.baml
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.g.resources
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.Properties.Resources.resources
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.csproj.GenerateResource.Cache
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.dll
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.pdb
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.csprojResolveAssemblyReference.cache
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Edit\Edit.baml
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\bin\Debug\MMS.UI.dll
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\bin\Debug\MMS.UI.pdb
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.csprojResolveAssemblyReference.cache
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Resource\Resource.baml
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.cache
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.lref
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Connection\Connection.baml
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Edit\Edit.baml
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Explorer\Explorer.baml
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Menu\Menu.baml
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Table\Table.baml
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Tabs\Tabs.baml
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\Themes\Generic.baml
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\Default\Window\Window.baml
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.g.resources
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.Properties.Resources.resources
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.csproj.GenerateResource.Cache
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.dll
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.UI\obj\Debug\MMS.UI.pdb
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\bin\Debug\MMS.UI.dll
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\bin\Debug\MMS.UI.pdb
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Resource\Resource.baml
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.cache
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.lref
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Connection\Connection.baml
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Edit\Edit.baml
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Explorer\Explorer.baml
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Menu\Menu.baml
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Navigation\Navigation.baml
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Table\Table.baml
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Tabs\Tabs.baml
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Themes\Generic.baml
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Window\Window.baml
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI.g.resources
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI.Properties.Resources.resources
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI.csproj.GenerateResource.Cache
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI.dll
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI.pdb
+J:\MMS\MMS.UI\bin\Debug\MMS.UI.dll
+J:\MMS\MMS.UI\bin\Debug\MMS.UI.pdb
+J:\MMS\MMS.UI\bin\Debug\Newtonsoft.Json.dll
+J:\MMS\MMS.UI\obj\Debug\MMS.UI.csprojResolveAssemblyReference.cache
+J:\MMS\MMS.UI\obj\Debug\Default\Resource\Resource.baml
+J:\MMS\MMS.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+J:\MMS\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.cache
+J:\MMS\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.lref
+J:\MMS\MMS.UI\obj\Debug\Default\Connection\Connection.baml
+J:\MMS\MMS.UI\obj\Debug\Default\Edit\Edit.baml
+J:\MMS\MMS.UI\obj\Debug\Default\Explorer\Explorer.baml
+J:\MMS\MMS.UI\obj\Debug\Default\Menu\Menu.baml
+J:\MMS\MMS.UI\obj\Debug\Default\Navigation\Navigation.baml
+J:\MMS\MMS.UI\obj\Debug\Default\Table\Table.baml
+J:\MMS\MMS.UI\obj\Debug\Default\Tabs\Tabs.baml
+J:\MMS\MMS.UI\obj\Debug\Themes\Generic.baml
+J:\MMS\MMS.UI\obj\Debug\Default\Window\Window.baml
+J:\MMS\MMS.UI\obj\Debug\MMS.UI.g.resources
+J:\MMS\MMS.UI\obj\Debug\MMS.UI.Properties.Resources.resources
+J:\MMS\MMS.UI\obj\Debug\MMS.UI.csproj.GenerateResource.Cache
+J:\MMS\MMS.UI\obj\Debug\MMS.UI.dll
+J:\MMS\MMS.UI\obj\Debug\MMS.UI.pdb
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Calendar\Calendar.baml
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI.csprojResolveAssemblyReference.cache
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\bin\Debug\MMS.UI.dll
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\bin\Debug\MMS.UI.pdb
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI.csprojResolveAssemblyReference.cache
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Resource\Resource.baml
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.cache
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.lref
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Calendar\Calendar.baml
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Connection\Connection.baml
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Edit\Edit.baml
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Explorer\Explorer.baml
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Menu\Menu.baml
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Navigation\Navigation.baml
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Table\Table.baml
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Tabs\Tabs.baml
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Themes\Generic.baml
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\Default\Window\Window.baml
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI.g.resources
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI.Properties.Resources.resources
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI.csproj.GenerateResource.Cache
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI.dll
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.UI\obj\Debug\MMS.UI.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\bin\Debug\MMS.UI.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\bin\Debug\MMS.UI.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\Default\Resource\Resource.baml
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.cache
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\MMS.UI_MarkupCompile.lref
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\Default\Calendar\Calendar.baml
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\Default\Connection\Connection.baml
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\Default\Edit\Edit.baml
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\Default\Explorer\Explorer.baml
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\Default\Menu\Menu.baml
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\Default\Navigation\Navigation.baml
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\Default\Table\Table.baml
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\Default\Tabs\Tabs.baml
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\Themes\Generic.baml
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\Default\Window\Window.baml
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\MMS.UI.g.resources
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\MMS.UI.Properties.Resources.resources
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\MMS.UI.csproj.GenerateResource.Cache
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\MMS.UI.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\MMS.UI.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MMS.UI\obj\Debug\MMS.UI.csprojResolveAssemblyReference.cache

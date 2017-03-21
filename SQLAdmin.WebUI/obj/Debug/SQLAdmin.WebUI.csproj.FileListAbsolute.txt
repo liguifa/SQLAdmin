@@ -1,0 +1,12 @@
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Web\css\sa.connect.css
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Web\script\angular.min.js
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Web\script\directive\sa.conmect.directive.js
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Web\SQLAdmin.WebUI.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Web\SQLAdmin.WebUI.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.WebUI\obj\Debug\SQLAdmin.WebUI.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.WebUI\obj\Debug\SQLAdmin.WebUI.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Web\Static\css\sa.connect.css
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Web\Static\script\angular.min.js
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Web\Static\script\directive\sa.conmect.directive.js
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Web\Static\SQLAdmin.WebUI.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Web\Static\SQLAdmin.WebUI.pdb

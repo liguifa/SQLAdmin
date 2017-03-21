@@ -1,0 +1,5 @@
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Domain\bin\Debug\SQLAdmin.Domain.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Domain\bin\Debug\SQLAdmin.Domain.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Domain\obj\Debug\SQLAdmin.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Domain\obj\Debug\SQLAdmin.Domain.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Domain\obj\Debug\SQLAdmin.Domain.pdb

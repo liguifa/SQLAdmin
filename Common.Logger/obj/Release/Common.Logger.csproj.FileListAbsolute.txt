@@ -1,0 +1,5 @@
+I:\VMM\Common\Common.Logger\bin\Release\Logger.dll
+I:\VMM\Common\Common.Logger\bin\Release\Logger.pdb
+I:\VMM\Common\Common.Logger\bin\Release\log4net.dll
+I:\VMM\Common\Common.Logger\obj\Release\Logger.dll
+I:\VMM\Common\Common.Logger\obj\Release\Logger.pdb

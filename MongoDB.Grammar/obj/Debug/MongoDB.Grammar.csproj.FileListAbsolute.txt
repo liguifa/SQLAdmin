@@ -1,0 +1,8 @@
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Grammar\obj\Debug\MongoDB.Grammar.csprojResolveAssemblyReference.cache
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Grammar\obj\Debug\MMS.Grammar.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Grammar\obj\Debug\MMS.Grammar.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Grammar\bin\Debug\MMS.Grammar.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Grammar\bin\Debug\MMS.Grammar.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Grammar\bin\Debug\MMS.UI.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Grammar\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Grammar\bin\Debug\MMS.UI.pdb

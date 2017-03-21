@@ -1,0 +1,8 @@
+J:\MMS\MMS.Build\bin\Release\Tool\Package.exe
+J:\MMS\MMS.Build\bin\Release\Tool\Setup.exe
+J:\MMS\MMS.Build\bin\Release\MMS.Build.exe
+J:\MMS\MMS.Build\bin\Release\MMS.Build.pdb
+J:\MMS\MMS.Build\bin\Release\Ionic.Zip.dll
+J:\MMS\MMS.Build\obj\Release\MMS.Build.csprojResolveAssemblyReference.cache
+J:\MMS\MMS.Build\obj\Release\MMS.Build.exe
+J:\MMS\MMS.Build\obj\Release\MMS.Build.pdb

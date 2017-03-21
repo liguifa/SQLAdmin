@@ -1,0 +1,23 @@
+﻿<src:Window x:Class="MMS.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="350" Width="525"
+        xmlns:src="clr-namespace:MMS.UI.Default;assembly=MMS.UI" Icon="/Images/logo.ico"  
+        Title="Mongodb Manager Studio" 
+        WindowState="Maximized" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <src:Menu Grid.Row="0" MenuItems="{Binding MenuItems}" Name="menu" />
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <src:Explorer Grid.Column="0" x:Name="explorer" />
+            <src:Tabs Grid.Column="1" Margin="0,3,5,3" x:Name="tabs" />
+        </Grid>
+    </Grid>
+</src:Window>

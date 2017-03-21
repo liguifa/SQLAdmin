@@ -1,0 +1,40 @@
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.Grammar\obj\Debug\MMS.Grammar.csprojResolveAssemblyReference.cache
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.Grammar\bin\Debug\MMS.Grammar.dll
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.Grammar\bin\Debug\MMS.Grammar.pdb
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.Grammar\bin\Debug\MMS.UI.dll
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.Grammar\bin\Debug\Newtonsoft.Json.dll
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.Grammar\bin\Debug\MMS.UI.pdb
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.Grammar\obj\Debug\MMS.Grammar.dll
+C:\Users\gfli\Downloads\Mongo Management Studio(1)\Mongo Management Studio\MMS.Grammar\obj\Debug\MMS.Grammar.pdb
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.Grammar\bin\Debug\MMS.Grammar.dll
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.Grammar\bin\Debug\MMS.Grammar.pdb
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.Grammar\bin\Debug\MMS.UI.dll
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.Grammar\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.Grammar\bin\Debug\MMS.UI.pdb
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.Grammar\obj\Debug\MMS.Grammar.csprojResolveAssemblyReference.cache
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.Grammar\obj\Debug\MMS.Grammar.dll
+C:\Users\Guifa.Lee\Desktop\Mongo Management Studio(3)\Mongo Management Studio\MMS.Grammar\obj\Debug\MMS.Grammar.pdb
+J:\MMS\MMS.Grammar\bin\Debug\MMS.Grammar.dll
+J:\MMS\MMS.Grammar\bin\Debug\MMS.Grammar.pdb
+J:\MMS\MMS.Grammar\bin\Debug\MMS.UI.dll
+J:\MMS\MMS.Grammar\bin\Debug\Newtonsoft.Json.dll
+J:\MMS\MMS.Grammar\bin\Debug\MMS.UI.pdb
+J:\MMS\MMS.Grammar\obj\Debug\MMS.Grammar.csprojResolveAssemblyReference.cache
+J:\MMS\MMS.Grammar\obj\Debug\MMS.Grammar.dll
+J:\MMS\MMS.Grammar\obj\Debug\MMS.Grammar.pdb
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\bin\Debug\MMS.Grammar.dll
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\bin\Debug\MMS.Grammar.pdb
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\bin\Debug\MMS.UI.dll
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\bin\Debug\Newtonsoft.Json.dll
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\bin\Debug\MMS.UI.pdb
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\obj\Debug\MMS.Grammar.csprojResolveAssemblyReference.cache
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\obj\Debug\MMS.Grammar.dll
+C:\Users\gfli\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\obj\Debug\MMS.Grammar.pdb
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\bin\Debug\MMS.Grammar.dll
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\bin\Debug\MMS.Grammar.pdb
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\bin\Debug\MMS.UI.dll
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\bin\Debug\MMS.UI.pdb
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\obj\Debug\MMS.Grammar.csprojResolveAssemblyReference.cache
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\obj\Debug\MMS.Grammar.dll
+C:\Users\Guifa.Lee\Source\Repos\MongoDB-Manager-Studio\MMS.Grammar\obj\Debug\MMS.Grammar.pdb

@@ -1,0 +1,242 @@
+﻿* {
+    font-family: 'Segoe UI';
+    margin: 0px;
+}
+
+body {
+    background: #293955;
+    overflow: hidden;
+}
+
+.sa-clear {
+    clear: both;
+}
+
+.sa-window {
+    width: 420px;
+    height: 315px;
+    border: 1px solid #636363;
+    -webkit-box-shadow: 1px 1px 2px;
+    -moz-box-shadow: 1px 1px 2px;
+    box-shadow: 1px 1px 2px;
+    position: absolute;
+    top: 10px;
+    left: 200px;
+    background: #fff;
+    z-index: 999;
+}
+
+.sa-border {
+    border: 10px solid #B6B6B6;
+    border-top: 30px solid #B6B6B6;
+    width: 400px;
+    height: 275px;
+}
+
+.sa-content {
+    border: 1px solid #636363;
+    width: 400px;
+    height: 275px;
+}
+
+.sa-title {
+    width: 385px;
+    height: 50px;
+    background: #E0E0E0;
+    font-size: 32px;
+    vertical-align: central;
+    padding-top: 20px;
+    padding-left: 15px;
+}
+
+.sa-form {
+    margin: auto;
+    height: 157px;
+    text-align: center;
+}
+
+    .sa-form div {
+        margin: 8px;
+    }
+
+.sa-connect-input {
+    width: 240px;
+    height: 20px;
+    border: 1px solid #ABABAB;
+}
+
+.sa-connect-footer {
+    border-top: 3px #CFCFCF solid;
+    height: 58px;
+    align-content: center;
+    text-align: center;
+}
+
+.sa-button {
+    background: #065999;
+    border: none;
+    color: #fff;
+    width: 78px;
+    height: 24px;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 10px;
+    margin-top: 8px;
+}
+
+.sa-menu {
+    background: #F0F0F0;
+    height: 30px;
+    width: 100%;
+}
+
+.sa-menu-list {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.sa-menu-item {
+    float: left;
+    cursor: pointer;
+    margin: 2px;
+    margin-top: 4px;
+    font-size: 14px;
+    width: 50px;
+    height: 22px;
+    text-align: center;
+    vertical-align: central;
+    border: #F0F0F0 solid 1px;
+}
+
+.sa-menu-item-title {
+    border: #F0F0F0 solid 1px;
+    width: 50px;
+    height: 22px;
+}
+
+    .sa-menu-item-title:hover {
+        background: #1ea2e5;
+        border: #065999 solid 1px;
+    }
+
+.sa-menu-item-select {
+    border: 1px solid #828790;
+    border-bottom: none;
+}
+
+.sa-menu-subs {
+    background: #F0F0F0;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    z-index: 998;
+    border: 1px solid #828790;
+    border-top: none;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    padding: 8px;
+}
+
+.sa-menu-item-subs-icon {
+    width: 16px;
+    height: 16px;
+    padding: 2px;
+    border-right: #ABABAB 1px solid;
+    float: left;
+    padding-right: 6px;
+}
+
+.sa-menu-item-subs-title {
+    float: left;
+    margin-left: 8px;
+    border: #F0F0F0 solid 1px;
+}
+
+    .sa-menu-item-subs-title:hover {
+        background: #1ea2e5;
+        border: #065999 solid 1px;
+    }
+
+.sa-explorer {
+    width: 278px;
+    height: 100%;
+    border-left: none;
+    padding-right: 20px;
+    position: absolute;
+    top: 33px;
+    left: 0px;
+}
+
+.sa-explorer-title {
+    background: #FFF3CD;
+    width: 100%;
+    height: 22px;
+    padding-right: 20px;
+}
+
+.sa-explorer-tool {
+    background: #BCC7D8;
+    width: 100%;
+    height: 30px;
+    padding-right: 20px;
+}
+
+.sa-explorer-panel {
+    background: #F0F0F0;
+    width: 100%;
+    height: 534px;
+    padding: 20px;
+    padding-left: 0px;
+}
+
+.sa-explorer-content {
+    background: #FFFFFF;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #828790;
+    border-left: none;
+}
+
+.sa-tabs {
+    background: #293955;
+    height: 100%;
+    width: 1054px;
+    border: 3px solid #293955;
+    position: absolute;
+    top: 30px;
+    right: 3px;
+}
+
+.sa-tabs-title {
+    width: 90px;
+    height: 23px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: #ffffff;
+    border: #ACACAC 1px solid;
+    border-bottom: none;
+}
+
+.sa-tabs-panel {
+    width: 100%;
+    height: 91%;
+    background: #ffffff;
+    margin-top: 23px;
+    border: #ACACAC 1px solid;
+}
+
+
+/*Common*/
+.sa-mask {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0px;
+}

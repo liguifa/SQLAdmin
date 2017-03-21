@@ -1,0 +1,8 @@
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Domain\bin\Debug\MongoDB.Domain.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Domain\bin\Debug\MongoDB.Domain.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Domain\bin\Debug\SQLAdmin.Domain.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Domain\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Domain\bin\Debug\SQLAdmin.Domain.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Domain\obj\Debug\MongoDB.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Domain\obj\Debug\MongoDB.Domain.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Domain\obj\Debug\MongoDB.Domain.pdb
