@@ -9,6 +9,8 @@ namespace SQLAdmin.Dao
 {
     public interface IRepertory
     {
+        bool Connect();
+
         List<Database> GetDatabases();
 
         List<Table> GetTabses(string dbName);

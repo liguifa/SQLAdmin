@@ -1,0 +1,7 @@
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Utility\bin\Debug\SQLAdmin.Utility.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Utility\bin\Debug\SQLAdmin.Utility.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Utility\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Utility\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Utility\obj\Debug\SQLAdmin.Utility.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Utility\obj\Debug\SQLAdmin.Utility.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Utility\obj\Debug\SQLAdmin.Utility.csprojResolveAssemblyReference.cache

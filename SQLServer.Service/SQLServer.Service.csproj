@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B36C2DA6-886D-4742-9DB8-9461AC8D9931}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SQLServer.Service</RootNamespace>
+    <AssemblyName>SQLServer.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SQLServerConnectService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Logger\Common.Logger.csproj">
+      <Project>{C2C92005-3ADC-49E2-85A2-8BD031190485}</Project>
+      <Name>Common.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLAdmin.Dao\SQLAdmin.Dao.csproj">
+      <Project>{bf26268f-b539-406b-aa88-4ca90187c782}</Project>
+      <Name>SQLAdmin.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLAdmin.Domain\SQLAdmin.Domain.csproj">
+      <Project>{a85141b4-0571-4d0e-b868-99f1af36dd8e}</Project>
+      <Name>SQLAdmin.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLAdmin.IService\SQLAdmin.IService.csproj">
+      <Project>{54b4022a-6bf0-416e-9578-e165136dc8d7}</Project>
+      <Name>SQLAdmin.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLServer.Dao\SQLServer.Dao.csproj">
+      <Project>{e8199617-96f1-461a-b4c4-d41dbc4fde71}</Project>
+      <Name>SQLServer.Dao</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

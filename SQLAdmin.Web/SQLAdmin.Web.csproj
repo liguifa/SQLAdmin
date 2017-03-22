@@ -192,6 +192,18 @@
       <Project>{a724907b-ef35-416a-af6f-340417f40b99}</Project>
       <Name>SQLAdmin.Config</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SQLAdmin.Domain\SQLAdmin.Domain.csproj">
+      <Project>{A85141B4-0571-4D0E-B868-99F1AF36DD8E}</Project>
+      <Name>SQLAdmin.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLAdmin.IService\SQLAdmin.IService.csproj">
+      <Project>{54B4022A-6BF0-416E-9578-E165136DC8D7}</Project>
+      <Name>SQLAdmin.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLServer.Service\SQLServer.Service.csproj">
+      <Project>{b36c2da6-886d-4742-9db8-9461ac8d9931}</Project>
+      <Name>SQLServer.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

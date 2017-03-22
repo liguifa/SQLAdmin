@@ -100,7 +100,7 @@
     </ProjectReference>
     <ProjectReference Include="..\MongoDB.Command\MongoDB.Command.csproj">
       <Project>{aca94866-d8cd-462f-81ea-fca4fd04d2f5}</Project>
-      <Name>MMS.Command</Name>
+      <Name>MongoDB.Command</Name>
     </ProjectReference>
     <ProjectReference Include="..\SQLAdmin.Config\SQLAdmin.Config.csproj">
       <Project>{a724907b-ef35-416a-af6f-340417f40b99}</Project>

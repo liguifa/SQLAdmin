@@ -32,6 +32,11 @@ namespace MongoDB.Dao
             }
         }
 
+        public bool Connect()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Database> GetDatabases()
         {
             var dbs = new List<BsonDocument>();

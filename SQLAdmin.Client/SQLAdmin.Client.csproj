@@ -129,7 +129,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MongoDB.Grammar\MongoDB.Grammar.csproj">
       <Project>{16ac7d83-90c0-426b-9664-b153a4f961b9}</Project>
-      <Name>MMS.Grammar</Name>
+      <Name>MongoDB.Grammar</Name>
     </ProjectReference>
     <ProjectReference Include="..\MongoDB.Dao\MongoDB.Dao.csproj">
       <Project>{3ec60a22-8f5c-4d17-abda-194057663682}</Project>
