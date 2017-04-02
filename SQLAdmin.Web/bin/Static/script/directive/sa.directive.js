@@ -80,7 +80,7 @@
             //username: '@',
             //password: '@',
             determine: '&',
-            cancel:'&',
+            cancel: '&',
         },
         controller: function ($scope)
         {
@@ -92,7 +92,7 @@
                 {
                     $scope.determine({ args: $scope.info });
                 },
-                cancel:function()
+                cancel: function ()
                 {
                     $scope.cancel();
                 }
@@ -106,7 +106,7 @@
 {
     var self = null;
     var stamp = {
-        isViewMenu : false
+        isViewMenu: false
     }
     var vm = {
         template: "<div class='sa-menu'>\
@@ -119,7 +119,7 @@
                             </li>\
                         </ul>\
                    </div>",
-        select:function (id)
+        select: function (id)
         {
             for (var i in self.vm.menus)
             {
@@ -166,7 +166,7 @@
             $scope.vm = {
                 menus: $scope.menus,
                 select: vm.select,
-                clearSubMenus:vm.clearSubMenus,
+                clearSubMenus: vm.clearSubMenus,
                 Command: vm.Command,
             }
             document.onmousedown = $scope.vm.clearSubMenus;
@@ -187,7 +187,9 @@
                         <div class='sa-explorer-title'></div>\
                         <div class='sa-explorer-tool'></div>\
                         <div class='sa-explorer-panel'>\
-                            <div class='sa-explorer-content'></div>\
+                            <div class='sa-explorer-content'>\
+                                <div ng-transclude></div>\
+                            </div>\
                         </div>\
                    </div>"
     }
@@ -195,6 +197,8 @@
         restrict: "E",
         template: vm.template,
         replace: true,
+        priority: 1,
+        transclude: true,
         scope: {
         },
         controller: function ($scope)
@@ -219,6 +223,45 @@
         },
         controller: function ($scope)
         {
+        }
+    }
+})
+
+.directive('saTree', function ()
+{
+    var vm = {
+        template: "<ul class='sa-tree-ul'>\
+                        <li class='sa-tree-li'>\
+                            <i class='sa-icon-folder' />\
+                            <span>{{vm.tree.Name}}</span>\
+                            <ul class='sa-tree-ul'>\
+                                <li class='sa-tree-li' ng-repeat='tree in vm.tree.Children'>\
+                                    <i class='sa-icon-folder' />\
+                                    <span>{{tree.Name}}</span>\
+                                </li>\
+                           </ul>\
+                        </li>\
+                   </ul>"
+    };
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 2,
+        scope: {
+            tree: '='
+        },
+        controller: function ($scope)
+        {
+            $scope.vm = {
+                tree: $scope.tree
+            }
+
+            $scope.$watch("tree", function ()
+            {
+                $scope.vm.tree = $scope.tree;
+            })
         }
     }
 })

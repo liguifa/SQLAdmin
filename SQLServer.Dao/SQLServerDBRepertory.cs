@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLAdmin.Domain;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace SQLServer.Dao
 {
@@ -20,12 +22,27 @@ namespace SQLServer.Dao
 
         public bool Connect()
         {
-            return this.DBContext.Connect();
+            using (var conn = this.DBContext.GetConnect())
+            {
+                return conn != null;
+            }
         }
 
         public List<Database> GetDatabases()
         {
-            throw new NotImplementedException();
+            string sql = "SELECT * FROM Master..SysDatabases ORDER BY Name";
+            var dataTable = this.DBContext.SqlReader(sql);
+            List<Database> databases = new List<Database>();
+            foreach(DataRow row in dataTable.Rows)
+            {
+                Database database = new Database()
+                {
+                    Id = Guid.NewGuid(), //row["dbid"].ToString(),
+                    Name = row["name"].ToString()
+                };
+                databases.Add(database);
+            }
+            return databases;
         }
 
         public List<Table> GetTabses(string dbName)

@@ -1,4 +1,4 @@
-﻿using MSQLAdmin.Domain;
+﻿using SQLAdmin.Domain;
 using SQLAdmin.Domain;
 using System;
 using System.Collections.Generic;

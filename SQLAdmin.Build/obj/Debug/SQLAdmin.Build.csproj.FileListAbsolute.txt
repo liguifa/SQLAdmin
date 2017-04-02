@@ -1,8 +1,0 @@
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Build\bin\Debug\Tool\Package.exe
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Build\bin\Debug\Tool\Setup.exe
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Build\bin\Debug\MMS.Build.exe
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Build\bin\Debug\MMS.Build.pdb
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Build\bin\Debug\Ionic.Zip.dll
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Build\obj\Debug\SQLAdmin.Build.csprojResolveAssemblyReference.cache
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Build\obj\Debug\MMS.Build.exe
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Build\obj\Debug\MMS.Build.pdb

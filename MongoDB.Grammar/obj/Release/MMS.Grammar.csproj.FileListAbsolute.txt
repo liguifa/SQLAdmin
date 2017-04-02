@@ -1,5 +1,0 @@
-J:\MMS\bin\Release\MMS.Grammar.dll
-J:\MMS\bin\Release\MMS.Grammar.pdb
-J:\MMS\MMS.Grammar\obj\Release\MMS.Grammar.csprojResolveAssemblyReference.cache
-J:\MMS\MMS.Grammar\obj\Release\MMS.Grammar.dll
-J:\MMS\MMS.Grammar\obj\Release\MMS.Grammar.pdb

@@ -1,4 +1,0 @@
-J:\MMS\bin\Release\MMS.Command.dll
-J:\MMS\bin\Release\MMS.Command.pdb
-J:\MMS\MMS.Command\obj\Release\MMS.Command.dll
-J:\MMS\MMS.Command\obj\Release\MMS.Command.pdb

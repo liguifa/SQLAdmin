@@ -10,12 +10,18 @@
         $scope.vm = {
             //window: "/Common/Connect",
             select: select,
-            menus:[]
+            menus: [],
+            database:[]
         }
 
         $http.get("/Common/GetMenus").then(function(res)
         {
             $scope.vm.menus = res.data;
+        })
+
+        $http.get("/Database/GetDatabases").then(function (res)
+        {
+            $scope.vm.database = res.data;
         })
     }
 

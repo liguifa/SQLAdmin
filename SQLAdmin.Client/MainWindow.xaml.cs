@@ -2,7 +2,7 @@
 using MMS.Grammar;
 using MMS.MongoDB;
 using MMS.UI.Default;
-using MSQLAdmin.Domain;
+using SQLAdmin.Domain;
 using SQLAdmin.Domain;
 using SQLAdmin.IService;
 using System;

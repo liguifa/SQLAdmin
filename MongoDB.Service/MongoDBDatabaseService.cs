@@ -8,7 +8,7 @@ using SQLAdmin.Domain;
 using MMS.MongoDB;
 using MongoDB.Dao;
 using SQLAdmin.Dao;
-using MSQLAdmin.Domain;
+using SQLAdmin.Utility;
 
 namespace MongoDB.Service
 {

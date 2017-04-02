@@ -1,5 +1,0 @@
-J:\MMS\bin\Release\MMS.MongoDB.dll
-J:\MMS\bin\Release\MMS.MongoDB.pdb
-J:\MMS\MMS.MongoDB\obj\Release\MMS.MongoDB.csprojResolveAssemblyReference.cache
-J:\MMS\MMS.MongoDB\obj\Release\MMS.MongoDB.dll
-J:\MMS\MMS.MongoDB\obj\Release\MMS.MongoDB.pdb

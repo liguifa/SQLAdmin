@@ -17,7 +17,7 @@ namespace SQLAdmin.IService
         static ServiceFactory()
         {
             var configuration = System.Configuration.ConfigurationManager.GetSection(UnityConfigurationSection.SectionName) as UnityConfigurationSection;
-            configuration.Configure(mContainer, "defaultContainer");
+            configuration.Configure(mContainer, "sqlserverContainer");
         }
 
         public static IDBConnectService DBConnectService { get { return mContainer.Resolve<IDBConnectService>(); } }

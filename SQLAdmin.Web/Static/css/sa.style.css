@@ -197,6 +197,7 @@ body {
     width: 100%;
     border: 1px solid #828790;
     border-left: none;
+    overflow: auto;
 }
 
 .sa-tabs {
@@ -227,6 +228,65 @@ body {
     margin-top: 23px;
     border: #ACACAC 1px solid;
 }
+
+.sa-tree-ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.sa-tree-li {
+    padding-left: 20px;
+    height: 26px;
+    cursor: pointer;
+    line-height: 26px;
+    color: #333;
+}
+
+.sa-tree-children {
+    margin-left: 2px;
+}
+
+.sa-tree-li:hover {
+    color: #999;
+}
+
+.sa-tree-li span {
+    padding-left: 5px;
+    font-size: 14px;
+    font-style: normal;
+}
+
+.sa-datagrid {
+    border: 1px solid #e2e2e2;
+    width: 100%;
+    margin: 10px 0;
+    background-color: #fff;
+    line-height: 22px;
+    border-collapse: collapse;
+}
+
+    .sa-datagrid thead tr {
+        background-color: #f2f2f2;
+    }
+
+    .sa-datagrid th {
+        padding: 9px 15px;
+        min-height: 20px;
+        line-height: 20px;
+        border: 1px solid #e2e2e2;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .sa-datagrid td {
+        padding: 9px 15px;
+        min-height: 20px;
+        line-height: 20px;
+        border: 1px solid #e2e2e2;
+        font-size: 14px;
+        text-align: left;
+    }
 
 
 /*Common*/

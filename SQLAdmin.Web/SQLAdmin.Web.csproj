@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Static\css\sa.icon.css" />
     <Content Include="Static\css\sa.style.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -128,6 +129,8 @@
     <Resource Include="Static\Images\new_connect.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Content Include="Static\Images\icon_folder.png" />
+    <Content Include="Static\Images\icon_arrow-right.png" />
     <Content Include="Static\script\angular.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -145,6 +148,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\ConnectController.cs" />
+    <Compile Include="Controllers\DatabaseController.cs" />
     <Compile Include="Controllers\SQLAdminController.cs" />
     <Compile Include="Convert\MenuConvert.cs" />
     <Compile Include="Global.asax.cs">
@@ -153,7 +157,6 @@
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\MenuViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="utils\CookieHepler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -164,6 +167,7 @@
     <Content Include="Views\Connect\Index.cshtml" />
     <Content Include="config\menu.config" />
     <Content Include="env.config" />
+    <None Include="Properties\PublishProfiles\10.1.1.11.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -173,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Database\" />
     <Folder Include="Views\SQLAdmin\" />
   </ItemGroup>
   <ItemGroup>

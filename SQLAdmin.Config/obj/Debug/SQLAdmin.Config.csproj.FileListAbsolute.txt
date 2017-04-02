@@ -1,12 +1,12 @@
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\bin\Debug\log4net.dll
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\bin\Debug\MMS.Config.dll
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\bin\Debug\MMS.Config.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\bin\Debug\Common.Cryptogram.dll
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\bin\Debug\Logger.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\bin\Debug\Common.Cryptogram.pdb
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\bin\Debug\Logger.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\obj\Debug\SQLAdmin.Config.csprojResolveAssemblyReference.cache
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\obj\Debug\MMS.Config.dll
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\obj\Debug\MMS.Config.pdb
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\bin\Debug\Common.Cryptogram.dll
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\bin\Debug\Common.Cryptogram.pdb
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\bin\Debug\Newtonsoft.Json.xml

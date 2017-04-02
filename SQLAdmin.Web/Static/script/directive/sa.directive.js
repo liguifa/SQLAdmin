@@ -80,7 +80,7 @@
             //username: '@',
             //password: '@',
             determine: '&',
-            cancel:'&',
+            cancel: '&',
         },
         controller: function ($scope)
         {
@@ -92,7 +92,7 @@
                 {
                     $scope.determine({ args: $scope.info });
                 },
-                cancel:function()
+                cancel: function ()
                 {
                     $scope.cancel();
                 }
@@ -106,7 +106,7 @@
 {
     var self = null;
     var stamp = {
-        isViewMenu : false
+        isViewMenu: false
     }
     var vm = {
         template: "<div class='sa-menu'>\
@@ -119,7 +119,7 @@
                             </li>\
                         </ul>\
                    </div>",
-        select:function (id)
+        select: function (id)
         {
             for (var i in self.vm.menus)
             {
@@ -166,7 +166,7 @@
             $scope.vm = {
                 menus: $scope.menus,
                 select: vm.select,
-                clearSubMenus:vm.clearSubMenus,
+                clearSubMenus: vm.clearSubMenus,
                 Command: vm.Command,
             }
             document.onmousedown = $scope.vm.clearSubMenus;
@@ -187,7 +187,9 @@
                         <div class='sa-explorer-title'></div>\
                         <div class='sa-explorer-tool'></div>\
                         <div class='sa-explorer-panel'>\
-                            <div class='sa-explorer-content'></div>\
+                            <div class='sa-explorer-content'>\
+                                <div ng-transclude></div>\
+                            </div>\
                         </div>\
                    </div>"
     }
@@ -195,6 +197,8 @@
         restrict: "E",
         template: vm.template,
         replace: true,
+        priority: 1,
+        transclude: true,
         scope: {
         },
         controller: function ($scope)
@@ -208,17 +212,176 @@
     var vm = {
         template: "<div class='sa-tabs'>\
                         <div class='sa-tabs-title'></div>\
-                        <div class='sa-tabs-panel'></div>\
+                        <div class='sa-tabs-panel' ng-transclude></div>\
                    </div>"
     }
     return {
         restrict: "E",
         template: vm.template,
         replace: true,
+        transclude: true,
         scope: {
         },
         controller: function ($scope)
         {
         }
+    }
+})
+
+.directive('saTree', function ()
+{
+    var vm = {
+        template: "<ul class='sa-tree-ul'>\
+                        <li class='sa-tree-li'>\
+                            <i class='sa-icon-arrow-right' ng-click='vm.spread()' />\
+                            <span class='sa-tree-children'>\
+                                <i class='sa-icon-folder' />\
+                                <span>{{vm.tree.Name}}</span>\
+                                <ul class='sa-tree-ul' ng-show='vm.tree.isShow'>\
+                                    <li class='sa-tree-li' ng-repeat='tree in vm.tree.Children'>\
+                                        <span class='sa-tree-children'>\
+                                            <i class='sa-icon-folder' />\
+                                            <span>{{tree.Name}}</span>\
+                                            <ul class='sa-tree-ul'>\
+                                                <li class='sa-tree-li' ng-repeat='tree in tree.Children'>\
+                                                    <i class='sa-icon-folder' />\
+                                                    <span>{{tree.Name}}</span>\
+                                                </li>\
+                                           </ul>\
+                                        </span>\
+                                    </li>\
+                               </ul>\
+                           </span>\
+                        </li>\
+                   </ul>"
+    };
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 2,
+        scope: {
+            tree: '='
+        },
+        controller: function ($scope)
+        {
+            $scope.vm = {
+                tree: $scope.tree,
+                spread: function ()
+                {
+                    $scope.vm.tree.isShow = !$scope.vm.tree.isShow;
+                }
+            }
+
+            $scope.$watch("tree", function ()
+            {
+                $scope.vm.tree = $scope.tree;
+                $scope.vm.tree.isShow = true;
+            })
+        }
+    }
+})
+
+.directive('saQueryPanel', function ()
+{
+    var vm = {
+        template: "<div>\
+                    <sa-datagrid></sa-datagrid>\
+                   </div>"
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 2,
+        scope: {
+        },
+        controller: function ($scope)
+        {
+
+        }
+    }
+})
+
+.directive('saDatagrid', function ()
+{
+    var vm = {
+        template: '<table class="sa-datagrid">\
+    <colgroup>\
+      <col width="50">\
+      <col width="150">\
+      <col width="150">\
+      <col width="200">\
+      <col>\
+    </colgroup>\
+    <thead>\
+      <tr>\
+        <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"></th>\
+        <th>人物</th>\
+        <th>民族</th>\
+        <th>出场时间</th>\
+        <th>格言</th>\
+      </tr> \
+    </thead>\
+    <tbody>\
+      <tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>贤心</td>\
+        <td>汉族</td>\
+        <td>1989-10-14</td>\
+        <td>人生似修行</td>\
+      </tr>\
+      <tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>张爱玲</td>\
+        <td>汉族</td>\
+        <td>1920-09-30</td>\
+        <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>\
+      </tr>\
+      <tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>Helen Keller</td>\
+        <td>拉丁美裔</td>\
+        <td>1880-06-27</td>\
+        <td> Life is either a daring adventure or nothing.</td>\
+      </tr>\
+      <tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>岳飞</td>\
+        <td>汉族</td>\
+        <td>1103-北宋崇宁二年</td>\
+        <td>教科书再滥改，也抹不去“民族英雄”的事实</td>\
+      </tr>\
+      <tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+    </tbody>\
+  </table>'
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 2,
+        scope: {
+        },
+        controller: function ($scope)
+        {
+
+        }
+    }
+})
+
+.directive("saTools",function()
+{
+    var vm = {
+        template:"<blockquote class="layui-elem-quote">这个貌似不用多介绍，因为你已经在太多的地方都看到</blockquote>"
     }
 })

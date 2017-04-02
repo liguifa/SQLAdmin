@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLAdmin.Domain;
-using MSQLAdmin.Domain;
+using SQLAdmin.Domain;
 using SQLAdmin.Dao;
 using MMS.MongoDB;
 using MongoDB.Dao;

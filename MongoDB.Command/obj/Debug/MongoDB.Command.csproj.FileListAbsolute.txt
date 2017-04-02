@@ -1,5 +1,0 @@
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Command\bin\Debug\MMS.Command.dll
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Command\bin\Debug\MMS.Command.pdb
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Command\obj\Debug\MongoDB.Command.csprojResolveAssemblyReference.cache
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Command\obj\Debug\MMS.Command.dll
-C:\Users\Guifa.Lee\Source\Repos\SQAdmin\MongoDB.Command\obj\Debug\MMS.Command.pdb

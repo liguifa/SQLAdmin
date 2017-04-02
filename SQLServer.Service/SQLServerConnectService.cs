@@ -22,9 +22,8 @@ namespace SQLServer.Service
             {
                 using (var scope = new SQLServerDBContextScope(connectSetting))
                 {
-                    IRepertory db = new SQLServerDBRepertory();
-                    //return db.Connect();
-                    return true;
+                    SQLServerDBRepertory db = new SQLServerDBRepertory();
+                    return db.Connect();
                 }
             }
             catch (Exception e)

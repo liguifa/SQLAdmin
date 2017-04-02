@@ -6,12 +6,17 @@
     <div>
         <sa-menu select="vm.select(menu)" menus="vm.menus"></sa-menu>
         <div>
-            <sa-explorer></sa-explorer>
-            <sa-tabs></sa-tabs>
+            <sa-explorer>
+                <sa-tree tree="vm.database"></sa-tree>
+            </sa-explorer>
+            <sa-tabs>
+                <sa-query-panel></sa-query-panel>
+            </sa-tabs>
         </div>
     </div>
     <div ng-include src="vm.window"></div>
 </div>
+<link href="~/Static/css/sa.icon.css" rel="stylesheet" />
 <script src="~/Static/script/controller/gui.common.controller.js"></script>
 <script src="~/Static/script/lib/base64.min.js"></script>
 <script src="~/Static/script/common/cryptogram.service.js"></script>

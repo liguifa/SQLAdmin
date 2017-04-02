@@ -1,6 +1,7 @@
 ﻿using SQLAdmin.Dao;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -27,20 +28,74 @@ namespace SQLServer.Dao
             this.mConnString = connString;
         }
 
-        public bool Connect()
+        public SqlConnection GetConnect()
         {
             try
             {
-                var conn = this.mSQLConnection;
-                return true;
+                return this.mSQLConnection;
             }
             catch(Exception e)
             {
                 
             }
-            return false;
+            return null;
         }
 
-       
+
+        #region public DataTable SqlReader(string sql)+Access数据库查询
+        /// <summary>
+        /// Access数据库查询
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
+        public DataTable SqlReader(string sql)
+        {
+            using (SqlConnection conn = this.GetConnect())
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "table");
+                return ds.Tables["table"];
+            }
+        }
+        #endregion
+
+        #region public int SqlQuery(string sql)+Access数据库的增、删、改.返回受影响行数
+        /// <summary>
+        /// Access数据库的增、删、改.返回受影响行数
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
+        public int AccessQuery(string sql)
+        {
+            using (SqlConnection conn = this.GetConnect())
+            {
+                conn.Open();
+                SqlCommand oc = new SqlCommand(sql, conn);
+                int result = oc.ExecuteNonQuery();
+                conn.Close();
+                return result;
+            }
+        }
+        #endregion
+
+        #region public object SqlScaler(string sql)+ Access数据库的增、删、改.返回结果集第一行第一列的值
+        /// <summary>
+        ///  Access数据库的增、删、改.返回结果集第一行第一列的值
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
+        public object SqlScaler(string sql)
+        {
+            using (SqlConnection conn = this.GetConnect())
+            {
+                conn.Open();
+                SqlCommand oc = new SqlCommand(sql, conn);
+                object result = oc.ExecuteScalar();
+                conn.Close();
+                return result;
+            }
+        }
+        #endregion
     }
 }

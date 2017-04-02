@@ -1,0 +1,15 @@
+﻿.sa-icon-folder {
+    background: url(../Images/icon_folder.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-arrow-right {
+    background: url(../Images/icon_arrow-right.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}

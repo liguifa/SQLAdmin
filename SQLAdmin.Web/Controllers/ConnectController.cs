@@ -24,7 +24,7 @@ namespace SQLAdmin.Web.Controllers
         {
             ServiceFactory.DBConnectService.Connect(new DBConnect() { Address = ".", Userename = "sa", Password = "123456" });
             vm.IsLogin = true;
-            SetCookie(PageId, vm);
+            this.SetCookie(PageId, vm);
             return Json(vm);
         }
     }
