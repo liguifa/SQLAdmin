@@ -23,6 +23,11 @@ namespace Common.Utility
             }
         }
 
+        public static T DeserializeObjectByJsonConvert<T>(string input) where T : class
+        {
+            return JsonConvert.DeserializeObject<T>(input);
+        }
+
         public static string SerializerObjectToBase64ByJsonConvert(object obj)
         {
             var json = SerializerObjectByJsonConvert(obj);

@@ -10,7 +10,7 @@ namespace SQLAdmin.Domain
     {
         public string Address { get; set; }
 
-        public int Prot { get; set; }
+        public int Port { get; set; }
 
         public string Userename { get; set; }
 

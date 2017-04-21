@@ -118,10 +118,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Static\css\messager.css" />
     <Content Include="Static\css\sa.icon.css" />
     <Content Include="Static\css\sa.style.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Static\Images\icon_edit.png" />
+    <Content Include="Static\Images\icon_add.png" />
     <Content Include="Static\Images\displayLogo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -129,12 +132,21 @@
     <Resource Include="Static\Images\new_connect.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Content Include="Static\Images\icon_error.png" />
     <Content Include="Static\Images\icon_folder.png" />
     <Content Include="Static\Images\icon_arrow-right.png" />
+    <Content Include="Static\Images\icon_loading.gif" />
+    <Content Include="Static\Images\icon_loading.png" />
+    <Content Include="Static\Images\icon_remove.png" />
+    <Content Include="Static\script\angular-cookies.min.js" />
     <Content Include="Static\script\angular.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Static\script\app.js" />
+    <Content Include="Static\script\common\angular-uuid2.min.js" />
+    <Content Include="Static\script\common\cache.service.js" />
     <Content Include="Static\script\common\cryptogram.service.js" />
+    <Content Include="Static\script\common\messager.service.js" />
     <Content Include="Static\script\controller\connect.controller.js" />
     <Content Include="Static\script\controller\gui.common.controller.js" />
     <Content Include="Static\script\directive\sa.directive.js">
@@ -146,9 +158,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\InjectAttribute.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\ConnectController.cs" />
     <Compile Include="Controllers\DatabaseController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SQLAdminController.cs" />
     <Compile Include="Convert\MenuConvert.cs" />
     <Compile Include="Global.asax.cs">
@@ -167,7 +181,16 @@
     <Content Include="Views\Connect\Index.cshtml" />
     <Content Include="config\menu.config" />
     <Content Include="env.config" />
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\databaseType.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\10.1.1.11.pubxml" />
+    <Content Include="Views\Manage\Query.cshtml" />
+    <Content Include="Static\script\common\event.service.js" />
+    <Content Include="Static\script\common\session.service.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -204,6 +227,10 @@
     <ProjectReference Include="..\SQLAdmin.IService\SQLAdmin.IService.csproj">
       <Project>{54B4022A-6BF0-416E-9578-E165136DC8D7}</Project>
       <Name>SQLAdmin.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLAdmin.Utility\SQLAdmin.Utility.csproj">
+      <Project>{698f30d4-2153-4055-b1f3-ed51670877a5}</Project>
+      <Name>SQLAdmin.Utility</Name>
     </ProjectReference>
     <ProjectReference Include="..\SQLServer.Service\SQLServer.Service.csproj">
       <Project>{b36c2da6-886d-4742-9db8-9461ac8d9931}</Project>

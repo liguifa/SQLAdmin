@@ -1,0 +1,4 @@
+D:\SQLAdmin\Common.Cryptogram\bin\Release\Common.Cryptogram.dll
+D:\SQLAdmin\Common.Cryptogram\bin\Release\Common.Cryptogram.pdb
+D:\SQLAdmin\Common.Cryptogram\obj\Release\Common.Cryptogram.dll
+D:\SQLAdmin\Common.Cryptogram\obj\Release\Common.Cryptogram.pdb

@@ -1,0 +1,4 @@
+D:\SQLAdmin\SQLAdmin.Client\obj\Debug\SQLAdmin.Client.csprojResolveAssemblyReference.cache
+D:\SQLAdmin\SQLAdmin.Client\obj\Debug\App.baml
+D:\SQLAdmin\SQLAdmin.Client\obj\Debug\App.g.cs
+D:\SQLAdmin\SQLAdmin.Client\obj\Debug\MMS.Client_MarkupCompile.cache

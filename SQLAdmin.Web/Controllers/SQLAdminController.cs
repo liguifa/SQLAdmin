@@ -37,18 +37,6 @@ namespace SQLAdmin.Web.Controllers
             base.OnActionExecuted(filterContext);
         }
 
-        protected string PageId
-        {
-            get
-            {
-                if(Request.Params.AllKeys.Contains("pageId"))
-                {
-                    return Request.Params["pageId"].ToString();
-                }
-                return Guid.Empty.ToString();
-            }
-        }
-
         public void SetCookie(string name, object value)
         {
             string valueStr = SerializerHelper.SerializerObjectToBase64ByJsonConvert(value);

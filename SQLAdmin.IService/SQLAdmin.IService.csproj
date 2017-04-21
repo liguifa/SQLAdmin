@@ -68,9 +68,17 @@
       <Project>{C2C92005-3ADC-49E2-85A2-8BD031190485}</Project>
       <Name>Common.Logger</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SQLAdmin.Config\SQLAdmin.Config.csproj">
+      <Project>{a724907b-ef35-416a-af6f-340417f40b99}</Project>
+      <Name>SQLAdmin.Config</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SQLAdmin.Domain\SQLAdmin.Domain.csproj">
       <Project>{a85141b4-0571-4d0e-b868-99f1af36dd8e}</Project>
       <Name>SQLAdmin.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLAdmin.Utility\SQLAdmin.Utility.csproj">
+      <Project>{698f30d4-2153-4055-b1f3-ed51670877a5}</Project>
+      <Name>SQLAdmin.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

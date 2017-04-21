@@ -1,0 +1,7 @@
+D:\SQLAdmin\Common.Logger\bin\Release\log4net.dll
+D:\SQLAdmin\Common.Logger\bin\Release\Logger.dll.config
+D:\SQLAdmin\Common.Logger\bin\Release\Logger.dll
+D:\SQLAdmin\Common.Logger\bin\Release\Logger.pdb
+D:\SQLAdmin\Common.Logger\obj\Release\Common.Logger.csprojResolveAssemblyReference.cache
+D:\SQLAdmin\Common.Logger\obj\Release\Logger.dll
+D:\SQLAdmin\Common.Logger\obj\Release\Logger.pdb

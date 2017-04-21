@@ -1,0 +1,4 @@
+D:\SQLAdmin\MongoDB.Command\bin\Debug\MMS.Command.dll
+D:\SQLAdmin\MongoDB.Command\bin\Debug\MMS.Command.pdb
+D:\SQLAdmin\MongoDB.Command\obj\Debug\MMS.Command.dll
+D:\SQLAdmin\MongoDB.Command\obj\Debug\MMS.Command.pdb

@@ -59,6 +59,10 @@ namespace MMS.Config
                 }
             }
             dictionary.Add(key, value);
+            if (this.mCache.Count == 0)
+            {
+                this.mCache.Add(dictionary);
+            }
         }
 
         public void Insert(InsertOption option = InsertOption.Row)
@@ -88,6 +92,8 @@ namespace MMS.Config
 
         public string BuildJson()
         {
+            var last = this.mCache.Last();
+            this.mCache.Remove(last);
             var cacheJson = JsonConvert.SerializeObject(this.mCache, Formatting.Indented);
             return Base64.Encrypt(cacheJson);
         }

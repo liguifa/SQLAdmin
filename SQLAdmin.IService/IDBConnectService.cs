@@ -10,6 +10,6 @@ namespace SQLAdmin.IService
 {
     public interface IDBConnectService
     {
-        bool Connect(DBConnect connectSetting);
+        bool Connect();
     }
 }

@@ -2,3 +2,7 @@ C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Cryptogram\bin\Debug\Common.Crypt
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Cryptogram\bin\Debug\Common.Cryptogram.pdb
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Cryptogram\obj\Debug\Common.Cryptogram.dll
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Cryptogram\obj\Debug\Common.Cryptogram.pdb
+D:\SQLAdmin\Common.Cryptogram\bin\Debug\Common.Cryptogram.dll
+D:\SQLAdmin\Common.Cryptogram\bin\Debug\Common.Cryptogram.pdb
+D:\SQLAdmin\Common.Cryptogram\obj\Debug\Common.Cryptogram.dll
+D:\SQLAdmin\Common.Cryptogram\obj\Debug\Common.Cryptogram.pdb

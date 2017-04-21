@@ -11,5 +11,7 @@ namespace SQLAdmin.IService
     public interface IDatabaseService
     {
         DatabaseTree GetDatabases();
+
+        List<Table> GetTables(string tableName);
     }
 }

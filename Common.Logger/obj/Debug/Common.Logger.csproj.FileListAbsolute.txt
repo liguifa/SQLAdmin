@@ -5,3 +5,9 @@ C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Logger\bin\Debug\Logger.pdb
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Logger\obj\Debug\Common.Logger.csprojResolveAssemblyReference.cache
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Logger\obj\Debug\Logger.dll
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\Common.Logger\obj\Debug\Logger.pdb
+D:\SQLAdmin\Common.Logger\bin\Debug\log4net.dll
+D:\SQLAdmin\Common.Logger\bin\Debug\Logger.dll.config
+D:\SQLAdmin\Common.Logger\bin\Debug\Logger.dll
+D:\SQLAdmin\Common.Logger\bin\Debug\Logger.pdb
+D:\SQLAdmin\Common.Logger\obj\Debug\Logger.dll
+D:\SQLAdmin\Common.Logger\obj\Debug\Logger.pdb

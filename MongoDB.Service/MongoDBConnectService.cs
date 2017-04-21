@@ -18,6 +18,11 @@ namespace MongoDB.Service
     {
         private readonly static Logger mLog = Logger.GetInstance(MethodBase.GetCurrentMethod().DeclaringType);
 
+        public bool Connect()
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Connect(DBConnect connectSetting)
         {
             try

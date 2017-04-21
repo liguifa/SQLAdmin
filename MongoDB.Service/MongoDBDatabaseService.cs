@@ -35,5 +35,10 @@ namespace MongoDB.Service
                 throw;
             }
         }
+
+        public List<Table> GetTables(string tableName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

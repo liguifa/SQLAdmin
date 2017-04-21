@@ -53,7 +53,7 @@ namespace MMS.Client
                 DBConnect setting = new DBConnect()
                 {
                     Address = address,
-                    Prot = Convert.ToInt32(port),
+                    Port = Convert.ToInt32(port),
                     Password = password,
                     Userename = username
                 };

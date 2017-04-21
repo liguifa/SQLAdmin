@@ -13,6 +13,6 @@ namespace SQLAdmin.Dao
 
         List<Database> GetDatabases();
 
-        List<Table> GetTabses(string dbName);
+        List<Table> GetTables(string dbName);
     }
 }

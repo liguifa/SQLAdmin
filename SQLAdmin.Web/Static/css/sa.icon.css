@@ -13,3 +13,35 @@
     background-repeat: no-repeat;
     padding: 8px;
 }
+
+.sa-icon-remove {
+    background: url(../Images/icon_remove.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-add {
+    background: url(../Images/icon_add.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-edit {
+    background: url(../Images/icon_edit.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-loading {
+    background: url(../Images/icon_loading.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}

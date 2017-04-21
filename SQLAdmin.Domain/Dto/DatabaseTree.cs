@@ -8,6 +8,8 @@ namespace SQLAdmin.Domain
 {
     public class DatabaseTree
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
+
         public string Name { get; set; }
 
         public DBTreeNodeType NodeType { get; set; }

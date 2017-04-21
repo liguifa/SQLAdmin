@@ -46,17 +46,12 @@
   <ItemGroup>
     <Compile Include="Constant.cs" />
     <Compile Include="JsonHelper.cs" />
-    <Compile Include="MenuHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Cryptogram\Common.Cryptogram.csproj">
       <Project>{F8A1A6E1-2BFE-42C1-AF1E-EC27C70E594E}</Project>
       <Name>Common.Cryptogram</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SQLAdmin.Config\SQLAdmin.Config.csproj">
-      <Project>{a724907b-ef35-416a-af6f-340417f40b99}</Project>
-      <Name>SQLAdmin.Config</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

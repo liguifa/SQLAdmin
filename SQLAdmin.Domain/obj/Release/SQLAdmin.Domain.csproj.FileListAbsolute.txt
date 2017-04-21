@@ -1,0 +1,4 @@
+D:\SQLAdmin\SQLAdmin.Domain\bin\Release\SQLAdmin.Domain.dll
+D:\SQLAdmin\SQLAdmin.Domain\bin\Release\SQLAdmin.Domain.pdb
+D:\SQLAdmin\SQLAdmin.Domain\obj\Release\SQLAdmin.Domain.dll
+D:\SQLAdmin\SQLAdmin.Domain\obj\Release\SQLAdmin.Domain.pdb

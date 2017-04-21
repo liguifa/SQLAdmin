@@ -10,3 +10,14 @@ C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\bin\Debug\Newtonsoft.Jso
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\obj\Debug\SQLAdmin.Config.csprojResolveAssemblyReference.cache
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\obj\Debug\MMS.Config.dll
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Config\obj\Debug\MMS.Config.pdb
+D:\SQLAdmin\SQLAdmin.Config\bin\Debug\log4net.dll
+D:\SQLAdmin\SQLAdmin.Config\bin\Debug\MMS.Config.dll
+D:\SQLAdmin\SQLAdmin.Config\bin\Debug\MMS.Config.pdb
+D:\SQLAdmin\SQLAdmin.Config\bin\Debug\Common.Cryptogram.dll
+D:\SQLAdmin\SQLAdmin.Config\bin\Debug\Logger.dll
+D:\SQLAdmin\SQLAdmin.Config\bin\Debug\Newtonsoft.Json.dll
+D:\SQLAdmin\SQLAdmin.Config\bin\Debug\Common.Cryptogram.pdb
+D:\SQLAdmin\SQLAdmin.Config\bin\Debug\Logger.pdb
+D:\SQLAdmin\SQLAdmin.Config\bin\Debug\Newtonsoft.Json.xml
+D:\SQLAdmin\SQLAdmin.Config\obj\Debug\MMS.Config.dll
+D:\SQLAdmin\SQLAdmin.Config\obj\Debug\MMS.Config.pdb

@@ -30,7 +30,7 @@ namespace SQLServer.Dao
 
         public List<Database> GetDatabases()
         {
-            string sql = "SELECT * FROM Master..SysDatabases ORDER BY Name";
+            string sql = "SELECT * FROM Master..SysDatabases ORDER BY crdate";
             var dataTable = this.DBContext.SqlReader(sql);
             List<Database> databases = new List<Database>();
             foreach(DataRow row in dataTable.Rows)
@@ -45,9 +45,21 @@ namespace SQLServer.Dao
             return databases;
         }
 
-        public List<Table> GetTabses(string dbName)
+        public List<Table> GetTables(string dbName)
         {
-            throw new NotImplementedException();
+            string sql = $"SELECT * FROM {dbName}..SysObjects Where XType='U' ORDER BY Name";
+            var dataTable = this.DBContext.SqlReader(sql);
+            List<Table> tables = new List<Table>();
+            foreach(DataRow row in dataTable.Rows)
+            {
+                Table table = new Table()
+                {
+                    Id = row["id"].ToString(),
+                    Name = row["name"].ToString(),
+                };
+                tables.Add(table);
+            }
+            return tables;
         }
     }
 }

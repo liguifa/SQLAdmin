@@ -11,7 +11,6 @@ namespace SQLServer.Dao
     {
         public SQLServerDBContextScope(SQLAdmin.Domain.DBConnect dbConnect) : base(dbConnect)
         {
-
         }
 
         protected override void Initialize(SQLAdmin.Domain.DBConnect dbConnect)

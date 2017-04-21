@@ -6,3 +6,13 @@ C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLServer.Dao\bin\Debug\SQLAdmin.Dao.pdb
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLServer.Dao\bin\Debug\SQLAdmin.Domain.pdb
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLServer.Dao\obj\Debug\SQLServer.Dao.dll
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLServer.Dao\obj\Debug\SQLServer.Dao.pdb
+C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLServer.Dao\obj\Debug\SQLServer.Dao.csprojResolveAssemblyReference.cache
+D:\SQLAdmin\SQLServer.Dao\bin\Debug\SQLServer.Dao.dll
+D:\SQLAdmin\SQLServer.Dao\bin\Debug\SQLServer.Dao.pdb
+D:\SQLAdmin\SQLServer.Dao\bin\Debug\SQLAdmin.Dao.dll
+D:\SQLAdmin\SQLServer.Dao\bin\Debug\SQLAdmin.Domain.dll
+D:\SQLAdmin\SQLServer.Dao\bin\Debug\SQLAdmin.Dao.pdb
+D:\SQLAdmin\SQLServer.Dao\bin\Debug\SQLAdmin.Domain.pdb
+D:\SQLAdmin\SQLServer.Dao\obj\Debug\SQLServer.Dao.dll
+D:\SQLAdmin\SQLServer.Dao\obj\Debug\SQLServer.Dao.pdb
+D:\SQLAdmin\SQLServer.Dao\obj\Debug\SQLServer.Dao.csprojResolveAssemblyReference.cache

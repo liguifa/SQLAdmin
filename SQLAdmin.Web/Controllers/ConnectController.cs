@@ -2,6 +2,7 @@
 using Common.Utility;
 using SQLAdmin.Domain;
 using SQLAdmin.IService;
+using SQLAdmin.Web.App_Start;
 using SQLAdmin.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -20,12 +21,11 @@ namespace SQLAdmin.Web.Controllers
         }
 
         [HttpPost]
-        public JsonResult LoginDb(LoginViewModel vm)
+        [Inject]
+        public JsonResult LoginDb(DatabaseConfigViewModel databaseConfig)
         {
-            ServiceFactory.DBConnectService.Connect(new DBConnect() { Address = ".", Userename = "sa", Password = "123456" });
-            vm.IsLogin = true;
-            this.SetCookie(PageId, vm);
-            return Json(vm);
+            databaseConfig.IsLogin = ServiceFactory.GetInstance().DBConnectService.Connect();
+            return Json(databaseConfig);
         }
     }
 }

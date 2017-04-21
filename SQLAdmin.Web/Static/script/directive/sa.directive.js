@@ -16,7 +16,7 @@
                                       <div>\
                                           <label>类别:</label>\
                                           <select class='sa-connect-input'>\
-                                          <option>SQL Server</option>\
+                                          <option ng-repeat='type in vm.types' value='type.id'>{{type.displayName}}</option>\
                                           </select>\
                                       </div>\
                                       <div>\
@@ -81,6 +81,7 @@
             //password: '@',
             determine: '&',
             cancel: '&',
+            databaseTypes: "@",
         },
         controller: function ($scope)
         {
@@ -95,9 +96,24 @@
                 cancel: function ()
                 {
                     $scope.cancel();
-                }
+                },
+                types:[]
             }
             document.onmouseup = vm.mouseup;
+
+            $scope.$watch("databaseTypes", function (newValue)
+            {
+                newValue = JSON.parse(newValue);
+                $scope.vm.types = [];
+                for(var i in newValue)
+                {
+                    var type = {
+                        id: newValue[i].Type,
+                        displayName: newValue[i].DisplayName
+                    };
+                    $scope.vm.types.push(type);
+                }
+            })
         }
     }
 })
@@ -230,55 +246,199 @@
 
 .directive('saTree', function ()
 {
+    //<ul class='sa-tree-ul'>\
+    //                    <li class='sa-tree-li'>\
+    //                        <i class='sa-icon-arrow-right' ng-click='vm.spread()' />\
+    //                        <span class='sa-tree-children'>\
+    //                            <i class='sa-icon-folder' />\
+    //                            <span>{{vm.tree.Name}}</span>\
+    //                            <ul class='sa-tree-ul' ng-show='vm.tree.isShow'>\
+    //                                <li class='sa-tree-li' ng-repeat='tree in vm.tree.Children'>\
+    //                                    <span class='sa-tree-children'>\
+    //                                        <i class='sa-icon-arrow-right' ng-click='vm.spread()' />\
+    //                                        <i class='sa-icon-folder' />\
+    //                                        <span>{{tree.Name}}</span>\
+    //                                        <ul class='sa-tree-ul'>\
+    //                                            <li class='sa-tree-li' ng-repeat='tree in tree.Children' sa-contextmenu contextmenu-id='{{tree.Id}}'>\
+    //                                                <i class='sa-icon-arrow-right' ng-click='vm.getTables(tree.Name)' />\
+    //                                                <i class='sa-icon-folder' />\
+    //                                                <span>{{tree.Name}}</span>\
+    //                                            </li>\
+    //                                       </ul>\
+    //                                    </span>\
+    //                                </li>\
+    //                           </ul>\
+    //                       </span>\
+    //                    </li>\
+    //               </ul>
     var vm = {
-        template: "<ul class='sa-tree-ul'>\
-                        <li class='sa-tree-li'>\
-                            <i class='sa-icon-arrow-right' ng-click='vm.spread()' />\
-                            <span class='sa-tree-children'>\
-                                <i class='sa-icon-folder' />\
-                                <span>{{vm.tree.Name}}</span>\
-                                <ul class='sa-tree-ul' ng-show='vm.tree.isShow'>\
-                                    <li class='sa-tree-li' ng-repeat='tree in vm.tree.Children'>\
-                                        <span class='sa-tree-children'>\
-                                            <i class='sa-icon-folder' />\
-                                            <span>{{tree.Name}}</span>\
-                                            <ul class='sa-tree-ul'>\
-                                                <li class='sa-tree-li' ng-repeat='tree in tree.Children'>\
-                                                    <i class='sa-icon-folder' />\
-                                                    <span>{{tree.Name}}</span>\
-                                                </li>\
-                                           </ul>\
-                                        </span>\
-                                    </li>\
-                               </ul>\
-                           </span>\
-                        </li>\
-                   </ul>"
+        id:new Date().getTime(),
+        isRoot:false,
+        template: "<div id='{{vm.id}}' ng-transclude></div>",
+        build: function (tree) {
+            var treeElement = document.getElementById(this.id);
+            var rootElement = document.createElement("ul");
+            rootElement.classList.add("sa-tree-ul");
+            if (tree != null) {
+                rootElement.appendChild(this.buildNode(tree));
+            }
+            treeElement.appendChild(rootElement);
+            treeElement.oncontextmenu = function (e) {
+                e = e || window.event; 　//IE window.event
+                var t = e.target || e.srcElement; //目标对象
+                if (e.type == "contextmenu") {
+                    var contextmenus = document.getElementsByClassName("sa-contextmenu");
+                    for (var i in contextmenus) {
+                        if (contextmenus[i].style) {
+                            contextmenus[i].style.visibility = "";
+                        }
+                    }
+                    var contextmenuId = t.id;
+                    var contextmenu = document.getElementById("contextmenu-"+contextmenuId);
+                    contextmenu.style.visibility = "visible";
+                }
+            };
+        },
+        buildNode: function (tree) {
+            var self = this;
+            var treeNode = document.createElement("li");
+            treeNode.classList.add("sa-tree-li");
+            var arrowNode = document.createElement("i");
+            arrowNode.classList.add("sa-icon-arrow-right");
+            var contextNode = document.createElement("span");
+            contextNode.classList.add("sa-tree-children");
+            var iconNode = document.createElement("i");
+            iconNode.classList.add("sa-icon-folder");
+            var nameNode = document.createElement("span");
+            nameNode.textContent = tree.Name;
+            var childrenNode = document.createElement("ul");
+            childrenNode.classList.add("sa-tree-ul");
+            treeNode.appendChild(arrowNode);
+            treeNode.appendChild(contextNode);
+            contextNode.appendChild(iconNode);
+            contextNode.appendChild(nameNode);
+            var outContextmenus = [];
+            angular.forEach(this.contextmenus, function (contextmenu) {
+                if (contextmenu) {
+                    if (contextmenu.attributes["contextmenu-type"].value == "database") {
+                        var newContextmenu = document.createElement("div");
+                        newContextmenu.innerHTML = contextmenu.innerHTML;
+                        newContextmenu.classList = newContextmenu.classList;
+                        contextNode.appendChild(newContextmenu);
+                        var contextmenuId = self.guid();
+                        nameNode.id = contextmenuId;
+                        newContextmenu.id = "contextmenu-" + contextmenuId;
+                        newContextmenu.classList.add("sa-contextmenu");
+                        this.push(contextmenu);
+                    }
+                }
+            }, outContextmenus);
+            contextNode.appendChild(childrenNode);
+            this.contextmenus = outContextmenus;
+            if (tree.Children) {
+                for (var i in tree.Children) {
+                    childrenNode.appendChild(this.buildNode(tree.Children[i]));
+                }
+            }
+            return treeNode;
+        },
+        contextmenus: [],
+        contextmenuClick: function () {
+            var contextmenus = document.getElementsByClassName("sa-contextmenu");
+            for (var i in contextmenus) {
+                if (contextmenus[i].style) {
+                    contextmenus[i].style.visibility = "";
+                }
+            }
+            var contextmenu = document.getElementById($scope.contextmenuId);
+            contextmenu.style.visibility = "visible";
+        },
+        guid: function () {
+            function s4() {
+                return Math.floor((1 + Math.random()) * 0x10000)
+                  .toString(16)
+                  .substring(1);
+            }
+            return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+              s4() + '-' + s4() + s4() + s4();
+        }
     };
 
     return {
         restrict: "E",
         template: vm.template,
         replace: true,
+        transclude: true,
         priority: 2,
         scope: {
-            tree: '='
+            tree: '=',
+            getTables: "&",
         },
-        controller: function ($scope)
-        {
+        controller: function ($scope) {
             $scope.vm = {
                 tree: $scope.tree,
-                spread: function ()
-                {
+                id: vm.id,
+                spread: function () {
                     $scope.vm.tree.isShow = !$scope.vm.tree.isShow;
+                },
+                getTables: function (table) {
+                    $scope.getTables({ tableName: table });
                 }
             }
 
-            $scope.$watch("tree", function ()
-            {
-                $scope.vm.tree = $scope.tree;
-                $scope.vm.tree.isShow = true;
+            $scope.$watch("tree", function () {
+                vm.build($scope.tree);
             })
+        },
+        link: function ($scope, element) {
+            vm.contextmenus = element[0].getElementsByClassName("sa-contextmenu");
+        }
+    }
+})
+
+.directive("saContextmenu", function ()
+{
+    var vm = {
+        template: "<div ng-transclude></div>",
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        transclude:true,
+        priority: 1,
+        scope: {
+            contextmenuId:"@"
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                visibility: false
+            }
+        },
+        link: function ($scope, element, attrs) {
+            element.contextmenu = function (event) {
+                $scope.$apply(function () {
+                    var contextmenus = document.getElementsByClassName("sa-contextmenu");
+                    for (var i in contextmenus)
+                    {
+                        if (contextmenus[i].style) {
+                            contextmenus[i].style.visibility = "";
+                        }
+                    }
+                    var contextmenu = document.getElementById($scope.contextmenuId);
+                    contextmenu.style.visibility = "visible";
+                })
+            }
+            document.onmousedown = function()
+            {
+                var contextmenus = document.getElementsByClassName("sa-contextmenu");
+                for (var i in contextmenus) {
+                    if (contextmenus[i].style) {
+                        contextmenus[i].style.visibility = "";
+                    }
+                }
+            }
         }
     }
 })
@@ -325,7 +485,17 @@
         <th>格言</th>\
       </tr> \
     </thead>\
-    <tbody>\
+<tbody>\
+<tr><td colspan="5" class="sa-datagrid-content-td"><div class="sa-datagrid-content">\
+    <table class="sa-datagrid">\
+<colgroup>\
+      <col width="50">\
+      <col width="150">\
+      <col width="150">\
+      <col width="200">\
+      <col>\
+    </colgroup>\
+<tbody>\
       <tr>\
         <td><input type="checkbox" name="" lay-skin="primary"></td>\
         <td>贤心</td>\
@@ -361,7 +531,122 @@
         <td>公元前-372年</td>\
         <td>猿强，则国强。国强，则猿更强！ </td>\
       </tr>\
-    </tbody>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+<tr>\
+        <td><input type="checkbox" name="" lay-skin="primary"></td>\
+        <td>孟子</td>\
+        <td>华夏族（汉族）</td>\
+        <td>公元前-372年</td>\
+        <td>猿强，则国强。国强，则猿更强！ </td>\
+      </tr>\
+</tbody>\
+    </table>\
+</div></td></tr>\
+</tbody>\
   </table>'
     }
 
@@ -379,9 +664,134 @@
     }
 })
 
-.directive("saTools",function()
+.directive("saBlockquote", function ()
 {
     var vm = {
-        template:"<blockquote class="layui-elem-quote">这个貌似不用多介绍，因为你已经在太多的地方都看到</blockquote>"
+        template: '<blockquote class="sa-blockquote"  ng-transclude></blockquote>'
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        transclude: true,
+        priority: 1,
+        scope: {
+        },
+        controller: function ($scope)
+        {
+
+        }
+    }
+})
+
+.directive("saTools", function ()
+{
+    var vm = {
+        template: '<div><sa-blockquote>\
+                    <div clas="sa-tools-icon" ng-transclude>\
+                    </div>\
+                   </sa-blockquote></div>'
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        transclude: true,
+        priority: 0,
+        scope: {
+        },
+        controller: function ($scope)
+        {
+
+        }
+    }
+})
+
+
+.directive("saIcon", ["messager.service",function (messager)
+{
+    var vm = {
+        template: '<i class="{{icon_class}} sa-tool-icon" ng-click="vm.icon_click()"></i> '
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 2,
+        scope: {
+            type: "@",
+            click:"&",
+        },
+        controller: function ($scope)
+        {
+            $scope.icon_class = "sa-icon-" + $scope.type;
+            $scope.vm = {
+                icon_click:function()
+                {
+                    $scope.click();
+                }
+            }
+        }
+    }
+}])
+
+.directive("saPagination", function ()
+{
+    var vm = {
+        template: '<div class="sa-pagination">\
+                    <ul>\
+                        <li><a href="javascript:;" data-page="2">上一页</a></li>\
+                        <li><a href="javascript:;" data-page="2">1</a></li>\
+                        <li><a href="javascript:;" data-page="2" class="sa-pagination-active">2</a></li>\
+                        <li><a href="javascript:;" data-page="2">3</a></li>\
+                        <li><a href="javascript:;" data-page="2">4</a></li>\
+                        <li><a href="javascript:;" data-page="2">5</a></li>\
+                        <li><a href="javascript:;" data-page="2">6</a></li>\
+                        <li><a href="javascript:;" data-page="2">7</a></li>\
+                        <li><a href="javascript:;" data-page="2">8</a></li>\
+                        <li><a href="javascript:;" data-page="2">9</a></li>\
+                        <li><a href="javascript:;" data-page="2">10</a></li>\
+                        <li><a href="javascript:;" data-page="2">下一页</a></li>\
+                    </ul>\
+                   </div>'
+    };
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+        },
+        controller: function ($scope)
+        {
+
+        }
+    }
+})
+
+.directive("saAlert", function (messager)
+{
+    var vm = {
+        template: '<div class="sa-alert">\
+                    <div class="sa-alert-title">信息</div>\
+                    <div class="sa-alert-content">居中弹出</div>\
+                    <button class="sa-alert-ok">确定</button>\
+                  </div>'
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+        },
+        controller: function($scope)
+        {
+        }
     }
 })

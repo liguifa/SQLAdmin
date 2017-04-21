@@ -21,15 +21,32 @@ namespace SQLServer.Service
         {
             try
             {
-                using (var scope = new SQLServerDBContextScope(new DBConnect() { Address = ".", Userename = "sa", Password = "123456" }))
+                using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.GetDatabases().ToList().To<DatabaseTree>();
+                    return db.GetDatabases().To<DatabaseTree>();
                 }
             }
             catch (Exception e)
             {
                 mLog.Error($"An error has occurred in the get databases,error:{e.ToString()}");
+                throw;
+            }
+        }
+
+        public List<Table> GetTables(string tableName)
+        {
+            try
+            {
+                using (var scope = new SQLServerDBContextScope(this.mDBConnect))
+                {
+                    SQLServerDBRepertory db = new SQLServerDBRepertory();
+                    return db.GetTables(tableName).To<List<Table>>();
+                }
+            }
+            catch (Exception e)
+            {
+                mLog.Error($"An error has occurred in the get tables,error:{e.ToString()}");
                 throw;
             }
         }

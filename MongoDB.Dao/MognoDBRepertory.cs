@@ -52,6 +52,11 @@ namespace MongoDB.Dao
             return databases;
         }
 
+        public List<Table> GetTables(string dbName)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Table> GetTabses(string dbName)
         {
             var collections = new List<BsonDocument>();

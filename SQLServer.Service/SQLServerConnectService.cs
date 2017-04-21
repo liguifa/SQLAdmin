@@ -12,15 +12,20 @@ using SQLAdmin.Dao;
 
 namespace SQLServer.Service
 {
-    public class SQLServerConnectService : IDBConnectService
+    public class SQLServerConnectService :DBService, IDBConnectService
     {
         private readonly static Logger mLog = Logger.GetInstance(MethodBase.GetCurrentMethod().DeclaringType);
 
-        public bool Connect(DBConnect connectSetting)
+        public SQLServerConnectService(DBConnect dbConnect) : base(dbConnect)
+        {
+
+        }
+
+        public bool Connect()
         {
             try
             {
-                using (var scope = new SQLServerDBContextScope(connectSetting))
+                using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
                     return db.Connect();

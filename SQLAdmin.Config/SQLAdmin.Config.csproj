@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Action.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="Dto\DatabaseType.cs" />
     <Compile Include="Dto\Menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

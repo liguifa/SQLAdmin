@@ -1,0 +1,8 @@
+D:\SQLAdmin\Common.Utility\bin\Release\Common.Utility.dll
+D:\SQLAdmin\Common.Utility\bin\Release\Common.Utility.pdb
+D:\SQLAdmin\Common.Utility\bin\Release\Common.Cryptogram.dll
+D:\SQLAdmin\Common.Utility\bin\Release\Newtonsoft.Json.dll
+D:\SQLAdmin\Common.Utility\bin\Release\Common.Cryptogram.pdb
+D:\SQLAdmin\Common.Utility\bin\Release\Newtonsoft.Json.xml
+D:\SQLAdmin\Common.Utility\obj\Release\Common.Utility.dll
+D:\SQLAdmin\Common.Utility\obj\Release\Common.Utility.pdb

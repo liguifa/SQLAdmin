@@ -37,5 +37,10 @@ namespace SQLAdmin.Utility
             tree.Children.Add(dbTree);
             return tree as T;
         }
+
+        public static T To<T>(this List<Table> tables) where T :class
+        {
+            return tables as T;
+        }
     }
 }

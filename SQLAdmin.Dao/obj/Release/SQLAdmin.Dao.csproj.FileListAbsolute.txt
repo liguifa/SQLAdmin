@@ -1,0 +1,7 @@
+D:\SQLAdmin\SQLAdmin.Dao\bin\Release\SQLAdmin.Dao.dll
+D:\SQLAdmin\SQLAdmin.Dao\bin\Release\SQLAdmin.Dao.pdb
+D:\SQLAdmin\SQLAdmin.Dao\bin\Release\SQLAdmin.Domain.dll
+D:\SQLAdmin\SQLAdmin.Dao\bin\Release\SQLAdmin.Domain.pdb
+D:\SQLAdmin\SQLAdmin.Dao\obj\Release\SQLAdmin.Dao.csprojResolveAssemblyReference.cache
+D:\SQLAdmin\SQLAdmin.Dao\obj\Release\SQLAdmin.Dao.dll
+D:\SQLAdmin\SQLAdmin.Dao\obj\Release\SQLAdmin.Dao.pdb

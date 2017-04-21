@@ -1,0 +1,11 @@
+D:\SQLAdmin\SQLAdmin.Config\bin\Release\log4net.dll
+D:\SQLAdmin\SQLAdmin.Config\bin\Release\MMS.Config.dll
+D:\SQLAdmin\SQLAdmin.Config\bin\Release\MMS.Config.pdb
+D:\SQLAdmin\SQLAdmin.Config\bin\Release\Common.Cryptogram.dll
+D:\SQLAdmin\SQLAdmin.Config\bin\Release\Logger.dll
+D:\SQLAdmin\SQLAdmin.Config\bin\Release\Newtonsoft.Json.dll
+D:\SQLAdmin\SQLAdmin.Config\bin\Release\Common.Cryptogram.pdb
+D:\SQLAdmin\SQLAdmin.Config\bin\Release\Logger.pdb
+D:\SQLAdmin\SQLAdmin.Config\bin\Release\Newtonsoft.Json.xml
+D:\SQLAdmin\SQLAdmin.Config\obj\Release\MMS.Config.dll
+D:\SQLAdmin\SQLAdmin.Config\obj\Release\MMS.Config.pdb

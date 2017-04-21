@@ -1,0 +1,7 @@
+D:\SQLAdmin\MongoDB.Domain\bin\Debug\MongoDB.Domain.dll
+D:\SQLAdmin\MongoDB.Domain\bin\Debug\MongoDB.Domain.pdb
+D:\SQLAdmin\MongoDB.Domain\bin\Debug\SQLAdmin.Domain.dll
+D:\SQLAdmin\MongoDB.Domain\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\SQLAdmin\MongoDB.Domain\bin\Debug\SQLAdmin.Domain.pdb
+D:\SQLAdmin\MongoDB.Domain\obj\Debug\MongoDB.Domain.dll
+D:\SQLAdmin\MongoDB.Domain\obj\Debug\MongoDB.Domain.pdb

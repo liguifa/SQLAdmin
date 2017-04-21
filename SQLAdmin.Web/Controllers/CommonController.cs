@@ -1,4 +1,5 @@
 ﻿using Common.Utility;
+using SQLAdmin.Utility;
 using SQLAdmin.Web.Convert;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,12 @@ namespace SQLAdmin.Web.Controllers
         public JsonResult GetMenus()
         {
             return Json(MenuHelper.GetMenus().ToViewModel(), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult GetDatabaseTypes()
+        {
+            return Json(DatabaseTypeHelper.GetDatabseTypes(), JsonRequestBehavior.AllowGet);
         }
     }
 }
