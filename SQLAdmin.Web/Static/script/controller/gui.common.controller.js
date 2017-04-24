@@ -12,10 +12,15 @@
             remove: function () {
                 messager.alert();
             },
-            getTables:function(tableName)
+            getTables:function(tree)
             {
-                $http.post("/Database/GetTables", { databaseName: tableName }).then(function (res) {
-                    alert(res.data);
+                $http.post("/Database/GetTables", { databaseName: tree.Name }).then(function (res) {
+                    if (!tree.Children) {
+                        tree.Children = [];
+                    }
+                    for (var i in res.data) {
+                        tree.Children.push({ Id: res.data[i].Id, Name: res.data[i].Name });
+                    }
                 })
             }
         }

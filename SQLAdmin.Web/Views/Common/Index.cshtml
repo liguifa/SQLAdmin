@@ -3,13 +3,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div ng-controller="gui.common.controller" ontext-menu  data-target="menu"
-     ng-class="{ 'highlight': highlight, 'expanded' : expanded }">
+<div ng-controller="gui.common.controller" ontext-menu  data-target="menu">
     <div>
         <sa-menu select="vm.select(menu)" menus="vm.menus"></sa-menu>
         <div>
             <sa-explorer>
-                <sa-tree tree="vm.database" get-tables="vm.getTables(tableName)">
+                <sa-tree tree="vm.database" doubleclick="vm.getTables(tree)">
                     <sa-contextmenu contextmenu-type='table' class='sa-contextmenu'>
                         <ul>
                             <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建查询</div></li>

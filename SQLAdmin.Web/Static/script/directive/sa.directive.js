@@ -246,36 +246,13 @@
 
 .directive('saTree', function ()
 {
-    //<ul class='sa-tree-ul'>\
-    //                    <li class='sa-tree-li'>\
-    //                        <i class='sa-icon-arrow-right' ng-click='vm.spread()' />\
-    //                        <span class='sa-tree-children'>\
-    //                            <i class='sa-icon-folder' />\
-    //                            <span>{{vm.tree.Name}}</span>\
-    //                            <ul class='sa-tree-ul' ng-show='vm.tree.isShow'>\
-    //                                <li class='sa-tree-li' ng-repeat='tree in vm.tree.Children'>\
-    //                                    <span class='sa-tree-children'>\
-    //                                        <i class='sa-icon-arrow-right' ng-click='vm.spread()' />\
-    //                                        <i class='sa-icon-folder' />\
-    //                                        <span>{{tree.Name}}</span>\
-    //                                        <ul class='sa-tree-ul'>\
-    //                                            <li class='sa-tree-li' ng-repeat='tree in tree.Children' sa-contextmenu contextmenu-id='{{tree.Id}}'>\
-    //                                                <i class='sa-icon-arrow-right' ng-click='vm.getTables(tree.Name)' />\
-    //                                                <i class='sa-icon-folder' />\
-    //                                                <span>{{tree.Name}}</span>\
-    //                                            </li>\
-    //                                       </ul>\
-    //                                    </span>\
-    //                                </li>\
-    //                           </ul>\
-    //                       </span>\
-    //                    </li>\
-    //               </ul>
     var vm = {
+        scope:null,
         id:new Date().getTime(),
         isRoot:false,
         template: "<div id='{{vm.id}}' ng-transclude></div>",
         build: function (tree) {
+            var self = this;
             var treeElement = document.getElementById(this.id);
             var rootElement = document.createElement("ul");
             rootElement.classList.add("sa-tree-ul");
@@ -298,6 +275,14 @@
                     contextmenu.style.visibility = "visible";
                 }
             };
+            treeElement.ondblclick = function(e)
+            {
+                e = e || window.event; 　//IE window.event
+                var t = e.target || e.srcElement; //目标对象
+                var treeId = t.attributes["tree-id"];
+                var selectTree = self.getTreeById(tree, treeId);
+                self.scope.doubleclick({ tree: selectTree });
+            }
         },
         buildNode: function (tree) {
             var self = this;
@@ -311,6 +296,7 @@
             iconNode.classList.add("sa-icon-folder");
             var nameNode = document.createElement("span");
             nameNode.textContent = tree.Name;
+            nameNode.attributes["tree-id"] = tree.Id;
             var childrenNode = document.createElement("ul");
             childrenNode.classList.add("sa-tree-ul");
             treeNode.appendChild(arrowNode);
@@ -334,6 +320,7 @@
                 }
             }, outContextmenus);
             contextNode.appendChild(childrenNode);
+
             this.contextmenus = outContextmenus;
             if (tree.Children) {
                 for (var i in tree.Children) {
@@ -361,6 +348,19 @@
             }
             return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
               s4() + '-' + s4() + s4() + s4();
+        },
+        getTreeById: function (tree, id) {
+            if (tree.Id && tree.Id == id) {
+                return tree;
+            }
+            if (tree.Children) {
+                for (var i in tree.Children) {
+                    var selectTree = this.getTreeById(tree.Children[i], id);
+                    if (selectTree) {
+                        return selectTree;
+                    }
+                }
+            }
         }
     };
 
@@ -372,7 +372,7 @@
         priority: 2,
         scope: {
             tree: '=',
-            getTables: "&",
+            doubleclick:"&"
         },
         controller: function ($scope) {
             $scope.vm = {
@@ -389,6 +389,7 @@
             $scope.$watch("tree", function () {
                 vm.build($scope.tree);
             })
+            vm.scope = $scope;
         },
         link: function ($scope, element) {
             vm.contextmenus = element[0].getElementsByClassName("sa-contextmenu");
