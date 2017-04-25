@@ -24,9 +24,9 @@
         return _interceptor;
     }
 
-    angular.module("sqladmin").factory("session.interceptor", ["$q","session.service", "messager.service" ,session_interceptor]);
+    angular.module("admin", ['sqladmin']).factory("session.interceptor", ["$q", "session.service", "messager.service", session_interceptor]);
 
-    angular.module("sqladmin").config(function ($httpProvider) {
+    angular.module("admin").config(function ($httpProvider) {
         $httpProvider.interceptors.push("session.interceptor");
         document.oncontextmenu = function () { return false; }
     });

@@ -259,6 +259,7 @@
             if (tree != null) {
                 rootElement.appendChild(this.buildNode(tree));
             }
+            treeElement.innerHTML = "";
             treeElement.appendChild(rootElement);
             treeElement.oncontextmenu = function (e) {
                 e = e || window.event; 　//IE window.event
@@ -323,6 +324,9 @@
 
             this.contextmenus = outContextmenus;
             if (tree.Children) {
+                if (tree.Children.length > 0) {
+                    treeNode.classList.add("sa-tree-li-children");
+                }
                 for (var i in tree.Children) {
                     childrenNode.appendChild(this.buildNode(tree.Children[i]));
                 }
@@ -388,7 +392,7 @@
 
             $scope.$watch("tree", function () {
                 vm.build($scope.tree);
-            })
+            },true)
             vm.scope = $scope;
         },
         link: function ($scope, element) {
