@@ -28,9 +28,16 @@ namespace SQLServer.Dao
             }
         }
 
+        public DataTable Filter(DataFilter filter)
+        {
+            string sql = new SQLQuery().Select("*").From(filter.TableName).OrderBy(filter.SortColumn, filter.IsAsc).Qenerate();
+            return this.DBContext.SqlReader(sql);
+        }
+
         public List<Database> GetDatabases()
         {
-            string sql = "SELECT * FROM Master..SysDatabases ORDER BY crdate";
+            //string sql = "SELECT * FROM Master..SysDatabases ORDER BY crdate";
+            string sql = new SQLQuery().Select("*").From("Master..SysDatabases").OrderBy("crdate").Qenerate();
             var dataTable = this.DBContext.SqlReader(sql);
             List<Database> databases = new List<Database>();
             foreach(DataRow row in dataTable.Rows)
@@ -47,7 +54,8 @@ namespace SQLServer.Dao
 
         public List<Table> GetTables(string dbName)
         {
-            string sql = $"SELECT * FROM {dbName}..SysObjects Where XType='U' ORDER BY Name";
+            //string sql = $"SELECT * FROM {dbName}..SysObjects Where XType='U' ORDER BY Name";
+            string sql = new SQLQuery().Select("*").From($"{dbName}..SysObjects").OrderBy("Name").Qenerate();
             var dataTable = this.DBContext.SqlReader(sql);
             List<Table> tables = new List<Table>();
             foreach(DataRow row in dataTable.Rows)

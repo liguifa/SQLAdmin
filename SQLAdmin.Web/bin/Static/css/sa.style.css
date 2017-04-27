@@ -245,6 +245,11 @@ body,html,document {
     color: #333;
 }
 
+.sa-tree-li-children{
+    height: auto;
+    margin-bottom:-26px;
+}
+
 .sa-tree-children {
     margin-left: 2px;
 }

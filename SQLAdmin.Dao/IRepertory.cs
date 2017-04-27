@@ -1,6 +1,7 @@
 ﻿using SQLAdmin.Domain;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,5 +15,7 @@ namespace SQLAdmin.Dao
         List<Database> GetDatabases();
 
         List<Table> GetTables(string dbName);
+
+        DataTable Filter(DataFilter filter);
     }
 }

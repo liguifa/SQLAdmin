@@ -404,7 +404,7 @@
 .directive("saContextmenu", function ()
 {
     var vm = {
-        template: "<div ng-transclude></div>",
+        template: "<div ng-click='vm.command()' ng-transclude></div>",
     }
 
     return {
@@ -414,12 +414,20 @@
         transclude:true,
         priority: 1,
         scope: {
-            contextmenuId:"@"
+            contextmenuId: "@",
+            click:"&"
         },
         controller: function ($scope) {
             $scope.vm = {
-                visibility: false
+                visibility: false,
+                command: function (e) {
+                    e = e || window.event; 　//IE window.event
+                    var t = e.target || e.srcElement; //目标对象
+                    var commandName = t.attributes["command"];
+                    $scope.click({ command: commandName });
+                }
             }
+
         },
         link: function ($scope, element, attrs) {
             element.contextmenu = function (event) {

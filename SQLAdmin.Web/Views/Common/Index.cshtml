@@ -11,29 +11,31 @@
                 <sa-tree tree="vm.database" doubleclick="vm.getTables(tree)">
                     <sa-contextmenu contextmenu-type='table' class='sa-contextmenu'>
                         <ul>
-                            <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建查询</div></li>
-                            <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建数据库</div></li>
-                            <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>重命名</div></li>
-                            <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>删除</div></li>
-                            <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>刷新</div></li>
-                            <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>属性</div></li>
+                            <li click="vm.contextMenuCommand(this)"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建查询</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建数据库</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>重命名</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>删除</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>刷新</div></li>
+                            <li click="vm.contextMenuCommand(command)" command="getproperies"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>属性</div></li>
                         </ul>
                     </sa-contextmenu>
                     <sa-contextmenu contextmenu-type='database' class='sa-contextmenu'>
                         <ul>
-                            <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建查询</div></li>
-                            <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建数据库</div></li>
-                            <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>重命名</div></li>
-                            <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>删除</div></li>
-                            <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>刷新</div></li>
-                            <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>属性</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建查询</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建数据库</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>重命名</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>删除</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>刷新</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>属性</div></li>
                         </ul>
                     </sa-contextmenu>
                 </sa-tree>
             </sa-explorer>
-            <sa-tabs>
-                <div data-view-id="123">@Html.Action("Query", "Manage")</div>
-            </sa-tabs>
+            <div ng-controller="manage.controller">
+                <sa-tabs>
+                    <div data-view-id="123">@Html.Action("Query", "Manage")</div>
+                </sa-tabs>
+            </div>
         </div>
     </div>
     <div ng-include src="vm.window"></div>
@@ -46,3 +48,5 @@
 <script src="~/Static/script/common/cryptogram.service.js"></script>
 <script src="~/Static/script/services/connect.service.js"></script>
 <script src="~/Static/script/controller/connect.controller.js"></script>
+<script src="~/Static/script/services/manage.service.js"></script>
+<script src="~/Static/script/controller/manage.controller.js"></script>

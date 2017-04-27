@@ -57,9 +57,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSet.cs" />
     <Compile Include="DBService.cs" />
     <Compile Include="IDatabaseService.cs" />
     <Compile Include="IDBConnectService.cs" />
+    <Compile Include="IDBManageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceFactory.cs" />
   </ItemGroup>

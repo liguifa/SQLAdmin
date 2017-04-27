@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="DataFilter.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Dto\DatabaseTree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

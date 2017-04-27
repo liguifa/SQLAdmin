@@ -8,7 +8,8 @@
             remove: function () {
                 messager.alert();
             },
-            getTables:_getTables
+            getTables: _getTables,
+            contextMenuCommand: _contextMenuCommand
         }
 
         function select(menu) {
@@ -19,6 +20,10 @@
             database.getTables(tree).then(function(data){
                 database.updateTree($scope.vm.database,data.Id,data);
             })
+        }
+
+        function _contextMenuCommand(command) {
+            event.trigger(command);
         }
        
         common.getMenus().then(function(data){

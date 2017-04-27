@@ -2427,3 +2427,274 @@
 2017-04-25 22:48:50,013 [8212] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
 2017-04-25 22:48:50,017 [8212] INFO  iisexpress.exe - Start get tables.
 2017-04-25 22:48:50,091 [8212] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-04-26 21:07:11,916 [17692] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-26 21:07:11,924 [17692] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-26 21:07:27,379 [17692] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-26 21:07:28,055 [17692] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-26 21:07:28,071 [17824] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-26 21:07:28,172 [17824] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-26 21:07:30,925 [17692] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-04-26 21:07:30,928 [17692] INFO  iisexpress.exe - Start get tables.
+2017-04-26 21:07:30,981 [17692] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-04-26 21:25:25,457 [8972] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-26 21:25:25,457 [8972] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-26 21:25:38,006 [8972] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-26 21:25:38,022 [8972] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-26 21:25:38,051 [8972] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-26 21:25:38,107 [8972] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-26 21:27:44,055 [17376] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-26 21:27:44,055 [17376] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-26 21:28:05,829 [5492] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-26 21:28:05,840 [5492] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-26 21:28:05,888 [17376] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-26 21:28:05,932 [17376] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 20:36:00,453 [7760] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-27 20:36:00,469 [7760] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-27 20:36:21,676 [7760] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 20:36:22,358 [7760] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 20:36:22,375 [540] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 20:36:22,503 [540] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 20:36:28,630 [16992] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-04-27 20:36:28,659 [16992] INFO  iisexpress.exe - Start get tables.
+2017-04-27 20:36:28,716 [16992] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-04-27 20:36:30,528 [16992] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-04-27 20:36:30,532 [16992] INFO  iisexpress.exe - Start get tables.
+2017-04-27 20:36:30,656 [16992] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-04-27 20:38:54,041 [16992] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-04-27 20:38:54,043 [16992] INFO  iisexpress.exe - Start get tables.
+2017-04-27 20:38:54,097 [16992] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-04-27 20:39:04,167 [540] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-04-27 20:39:04,199 [540] INFO  iisexpress.exe - Start get tables.
+2017-04-27 20:39:04,233 [540] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-04-27 20:39:09,606 [16992] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-04-27 20:39:09,608 [16992] INFO  iisexpress.exe - Start get tables.
+2017-04-27 20:39:09,654 [16992] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-04-27 20:39:16,354 [16992] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-04-27 20:39:16,360 [16992] INFO  iisexpress.exe - Start get tables.
+2017-04-27 20:39:16,487 [16992] ERROR iisexpress.exe - An error has occurred in the get tables,error:System.Data.SqlClient.SqlException (0x80131904): 对象名 'msdb_version..SysObjects' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 57
+   在 SQLServer.Dao.SQLServerDBRepertory.GetTables(String dbName) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 51
+   在 SQLServer.Service.SQLServerDatabaseService.GetTables(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 44
+ClientConnectionId:eaef910a-307d-4d1f-8b6a-382bb6685776
+Error Number:208,State:1,Class:16
+2017-04-27 20:39:42,451 [16992] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-04-27 21:53:57,916 [15808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-27 21:53:57,924 [15808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-27 21:54:18,943 [15808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 21:54:19,099 [15808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 21:54:19,127 [15808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 21:54:19,238 [15808] ERROR iisexpress.exe - An error has occurred in the get databases,error:System.Data.SqlClient.SqlException (0x80131904): 关键字 'From' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 57
+   在 SQLServer.Dao.SQLServerDBRepertory.GetDatabases() 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 41
+   在 SQLServer.Service.SQLServerDatabaseService.GetDatabases() 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 27
+ClientConnectionId:9c1100a6-e416-4d27-bc4e-9b4a5c888f0b
+Error Number:156,State:1,Class:15
+2017-04-27 21:54:31,007 [15808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 21:54:35,893 [15808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-27 21:54:35,893 [15808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-27 21:54:48,103 [15808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 21:54:48,133 [15808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 21:54:48,168 [15808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 21:55:32,391 [15808] ERROR iisexpress.exe - An error has occurred in the get databases,error:System.Data.SqlClient.SqlException (0x80131904): 关键字 'From' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 57
+   在 SQLServer.Dao.SQLServerDBRepertory.GetDatabases() 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 41
+   在 SQLServer.Service.SQLServerDatabaseService.GetDatabases() 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 27
+ClientConnectionId:9c1100a6-e416-4d27-bc4e-9b4a5c888f0b
+Error Number:156,State:1,Class:15
+2017-04-27 21:55:32,391 [15808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 21:56:03,897 [15808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-27 21:56:03,907 [15808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-27 21:56:19,911 [15808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 21:56:20,054 [15808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 21:56:20,090 [9596] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 21:56:42,880 [9596] ERROR iisexpress.exe - An error has occurred in the get databases,error:System.Data.SqlClient.SqlException (0x80131904): “crdate”附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 57
+   在 SQLServer.Dao.SQLServerDBRepertory.GetDatabases() 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 41
+   在 SQLServer.Service.SQLServerDatabaseService.GetDatabases() 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 27
+ClientConnectionId:d5b7c606-c24d-4f88-8e68-00afc9aa2676
+Error Number:102,State:1,Class:15
+2017-04-27 21:56:44,310 [9596] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 21:56:48,691 [15808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-27 21:56:48,691 [15808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-27 21:56:58,517 [12464] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 21:56:58,527 [12464] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 21:56:58,560 [12464] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 21:58:07,990 [12464] ERROR iisexpress.exe - An error has occurred in the get databases,error:System.Data.SqlClient.SqlException (0x80131904): “crdate”附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 57
+   在 SQLServer.Dao.SQLServerDBRepertory.GetDatabases() 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 41
+   在 SQLServer.Service.SQLServerDatabaseService.GetDatabases() 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 27
+ClientConnectionId:d5b7c606-c24d-4f88-8e68-00afc9aa2676
+Error Number:102,State:1,Class:15
+2017-04-27 21:58:07,990 [12464] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 21:58:49,343 [15808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-27 21:58:49,351 [15808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-27 21:59:00,221 [10784] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 21:59:00,350 [10784] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 21:59:00,380 [10784] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 21:59:13,191 [10784] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 22:11:42,752 [6524] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-27 22:11:42,752 [6524] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-27 22:12:23,549 [6524] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 22:12:23,716 [6524] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 22:12:39,114 [6524] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 22:12:43,514 [6524] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 22:13:05,097 [12612] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-27 22:13:05,097 [12612] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-27 22:13:18,473 [12612] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 22:13:19,129 [12612] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 22:13:27,365 [8768] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 22:13:29,259 [8768] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 22:18:39,221 [8768] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-27 22:18:39,221 [8768] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-27 22:18:50,488 [8768] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 22:18:50,545 [8768] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 22:18:50,604 [8768] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 22:18:52,491 [8768] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 22:19:31,745 [8768] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-27 22:19:31,745 [8768] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-27 22:19:42,024 [8768] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 22:19:42,051 [8768] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 22:20:05,561 [5860] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 22:20:10,189 [5860] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 22:21:18,166 [5860] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-27 22:21:18,166 [5860] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-27 22:21:34,017 [5860] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 22:21:34,043 [5860] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 22:21:34,105 [5860] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 22:21:52,995 [5860] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 22:22:23,953 [17944] ERROR iisexpress.exe - An error has occurred in the select data,error:System.Data.SqlClient.SqlException (0x80131904): “ESC”附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 57
+   在 SQLServer.Dao.SQLServerDBRepertory.Filter(DataFilter filter) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 34
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerManageService.cs:行号 27
+ClientConnectionId:980583a7-247b-4e37-bbb2-d4dad05c1728
+Error Number:102,State:1,Class:15
+2017-04-27 22:22:30,474 [17944] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-27 22:22:30,474 [17944] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-27 22:22:40,967 [5860] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 22:22:41,005 [5860] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 22:22:41,058 [17388] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 22:22:48,491 [17388] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 22:24:07,368 [17944] ERROR iisexpress.exe - An error has occurred in the select data,error:System.Data.SqlClient.SqlException (0x80131904): “ESC”附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 57
+   在 SQLServer.Dao.SQLServerDBRepertory.Filter(DataFilter filter) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 34
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerManageService.cs:行号 27
+ClientConnectionId:980583a7-247b-4e37-bbb2-d4dad05c1728
+Error Number:102,State:1,Class:15
+2017-04-27 22:25:23,752 [672] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-04-27 22:25:23,770 [672] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-04-27 22:25:37,236 [672] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 22:25:37,384 [672] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-04-27 22:25:39,525 [17388] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-04-27 22:25:43,337 [17388] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.

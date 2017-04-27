@@ -247,94 +247,190 @@
 .directive('saTree', function ()
 {
     var vm = {
-        template: "<ul class='sa-tree-ul'>\
-                        <li class='sa-tree-li'>\
-                            <i class='sa-icon-arrow-right' ng-click='vm.spread()' />\
-                            <span class='sa-tree-children'>\
-                                <i class='sa-icon-folder' />\
-                                <span>{{vm.tree.Name}}</span>\
-                                <ul class='sa-tree-ul' ng-show='vm.tree.isShow'>\
-                                    <li class='sa-tree-li' ng-repeat='tree in vm.tree.Children'>\
-                                        <span class='sa-tree-children'>\
-                                            <i class='sa-icon-arrow-right' ng-click='vm.spread()' />\
-                                            <i class='sa-icon-folder' />\
-                                            <span>{{tree.Name}}</span>\
-                                            <ul class='sa-tree-ul'>\
-                                                <li class='sa-tree-li' ng-repeat='tree in tree.Children' sa-contextmenu contextmenu-id='{{tree.Id}}'>\
-                                                    <i class='sa-icon-arrow-right' ng-click='vm.getTables(tree.Name)' />\
-                                                    <i class='sa-icon-folder' />\
-                                                    <span>{{tree.Name}}</span>\
-                                                    <div id='{{tree.Id}}' class='sa-contextmenu'>\
-                                                        <ul><li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建查询</div></li>\
-                                                        <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建数据库</div></li>\
-                                                        <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>重命名</div></li>\
-                                                        <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>删除</div></li>\
-                                                        <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>刷新</div></li>\
-                                                        <li><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>属性</div></li>\</ul>\
-                                                    </div>\
-                                                </li>\
-                                           </ul>\
-                                        </span>\
-                                    </li>\
-                               </ul>\
-                           </span>\
-                        </li>\
-                   </ul>"
+        scope:null,
+        id:new Date().getTime(),
+        isRoot:false,
+        template: "<div id='{{vm.id}}' ng-transclude></div>",
+        build: function (tree) {
+            var self = this;
+            var treeElement = document.getElementById(this.id);
+            var rootElement = document.createElement("ul");
+            rootElement.classList.add("sa-tree-ul");
+            if (tree != null) {
+                rootElement.appendChild(this.buildNode(tree));
+            }
+            treeElement.innerHTML = "";
+            treeElement.appendChild(rootElement);
+            treeElement.oncontextmenu = function (e) {
+                e = e || window.event; 　//IE window.event
+                var t = e.target || e.srcElement; //目标对象
+                if (e.type == "contextmenu") {
+                    var contextmenus = document.getElementsByClassName("sa-contextmenu");
+                    for (var i in contextmenus) {
+                        if (contextmenus[i].style) {
+                            contextmenus[i].style.visibility = "";
+                        }
+                    }
+                    var contextmenuId = t.id;
+                    var contextmenu = document.getElementById("contextmenu-"+contextmenuId);
+                    contextmenu.style.visibility = "visible";
+                }
+            };
+            treeElement.ondblclick = function(e)
+            {
+                e = e || window.event; 　//IE window.event
+                var t = e.target || e.srcElement; //目标对象
+                var treeId = t.attributes["tree-id"];
+                var selectTree = self.getTreeById(tree, treeId);
+                self.scope.doubleclick({ tree: selectTree });
+            }
+        },
+        buildNode: function (tree) {
+            var self = this;
+            var treeNode = document.createElement("li");
+            treeNode.classList.add("sa-tree-li");
+            var arrowNode = document.createElement("i");
+            arrowNode.classList.add("sa-icon-arrow-right");
+            var contextNode = document.createElement("span");
+            contextNode.classList.add("sa-tree-children");
+            var iconNode = document.createElement("i");
+            iconNode.classList.add("sa-icon-folder");
+            var nameNode = document.createElement("span");
+            nameNode.textContent = tree.Name;
+            nameNode.attributes["tree-id"] = tree.Id;
+            var childrenNode = document.createElement("ul");
+            childrenNode.classList.add("sa-tree-ul");
+            treeNode.appendChild(arrowNode);
+            treeNode.appendChild(contextNode);
+            contextNode.appendChild(iconNode);
+            contextNode.appendChild(nameNode);
+            var outContextmenus = [];
+            angular.forEach(this.contextmenus, function (contextmenu) {
+                if (contextmenu) {
+                    if (contextmenu.attributes["contextmenu-type"].value == "database") {
+                        var newContextmenu = document.createElement("div");
+                        newContextmenu.innerHTML = contextmenu.innerHTML;
+                        newContextmenu.classList = newContextmenu.classList;
+                        contextNode.appendChild(newContextmenu);
+                        var contextmenuId = self.guid();
+                        nameNode.id = contextmenuId;
+                        newContextmenu.id = "contextmenu-" + contextmenuId;
+                        newContextmenu.classList.add("sa-contextmenu");
+                        this.push(contextmenu);
+                    }
+                }
+            }, outContextmenus);
+            contextNode.appendChild(childrenNode);
+
+            this.contextmenus = outContextmenus;
+            if (tree.Children) {
+                if (tree.Children.length > 0) {
+                    treeNode.classList.add("sa-tree-li-children");
+                }
+                for (var i in tree.Children) {
+                    childrenNode.appendChild(this.buildNode(tree.Children[i]));
+                }
+            }
+            return treeNode;
+        },
+        contextmenus: [],
+        contextmenuClick: function () {
+            var contextmenus = document.getElementsByClassName("sa-contextmenu");
+            for (var i in contextmenus) {
+                if (contextmenus[i].style) {
+                    contextmenus[i].style.visibility = "";
+                }
+            }
+            var contextmenu = document.getElementById($scope.contextmenuId);
+            contextmenu.style.visibility = "visible";
+        },
+        guid: function () {
+            function s4() {
+                return Math.floor((1 + Math.random()) * 0x10000)
+                  .toString(16)
+                  .substring(1);
+            }
+            return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+              s4() + '-' + s4() + s4() + s4();
+        },
+        getTreeById: function (tree, id) {
+            if (tree.Id && tree.Id == id) {
+                return tree;
+            }
+            if (tree.Children) {
+                for (var i in tree.Children) {
+                    var selectTree = this.getTreeById(tree.Children[i], id);
+                    if (selectTree) {
+                        return selectTree;
+                    }
+                }
+            }
+        }
     };
 
     return {
         restrict: "E",
         template: vm.template,
         replace: true,
+        transclude: true,
         priority: 2,
         scope: {
             tree: '=',
-            getTables: "&",
+            doubleclick:"&"
         },
-        controller: function ($scope)
-        {
+        controller: function ($scope) {
             $scope.vm = {
                 tree: $scope.tree,
-                spread: function ()
-                {
+                id: vm.id,
+                spread: function () {
                     $scope.vm.tree.isShow = !$scope.vm.tree.isShow;
                 },
-                getTables: function (table)
-                {
+                getTables: function (table) {
                     $scope.getTables({ tableName: table });
                 }
             }
 
-            $scope.$watch("tree", function ()
-            {
-                $scope.vm.tree = $scope.tree;
-                $scope.vm.tree.isShow = true;
-            })
+            $scope.$watch("tree", function () {
+                vm.build($scope.tree);
+            },true)
+            vm.scope = $scope;
         },
+        link: function ($scope, element) {
+            vm.contextmenus = element[0].getElementsByClassName("sa-contextmenu");
+        }
     }
 })
 
 .directive("saContextmenu", function ()
 {
     var vm = {
-        template: "",
+        template: "<div ng-click='vm.command()' ng-transclude></div>",
     }
 
     return {
-        restrict: "A",
-        template: "",
-        replace: false,
-        priority: 4,
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        transclude:true,
+        priority: 1,
         scope: {
-            contextmenuId:"@"
+            contextmenuId: "@",
+            click:"&"
         },
         controller: function ($scope) {
             $scope.vm = {
-                visibility: false
+                visibility: false,
+                command: function (e) {
+                    e = e || window.event; 　//IE window.event
+                    var t = e.target || e.srcElement; //目标对象
+                    var commandName = t.attributes["command"];
+                    $scope.click({ command: commandName });
+                }
             }
+
         },
         link: function ($scope, element, attrs) {
-            element.bind("contextmenu", function (event) {
+            element.contextmenu = function (event) {
                 $scope.$apply(function () {
                     var contextmenus = document.getElementsByClassName("sa-contextmenu");
                     for (var i in contextmenus)
@@ -346,7 +442,7 @@
                     var contextmenu = document.getElementById($scope.contextmenuId);
                     contextmenu.style.visibility = "visible";
                 })
-            });
+            }
             document.onmousedown = function()
             {
                 var contextmenus = document.getElementsByClassName("sa-contextmenu");

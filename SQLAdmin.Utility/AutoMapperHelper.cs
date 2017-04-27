@@ -1,5 +1,6 @@
 ﻿using SQLAdmin.Domain;
 using System.Collections.Generic;
+using System.Data;
 
 namespace SQLAdmin.Utility
 {
@@ -41,6 +42,21 @@ namespace SQLAdmin.Utility
         public static T To<T>(this List<Table> tables) where T :class
         {
             return tables as T;
+        }
+
+        public static List<List<string>> To(this DataTable table)
+        {
+            List<List<string>> dataSet = new List<List<string>>();
+            foreach(DataRow row in table.Rows)
+            {
+                List<string> dataRow = new List<string>();
+                foreach (DataColumn column in table.Columns)
+                {
+                    dataRow.Add(row[column].ToString());
+                }
+                dataSet.Add(dataRow);
+            }
+            return dataSet;
         }
     }
 }

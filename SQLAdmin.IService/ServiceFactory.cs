@@ -59,5 +59,7 @@ namespace SQLAdmin.IService
         public  IDBConnectService DBConnectService { get { return mContainer.Resolve<IDBConnectService>(this.mParameter); } }
 
         public IDatabaseService DatabaseService { get { return mContainer.Resolve<IDatabaseService>(this.mParameter); } }
+
+        public IDBManageService DBManageService { get { return mContainer.Resolve<IDBManageService>(this.mParameter); } }
     }
 }

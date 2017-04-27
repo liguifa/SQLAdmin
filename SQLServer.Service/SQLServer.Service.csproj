@@ -43,6 +43,7 @@
     <Compile Include="SQLServerConnectService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLServerDatabaseService.cs" />
+    <Compile Include="SQLServerManageService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Logger\Common.Logger.csproj">
