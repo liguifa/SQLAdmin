@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Unity;
+﻿using Common.Interceptor;
+using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using SQLAdmin.Domain;
 using SQLAdmin.IService;
@@ -49,17 +50,17 @@ namespace SQLAdmin.IService
         public static ServiceFactory GetInstance()
         {
             int theadId = Thread.CurrentThread.ManagedThreadId;
-            if(mServiceFactoryPool.Keys.Contains(theadId))
+            if (mServiceFactoryPool.Keys.Contains(theadId))
             {
                 return mServiceFactoryPool[theadId];
             }
             return null;
         }
 
-        public  IDBConnectService DBConnectService { get { return mContainer.Resolve<IDBConnectService>(this.mParameter); } }
+        public IDBConnectService DBConnectService { get { return InterceptorFactory.GetInstance<IDBConnectService>(mContainer.Resolve<IDBConnectService>(this.mParameter)); } }
 
-        public IDatabaseService DatabaseService { get { return mContainer.Resolve<IDatabaseService>(this.mParameter); } }
+        public IDatabaseService DatabaseService { get { return InterceptorFactory.GetInstance<IDatabaseService>(mContainer.Resolve<IDatabaseService>(this.mParameter)); } }
 
-        public IDBManageService DBManageService { get { return mContainer.Resolve<IDBManageService>(this.mParameter); } }
+        public IDBManageService DBManageService { get { return InterceptorFactory.GetInstance<IDBManageService>(mContainer.Resolve<IDBManageService>(this.mParameter)); } }
     }
 }

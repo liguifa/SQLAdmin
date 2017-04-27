@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using SQLAdmin.Domain;
 using SQLServer.Dao;
 using SQLAdmin.Utility;
+using SQLServer.Utility;
 
 namespace SQLServer.Service
 {
@@ -17,6 +18,7 @@ namespace SQLServer.Service
 
         }
 
+        [DBScopeInterecpor]
         public List<List<string>> Select(DataFilter filter)
         {
             try

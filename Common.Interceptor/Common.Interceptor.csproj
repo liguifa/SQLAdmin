@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B36C2DA6-886D-4742-9DB8-9461AC8D9931}</ProjectGuid>
+    <ProjectGuid>{DC36606A-80CE-4222-8CB6-65F6D39BCF83}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SQLServer.Service</RootNamespace>
-    <AssemblyName>SQLServer.Service</AssemblyName>
+    <RootNamespace>Common.Interceptor</RootNamespace>
+    <AssemblyName>Common.Interceptor</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,44 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SQLServerConnectService.cs" />
+    <Compile Include="InterceptorAttribute.cs" />
+    <Compile Include="InterceptorFactory.cs" />
+    <Compile Include="InterceptorProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQLServerDatabaseService.cs" />
-    <Compile Include="SQLServerManageService.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Common.Interceptor\Common.Interceptor.csproj">
-      <Project>{DC36606A-80CE-4222-8CB6-65F6D39BCF83}</Project>
-      <Name>Common.Interceptor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Common.Logger\Common.Logger.csproj">
-      <Project>{C2C92005-3ADC-49E2-85A2-8BD031190485}</Project>
-      <Name>Common.Logger</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SQLAdmin.Dao\SQLAdmin.Dao.csproj">
-      <Project>{bf26268f-b539-406b-aa88-4ca90187c782}</Project>
-      <Name>SQLAdmin.Dao</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SQLAdmin.Domain\SQLAdmin.Domain.csproj">
-      <Project>{a85141b4-0571-4d0e-b868-99f1af36dd8e}</Project>
-      <Name>SQLAdmin.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SQLAdmin.IService\SQLAdmin.IService.csproj">
-      <Project>{54b4022a-6bf0-416e-9578-e165136dc8d7}</Project>
-      <Name>SQLAdmin.IService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SQLAdmin.Utility\SQLAdmin.Utility.csproj">
-      <Project>{698F30D4-2153-4055-B1F3-ED51670877A5}</Project>
-      <Name>SQLAdmin.Utility</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SQLServer.Dao\SQLServer.Dao.csproj">
-      <Project>{e8199617-96f1-461a-b4c4-d41dbc4fde71}</Project>
-      <Name>SQLServer.Dao</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SQLServer.Utility\SQLServer.Utility.csproj">
-      <Project>{7ecb60b2-ea2f-4524-b597-6b4be26b6aa3}</Project>
-      <Name>SQLServer.Utility</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
