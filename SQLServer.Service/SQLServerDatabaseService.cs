@@ -17,6 +17,22 @@ namespace SQLServer.Service
 
         }
 
+        public bool CreateTable(Table table)
+        {
+            try
+            {
+                using (var scope = new SQLServerDBContextScope(this.mDBConnect))
+                {
+                    SQLServerDBRepertory db = new SQLServerDBRepertory();
+                    
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
         public DatabaseTree GetDatabases()
         {
             try
@@ -30,6 +46,23 @@ namespace SQLServer.Service
             catch (Exception e)
             {
                 mLog.Error($"An error has occurred in the get databases,error:{e.ToString()}");
+                throw;
+            }
+        }
+
+        public List<FieldType> GetFieldTypes()
+        {
+            try
+            {
+                using (var scope = new SQLServerDBContextScope(this.mDBConnect))
+                {
+                    SQLServerDBRepertory db = new SQLServerDBRepertory();
+                    return db.GetFieldTypes().ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                mLog.Error($"An error has occurred in the get field types,error:{e.ToString()}");
                 throw;
             }
         }

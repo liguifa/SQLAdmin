@@ -16,6 +16,10 @@ namespace SQLAdmin.Dao
 
         List<Table> GetTables(string dbName);
 
+        bool CreateTable(Table table);
+
+        List<FieldType> GetFieldTypes();
+
         DataTable Filter(DataFilter filter);
     }
 }

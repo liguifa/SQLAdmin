@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using SQLAdmin.Domain;
 using System.Data.SqlClient;
 using System.Data;
+using SQLServer.Utility;
+using static SQLServer.Utility.Constant;
 
 namespace SQLServer.Dao
 {
@@ -28,6 +30,11 @@ namespace SQLServer.Dao
             }
         }
 
+        public bool CreateTable(Table table)
+        {
+            string sql = new SQLQuery();
+        }
+
         public DataTable Filter(DataFilter filter)
         {
             string sql = new SQLQuery().Select("*").From(filter.TableName).OrderBy(filter.SortColumn, filter.IsAsc).Qenerate();
@@ -39,17 +46,30 @@ namespace SQLServer.Dao
             //string sql = "SELECT * FROM Master..SysDatabases ORDER BY crdate";
             string sql = new SQLQuery().Select("*").From("Master..SysDatabases").OrderBy("crdate").Qenerate();
             var dataTable = this.DBContext.SqlReader(sql);
-            List<Database> databases = new List<Database>();
-            foreach(DataRow row in dataTable.Rows)
-            {
-                Database database = new Database()
-                {
-                    Id = Guid.NewGuid(), //row["dbid"].ToString(),
+            return dataTable.ToList(row =>
+           {
+               return new Database()
+               {
+                   Id = Guid.NewGuid(), //row["dbid"].ToString(),
                     Name = row["name"].ToString()
+               };
+           });
+        }
+
+        public List<FieldType> GetFieldTypes()
+        {
+            // SELECT* FROM sys.types
+            string sql = new SQLQuery().Select("*").From("sys.types").OrderBy("name").Qenerate();
+            var types = this.DBContext.SqlReader(sql);
+            return types.ToList(row =>
+            {
+                return new FieldType()
+                {
+                    DisplayName = row["name"].ToString(),
+                    IsNullable = Convert.ToInt32(row["is_nullable"]),
+                    MaxLength = Convert.ToInt32(row["max_length"])
                 };
-                databases.Add(database);
-            }
-            return databases;
+            });
         }
 
         public List<Table> GetTables(string dbName)
@@ -58,16 +78,14 @@ namespace SQLServer.Dao
             string sql = new SQLQuery().Select("*").From($"{dbName}..SysObjects").OrderBy("Name").Qenerate();
             var dataTable = this.DBContext.SqlReader(sql);
             List<Table> tables = new List<Table>();
-            foreach(DataRow row in dataTable.Rows)
+            return dataTable.ToList(row =>
             {
-                Table table = new Table()
+                return new Table()
                 {
                     Id = row["id"].ToString(),
                     Name = row["name"].ToString(),
                 };
-                tables.Add(table);
-            }
-            return tables;
+            });
         }
     }
 }

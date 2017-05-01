@@ -37,5 +37,17 @@ namespace SQLAdmin.Web.Controllers
             mLog.Info("Start get tables.");
             return Json(ServiceFactory.GetInstance().DatabaseService.GetTables(databaseName), JsonRequestBehavior.AllowGet);
         }
+
+        [Inject]
+        public JsonResult GetFieldTypes()
+        {
+            return Json(ServiceFactory.GetInstance().DatabaseService.GetFieldTypes(), JsonRequestBehavior.AllowGet);
+        }
+
+        [Inject]
+        public JsonResult CreateTable()
+        {
+            return Json(ServiceFactory.GetInstance().DatabaseService.cre)
+        }
     }
 }

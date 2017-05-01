@@ -13,5 +13,9 @@ namespace SQLAdmin.IService
         DatabaseTree GetDatabases();
 
         List<Table> GetTables(string tableName);
+
+        List<FieldType> GetFieldTypes();
+
+        bool CreateTable(Table table);
     }
 }

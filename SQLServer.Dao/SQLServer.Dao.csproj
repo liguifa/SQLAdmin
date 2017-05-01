@@ -55,6 +55,10 @@
       <Project>{a85141b4-0571-4d0e-b868-99f1af36dd8e}</Project>
       <Name>SQLAdmin.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SQLServer.Utility\SQLServer.Utility.csproj">
+      <Project>{7ecb60b2-ea2f-4524-b597-6b4be26b6aa3}</Project>
+      <Name>SQLServer.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

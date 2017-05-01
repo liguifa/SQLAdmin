@@ -9,16 +9,6 @@ namespace SQLServer.Dao
 {
     public class SQLQuery
     {
-        public const string SELECT = "Select";
-
-        public const string FORM = "From";
-
-        public const string ORDERBY = "Order By";
-
-        public const string DESC = "Desc";
-
-        public const string ESC = "Asc";
-
         private List<string> mQueryKeys = new List<string>();
 
         public SQLQuery()
