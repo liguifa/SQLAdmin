@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static SQLServer.Utility.Constant;
 
 namespace SQLServer.Dao
 {
@@ -41,6 +42,19 @@ namespace SQLServer.Dao
             {
                 this.mQueryKeys.Add(DESC);
             }
+            return this;
+        }
+
+        public SQLQuery Create(string tableName)
+        {
+            this.mQueryKeys.Insert(0, tableName);
+            this.mQueryKeys.Insert(0, CREATE);
+            return this;
+        }
+
+        public SQLQuery Table()
+        {
+            this.mQueryKeys.Add(TABLE);
             return this;
         }
 

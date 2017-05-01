@@ -58,3 +58,7 @@ D:\SQLAdmin\SQLServer.Service\bin\Debug\Common.Cryptogram.pdb
 D:\SQLAdmin\SQLServer.Service\obj\Debug\SQLServer.Service.csprojResolveAssemblyReference.cache
 D:\SQLAdmin\SQLServer.Service\obj\Debug\SQLServer.Service.dll
 D:\SQLAdmin\SQLServer.Service\obj\Debug\SQLServer.Service.pdb
+D:\SQLAdmin\SQLServer.Service\bin\Debug\Common.Interceptor.dll
+D:\SQLAdmin\SQLServer.Service\bin\Debug\SQLServer.Utility.dll
+D:\SQLAdmin\SQLServer.Service\bin\Debug\Common.Interceptor.pdb
+D:\SQLAdmin\SQLServer.Service\bin\Debug\SQLServer.Utility.pdb

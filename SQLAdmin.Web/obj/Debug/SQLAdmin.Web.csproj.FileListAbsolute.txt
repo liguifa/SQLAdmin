@@ -173,3 +173,7 @@ D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.csprojResolveAssemblyReference.c
 D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.g.resources
 D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.dll
 D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.pdb
+D:\SQLAdmin\SQLAdmin.Web\bin\Common.Interceptor.dll
+D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Utility.dll
+D:\SQLAdmin\SQLAdmin.Web\bin\Common.Interceptor.pdb
+D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Utility.pdb

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SQLAdmin.IService
 {
-    public class DBService
+    public class DBService : MarshalByRefObject
     {
         protected static readonly Logger mLog = Logger.GetInstance(MethodBase.GetCurrentMethod().DeclaringType);
         protected DBConnect mDBConnect { get; private set; }

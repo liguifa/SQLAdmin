@@ -1,0 +1,7 @@
+D:\SQLAdmin\SQLServer.Utility\bin\Debug\SQLServer.Utility.dll
+D:\SQLAdmin\SQLServer.Utility\bin\Debug\SQLServer.Utility.pdb
+D:\SQLAdmin\SQLServer.Utility\bin\Debug\Common.Interceptor.dll
+D:\SQLAdmin\SQLServer.Utility\bin\Debug\Common.Interceptor.pdb
+D:\SQLAdmin\SQLServer.Utility\obj\Debug\SQLServer.Utility.csprojResolveAssemblyReference.cache
+D:\SQLAdmin\SQLServer.Utility\obj\Debug\SQLServer.Utility.dll
+D:\SQLAdmin\SQLServer.Utility\obj\Debug\SQLServer.Utility.pdb

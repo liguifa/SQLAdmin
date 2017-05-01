@@ -143,9 +143,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Static\script\app.js" />
-    <Content Include="Static\script\common\angular-uuid2.min.js" />
     <Content Include="Static\script\common\cache.service.js" />
+    <Content Include="Static\script\common\constant.service.js" />
     <Content Include="Static\script\common\cryptogram.service.js" />
+    <Content Include="Static\script\common\grid.service.js" />
     <Content Include="Static\script\common\messager.service.js" />
     <Content Include="Static\script\controller\connect.controller.js" />
     <Content Include="Static\script\controller\gui.common.controller.js" />

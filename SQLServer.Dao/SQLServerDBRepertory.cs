@@ -8,7 +8,6 @@ using SQLAdmin.Domain;
 using System.Data.SqlClient;
 using System.Data;
 using SQLServer.Utility;
-using static SQLServer.Utility.Constant;
 
 namespace SQLServer.Dao
 {
@@ -32,7 +31,9 @@ namespace SQLServer.Dao
 
         public bool CreateTable(Table table)
         {
-            string sql = new SQLQuery();
+            string sql = new SQLQuery().Create(table.Name).Table().Qenerate();
+            var result = this.DBContext.AccessQuery(sql);
+            return result > 0;
         }
 
         public DataTable Filter(DataFilter filter)

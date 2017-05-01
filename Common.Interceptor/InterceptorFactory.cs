@@ -8,9 +8,9 @@ namespace Common.Interceptor
 {
     public static class InterceptorFactory
     {
-        public static T GetInstance<T>(object interceptorInstance)
+        public static T GetInstance<T>(object interceptorInstance) where T : class
         {
-            InterceptorProxy interceptor = new InterceptorProxy(interceptorInstance);
+            InterceptorProxy<T> interceptor = new InterceptorProxy<T>(interceptorInstance);
             return (T)interceptor.GetTransparentProxy();
         }
     }

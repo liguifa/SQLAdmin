@@ -32,8 +32,8 @@
                 </sa-tree>
             </sa-explorer>
             <div ng-controller="manage.controller">
-                <sa-tabs>
-                    <div data-view-id="123">@Html.Action("Query", "Manage")</div>
+                <sa-tabs pages="vm.pages">
+                    @*<div data-view-id="123">@Html.Action("Query", "Manage")</div>*@
                 </sa-tabs>
             </div>
         </div>
@@ -41,6 +41,7 @@
     <div ng-include src="vm.window"></div>
 </div>
 <link href="~/Static/css/sa.icon.css" rel="stylesheet" />
+<script src="~/Static/script/common/constant.service.js"></script>
 <script src="~/Static/script/services/common.service.js"></script>
 <script src="~/Static/script/services/database.service.js"></script>
 <script src="~/Static/script/controller/gui.common.controller.js"></script>

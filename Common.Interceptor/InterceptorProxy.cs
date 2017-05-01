@@ -8,46 +8,47 @@ using System.Threading.Tasks;
 
 namespace Common.Interceptor
 {
-    public class InterceptorProxy:RealProxy
+    public class InterceptorProxy<T> : RealProxy where T : class
     {
         public object mProxyInstance;
 
-        public InterceptorProxy(object proxyInstance)
+        public InterceptorProxy(object proxyInstance) : base(proxyInstance.GetType())
         {
             this.mProxyInstance = proxyInstance;
         }
 
         public override IMessage Invoke(IMessage msg)
         {
-            IMethodMessage methodMessage = msg as IMethodMessage;
+            IMethodCallMessage methodMessage = msg as IMethodCallMessage;
             object[] interceptors = methodMessage.MethodBase.GetCustomAttributes(typeof(InterceptorAttribute), true);
             bool isPreExec = true;
-            if(interceptors != null && interceptors.Any())
+            object returnValue = null;
+            if (interceptors != null && interceptors.Any())
             {
-                foreach(InterceptorAttribute interceptor in interceptors)
+                foreach (InterceptorAttribute interceptor in interceptors)
                 {
                     if (isPreExec)
                     {
                         isPreExec = interceptor.PreHandler();
                     }
-                    if(!isPreExec)
+                    if (!isPreExec)
                     {
                         break;
                     }
                 }
             }
-            if(isPreExec)
+            if (isPreExec)
             {
-                methodMessage.MethodBase.Invoke(this.mProxyInstance, null);
+                returnValue = methodMessage.MethodBase.Invoke(this.mProxyInstance, methodMessage.Args);
             }
-            if(isPreExec)
+            if (isPreExec)
             {
                 foreach (InterceptorAttribute interceptor in interceptors)
                 {
                     interceptor.PostHanler();
                 }
             }
-            return null;
+            return new ReturnMessage(returnValue, new object[0], 0, null, methodMessage);
         }
     }
 }

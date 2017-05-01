@@ -24,12 +24,13 @@ namespace SQLServer.Service
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    
+                    return db.CreateTable(table);
                 }
             }
             catch (Exception e)
             {
-
+                mLog.Error($"An error has occurred in the create table,error:{e.ToString()}");
+                throw;
             }
         }
 

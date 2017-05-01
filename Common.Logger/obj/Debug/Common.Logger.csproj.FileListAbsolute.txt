@@ -11,3 +11,4 @@ D:\SQLAdmin\Common.Logger\bin\Debug\Logger.dll
 D:\SQLAdmin\Common.Logger\bin\Debug\Logger.pdb
 D:\SQLAdmin\Common.Logger\obj\Debug\Logger.dll
 D:\SQLAdmin\Common.Logger\obj\Debug\Logger.pdb
+D:\SQLAdmin\Common.Logger\obj\Debug\Common.Logger.csprojResolveAssemblyReference.cache

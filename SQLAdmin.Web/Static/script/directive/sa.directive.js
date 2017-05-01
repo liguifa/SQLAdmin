@@ -223,13 +223,34 @@
     }
 })
 
-.directive('saTabs', function ()
+.directive('saTabs', ["guid.service",function (guid)
 {
     var vm = {
-        template: "<div class='sa-tabs'>\
-                        <div class='sa-tabs-title'></div>\
-                        <div class='sa-tabs-panel' ng-transclude></div>\
-                   </div>"
+        id:guid.newGuid(),
+        template: "<div class='sa-tabs' id='{{vm.id}}'></div>",
+        build: function (pages) {
+            var tabs = document.getElementById(this.id);
+            //<div class='sa-tabs-tab'>\
+            //               <div class='sa-tabs-title'></div>\
+            //               <div class='sa-tabs-panel' ng-transclude></div>\
+            //           </div>\
+            //           <div class='sa-tabs-tab'>\
+            //               <div class='sa-tabs-title'></div>\
+            //               <div class='sa-tabs-panel' ng-transclude></div>\
+            //           </div>\
+            for (var i in pages) {
+                var tab = document.createElement("div");
+                tab.classList.add("sa-tabs-tab");
+                tab.attributes["data-tab-id"] = pages[i].id;
+                var title = document.createElement("div");
+                title.classList.add("sa-tabs-title");
+                title.style.left = (i * 90) + "px";
+                var panel = document.createElement("div");
+                panel.classList.add("sa-tabs-panel");
+                tab.appendChild(title);
+                tab.appendChild(panel);
+            }
+        }
     }
     return {
         restrict: "E",
@@ -237,12 +258,19 @@
         replace: true,
         transclude: true,
         scope: {
+            pages:"=",
         },
         controller: function ($scope)
         {
+            $scope.vm = {
+                id:vm.id
+            }
+            $scope.$watch("pages", function (pages) {
+                vm.build(pages);
+            });
         }
     }
-})
+}])
 
 .directive('saTree', function ()
 {

@@ -1,5 +1,5 @@
 ﻿(function () {
-    function gui_common_controller($scope, $http, messager, event, database,common) {
+    function gui_common_controller($scope, $http, messager, event, database, common, constant) {
         $scope.vm = {
             //window: "/Common/Connect",
             select: select,
@@ -16,17 +16,22 @@
             $scope.vm.window = menu.Href;
         }
 
-        function _getTables(tree){
-            database.getTables(tree).then(function(data){
-                database.updateTree($scope.vm.database,data.Id,data);
-            })
+        function _getTables(tree) {
+            if (tree.NodeType == 2) {
+                database.getTables(tree).then(function (data) {
+                    database.updateTree($scope.vm.database, data.Id, data);
+                })
+            }
+            else {
+                event.trigger(constant.SELECT);
+            }
         }
 
         function _contextMenuCommand(command) {
             event.trigger(command);
         }
-       
-        common.getMenus().then(function(data){
+
+        common.getMenus().then(function (data) {
             $scope.vm.menus = data;
         });
 
@@ -37,5 +42,5 @@
         });
     }
 
-    angular.module("admin").controller("gui.common.controller", ["$scope", "$http", "messager.service", "event.service", "database.service", "common.service", gui_common_controller]);
+    angular.module("admin").controller("gui.common.controller", ["$scope", "$http", "messager.service", "event.service", "database.service", "common.service", "constant.service", gui_common_controller]);
 })();

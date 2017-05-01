@@ -8,6 +8,7 @@ namespace SQLServer.Utility
 {
     public static class Constant
     {
+        #region SQL
         public const string SELECT = "Select";
 
         public const string FORM = "From";
@@ -19,5 +20,8 @@ namespace SQLServer.Utility
         public const string ESC = "Asc";
 
         public const string CREATE = "Create";
+
+        public const string TABLE = "Table";
+        #endregion
     }
 }

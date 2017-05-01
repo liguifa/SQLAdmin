@@ -212,6 +212,14 @@ body,html,document {
     right: 3px;
 }
 
+.sa-tabs-tab{
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+
 .sa-tabs-title {
     width: 90px;
     height: 23px;

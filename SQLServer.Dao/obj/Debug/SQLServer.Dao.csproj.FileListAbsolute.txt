@@ -16,3 +16,7 @@ D:\SQLAdmin\SQLServer.Dao\bin\Debug\SQLAdmin.Domain.pdb
 D:\SQLAdmin\SQLServer.Dao\obj\Debug\SQLServer.Dao.dll
 D:\SQLAdmin\SQLServer.Dao\obj\Debug\SQLServer.Dao.pdb
 D:\SQLAdmin\SQLServer.Dao\obj\Debug\SQLServer.Dao.csprojResolveAssemblyReference.cache
+D:\SQLAdmin\SQLServer.Dao\bin\Debug\SQLServer.Utility.dll
+D:\SQLAdmin\SQLServer.Dao\bin\Debug\Common.Interceptor.dll
+D:\SQLAdmin\SQLServer.Dao\bin\Debug\SQLServer.Utility.pdb
+D:\SQLAdmin\SQLServer.Dao\bin\Debug\Common.Interceptor.pdb
