@@ -52,6 +52,7 @@
     <Compile Include="SerializeHelper.cs" />
     <Compile Include="ViewModels\DatabaseConfigViewModel.cs" />
     <Compile Include="ViewModels\NavigationViewModel.cs" />
+    <Compile Include="ViewModels\TableDataViewMdoel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

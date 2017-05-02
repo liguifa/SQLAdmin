@@ -12,8 +12,9 @@ namespace SQLAdmin.Web.Controllers
     public class ManageController : Controller
     {
         // GET: Manage
-        public ActionResult Query()
+        public ActionResult Query(string name)
         {
+            ViewBag.Name = name;
             return View();
         }
 

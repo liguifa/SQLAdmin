@@ -22,6 +22,10 @@ namespace SQLServer.Utility
         public const string CREATE = "Create";
 
         public const string TABLE = "Table";
+
+        public const string WHERE = "Where";
+
+        public const string COUNT = "Count(*)";
         #endregion
     }
 }

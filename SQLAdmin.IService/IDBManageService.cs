@@ -1,4 +1,5 @@
 ﻿using SQLAdmin.Domain;
+using SQLAdmin.Utility.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace SQLAdmin.IService
 {
     public interface IDBManageService
     {
-        List<List<string>> Select(DataFilter filter);
+        TableDataViewMdoel Select(DataFilter filter);
     }
 }

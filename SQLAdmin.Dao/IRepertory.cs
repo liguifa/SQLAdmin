@@ -21,5 +21,9 @@ namespace SQLAdmin.Dao
         List<FieldType> GetFieldTypes();
 
         DataTable Filter(DataFilter filter);
+
+        List<Field> GetTableFields(string tableName);
+
+        int Count(string tableName);
     }
 }

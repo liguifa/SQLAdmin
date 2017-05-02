@@ -8,6 +8,7 @@ using SQLAdmin.Domain;
 using SQLServer.Dao;
 using SQLAdmin.Utility;
 using SQLServer.Utility;
+using SQLAdmin.Utility.ViewModels;
 
 namespace SQLServer.Service
 {
@@ -19,14 +20,23 @@ namespace SQLServer.Service
         }
 
         [DBScopeInterecpor]
-        public List<List<string>> Select(DataFilter filter)
+        public TableDataViewMdoel Select(DataFilter filter)
         {
             try
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.Filter(filter).To();
+                    var count = db.Count(filter.TableName);
+                    var datas = db.Filter(filter).To();
+                    return new TableDataViewMdoel()
+                    {
+                        Datas = datas,
+                        PageIndex = filter.PageIndex,
+                        PageSize = filter.PageSize,
+                        PageCount = Convert.ToInt64(Math.Ceiling(((double)count / filter.PageSize))),
+                        Total = count
+                    };
                 }
             }
             catch(Exception e)

@@ -6,12 +6,12 @@
 			_eventPools.push(event);
 		}
 
-		function _trigger(name) {
+		function _trigger(name,args) {
 			for(var i in _eventPools)
 			{
 				if(_eventPools[i].name == name)
 				{
-					_eventPools[i].func();
+				    _eventPools[i].func(args);
 				}
 			}
 		}

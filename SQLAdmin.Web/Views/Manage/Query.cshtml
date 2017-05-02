@@ -1,9 +1,9 @@
-﻿<div class="sa-query">
+﻿<div class="sa-query" ng-controller="query.controller" ng-init="vm.tableName='@ViewBag.Name'">
     <sa-tools>
         <sa-icon type="remove" click="vm.remove()"></sa-icon>
         <sa-icon type="add"></sa-icon>
         <sa-icon type="edit"></sa-icon>
     </sa-tools>
-    <sa-datagrid></sa-datagrid>
-    <sa-pagination></sa-pagination>
+    <sa-datagrid datas="vm.datas" fields="vm.fields"></sa-datagrid>
+    <sa-pagination page="vm.page"></sa-pagination>
 </div>

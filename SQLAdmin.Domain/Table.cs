@@ -13,5 +13,7 @@ namespace SQLAdmin.Domain
         public string Name { get; set;}
 
         public Guid DatabaseId { get; set; } 
+
+        public string Fullname { get; set; }
     }
 }

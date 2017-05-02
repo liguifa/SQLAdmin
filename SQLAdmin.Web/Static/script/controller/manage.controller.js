@@ -4,12 +4,15 @@
             pages:[]
         }
 
-        event.register(constant.SELECT, function () {
-            var page = {
-                id:guid.newGuid(),
-            }
-            $scope.vm.pages.push(page);
-            manage.filter();
+        event.register(constant.SELECT, function (table) {
+            $scope.$apply(function () {
+                var page = {
+                    id: guid.newGuid(),
+                    url: "/Manage/Query?name="+table.name,
+                    table:table
+                }
+                $scope.vm.pages.push(page);
+            });
         });
     }
 

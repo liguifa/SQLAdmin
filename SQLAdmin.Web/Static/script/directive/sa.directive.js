@@ -223,32 +223,30 @@
     }
 })
 
-.directive('saTabs', ["guid.service",function (guid)
+.directive('saTabs', ["guid.service", "$http", "$compile", function (guid, $http, $compile)
 {
     var vm = {
-        id:guid.newGuid(),
+        id: guid.newGuid(),
         template: "<div class='sa-tabs' id='{{vm.id}}'></div>",
-        build: function (pages) {
-            var tabs = document.getElementById(this.id);
-            //<div class='sa-tabs-tab'>\
-            //               <div class='sa-tabs-title'></div>\
-            //               <div class='sa-tabs-panel' ng-transclude></div>\
-            //           </div>\
-            //           <div class='sa-tabs-tab'>\
-            //               <div class='sa-tabs-title'></div>\
-            //               <div class='sa-tabs-panel' ng-transclude></div>\
-            //           </div>\
-            for (var i in pages) {
-                var tab = document.createElement("div");
-                tab.classList.add("sa-tabs-tab");
-                tab.attributes["data-tab-id"] = pages[i].id;
-                var title = document.createElement("div");
-                title.classList.add("sa-tabs-title");
-                title.style.left = (i * 90) + "px";
-                var panel = document.createElement("div");
-                panel.classList.add("sa-tabs-panel");
-                tab.appendChild(title);
-                tab.appendChild(panel);
+        build: function ($scope,pages) {
+            var self = this;
+            for (var i in pages)
+            {
+                $http.get(pages[i].url).then(function (data) {
+                    var tabs = document.getElementById(self.id);
+                    var tab = document.createElement("div");
+                    tab.classList.add("sa-tabs-tab");
+                    tab.attributes["data-tab-id"] = pages[i].id;
+                    var title = document.createElement("div");
+                    title.classList.add("sa-tabs-title");
+                    title.style.left = (i * 90) + "px";
+                    var panel = document.createElement("div");
+                    panel.appendChild($compile(data.data)($scope)[0]);
+                    panel.classList.add("sa-tabs-panel");
+                    tab.appendChild(title);
+                    tab.appendChild(panel);
+                    tabs.appendChild(tab);
+                });
             }
         }
     }
@@ -266,8 +264,8 @@
                 id:vm.id
             }
             $scope.$watch("pages", function (pages) {
-                vm.build(pages);
-            });
+                vm.build($scope,pages);
+            },true);
         }
     }
 }])
@@ -506,189 +504,25 @@
     }
 })
 
-.directive('saDatagrid', function ()
+.directive('saDatagrid', ["guid.service",function (guid)
 {
     var vm = {
-        template: '<table class="sa-datagrid">\
-    <colgroup>\
-      <col width="50">\
-      <col width="150">\
-      <col width="150">\
-      <col width="200">\
-      <col>\
-    </colgroup>\
-    <thead>\
+        template: '<div class="sa-datagrid-content">\
+    <table class="sa-datagrid">\
+        <thead>\
       <tr>\
         <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"></th>\
-        <th>人物</th>\
-        <th>民族</th>\
-        <th>出场时间</th>\
-        <th>格言</th>\
+        <th ng-repeat="field in vm.fields">{{field.Name}}</th>\
       </tr> \
     </thead>\
 <tbody>\
-<tr><td colspan="5" class="sa-datagrid-content-td"><div class="sa-datagrid-content">\
-    <table class="sa-datagrid">\
-<colgroup>\
-      <col width="50">\
-      <col width="150">\
-      <col width="150">\
-      <col width="200">\
-      <col>\
-    </colgroup>\
-<tbody>\
-      <tr>\
+      <tr ng-repeat="row in vm.datas">\
         <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>贤心</td>\
-        <td>汉族</td>\
-        <td>1989-10-14</td>\
-        <td>人生似修行</td>\
-      </tr>\
-      <tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>张爱玲</td>\
-        <td>汉族</td>\
-        <td>1920-09-30</td>\
-        <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>\
-      </tr>\
-      <tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>Helen Keller</td>\
-        <td>拉丁美裔</td>\
-        <td>1880-06-27</td>\
-        <td> Life is either a daring adventure or nothing.</td>\
-      </tr>\
-      <tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>岳飞</td>\
-        <td>汉族</td>\
-        <td>1103-北宋崇宁二年</td>\
-        <td>教科书再滥改，也抹不去“民族英雄”的事实</td>\
-      </tr>\
-      <tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
+        <td ng-repeat="field in row track by $index">{{field}}</td>\
       </tr>\
 </tbody>\
     </table>\
-</div></td></tr>\
-</tbody>\
-  </table>'
+</div>',
     }
 
     return {
@@ -697,13 +531,22 @@
         replace: true,
         priority: 2,
         scope: {
+            datas: "=",
+            fields:"="
         },
-        controller: function ($scope)
-        {
+        controller: function ($scope) {
+            $scope.vm = {};
 
+            $scope.$watch("datas", function (datas) {
+                $scope.vm.datas = datas;
+            });
+
+            $scope.$watch("fields", function (fields) {
+                $scope.vm.fields = fields;
+            });
         }
     }
-})
+}])
 
 .directive("saBlockquote", function ()
 {
@@ -784,18 +627,7 @@
     var vm = {
         template: '<div class="sa-pagination">\
                     <ul>\
-                        <li><a href="javascript:;" data-page="2">上一页</a></li>\
-                        <li><a href="javascript:;" data-page="2">1</a></li>\
-                        <li><a href="javascript:;" data-page="2" class="sa-pagination-active">2</a></li>\
-                        <li><a href="javascript:;" data-page="2">3</a></li>\
-                        <li><a href="javascript:;" data-page="2">4</a></li>\
-                        <li><a href="javascript:;" data-page="2">5</a></li>\
-                        <li><a href="javascript:;" data-page="2">6</a></li>\
-                        <li><a href="javascript:;" data-page="2">7</a></li>\
-                        <li><a href="javascript:;" data-page="2">8</a></li>\
-                        <li><a href="javascript:;" data-page="2">9</a></li>\
-                        <li><a href="javascript:;" data-page="2">10</a></li>\
-                        <li><a href="javascript:;" data-page="2">下一页</a></li>\
+                        <li ng-repeat="page in vm.pages"><a href="{{page.url]}" data-page="2" class="{{page._class}}">{{page.text}}</a></li>\
                     </ul>\
                    </div>'
     };
@@ -806,10 +638,23 @@
         replace: true,
         priority: 1,
         scope: {
+            page:"=",
         },
         controller: function ($scope)
         {
-
+            $scope.vm = {};
+            $scope.$watch("page", function (page) {
+                $scope.vm.pages = [];
+                for (var i = 1 ; i <= page.pageCount; i++)
+                {
+                    var page = {
+                        url: "#",
+                        text: i,
+                        _class: i == page.pageIndex ? "sa-pagination-active" : "",
+                    };
+                    $scope.vm.pages.push(page);
+                }
+            }, true);
         }
     }
 })

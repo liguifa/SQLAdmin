@@ -30,6 +30,13 @@ namespace SQLServer.Dao
             return this;
         }
 
+        public SQLQuery Where(string where)
+        {
+            this.mQueryKeys.Add(WHERE);
+            this.mQueryKeys.Add(where);
+            return this;
+        }
+
         public SQLQuery OrderBy(string col, bool isAsc = false)
         {
             this.mQueryKeys.Add(ORDERBY);
@@ -42,6 +49,12 @@ namespace SQLServer.Dao
             {
                 this.mQueryKeys.Add(DESC);
             }
+            return this;
+        }
+
+        public SQLQuery Count()
+        {
+            this.Select(COUNT);
             return this;
         }
 

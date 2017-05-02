@@ -9,14 +9,8 @@
         //public string SortColumn { get; set; }
 
         //public bool IsAsc { get; set; }
-        function _filter() {
-            $http.post("/Manage/Get", { TableName: "[test].[dbo].[nAME]", SortColumn: "Age", IsAsc: true }).then(function (data) {
-                console.log(data);
-            });
-        }
-
         return {
-            filter: _filter
+
         }
     }
 

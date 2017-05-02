@@ -76,7 +76,7 @@ namespace SQLServer.Dao
         public List<Table> GetTables(string dbName)
         {
             //string sql = $"SELECT * FROM {dbName}..SysObjects Where XType='U' ORDER BY Name";
-            string sql = new SQLQuery().Select("*").From($"{dbName}..SysObjects").OrderBy("Name").Qenerate();
+            string sql = new SQLQuery().Select("*").From($"{dbName}..SysObjects").Where("type='U'").OrderBy("Name").Qenerate();
             var dataTable = this.DBContext.SqlReader(sql);
             List<Table> tables = new List<Table>();
             return dataTable.ToList(row =>
@@ -85,8 +85,34 @@ namespace SQLServer.Dao
                 {
                     Id = row["id"].ToString(),
                     Name = row["name"].ToString(),
+                    Fullname = $"[{dbName}].[dbo].[{row["name"].ToString()}]"
                 };
             });
+        }
+
+        public List<Field> GetTableFields(string tableName)
+        {
+            //select * from RP_DB..SysColumns where id = (select id from RP_DB..sysobjects where Name = 'SLA_SubmissionForm')
+            //string sql = new SQLQuery().Select("*").From("SysColumns").wher
+            var dbName = tableName.Split('.').First();
+            var tbName = tableName.Split('.').Last().Remove(0, 1);
+            tbName = tbName.Remove(tbName.Length - 1, 1);
+            string sql = $"select * from {dbName}..SysColumns where id = (select id from {dbName}..sysobjects where Name = '{tbName}')";
+            var dataTable = this.DBContext.SqlReader(sql);
+            return dataTable.ToList(row =>
+            {
+                return new Field()
+                {
+                    Id = row["id"].ToString(),
+                    Name = row["name"].ToString()
+                };
+            });
+        }
+
+        public int Count(string tableName)
+        {
+            string sql = new SQLQuery().Count().From(tableName).Qenerate();
+            return Convert.ToInt32(this.DBContext.SqlScaler(sql));
         }
     }
 }

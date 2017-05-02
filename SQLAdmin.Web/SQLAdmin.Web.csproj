@@ -151,12 +151,16 @@
     <Content Include="Static\script\controller\connect.controller.js" />
     <Content Include="Static\script\controller\gui.common.controller.js" />
     <Content Include="Static\script\controller\manage.controller.js" />
+    <Content Include="Static\script\controller\query.controller.js" />
     <Content Include="Static\script\directive\sa.directive.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Static\script\lib\base64.min.js" />
+    <Content Include="Static\script\services\common.service.js" />
     <Content Include="Static\script\services\connect.service.js" />
+    <Content Include="Static\script\services\database.service.js" />
     <Content Include="Static\script\services\manage.service.js" />
+    <Content Include="Static\script\services\query.service.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

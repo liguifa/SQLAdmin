@@ -55,7 +55,9 @@ namespace SQLServer.Dao
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
                 DataSet ds = new DataSet();
                 da.Fill(ds, "table");
-                return ds.Tables["table"];
+                var res = ds.Tables["table"];
+                conn.Close();
+                return res;
             }
         }
         #endregion
@@ -70,7 +72,7 @@ namespace SQLServer.Dao
         {
             using (SqlConnection conn = this.GetConnect())
             {
-                conn.Open();
+                //conn.Open();
                 SqlCommand oc = new SqlCommand(sql, conn);
                 int result = oc.ExecuteNonQuery();
                 conn.Close();
@@ -89,7 +91,7 @@ namespace SQLServer.Dao
         {
             using (SqlConnection conn = this.GetConnect())
             {
-                conn.Open();
+                //conn.Open();
                 SqlCommand oc = new SqlCommand(sql, conn);
                 object result = oc.ExecuteScalar();
                 conn.Close();

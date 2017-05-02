@@ -68,6 +68,23 @@ namespace SQLServer.Service
             }
         }
 
+        public List<Field> GetTableFields(string tableName)
+        {
+            try
+            {
+                using (var scope = new SQLServerDBContextScope(this.mDBConnect))
+                {
+                    SQLServerDBRepertory db = new SQLServerDBRepertory();
+                    return db.GetTableFields(tableName).ToList();
+                }
+            }
+            catch(Exception e)
+            {
+                mLog.Error($"An error has occurred in the get table fields,error:{e.ToString()}");
+                throw;
+            }
+        }
+
         public List<Table> GetTables(string tableName)
         {
             try

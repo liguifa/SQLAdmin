@@ -15,7 +15,7 @@
                     tree.Children = [];
                 }
                 for (var i in res.data) {
-                    tree.Children.push({ Id: res.data[i].Id, Name: res.data[i].Name });
+                    tree.Children.push({ Id: res.data[i].Id, Name: res.data[i].Name, Fullname: res.data[i].Fullname });
                 }
                 deferred.resolve(tree);
             })

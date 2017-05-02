@@ -17,5 +17,7 @@ namespace SQLAdmin.IService
         List<FieldType> GetFieldTypes();
 
         bool CreateTable(Table table);
+
+        List<Field> GetTableFields(string tableName);
     }
 }

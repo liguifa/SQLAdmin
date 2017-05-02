@@ -23,7 +23,7 @@
                 })
             }
             else {
-                event.trigger(constant.SELECT);
+                event.trigger(constant.SELECT, {name:tree.Fullname});
             }
         }
 
