@@ -227,7 +227,12 @@
 {
     var vm = {
         id: guid.newGuid(),
-        template: "<div class='sa-tabs' id='{{vm.id}}'></div>",
+        template: "<div class='sa-tabs' id='{{vm.id}}'>\
+                    <div class='sa-tabs-tab' ng-repeat='page in vm.pages' id='{{page.id}}' style='z-index:{{page.isSelected?990:989}}'>\
+                        <div class='sa-tabs-title' style='left:{{$index*210}}px' ng-click='vm.click_title(page.id)'>{{page.title}}</div>\
+                        <div class='sa-tabs-panel' ng-if='page.isSelected'><div ng-include src='page.url'></div></div>\
+                    </div>\
+                   </div>",
         build: function ($scope,pages) {
             var self = this;
             for (var i in pages)
@@ -261,10 +266,41 @@
         controller: function ($scope)
         {
             $scope.vm = {
-                id:vm.id
+                id: vm.id,
+                click_title:function(panel_id)
+                {
+                    //var panels = document.getElementsByClassName("sa-tabs-tab");
+                    //for (var i = 0; i < panels.length; i++)
+                    //{
+                    //    panels[i].style.zIndex = 997;
+                    //}
+                    //document.getElementById(panel_id).style.zIndex = 998;
+                    for(var i in $scope.vm.pages)
+                    {
+                        if($scope.vm.pages[i].id == panel_id)
+                        {
+                            $scope.vm.pages[i].isSelected = true;
+                        }
+                        else
+                        {
+                            $scope.vm.pages[i].isSelected = false;
+                        }
+                    }
+                }
             }
             $scope.$watch("pages", function (pages) {
-                vm.build($scope,pages);
+                $scope.vm.pages = [];
+                for (var i in pages)
+                {
+                    var page = {
+                        isSelected: false,
+                        url: pages[i].url,
+                        id: pages[i].id,
+                        title:pages[i].title
+                    }
+                    $scope.vm.pages.push(page);
+                }
+                $scope.vm.pages[$scope.vm.pages.length - 1].isSelected = true;
             },true);
         }
     }
@@ -627,9 +663,45 @@
     var vm = {
         template: '<div class="sa-pagination">\
                     <ul>\
-                        <li ng-repeat="page in vm.pages"><a href="{{page.url]}" data-page="2" class="{{page._class}}">{{page.text}}</a></li>\
+                        <li ng-repeat="page in vm.pages"><a href="{{page.url}}" data-page="2" class="{{page._class}}" ng-click="vm.jump(page.index)">{{page.text}}</a></li>\
                     </ul>\
-                   </div>'
+                   </div>',
+        buildPages: function (page, pageNumber) {
+            var pages = [];
+            var startNumber = page.pageIndex <= pageNumber / 2 ? 1 : page.pageIndex - pageNumber / 2 + 1;
+            var minPageNumber = Math.min(startNumber + pageNumber - 1, page.pageCount);
+            if (page.pageIndex != 1)
+            {
+                var inPage = {
+                    url: "javascripe:#",
+                    text: "上一页",
+                    _class: "",
+                    index: page.pageIndex - 1
+                }
+                pages.push(inPage);
+            }
+            for (var i = startNumber ; i <= minPageNumber; i++)
+            {
+                var inPage = {
+                    url: "javascripe:#",
+                    text: i,
+                    _class: i == page.pageIndex ? "sa-pagination-active" : "",
+                    index: i
+                };
+                pages.push(inPage);
+            }
+            if (page.pageIndex != page.pageCount)
+            {
+                var inPage = {
+                    url: "javascripe:#",
+                    text: "下一页",
+                    _class: "",
+                    index: page.pageIndex + 1
+                }
+                pages.push(inPage);
+            }
+            return pages;
+        }
     };
 
     return {
@@ -638,23 +710,23 @@
         replace: true,
         priority: 1,
         scope: {
-            page:"=",
+            page: "=",
+            pageNumber: "=",
+            click:"&"
         },
         controller: function ($scope)
         {
             $scope.vm = {};
+            $scope.pageNumber = 10;
             $scope.$watch("page", function (page) {
-                $scope.vm.pages = [];
-                for (var i = 1 ; i <= page.pageCount; i++)
-                {
-                    var page = {
-                        url: "#",
-                        text: i,
-                        _class: i == page.pageIndex ? "sa-pagination-active" : "",
-                    };
-                    $scope.vm.pages.push(page);
-                }
+                $scope.vm.pages = vm.buildPages(page,10);
             }, true);
+            //$scope.$watch("pageNumber", function (number) {
+            //    $scope.vm.pages = vm.buildPages($scope.page, number);
+            //});
+            $scope.vm.jump = function (index) {
+                $scope.click({ pageIndex: index });
+            }
         }
     }
 })

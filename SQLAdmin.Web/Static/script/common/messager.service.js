@@ -1,21 +1,26 @@
 ﻿(function ()
 {
-    function messager_service() {
+    function messager_service(guid) {
         var messageInfo = {
             window: 280,
             height: 162
         }
 
         function _window(content, winType) {
+            var alertId = guid.newGuid();
             var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
             var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
             var alert = document.createElement("div");
             alert.classList.add("messager-alert");
             alert.classList.add(winType);
+            alert.id = alertId;
             alert.style.top = (h - messageInfo.height) / 2 + "px";
             alert.style.left = (w - messageInfo.window) / 2 + "px";
-            alert.innerHTML = '<div class="messager-alert-title">信息</div><div class="messager-alert-content">' + content + '</div>';
-            document.body.appendChild(alert)
+            alert.innerHTML = '<div class="messager-alert-title">信息</div><div class="messager-alert-content">' + content + '</div><div class="message-alert-tool"><button id="' + alertId + '_ok_btn">确定</button></div>';
+            document.body.appendChild(alert);
+            document.getElementById(alertId + "_ok_htn").onclick = function () {
+                document.getElementById(alertId).remove();
+            }
         }
 
         function _alert(content) {
@@ -49,5 +54,5 @@
         }
     }
 
-    angular.module("sqladmin").factory("messager.service", messager_service);
+    angular.module("sqladmin").factory("messager.service", ["guid.service",messager_service]);
 })();

@@ -14,10 +14,16 @@
                 messager.error("一个错误发生。");
                 return config;
             },
-            response: function (config)
-            {
+            response: function (config) {
                 messager.loading(true);
-                return config;
+                if (config.data.IsSuccess != undefined && !config.data.IsSuccess)
+                {
+                    messager.error(config.data.Message);
+                }
+                else
+                {
+                    return config;
+                }
             }
         }
 

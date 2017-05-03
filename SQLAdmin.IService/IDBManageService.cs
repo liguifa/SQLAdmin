@@ -11,5 +11,7 @@ namespace SQLAdmin.IService
     public interface IDBManageService
     {
         TableDataViewMdoel Select(DataFilter filter);
+
+        bool Delete(RemoveFilter filter);
     }
 }

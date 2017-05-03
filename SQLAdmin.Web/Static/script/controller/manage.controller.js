@@ -8,8 +8,9 @@
             $scope.$apply(function () {
                 var page = {
                     id: guid.newGuid(),
-                    url: "/Manage/Query?name="+table.name,
-                    table:table
+                    url: "/Manage/Query?name=" + table.name,
+                    table: table,
+                    title: table.name + "-" + constant.SELECT
                 }
                 $scope.vm.pages.push(page);
             });

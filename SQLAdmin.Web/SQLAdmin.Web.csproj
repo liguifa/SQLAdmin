@@ -164,11 +164,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\ExceptionHandler.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\InjectAttribute.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\ConnectController.cs" />
     <Compile Include="Controllers\DatabaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SQLAdminController.cs" />
     <Compile Include="Convert\MenuConvert.cs" />
@@ -208,6 +210,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Database\" />
+    <Folder Include="Views\Error\" />
     <Folder Include="Views\SQLAdmin\" />
   </ItemGroup>
   <ItemGroup>

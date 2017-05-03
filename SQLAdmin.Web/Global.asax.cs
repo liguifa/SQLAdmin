@@ -1,5 +1,6 @@
 ﻿using SQLAdmin.IService;
 using SQLAdmin.Utility.ViewModels;
+using SQLAdmin.Web.App_Start;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,12 @@ namespace SQLAdmin.Web
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             //GlobalFilters.Filters.Add(new RequireHttpsAttribute());
+        }
+
+        protected void Application_Error()
+        {
+            var ex = Server.GetLastError();
+            ExceptionHandler.ErrorHanding(ex);
         }
     }
 }

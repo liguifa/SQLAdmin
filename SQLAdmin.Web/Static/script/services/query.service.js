@@ -18,8 +18,17 @@
             return deferred.promise;
         }
 
+        function _remove(tableName, selected) {
+            var deferred = $q.defer();
+            $http.post("/Manage/Delete", { tableName: tableName, selected: selected }).then(function (data) {
+                deferred.resolve(data.data);
+            });
+            return deferred.promise;
+        }
+
         return {
             filter: _filter,
+            remove: _remove,
             getTableFields: _getTableFields
         }
     }

@@ -221,14 +221,19 @@ body,html,document {
 }
 
 .sa-tabs-title {
-    width: 90px;
+    width: 210px;
     height: 23px;
     position: absolute;
     left: 0px;
     top: 0px;
-    background: #ffffff;
+    background: #F2F2F2;
     border: #ACACAC 1px solid;
     border-bottom: none;
+    cursor: pointer;
+    z-index: 998;
+    font-size: 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .sa-tabs-panel {

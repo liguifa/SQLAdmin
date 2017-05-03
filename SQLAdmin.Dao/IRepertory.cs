@@ -25,5 +25,7 @@ namespace SQLAdmin.Dao
         List<Field> GetTableFields(string tableName);
 
         int Count(string tableName);
+
+        bool Remove(RemoveFilter filter);
     }
 }

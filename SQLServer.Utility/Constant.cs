@@ -26,6 +26,18 @@ namespace SQLServer.Utility
         public const string WHERE = "Where";
 
         public const string COUNT = "Count(*)";
+
+        public const string OFFSET = "Offset";
+
+        public const string ROWS = "Rows";
+
+        public const string FETCH = "Fetch";
+
+        public const string ONLY = "Only";
+
+        public const string NEXT = "Next";
+
+        public const string DELETE = "Delete";
         #endregion
     }
 }

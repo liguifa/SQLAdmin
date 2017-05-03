@@ -52,6 +52,32 @@ namespace SQLServer.Dao
             return this;
         }
 
+        public SQLQuery Skip(int number)
+        {
+            this.mQueryKeys.Add(OFFSET);
+            this.mQueryKeys.Add(number.ToString());
+            this.mQueryKeys.Add(ROWS);
+            return this;
+        }
+
+        public SQLQuery Take(int number)
+        {
+            this.mQueryKeys.Add(FETCH);
+            this.mQueryKeys.Add(NEXT);
+            this.mQueryKeys.Add(number.ToString());
+            this.mQueryKeys.Add(ROWS);
+            this.mQueryKeys.Add(ONLY);
+            return this;
+        }
+
+        public SQLQuery Delete(string tableName)
+        {
+            this.mQueryKeys.Insert(0, tableName);
+            this.mQueryKeys.Insert(0, FORM);
+            this.mQueryKeys.Insert(0, DELETE);
+            return this;
+        }
+
         public SQLQuery Count()
         {
             this.Select(COUNT);

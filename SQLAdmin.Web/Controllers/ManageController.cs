@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace SQLAdmin.Web.Controllers
 {
-    public class ManageController : Controller
+    public class ManageController : SQLAdminController
     {
         // GET: Manage
         public ActionResult Query(string name)
@@ -27,9 +27,9 @@ namespace SQLAdmin.Web.Controllers
 
         [HttpPost]
         [Inject]
-        public JsonResult Delete()
+        public JsonResult Delete(RemoveFilter filter)
         {
-            return null;
+            return Json(ServiceFactory.GetInstance().DBManageService.Delete(filter), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

@@ -19,6 +19,23 @@ namespace SQLServer.Service
 
         }
 
+        public bool Delete(RemoveFilter filter)
+        {
+            try
+            {
+                using (var scope = new SQLServerDBContextScope(this.mDBConnect))
+                {
+                    SQLServerDBRepertory db = new SQLServerDBRepertory();
+                    return db.Remove(filter);
+                }
+            }
+            catch(Exception e)
+            {
+                mLog.Error($"An error has occurred in the delete,error:{e.ToString()}");
+                throw;
+            }
+        }
+
         [DBScopeInterecpor]
         public TableDataViewMdoel Select(DataFilter filter)
         {

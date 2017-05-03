@@ -38,21 +38,21 @@ namespace SQLServer.Dao
 
         public DataTable Filter(DataFilter filter)
         {
-            string sql = new SQLQuery().Select("*").From(filter.TableName).OrderBy(filter.SortColumn, filter.IsAsc).Qenerate();
+            string sql = new SQLQuery().Select("*").From(filter.TableName).OrderBy(filter.SortColumn, filter.IsAsc).Skip((filter.PageIndex - 1) * filter.PageSize).Take(filter.PageSize).Qenerate();
             return this.DBContext.SqlReader(sql);
         }
 
         public List<Database> GetDatabases()
         {
             //string sql = "SELECT * FROM Master..SysDatabases ORDER BY crdate";
-            string sql = new SQLQuery().Select("*").From("Master..SysDatabases").OrderBy("crdate").Qenerate();
+            string sql = new SQLQuery().Select("*").From("Master..SysDatabases").OrderBy("crdate", true).Qenerate();
             var dataTable = this.DBContext.SqlReader(sql);
             return dataTable.ToList(row =>
            {
                return new Database()
                {
                    Id = Guid.NewGuid(), //row["dbid"].ToString(),
-                    Name = row["name"].ToString()
+                   Name = row["name"].ToString()
                };
            });
         }
@@ -76,7 +76,7 @@ namespace SQLServer.Dao
         public List<Table> GetTables(string dbName)
         {
             //string sql = $"SELECT * FROM {dbName}..SysObjects Where XType='U' ORDER BY Name";
-            string sql = new SQLQuery().Select("*").From($"{dbName}..SysObjects").Where("type='U'").OrderBy("Name").Qenerate();
+            string sql = new SQLQuery().Select("*").From($"{dbName}..SysObjects").Where("type='U'").OrderBy("Name", true).Qenerate();
             var dataTable = this.DBContext.SqlReader(sql);
             List<Table> tables = new List<Table>();
             return dataTable.ToList(row =>
@@ -113,6 +113,12 @@ namespace SQLServer.Dao
         {
             string sql = new SQLQuery().Count().From(tableName).Qenerate();
             return Convert.ToInt32(this.DBContext.SqlScaler(sql));
+        }
+
+        public bool Remove(RemoveFilter filter)
+        {
+            string sql = new SQLQuery().Delete(filter.TableName).Where($"ID in ('{String.Join("','", filter.Selected.ToArray())}')").Qenerate();
+            return this.DBContext.AccessQuery(sql) > 0;
         }
     }
 }
