@@ -56,5 +56,11 @@ namespace SQLAdmin.Web.Controllers
         {
             return Json(ServiceFactory.GetInstance().DatabaseService.GetTableFields(tableName), JsonRequestBehavior.AllowGet);
         }
+
+        [Inject]
+        public JsonResult GetTableIndexs(string tableName)
+        {
+            return Json(ServiceFactory.GetInstance().DatabaseService.GetTableIndexs(tableName), JsonRequestBehavior.AllowGet);
+        }
     }
 }

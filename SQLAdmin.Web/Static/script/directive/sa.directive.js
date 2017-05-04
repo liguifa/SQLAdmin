@@ -121,9 +121,6 @@
 .directive("saMenu", ["$http", "$compile", function ($http, $compile)
 {
     var self = null;
-    var stamp = {
-        isViewMenu: false
-    }
     var vm = {
         template: "<div class='sa-menu'>\
                         <ul class='sa-menu-list'>\
@@ -142,7 +139,7 @@
                 if (self.vm.menus[i].Id == id)
                 {
                     self.vm.menus[i].IsSelect = true;
-                    stamp.isViewMenu = true;
+                    self.vm.isViewMenu = true;
                 }
                 else
                 {
@@ -152,7 +149,7 @@
         },
         clearSubMenus: function ()
         {
-            if (!stamp.isViewMenu)
+            if (!self.vm.isViewMenu)
             {
                 self.$apply(function ()
                 {
@@ -166,7 +163,8 @@
         Command: function (sub)
         {
             self.select({ menu: sub });
-            stamp.isViewMenu = false;
+            self.vm.isViewMenu = false;
+            return false;
         }
     }
     return {
@@ -184,14 +182,16 @@
                 select: vm.select,
                 clearSubMenus: vm.clearSubMenus,
                 Command: vm.Command,
+                isViewMenu: false
             }
             document.onmousedown = $scope.vm.clearSubMenus;
             self = $scope;
 
-            $scope.$watch("menus", function (menus)
-            {
+            $scope.$watch("menus", function (menus) {
                 $scope.vm.menus = menus;
-            })
+            });
+
+            $scope.$watch("vm.isViewMenu", vm.clearSubMenus)
         }
     }
 }])
@@ -505,8 +505,10 @@
                     contextmenu.style.visibility = "visible";
                 })
             }
+            var func = document.onmousedown;
             document.onmousedown = function()
             {
+                func();
                 var contextmenus = document.getElementsByClassName("sa-contextmenu");
                 for (var i in contextmenus) {
                     if (contextmenus[i].style) {
@@ -547,14 +549,14 @@
     <table class="sa-datagrid">\
         <thead>\
       <tr>\
-        <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"></th>\
-        <th ng-repeat="field in vm.fields">{{field.Name}}</th>\
+        <th><input type="checkbox" name="" ng-change="vm.globalChecked()" ng-model="vm.isGlobalSelected" lay-skin="primary" lay-filter="allChoose"></th>\
+        <th ng-repeat="field in vm.fields">{{field.name}}<div ng-if="field.isPrimary">主键</div></th>\
       </tr> \
     </thead>\
 <tbody>\
-      <tr ng-repeat="row in vm.datas">\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td ng-repeat="field in row track by $index">{{field}}</td>\
+      <tr ng-repeat="row in datas">\
+        <td><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
+        <td ng-repeat="(key,val) in row.rows track by $index">{{val}}</td>\
       </tr>\
 </tbody>\
     </table>\
@@ -568,18 +570,51 @@
         priority: 2,
         scope: {
             datas: "=",
-            fields:"="
+            fields: "=",
+            indexs:"=",
         },
         controller: function ($scope) {
-            $scope.vm = {};
+            $scope.vm = {
+                isGlobalSelected: false,
+                globalChecked: function () {
+                    for (var i in $scope.datas)
+                    {
+                        $scope.datas[i].isSelected = this.isGlobalSelected;
+                    }
+                }
+            };
 
             $scope.$watch("datas", function (datas) {
-                $scope.vm.datas = datas;
+                $scope.vm.isGlobalSelected = false;
+                $scope.vm.globalChecked();
             });
 
             $scope.$watch("fields", function (fields) {
-                $scope.vm.fields = fields;
+                $scope.vm.fields = [];
+                for (var i in fields)
+                {
+                    var f = {
+                        name: fields[i].Name,
+                        isPrimary:false,
+                        isForeign:false
+                    };
+                    $scope.vm.fields.push(f);
+                }
             });
+
+            $scope.$watch("indexs", function (indexs) {
+                for (var i in $scope.fields)
+                {
+                    for (var j in indexs)
+                    {
+                        if(indexs[j].ColumnName == $scope.vm.fields[i].name)
+                        {
+                            $scope.vm.fields[i].isPrimary = indexs[j].Type == 0;
+                            $scope.vm.fields[i].isForeign = indexs[j].Type == 1;
+                        }
+                    }
+                }
+            })
         }
     }
 }])

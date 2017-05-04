@@ -161,6 +161,7 @@
     <Content Include="Static\script\services\database.service.js" />
     <Content Include="Static\script\services\manage.service.js" />
     <Content Include="Static\script\services\query.service.js" />
+    <Content Include="Static\script\services\wrapper.service.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -26,10 +26,20 @@
             return deferred.promise;
         }
 
+        function _getTableIndexs(name) {
+            var deferred = $q.defer();
+            $http.post("/Database/GetTableIndexs", { tableName: name }).then(function (data) {
+                console.log(data);
+                deferred.resolve(data.data);
+            });
+            return deferred.promise;
+        }
+
         return {
             filter: _filter,
             remove: _remove,
-            getTableFields: _getTableFields
+            getTableFields: _getTableFields,
+            getTableIndexs: _getTableIndexs
         }
     }
 

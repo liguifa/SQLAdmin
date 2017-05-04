@@ -44,15 +44,15 @@ namespace SQLAdmin.Utility
             return tables as T;
         }
 
-        public static List<List<string>> To(this DataTable table)
+        public static List<Dictionary<string,string>> To(this DataTable table)
         {
-            List<List<string>> dataSet = new List<List<string>>();
+            List<Dictionary<string, string>> dataSet = new List<Dictionary<string, string>>();
             foreach(DataRow row in table.Rows)
             {
-                List<string> dataRow = new List<string>();
+                Dictionary<string, string> dataRow = new Dictionary<string, string>();
                 foreach (DataColumn column in table.Columns)
                 {
-                    dataRow.Add(row[column].ToString());
+                    dataRow.Add(column.ColumnName,row[column].ToString());
                 }
                 dataSet.Add(dataRow);
             }

@@ -8,7 +8,7 @@ namespace SQLAdmin.Utility.ViewModels
 {
     public class TableDataViewMdoel
     {
-        public List<List<string>> Datas { get; set; }
+        public List<Dictionary<string, string>> Datas { get; set; }
 
         public long Total { get; set; }
 

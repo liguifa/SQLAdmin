@@ -9,12 +9,19 @@
                 totle: 0,
                 pageCount: 0
             },
-            selected:[]
+            indexs:[]
         }
 
         function getDatas() {
             query.filter($scope.vm.tableName, $scope.vm.page).then(function (data) {
-                $scope.vm.datas = data.Datas;
+                for (var i in data.Datas)
+                {
+                    var d = {
+                        isSelected: false,
+                        rows:data.Datas[i]
+                    }
+                    $scope.vm.datas.push(d);
+                }
                 $scope.vm.page = {
                     pageIndex: data.PageIndex,
                     pageSize: data.PageSize,
@@ -28,7 +35,11 @@
             getDatas();
             query.getTableFields($scope.vm.tableName).then(function (data) {
                 $scope.vm.fields = data;
-            })
+                query.getTableIndexs($scope.vm.tableName).then(function (data) {
+                    $scope.vm.indexs = data;
+                });
+            });
+           
         });
 
         //$scope.$watch("vm.page", function () {
@@ -47,6 +58,14 @@
             //}
             //else
             //{
+            var selected = [];
+            for (var i in $scope.vm.datas)
+            {
+                if($scope.vm.datas[i].isSelected)
+                {
+
+                }
+            }
                 query.remove("[RP_UAT_Li].[dbo].[Common_LearningObject]", ["3A19D3C5-39B5-E611-80BA-00155D430A74", "D3634E4B-44B5-E611-80BA-00155D430A74"]).then(function (data) {
                     alert(data);
                 });

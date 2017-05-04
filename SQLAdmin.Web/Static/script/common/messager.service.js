@@ -18,7 +18,7 @@
             alert.style.left = (w - messageInfo.window) / 2 + "px";
             alert.innerHTML = '<div class="messager-alert-title">信息</div><div class="messager-alert-content">' + content + '</div><div class="message-alert-tool"><button id="' + alertId + '_ok_btn">确定</button></div>';
             document.body.appendChild(alert);
-            document.getElementById(alertId + "_ok_htn").onclick = function () {
+            document.getElementById(alertId + "_ok_btn").onclick = function () {
                 document.getElementById(alertId).remove();
             }
         }

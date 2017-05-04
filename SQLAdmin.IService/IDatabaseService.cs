@@ -19,5 +19,7 @@ namespace SQLAdmin.IService
         bool CreateTable(Table table);
 
         List<Field> GetTableFields(string tableName);
+
+        List<Index> GetTableIndexs(string tableName);
     }
 }

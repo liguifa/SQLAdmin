@@ -58,13 +58,33 @@
 }
 
 .messager-alert-error .messager-alert-content{
-    background:url(/Static/Images/icon_error.png) no-repeat;
+    /*background:url(/Static/Images/icon_error.png) no-repeat;*/
     background-position:20px 18px;
     padding:20px 20px 0px 20px;
     padding-top:20px;
     overflow-y:auto;
-    text-indent:4em;
+    text-indent:2em;
 }
+
+.message-alert-tool {
+    padding: 10px 20px 0px 20px;
+    background: #ffffff;
+    height: 40px;
+    width: 100%;
+}
+
+    .message-alert-tool button {
+        background: #065999;
+        border: none;
+        color: #fff;
+        width: 78px;
+        height: 24px;
+        cursor: pointer;
+        font-size: 12px;
+        margin: 10px;
+        margin-top: 8px;
+        float: right;
+    }
 
 .messager-model{
     position:fixed;

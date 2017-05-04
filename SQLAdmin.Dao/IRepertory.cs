@@ -27,5 +27,7 @@ namespace SQLAdmin.Dao
         int Count(string tableName);
 
         bool Remove(RemoveFilter filter);
+
+        List<Index> GetTableIndexs(string tableName);
     }
 }

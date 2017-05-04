@@ -85,6 +85,23 @@ namespace SQLServer.Service
             }
         }
 
+        public List<Index> GetTableIndexs(string tableName)
+        {
+            try
+            {
+                using (var scope = new SQLServerDBContextScope(this.mDBConnect))
+                {
+                    SQLServerDBRepertory db = new SQLServerDBRepertory();
+                    return db.GetTableIndexs(tableName).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                mLog.Error($"An error has occurred in the get table indexs,error:{e.ToString()}");
+                throw;
+            }
+        }
+
         public List<Table> GetTables(string tableName)
         {
             try
