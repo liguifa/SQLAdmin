@@ -151,13 +151,20 @@
         {
             if (!self.vm.isViewMenu)
             {
-                self.$apply(function ()
+                try
                 {
-                    for (var i in self.vm.menus)
+                    self.$apply(function ()
                     {
-                        self.vm.menus[i].IsSelect = false;
-                    }
-                });
+                        for (var i in self.vm.menus)
+                        {
+                            self.vm.menus[i].IsSelect = false;
+                        }
+                    });
+                }
+                catch(e)
+                {
+
+                }
             }
         },
         Command: function (sub)
@@ -184,7 +191,15 @@
                 Command: vm.Command,
                 isViewMenu: false
             }
-            document.onmousedown = $scope.vm.clearSubMenus;
+            var func = document.onmousedown;
+            document.onmousedown = function()
+            {
+                if (func)
+                {
+                    func();
+                }
+                $scope.vm.clearSubMenus();
+            }
             self = $scope;
 
             $scope.$watch("menus", function (menus) {
@@ -300,7 +315,9 @@
                     }
                     $scope.vm.pages.push(page);
                 }
-                $scope.vm.pages[$scope.vm.pages.length - 1].isSelected = true;
+                if ($scope.vm.pages[$scope.vm.pages.length - 1]) {
+                    $scope.vm.pages[$scope.vm.pages.length - 1].isSelected = true;
+                }
             },true);
         }
     }
@@ -316,35 +333,43 @@
         build: function (tree) {
             var self = this;
             var treeElement = document.getElementById(this.id);
-            var rootElement = document.createElement("ul");
-            rootElement.classList.add("sa-tree-ul");
-            if (tree != null) {
-                rootElement.appendChild(this.buildNode(tree));
-            }
-            treeElement.innerHTML = "";
-            treeElement.appendChild(rootElement);
-            treeElement.oncontextmenu = function (e) {
-                e = e || window.event; 　//IE window.event
-                var t = e.target || e.srcElement; //目标对象
-                if (e.type == "contextmenu") {
-                    var contextmenus = document.getElementsByClassName("sa-contextmenu");
-                    for (var i in contextmenus) {
-                        if (contextmenus[i].style) {
-                            contextmenus[i].style.visibility = "";
-                        }
-                    }
-                    var contextmenuId = t.id;
-                    var contextmenu = document.getElementById("contextmenu-"+contextmenuId);
-                    contextmenu.style.visibility = "visible";
+            if (treeElement) {
+                var rootElement = document.createElement("ul");
+                rootElement.classList.add("sa-tree-ul");
+                if (tree != null) {
+                    rootElement.appendChild(this.buildNode(tree));
                 }
-            };
-            treeElement.ondblclick = function(e)
-            {
-                e = e || window.event; 　//IE window.event
-                var t = e.target || e.srcElement; //目标对象
-                var treeId = t.attributes["tree-id"];
-                var selectTree = self.getTreeById(tree, treeId);
-                self.scope.doubleclick({ tree: selectTree });
+                treeElement.innerHTML = "";
+                treeElement.appendChild(rootElement);
+                treeElement.oncontextmenu = function (e) {
+                    e = e || window.event; 　//IE window.event
+                    var t = e.target || e.srcElement; //目标对象
+                    if (e.type == "contextmenu") {
+                        var contextmenus = document.getElementsByClassName("sa-contextmenu");
+                        for (var i in contextmenus) {
+                            if (contextmenus[i].style) {
+                                contextmenus[i].style.visibility = "";
+                            }
+                        }
+                        var contextmenuId = t.id;
+                        var contextmenu = document.getElementById("contextmenu-" + contextmenuId);
+                        contextmenu.style.visibility = "visible";
+                    }
+                };
+                treeElement.ondblclick = function (e) {
+                    e = e || window.event; 　//IE window.event
+                    var t = e.target || e.srcElement; //目标对象
+                    var treeId = t.attributes["tree-id"];
+                    var selectTree = self.getTreeById(tree, treeId);
+                    self.scope.doubleclick({ tree: selectTree });
+                }
+
+                treeElement.onclick = function (e) {
+                    e = e || window.event; 　//IE window.event
+                    var t = e.target || e.srcElement; //目标对象
+                    var command = t.attributes["command"].value;
+                    self.scope.menuCommand({ command: command });
+                }
             }
         },
         buildNode: function (tree) {
@@ -438,7 +463,8 @@
         priority: 2,
         scope: {
             tree: '=',
-            doubleclick:"&"
+            doubleclick: "&",
+            menuCommand:"&"
         },
         controller: function ($scope) {
             $scope.vm = {
@@ -449,7 +475,7 @@
                 },
                 getTables: function (table) {
                     $scope.getTables({ tableName: table });
-                }
+                },
             }
 
             $scope.$watch("tree", function () {
@@ -466,7 +492,7 @@
 .directive("saContextmenu", function ()
 {
     var vm = {
-        template: "<div ng-click='vm.command()' ng-transclude></div>",
+        template: "<div ng-click='vm.command(e)' ng-transclude></div>",
     }
 
     return {
@@ -506,15 +532,21 @@
                 })
             }
             var func = document.onmousedown;
-            document.onmousedown = function()
+            //document.onmousedown = function()
+            //{
+            //    func();
+            //    var contextmenus = document.getElementsByClassName("sa-contextmenu");
+            //    for (var i in contextmenus) {
+            //        if (contextmenus[i].style) {
+            //            contextmenus[i].style.visibility = "";
+            //        }
+            //    }
+            //}
+            element.onclick = function(e)
             {
-                func();
-                var contextmenus = document.getElementsByClassName("sa-contextmenu");
-                for (var i in contextmenus) {
-                    if (contextmenus[i].style) {
-                        contextmenus[i].style.visibility = "";
-                    }
-                }
+                $scope.$apply(function () {
+                    $scope.vm.command(e);
+                });
             }
         }
     }
@@ -550,7 +582,7 @@
         <thead>\
       <tr>\
         <th><input type="checkbox" name="" ng-change="vm.globalChecked()" ng-model="vm.isGlobalSelected" lay-skin="primary" lay-filter="allChoose"></th>\
-        <th ng-repeat="field in vm.fields">{{field.name}}<div ng-if="field.isPrimary">主键</div></th>\
+        <th ng-repeat="field in vm.fields">{{field.name}}<div class="sa-datagrid-content-header-icon" ng-if="field.isPrimary"><img src="/Static/Images/icon_key.png" /></div></th>\
       </tr> \
     </thead>\
 <tbody>\
@@ -788,3 +820,132 @@
         }
     }
 })
+
+.directive("saLines", ["guid.service",function (guid) {
+    var vm = {
+        id:guid.newGuid(),
+        template: '<div id="{{vm.id}}" style="width:1000px;height:500px"></div>',
+        build: function (points, xAxis) {
+            var container = document.getElementById(this.id);
+            var option = {
+                colors: ['#00A8F0', '#C0D800', '#CB4B4B'],  //线条的颜色
+                ieBackgroundColor: '#3ec5ff',                    //选中时的背景颜色
+                title: 'CPU 使用率',               //标题
+                subtitle: '',                           //子标题
+                shadowSize: 3,                                 //线条阴影
+                defaultType: 'lines',                           //图表类型,可选值:bars,bubbles,candles,gantt,lines,markers,pie,points,radar
+                HtmlText: false,                                //是使用html或者canvas显示 true:使用html  false:使用canvas
+                fontColor: '#ff3ec5',                           //字体颜色
+                fontSize: 7.5,                                  //字体大小
+                resolution: 1,                                  //分辨率 数字越大越模糊
+                parseFloat: true,                               //是否将数据转化为浮点型
+                xaxis: {
+                    //ticks: [[1, "一月"], [2, "二月"], [3, "三月"], [4, "四月"], [5, "五月"], [6, "六月"], [7, "七月"], [8, "八月"], [9, "九月"], [10, "十月"], [11, "十一月"], [12, "十二月"]], // 自定义X轴
+                    xaxis:xAxis,
+                    minorTicks: null,
+                    showLabels: true,                             // 是否显示X轴刻度
+                    showMinorLabels: false,
+                    labelsAngle: 15,                              //x轴文字倾斜角度
+                    title: '时间',                                 //x轴标题
+                    titleAngle: 0,                                //x轴标题倾斜角度
+                    noTicks: 12,                                   //当使用自动增长时,x轴刻度的个数
+                    minorTickFreq: null,                           //
+                    tickFormatter: Flotr.defaultTickFormatter,   //刻度的格式化方式
+                    tickDecimals: 0,                              //刻度小数点后的位数
+                    min: null,                                    //刻度最小值  X轴起点的值
+                    max: null,                                    //刻度最大值
+                    autoscale: true,
+                    autoscaleMargin: 0,
+                    color: null,                             //x轴刻度的颜色
+                    mode: 'normal',
+                    timeFormat: null,
+                    timeMode: 'UTC',                               //For UTC time ('local' for local time).
+                    timeUnit: 'year',                             //时间单位 (millisecond, second, minute, hour, day, month, year) 
+                    scaling: 'linear',                            //linear or logarithmic
+                    base: Math.E,
+                    titleAlign: 'center',                         //标题对齐方式
+                    margin: true
+                },
+                x2axis: {
+                },
+                yaxis: {
+                    //// =>  Y轴配置与X轴类似
+                    ticks: [[0, "0"], [10, "10"], [20, "20"], [30, "30"], [40, "40"], [50, "50"], [60, "60"], [70, "70"], [80, "80"], [90, "90"], [100,"100"] ],
+                    minorTicks: null,      // =>  format: either [1, 3] or [[1, 'a'], 3]
+                    showLabels: true,      // =>  setting to true will show the axis ticks labels, hide otherwise
+                    showMinorLabels: false,// =>  true to show the axis minor ticks labels, false to hide
+                    labelsAngle: 0,        // =>  labels' angle, in degrees
+                    title: '使用率',           // =>  axis title
+                    titleAngle: 90,        // =>  axis title's angle, in degrees
+                    noTicks: null,            // =>  number of ticks for automagically generated ticks
+                    minorTickFreq: null,   // =>  number of minor ticks between major ticks for autogenerated ticks
+                    tickFormatter: Flotr.defaultTickFormatter, // =>  fn: number, Object ->  string
+                    tickDecimals: 'no',    // =>  no. of decimals, null means auto
+                    min: 0,             // =>  min. value to show, null means set automatically
+                    max: 100,             // =>  max. value to show, null means set automatically
+                    autoscale: false,      // =>  Turns autoscaling on with true
+                    autoscaleMargin: 0,    // =>  margin in % to add if auto-setting min/max
+                    color: null,           // =>  The color of the ticks
+                    scaling: 'linear',     // =>  Scaling, can be 'linear' or 'logarithmic'
+                    base: Math.E,
+                    titleAlign: 'center',
+                    margin: true           // =>  Turn off margins with false
+                },
+                y2axis: {
+                },
+                grid: {
+                    color: '#545454',      // =>  表格外边框和标题以及所有刻度的颜色
+                    backgroundColor: null, // =>  表格背景颜色
+                    backgroundImage: null, // =>  表格背景图片
+                    watermarkAlpha: 0.4,   // =>  水印透明度
+                    tickColor: '#DDDDDD',  // =>  表格内部线条的颜色
+                    labelMargin: 1,        // =>  margin in pixels
+                    verticalLines: true,   // =>  表格内部是否显示垂直线条
+                    minorVerticalLines: null, // =>  whether to show gridlines for minor ticks in vertical dir.
+                    horizontalLines: true, // =>  表格内部是否显示水平线条
+                    minorHorizontalLines: null, // =>  whether to show gridlines for minor ticks in horizontal dir.
+                    outlineWidth: 1,       // =>  表格外边框的粗细
+                    outline: 'nsew',      // =>  超出显示范围后的显示方式
+                    circular: false        // =>  是否以环形的方式显示
+                },
+                mouse: {
+                    track: true,          // =>  为true时,当鼠标移动到每个折点时,会显示折点的坐标
+                    trackAll: true,       // =>  为true时,当鼠标在线条上移动时,显示所在点的坐标
+                    position: 'se',        // =>  鼠标事件显示数据的位置 (default south-east)
+                    relative: false,       // =>  当为true时,鼠标移动时,即使不在线条上,也会显示相应点的数据
+                    trackFormatter: Flotr.defaultTrackFormatter, // =>  formats the values in the value box
+                    margin: 5,             // =>  margin in pixels of the valuebox
+                    lineColor: '#FF3F19',  // =>  鼠标移动到线条上时,点的颜色
+                    trackDecimals: 0,      // =>  数值小数点后的位数
+                    sensibility: 2,        // =>  值越小,鼠标事件越精确
+                    trackY: true,          // =>  whether or not to track the mouse in the y axis
+                    radius: 3,             // =>  radius of the track point
+                    fillColor: null,       // =>  color to fill our select bar with only applies to bar and similar graphs (only bars for now)
+                    fillOpacity: 0.4       // =>  o
+                }
+            };
+            Flotr.draw(container, points, option);
+        }
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        scope: {
+            points: "=",
+            xaxis:"="
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                id: vm.id
+            }
+            $scope.$watch("points", function (points) {
+                vm.build(points, $scope.xaxis);
+            }, true);
+            $scope.$watch("xaxis", function (xaxis) {
+                vm.build($scope.points, xaxis);
+            }, true);
+        },
+    }
+}])

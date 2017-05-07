@@ -212,15 +212,28 @@ body,html,document {
     right: 3px;
 }
 
+.sa-tabs-tab{
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+
 .sa-tabs-title {
-    width: 90px;
+    width: 210px;
     height: 23px;
     position: absolute;
     left: 0px;
     top: 0px;
-    background: #ffffff;
+    background: #F2F2F2;
     border: #ACACAC 1px solid;
     border-bottom: none;
+    cursor: pointer;
+    z-index: 998;
+    font-size: 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .sa-tabs-panel {
@@ -231,10 +244,17 @@ body,html,document {
     border: #ACACAC 1px solid;
 }
 
+.sa-table-panel-iframe{
+    border:none;
+    width:100%;
+    height:100%;
+}
+
 .sa-tree-ul {
     list-style: none;
     padding: 0px;
     margin: 0px;
+    background: #ffffff;
 }
 
 .sa-tree-li {
@@ -272,6 +292,8 @@ body,html,document {
     background-color: #fff;
     line-height: 22px;
     border-collapse: collapse;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
 
     .sa-datagrid thead tr {
@@ -289,8 +311,12 @@ body,html,document {
 
 .sa-datagrid-content {
     overflow-y: scroll;
-    height: 100%;
+    overflow-x:auto;
+    height: 77%;
+    width:100%;
     margin: 0px;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
 
 .sa-datagrid-content-td {
@@ -307,6 +333,17 @@ body,html,document {
     text-align: left;
     height: 25%;
 }
+
+.sa-datagrid-content-header-icon{
+    float:right;
+    width:16px;
+    height:16px;
+}
+
+    .sa-datagrid-content-header-icon img {
+        width: 16px;
+        height: 16px;
+    }
 
 .sa-blockquote {
     margin-bottom: 0px;
@@ -447,3 +484,39 @@ body,html,document {
         background: #F0F0F0;
         border: #F0F0F0 1px solid;
     }
+
+.sa-contextmenu-sub {
+    margin-left: 185px;
+}
+
+.sa-contextmenu ul li:hover .sa-contextmenu-sub {
+    visibility: visible;
+}
+
+.sa-contextmenu ul li:hover .sa-contextmenu-title-sub {
+    background: #fff !important;
+    border: #ffffff 1px solid !important;
+    border-left: none !important;
+}
+
+.sa-contextmenu ul li:hover .sa-contextmenu-i-sub {
+    background: #F0F0F0 !important;
+    border: #F0F0F0 1px solid !important;
+}
+
+.sa-contextmenu-sub ul li:hover .sa-contextmenu-title {
+    background: #FFECB5 !important;
+    border: #E5C365 1px solid !important;
+    float: right !important;
+    border-left: none !important;
+    width: 147px !important;
+}
+
+.sa-contextmenu-sub ul li:hover .sa-contextmenu-i {
+    background: #FFECB5 !important;
+    border: none !important;
+    height: 18px !important;
+    border: #E5C365 1px solid !important;
+    border-right: #FFECB5 1px solid !important;
+}
+

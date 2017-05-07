@@ -62,5 +62,7 @@ namespace SQLAdmin.IService
         public IDatabaseService DatabaseService { get { return InterceptorFactory.GetInstance<IDatabaseService>(mContainer.Resolve<IDatabaseService>(this.mParameter)); } }
 
         public IDBManageService DBManageService { get { return InterceptorFactory.GetInstance<IDBManageService>(mContainer.Resolve<IDBManageService>(this.mParameter)); } }
+
+        public IDBReportService DBReportService { get { return InterceptorFactory.GetInstance<IDBReportService>(mContainer.Resolve<IDBReportService>(this.mParameter)); } }
     }
 }

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CPUInfo.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DataFilter.cs" />
     <Compile Include="DBConnect.cs" />

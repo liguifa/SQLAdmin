@@ -121,9 +121,6 @@
 .directive("saMenu", ["$http", "$compile", function ($http, $compile)
 {
     var self = null;
-    var stamp = {
-        isViewMenu: false
-    }
     var vm = {
         template: "<div class='sa-menu'>\
                         <ul class='sa-menu-list'>\
@@ -142,7 +139,7 @@
                 if (self.vm.menus[i].Id == id)
                 {
                     self.vm.menus[i].IsSelect = true;
-                    stamp.isViewMenu = true;
+                    self.vm.isViewMenu = true;
                 }
                 else
                 {
@@ -152,7 +149,7 @@
         },
         clearSubMenus: function ()
         {
-            if (!stamp.isViewMenu)
+            if (!self.vm.isViewMenu)
             {
                 self.$apply(function ()
                 {
@@ -166,7 +163,8 @@
         Command: function (sub)
         {
             self.select({ menu: sub });
-            stamp.isViewMenu = false;
+            self.vm.isViewMenu = false;
+            return false;
         }
     }
     return {
@@ -184,14 +182,24 @@
                 select: vm.select,
                 clearSubMenus: vm.clearSubMenus,
                 Command: vm.Command,
+                isViewMenu: false
             }
-            document.onmousedown = $scope.vm.clearSubMenus;
+            var func = document.onmousedown;
+            document.onmousedown = function()
+            {
+                if (func)
+                {
+                    func();
+                }
+                $scope.vm.clearSubMenus();
+            }
             self = $scope;
 
-            $scope.$watch("menus", function (menus)
-            {
+            $scope.$watch("menus", function (menus) {
                 $scope.vm.menus = menus;
-            })
+            });
+
+            $scope.$watch("vm.isViewMenu", vm.clearSubMenus)
         }
     }
 }])
@@ -223,13 +231,37 @@
     }
 })
 
-.directive('saTabs', function ()
+.directive('saTabs', ["guid.service", "$http", "$compile", function (guid, $http, $compile)
 {
     var vm = {
-        template: "<div class='sa-tabs'>\
-                        <div class='sa-tabs-title'></div>\
-                        <div class='sa-tabs-panel' ng-transclude></div>\
-                   </div>"
+        id: guid.newGuid(),
+        template: "<div class='sa-tabs' id='{{vm.id}}'>\
+                    <div class='sa-tabs-tab' ng-repeat='page in vm.pages' id='{{page.id}}' style='z-index:{{page.isSelected?990:989}}'>\
+                        <div class='sa-tabs-title' style='left:{{$index*210}}px' ng-click='vm.click_title(page.id)'>{{page.title}}</div>\
+                        <div class='sa-tabs-panel' ng-if='page.isSelected'><div ng-include src='page.url'></div></div>\
+                    </div>\
+                   </div>",
+        build: function ($scope,pages) {
+            var self = this;
+            for (var i in pages)
+            {
+                $http.get(pages[i].url).then(function (data) {
+                    var tabs = document.getElementById(self.id);
+                    var tab = document.createElement("div");
+                    tab.classList.add("sa-tabs-tab");
+                    tab.attributes["data-tab-id"] = pages[i].id;
+                    var title = document.createElement("div");
+                    title.classList.add("sa-tabs-title");
+                    title.style.left = (i * 90) + "px";
+                    var panel = document.createElement("div");
+                    panel.appendChild($compile(data.data)($scope)[0]);
+                    panel.classList.add("sa-tabs-panel");
+                    tab.appendChild(title);
+                    tab.appendChild(panel);
+                    tabs.appendChild(tab);
+                });
+            }
+        }
     }
     return {
         restrict: "E",
@@ -237,12 +269,50 @@
         replace: true,
         transclude: true,
         scope: {
+            pages:"=",
         },
         controller: function ($scope)
         {
+            $scope.vm = {
+                id: vm.id,
+                click_title:function(panel_id)
+                {
+                    //var panels = document.getElementsByClassName("sa-tabs-tab");
+                    //for (var i = 0; i < panels.length; i++)
+                    //{
+                    //    panels[i].style.zIndex = 997;
+                    //}
+                    //document.getElementById(panel_id).style.zIndex = 998;
+                    for(var i in $scope.vm.pages)
+                    {
+                        if($scope.vm.pages[i].id == panel_id)
+                        {
+                            $scope.vm.pages[i].isSelected = true;
+                        }
+                        else
+                        {
+                            $scope.vm.pages[i].isSelected = false;
+                        }
+                    }
+                }
+            }
+            $scope.$watch("pages", function (pages) {
+                $scope.vm.pages = [];
+                for (var i in pages)
+                {
+                    var page = {
+                        isSelected: false,
+                        url: pages[i].url,
+                        id: pages[i].id,
+                        title:pages[i].title
+                    }
+                    $scope.vm.pages.push(page);
+                }
+                $scope.vm.pages[$scope.vm.pages.length - 1].isSelected = true;
+            },true);
         }
     }
-})
+}])
 
 .directive('saTree', function ()
 {
@@ -283,6 +353,14 @@
                 var treeId = t.attributes["tree-id"];
                 var selectTree = self.getTreeById(tree, treeId);
                 self.scope.doubleclick({ tree: selectTree });
+            }
+
+            treeElement.onclick = function(e)
+            {
+                e = e || window.event; 　//IE window.event
+                var t = e.target || e.srcElement; //目标对象
+                var command = t.attributes["command"].value;
+                self.scope.menuCommand({ command: command });
             }
         },
         buildNode: function (tree) {
@@ -376,7 +454,8 @@
         priority: 2,
         scope: {
             tree: '=',
-            doubleclick:"&"
+            doubleclick: "&",
+            menuCommand:"&"
         },
         controller: function ($scope) {
             $scope.vm = {
@@ -387,7 +466,7 @@
                 },
                 getTables: function (table) {
                     $scope.getTables({ tableName: table });
-                }
+                },
             }
 
             $scope.$watch("tree", function () {
@@ -404,7 +483,7 @@
 .directive("saContextmenu", function ()
 {
     var vm = {
-        template: "<div ng-click='vm.command()' ng-transclude></div>",
+        template: "<div ng-click='vm.command(e)' ng-transclude></div>",
     }
 
     return {
@@ -443,14 +522,22 @@
                     contextmenu.style.visibility = "visible";
                 })
             }
-            document.onmousedown = function()
+            var func = document.onmousedown;
+            //document.onmousedown = function()
+            //{
+            //    func();
+            //    var contextmenus = document.getElementsByClassName("sa-contextmenu");
+            //    for (var i in contextmenus) {
+            //        if (contextmenus[i].style) {
+            //            contextmenus[i].style.visibility = "";
+            //        }
+            //    }
+            //}
+            element.onclick = function(e)
             {
-                var contextmenus = document.getElementsByClassName("sa-contextmenu");
-                for (var i in contextmenus) {
-                    if (contextmenus[i].style) {
-                        contextmenus[i].style.visibility = "";
-                    }
-                }
+                $scope.$apply(function () {
+                    $scope.vm.command(e);
+                });
             }
         }
     }
@@ -478,189 +565,25 @@
     }
 })
 
-.directive('saDatagrid', function ()
+.directive('saDatagrid', ["guid.service",function (guid)
 {
     var vm = {
-        template: '<table class="sa-datagrid">\
-    <colgroup>\
-      <col width="50">\
-      <col width="150">\
-      <col width="150">\
-      <col width="200">\
-      <col>\
-    </colgroup>\
-    <thead>\
+        template: '<div class="sa-datagrid-content">\
+    <table class="sa-datagrid">\
+        <thead>\
       <tr>\
-        <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"></th>\
-        <th>人物</th>\
-        <th>民族</th>\
-        <th>出场时间</th>\
-        <th>格言</th>\
+        <th><input type="checkbox" name="" ng-change="vm.globalChecked()" ng-model="vm.isGlobalSelected" lay-skin="primary" lay-filter="allChoose"></th>\
+        <th ng-repeat="field in vm.fields">{{field.name}}<div class="sa-datagrid-content-header-icon" ng-if="field.isPrimary"><img src="/Static/Images/icon_key.png" /></div></th>\
       </tr> \
     </thead>\
 <tbody>\
-<tr><td colspan="5" class="sa-datagrid-content-td"><div class="sa-datagrid-content">\
-    <table class="sa-datagrid">\
-<colgroup>\
-      <col width="50">\
-      <col width="150">\
-      <col width="150">\
-      <col width="200">\
-      <col>\
-    </colgroup>\
-<tbody>\
-      <tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>贤心</td>\
-        <td>汉族</td>\
-        <td>1989-10-14</td>\
-        <td>人生似修行</td>\
-      </tr>\
-      <tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>张爱玲</td>\
-        <td>汉族</td>\
-        <td>1920-09-30</td>\
-        <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>\
-      </tr>\
-      <tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>Helen Keller</td>\
-        <td>拉丁美裔</td>\
-        <td>1880-06-27</td>\
-        <td> Life is either a daring adventure or nothing.</td>\
-      </tr>\
-      <tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>岳飞</td>\
-        <td>汉族</td>\
-        <td>1103-北宋崇宁二年</td>\
-        <td>教科书再滥改，也抹不去“民族英雄”的事实</td>\
-      </tr>\
-      <tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
-      </tr>\
-<tr>\
-        <td><input type="checkbox" name="" lay-skin="primary"></td>\
-        <td>孟子</td>\
-        <td>华夏族（汉族）</td>\
-        <td>公元前-372年</td>\
-        <td>猿强，则国强。国强，则猿更强！ </td>\
+      <tr ng-repeat="row in datas">\
+        <td><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
+        <td ng-repeat="(key,val) in row.rows track by $index">{{val}}</td>\
       </tr>\
 </tbody>\
     </table>\
-</div></td></tr>\
-</tbody>\
-  </table>'
+</div>',
     }
 
     return {
@@ -669,13 +592,55 @@
         replace: true,
         priority: 2,
         scope: {
+            datas: "=",
+            fields: "=",
+            indexs:"=",
         },
-        controller: function ($scope)
-        {
+        controller: function ($scope) {
+            $scope.vm = {
+                isGlobalSelected: false,
+                globalChecked: function () {
+                    for (var i in $scope.datas)
+                    {
+                        $scope.datas[i].isSelected = this.isGlobalSelected;
+                    }
+                }
+            };
 
+            $scope.$watch("datas", function (datas) {
+                $scope.vm.isGlobalSelected = false;
+                $scope.vm.globalChecked();
+            });
+
+            $scope.$watch("fields", function (fields) {
+                $scope.vm.fields = [];
+                for (var i in fields)
+                {
+                    var f = {
+                        name: fields[i].Name,
+                        isPrimary:false,
+                        isForeign:false
+                    };
+                    $scope.vm.fields.push(f);
+                }
+            });
+
+            $scope.$watch("indexs", function (indexs) {
+                for (var i in $scope.fields)
+                {
+                    for (var j in indexs)
+                    {
+                        if(indexs[j].ColumnName == $scope.vm.fields[i].name)
+                        {
+                            $scope.vm.fields[i].isPrimary = indexs[j].Type == 0;
+                            $scope.vm.fields[i].isForeign = indexs[j].Type == 1;
+                        }
+                    }
+                }
+            })
         }
     }
-})
+}])
 
 .directive("saBlockquote", function ()
 {
@@ -756,20 +721,45 @@
     var vm = {
         template: '<div class="sa-pagination">\
                     <ul>\
-                        <li><a href="javascript:;" data-page="2">上一页</a></li>\
-                        <li><a href="javascript:;" data-page="2">1</a></li>\
-                        <li><a href="javascript:;" data-page="2" class="sa-pagination-active">2</a></li>\
-                        <li><a href="javascript:;" data-page="2">3</a></li>\
-                        <li><a href="javascript:;" data-page="2">4</a></li>\
-                        <li><a href="javascript:;" data-page="2">5</a></li>\
-                        <li><a href="javascript:;" data-page="2">6</a></li>\
-                        <li><a href="javascript:;" data-page="2">7</a></li>\
-                        <li><a href="javascript:;" data-page="2">8</a></li>\
-                        <li><a href="javascript:;" data-page="2">9</a></li>\
-                        <li><a href="javascript:;" data-page="2">10</a></li>\
-                        <li><a href="javascript:;" data-page="2">下一页</a></li>\
+                        <li ng-repeat="page in vm.pages"><a href="{{page.url}}" data-page="2" class="{{page._class}}" ng-click="vm.jump(page.index)">{{page.text}}</a></li>\
                     </ul>\
-                   </div>'
+                   </div>',
+        buildPages: function (page, pageNumber) {
+            var pages = [];
+            var startNumber = page.pageIndex <= pageNumber / 2 ? 1 : page.pageIndex - pageNumber / 2 + 1;
+            var minPageNumber = Math.min(startNumber + pageNumber - 1, page.pageCount);
+            if (page.pageIndex != 1)
+            {
+                var inPage = {
+                    url: "javascripe:#",
+                    text: "上一页",
+                    _class: "",
+                    index: page.pageIndex - 1
+                }
+                pages.push(inPage);
+            }
+            for (var i = startNumber ; i <= minPageNumber; i++)
+            {
+                var inPage = {
+                    url: "javascripe:#",
+                    text: i,
+                    _class: i == page.pageIndex ? "sa-pagination-active" : "",
+                    index: i
+                };
+                pages.push(inPage);
+            }
+            if (page.pageIndex != page.pageCount)
+            {
+                var inPage = {
+                    url: "javascripe:#",
+                    text: "下一页",
+                    _class: "",
+                    index: page.pageIndex + 1
+                }
+                pages.push(inPage);
+            }
+            return pages;
+        }
     };
 
     return {
@@ -778,10 +768,23 @@
         replace: true,
         priority: 1,
         scope: {
+            page: "=",
+            pageNumber: "=",
+            click:"&"
         },
         controller: function ($scope)
         {
-
+            $scope.vm = {};
+            $scope.pageNumber = 10;
+            $scope.$watch("page", function (page) {
+                $scope.vm.pages = vm.buildPages(page,10);
+            }, true);
+            //$scope.$watch("pageNumber", function (number) {
+            //    $scope.vm.pages = vm.buildPages($scope.page, number);
+            //});
+            $scope.vm.jump = function (index) {
+                $scope.click({ pageIndex: index });
+            }
         }
     }
 })
@@ -808,3 +811,39 @@
         }
     }
 })
+
+.directive("saLines", ["guid.service",function (guid) {
+    var vm = {
+        id:guid.newGuid(),
+        template: '<div id="{{vm.id}}" style="width:600px;height:400px"></div>',
+        build: function () {
+            var container = document.getElementById(this.id);
+            var d1 = [[0, 3], [4, 8], [8, 5], [9, 13]], // First data series
+            i, graph;
+
+            // Draw Graph
+            graph = Flotr.draw(container, [d1], {
+                xaxis: {
+                    minorTickFreq: 4
+                },
+                grid: {
+                    minorVerticalLines: true
+                }
+            });
+        }
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        scope: {
+
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                id: vm.id
+            }
+        },
+    }
+}])

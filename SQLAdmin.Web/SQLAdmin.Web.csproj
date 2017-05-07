@@ -152,10 +152,13 @@
     <Content Include="Static\script\controller\gui.common.controller.js" />
     <Content Include="Static\script\controller\manage.controller.js" />
     <Content Include="Static\script\controller\query.controller.js" />
+    <Content Include="Static\script\controller\report.controller.js" />
     <Content Include="Static\script\directive\sa.directive.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Static\script\directive\sa.report.directive.js" />
     <Content Include="Static\script\lib\base64.min.js" />
+    <Content Include="Static\script\lib\flotr2.min.js" />
     <Content Include="Static\script\services\common.service.js" />
     <Content Include="Static\script\services\connect.service.js" />
     <Content Include="Static\script\services\database.service.js" />
@@ -173,6 +176,7 @@
     <Compile Include="Controllers\DatabaseController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\SQLAdminController.cs" />
     <Compile Include="Convert\MenuConvert.cs" />
     <Compile Include="Global.asax.cs">
@@ -201,6 +205,7 @@
     <Content Include="Views\Manage\Query.cshtml" />
     <Content Include="Static\script\common\event.service.js" />
     <Content Include="Static\script\common\session.service.js" />
+    <Content Include="Views\Report\Cpu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

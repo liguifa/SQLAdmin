@@ -126,7 +126,7 @@ namespace SQLServer.Dao
             var dbName = tableName.Split('.').First();
             var tbName = tableName.Split('.').Last().Remove(0, 1);
             tbName = tbName.Remove(tbName.Length - 1, 1);
-            string sql = $"select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from RP_DB..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from RP_DB..sysindexkeys as t_key inner join RP_DB..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from {dbName}..sysobjects where Name = '{tbName}')) as _index on _index.colid = _col.colid where _col.id = _index.id";
+            string sql = $"select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from {dbName}..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from {dbName}..sysindexkeys as t_key inner join {dbName}..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from {dbName}..sysobjects where Name = '{tbName}')) as _index on _index.colid = _col.colid where _col.id = _index.id";
             var dataTable = this.DBContext.SqlReader(sql);
             return dataTable.ToList(row =>
             {
@@ -136,6 +136,41 @@ namespace SQLServer.Dao
                     ColumnName = row["colname"].ToString(),
                     IndexName = row["indname"].ToString(),
                     Type = row["indid"].ToString().Equals("1", StringComparison.OrdinalIgnoreCase) ? IndexType.Primary : IndexType.Foreign
+                };
+            });
+        }
+
+        public List<CPUInfo> GetCPUInfos()
+        {
+            string sql = @"DECLARE @ts_now bigint = (SELECT cpu_ticks/(cpu_ticks/ms_ticks)FROM sys.dm_os_sys_info);
+
+SELECT SQLProcessUtilization AS[SQL Server Process CPU Utilization], 
+               SystemIdle AS[System Idle Process],
+               100 - SystemIdle - SQLProcessUtilization AS[Other Process CPU Utilization], 
+               DATEADD(ms, -1 * (@ts_now - [timestamp]), GETDATE()) AS[Event Time]
+FROM(
+      SELECT record.value('(./Record/@id)[1]', 'int') AS record_id,
+            record.value('(./Record/SchedulerMonitorEvent/SystemHealth/SystemIdle)[1]', 'int')
+            AS[SystemIdle],
+            record.value('(./Record/SchedulerMonitorEvent/SystemHealth/ProcessUtilization)[1]',
+            'int')
+            AS[SQLProcessUtilization], [timestamp]
+      FROM(
+            SELECT[timestamp], CONVERT(xml, record) AS[record]
+            FROM sys.dm_os_ring_buffers
+            WHERE ring_buffer_type = N'RING_BUFFER_SCHEDULER_MONITOR'
+            AND record LIKE N'%<SystemHealth>%') AS x
+      ) AS y
+ORDER BY record_id DESC; ";
+            var dataTable = this.DBContext.SqlReader(sql);
+            return dataTable.ToList(row =>
+            {
+                return new CPUInfo()
+                {
+                    DBProess = Convert.ToInt32(row["SQL Server Process CPU Utilization"]),
+                    IDLEProcess = Convert.ToInt32(row["System Idle Process"]),
+                    OtherProcess = Convert.ToInt32(row["Other Process CPU Utilization"]),
+                    EventTime = row["Event Time"].ToString()
                 };
             });
         }

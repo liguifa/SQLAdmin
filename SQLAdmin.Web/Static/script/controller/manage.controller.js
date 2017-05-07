@@ -1,7 +1,7 @@
 ﻿(function () {
-    function manage_controller($scope, manage, event, constant,guid) {
+    function manage_controller($scope, manage, event, constant, guid) {
         $scope.vm = {
-            pages:[]
+            pages: []
         }
 
         event.register(constant.SELECT, function (table) {
@@ -15,6 +15,17 @@
                 $scope.vm.pages.push(page);
             });
         });
+
+        event.register(constant.CPU, function () {
+            $scope.$apply(function () {
+                var page = {
+                    id: guid.newGuid(),
+                    url: "/Report/Cpu",
+                    title: "cpu 统计",
+                }
+                $scope.vm.pages.push(page);
+            });
+        })
     }
 
     angular.module("admin").controller("manage.controller", ["$scope", "manage.service", "event.service", "constant.service", "guid.service", manage_controller]);

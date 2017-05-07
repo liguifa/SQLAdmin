@@ -2,7 +2,8 @@
     function constant_service() {
         return {
             CONNECTED: "connected",
-            SELECT: "SELECT"
+            SELECT: "SELECT",
+            CPU: "getcpuinfo",
         }
     }
 

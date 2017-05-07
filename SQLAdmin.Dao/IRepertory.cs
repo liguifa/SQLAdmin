@@ -29,5 +29,7 @@ namespace SQLAdmin.Dao
         bool Remove(RemoveFilter filter);
 
         List<Index> GetTableIndexs(string tableName);
+
+        List<CPUInfo> GetCPUInfos();
     }
 }
