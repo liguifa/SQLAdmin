@@ -174,5 +174,24 @@ ORDER BY record_id DESC; ";
                 };
             });
         }
+
+        public List<ConnectedInfo> GetConnectedInfos()
+        {
+            string sql = @" DECLARE @ts_now bigint = (SELECT cpu_ticks/(cpu_ticks/ms_ticks)FROM sys.dm_os_sys_info);
+  SELECT record.value('(./Record/@id)[1]', 'int') AS record_id,
+            record.value('(./Record/ConnectivityTraceRecord/RemoteHost)[1]', 'varchar(100)')
+            AS ip, DATEADD(ms, -1 * (@ts_now - [timestamp]), GETDATE()) AS[Event Time] 
+			from
+ (SELECT timestamp, CONVERT(xml, record) as record FROM sys.dm_os_ring_buffers where ring_buffer_type = 'RING_BUFFER_CONNECTIVITY') as t";
+            var dataTable = this.DBContext.SqlReader(sql);
+            return dataTable.ToList(row =>
+            {
+                return new ConnectedInfo
+                {
+                    EventTime = row["Event Time"].ToString(),
+                    Ip = row["ip"].ToString()
+                };
+            });
+        }
     }
 }

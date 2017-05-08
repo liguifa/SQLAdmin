@@ -31,5 +31,7 @@ namespace SQLAdmin.Dao
         List<Index> GetTableIndexs(string tableName);
 
         List<CPUInfo> GetCPUInfos();
+
+        List<ConnectedInfo> GetConnectedInfos();
     }
 }

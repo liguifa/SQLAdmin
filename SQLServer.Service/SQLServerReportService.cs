@@ -17,6 +17,28 @@ namespace SQLServer.Service
 
         }
 
+        public List<ConnectedInfo> GetConnectedInfos()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ConnectedSummary> GetConnectedSummary()
+        {
+            try
+            {
+                using (var scope = new SQLServerDBContextScope(this.mDBConnect))
+                {
+                    SQLServerDBRepertory db = new SQLServerDBRepertory();
+                    List<ConnectedInfo> infos = db.GetConnectedInfos();
+                    return infos.Select(d => d.Ip).Distinct().Select(d => new ConnectedSummary() { Ip = d, Total = infos.Count(i => d == i.Ip) }).ToList();
+                }
+            }
+            catch(Exception e)
+            {
+                throw;
+            }
+        }
+
         public List<CPUInfo> GetCPUInfos()
         {
             try

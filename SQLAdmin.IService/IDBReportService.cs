@@ -10,5 +10,9 @@ namespace SQLAdmin.IService
     public interface IDBReportService
     {
         List<CPUInfo> GetCPUInfos();
+
+        List<ConnectedInfo> GetConnectedInfos();
+
+        List<ConnectedSummary> GetConnectedSummary();
     }
 }

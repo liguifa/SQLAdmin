@@ -1,0 +1,13 @@
+﻿.cpuinfo-nav {
+    border-bottom: 1px solid #808080;
+}
+
+    .cpuinfo-nav ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+
+        .cpuinfo-nav ul li {
+            float: left;
+        }

@@ -9,8 +9,18 @@
             return deferred.promise;
         }
 
+        function _getConnectedSummary() {
+            var deferred = $q.defer();
+            $http.post("/Report/GetConnectedSummary", { tableName: name }).then(function (data) {
+                console.log(data);
+                deferred.resolve(data.data);
+            });
+            return deferred.promise;
+        }
+
         return {
-            getCPUInfos: _getCPUInfos
+            getCPUInfos: _getCPUInfos,
+            getConnectedSummary: _getConnectedSummary
         }
     }
 

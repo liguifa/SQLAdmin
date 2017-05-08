@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Static\css\cpuinfo.css" />
     <Content Include="Static\css\messager.css" />
     <Content Include="Static\css\sa.icon.css" />
     <Content Include="Static\css\sa.style.css">
@@ -164,6 +165,7 @@
     <Content Include="Static\script\services\database.service.js" />
     <Content Include="Static\script\services\manage.service.js" />
     <Content Include="Static\script\services\query.service.js" />
+    <Content Include="Static\script\services\report.service.js" />
     <Content Include="Static\script\services\wrapper.service.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -206,6 +208,8 @@
     <Content Include="Static\script\common\event.service.js" />
     <Content Include="Static\script\common\session.service.js" />
     <Content Include="Views\Report\Cpu.cshtml" />
+    <Content Include="Views\Report\Memory.cshtml" />
+    <Content Include="Views\Report\Connect.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -4,6 +4,8 @@
             CONNECTED: "connected",
             SELECT: "SELECT",
             CPU: "getcpuinfo",
+            Memory: "getmemoryinfo",
+            CONNECT_INFO:"getconnectinfo",
         }
     }
 

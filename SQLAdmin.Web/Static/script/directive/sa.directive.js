@@ -532,21 +532,15 @@
                 })
             }
             var func = document.onmousedown;
-            //document.onmousedown = function()
-            //{
-            //    func();
-            //    var contextmenus = document.getElementsByClassName("sa-contextmenu");
-            //    for (var i in contextmenus) {
-            //        if (contextmenus[i].style) {
-            //            contextmenus[i].style.visibility = "";
-            //        }
-            //    }
-            //}
-            element.onclick = function(e)
+            document.onmousedown = function()
             {
-                $scope.$apply(function () {
-                    $scope.vm.command(e);
-                });
+                func();
+                var contextmenus = document.getElementsByClassName("sa-contextmenu");
+                for (var i in contextmenus) {
+                    if (contextmenus[i].style) {
+                        contextmenus[i].style.visibility = "";
+                    }
+                }
             }
         }
     }
@@ -824,7 +818,7 @@
 .directive("saLines", ["guid.service",function (guid) {
     var vm = {
         id:guid.newGuid(),
-        template: '<div id="{{vm.id}}" style="width:1000px;height:500px"></div>',
+        template: '<div id="{{vm.id}}" style="width:1300px;height:500px"></div>',
         build: function (points, xAxis) {
             var container = document.getElementById(this.id);
             var option = {

@@ -52,6 +52,12 @@ namespace SQLAdmin.Web.Controllers
         {
             return Json(ServiceFactory.GetInstance().DBReportService.GetCPUInfos(), JsonRequestBehavior.AllowGet);
         }
+
+        [Inject]
+        public JsonResult GetConnectedSummary()
+        {
+            return Json(ServiceFactory.GetInstance().DBReportService.GetConnectedSummary(), JsonRequestBehavior.AllowGet);
+        }
         #endregion
     }
 }
