@@ -33,5 +33,7 @@ namespace SQLAdmin.Dao
         List<CPUInfo> GetCPUInfos();
 
         List<ConnectedInfo> GetConnectedInfos();
+
+        bool DeleteDatabase(string databaseName);
     }
 }

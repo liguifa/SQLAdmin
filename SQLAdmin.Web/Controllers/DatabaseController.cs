@@ -62,5 +62,11 @@ namespace SQLAdmin.Web.Controllers
         {
             return Json(ServiceFactory.GetInstance().DatabaseService.GetTableIndexs(tableName), JsonRequestBehavior.AllowGet);
         }
+
+        [Inject]
+        public JsonResult DeleteDatabase(string databaseName)
+        {
+            return Json(ServiceFactory.GetInstance().DatabaseService.DeleteDatabase(databaseName));
+        }
     }
 }

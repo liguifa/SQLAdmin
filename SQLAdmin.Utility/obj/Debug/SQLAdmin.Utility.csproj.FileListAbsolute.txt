@@ -24,4 +24,3 @@ D:\SQLAdmin\SQLAdmin.Utility\bin\Debug\Common.Cryptogram.pdb
 D:\SQLAdmin\SQLAdmin.Utility\bin\Debug\Logger.pdb
 D:\SQLAdmin\SQLAdmin.Utility\obj\Debug\SQLAdmin.Utility.dll
 D:\SQLAdmin\SQLAdmin.Utility\obj\Debug\SQLAdmin.Utility.pdb
-D:\SQLAdmin\SQLAdmin.Utility\obj\Debug\SQLAdmin.Utility.csprojResolveAssemblyReference.cache

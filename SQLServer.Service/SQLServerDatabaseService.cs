@@ -34,6 +34,23 @@ namespace SQLServer.Service
             }
         }
 
+        public bool DeleteDatabase(string databaseName)
+        {
+            try
+            {
+                using (var scope = new SQLServerDBContextScope(this.mDBConnect))
+                {
+                    SQLServerDBRepertory db = new SQLServerDBRepertory();
+                    return db.DeleteDatabase(databaseName);
+                }
+            }
+            catch (Exception e)
+            {
+                mLog.Error($"An error has occurred in the create table,error:{e.ToString()}");
+                throw;
+            }
+        }
+
         public DatabaseTree GetDatabases()
         {
             try

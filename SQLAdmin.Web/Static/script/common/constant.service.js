@@ -5,7 +5,8 @@
             SELECT: "SELECT",
             CPU: "getcpuinfo",
             Memory: "getmemoryinfo",
-            CONNECT_INFO:"getconnectinfo",
+            CONNECT_INFO: "getconnectinfo",
+            DELETE_DB:"delete_db"
         }
     }
 

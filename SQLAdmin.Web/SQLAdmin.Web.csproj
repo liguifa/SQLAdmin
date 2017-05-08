@@ -150,6 +150,7 @@
     <Content Include="Static\script\common\grid.service.js" />
     <Content Include="Static\script\common\messager.service.js" />
     <Content Include="Static\script\controller\connect.controller.js" />
+    <Content Include="Static\script\controller\database.controller.js" />
     <Content Include="Static\script\controller\gui.common.controller.js" />
     <Content Include="Static\script\controller\manage.controller.js" />
     <Content Include="Static\script\controller\query.controller.js" />

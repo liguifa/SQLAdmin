@@ -21,5 +21,7 @@ namespace SQLAdmin.IService
         List<Field> GetTableFields(string tableName);
 
         List<Index> GetTableIndexs(string tableName);
+
+        bool DeleteDatabase(string databaseName);
     }
 }

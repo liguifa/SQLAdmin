@@ -193,5 +193,11 @@ ORDER BY record_id DESC; ";
                 };
             });
         }
+
+        public bool DeleteDatabase(string databaseName)
+        {
+            string sql = new SQLQuery().Drop(databaseName).Qenerate();
+            return this.DBContext.AccessQuery(sql) > 0;
+        }
     }
 }

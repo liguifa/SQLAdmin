@@ -1,8 +1,8 @@
 ﻿(function () {
 	function event_service() {
 		var _eventPools = [];
-		function _register(name, func) {
-			var event = { name: name, func: func };
+		function _register(name, func,args) {
+			var event = { name: name, func: func,args:args};
 			_eventPools.push(event);
 		}
 
@@ -11,7 +11,7 @@
 			{
 				if(_eventPools[i].name == name)
 				{
-				    _eventPools[i].func(args);
+				    _eventPools[i].func(args, _eventPools[i].args);
 				}
 			}
 		}

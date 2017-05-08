@@ -78,6 +78,14 @@ namespace SQLServer.Dao
             return this;
         }
 
+        public SQLQuery Drop(string databaseName)
+        {
+            this.mQueryKeys.Add(DROP);
+            this.mQueryKeys.Add(DATABASE);
+            this.mQueryKeys.Add(databaseName);
+            return this;
+        }
+
         public SQLQuery Count()
         {
             this.Select(COUNT);

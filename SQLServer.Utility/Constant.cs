@@ -38,6 +38,10 @@ namespace SQLServer.Utility
         public const string NEXT = "Next";
 
         public const string DELETE = "Delete";
+
+        public const string DROP = "Drop";
+
+        public const string DATABASE = "Database";
         #endregion
     }
 }

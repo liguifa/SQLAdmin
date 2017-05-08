@@ -33,10 +33,19 @@
             }
         }
 
+        function _deleteDatabase(dbName) {
+            var defarred = $q.defer();
+            $http.post("/Database/DeleteDatabase", { databaseName: dbName }).then(function (res) {
+                defarred.resolve(res);
+            });
+            return defarred.promise();
+        }
+
         return {
             getDatabases: _getDatabases,
             getTables: _getTables,
-            updateTree: _updateTree
+            updateTree: _updateTree,
+            deleteDatabase: _deleteDatabase
         }
     }
 

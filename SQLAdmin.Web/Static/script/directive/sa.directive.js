@@ -531,17 +531,17 @@
                     contextmenu.style.visibility = "visible";
                 })
             }
-            var func = document.onmousedown;
-            document.onmousedown = function()
-            {
-                func();
-                var contextmenus = document.getElementsByClassName("sa-contextmenu");
-                for (var i in contextmenus) {
-                    if (contextmenus[i].style) {
-                        contextmenus[i].style.visibility = "";
-                    }
-                }
-            }
+            //var func = document.onmousedown;
+            //document.onmousedown = function()
+            //{
+            //    func();
+            //    var contextmenus = document.getElementsByClassName("sa-contextmenu");
+            //    for (var i in contextmenus) {
+            //        if (contextmenus[i].style) {
+            //            contextmenus[i].style.visibility = "";
+            //        }
+            //    }
+            //}
         }
     }
 })
@@ -929,6 +929,81 @@
         scope: {
             points: "=",
             xaxis:"="
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                id: vm.id
+            }
+            $scope.$watch("points", function (points) {
+                vm.build(points, $scope.xaxis);
+            }, true);
+            $scope.$watch("xaxis", function (xaxis) {
+                vm.build($scope.points, xaxis);
+            }, true);
+        },
+    }
+}])
+
+.directive("saBars", ["guid.service", function (guid) {
+    var vm = {
+        id: guid.newGuid(),
+        template: '<div id="{{vm.id}}" style="width:1300px;height:500px"></div>',
+        build: function (points, xAxis) {
+            var container = document.getElementById(this.id);
+            var option = {
+                bars: {
+                    show: true,
+                    horizontal: false,
+                    shadowSize: 0,
+                    barWidth: 0.5
+                },
+                mouse: {
+                    track: true,
+                    relative: true
+                },
+                xaxis: {
+                    //ticks: [[1, "一月"], [2, "二月"], [3, "三月"], [4, "四月"], [5, "五月"], [6, "六月"], [7, "七月"], [8, "八月"], [9, "九月"], [10, "十月"], [11, "十一月"], [12, "十二月"]], // 自定义X轴
+                    xaxis: [[0, "1"], [1, "2"]],
+                    minorTicks: null,
+                    showLabels: true,                             // 是否显示X轴刻度
+                    showMinorLabels: false,
+                    labelsAngle: 15,                              //x轴文字倾斜角度
+                    title: '时间',                                 //x轴标题
+                    titleAngle: 0,                                //x轴标题倾斜角度
+                    noTicks: 12,                                   //当使用自动增长时,x轴刻度的个数
+                    minorTickFreq: null,                           //
+                    tickFormatter: Flotr.defaultTickFormatter,   //刻度的格式化方式
+                    tickDecimals: 0,                              //刻度小数点后的位数
+                    min: null,                                    //刻度最小值  X轴起点的值
+                    max: null,                                    //刻度最大值
+                    autoscale: true,
+                    autoscaleMargin: 0,
+                    color: null,                             //x轴刻度的颜色
+                    mode: 'normal',
+                    timeFormat: null,
+                    timeMode: 'UTC',                               //For UTC time ('local' for local time).
+                    timeUnit: 'year',                             //时间单位 (millisecond, second, minute, hour, day, month, year) 
+                    scaling: 'linear',                            //linear or logarithmic
+                    base: Math.E,
+                    titleAlign: 'center',                         //标题对齐方式
+                    margin: true
+                },
+                yaxis: {
+                    min: 0,
+                    autoscaleMargin: 1
+                }
+            }
+            Flotr.draw(container, points, option);
+        }
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        scope: {
+            points: "=",
+            xaxis: "="
         },
         controller: function ($scope) {
             $scope.vm = {

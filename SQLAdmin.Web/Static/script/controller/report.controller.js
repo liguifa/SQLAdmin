@@ -48,7 +48,7 @@
             {
                 connecteds.push([i, infos[i].Total]);
             }
-            $scope.vm.connectedSummary = [{ data: connecteds, label: "登录次数", lines: { show: true }, points: { show:true}}];
+            $scope.vm.connectedSummary = [{ data: connecteds, label: "登录次数", lines: { show: false }, points: { show:false}}];
         });
     }
     angular.module("admin").controller("report.controller", ["$scope", "report.service", report_controller]);

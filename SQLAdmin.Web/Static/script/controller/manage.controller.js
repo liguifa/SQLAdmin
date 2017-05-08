@@ -7,7 +7,7 @@
         var pageConfiguration = [
             { name: constant.SELECT, url: "/Manage/Query", args: "name", title: "select" },
             { name: constant.CPU, url: "/Report/Cpu", args: null, title: "CPU 统计" },
-             { name: constant.CONNECT_INFO, url: "/Report/Cpu", args: null, title: "CPU 统计" },
+            { name: constant.CONNECT_INFO, url: "/Report/Connect", args: null, title: "连接统计" },
         ]
 
         function _addPage(config,args) {
@@ -31,9 +31,9 @@
         {
             for (var i in pageConfiguration)
             {
-                event.register(pageConfiguration[i].name, function (args) {
-                    _addPage(pageConfiguration[i],args);
-                });
+                event.register(pageConfiguration[i].name, function (args,config) {
+                    _addPage(config, args);
+                },pageConfiguration[i]);
             }
         }
         _registerEvent();

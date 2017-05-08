@@ -6,56 +6,60 @@
 <div ng-controller="gui.common.controller" ontext-menu  data-target="menu">
     <div>
         <sa-menu select="vm.select(menu)" menus="vm.menus"></sa-menu>
-        <sa-explorer>
-            <sa-tree tree="vm.database" doubleclick="vm.getTables(tree)" menu-command="vm.contextMenuCommand(command)">
-                <sa-contextmenu contextmenu-type='table' class='sa-contextmenu'>
-                    <ul>
-                        <li click="vm.contextMenuCommand(this)"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建查询</div></li>
-                        <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建数据库</div></li>
-                        <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>重命名</div></li>
-                        <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>删除</div></li>
-                        <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>刷新</div></li>
-                        <li click="vm.contextMenuCommand(command)" command="getproperies"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>属性</div></li>
-                        <li click="vm.contextMenuCommand(command)" command="getproperies"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>数据统计</div>
-                            <ul class="sa-contextmenu-sub">
-                                <li>CPU</li>
-                                <li>内存</li>
-                                <li>磁盘</li>
-                                <li>数据量</li>
-                                <li>备份</li>
-                                <li>查询</li>
-                                <li>连接</li>
-                            </ul>
-                        </li>
-                        <li click="vm.contextMenuCommand(command)" command="getproperies"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>查询优化</div></li>
-                    </ul>
-                </sa-contextmenu>
-                <sa-contextmenu contextmenu-type='database' class='sa-contextmenu' click="vm.contextMenuCommand(command)">
-                    <ul>
-                        <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建查询</div></li>
-                        <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建数据库</div></li>
-                        <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>重命名</div></li>
-                        <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>删除</div></li>
-                        <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>刷新</div></li>
-                        <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>属性</div></li>
-                        <li click="vm.contextMenuCommand(command)" command="getproperies"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>数据统计</div>
-                            <sa-contextmenu contextmenu-type='sub' class='sa-contextmenu sa-contextmenu-sub'  click="vm.contextMenuCommand(command)">
-                                <ul>
-                                    <li><div class='sa-contextmenu-i sa-contextmenu-i-sub'></div><div class='sa-contextmenu-title sa-contextmenu-title-sub' command="getcpuinfo">CPU</div></li>
-                                    <li><div class='sa-contextmenu-i sa-contextmenu-i-sub'></div><div class='sa-contextmenu-title sa-contextmenu-title-sub' command="getmemoryinfo">内存</div></li>
-                                    <li><div class='sa-contextmenu-i sa-contextmenu-i-sub'></div><div class='sa-contextmenu-title sa-contextmenu-title-sub'>磁盘</div></li>
-                                    <li><div class='sa-contextmenu-i sa-contextmenu-i-sub'></div><div class='sa-contextmenu-title sa-contextmenu-title-sub'>数据量</div></li>
-                                    <li><div class='sa-contextmenu-i sa-contextmenu-i-sub'></div><div class='sa-contextmenu-title sa-contextmenu-title-sub'>备份</div></li>
-                                    <li><div class='sa-contextmenu-i sa-contextmenu-i-sub'></div><div class='sa-contextmenu-title sa-contextmenu-title-sub'>查询</div></li>
-                                    <li><div class='sa-contextmenu-i sa-contextmenu-i-sub'></div><div class='sa-contextmenu-title sa-contextmenu-title-sub' command="getconnectinfo">连接</div></li>
+        <div ng-controller="database.controller">
+            <sa-explorer>
+                <sa-tree tree="vm.database" doubleclick="vm.getTables(tree)" menu-command="vm.contextMenuCommand(command)">
+                    <sa-contextmenu contextmenu-type='table' class='sa-contextmenu'>
+                        <ul>
+                            <li click="vm.contextMenuCommand(this)"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建查询</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建数据库</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>重命名</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>删除</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>刷新</div></li>
+                            <li click="vm.contextMenuCommand(command)" command="getproperies"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>属性</div></li>
+                            <li click="vm.contextMenuCommand(command)" command="getproperies">
+                                <div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>数据统计</div>
+                                <ul class="sa-contextmenu-sub">
+                                    <li>CPU</li>
+                                    <li>内存</li>
+                                    <li>磁盘</li>
+                                    <li>数据量</li>
+                                    <li>备份</li>
+                                    <li>查询</li>
+                                    <li>连接</li>
                                 </ul>
-                            </sa-contextmenu>
-                        </li>
-                        <li click="vm.contextMenuCommand(command)" command="getproperies"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>查询优化</div></li>
-                    </ul>
-                </sa-contextmenu>
-            </sa-tree>
-        </sa-explorer>
+                            </li>
+                            <li click="vm.contextMenuCommand(command)" command="getproperies"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>查询优化</div></li>
+                        </ul>
+                    </sa-contextmenu>
+                    <sa-contextmenu contextmenu-type='database' class='sa-contextmenu' click="vm.contextMenuCommand(command)">
+                        <ul>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建查询</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建数据库</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>重命名</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title' command="delete_db">删除</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>刷新</div></li>
+                            <li click="vm.contextMenuCommand"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>属性</div></li>
+                            <li click="vm.contextMenuCommand(command)" command="getproperies">
+                                <div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>数据统计</div>
+                                <sa-contextmenu contextmenu-type='sub' class='sa-contextmenu sa-contextmenu-sub' click="vm.contextMenuCommand(command)">
+                                    <ul>
+                                        <li><div class='sa-contextmenu-i sa-contextmenu-i-sub'></div><div class='sa-contextmenu-title sa-contextmenu-title-sub' command="getcpuinfo">CPU</div></li>
+                                        <li><div class='sa-contextmenu-i sa-contextmenu-i-sub'></div><div class='sa-contextmenu-title sa-contextmenu-title-sub' command="getmemoryinfo">内存</div></li>
+                                        <li><div class='sa-contextmenu-i sa-contextmenu-i-sub'></div><div class='sa-contextmenu-title sa-contextmenu-title-sub'>磁盘</div></li>
+                                        <li><div class='sa-contextmenu-i sa-contextmenu-i-sub'></div><div class='sa-contextmenu-title sa-contextmenu-title-sub'>数据量</div></li>
+                                        <li><div class='sa-contextmenu-i sa-contextmenu-i-sub'></div><div class='sa-contextmenu-title sa-contextmenu-title-sub'>备份</div></li>
+                                        <li><div class='sa-contextmenu-i sa-contextmenu-i-sub'></div><div class='sa-contextmenu-title sa-contextmenu-title-sub'>查询</div></li>
+                                        <li><div class='sa-contextmenu-i sa-contextmenu-i-sub'></div><div class='sa-contextmenu-title sa-contextmenu-title-sub' command="getconnectinfo">连接</div></li>
+                                    </ul>
+                                </sa-contextmenu>
+                            </li>
+                            <li click="vm.contextMenuCommand(command)" command="getproperies"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>查询优化</div></li>
+                        </ul>
+                    </sa-contextmenu>
+                </sa-tree>
+            </sa-explorer>
+        </div>
         <div ng-controller="manage.controller">
             <sa-tabs pages="vm.pages">
                 @*<div data-view-id="123">@Html.Action("Query", "Manage")</div>*@
@@ -69,6 +73,7 @@
 <script src="~/Static/script/services/common.service.js"></script>
 <script src="~/Static/script/services/database.service.js"></script>
 <script src="~/Static/script/controller/gui.common.controller.js"></script>
+<script src="~/Static/script/controller/database.controller.js"></script>
 <script src="~/Static/script/lib/base64.min.js"></script>
 <script src="~/Static/script/common/cryptogram.service.js"></script>
 <script src="~/Static/script/services/connect.service.js"></script>
