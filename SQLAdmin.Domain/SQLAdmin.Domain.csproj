@@ -46,6 +46,7 @@
     <Compile Include="DataFilter.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Dto\DatabaseTree.cs" />
+    <Compile Include="ExceptionInfo.cs" />
     <Compile Include="Field.cs" />
     <Compile Include="FieldType.cs" />
     <Compile Include="Index.cs" />

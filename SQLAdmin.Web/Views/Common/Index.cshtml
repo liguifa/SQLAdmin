@@ -8,7 +8,7 @@
         <sa-menu select="vm.select(menu)" menus="vm.menus"></sa-menu>
         <div ng-controller="database.controller">
             <sa-explorer>
-                <sa-tree tree="vm.database" doubleclick="vm.getTables(tree)" menu-command="vm.contextMenuCommand(command)">
+                <sa-tree tree="vm.database" doubleclick="vm.getTables(tree)" menu-command="vm.contextMenuCommand(command,args)">
                     <sa-contextmenu contextmenu-type='table' class='sa-contextmenu'>
                         <ul>
                             <li click="vm.contextMenuCommand(this)"><div class='sa-contextmenu-i'></div><div class='sa-contextmenu-title'>新建查询</div></li>

@@ -27,8 +27,8 @@
             }
         }
 
-        function _contextMenuCommand(command) {
-            event.trigger(command);
+        function _contextMenuCommand(command, args) {
+            event.trigger(command, args);
         }
 
         common.getMenus().then(function (data) {

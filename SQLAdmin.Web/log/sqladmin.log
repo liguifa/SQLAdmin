@@ -4240,3 +4240,268 @@ Error Number:102,State:1,Class:15
 2017-05-08 22:16:29,156 [26784] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
 2017-05-08 22:16:29,180 [26784] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
 2017-05-08 22:16:29,214 [26784] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-09 21:46:56,733 [20172] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-09 21:46:56,742 [20172] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-09 21:47:17,229 [20172] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-09 21:47:17,482 [20172] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-09 21:47:17,523 [20172] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-09 21:47:17,641 [20172] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-09 21:47:23,644 [20172] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Report/Exception.
+2017-05-09 21:47:23,645 [20172] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/Exception.
+2017-05-09 21:47:28,939 [15564] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Report/GetCPUInfos.
+2017-05-09 21:47:28,953 [1876] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Report/GetExceptionInfos.
+2017-05-09 21:47:28,955 [6916] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Report/GetConnectedInfos.
+2017-05-09 21:47:29,016 [20172] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Report/GetConnectedSummary.
+2017-05-09 21:47:29,256 [6916] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/GetConnectedInfos.
+2017-05-09 21:47:29,351 [1876] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/GetExceptionInfos.
+2017-05-09 21:47:29,369 [20172] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/GetConnectedSummary.
+2017-05-09 21:47:29,584 [15564] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/GetCPUInfos.
+2017-05-09 21:47:59,810 [20172] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Report/Cpu.
+2017-05-09 21:47:59,811 [20172] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/Cpu.
+2017-05-09 21:47:59,883 [15564] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Report/GetCPUInfos.
+2017-05-09 21:47:59,884 [1876] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Report/GetConnectedInfos.
+2017-05-09 21:47:59,966 [6916] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Report/GetExceptionInfos.
+2017-05-09 21:47:59,998 [20172] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Report/GetConnectedSummary.
+2017-05-09 21:48:00,101 [1876] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/GetConnectedInfos.
+2017-05-09 21:48:00,162 [6916] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/GetExceptionInfos.
+2017-05-09 21:48:00,163 [15564] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/GetCPUInfos.
+2017-05-09 21:48:00,173 [20172] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/GetConnectedSummary.
+2017-05-09 22:04:04,711 [3776] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/DeleteDatabase.
+2017-05-09 22:04:04,889 [3776] ERROR iisexpress.exe - An error has occurred in the create table,error:System.Data.SqlClient.SqlException (0x80131904): “Database”附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 SQLServer.Dao.SQLServerDBContext.AccessQuery(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 77
+   在 SQLServer.Dao.SQLServerDBRepertory.DeleteDatabase(String databaseName) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 200
+   在 SQLServer.Service.SQLServerDatabaseService.DeleteDatabase(String databaseName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 44
+ClientConnectionId:c4303426-6f01-4bee-beeb-3d500d37e432
+Error Number:102,State:1,Class:15
+2017-05-09 22:04:11,120 [3776] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/DeleteDatabase.
+2017-05-09 22:10:54,962 [38304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/DeleteDatabase.
+2017-05-09 22:10:55,085 [38304] ERROR iisexpress.exe - An error has occurred in the create table,error:System.Data.SqlClient.SqlException (0x80131904): “Database”附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 SQLServer.Dao.SQLServerDBContext.AccessQuery(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 77
+   在 SQLServer.Dao.SQLServerDBRepertory.DeleteDatabase(String databaseName) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 200
+   在 SQLServer.Service.SQLServerDatabaseService.DeleteDatabase(String databaseName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 44
+ClientConnectionId:c4303426-6f01-4bee-beeb-3d500d37e432
+Error Number:102,State:1,Class:15
+2017-05-09 22:11:01,076 [38304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/DeleteDatabase.
+2017-05-09 22:11:46,523 [34496] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-09 22:11:46,523 [34496] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-09 22:11:56,822 [34496] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-09 22:11:56,839 [34496] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-09 22:11:56,874 [34496] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-09 22:11:56,924 [34496] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-09 22:12:54,318 [34496] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-09 22:12:54,318 [34496] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-09 22:13:06,272 [34496] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-09 22:13:06,307 [34496] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-09 22:13:06,338 [34496] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-09 22:13:06,377 [34496] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-09 22:14:15,175 [28132] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/DeleteDatabase.
+2017-05-09 22:15:33,940 [28132] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/DeleteDatabase.
+2017-05-09 22:15:46,630 [28132] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-09 22:15:46,630 [28132] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-09 22:15:56,012 [28132] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-09 22:15:56,032 [28132] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-09 22:15:56,061 [38304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-09 22:15:56,122 [38304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-09 22:29:34,305 [30936] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-09 22:29:34,305 [30936] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-09 22:30:49,585 [6940] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-09 22:30:49,604 [6940] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-09 22:30:49,633 [30936] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-09 22:30:49,694 [30936] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-09 22:30:53,710 [6940] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-09 22:30:53,714 [6940] INFO  iisexpress.exe - Start get tables.
+2017-05-09 22:30:53,760 [6940] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-09 22:30:55,338 [6940] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?SELECT=[object Object].
+2017-05-09 22:30:55,347 [6940] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?SELECT=[object Object].
+2017-05-09 22:31:00,305 [30936] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-09 22:31:00,450 [6940] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-09 22:31:00,451 [30936] ERROR iisexpress.exe - An error has occurred in the select data,error:System.Data.SqlClient.SqlException (0x80131904): “From”附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   在 SQLServer.Dao.SQLServerDBContext.SqlScaler(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 96
+   在 SQLServer.Dao.SQLServerDBRepertory.Count(String tableName) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 115
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerManageService.cs:行号 47
+ClientConnectionId:f1f4fa50-b39f-4c97-ab6c-031a8a488fd5
+Error Number:102,State:1,Class:15
+2017-05-09 22:31:21,903 [30936] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-09 22:31:21,963 [6940] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.ArgumentOutOfRangeException: 索引和计数必须引用该字符串内的位置。
+参数名: count
+   在 System.String.Remove(Int32 startIndex, Int32 count)
+   在 SQLServer.Dao.SQLServerDBRepertory.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 98
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 95
+2017-05-09 22:31:33,312 [6940] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-09 22:36:22,120 [30936] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-09 22:36:22,121 [32828] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-09 22:36:22,220 [30936] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.ArgumentOutOfRangeException: 索引和计数必须引用该字符串内的位置。
+参数名: count
+   在 System.String.Remove(Int32 startIndex, Int32 count)
+   在 SQLServer.Dao.SQLServerDBRepertory.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 98
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 95
+2017-05-09 22:36:43,461 [30936] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-09 22:36:43,549 [32828] ERROR iisexpress.exe - An error has occurred in the select data,error:System.Data.SqlClient.SqlException (0x80131904): “From”附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   在 SQLServer.Dao.SQLServerDBContext.SqlScaler(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 96
+   在 SQLServer.Dao.SQLServerDBRepertory.Count(String tableName) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 115
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerManageService.cs:行号 47
+ClientConnectionId:0633baa6-2929-4bf7-9b14-9d96c7257e53
+Error Number:102,State:1,Class:15
+2017-05-09 22:36:46,889 [32828] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-09 22:36:54,456 [32828] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-09 22:36:54,456 [30936] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-09 22:37:00,388 [30936] ERROR iisexpress.exe - An error has occurred in the select data,error:System.Data.SqlClient.SqlException (0x80131904): “From”附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   在 SQLServer.Dao.SQLServerDBContext.SqlScaler(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 96
+   在 SQLServer.Dao.SQLServerDBRepertory.Count(String tableName) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 115
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerManageService.cs:行号 47
+ClientConnectionId:0633baa6-2929-4bf7-9b14-9d96c7257e53
+Error Number:102,State:1,Class:15
+2017-05-09 22:37:11,102 [30936] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-09 22:37:11,978 [32828] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.ArgumentOutOfRangeException: 索引和计数必须引用该字符串内的位置。
+参数名: count
+   在 System.String.Remove(Int32 startIndex, Int32 count)
+   在 SQLServer.Dao.SQLServerDBRepertory.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 98
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 95
+2017-05-09 22:37:14,181 [32828] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-09 22:37:18,492 [30936] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-09 22:37:18,492 [32828] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-09 22:37:32,757 [30936] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.ArgumentOutOfRangeException: 索引和计数必须引用该字符串内的位置。
+参数名: count
+   在 System.String.Remove(Int32 startIndex, Int32 count)
+   在 SQLServer.Dao.SQLServerDBRepertory.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 98
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 95
+2017-05-09 22:37:32,757 [32828] ERROR iisexpress.exe - An error has occurred in the select data,error:System.Data.SqlClient.SqlException (0x80131904): “From”附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   在 SQLServer.Dao.SQLServerDBContext.SqlScaler(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 96
+   在 SQLServer.Dao.SQLServerDBRepertory.Count(String tableName) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 115
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerManageService.cs:行号 47
+ClientConnectionId:0633baa6-2929-4bf7-9b14-9d96c7257e53
+Error Number:102,State:1,Class:15
+2017-05-09 22:37:40,364 [30936] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-09 22:37:42,592 [32828] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-09 22:59:43,679 [22028] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-09 22:59:43,679 [22028] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-09 22:59:53,484 [5104] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-09 22:59:53,503 [5104] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-09 22:59:53,534 [22028] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-09 22:59:53,585 [22028] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-09 22:59:55,043 [5104] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-09 22:59:55,048 [5104] INFO  iisexpress.exe - Start get tables.
+2017-05-09 22:59:55,095 [5104] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-09 22:59:56,231 [13292] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?SELECT=[object Object].
+2017-05-09 22:59:56,231 [13292] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?SELECT=[object Object].
+2017-05-09 22:59:56,304 [27244] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-09 22:59:56,304 [5104] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-09 23:00:04,818 [5104] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.ArgumentOutOfRangeException: 索引和计数必须引用该字符串内的位置。
+参数名: count
+   在 System.String.Remove(Int32 startIndex, Int32 count)
+   在 SQLServer.Dao.SQLServerDBRepertory.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 98
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 95
+2017-05-09 23:00:04,819 [27244] ERROR iisexpress.exe - An error has occurred in the select data,error:System.Data.SqlClient.SqlException (0x80131904): “From”附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   在 SQLServer.Dao.SQLServerDBContext.SqlScaler(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 96
+   在 SQLServer.Dao.SQLServerDBRepertory.Count(String tableName) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 115
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerManageService.cs:行号 47
+ClientConnectionId:dd9482ee-0c24-4b16-98ca-b969065a3e4b
+Error Number:102,State:1,Class:15
+2017-05-09 23:00:09,932 [5104] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-09 23:00:09,932 [27244] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-09 23:06:59,135 [22028] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-09 23:06:59,135 [22028] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-09 23:07:13,835 [22028] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-09 23:07:13,878 [22028] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-09 23:07:13,936 [22028] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-09 23:07:13,974 [22028] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-09 23:07:49,772 [22028] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-09 23:07:49,782 [22028] INFO  iisexpress.exe - Start get tables.
+2017-05-09 23:07:49,895 [22028] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-09 23:07:57,575 [22028] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?SELECT=[object Object].
+2017-05-09 23:07:57,575 [22028] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?SELECT=[object Object].
+2017-05-09 23:07:57,705 [22028] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-09 23:07:57,707 [34536] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-09 23:08:04,058 [22028] ERROR iisexpress.exe - An error has occurred in the select data,error:System.Data.SqlClient.SqlException (0x80131904): “From”附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   在 SQLServer.Dao.SQLServerDBContext.SqlScaler(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 96
+   在 SQLServer.Dao.SQLServerDBRepertory.Count(String tableName) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 115
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerManageService.cs:行号 47
+ClientConnectionId:782334e7-8110-4271-8372-19b526286957
+Error Number:102,State:1,Class:15
+2017-05-09 23:08:06,268 [34536] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.ArgumentOutOfRangeException: 索引和计数必须引用该字符串内的位置。
+参数名: count
+   在 System.String.Remove(Int32 startIndex, Int32 count)
+   在 SQLServer.Dao.SQLServerDBRepertory.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 98
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 95
+2017-05-09 23:08:09,799 [22028] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-09 23:08:11,025 [34536] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.

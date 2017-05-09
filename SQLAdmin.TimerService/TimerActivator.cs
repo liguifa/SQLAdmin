@@ -29,20 +29,26 @@ namespace SQLAdmin.TimerService
 
         private static void ReviewSchedule()
         {
-            ScheduleService scheduleService = new ScheduleService();
-            while (mIsRun)
+            Task.Run(() =>
             {
-                List<Schedule> schedules = scheduleService.GetSchedules();
-                foreach (var schedule in schedules)
+                ScheduleService scheduleService = new ScheduleService();
+                while (mIsRun)
                 {
-                    if (schedule.NextTime <= DateTime.UtcNow)
+                    List<Schedule> schedules = scheduleService.GetSchedules();
+                    if (schedules != null)
                     {
-                        mTasks.Enqueue(schedule);
-                        schedule.NextTime = CalculateNextTime(schedule);
+                        foreach (var schedule in schedules)
+                        {
+                            if (schedule.NextTime <= DateTime.UtcNow)
+                            {
+                                mTasks.Enqueue(schedule);
+                                schedule.NextTime = CalculateNextTime(schedule);
+                            }
+                        }
                     }
+                    Thread.Sleep(30000);
                 }
-                Thread.Sleep(30000);
-            }
+            });
         }
 
         private static DateTime CalculateNextTime(Schedule schedule)

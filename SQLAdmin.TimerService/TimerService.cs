@@ -11,6 +11,7 @@ using System.Reflection;
 using System.ServiceModel;
 using System.ServiceProcess;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SQLAdmin.TimerService
@@ -29,9 +30,18 @@ namespace SQLAdmin.TimerService
         {
             try
             {
-                this.mHost = new ServiceHost(typeof(ScheduleService));
-                this.mHost.Open();
-                TimerActivator.Start();
+                Task.Run(() =>
+                {
+#if DEBUG
+                    while (File.Exists(@"C:\SQLAdmin.Timer.sleep"))
+                    {
+                        Thread.Sleep(1000);
+                    }
+#endif
+                    this.mHost = new ServiceHost(typeof(ScheduleService));
+                    this.mHost.Open();
+                    TimerActivator.Start();
+                });
             }
             catch(Exception e)
             {

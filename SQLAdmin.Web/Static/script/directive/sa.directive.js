@@ -330,6 +330,7 @@
         id:new Date().getTime(),
         isRoot:false,
         template: "<div id='{{vm.id}}' ng-transclude></div>",
+        clickCall:null,
         build: function (tree) {
             var self = this;
             var treeElement = document.getElementById(this.id);
@@ -357,6 +358,7 @@
                     }
                 };
                 treeElement.ondblclick = function (e) {
+                    clearTimeout(self.clickCall);
                     e = e || window.event; 　//IE window.event
                     var t = e.target || e.srcElement; //目标对象
                     var treeId = t.attributes["tree-id"];
@@ -365,10 +367,13 @@
                 }
 
                 treeElement.onclick = function (e) {
-                    e = e || window.event; 　//IE window.event
-                    var t = e.target || e.srcElement; //目标对象
-                    var command = t.attributes["command"].value;
-                    self.scope.menuCommand({ command: command });
+                    clearTimeout(self.clickCall);
+                    self.clickCall = setTimeout(function () {
+                        e = e || window.event; 　//IE window.event
+                        var t = e.target || e.srcElement; //目标对象
+                        var command = t.attributes["command"].value;
+                        self.scope.menuCommand({ command: command, args: t.parentElement.parentElement.parentElement.parentElement.childNodes[1].textContent });
+                    },3000);
                 }
             }
         },
