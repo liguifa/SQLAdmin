@@ -8,6 +8,7 @@
             { name: constant.SELECT, url: "/Manage/Query", args: "name", title: "select" },
             { name: constant.CPU, url: "/Report/Cpu", args: null, title: "CPU 统计" },
             { name: constant.CONNECT_INFO, url: "/Report/Connect", args: null, title: "连接统计" },
+            { name: constant.EXCEPTION, url: "/Report/Exception", args: null, title: "异常统计" },
         ]
 
         function _addPage(config,args) {

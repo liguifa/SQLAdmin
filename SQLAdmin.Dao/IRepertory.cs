@@ -35,5 +35,7 @@ namespace SQLAdmin.Dao
         List<ConnectedInfo> GetConnectedInfos();
 
         bool DeleteDatabase(string databaseName);
+
+        List<ExceptionInfo> GetExceptionInfos();
     }
 }

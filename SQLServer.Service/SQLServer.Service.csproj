@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Schedule\MonitorCPUSchedule.cs" />
     <Compile Include="SQLServerConnectService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLServerDatabaseService.cs" />
@@ -54,6 +56,10 @@
     <ProjectReference Include="..\Common.Logger\Common.Logger.csproj">
       <Project>{C2C92005-3ADC-49E2-85A2-8BD031190485}</Project>
       <Name>Common.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Utility\Common.Utility.csproj">
+      <Project>{7272f819-4cff-4b74-bff4-ac9a61dbf215}</Project>
+      <Name>Common.Utility</Name>
     </ProjectReference>
     <ProjectReference Include="..\SQLAdmin.Dao\SQLAdmin.Dao.csproj">
       <Project>{bf26268f-b539-406b-aa88-4ca90187c782}</Project>

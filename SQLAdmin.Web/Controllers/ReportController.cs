@@ -44,6 +44,11 @@ namespace SQLAdmin.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Exception()
+        {
+            return View();
+        }
         #endregion
 
         #region DATA
@@ -57,6 +62,18 @@ namespace SQLAdmin.Web.Controllers
         public JsonResult GetConnectedSummary()
         {
             return Json(ServiceFactory.GetInstance().DBReportService.GetConnectedSummary(), JsonRequestBehavior.AllowGet);
+        }
+
+        [Inject]
+        public JsonResult GetConnectedInfos()
+        {
+            return Json(ServiceFactory.GetInstance().DBReportService.GetConnectedInfos(),JsonRequestBehavior.AllowGet);
+        }
+
+        [Inject]
+        public JsonResult GetExceptionInfos()
+        {
+            return Json(ServiceFactory.GetInstance().DBReportService.GetExceptionInfos(), JsonRequestBehavior.AllowGet);
         }
         #endregion
     }

@@ -1,4 +1,4 @@
-﻿namespace MMS.TimerService
+﻿namespace SQLAdmin.TimerService
 {
     partial class TimerService
     {
@@ -31,7 +31,7 @@
             // 
             // TimerService
             // 
-            this.ServiceName = "MMS Timer Service";
+            this.ServiceName = "SQLAdmin Timer Service";
 
         }
 

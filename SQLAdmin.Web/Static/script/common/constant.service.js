@@ -6,7 +6,8 @@
             CPU: "getcpuinfo",
             Memory: "getmemoryinfo",
             CONNECT_INFO: "getconnectinfo",
-            DELETE_DB:"delete_db"
+            DELETE_DB: "delete_db",
+            EXCEPTION: "geterrorinfo"
         }
     }
 

@@ -199,5 +199,27 @@ ORDER BY record_id DESC; ";
             string sql = new SQLQuery().Drop(databaseName).Qenerate();
             return this.DBContext.AccessQuery(sql) > 0;
         }
+
+        public List<ExceptionInfo> GetExceptionInfos()
+        {
+            string sql = $@"DECLARE @ts_now bigint = (SELECT cpu_ticks/(cpu_ticks/ms_ticks)FROM sys.dm_os_sys_info);
+select DATEADD(ms, -1 * (@ts_now - [timestamp]), GETDATE()) AS[Event Time] ,[text] from(SELECT
+record.value('(./Record/@id)[1]', 'int') AS record_id,
+record.value('(./Record/Exception/Error)[1]', 'int') AS Error,
+record.value('(./Record/Exception/UserDefined)[1]', 'int') AS UserDefined, TIMESTAMP
+FROM(
+SELECT TIMESTAMP, CONVERT(XML, record) AS record
+FROM sys.dm_os_ring_buffers
+WHERE ring_buffer_type = N'RING_BUFFER_EXCEPTION') as e) as excption join sys.messages as messages on excption.Error = messages.message_id where messages.language_id = 2052";
+            var dataTable = this.DBContext.SqlReader(sql);
+            return dataTable.ToList(row =>
+            {
+                return new ExceptionInfo()
+                {
+                    EventTime = row["Event Time"].ToString(),
+                    Message = row["text"].ToString()
+                };
+            });
+        }
     }
 }

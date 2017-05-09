@@ -19,7 +19,18 @@ namespace SQLServer.Service
 
         public List<ConnectedInfo> GetConnectedInfos()
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var scope = new SQLServerDBContextScope(this.mDBConnect))
+                {
+                    SQLServerDBRepertory db = new SQLServerDBRepertory();
+                    return db.GetConnectedInfos();
+                }
+            }
+            catch(Exception e)
+            {
+                throw;
+            }
         }
 
         public List<ConnectedSummary> GetConnectedSummary()
@@ -47,6 +58,22 @@ namespace SQLServer.Service
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
                     return db.GetCPUInfos();
+                }
+            }
+            catch(Exception e)
+            {
+                throw;
+            }
+        }
+
+        public List<ExceptionInfo> GetExceptionInfos()
+        {
+            try
+            {
+                using (var scope = new SQLServerDBContextScope(this.mDBConnect))
+                {
+                    SQLServerDBRepertory db = new SQLServerDBRepertory();
+                    return db.GetExceptionInfos();
                 }
             }
             catch(Exception e)

@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="DataSet.cs" />
     <Compile Include="DBService.cs" />
+    <Compile Include="IAlarmService.cs" />
     <Compile Include="IDatabaseService.cs" />
     <Compile Include="IDBConnectService.cs" />
     <Compile Include="IDBManageService.cs" />

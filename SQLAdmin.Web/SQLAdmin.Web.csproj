@@ -211,6 +211,7 @@
     <Content Include="Views\Report\Cpu.cshtml" />
     <Content Include="Views\Report\Memory.cshtml" />
     <Content Include="Views\Report\Connect.cshtml" />
+    <Content Include="Views\Report\Exception.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

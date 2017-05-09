@@ -14,5 +14,7 @@ namespace SQLAdmin.IService
         List<ConnectedInfo> GetConnectedInfos();
 
         List<ConnectedSummary> GetConnectedSummary();
+
+        List<ExceptionInfo> GetExceptionInfos();
     }
 }

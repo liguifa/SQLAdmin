@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E8199617-96F1-461A-B4C4-D41DBC4FDE71}</ProjectGuid>
+    <ProjectGuid>{B623F59D-8C25-44AD-AD0D-8823495BF66F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SQLServer.Dao</RootNamespace>
-    <AssemblyName>SQLServer.Dao</AssemblyName>
+    <RootNamespace>SQLAdmin.TimerContract</RootNamespace>
+    <AssemblyName>SQLAdmin.TimerContract</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,25 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SQLHelper.cs" />
-    <Compile Include="SQLServerDBContext.cs" />
-    <Compile Include="SQLServerDBContextScope.cs" />
+    <Compile Include="IScheduleService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQLServerDBRepertory.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SQLAdmin.Dao\SQLAdmin.Dao.csproj">
-      <Project>{BF26268F-B539-406B-AA88-4CA90187C782}</Project>
-      <Name>SQLAdmin.Dao</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SQLAdmin.Domain\SQLAdmin.Domain.csproj">
-      <Project>{a85141b4-0571-4d0e-b868-99f1af36dd8e}</Project>
-      <Name>SQLAdmin.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SQLServer.Utility\SQLServer.Utility.csproj">
-      <Project>{7ecb60b2-ea2f-4524-b597-6b4be26b6aa3}</Project>
-      <Name>SQLServer.Utility</Name>
-    </ProjectReference>
+    <Compile Include="Schedule.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

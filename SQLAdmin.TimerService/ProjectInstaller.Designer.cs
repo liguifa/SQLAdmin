@@ -1,4 +1,4 @@
-﻿namespace MMS.TimerService
+﻿namespace SQLAdmin.TimerService
 {
     partial class ProjectInstaller
     {
@@ -39,9 +39,9 @@
             // 
             // serviceInstaller
             // 
-            this.serviceInstaller.Description = "Mongdb Manager Studio task service.";
-            this.serviceInstaller.DisplayName = "MMS Timer Service";
-            this.serviceInstaller.ServiceName = "MMS Timer Service";
+            this.serviceInstaller.Description = "SQLAdmin task service.";
+            this.serviceInstaller.DisplayName = "SQLAdmin Timer Service";
+            this.serviceInstaller.ServiceName = "SQLAdmin Timer Service";
             this.serviceInstaller.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller

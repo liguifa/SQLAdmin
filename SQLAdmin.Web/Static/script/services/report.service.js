@@ -18,9 +18,27 @@
             return deferred.promise;
         }
 
+        function _getConnectedInfos() {
+            var deferred = $q.defer();
+            $http.get("/Report/GetConnectedInfos").then(function (data) {
+                deferred.resolve(data.data);
+            });
+            return deferred.promise;
+        }
+
+        function _getExceptionInfos() {
+            var deferred = $q.defer();
+            $http.get("/Report/GetExceptionInfos").then(function (data) {
+                deferred.resolve(data.data);
+            });
+            return deferred.promise;
+        }
+
         return {
             getCPUInfos: _getCPUInfos,
-            getConnectedSummary: _getConnectedSummary
+            getConnectedSummary: _getConnectedSummary,
+            getConnectedInfos: _getConnectedInfos,
+            getExceptionInfos: _getExceptionInfos
         }
     }
 

@@ -7,8 +7,8 @@
     <ProjectGuid>{1B917038-86DF-4150-A679-BC70C04B1152}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MMS.TimerService</RootNamespace>
-    <AssemblyName>MMS.TimerService</AssemblyName>
+    <RootNamespace>SQLAdmin.TimerService</RootNamespace>
+    <AssemblyName>SQLAdmin.TimerService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -36,6 +36,7 @@
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,7 @@
     <Compile Include="ProjectInstaller.Designer.cs">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimerActivator.cs" />
     <Compile Include="TimerService.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -61,6 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ProjectInstaller.resx">
@@ -69,6 +74,24 @@
     <EmbeddedResource Include="TimerService.resx">
       <DependentUpon>TimerService.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Logger\Common.Logger.csproj">
+      <Project>{c2c92005-3adc-49e2-85a2-8bd031190485}</Project>
+      <Name>Common.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLAdmin.Config\SQLAdmin.Config.csproj">
+      <Project>{a724907b-ef35-416a-af6f-340417f40b99}</Project>
+      <Name>SQLAdmin.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLAdmin.TimerContract\SQLAdmin.TimerContract.csproj">
+      <Project>{b623f59d-8c25-44ad-ad0d-8823495bf66f}</Project>
+      <Name>SQLAdmin.TimerContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLAdmin.TimerMain\SQLAdmin.TimerMain.csproj">
+      <Project>{f3c30030-892b-4059-be44-228d4acd0e8a}</Project>
+      <Name>SQLAdmin.TimerMain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

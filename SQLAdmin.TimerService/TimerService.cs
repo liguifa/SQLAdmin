@@ -1,19 +1,24 @@
-﻿using System;
+﻿using Common.Logger;
+using SQLAdmin.TimerMain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.ServiceModel;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MMS.TimerService
+namespace SQLAdmin.TimerService
 {
     public partial class TimerService : ServiceBase
     {
-        private Process mTimrProcess;
+        private ServiceHost mHost;
+        private static readonly Logger mLog = Logger.GetInstance(MethodBase.GetCurrentMethod().DeclaringType);
 
         public TimerService()
         {
@@ -22,17 +27,22 @@ namespace MMS.TimerService
 
         protected override void OnStart(string[] args)
         {
-            this.mTimrProcess = new Process();
-            this.mTimrProcess.StartInfo = new ProcessStartInfo();
-            this.mTimrProcess.StartInfo.FileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MMS.TimerMain.exe");
-            this.mTimrProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            this.mTimrProcess.Start();
+            try
+            {
+                this.mHost = new ServiceHost(typeof(ScheduleService));
+                this.mHost.Open();
+                TimerActivator.Start();
+            }
+            catch(Exception e)
+            {
+                mLog.Error(e.ToString());
+            }
         }
 
         protected override void OnStop()
         {
-            this.mTimrProcess.Close();
-            this.mTimrProcess.Dispose();
+            this.mHost.Close();
+            TimerActivator.Stop();
         }
     }
 }
