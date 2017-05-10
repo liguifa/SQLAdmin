@@ -168,7 +168,9 @@
     <Content Include="Static\script\services\query.service.js" />
     <Content Include="Static\script\services\report.service.js" />
     <Content Include="Static\script\services\wrapper.service.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\ExceptionHandler.cs" />
@@ -179,6 +181,7 @@
     <Compile Include="Controllers\DatabaseController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MonitorController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\SQLAdminController.cs" />
     <Compile Include="Convert\MenuConvert.cs" />
@@ -212,6 +215,8 @@
     <Content Include="Views\Report\Memory.cshtml" />
     <Content Include="Views\Report\Connect.cshtml" />
     <Content Include="Views\Report\Exception.cshtml" />
+    <Content Include="Views\Report\Query.cshtml" />
+    <Content Include="Views\Monitor\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

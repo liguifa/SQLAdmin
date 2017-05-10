@@ -4505,3 +4505,11 @@ Error Number:102,State:1,Class:15
    ÔÚ SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) Î»ÖÃ D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:ÐÐºÅ 95
 2017-05-09 23:08:09,799 [22028] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
 2017-05-09 23:08:11,025 [34536] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-10 20:37:55,198 [9604] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-10 20:37:55,209 [9604] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-10 20:38:12,822 [9604] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-10 20:38:13,038 [9604] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-10 20:38:13,060 [13100] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-10 20:38:13,156 [13100] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-10 21:59:51,852 [9668] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-10 21:59:51,868 [9668] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.

@@ -7,7 +7,8 @@
             Memory: "getmemoryinfo",
             CONNECT_INFO: "getconnectinfo",
             DELETE_DB: "delete_db",
-            EXCEPTION: "geterrorinfo"
+            EXCEPTION: "geterrorinfo",
+            MONITOR:"monitor",
         }
     }
 

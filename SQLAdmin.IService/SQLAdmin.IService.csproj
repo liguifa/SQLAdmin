@@ -64,6 +64,7 @@
     <Compile Include="IDBConnectService.cs" />
     <Compile Include="IDBManageService.cs" />
     <Compile Include="IDBReportService.cs" />
+    <Compile Include="IMonitorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceFactory.cs" />
   </ItemGroup>

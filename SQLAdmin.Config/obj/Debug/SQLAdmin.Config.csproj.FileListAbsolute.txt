@@ -21,4 +21,3 @@ D:\SQLAdmin\SQLAdmin.Config\bin\Debug\Logger.pdb
 D:\SQLAdmin\SQLAdmin.Config\bin\Debug\Newtonsoft.Json.xml
 D:\SQLAdmin\SQLAdmin.Config\obj\Debug\MMS.Config.dll
 D:\SQLAdmin\SQLAdmin.Config\obj\Debug\MMS.Config.pdb
-D:\SQLAdmin\SQLAdmin.Config\obj\Debug\SQLAdmin.Config.csprojResolveAssemblyReference.cache

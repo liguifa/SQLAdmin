@@ -9,6 +9,7 @@
             { name: constant.CPU, url: "/Report/Cpu", args: null, title: "CPU 统计" },
             { name: constant.CONNECT_INFO, url: "/Report/Connect", args: null, title: "连接统计" },
             { name: constant.EXCEPTION, url: "/Report/Exception", args: null, title: "异常统计" },
+            { name: constant.MONITOR, url: "Monitor/Index",args:null,title:"监视" },
         ]
 
         function _addPage(config,args) {

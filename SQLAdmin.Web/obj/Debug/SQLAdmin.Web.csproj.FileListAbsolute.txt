@@ -177,3 +177,5 @@ D:\SQLAdmin\SQLAdmin.Web\bin\Common.Interceptor.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Utility.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\Common.Interceptor.pdb
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Utility.pdb
+D:\SQLAdmin\SQLAdmin.Web\bin\SQLAdmin.TimerContract.dll
+D:\SQLAdmin\SQLAdmin.Web\bin\SQLAdmin.TimerContract.pdb

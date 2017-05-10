@@ -51,8 +51,15 @@ namespace SQLAdmin.TimerService
 
         protected override void OnStop()
         {
-            this.mHost.Close();
-            TimerActivator.Stop();
+            try
+            {
+                this.mHost.Close();
+                TimerActivator.Stop();
+            }
+            catch(Exception e)
+            {
+                mLog.Error(e.ToString());
+            }
         }
     }
 }

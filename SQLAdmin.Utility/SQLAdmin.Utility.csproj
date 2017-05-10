@@ -70,6 +70,10 @@
       <Project>{A85141B4-0571-4D0E-B868-99F1AF36DD8E}</Project>
       <Name>SQLAdmin.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SQLAdmin.TimerContract\SQLAdmin.TimerContract.csproj">
+      <Project>{b623f59d-8c25-44ad-ad0d-8823495bf66f}</Project>
+      <Name>SQLAdmin.TimerContract</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

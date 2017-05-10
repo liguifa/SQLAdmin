@@ -62,3 +62,5 @@ D:\SQLAdmin\SQLServer.Service\bin\Debug\Common.Interceptor.dll
 D:\SQLAdmin\SQLServer.Service\bin\Debug\SQLServer.Utility.dll
 D:\SQLAdmin\SQLServer.Service\bin\Debug\Common.Interceptor.pdb
 D:\SQLAdmin\SQLServer.Service\bin\Debug\SQLServer.Utility.pdb
+D:\SQLAdmin\SQLServer.Service\bin\Debug\SQLAdmin.TimerContract.dll
+D:\SQLAdmin\SQLServer.Service\bin\Debug\SQLAdmin.TimerContract.pdb

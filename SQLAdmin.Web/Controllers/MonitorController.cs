@@ -1,0 +1,25 @@
+﻿using SQLAdmin.IService;
+using SQLAdmin.Web.App_Start;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace SQLAdmin.Web.Controllers
+{
+    public class MonitorController : Controller
+    {
+        // GET: Monitor
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        [Inject]
+        public JsonResult GetMonitors()
+        {
+            return Json(ServiceFactory.GetInstance().MonitorService.GetAllSchedule());
+        }
+    }
+}

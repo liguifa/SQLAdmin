@@ -16,6 +16,11 @@ namespace SQLAdmin.TimerMain
             return true;
         }
 
+        public List<Schedule> GetAllSchedules()
+        {
+            return new List<Schedule>(){ new Schedule() {  DisplayName = "testc"} };
+        }
+
         public List<Schedule> GetSchedules()
         {
             return null;

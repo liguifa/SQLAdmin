@@ -47,3 +47,5 @@ D:\SQLAdmin\SQLAdmin.IService\bin\Debug\Common.Cryptogram.pdb
 D:\SQLAdmin\SQLAdmin.IService\bin\Debug\Common.Utility.pdb
 D:\SQLAdmin\SQLAdmin.IService\bin\Debug\Common.Interceptor.dll
 D:\SQLAdmin\SQLAdmin.IService\bin\Debug\Common.Interceptor.pdb
+D:\SQLAdmin\SQLAdmin.IService\bin\Debug\SQLAdmin.TimerContract.dll
+D:\SQLAdmin\SQLAdmin.IService\bin\Debug\SQLAdmin.TimerContract.pdb

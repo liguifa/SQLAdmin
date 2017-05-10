@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SQLAdmin.TimerContract
 {
+    [DataContract(Name = "Schedule", Namespace = "SQLAdmin.TimerContract")]
     public class Schedule
     {
         public Guid Id { get; set; }
+
+        public string DisplayName { get; set; }
 
         public string Assembly { get; set; }
 
