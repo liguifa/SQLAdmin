@@ -16,6 +16,17 @@
             },
             response: function (config) {
                 messager.loading(true);
+                if (config.data && config.data.IsSuccess == undefined)
+                {
+                    try
+                    {
+                        config.data = JSON.parse(config.data);
+                    }
+                    catch(e)
+                    {
+                        console.log(e);
+                    }
+                }
                 if (config.data.IsSuccess != undefined && !config.data.IsSuccess)
                 {
                     messager.error(config.data.Message);

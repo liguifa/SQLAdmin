@@ -5,19 +5,22 @@
         }
 
         var pageConfiguration = [
-            { name: constant.SELECT, url: "/Manage/Query", args: "name", title: "select" },
-            { name: constant.CPU, url: "/Report/Cpu", args: null, title: "CPU 统计" },
-            { name: constant.CONNECT_INFO, url: "/Report/Connect", args: null, title: "连接统计" },
-            { name: constant.EXCEPTION, url: "/Report/Exception", args: null, title: "异常统计" },
-            { name: constant.MONITOR, url: "Monitor/Index",args:null,title:"监视" },
+            { name: constant.SELECT, url: "/Manage/Query", args: "name", title: "select",defaultPageId:101 },
+            { name: constant.CPU, url: "/Report/Cpu", args: null, title: "CPU 统计", defaultPageId: 11 },
+            { name: constant.CONNECT_INFO, url: "/Report/Connect", args: null, title: "连接统计", defaultPageId: 71 },
+            { name: constant.EXCEPTION, url: "/Report/Exception", args: null, title: "异常统计", defaultPageId: 81 },
+            { name: constant.MONITOR, url: "Monitor/Index", args: null, title: "监视", defaultPageId: 111 },
+            { name: constant.QUERYHISTORY, url: "Report/Query", arg: null, title: "查询统计", defaultPageId: 61 }
         ]
 
         function _addPage(config,args) {
             $scope.$apply(function () {
                 var url = config.url;
+                url += "?defaultPageId=" + config.defaultPageId;
                 if(config.args){
-                    url +="?"+config.name+"="+args;
+                    url +="&"+config.name+"="+args;
                 }
+               
                 var page = {
                     id: guid.newGuid(),
                     url: url,

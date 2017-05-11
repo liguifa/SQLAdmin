@@ -35,8 +35,9 @@ namespace SQLAdmin.Web.Controllers
             return View();
         }
 
-        public ActionResult Query()
+        public ActionResult Query(int defaultPageId)
         {
+            ViewBag.DefaultPageId = defaultPageId;
             return View();
         }
 
@@ -74,6 +75,18 @@ namespace SQLAdmin.Web.Controllers
         public JsonResult GetExceptionInfos()
         {
             return Json(ServiceFactory.GetInstance().DBReportService.GetExceptionInfos(), JsonRequestBehavior.AllowGet);
+        }
+
+        [Inject]
+        public JsonResult GetQueryHistories()
+        {
+            return Json(ServiceFactory.GetInstance().DBReportService.GetQueryHistories(), JsonRequestBehavior.AllowGet);
+        }
+
+        [Inject] 
+        public JsonResult GetAllQueryProportionInfo()
+        {
+            return Json(ServiceFactory.GetInstance().DBReportService.GetAllQueryProportionInfo(), JsonRequestBehavior.AllowGet);
         }
         #endregion
     }

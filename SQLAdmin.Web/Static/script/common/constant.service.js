@@ -8,7 +8,8 @@
             CONNECT_INFO: "getconnectinfo",
             DELETE_DB: "delete_db",
             EXCEPTION: "geterrorinfo",
-            MONITOR:"monitor",
+            MONITOR: "monitor",
+            QUERYHISTORY:"query_history"
         }
     }
 

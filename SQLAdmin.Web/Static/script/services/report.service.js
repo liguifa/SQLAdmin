@@ -34,11 +34,29 @@
             return deferred.promise;
         }
 
+        function _getQueryHistories() {
+            var deferred = $q.defer();
+            $http.get("/Report/GetQueryHistories").then(function (data) {
+                deferred.resolve(data.data);
+            });
+            return deferred.promise;
+        }
+
+        function _getAllQueryProportionInfo() {
+            var deferred = $q.defer();
+            $http.post("/Report/getAllQueryProportionInfo", { tableName: name }).then(function (data) {
+                console.log(data);
+                deferred.resolve(data.data);
+            });
+        }
+
         return {
             getCPUInfos: _getCPUInfos,
             getConnectedSummary: _getConnectedSummary,
             getConnectedInfos: _getConnectedInfos,
-            getExceptionInfos: _getExceptionInfos
+            getExceptionInfos: _getExceptionInfos,
+            getQueryHistories: _getQueryHistories,
+            getAllQueryProportionInfo: _getAllQueryProportionInfo
         }
     }
 

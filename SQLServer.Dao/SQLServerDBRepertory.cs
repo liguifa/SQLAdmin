@@ -221,5 +221,28 @@ WHERE ring_buffer_type = N'RING_BUFFER_EXCEPTION') as e) as excption join sys.me
                 };
             });
         }
+
+        public List<QueryHistoryInfo> GetQueryHistories()
+        {
+            string sql = new SQLQuery().Select("text,last_execution_time,last_worker_time,min_worker_time,max_worker_time,last_elapsed_time,min_elapsed_time,max_elapsed_time,last_rows,min_rows,max_rows").From("sys.dm_exec_query_stats").Cross("sys.dm_exec_sql_text(sql_handle) as dest").OrderBy("last_execution_time", false).Qenerate();
+            var dataTable = this.DBContext.SqlReader(sql);
+            return dataTable.ToList(row =>
+            {
+                return new QueryHistoryInfo()
+                {
+                    Text = row["text"].ToString(),
+                    LastExecutionTime = row["last_execution_time"].ToString(),
+                    LastCPUTime = row["last_worker_time"].ToString(),
+                    MinCPUTime = row["min_worker_time"].ToString(),
+                    MaxCPUTime = row["max_worker_time"].ToString(),
+                    LastExecuteTime = row["last_elapsed_time"].ToString(),
+                    MinExecuteTime = row["min_elapsed_time"].ToString(),
+                    MaxExecuteTime = row["max_elapsed_time"].ToString(),
+                    LastReturnRows = row["last_rows"].ToString(),
+                    MinReturnRows = row["min_rows"].ToString(),
+                    MaxReturnRows = row["max_rows"].ToString()
+                };
+            });
+        }
     }
 }

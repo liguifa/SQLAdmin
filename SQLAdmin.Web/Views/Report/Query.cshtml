@@ -1,1 +1,23 @@
-﻿
+﻿<link href="~/Static/css/cpuinfo.css" rel="stylesheet" />
+
+<div ng-controller="report.controller" ng-init="vm.pageId = @ViewBag.DefaultPageId">
+    <div class="cpuinfo-nav">
+        <ul>
+            <li><button class="sa-button" ng-click="vm.switchTo(61)">全部查询</button></li>
+            <li><button class="sa-button" ng-click="vm.switchTo(62)">查询比例</button></li>
+            <li><button class="sa-button" ng-click="vm.switchTo(63)">表查询比例</button></li>
+        </ul>
+        <div class="sa-clear"></div>
+    </div>
+    <div ng-if="vm.pageId == 61">
+        <sa-datagrid datas="vm.query.historydatas" fields="vm.query.fields"></sa-datagrid>
+    </div>
+    <div ng-if="vm.pageId == 62">
+        <sa-bars datas="vm.query."></sa-bars>
+    </div>
+    <div ng-if="vm.pageId == 63">
+        <sa-bars></sa-bars>
+        <sa-datagrid datas="vm.query.historydatas" fields="vm.query.fields"></sa-datagrid>
+    </div>
+</div>
+

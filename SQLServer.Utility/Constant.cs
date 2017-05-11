@@ -42,6 +42,10 @@ namespace SQLServer.Utility
         public const string DROP = "Drop";
 
         public const string DATABASE = "Database";
+
+        public const string CROSS = "Cross";
+
+        public const string APPLY = "Apply";
         #endregion
     }
 }

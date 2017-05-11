@@ -16,5 +16,9 @@ namespace SQLAdmin.IService
         List<ConnectedSummary> GetConnectedSummary();
 
         List<ExceptionInfo> GetExceptionInfos();
+
+        List<QueryHistoryInfo> GetQueryHistories();
+
+        QueryProportionInfo GetAllQueryProportionInfo();
     }
 }

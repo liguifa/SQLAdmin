@@ -37,5 +37,7 @@ namespace SQLAdmin.Dao
         bool DeleteDatabase(string databaseName);
 
         List<ExceptionInfo> GetExceptionInfos();
+
+        List<QueryHistoryInfo> GetQueryHistories();
     }
 }

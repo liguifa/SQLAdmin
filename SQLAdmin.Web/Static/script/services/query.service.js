@@ -39,7 +39,7 @@
             filter: _filter,
             remove: _remove,
             getTableFields: _getTableFields,
-            getTableIndexs: _getTableIndexs
+            getTableIndexs: _getTableIndexs,
         }
     }
 
