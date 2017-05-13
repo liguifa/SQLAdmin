@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SQLAdmin.Domain
+namespace SQLAdmin.Utility
 {
-    public class ExceptionInfo
+    public class ExceptionViewModel
     {
         public string EventTime { get; set; }
 

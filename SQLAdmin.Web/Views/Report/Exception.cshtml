@@ -1,6 +1,6 @@
 ﻿<link href="~/Static/css/cpuinfo.css" rel="stylesheet" />
 
-<div ng-controller="report.controller">
+<div ng-controller="report.controller" ng-init="vm.pageId = @ViewBag.DefaultPageId">
         <sa-datagrid datas="vm.exception.exceptiondatas" fields="vm.exception.fields"></sa-datagrid>
 </div>
 

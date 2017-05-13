@@ -8,6 +8,9 @@ using SQLAdmin.Domain;
 using System.Data.SqlClient;
 using System.Data;
 using SQLServer.Utility;
+using System.Linq.Expressions;
+using SQLServer.Domain;
+using Common.Utility;
 
 namespace SQLServer.Dao
 {
@@ -21,6 +24,24 @@ namespace SQLServer.Dao
             }
         }
 
+        public T Add<T>(T t, bool isSaveChange = false) where T : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<T> AddRange<T>(IEnumerable<T> TObjects, bool isSaveChange = false) where T : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<T> All<T>() where T : class
+        {
+            string sql = new SQLQuery().Select(String.Join(",", typeof(T).GetEntityColumnNames()))
+                                       .From(typeof(T).GetEntityTableName())
+                                       .Qenerate();
+            return this.DBContext.SqlReader(sql).ToList<T>();
+        }
+
         public bool Connect()
         {
             using (var conn = this.DBContext.GetConnect())
@@ -29,220 +50,119 @@ namespace SQLServer.Dao
             }
         }
 
-        public bool CreateTable(Table table)
+        public bool Contains<T>(Expression<Func<T, bool>> predicate) where T : class
         {
-            string sql = new SQLQuery().Create(table.Name).Table().Qenerate();
-            var result = this.DBContext.AccessQuery(sql);
-            return result > 0;
+            throw new NotImplementedException();
         }
 
-        public DataTable Filter(DataFilter filter)
+        public bool Delete<T>(Expression<Func<T, bool>> predicate, bool isSaveChange = false) where T : class
         {
-            string sql = new SQLQuery().Select("*").From(filter.TableName).OrderBy(filter.SortColumn, filter.IsAsc).Skip((filter.PageIndex - 1) * filter.PageSize).Take(filter.PageSize).Qenerate();
-            return this.DBContext.SqlReader(sql);
+            throw new NotImplementedException();
         }
 
-        public List<Database> GetDatabases()
+        public bool Delete<T>(T t, bool isSaveChange = false) where T : class
         {
-            //string sql = "SELECT * FROM Master..SysDatabases ORDER BY crdate";
-            string sql = new SQLQuery().Select("*").From("Master..SysDatabases").OrderBy("crdate", true).Qenerate();
-            var dataTable = this.DBContext.SqlReader(sql);
-            return dataTable.ToList(row =>
-           {
-               return new Database()
-               {
-                   Id = Guid.NewGuid(), //row["dbid"].ToString(),
-                   Name = row["name"].ToString()
-               };
-           });
+            throw new NotImplementedException();
         }
 
-        public List<FieldType> GetFieldTypes()
+        public bool DeleteRange<T>(IEnumerable<T> TObjects, bool isSaveChange = false) where T : class
         {
-            // SELECT* FROM sys.types
-            string sql = new SQLQuery().Select("*").From("sys.types").OrderBy("name").Qenerate();
-            var types = this.DBContext.SqlReader(sql);
-            return types.ToList(row =>
-            {
-                return new FieldType()
-                {
-                    DisplayName = row["name"].ToString(),
-                    IsNullable = Convert.ToInt32(row["is_nullable"]),
-                    MaxLength = Convert.ToInt32(row["max_length"])
-                };
-            });
+            throw new NotImplementedException();
         }
 
-        public List<Table> GetTables(string dbName)
+        public bool Exist<T>(T model) where T : class
         {
-            //string sql = $"SELECT * FROM {dbName}..SysObjects Where XType='U' ORDER BY Name";
-            string sql = new SQLQuery().Select("*").From($"{dbName}..SysObjects").Where("type='U'").OrderBy("Name", true).Qenerate();
-            var dataTable = this.DBContext.SqlReader(sql);
-            List<Table> tables = new List<Table>();
-            return dataTable.ToList(row =>
-            {
-                return new Table()
-                {
-                    Id = row["id"].ToString(),
-                    Name = row["name"].ToString(),
-                    Fullname = $"[{dbName}].[dbo].[{row["name"].ToString()}]"
-                };
-            });
+            throw new NotImplementedException();
         }
 
-        public List<Field> GetTableFields(string tableName)
+        public List<T> Filter<T>(Expression<Func<T, bool>> predicate) where T : class
         {
-            //select * from RP_DB..SysColumns where id = (select id from RP_DB..sysobjects where Name = 'SLA_SubmissionForm')
-            //string sql = new SQLQuery().Select("*").From("SysColumns").wher
-            var dbName = tableName.Split('.').First();
-            var tbName = tableName.Split('.').Last().Remove(0, 1);
-            tbName = tbName.Remove(tbName.Length - 1, 1);
-            string sql = $"select * from {dbName}..SysColumns where id = (select id from {dbName}..sysobjects where Name = '{tbName}')";
-            var dataTable = this.DBContext.SqlReader(sql);
-            return dataTable.ToList(row =>
-            {
-                return new Field()
-                {
-                    Id = row["id"].ToString(),
-                    Name = row["name"].ToString()
-                };
-            });
+            throw new NotImplementedException();
         }
 
-        public int Count(string tableName)
+        public List<TResult> Filter<T, TResult>(Expression<Func<T, TResult>> selector) where T : class
         {
-            string sql = new SQLQuery().Count().From(tableName).Qenerate();
-            return Convert.ToInt32(this.DBContext.SqlScaler(sql));
+            throw new NotImplementedException();
         }
 
-        public bool Remove(RemoveFilter filter)
+        public List<T> Filter<T, TResult>(Expression<Func<T, bool>> predicate, Expression<Func<T, TResult>> orderBy) where T : class
         {
-            string sql = new SQLQuery().Delete(filter.TableName).Where($"ID in ('{String.Join("','", filter.Selected.ToArray())}')").Qenerate();
-            return this.DBContext.AccessQuery(sql) > 0;
+            throw new NotImplementedException();
         }
 
-        public List<Index> GetTableIndexs(string tableName)
+        public List<T> Filter<T, TResult>(Expression<Func<T, bool>> predicate, Expression<Func<T, TResult>> orderBy, out int total, int index = 0, int size = 50, bool isAsc = true) where T : class
         {
-            var dbName = tableName.Split('.').First();
-            var tbName = tableName.Split('.').Last().Remove(0, 1);
-            tbName = tbName.Remove(tbName.Length - 1, 1);
-            string sql = $"select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from {dbName}..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from {dbName}..sysindexkeys as t_key inner join {dbName}..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from {dbName}..sysobjects where Name = '{tbName}')) as _index on _index.colid = _col.colid where _col.id = _index.id";
-            var dataTable = this.DBContext.SqlReader(sql);
-            return dataTable.ToList(row =>
-            {
-                return new Index()
-                {
-                    Id = row["id"].ToString(),
-                    ColumnName = row["colname"].ToString(),
-                    IndexName = row["indname"].ToString(),
-                    Type = row["indid"].ToString().Equals("1", StringComparison.OrdinalIgnoreCase) ? IndexType.Primary : IndexType.Foreign
-                };
-            });
+            string sql = new SQLQuery().Select(String.Join(",", typeof(T).GetEntityColumnNames()))
+                                       .From(typeof(T).GetEntityTableName())
+                                       .OrderBy("last_execution_time")
+                                       .Skip((index - 1) * size)
+                                       .Take(size)
+                                       .Qenerate();
+            total = 500;
+            return this.DBContext.SqlReader(sql).ToList<T>();
         }
 
-        public List<CPUInfo> GetCPUInfos()
+        public List<T1> CrossJoin<T1,T2,TCross, TResult>(Expression<Func<T1, TCross>> crossApply, Expression<Func<T1, bool>> predicate, Expression<Func<T1, TResult>> orderBy, out int total, int index = 0, int size = 50, bool isAsc = true) where T1 :class
         {
-            string sql = @"DECLARE @ts_now bigint = (SELECT cpu_ticks/(cpu_ticks/ms_ticks)FROM sys.dm_os_sys_info);
-
-SELECT SQLProcessUtilization AS[SQL Server Process CPU Utilization], 
-               SystemIdle AS[System Idle Process],
-               100 - SystemIdle - SQLProcessUtilization AS[Other Process CPU Utilization], 
-               DATEADD(ms, -1 * (@ts_now - [timestamp]), GETDATE()) AS[Event Time]
-FROM(
-      SELECT record.value('(./Record/@id)[1]', 'int') AS record_id,
-            record.value('(./Record/SchedulerMonitorEvent/SystemHealth/SystemIdle)[1]', 'int')
-            AS[SystemIdle],
-            record.value('(./Record/SchedulerMonitorEvent/SystemHealth/ProcessUtilization)[1]',
-            'int')
-            AS[SQLProcessUtilization], [timestamp]
-      FROM(
-            SELECT[timestamp], CONVERT(xml, record) AS[record]
-            FROM sys.dm_os_ring_buffers
-            WHERE ring_buffer_type = N'RING_BUFFER_SCHEDULER_MONITOR'
-            AND record LIKE N'%<SystemHealth>%') AS x
-      ) AS y
-ORDER BY record_id DESC; ";
-            var dataTable = this.DBContext.SqlReader(sql);
-            return dataTable.ToList(row =>
-            {
-                return new CPUInfo()
-                {
-                    DBProess = Convert.ToInt32(row["SQL Server Process CPU Utilization"]),
-                    IDLEProcess = Convert.ToInt32(row["System Idle Process"]),
-                    OtherProcess = Convert.ToInt32(row["Other Process CPU Utilization"]),
-                    EventTime = row["Event Time"].ToString()
-                };
-            });
+            string sql = new SQLQuery().Select(String.Join(",", typeof(T1).GetEntityColumnNames()))
+                                       .From(typeof(T1).GetEntityTableName())
+                                       .Cross($"{typeof(T2).GetEntityTableName()}({typeof(T1).GetEntityColumnName(LambdaHelper.GetColumn(crossApply))})")
+                                       .OrderBy(typeof(T1).GetEntityColumnName(LambdaHelper.GetColumn(orderBy)))
+                                       .Skip((index - 1) * size)
+                                       .Take(size)
+                                       .Qenerate();
+            total = 500;
+            return this.DBContext.SqlReader(sql).ToList<T1>();
         }
 
-        public List<ConnectedInfo> GetConnectedInfos()
+        public List<T> FilterSimple<T>(Expression<Func<T, bool>> predicate) where T : class
         {
-            string sql = @" DECLARE @ts_now bigint = (SELECT cpu_ticks/(cpu_ticks/ms_ticks)FROM sys.dm_os_sys_info);
-  SELECT record.value('(./Record/@id)[1]', 'int') AS record_id,
-            record.value('(./Record/ConnectivityTraceRecord/RemoteHost)[1]', 'varchar(100)')
-            AS ip, DATEADD(ms, -1 * (@ts_now - [timestamp]), GETDATE()) AS[Event Time] 
-			from
- (SELECT timestamp, CONVERT(xml, record) as record FROM sys.dm_os_ring_buffers where ring_buffer_type = 'RING_BUFFER_CONNECTIVITY') as t";
-            var dataTable = this.DBContext.SqlReader(sql);
-            return dataTable.ToList(row =>
-            {
-                return new ConnectedInfo
-                {
-                    EventTime = row["Event Time"].ToString(),
-                    Ip = row["ip"].ToString()
-                };
-            });
+            throw new NotImplementedException();
         }
 
-        public bool DeleteDatabase(string databaseName)
+        public List<T> FilterWithNoTracking<T>(Expression<Func<T, bool>> predicate) where T : class
         {
-            string sql = new SQLQuery().Drop(databaseName).Qenerate();
-            return this.DBContext.AccessQuery(sql) > 0;
+            throw new NotImplementedException();
         }
 
-        public List<ExceptionInfo> GetExceptionInfos()
+        public T Find<T>(Expression<Func<T, bool>> predicate) where T : class
         {
-            string sql = $@"DECLARE @ts_now bigint = (SELECT cpu_ticks/(cpu_ticks/ms_ticks)FROM sys.dm_os_sys_info);
-select DATEADD(ms, -1 * (@ts_now - [timestamp]), GETDATE()) AS[Event Time] ,[text] from(SELECT
-record.value('(./Record/@id)[1]', 'int') AS record_id,
-record.value('(./Record/Exception/Error)[1]', 'int') AS Error,
-record.value('(./Record/Exception/UserDefined)[1]', 'int') AS UserDefined, TIMESTAMP
-FROM(
-SELECT TIMESTAMP, CONVERT(XML, record) AS record
-FROM sys.dm_os_ring_buffers
-WHERE ring_buffer_type = N'RING_BUFFER_EXCEPTION') as e) as excption join sys.messages as messages on excption.Error = messages.message_id where messages.language_id = 2052";
-            var dataTable = this.DBContext.SqlReader(sql);
-            return dataTable.ToList(row =>
-            {
-                return new ExceptionInfo()
-                {
-                    EventTime = row["Event Time"].ToString(),
-                    Message = row["text"].ToString()
-                };
-            });
+            throw new NotImplementedException();
         }
 
-        public List<QueryHistoryInfo> GetQueryHistories()
+        public T Find<T>(params object[] keys) where T : class
         {
-            string sql = new SQLQuery().Select("text,last_execution_time,last_worker_time,min_worker_time,max_worker_time,last_elapsed_time,min_elapsed_time,max_elapsed_time,last_rows,min_rows,max_rows").From("sys.dm_exec_query_stats").Cross("sys.dm_exec_sql_text(sql_handle) as dest").OrderBy("last_execution_time", false).Qenerate();
-            var dataTable = this.DBContext.SqlReader(sql);
-            return dataTable.ToList(row =>
-            {
-                return new QueryHistoryInfo()
-                {
-                    Text = row["text"].ToString(),
-                    LastExecutionTime = row["last_execution_time"].ToString(),
-                    LastCPUTime = row["last_worker_time"].ToString(),
-                    MinCPUTime = row["min_worker_time"].ToString(),
-                    MaxCPUTime = row["max_worker_time"].ToString(),
-                    LastExecuteTime = row["last_elapsed_time"].ToString(),
-                    MinExecuteTime = row["min_elapsed_time"].ToString(),
-                    MaxExecuteTime = row["max_elapsed_time"].ToString(),
-                    LastReturnRows = row["last_rows"].ToString(),
-                    MinReturnRows = row["min_rows"].ToString(),
-                    MaxReturnRows = row["max_rows"].ToString()
-                };
-            });
+            throw new NotImplementedException();
+        }
+
+        public List<T> FindWithOrderBy<T, TResult>(Expression<Func<T, bool>> predicate, Expression<Func<T, TResult>> order) where T : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<T> FindWithOrderByDescending<T, TResult>(Expression<Func<T, bool>> predicate, Expression<Func<T, TResult>> order) where T : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Single<T>(Expression<Func<T, bool>> expression) where T : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<T> SQLQuery<T>(string sql) where T : class
+        {
+            return this.DBContext.SqlReader(sql).ToList<T>();
+        }
+
+        public bool Update<T>(T t, string key = "ID", bool isSaveChange = false) where T : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateRange<T>(IEnumerable<T> TObjects, string key = "ID", bool isSaveChange = false) where T : class
+        {
+            throw new NotImplementedException();
         }
     }
 }

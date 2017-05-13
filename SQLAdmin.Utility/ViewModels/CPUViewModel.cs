@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SQLAdmin.Domain
+namespace SQLAdmin.Utility
 {
-    public class CPUInfo
+    public class CPUViewModel
     {
         public string EventTime { get; set; }
 

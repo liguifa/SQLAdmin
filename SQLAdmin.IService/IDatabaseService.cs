@@ -1,5 +1,6 @@
 ﻿using SQLAdmin.Domain;
 using SQLAdmin.Domain;
+using SQLAdmin.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,17 +11,17 @@ namespace SQLAdmin.IService
 {
     public interface IDatabaseService
     {
-        DatabaseTree GetDatabases();
+        DatabaseTreeViewModel GetDatabases();
 
-        List<Table> GetTables(string tableName);
+        List<TableViewModel> GetTables(string tableName);
 
-        List<FieldType> GetFieldTypes();
+        List<FieldTypeViewModel> GetFieldTypes();
 
-        bool CreateTable(Table table);
+        bool CreateTable(TableViewModel table);
 
-        List<Field> GetTableFields(string tableName);
+        List<FieldViewModel> GetTableFields(string tableName);
 
-        List<Index> GetTableIndexs(string tableName);
+        List<IndexViewModel> GetTableIndexs(string tableName);
 
         bool DeleteDatabase(string databaseName);
     }

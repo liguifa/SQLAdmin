@@ -133,7 +133,11 @@ D:\SQLAdmin\SQLAdmin.Web\bin\System.Web.Webpages.Razor.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\Newtonsoft.Json.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\Microsoft.Practices.Unity.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\Microsoft.Practices.Unity.Configuration.dll
+D:\SQLAdmin\SQLAdmin.Web\bin\Common.Interceptor.dll
+D:\SQLAdmin\SQLAdmin.Web\bin\SQLAdmin.TimerContract.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Dao.dll
+D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Utility.dll
+D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Domain.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\Microsoft.Practices.ServiceLocation.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLAdmin.Dao.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\Common.Cryptogram.pdb
@@ -159,7 +163,11 @@ D:\SQLAdmin\SQLAdmin.Web\bin\System.Web.Mvc.xml
 D:\SQLAdmin\SQLAdmin.Web\bin\Newtonsoft.Json.xml
 D:\SQLAdmin\SQLAdmin.Web\bin\Microsoft.Practices.Unity.xml
 D:\SQLAdmin\SQLAdmin.Web\bin\Microsoft.Practices.Unity.Configuration.xml
+D:\SQLAdmin\SQLAdmin.Web\bin\Common.Interceptor.pdb
+D:\SQLAdmin\SQLAdmin.Web\bin\SQLAdmin.TimerContract.pdb
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Dao.pdb
+D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Utility.pdb
+D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Domain.pdb
 D:\SQLAdmin\SQLAdmin.Web\bin\Microsoft.Practices.ServiceLocation.pdb
 D:\SQLAdmin\SQLAdmin.Web\bin\Microsoft.Practices.ServiceLocation.xml
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLAdmin.Dao.pdb
@@ -173,9 +181,3 @@ D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.csprojResolveAssemblyReference.c
 D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.g.resources
 D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.dll
 D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.pdb
-D:\SQLAdmin\SQLAdmin.Web\bin\Common.Interceptor.dll
-D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Utility.dll
-D:\SQLAdmin\SQLAdmin.Web\bin\Common.Interceptor.pdb
-D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Utility.pdb
-D:\SQLAdmin\SQLAdmin.Web\bin\SQLAdmin.TimerContract.dll
-D:\SQLAdmin\SQLAdmin.Web\bin\SQLAdmin.TimerContract.pdb

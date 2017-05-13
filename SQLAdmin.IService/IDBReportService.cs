@@ -1,4 +1,6 @@
 ﻿using SQLAdmin.Domain;
+using SQLAdmin.Utility;
+using SQLAdmin.Utility.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +11,16 @@ namespace SQLAdmin.IService
 {
     public interface IDBReportService
     {
-        List<CPUInfo> GetCPUInfos();
+        List<CPUViewModel> GetCPUInfos();
 
-        List<ConnectedInfo> GetConnectedInfos();
+        List<ConnectedViewModel> GetConnectedInfos();
 
-        List<ConnectedSummary> GetConnectedSummary();
+        List<ConnectedSummaryViewModel> GetConnectedSummary();
 
-        List<ExceptionInfo> GetExceptionInfos();
+        List<ExceptionViewModel> GetExceptionInfos();
 
-        List<QueryHistoryInfo> GetQueryHistories();
+        List<QueryHistoryViewModel> GetQueryHistories(DataFilter filter);
 
-        QueryProportionInfo GetAllQueryProportionInfo();
+        QueryProportionViewModel GetAllQueryProportionInfo();
     }
 }

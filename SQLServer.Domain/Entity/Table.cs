@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SQLServer.Domain
+{
+    [EntityColumn("..SysObjects")]
+    public class Table
+    {
+        [EntityColumn("id")]
+        public string Id { get; set; }
+
+        [EntityColumn("name")]
+        public string Name { get; set;}
+
+        [EntityColumn("xtype")]
+        public string Type { get; set; }
+    }
+}

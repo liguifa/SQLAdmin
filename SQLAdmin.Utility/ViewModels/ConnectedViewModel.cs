@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SQLAdmin.Domain
+namespace SQLAdmin.Utility
 {
-    public class ConnectedInfo
+    public class ConnectedViewModel
     {
         public string Ip { get; set; }
 
         public string EventTime { get; set; }
     }
 
-    public class ConnectedSummary
+    public class ConnectedSummaryViewModel
     {
         public string Ip { get; set; }
 

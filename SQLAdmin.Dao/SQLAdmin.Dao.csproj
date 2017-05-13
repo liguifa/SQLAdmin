@@ -44,7 +44,6 @@
     <Compile Include="DBContextScope.cs" />
     <Compile Include="IRepertory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQLAdminQuertable.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SQLAdmin.Domain\SQLAdmin.Domain.csproj">

@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using SQLAdmin.Domain;
 using SQLServer.Dao;
 using SQLAdmin.Utility;
+using SQLServer.Domain;
+using SQLServer.Utility;
 
 namespace SQLServer.Service
 {
@@ -17,14 +19,14 @@ namespace SQLServer.Service
 
         }
 
-        public bool CreateTable(Table table)
+        public bool CreateTable(TableViewModel table)
         {
             try
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.CreateTable(table);
+                    return false;
                 }
             }
             catch (Exception e)
@@ -41,7 +43,7 @@ namespace SQLServer.Service
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.DeleteDatabase(databaseName);
+                    return db.Delete<Database>(d=>d.Name == databaseName);
                 }
             }
             catch (Exception e)
@@ -51,14 +53,14 @@ namespace SQLServer.Service
             }
         }
 
-        public DatabaseTree GetDatabases()
+        public DatabaseTreeViewModel GetDatabases()
         {
             try
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.GetDatabases().To<DatabaseTree>();
+                    return db.All<Database>().ToViewModel();
                 }
             }
             catch (Exception e)
@@ -68,14 +70,14 @@ namespace SQLServer.Service
             }
         }
 
-        public List<FieldType> GetFieldTypes()
+        public List<FieldTypeViewModel> GetFieldTypes()
         {
             try
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.GetFieldTypes().ToList();
+                    return db.All<FieldType>().ToViewModel();
                 }
             }
             catch (Exception e)
@@ -85,14 +87,14 @@ namespace SQLServer.Service
             }
         }
 
-        public List<Field> GetTableFields(string tableName)
+        public List<FieldViewModel> GetTableFields(string tableName)
         {
             try
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.GetTableFields(tableName).ToList();
+                    return db.Filter<Field>(d => d.Name == tableName).ToViewModel();
                 }
             }
             catch(Exception e)
@@ -102,14 +104,17 @@ namespace SQLServer.Service
             }
         }
 
-        public List<Index> GetTableIndexs(string tableName)
+        public List<IndexViewModel> GetTableIndexs(string tableName)
         {
             try
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.GetTableIndexs(tableName).ToList();
+                    var dbName = tableName.Split('.').First();
+                    var tbName = tableName.Split('.').Last().Remove(0, 1);
+                    tbName = tbName.Remove(tbName.Length - 1, 1);
+                    return db.SQLQuery<Index>($"select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from {dbName}..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from {dbName}..sysindexkeys as t_key inner join {dbName}..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from {dbName}..sysobjects where Name = '{tbName}')) as _index on _index.colid = _col.colid where _col.id = _index.id").ToViewModel();
                 }
             }
             catch (Exception e)
@@ -119,14 +124,14 @@ namespace SQLServer.Service
             }
         }
 
-        public List<Table> GetTables(string tableName)
+        public List<TableViewModel> GetTables(string tableName)
         {
             try
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.GetTables(tableName).To<List<Table>>();
+                    return db.Filter<Table, string>(d => d.Type == "U", d => d.Name).ToViewModel(tableName);
                 }
             }
             catch (Exception e)

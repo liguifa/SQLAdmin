@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SQLAdmin.Domain
+namespace SQLAdmin.Utility
 {
-    public class Table
+    public class TableViewModel
     {
         public string Id { get; set; }
 

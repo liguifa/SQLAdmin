@@ -47,6 +47,7 @@
     <Compile Include="Constant.cs" />
     <Compile Include="EmailHelper.cs" />
     <Compile Include="JsonHelper.cs" />
+    <Compile Include="LambdaHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

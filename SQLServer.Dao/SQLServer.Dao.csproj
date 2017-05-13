@@ -47,6 +47,10 @@
     <Compile Include="SQLServerDBRepertory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common.Utility\Common.Utility.csproj">
+      <Project>{7272f819-4cff-4b74-bff4-ac9a61dbf215}</Project>
+      <Name>Common.Utility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SQLAdmin.Dao\SQLAdmin.Dao.csproj">
       <Project>{BF26268F-B539-406B-AA88-4CA90187C782}</Project>
       <Name>SQLAdmin.Dao</Name>
@@ -54,6 +58,10 @@
     <ProjectReference Include="..\SQLAdmin.Domain\SQLAdmin.Domain.csproj">
       <Project>{a85141b4-0571-4d0e-b868-99f1af36dd8e}</Project>
       <Name>SQLAdmin.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLServer.Domain\SQLServer.Domain.csproj">
+      <Project>{8203e461-b72c-4bf0-9df5-0d1ae2eed223}</Project>
+      <Name>SQLServer.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\SQLServer.Utility\SQLServer.Utility.csproj">
       <Project>{7ecb60b2-ea2f-4524-b597-6b4be26b6aa3}</Project>

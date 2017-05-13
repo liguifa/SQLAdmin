@@ -42,14 +42,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constant.cs" />
+    <Compile Include="ConvertHerlper.cs" />
     <Compile Include="DBScopeInterecpor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TableExt.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Interceptor\Common.Interceptor.csproj">
       <Project>{dc36606a-80ce-4222-8cb6-65f6d39bcf83}</Project>
       <Name>Common.Interceptor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLAdmin.Utility\SQLAdmin.Utility.csproj">
+      <Project>{698f30d4-2153-4055-b1f3-ed51670877a5}</Project>
+      <Name>SQLAdmin.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLServer.Domain\SQLServer.Domain.csproj">
+      <Project>{8203e461-b72c-4bf0-9df5-0d1ae2eed223}</Project>
+      <Name>SQLServer.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

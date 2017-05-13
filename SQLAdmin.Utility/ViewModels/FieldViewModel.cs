@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SQLAdmin.Domain
+namespace SQLAdmin.Utility
 {
-    public class Database
+    public class FieldViewModel
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         public string Name { get; set; }
-
-        public List<Table> Tables { get; set; }
     }
 }

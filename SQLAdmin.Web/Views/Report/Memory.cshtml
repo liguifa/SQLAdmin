@@ -1,4 +1,4 @@
-﻿<div ng-controller="report.controller">
+﻿<div ng-controller="report.controller" ng-init="vm.pageId = @ViewBag.DefaultPageId">
     <sa-lines points="vm.cpuinfos" xaxis="vm.xaxis"></sa-lines>
     <div style="height:420px;">
         <sa-datagrid datas="vm.cpudatas" fields="vm.fields"></sa-datagrid>

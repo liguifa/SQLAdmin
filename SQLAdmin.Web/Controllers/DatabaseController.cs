@@ -1,6 +1,7 @@
 ﻿using Common.Logger;
 using SQLAdmin.Domain;
 using SQLAdmin.IService;
+using SQLAdmin.Utility;
 using SQLAdmin.Web.App_Start;
 using SQLAdmin.Web.Models;
 using System;
@@ -46,7 +47,7 @@ namespace SQLAdmin.Web.Controllers
         }
 
         [Inject]
-        public JsonResult CreateTable(Table table)
+        public JsonResult CreateTable(TableViewModel table)
         {
             return Json(ServiceFactory.GetInstance().DatabaseService.CreateTable(table), JsonRequestBehavior.AllowGet);
         }

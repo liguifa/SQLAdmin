@@ -1,4 +1,5 @@
-﻿using SQLAdmin.IService;
+﻿using SQLAdmin.Domain;
+using SQLAdmin.IService;
 using SQLAdmin.Web.App_Start;
 using System;
 using System.Collections.Generic;
@@ -11,27 +12,32 @@ namespace SQLAdmin.Web.Controllers
     public class ReportController : SQLAdminController
     {
         #region View
-        public ActionResult Cpu()
+        public ActionResult Cpu(int defaultPageId)
         {
+            ViewBag.DefaultPageId = defaultPageId;
             return View();
         }
 
-        public ActionResult Memory()
+        public ActionResult Memory(int defaultPageId)
         {
+            ViewBag.DefaultPageId = defaultPageId;
             return View();
         }
 
-        public ActionResult HardDisk()
+        public ActionResult HardDisk(int defaultPageId)
         {
+            ViewBag.DefaultPageId = defaultPageId;
             return View();
         }
 
-        public ActionResult DataQuantity()
+        public ActionResult DataQuantity(int defaultPageId)
         {
+            ViewBag.DefaultPageId = defaultPageId;
             return View();
         }
-        public ActionResult backups()
+        public ActionResult backups(int defaultPageId)
         {
+            ViewBag.DefaultPageId = defaultPageId;
             return View();
         }
 
@@ -41,13 +47,15 @@ namespace SQLAdmin.Web.Controllers
             return View();
         }
 
-        public ActionResult Connect()
+        public ActionResult Connect(int defaultPageId)
         {
+            ViewBag.DefaultPageId = defaultPageId;
             return View();
         }
 
-        public ActionResult Exception()
+        public ActionResult Exception(int defaultPageId)
         {
+            ViewBag.DefaultPageId = defaultPageId;
             return View();
         }
         #endregion
@@ -78,9 +86,9 @@ namespace SQLAdmin.Web.Controllers
         }
 
         [Inject]
-        public JsonResult GetQueryHistories()
+        public JsonResult GetQueryHistories(DataFilter filter)
         {
-            return Json(ServiceFactory.GetInstance().DBReportService.GetQueryHistories(), JsonRequestBehavior.AllowGet);
+            return Json(ServiceFactory.GetInstance().DBReportService.GetQueryHistories(filter), JsonRequestBehavior.AllowGet);
         }
 
         [Inject] 

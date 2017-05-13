@@ -1,7 +1,11 @@
 ﻿using SQLAdmin.Dao;
 using SQLAdmin.Domain;
 using SQLAdmin.IService;
+using SQLAdmin.Utility;
+using SQLAdmin.Utility.ViewModels;
 using SQLServer.Dao;
+using SQLServer.Domain;
+using SQLServer.Utility;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -18,14 +22,15 @@ namespace SQLServer.Service
 
         }
 
-        public List<QueryHistoryInfo> GetQueryHistories()
+        public List<QueryHistoryViewModel> GetQueryHistories(DataFilter filter)
         {
             try
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.GetQueryHistories();
+                    int total = 0;
+                    return db.CrossJoin<QueryHistory, DmExecSQLText, byte[], long>(d => d.SQLHandle, d => true, d => d.LastExecuteTime, out total, filter.PageIndex, filter.PageSize, filter.IsAsc).ToViewModel();
                 }
             }
             catch(Exception e)
@@ -34,14 +39,15 @@ namespace SQLServer.Service
             }
         }
 
-        public List<ConnectedInfo> GetConnectedInfos()
+        public List<ConnectedViewModel> GetConnectedInfos()
         {
             try
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.GetConnectedInfos();
+                    List<RingBuffer> buffers = db.Filter<RingBuffer>(d => d.Type == "RING_BUFFER_CONNECTIVITY");
+                    return new List<ConnectedViewModel>();
                 }
             }
             catch(Exception e)
@@ -50,15 +56,15 @@ namespace SQLServer.Service
             }
         }
 
-        public List<ConnectedSummary> GetConnectedSummary()
+        public List<ConnectedSummaryViewModel> GetConnectedSummary()
         {
             try
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    List<ConnectedInfo> infos = db.GetConnectedInfos();
-                    return infos.Select(d => d.Ip).Distinct().Select(d => new ConnectedSummary() { Ip = d, Total = infos.Count(i => d == i.Ip) }).ToList();
+
+                    return new List<ConnectedSummaryViewModel>();
                 }
             }
             catch(Exception e)
@@ -67,14 +73,14 @@ namespace SQLServer.Service
             }
         }
 
-        public List<CPUInfo> GetCPUInfos()
+        public List<CPUViewModel> GetCPUInfos()
         {
             try
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.GetCPUInfos();
+                    return new List<CPUViewModel>();
                 }
             }
             catch(Exception e)
@@ -83,14 +89,14 @@ namespace SQLServer.Service
             }
         }
 
-        public List<ExceptionInfo> GetExceptionInfos()
+        public List<ExceptionViewModel> GetExceptionInfos()
         {
             try
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.GetExceptionInfos();
+                    return new List<ExceptionViewModel>();
                 }
             }
             catch(Exception e)
@@ -99,15 +105,17 @@ namespace SQLServer.Service
             }
         }
 
-        public QueryProportionInfo GetAllQueryProportionInfo()
+        public QueryProportionViewModel GetAllQueryProportionInfo()
         {
             try
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
-                    QueryProportionInfo info = new QueryProportionInfo();
+                    QueryProportionViewModel info = new QueryProportionViewModel();
                     Dictionary<string, dynamic> queryConfig = new Dictionary<string, dynamic>() { { "Select",new ExpandoObject() }, { "Delete", new ExpandoObject() }, { "Update", new ExpandoObject() }, { "Insert", new ExpandoObject() } };
-                    List<QueryHistoryInfo> queries = this.GetQueryHistories();
+                    SQLServerDBRepertory db = new SQLServerDBRepertory();
+                    int total = 0;
+                    List<QueryHistory> queries = db.CrossJoin<QueryHistory, DmExecSQLText, byte[], DateTime>(d => d.SQLHandle, d => true, d => d.LastExecutionTime, out total, 1, int.MaxValue, true);
                     foreach (var queryIndex in queryConfig)
                     {
                         queryIndex.Value.Count = 0;
@@ -123,7 +131,7 @@ namespace SQLServer.Service
                     });
                     foreach (var queryIndex in queryConfig)
                     {
-                        typeof(QueryProportionInfo).GetProperty($"{queryIndex.Key}Count").SetValue(info,Convert.ToInt32(queryIndex.Value.Count));
+                        typeof(QueryProportionViewModel).GetProperty($"{queryIndex.Key}Count").SetValue(info,Convert.ToInt32(queryIndex.Value.Count));
                     }
                     return info;
                 }

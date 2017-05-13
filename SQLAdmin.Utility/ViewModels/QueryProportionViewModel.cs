@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SQLAdmin.Domain
+namespace SQLAdmin.Utility
 {
-    public class QueryProportionInfo
+    public class QueryProportionViewModel
     {
         public int SelectCount { get; set; }
 

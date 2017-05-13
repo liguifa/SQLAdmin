@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SQLAdmin.Domain
+namespace SQLAdmin.Utility
 {
-    public class DatabaseTree
+    public class DatabaseTreeViewModel
     {
         public Guid Id { get; set; } = Guid.NewGuid();
 
@@ -14,7 +14,7 @@ namespace SQLAdmin.Domain
 
         public DBTreeNodeType NodeType { get; set; }
 
-        public List<DatabaseTree> Children { get; set; }
+        public List<DatabaseTreeViewModel> Children { get; set; }
     }
 
     public enum DBTreeNodeType

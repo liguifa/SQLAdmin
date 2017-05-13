@@ -26,7 +26,7 @@ namespace SQLServer.Service
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.Remove(filter);
+                    return true;
                 }
             }
             catch(Exception e)
@@ -43,17 +43,18 @@ namespace SQLServer.Service
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
-                    SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    var count = db.Count(filter.TableName);
-                    var datas = db.Filter(filter).To();
-                    return new TableDataViewMdoel()
-                    {
-                        Datas = datas,
-                        PageIndex = filter.PageIndex,
-                        PageSize = filter.PageSize,
-                        PageCount = Convert.ToInt64(Math.Ceiling(((double)count / filter.PageSize))),
-                        Total = count
-                    };
+                    //SQLServerDBRepertory db = new SQLServerDBRepertory();
+                    //var count = db.Count(filter.TableName);
+                    //var datas = db.Filter(filter).To();
+                    //return new TableDataViewMdoel()
+                    //{
+                    //    Datas = datas,
+                    //    PageIndex = filter.PageIndex,
+                    //    PageSize = filter.PageSize,
+                    //    PageCount = Convert.ToInt64(Math.Ceiling(((double)count / filter.PageSize))),
+                    //    Total = count
+                    //};
+                    return new TableDataViewMdoel();
                 }
             }
             catch(Exception e)

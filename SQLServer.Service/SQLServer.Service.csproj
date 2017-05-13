@@ -87,6 +87,10 @@
       <Project>{e8199617-96f1-461a-b4c4-d41dbc4fde71}</Project>
       <Name>SQLServer.Dao</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SQLServer.Domain\SQLServer.Domain.csproj">
+      <Project>{8203e461-b72c-4bf0-9df5-0d1ae2eed223}</Project>
+      <Name>SQLServer.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SQLServer.Utility\SQLServer.Utility.csproj">
       <Project>{7ecb60b2-ea2f-4524-b597-6b4be26b6aa3}</Project>
       <Name>SQLServer.Utility</Name>
