@@ -118,9 +118,8 @@ namespace SQLServer.Service
                         foreach (var queryIndex in queryConfig)
                         {
                             queryIndex.Value.Index = sql.IndexOf(queryIndex.Key, StringComparison.OrdinalIgnoreCase);
-                          
                         }
-                        queryConfig.OrderBy(d => d.Value.Index).First().Value.Count += 1;
+                        queryConfig.OrderByDescending(d => d.Value.Index).First().Value.Count += 1;
                     });
                     foreach (var queryIndex in queryConfig)
                     {

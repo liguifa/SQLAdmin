@@ -129,12 +129,12 @@
 
         function getAllQueryProportionInfo() {
             report.getAllQueryProportionInfo().then(function (info) {
-                var proportionI = [];
-                connecteds.push([0, info.SelectCount]);
-                connecteds.push([1, info.DeleteCount]);
-                connecteds.push([2, info.UpdateCount]);
-                connecteds.push([3, info.InsertCount]);
-                $scope.vm.query.queryProportionInfo = [{ data: connecteds, label: "查询次数", lines: { show: false }, points: { show: false } }];
+                var proportionInfo = [];
+                proportionInfo.push([0, info.SelectCount]);
+                proportionInfo.push([1, info.DeleteCount]);
+                proportionInfo.push([2, info.UpdateCount]);
+                proportionInfo.push([3, info.InsertCount]);
+                $scope.vm.query.queryProportionInfo = [{ data: proportionInfo, label: "查询次数", lines: { show: false }, points: { show: false } }];
                 $scope.vm.query.xaxis = [[0, "Select"], [1, "Delete"], [2, "Update"], [3, "Insert"], ];
             });
         }

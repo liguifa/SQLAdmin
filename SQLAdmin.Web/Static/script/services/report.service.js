@@ -48,6 +48,7 @@
                 console.log(data);
                 deferred.resolve(data.data);
             });
+            return deferred.promise;
         }
 
         return {
