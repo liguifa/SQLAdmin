@@ -11,19 +11,24 @@ namespace SQLServer.Domain
     {
         public static string GetEntityTableName(this Type type)
         {
-                return type.GetCustomAttributes(false).OfType<EntityTableAttribute>().FirstOrDefault().EntityName;
+            return type.GetCustomAttributes(false).OfType<EntityTableAttribute>().FirstOrDefault().EntityName;
         }
 
         public static List<string> GetEntityColumnNames(this Type type)
         {
             PropertyInfo[] properties = type.GetProperties();
-            return properties.Select(d => d.GetCustomAttributes(false).OfType<EntityColumnAttribute>().FirstOrDefault()?.EntityName).Where(d => !String.IsNullOrEmpty(d)).ToList();
+            return properties.Select(d => d.GetCustomAttributes(false).OfType<EntityColumnAttribute>().FirstOrDefault()).Where(d => d != null).Select(d => String.IsNullOrEmpty(d.SelectName) ? d.EntityName : d.SelectName).ToList();
         }
 
         public static string GetEntityColumnName(this Type type,string propertyName)
         {
             PropertyInfo property = type.GetProperty(propertyName);
-            return property?.GetCustomAttributes(false).OfType<EntityColumnAttribute>().FirstOrDefault()?.EntityName;
+            EntityColumnAttribute entity = property?.GetCustomAttributes(false).OfType<EntityColumnAttribute>().FirstOrDefault();
+            if(entity == null)
+            {
+                return null;
+            }
+            return String.IsNullOrEmpty(entity.SelectName) ? entity.EntityName : entity.SelectName;
         }
 
         public static List<string> GetEntityColumnNames(this Type type, List<string> propertiesName)

@@ -50,6 +50,24 @@
             });
             return deferred.promise;
         }
+        
+        function _getMemoryInfos() {
+            var deferred = $q.defer();
+            $http.post("/Report/GetMemoryInfos", { tableName: name }).then(function (data) {
+                console.log(data);
+                deferred.resolve(data.data);
+            });
+            return deferred.promise;
+        }
+
+        function _getDiskInfos() {
+            var deferred = $q.defer();
+            $http.post("/Report/GetDiskInfos", { tableName: name }).then(function (data) {
+                console.log(data);
+                deferred.resolve(data.data);
+            });
+            return deferred.promise;
+        }
 
         return {
             getCPUInfos: _getCPUInfos,
@@ -57,7 +75,9 @@
             getConnectedInfos: _getConnectedInfos,
             getExceptionInfos: _getExceptionInfos,
             getQueryHistories: _getQueryHistories,
-            getAllQueryProportionInfo: _getAllQueryProportionInfo
+            getAllQueryProportionInfo: _getAllQueryProportionInfo,
+            getMemoryInfos: _getMemoryInfos,
+            getDiskInfos: _getDiskInfos
         }
     }
 

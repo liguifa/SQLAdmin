@@ -9,7 +9,7 @@ namespace Common.Utility
 {
     public static class LambdaHelper
     {
-        public static string GetColumn<T, TResult>(Expression<Func<T,TResult>> lambda)
+        public static List<string> GetColumn<T, TResult>(Expression<Func<T,TResult>> lambda)
         {
             return GetColumn(lambda.Body);
         }
@@ -19,12 +19,17 @@ namespace Common.Utility
             return GetConditions(lambda.Body);
         }
 
-        private static string GetColumn(Expression expression)
+        private static List<string> GetColumn(Expression expression)
         {
             if (expression.NodeType == ExpressionType.MemberAccess)
             {
                 MemberExpression memberExpression = GetMemberExpression(expression);
-                return memberExpression.Member.Name;
+                return new List<string>() { memberExpression.Member.Name };
+            }
+            if(expression.NodeType == ExpressionType.New)
+            {
+                NewExpression newExpression = expression as NewExpression;
+                return newExpression.Members.Select(d => d.Name).ToList();
             }
             return null;
         }
@@ -48,11 +53,15 @@ namespace Common.Utility
             List<string> returnConditions = new List<string>();
             switch(operatorType)
             {
+                case ExpressionType.AndAlso: returnConditions.AddRange(GetConditionForBinocular(expression, "And")); break;
                 case ExpressionType.And:returnConditions.AddRange(GetConditionForBinocular(expression,"And")); break;
                 case ExpressionType.Or: returnConditions.AddRange(GetConditionForBinocular(expression, "Or")); break;
                 case ExpressionType.GreaterThan: returnConditions.AddRange(GetConditionForBinocular(expression, ">")); break;
+                case ExpressionType.Equal:returnConditions.AddRange(GetConditionForBinocular(expression, "=")); break;
+                case ExpressionType.Call:returnConditions.AddRange(GetConditionForCall(expression));break;
                 case ExpressionType.MemberAccess:returnConditions.Add(GetConditionForMonocular(expression)); break;
-                case ExpressionType.Constant:returnConditions.Add((expression as ConstantExpression).Value.ToString()); break;
+                case ExpressionType.Constant:returnConditions.Add($"'{(expression as ConstantExpression).Value.ToString()}'"); break;
+                case ExpressionType.Convert: returnConditions.Add(GetConditionForMonocular(expression)); break;
             }
             return returnConditions;
         }
@@ -71,7 +80,24 @@ namespace Common.Utility
 
         private static string GetConditionForMonocular(Expression expression)
         {
-            return (expression as MemberExpression).Member.Name;
+            return GetMemberExpression(expression).Member.Name;
+        }
+
+        private static List<string> GetConditionForCall(Expression expression)
+        {
+            MethodCallExpression methodExpression = expression as MethodCallExpression;
+            List<string> returnConditions = new List<string>();
+            switch (methodExpression.Method.Name)
+            {
+                case "Contains":
+                    {
+                        returnConditions.Add(GetConditionForMonocular(methodExpression.Object));
+                        returnConditions.Add("like");
+                        returnConditions.Add($"'{methodExpression.Arguments[0].ToString().Replace("\"","%")}'");
+                        break;
+                    }
+            }
+            return returnConditions;
         }
     }
 }

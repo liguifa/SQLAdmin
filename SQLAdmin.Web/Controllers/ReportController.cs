@@ -96,6 +96,18 @@ namespace SQLAdmin.Web.Controllers
         {
             return Json(ServiceFactory.GetInstance().DBReportService.GetAllQueryProportionInfo(), JsonRequestBehavior.AllowGet);
         }
+
+        [Inject]
+        public JsonResult GetMemoryInfos()
+        {
+            return Json(ServiceFactory.GetInstance().DBReportService.GetMemoryInfos(), JsonRequestBehavior.AllowGet);
+        }
+
+        [Inject]
+        public JsonResult GetDiskInfos()
+        {
+            return Json(ServiceFactory.GetInstance().DBReportService.GetDiskInfos(), JsonRequestBehavior.AllowGet);
+        }
         #endregion
     }
 }

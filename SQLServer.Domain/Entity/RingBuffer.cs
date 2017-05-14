@@ -12,8 +12,8 @@ namespace SQLServer.Domain
         [EntityColumn("ring_buffer_type")]
         public string Type { get; set; }
 
-        [EntityColumn("timestamp")]
-        public string EventTime { get; set; }
+        [EntityColumn("timestamp", "DATEADD(ms, -1 * ((SELECT cpu_ticks/(cpu_ticks/ms_ticks) FROM sys.dm_os_sys_info)- [timestamp]), GETDATE()) as timestamp")]
+        public DateTime EventTime { get; set; }
 
         [EntityColumn("record")]
         public string Record { get; set; }

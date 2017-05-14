@@ -217,6 +217,7 @@
     <Content Include="Views\Report\Exception.cshtml" />
     <Content Include="Views\Report\Query.cshtml" />
     <Content Include="Views\Monitor\Index.cshtml" />
+    <Content Include="Views\Report\HardDisk.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

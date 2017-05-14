@@ -131,7 +131,7 @@ namespace SQLServer.Service
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.Filter<Table, string>(d => d.Type == "U", d => d.Name).ToViewModel(tableName);
+                    return db.Use(tableName).Filter<Table, string>(d => d.Type == "U", d => d.Name).ToViewModel(tableName);
                 }
             }
             catch (Exception e)

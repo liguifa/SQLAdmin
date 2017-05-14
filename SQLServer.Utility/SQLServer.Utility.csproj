@@ -45,6 +45,7 @@
     <Compile Include="ConvertHerlper.cs" />
     <Compile Include="DBScopeInterecpor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RingBufferHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Interceptor\Common.Interceptor.csproj">

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SQLServer.Domain
 {
-    [EntityColumn("..SysObjects")]
+    [EntityTable("..SysObjects")]
     public class Table
     {
         [EntityColumn("id")]

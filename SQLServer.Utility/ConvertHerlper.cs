@@ -128,5 +128,30 @@ namespace SQLServer.Utility
             }
             return tables;
         }
+
+        public static List<DiskViewModel> ToViewModel(this List<Disk> disks)
+        {
+            List<DiskViewModel> viewmodes = new List<DiskViewModel>();
+            DiskViewModel allDisk = new DiskViewModel();
+            allDisk.FreeSpace = disks.Sum(d => d.AvailableSpace);
+            allDisk.TotalSpace = disks.Sum(d => d.TotalSpace);
+            allDisk.UsedSpace = allDisk.TotalSpace - allDisk.FreeSpace;
+            allDisk.FreeSpacePercent = (double)allDisk.FreeSpace / allDisk.TotalSpace;
+            allDisk.DatabaseName = "Server";
+            viewmodes.Add(allDisk);
+            List<IGrouping<long,Disk>> databaseGroup = disks.GroupBy(d => d.DatabaseId).ToList();
+            foreach (var database in databaseGroup)
+            {
+                DiskViewModel databaseDisk = new DiskViewModel();
+                databaseDisk.DatabaseName = database.FirstOrDefault()?.DatabaseName;
+                databaseDisk.DriveName = database.FirstOrDefault()?.VolumeMountPoint;
+                databaseDisk.FreeSpace = database.Sum(d => d.AvailableSpace);
+                databaseDisk.TotalSpace = database.Sum(d => d.TotalSpace);
+                databaseDisk.UsedSpace = databaseDisk.TotalSpace - databaseDisk.FreeSpace;
+                databaseDisk.FreeSpacePercent = (double)databaseDisk.FreeSpace / databaseDisk.TotalSpace;
+                viewmodes.Add(databaseDisk);
+            }
+            return viewmodes;
+        }
     }
 }

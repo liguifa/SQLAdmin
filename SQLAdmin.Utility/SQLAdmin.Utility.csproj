@@ -54,10 +54,12 @@
     <Compile Include="ViewModels\CPUViewModel.cs" />
     <Compile Include="ViewModels\DatabaseTreeViewModel.cs" />
     <Compile Include="ViewModels\DatabaseConfigViewModel.cs" />
+    <Compile Include="ViewModels\DiskViewModel.cs" />
     <Compile Include="ViewModels\ExceptionViewModel.cs" />
     <Compile Include="ViewModels\FieldViewModel.cs" />
     <Compile Include="ViewModels\FieldTypeViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
+    <Compile Include="ViewModels\MemoryViewModel.cs" />
     <Compile Include="ViewModels\NavigationViewModel.cs" />
     <Compile Include="ViewModels\QueryHistoryViewModel.cs" />
     <Compile Include="ViewModels\QueryProportionViewModel.cs" />

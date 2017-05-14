@@ -1023,3 +1023,63 @@
         },
     }
 }])
+
+.directive("saPie", ["guid.service", function (guid) {
+    var vm = {
+        id: guid.newGuid(),
+        template: '<div id="{{vm.id}}"  style="width:400px;height:400px"></div>',
+        build: function (points, xAxis) {
+            var container = document.getElementById(this.id);
+            var option = {
+                HtmlText: false,
+                grid: {
+                    verticalLines: false,
+                    horizontalLines: false
+                },
+                xaxis: { showLabels: false },
+                yaxis: { showLabels: false },
+                pie: {
+                    show: true,
+                    explode: 6
+                },
+                mouse: { track: true },
+                legend: {
+                    position: 'se',
+                    backgroundColor: '#D2E8FF'
+                }
+            }
+            Flotr.draw(container, points, option);
+        }
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        scope: {
+            points: "=",
+            xaxis: "=",
+            _width: "=",
+            _height:"="
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                id: vm.id,
+                width: "1300px",
+                height:'500px'
+            }
+            $scope.$watch("points", function (points) {
+                vm.build(points, $scope.xaxis);
+            }, true);
+            $scope.$watch("xaxis", function (xaxis) {
+                vm.build($scope.points, xaxis);
+            }, true);
+            //$scope.$watch("_width", function (width) {
+            //    $scope.vm.width = width;
+            //});
+            //$scope.$watch("_height", function (height) {
+            //    $scope.vm.height = height;
+            //});
+        },
+    }
+}])

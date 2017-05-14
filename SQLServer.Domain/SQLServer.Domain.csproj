@@ -46,12 +46,15 @@
     <Compile Include="EntityHepler\EntityColumnAttribute.cs" />
     <Compile Include="EntityHepler\EntityTableAttribute.cs" />
     <Compile Include="EntityHepler\TableEx.cs" />
+    <Compile Include="Entity\Disk.cs" />
     <Compile Include="Entity\DmExecSQLText.cs" />
+    <Compile Include="Entity\DmOSVolumeStats.cs" />
     <Compile Include="Entity\Field.cs" />
     <Compile Include="Entity\Index.cs" />
     <Compile Include="Entity\QueryHistory.cs" />
     <Compile Include="Entity\FieldType.cs" />
     <Compile Include="Entity\RingBuffer.cs" />
+    <Compile Include="Entity\SystemInfo.cs" />
     <Compile Include="Entity\Table.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

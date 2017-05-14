@@ -16,12 +16,20 @@ namespace SQLServer.Dao
 {
     public class SQLServerDBRepertory : IRepertory
     {
+        private string mDatabaseName = String.Empty;
+
         protected SQLServerDBContext DBContext
         {
             get
             {
                 return SQLServerDBContextScope.DBContext as SQLServerDBContext;
             }
+        }
+
+        public SQLServerDBRepertory Use(string databaseName)
+        {
+            this.mDatabaseName = databaseName;
+            return this;
         }
 
         public T Add<T>(T t, bool isSaveChange = false) where T : class
@@ -37,7 +45,7 @@ namespace SQLServer.Dao
         public List<T> All<T>() where T : class
         {
             string sql = new SQLQuery().Select(String.Join(",", typeof(T).GetEntityColumnNames()))
-                                       .From(typeof(T).GetEntityTableName())
+                                       .From($"{this.mDatabaseName}{typeof(T).GetEntityTableName()}")
                                        .Qenerate();
             return this.DBContext.SqlReader(sql).ToList<T>();
         }
@@ -77,7 +85,11 @@ namespace SQLServer.Dao
 
         public List<T> Filter<T>(Expression<Func<T, bool>> predicate) where T : class
         {
-            throw new NotImplementedException();
+            string sql = new SQLQuery().Select(String.Join(",", typeof(T).GetEntityColumnNames()))
+                                       .From($"{this.mDatabaseName}{typeof(T).GetEntityTableName()}")
+                                       .Where(String.Join(" ", typeof(T).GetEntityColumnNames(LambdaHelper.GetConditions(predicate))))
+                                       .Qenerate();
+            return this.DBContext.SqlReader(sql).ToList<T>();
         }
 
         public List<TResult> Filter<T, TResult>(Expression<Func<T, TResult>> selector) where T : class
@@ -87,14 +99,20 @@ namespace SQLServer.Dao
 
         public List<T> Filter<T, TResult>(Expression<Func<T, bool>> predicate, Expression<Func<T, TResult>> orderBy) where T : class
         {
-            throw new NotImplementedException();
+            string sql = new SQLQuery().Select(String.Join(",", typeof(T).GetEntityColumnNames()))
+                                       .From($"{this.mDatabaseName}{typeof(T).GetEntityTableName()}")
+                                       .Where(String.Join(" ", typeof(T).GetEntityColumnNames(LambdaHelper.GetConditions(predicate))))
+                                       .OrderBy(typeof(T).GetEntityColumnName(LambdaHelper.GetColumn(orderBy).FirstOrDefault()))
+                                       .Qenerate();
+            return this.DBContext.SqlReader(sql).ToList<T>();
         }
 
         public List<T> Filter<T, TResult>(Expression<Func<T, bool>> predicate, Expression<Func<T, TResult>> orderBy, out int total, int index = 0, int size = 50, bool isAsc = true) where T : class
         {
             string sql = new SQLQuery().Select(String.Join(",", typeof(T).GetEntityColumnNames()))
-                                       .From(typeof(T).GetEntityTableName())
-                                       .OrderBy("last_execution_time")
+                                       .From($"{this.mDatabaseName}{typeof(T).GetEntityTableName()}")
+                                       .Where(String.Join(" ", typeof(T).GetEntityColumnNames(LambdaHelper.GetConditions(predicate))))
+                                       .OrderBy(typeof(T).GetEntityColumnName(LambdaHelper.GetColumn(orderBy).FirstOrDefault()))
                                        .Skip((index - 1) * size)
                                        .Take(size)
                                        .Qenerate();
@@ -102,13 +120,13 @@ namespace SQLServer.Dao
             return this.DBContext.SqlReader(sql).ToList<T>();
         }
 
-        public List<T1> CrossJoin<T1,T2,TCross, TResult>(Expression<Func<T1, TCross>> crossApply, Expression<Func<T1, bool>> predicate, Expression<Func<T1, TResult>> orderBy, out int total, int index = 0, int size = 50, bool isAsc = true) where T1 :class
+        public List<T1> CrossJoin<T1, T2, TCross, TResult>(Expression<Func<T1, TCross>> crossApply, Expression<Func<T1, bool>> predicate, Expression<Func<T1, TResult>> orderBy, out int total, int index = 0, int size = 50, bool isAsc = true) where T1 : class
         {
             string sql = new SQLQuery().Select(String.Join(",", typeof(T1).GetEntityColumnNames()))
-                                       .From(typeof(T1).GetEntityTableName())
-                                       .Cross($"{typeof(T2).GetEntityTableName()}({typeof(T1).GetEntityColumnName(LambdaHelper.GetColumn(crossApply))})")
+                                       .From($"{this.mDatabaseName}{typeof(T1).GetEntityTableName()}")
+                                       .Cross($"{typeof(T2).GetEntityTableName()}({String.Join(",", typeof(T1).GetEntityColumnNames(LambdaHelper.GetColumn(crossApply)))})")
                                        .Where(String.Join(" ", typeof(T1).GetEntityColumnNames(LambdaHelper.GetConditions(predicate))))
-                                       .OrderBy(typeof(T1).GetEntityColumnName(LambdaHelper.GetColumn(orderBy)))
+                                       .OrderBy(typeof(T1).GetEntityColumnName(LambdaHelper.GetColumn(orderBy).FirstOrDefault()))
                                        .Skip((index - 1) * size)
                                        .Take(size)
                                        .Qenerate();
@@ -128,7 +146,11 @@ namespace SQLServer.Dao
 
         public T Find<T>(Expression<Func<T, bool>> predicate) where T : class
         {
-            throw new NotImplementedException();
+            string sql = new SQLQuery().Select($" top 1 {String.Join(",", typeof(T).GetEntityColumnNames())}")
+                                       .From($"{this.mDatabaseName}{typeof(T).GetEntityTableName()}")
+                                       .Where(String.Join(" ", typeof(T).GetEntityColumnNames(LambdaHelper.GetConditions(predicate))))
+                                       .Qenerate();
+            return this.DBContext.SqlReader(sql).ToList<T>().FirstOrDefault();
         }
 
         public T Find<T>(params object[] keys) where T : class
@@ -174,7 +196,7 @@ namespace SQLServer.Dao
         public int Count<T>(Expression<Func<T, bool>> predicate) where T : class
         {
             string sql = new SQLQuery().Select("count(*)")
-                                     .From(typeof(T).GetEntityTableName())
+                                     .From($"{this.mDatabaseName}{typeof(T).GetEntityTableName()}")
                                      .Where(String.Join(" ",typeof(T).GetEntityColumnNames(LambdaHelper.GetConditions(predicate))))
                                      .Qenerate();
             return Convert.ToInt32(this.DBContext.SqlScaler(sql));

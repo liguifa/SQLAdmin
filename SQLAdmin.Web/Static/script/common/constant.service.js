@@ -4,12 +4,13 @@
             CONNECTED: "connected",
             SELECT: "SELECT",
             CPU: "getcpuinfo",
-            Memory: "getmemoryinfo",
+            MEMORY: "getmemoryinfo",
             CONNECT_INFO: "getconnectinfo",
             DELETE_DB: "delete_db",
             EXCEPTION: "geterrorinfo",
             MONITOR: "monitor",
-            QUERYHISTORY:"query_history"
+            QUERYHISTORY: "query_history",
+            DISK:"getdiskinfo"
         }
     }
 

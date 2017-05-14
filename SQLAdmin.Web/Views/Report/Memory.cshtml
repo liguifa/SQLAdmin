@@ -1,7 +1,18 @@
-﻿<div ng-controller="report.controller" ng-init="vm.pageId = @ViewBag.DefaultPageId">
-    <sa-lines points="vm.cpuinfos" xaxis="vm.xaxis"></sa-lines>
-    <div style="height:420px;">
-        <sa-datagrid datas="vm.cpudatas" fields="vm.fields"></sa-datagrid>
+﻿<link href="~/Static/css/sa.report.style.css" rel="stylesheet" />
+
+<div ng-controller="report.controller" ng-init="vm.pageId = @ViewBag.DefaultPageId">
+    <div class="cpuinfo-nav">
+        <ul>
+            <li><button class="sa-button">CPU 使用率</button></li>
+            @*<li><button class="sa-button">CPU 异常</button></li>*@
+        </ul>
+        <div class="sa-clear"></div>
+    </div>
+    <div>
+        <sa-lines points="vm.memory.memoryinfos" xaxis="vm.memory.xaxis"></sa-lines>
+        <div style="height:400px;">
+            <sa-datagrid datas="vm.memory.memorydatas" fields="vm.memory.fields"></sa-datagrid>
+        </div>
     </div>
 </div>
 

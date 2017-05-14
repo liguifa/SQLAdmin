@@ -22,5 +22,9 @@ namespace SQLAdmin.IService
         QueryHistoryViewModel GetQueryHistories(DataFilter filter);
 
         QueryProportionViewModel GetAllQueryProportionInfo();
+
+        List<MemoryViewModel> GetMemoryInfos();
+
+        List<DiskViewModel> GetDiskInfos();
     }
 }

@@ -10,9 +10,12 @@ namespace SQLServer.Domain
     { 
         public string EntityName { get; private set; }
 
-        public EntityColumnAttribute(string name)
+        public string SelectName { get; private set; }
+
+        public EntityColumnAttribute(string name,string selectName = default(string))
         {
             this.EntityName = name;
+            this.SelectName = selectName;
         }
     }
 }

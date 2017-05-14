@@ -51,6 +51,10 @@
     <Compile Include="SQLServerReportService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common.Analysis\Common.Analysis.csproj">
+      <Project>{f017b19f-f940-4fd4-b1f3-d39647cfe400}</Project>
+      <Name>Common.Analysis</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common.Interceptor\Common.Interceptor.csproj">
       <Project>{DC36606A-80CE-4222-8CB6-65F6D39BCF83}</Project>
       <Name>Common.Interceptor</Name>

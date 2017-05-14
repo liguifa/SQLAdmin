@@ -181,3 +181,5 @@ D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.csprojResolveAssemblyReference.c
 D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.g.resources
 D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.dll
 D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.pdb
+D:\SQLAdmin\SQLAdmin.Web\bin\Common.Analysis.dll
+D:\SQLAdmin\SQLAdmin.Web\bin\Common.Analysis.pdb
