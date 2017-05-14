@@ -14,6 +14,11 @@ namespace Common.Utility
             return GetColumn(lambda.Body);
         }
 
+        public static List<string> GetConditions<T>(Expression<Func<T,bool>> lambda)
+        {
+            return GetConditions(lambda.Body);
+        }
+
         private static string GetColumn(Expression expression)
         {
             if (expression.NodeType == ExpressionType.MemberAccess)
@@ -35,6 +40,38 @@ namespace Common.Utility
             }
 
             throw new ArgumentException("Member expression expected");
+        }
+
+        private static List<string> GetConditions(Expression expression)
+        {
+            ExpressionType operatorType = expression.NodeType;
+            List<string> returnConditions = new List<string>();
+            switch(operatorType)
+            {
+                case ExpressionType.And:returnConditions.AddRange(GetConditionForBinocular(expression,"And")); break;
+                case ExpressionType.Or: returnConditions.AddRange(GetConditionForBinocular(expression, "Or")); break;
+                case ExpressionType.GreaterThan: returnConditions.AddRange(GetConditionForBinocular(expression, ">")); break;
+                case ExpressionType.MemberAccess:returnConditions.Add(GetConditionForMonocular(expression)); break;
+                case ExpressionType.Constant:returnConditions.Add((expression as ConstantExpression).Value.ToString()); break;
+            }
+            return returnConditions;
+        }
+
+        private static List<string> GetConditionForBinocular(Expression expression,string @operator)
+        {
+            BinaryExpression binaryExpression = expression as BinaryExpression;
+            List<string> leftConditions = GetConditions(binaryExpression.Left);
+            List<string> rightConditions = GetConditions(binaryExpression.Right);
+            List<string> returnConditions = new List<string>();
+            returnConditions.AddRange(leftConditions);
+            returnConditions.Add(@operator);
+            returnConditions.AddRange(rightConditions);
+            return returnConditions;
+        }
+
+        private static string GetConditionForMonocular(Expression expression)
+        {
+            return (expression as MemberExpression).Member.Name;
         }
     }
 }

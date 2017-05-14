@@ -23,7 +23,25 @@ namespace SQLServer.Domain
         public static string GetEntityColumnName(this Type type,string propertyName)
         {
             PropertyInfo property = type.GetProperty(propertyName);
-            return property.GetCustomAttributes(false).OfType<EntityColumnAttribute>().FirstOrDefault()?.EntityName;
+            return property?.GetCustomAttributes(false).OfType<EntityColumnAttribute>().FirstOrDefault()?.EntityName;
+        }
+
+        public static List<string> GetEntityColumnNames(this Type type, List<string> propertiesName)
+        {
+            List<string> returnEntityNames = new List<string>();
+            foreach(string propertyName in propertiesName)
+            {
+                var entityName = GetEntityColumnName(type, propertyName);
+                if(!String.IsNullOrEmpty(entityName))
+                {
+                    returnEntityNames.Add(entityName);
+                }
+                else
+                {
+                    returnEntityNames.Add(propertyName);
+                }
+            }
+            return returnEntityNames;
         }
     }
 }

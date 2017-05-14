@@ -118,7 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Static\css\cpuinfo.css" />
+    <Content Include="Static\css\sa.report.style.css" />
     <Content Include="Static\css\messager.css" />
     <Content Include="Static\css\sa.icon.css" />
     <Content Include="Static\css\sa.style.css">

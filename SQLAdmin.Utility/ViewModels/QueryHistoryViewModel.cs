@@ -8,6 +8,17 @@ namespace SQLAdmin.Utility.ViewModels
 {
     public class QueryHistoryViewModel
     {
+        public List<QueryHistoryInfoViewModel> QueryHistories { get; set; }
+
+        public int PageIndex { get; set; }
+
+        public int PageSize { get; set; }
+
+        public int PageCount { get; set; }
+    }
+
+    public class QueryHistoryInfoViewModel
+    {
         public string Text { get; set; }
 
         public string LastExecutionTime { get; set; }

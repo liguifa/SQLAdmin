@@ -245,7 +245,7 @@
         template: "<div class='sa-tabs' id='{{vm.id}}'>\
                     <div class='sa-tabs-tab' ng-repeat='page in vm.pages' id='{{page.id}}' style='z-index:{{page.isSelected?990:989}}'>\
                         <div class='sa-tabs-title' style='left:{{$index*210}}px' ng-click='vm.click_title(page.id)'>{{page.title}}</div>\
-                        <div class='sa-tabs-panel' ng-if='page.isSelected'><div ng-include src='page.url'></div></div>\
+                        <div class='sa-tabs-panel' ng-if='page.isSelected'><div class='sa-tabs-panel-include' ng-include src='page.url'></div></div>\
                     </div>\
                    </div>",
         build: function ($scope,pages) {

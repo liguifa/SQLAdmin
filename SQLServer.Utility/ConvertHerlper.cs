@@ -11,14 +11,14 @@ namespace SQLServer.Utility
 {
     public static class ConvertHerlper
     {
-        public static List<QueryHistoryViewModel> ToViewModel(this List<QueryHistory> entities)
+        public static List<QueryHistoryInfoViewModel> ToViewModel(this List<QueryHistory> entities)
         {
-            List<QueryHistoryViewModel> viewmodels = new List<QueryHistoryViewModel>();
+            List<QueryHistoryInfoViewModel> viewmodels = new List<QueryHistoryInfoViewModel>();
             if(entities!=null)
             {
                 foreach(QueryHistory entity in entities)
                 {
-                    QueryHistoryViewModel viewmodel = new QueryHistoryViewModel();
+                    QueryHistoryInfoViewModel viewmodel = new QueryHistoryInfoViewModel();
                     viewmodel.LastCPUTime = entity.LastCPUTime;
                     viewmodel.LastExecuteTime = entity.LastExecuteTime;
                     viewmodel.LastExecutionTime = entity.LastExecutionTime.ToLocalTime().ToString();

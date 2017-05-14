@@ -244,6 +244,11 @@ body,html,document {
     border: #ACACAC 1px solid;
 }
 
+.sa-tabs-panel-include{
+    height:100%;
+    width:100%;
+}
+
 .sa-table-panel-iframe{
     border:none;
     width:100%;

@@ -13,7 +13,9 @@ namespace SQLAdmin.Dao
     {
         bool Connect();
 
-        List<T> All<T>() where T : class;
+        List<T> All<T>(Expression<Func<T, bool>> predicate) where T : class;
+
+        int Count<T>(Expression<Func<T, bool>> predicate) where T : class;
 
         List<T> Filter<T>(Expression<Func<T, bool>> predicate) where T : class;
 

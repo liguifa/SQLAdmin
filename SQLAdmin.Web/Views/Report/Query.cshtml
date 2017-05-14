@@ -1,6 +1,5 @@
-﻿<link href="~/Static/css/cpuinfo.css" rel="stylesheet" />
-
-<div ng-controller="report.controller" ng-init="vm.pageId = @ViewBag.DefaultPageId">
+﻿<link href="~/Static/css/sa.report.style.css" rel="stylesheet" />
+<div ng-controller="report.controller" ng-init="vm.pageId = @ViewBag.DefaultPageId" class="query-panel">
     <div class="cpuinfo-nav">
         <ul>
             <li><button class="sa-button" ng-click="vm.switchTo(61)">全部查询</button></li>
@@ -9,8 +8,9 @@
         </ul>
         <div class="sa-clear"></div>
     </div>
-    <div ng-if="vm.pageId == 61">
+    <div ng-if="vm.pageId == 61" class="query-panel-all">
         <sa-datagrid datas="vm.query.historydatas" fields="vm.query.fields"></sa-datagrid>
+        <sa-pagination page="vm.query.page" pageNumber="10" click="vm.query.jump(pageIndex)"></sa-pagination>
     </div>
     <div ng-if="vm.pageId == 62">
         <sa-bars points="vm.query.queryProportionInfo" fields="vm.query.xaxis"></sa-bars>

@@ -107,11 +107,12 @@ namespace SQLServer.Dao
             string sql = new SQLQuery().Select(String.Join(",", typeof(T1).GetEntityColumnNames()))
                                        .From(typeof(T1).GetEntityTableName())
                                        .Cross($"{typeof(T2).GetEntityTableName()}({typeof(T1).GetEntityColumnName(LambdaHelper.GetColumn(crossApply))})")
+                                       .Where(String.Join(" ", typeof(T1).GetEntityColumnNames(LambdaHelper.GetConditions(predicate))))
                                        .OrderBy(typeof(T1).GetEntityColumnName(LambdaHelper.GetColumn(orderBy)))
                                        .Skip((index - 1) * size)
                                        .Take(size)
                                        .Qenerate();
-            total = 500;
+            total = this.Count<T1>(predicate);
             return this.DBContext.SqlReader(sql).ToList<T1>();
         }
 
@@ -163,6 +164,20 @@ namespace SQLServer.Dao
         public bool UpdateRange<T>(IEnumerable<T> TObjects, string key = "ID", bool isSaveChange = false) where T : class
         {
             throw new NotImplementedException();
+        }
+
+        public List<T> All<T>(Expression<Func<T, bool>> predicate) where T : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Count<T>(Expression<Func<T, bool>> predicate) where T : class
+        {
+            string sql = new SQLQuery().Select("count(*)")
+                                     .From(typeof(T).GetEntityTableName())
+                                     .Where(String.Join(" ",typeof(T).GetEntityColumnNames(LambdaHelper.GetConditions(predicate))))
+                                     .Qenerate();
+            return Convert.ToInt32(this.DBContext.SqlScaler(sql));
         }
     }
 }

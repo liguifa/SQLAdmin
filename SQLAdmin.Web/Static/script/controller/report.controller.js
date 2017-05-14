@@ -23,7 +23,13 @@
                 historydatas: [],
                 fields: [{ Name: "语句" }, { Name: "时间" }, { Name: "CPU时间" }, { Name: "最小CPU时间" }, { Name: "最大CPU时间" }, { Name: "执行时间" }, { Name: "最小执行时间" }, { Name: "最大执行时间" }, { Name: "影响行数" }, { Name: "最小影响行数" }, { Name: "最大影响行数" }],
                 queryProportionInfo: [],
-                xaxis:[]
+                xaxis: [],
+                page: {
+                    pageIndex: 1,
+                    pageSize: 50,
+                    totle: 0,
+                    pageCount: 0
+                },
             },
 
             pageId: 0,
@@ -118,12 +124,19 @@
         }
 
         function getQueryHistories() {
-            report.getQueryHistories().then(function (histories) {
+            report.getQueryHistories($scope.vm.query.page).then(function (history) {
                 var historydatas = [];
+                var histories = history.QueryHistories;
                 for (var i in histories) {
                     historydatas.push({ rows: histories[i] });
                 }
                 $scope.vm.query.historydatas = historydatas;
+                $scope.page = {
+                    pageIndex: history.PageIndex,
+                    pageSize: history.PageSize,
+                    totle: 0,
+                    pageCount: history.PageCount,
+                }
             });
         }
 

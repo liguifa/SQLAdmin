@@ -22,7 +22,7 @@ namespace SQLServer.Service
 
         }
 
-        public List<QueryHistoryViewModel> GetQueryHistories(DataFilter filter)
+        public QueryHistoryViewModel GetQueryHistories(DataFilter filter)
         {
             try
             {
@@ -30,7 +30,14 @@ namespace SQLServer.Service
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
                     int total = 0;
-                    return db.CrossJoin<QueryHistory, DmExecSQLText, byte[], long>(d => d.SQLHandle, d => true, d => d.LastExecuteTime, out total, filter.PageIndex, filter.PageSize, filter.IsAsc).ToViewModel();
+                    List<QueryHistoryInfoViewModel> queryHistories = db.CrossJoin<QueryHistory, DmExecSQLText, byte[], DateTime>(d => d.SQLHandle, d => d.LastReturnRows > -1, d => d.LastExecutionTime, out total, filter.PageIndex, filter.PageSize, filter.IsAsc).ToViewModel();
+                    return new QueryHistoryViewModel()
+                    {
+                        QueryHistories = queryHistories,
+                        PageIndex = filter.PageIndex,
+                        PageSize = filter.PageSize,
+                        PageCount = Convert.ToInt32(Math.Ceiling((double)total / filter.PageSize))
+                    };
                 }
             }
             catch(Exception e)
@@ -115,7 +122,7 @@ namespace SQLServer.Service
                     Dictionary<string, dynamic> queryConfig = new Dictionary<string, dynamic>() { { "Select",new ExpandoObject() }, { "Delete", new ExpandoObject() }, { "Update", new ExpandoObject() }, { "Insert", new ExpandoObject() } };
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
                     int total = 0;
-                    List<QueryHistory> queries = db.CrossJoin<QueryHistory, DmExecSQLText, byte[], DateTime>(d => d.SQLHandle, d => true, d => d.LastExecutionTime, out total, 1, int.MaxValue, true);
+                    List<QueryHistory> queries = db.CrossJoin<QueryHistory, DmExecSQLText, byte[], DateTime>(d => d.SQLHandle, d => d.LastReturnRows > -1, d => d.LastExecutionTime, out total, 1, int.MaxValue, true);
                     foreach (var queryIndex in queryConfig)
                     {
                         queryIndex.Value.Count = 0;

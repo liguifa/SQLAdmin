@@ -19,7 +19,7 @@ namespace SQLAdmin.IService
 
         List<ExceptionViewModel> GetExceptionInfos();
 
-        List<QueryHistoryViewModel> GetQueryHistories(DataFilter filter);
+        QueryHistoryViewModel GetQueryHistories(DataFilter filter);
 
         QueryProportionViewModel GetAllQueryProportionInfo();
     }

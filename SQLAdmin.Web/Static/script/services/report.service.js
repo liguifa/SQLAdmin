@@ -34,9 +34,9 @@
             return deferred.promise;
         }
 
-        function _getQueryHistories() {
+        function _getQueryHistories(page) {
             var deferred = $q.defer();
-            $http.get("/Report/GetQueryHistories").then(function (data) {
+            $http.post("/Report/GetQueryHistories", { TableName: null, SortColumn: null, IsAsc: true, PageIndex: page.pageIndex, PageSize: page.pageSize }).then(function (data) {
                 deferred.resolve(data.data);
             });
             return deferred.promise;

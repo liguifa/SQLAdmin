@@ -11,3 +11,15 @@
         .cpuinfo-nav ul li {
             float: left;
         }
+
+.query-panel {
+    height:90%;
+}
+
+.query-panel-all{
+    height:100%;
+}
+
+.query-panel-all .sa-datagrid-content {
+    height:100%;
+}
