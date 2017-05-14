@@ -123,6 +123,11 @@
             });
         }
 
+        $scope.vm.query.jump = function (pageIndex) {
+            $scope.vm.query.page.pageIndex = pageIndex;
+            getQueryHistories();
+        }
+
         function getQueryHistories() {
             report.getQueryHistories($scope.vm.query.page).then(function (history) {
                 var historydatas = [];
@@ -131,7 +136,7 @@
                     historydatas.push({ rows: histories[i] });
                 }
                 $scope.vm.query.historydatas = historydatas;
-                $scope.page = {
+                $scope.vm.query.page = {
                     pageIndex: history.PageIndex,
                     pageSize: history.PageSize,
                     totle: 0,
