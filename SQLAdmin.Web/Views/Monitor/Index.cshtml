@@ -1,3 +1,35 @@
 ﻿<div ng-controller="monitor.controller">
-    <sa-datagrid></sa-datagrid>
+    <div ng-if="true">
+
+    </div>
+    <div ng-if="false">
+        <div class='sa-form'>
+            <div>
+                <label>类别:</label>
+                <select class='sa-connect-input'>
+                    <option ng-repeat='type in vm.types' value='type.id'>{{type.displayName}}</option>
+                </select>
+            </div>
+            <div>
+                <label>地址:</label>
+                <input type='text' class='sa-connect-input' ng-model='info.address' />
+            </div>
+            <div>
+                <label>端口:</label>
+                <input type='text' class='sa-connect-input' ng-model='info.port' />
+            </div>
+            <div>
+                <label>账号:</label>
+                <input type='text' class='sa-connect-input' ng-model='info.username' />
+            </div>
+            <div>
+                <label>密码:</label>
+                <input type='password' class='sa-connect-input' ng-model='info.password' />
+            </div>
+        </div>
+        <div class='sa-connect-footer'>
+            <button class='sa-button' ng-click='vm.determine()'>确定</button>
+            <button class='sa-button' ng-click='vm.cancel()'>取消</button>
+        </div>
+    </div>
 </div>

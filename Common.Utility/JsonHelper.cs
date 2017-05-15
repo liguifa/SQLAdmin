@@ -23,6 +23,21 @@ namespace Common.Utility
             }
         }
 
+        public static void SerializerObjectToFile(object obj,string filename)
+        {
+            string fileFullname = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename);
+            if(File.Exists(fileFullname))
+            {
+                File.Delete(fileFullname);
+            }
+            using (FileStream fs = File.Open(fileFullname, FileMode.OpenOrCreate))
+            {
+                string json = SerializerObjectByJsonConvert(obj);
+                byte[] buffer = Encoding.Default.GetBytes(json);
+                fs.Write(buffer, 0, buffer.Length);
+            }
+        }
+
         public static T DeserializeObjectByJsonConvert<T>(string input) where T : class
         {
             return JsonConvert.DeserializeObject<T>(input);

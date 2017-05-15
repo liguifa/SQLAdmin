@@ -92,6 +92,10 @@
       <Project>{f3c30030-892b-4059-be44-228d4acd0e8a}</Project>
       <Name>SQLAdmin.TimerMain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SQLServer.Service\SQLServer.Service.csproj">
+      <Project>{b36c2da6-886d-4742-9db8-9461ac8d9931}</Project>
+      <Name>SQLServer.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

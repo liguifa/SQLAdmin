@@ -207,6 +207,9 @@
     <Content Include="config\databaseType.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="MonitorType.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\10.1.1.11.pubxml" />
     <Content Include="Views\Manage\Query.cshtml" />
     <Content Include="Static\script\common\event.service.js" />

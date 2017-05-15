@@ -49,7 +49,6 @@
     <Compile Include="MenuHelper.cs" />
     <Compile Include="NavigationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SerializeHelper.cs" />
     <Compile Include="ViewModels\ConnectedViewModel.cs" />
     <Compile Include="ViewModels\CPUViewModel.cs" />
     <Compile Include="ViewModels\DatabaseTreeViewModel.cs" />

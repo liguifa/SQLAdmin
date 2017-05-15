@@ -1,4 +1,5 @@
-﻿using SQLAdmin.IService;
+﻿using SQLAdmin.Domain;
+using SQLAdmin.IService;
 using SQLAdmin.Web.App_Start;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,12 @@ namespace SQLAdmin.Web.Controllers
         public JsonResult GetMonitors()
         {
             return Json(ServiceFactory.GetInstance().MonitorService.GetAllSchedule());
+        }
+
+        [Inject]
+        public JsonResult AddMonitors(Schedule schedule)
+        {
+            return Json(ServiceFactory.GetInstance().MonitorService.AddSchedule(schedule), JsonRequestBehavior.AllowGet);
         }
     }
 }

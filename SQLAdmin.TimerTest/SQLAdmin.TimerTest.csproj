@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F3C30030-892B-4059-BE44-228D4ACD0E8A}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{7FBE6000-A552-4EC5-81D0-E231463E6A71}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SQLAdmin.TimerMain</RootNamespace>
-    <AssemblyName>SQLAdmin.TimerMain</AssemblyName>
+    <RootNamespace>SQLAdmin.TimerTest</RootNamespace>
+    <AssemblyName>SQLAdmin.TimerTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,21 +42,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScheduleService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="MonitorType.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Utility\Common.Utility.csproj">
       <Project>{7272f819-4cff-4b74-bff4-ac9a61dbf215}</Project>
       <Name>Common.Utility</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SQLAdmin.Config\SQLAdmin.Config.csproj">
-      <Project>{a724907b-ef35-416a-af6f-340417f40b99}</Project>
-      <Name>SQLAdmin.Config</Name>
+    <ProjectReference Include="..\SQLAdmin.Domain\SQLAdmin.Domain.csproj">
+      <Project>{a85141b4-0571-4d0e-b868-99f1af36dd8e}</Project>
+      <Name>SQLAdmin.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SQLAdmin.TimerContract\SQLAdmin.TimerContract.csproj">
-      <Project>{b623f59d-8c25-44ad-ad0d-8823495bf66f}</Project>
-      <Name>SQLAdmin.TimerContract</Name>
+    <ProjectReference Include="..\SQLAdmin.IService\SQLAdmin.IService.csproj">
+      <Project>{54b4022a-6bf0-416e-9578-e165136dc8d7}</Project>
+      <Name>SQLAdmin.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLAdmin.Utility\SQLAdmin.Utility.csproj">
+      <Project>{698f30d4-2153-4055-b1f3-ed51670877a5}</Project>
+      <Name>SQLAdmin.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLServer.Service\SQLServer.Service.csproj">
+      <Project>{b36c2da6-886d-4742-9db8-9461ac8d9931}</Project>
+      <Name>SQLServer.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

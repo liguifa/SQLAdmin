@@ -45,11 +45,20 @@
     <Compile Include="ConvertHerlper.cs" />
     <Compile Include="DBScopeInterecpor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScheduleTypeHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Interceptor\Common.Interceptor.csproj">
       <Project>{dc36606a-80ce-4222-8cb6-65f6d39bcf83}</Project>
       <Name>Common.Interceptor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Utility\Common.Utility.csproj">
+      <Project>{7272f819-4cff-4b74-bff4-ac9a61dbf215}</Project>
+      <Name>Common.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLAdmin.Domain\SQLAdmin.Domain.csproj">
+      <Project>{a85141b4-0571-4d0e-b868-99f1af36dd8e}</Project>
+      <Name>SQLAdmin.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\SQLAdmin.Utility\SQLAdmin.Utility.csproj">
       <Project>{698f30d4-2153-4055-b1f3-ed51670877a5}</Project>

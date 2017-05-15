@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,13 @@ namespace Common.Utility
         {
             MailMessage message = email.ToMailMessage();
             SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.163.com";
+            smtp.Port = 25;
+            smtp.Credentials = new NetworkCredential("18840848462@163.com", "1qaz2wsxE");
+            smtp.EnableSsl = true; //Gmail要求SSL连接
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network; //Gmail的发送方式是通过网络的方式，需要指定
+            ServicePointManager.ServerCertificateValidationCallback = (s, c, cc, ss) => true;
+            smtp.Send(message);
             return true;
         }
     }
@@ -47,6 +55,9 @@ namespace Common.Utility
             message.Subject = email.Subject;
             message.SubjectEncoding = Encoding.UTF8;
             message.Body = email.Body;
+            message.From = new MailAddress("18840848462@163.com");
+            message.Sender = new MailAddress("18840848462@163.com");
+          
             return message;
         }
     }

@@ -10,5 +10,7 @@ namespace SQLAdmin.IService
     public interface IMonitorService
     {
         List<Schedule> GetAllSchedule();
+
+        bool AddSchedule(SQLAdmin.Domain.Schedule schedule);
     }
 }

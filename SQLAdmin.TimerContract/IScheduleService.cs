@@ -11,7 +11,7 @@ namespace SQLAdmin.TimerContract
     public interface IScheduleService
     {
         [OperationContract]
-        bool AddScheduleService(Schedule schedule);
+        bool AddSchedule(Schedule schedule);
 
         [OperationContract]
         List<Schedule> GetAllSchedules();

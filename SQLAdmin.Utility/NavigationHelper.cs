@@ -1,4 +1,5 @@
-﻿using SQLAdmin.Utility.ViewModels;
+﻿using Common.Utility;
+using SQLAdmin.Utility.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,7 +20,7 @@ namespace SQLAdmin.Utility
                 byte[] buffer = new byte[fs.Length];
                 fs.Read(buffer, 0, buffer.Length);
                 string config = Encoding.Default.GetString(buffer);
-                return SerializeHelper.Deserialize<List<NavigationViewModel>>(config);
+                return SerializerHelper.DeserializeObjectByJsonConvert<List<NavigationViewModel>>(config);
             }
         }
     }

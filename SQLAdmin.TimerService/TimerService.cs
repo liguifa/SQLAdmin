@@ -28,25 +28,26 @@ namespace SQLAdmin.TimerService
 
         protected override void OnStart(string[] args)
         {
-            try
+            Task.Run(() =>
             {
-                Task.Run(() =>
-                {
 #if DEBUG
-                    while (File.Exists(@"C:\SQLAdmin.Timer.sleep"))
-                    {
-                        Thread.Sleep(1000);
-                    }
+                while (File.Exists(@"C:\SQLAdmin.Timer.sleep"))
+                {
+                    Thread.Sleep(1000);
+                }
 #endif
+                try
+                {
                     this.mHost = new ServiceHost(typeof(ScheduleService));
                     this.mHost.Open();
                     TimerActivator.Start();
-                });
-            }
-            catch(Exception e)
-            {
-                mLog.Error(e.ToString());
-            }
+                }
+                catch (Exception e)
+                {
+                    mLog.Error(e.ToString());
+                }
+            });
+
         }
 
         protected override void OnStop()

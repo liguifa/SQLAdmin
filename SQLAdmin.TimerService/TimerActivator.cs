@@ -34,19 +34,33 @@ namespace SQLAdmin.TimerService
                 ScheduleService scheduleService = new ScheduleService();
                 while (mIsRun)
                 {
-                    List<Schedule> schedules = scheduleService.GetSchedules();
-                    if (schedules != null)
+                    try
                     {
-                        foreach (var schedule in schedules)
+                        List<Schedule> schedules = scheduleService.GetAllSchedules();
+                        if (schedules != null)
                         {
-                            if (schedule.NextTime <= DateTime.UtcNow)
+                            foreach (var schedule in schedules)
                             {
-                                mTasks.Enqueue(schedule);
-                                schedule.NextTime = CalculateNextTime(schedule);
+                                try
+                                {
+                                    if (schedule.NextTime <= DateTime.UtcNow)
+                                    {
+                                        mTasks.Enqueue(schedule);
+                                        schedule.NextTime = CalculateNextTime(schedule);
+                                    }
+                                }
+                                catch(Exception e)
+                                {
+
+                                }
                             }
                         }
+                        Thread.Sleep(30000);
                     }
-                    Thread.Sleep(30000);
+                    catch(Exception e)
+                    {
+                        
+                    }
                 }
             });
         }
@@ -68,14 +82,21 @@ namespace SQLAdmin.TimerService
             {
                 while (mIsRun)
                 {
-                    if(mTasks.Count>0)
+                    try
                     {
-                        Schedule task = mTasks.Dequeue();
-                        ThreadPool.QueueUserWorkItem(d => ExecuteTask(task));
+                        if (mTasks.Count > 0)
+                        {
+                            Schedule task = mTasks.Dequeue();
+                            ThreadPool.QueueUserWorkItem(d => ExecuteTask(task));
+                        }
+                        else
+                        {
+                            Thread.Sleep(2000);
+                        }
                     }
-                    else
+                    catch(Exception e)
                     {
-                        Thread.Sleep(2000);
+
                     }
                 }
             });
@@ -87,7 +108,7 @@ namespace SQLAdmin.TimerService
             {
                 Assembly taskAssembly = Assembly.Load(task.Assembly);
                 var taskType = taskAssembly.CreateInstance(task.Type);
-                taskType.GetType().GetMethod(task.Method).Invoke(taskType, null);
+                taskType.GetType().GetMethod(task.Method).Invoke(taskType, new object[] { task });
             }
             catch (Exception e)
             {
