@@ -102,7 +102,7 @@ namespace SQLServer.Dao
             string sql = new SQLQuery().Select(String.Join(",", typeof(T).GetEntityColumnNames()))
                                        .From($"{this.mDatabaseName}{typeof(T).GetEntityTableName()}")
                                        .Where(String.Join(" ", typeof(T).GetEntityColumnNames(LambdaHelper.GetConditions(predicate))))
-                                       .OrderBy(typeof(T).GetEntityColumnName(LambdaHelper.GetColumn(orderBy).FirstOrDefault()))
+                                       .OrderBy(typeof(T).GetEntityColumnName(LambdaHelper.GetColumn(orderBy).FirstOrDefault(),true))
                                        .Qenerate();
             return this.DBContext.SqlReader(sql).ToList<T>();
         }
@@ -112,7 +112,7 @@ namespace SQLServer.Dao
             string sql = new SQLQuery().Select(String.Join(",", typeof(T).GetEntityColumnNames()))
                                        .From($"{this.mDatabaseName}{typeof(T).GetEntityTableName()}")
                                        .Where(String.Join(" ", typeof(T).GetEntityColumnNames(LambdaHelper.GetConditions(predicate))))
-                                       .OrderBy(typeof(T).GetEntityColumnName(LambdaHelper.GetColumn(orderBy).FirstOrDefault()))
+                                       .OrderBy(typeof(T).GetEntityColumnName(LambdaHelper.GetColumn(orderBy).FirstOrDefault(), true))
                                        .Skip((index - 1) * size)
                                        .Take(size)
                                        .Qenerate();
@@ -126,7 +126,7 @@ namespace SQLServer.Dao
                                        .From($"{this.mDatabaseName}{typeof(T1).GetEntityTableName()}")
                                        .Cross($"{typeof(T2).GetEntityTableName()}({String.Join(",", typeof(T1).GetEntityColumnNames(LambdaHelper.GetColumn(crossApply)))})")
                                        .Where(String.Join(" ", typeof(T1).GetEntityColumnNames(LambdaHelper.GetConditions(predicate))))
-                                       .OrderBy(typeof(T1).GetEntityColumnName(LambdaHelper.GetColumn(orderBy).FirstOrDefault()))
+                                       .OrderBy(typeof(T1).GetEntityColumnName(LambdaHelper.GetColumn(orderBy).FirstOrDefault(), true))
                                        .Skip((index - 1) * size)
                                        .Take(size)
                                        .Qenerate();

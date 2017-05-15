@@ -28,6 +28,7 @@ C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLServer.Service\obj\Debug\SQLServer.Se
 D:\SQLAdmin\SQLServer.Service\bin\Debug\log4net.dll
 D:\SQLAdmin\SQLServer.Service\bin\Debug\SQLServer.Service.dll
 D:\SQLAdmin\SQLServer.Service\bin\Debug\SQLServer.Service.pdb
+D:\SQLAdmin\SQLServer.Service\bin\Debug\Common.Analysis.dll
 D:\SQLAdmin\SQLServer.Service\bin\Debug\Common.Interceptor.dll
 D:\SQLAdmin\SQLServer.Service\bin\Debug\Common.Utility.dll
 D:\SQLAdmin\SQLServer.Service\bin\Debug\Logger.dll
@@ -45,6 +46,7 @@ D:\SQLAdmin\SQLServer.Service\bin\Debug\Microsoft.Practices.Unity.dll
 D:\SQLAdmin\SQLServer.Service\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
 D:\SQLAdmin\SQLServer.Service\bin\Debug\MMS.Config.dll
 D:\SQLAdmin\SQLServer.Service\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\SQLAdmin\SQLServer.Service\bin\Debug\Common.Analysis.pdb
 D:\SQLAdmin\SQLServer.Service\bin\Debug\Common.Interceptor.pdb
 D:\SQLAdmin\SQLServer.Service\bin\Debug\Logger.pdb
 D:\SQLAdmin\SQLServer.Service\bin\Debug\Common.Utility.pdb
@@ -66,5 +68,3 @@ D:\SQLAdmin\SQLServer.Service\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 D:\SQLAdmin\SQLServer.Service\obj\Debug\SQLServer.Service.csprojResolveAssemblyReference.cache
 D:\SQLAdmin\SQLServer.Service\obj\Debug\SQLServer.Service.dll
 D:\SQLAdmin\SQLServer.Service\obj\Debug\SQLServer.Service.pdb
-D:\SQLAdmin\SQLServer.Service\bin\Debug\Common.Analysis.dll
-D:\SQLAdmin\SQLServer.Service\bin\Debug\Common.Analysis.pdb

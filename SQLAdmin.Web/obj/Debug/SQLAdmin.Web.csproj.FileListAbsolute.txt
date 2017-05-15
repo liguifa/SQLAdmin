@@ -85,6 +85,8 @@ C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Web\bin\zh-Hans\System.Web.Mvc.
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.dll
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.pdb
 C:\Users\Guifa.Lee\Source\Repos\SQAdmin\SQLAdmin.Web\bin\log4net.config
+D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.csprojResolveAssemblyReference.cache
+D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.g.resources
 D:\SQLAdmin\SQLAdmin.Web\bin\roslyn\csc.exe
 D:\SQLAdmin\SQLAdmin.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -104,6 +106,7 @@ D:\SQLAdmin\SQLAdmin.Web\bin\Static\script\angular.min.js
 D:\SQLAdmin\SQLAdmin.Web\bin\Static\script\directive\sa.directive.js
 D:\SQLAdmin\SQLAdmin.Web\bin\log4net.config
 D:\SQLAdmin\SQLAdmin.Web\bin\config\databaseType.config
+D:\SQLAdmin\SQLAdmin.Web\bin\MonitorType.config
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLAdmin.Web.dll.config
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLAdmin.Web.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLAdmin.Web.pdb
@@ -138,6 +141,7 @@ D:\SQLAdmin\SQLAdmin.Web\bin\SQLAdmin.TimerContract.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Dao.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Utility.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Domain.dll
+D:\SQLAdmin\SQLAdmin.Web\bin\Common.Analysis.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\Microsoft.Practices.ServiceLocation.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLAdmin.Dao.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\Common.Cryptogram.pdb
@@ -168,6 +172,7 @@ D:\SQLAdmin\SQLAdmin.Web\bin\SQLAdmin.TimerContract.pdb
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Dao.pdb
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Utility.pdb
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLServer.Domain.pdb
+D:\SQLAdmin\SQLAdmin.Web\bin\Common.Analysis.pdb
 D:\SQLAdmin\SQLAdmin.Web\bin\Microsoft.Practices.ServiceLocation.pdb
 D:\SQLAdmin\SQLAdmin.Web\bin\Microsoft.Practices.ServiceLocation.xml
 D:\SQLAdmin\SQLAdmin.Web\bin\SQLAdmin.Dao.pdb
@@ -177,9 +182,5 @@ D:\SQLAdmin\SQLAdmin.Web\bin\zh-Hans\System.Web.Webpages.Deployment.resources.dl
 D:\SQLAdmin\SQLAdmin.Web\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\zh-Hans\System.Web.Helpers.resources.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\zh-Hans\System.Web.Mvc.resources.dll
-D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.csprojResolveAssemblyReference.cache
-D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.g.resources
 D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.dll
 D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.pdb
-D:\SQLAdmin\SQLAdmin.Web\bin\Common.Analysis.dll
-D:\SQLAdmin\SQLAdmin.Web\bin\Common.Analysis.pdb

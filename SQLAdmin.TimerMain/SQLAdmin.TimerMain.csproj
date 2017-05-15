@@ -44,6 +44,10 @@
     <Compile Include="ScheduleService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common.Utility\Common.Utility.csproj">
+      <Project>{7272f819-4cff-4b74-bff4-ac9a61dbf215}</Project>
+      <Name>Common.Utility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SQLAdmin.Config\SQLAdmin.Config.csproj">
       <Project>{a724907b-ef35-416a-af6f-340417f40b99}</Project>
       <Name>SQLAdmin.Config</Name>

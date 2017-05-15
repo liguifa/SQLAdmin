@@ -8,25 +8,25 @@ namespace SQLAdmin.Domain
 {
     public class Schedule
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
 
         public string DisplayName { get; set; }
 
-        public string Assembly { get; set; }
+        public long StartTime { get; set; } = long.MinValue;
 
-        public string Type { get; set; }
+        public long EndTime { get; set; } = long.MaxValue;
 
-        public string Method { get; set; }
-
-        public DateTime StartTime { get; set; } = DateTime.UtcNow;
-
-        public DateTime EndTime { get; set; } = DateTime.MaxValue;
-
-        public DateTime NextTime { get; set; }
+        public long NextTime { get; set; }
 
         public IntervalType IntervalType { get; set; }
 
         public int Interval { get; set; }
+
+        public MonitorType MonitorType { get; set; }
+
+        public int Threshold { get; set; }
+
+        public string ToEmail { get; set; }
     }
 
     public enum IntervalType
@@ -34,5 +34,10 @@ namespace SQLAdmin.Domain
         OnceOnly,
         Hour,
         Day,
+    }
+
+    public enum MonitorType
+    {
+        CPU,
     }
 }

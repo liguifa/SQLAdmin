@@ -1,0 +1,18 @@
+﻿.sa-add-monitor{
+    position:fixed;
+    top:200px;
+    left:600px;
+} 
+.sa-monitor {
+    height:340px;
+}
+.sa-monitor .sa-border{
+    height:300px;
+}
+.sa-monitor .sa-content{
+    height:300px;
+    padding-top:0px;
+}
+.sa-monitor-form{
+    height:auto;
+}

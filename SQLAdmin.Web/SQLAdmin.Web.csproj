@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Static\css\sa.monior.style.css" />
     <Content Include="Static\css\sa.report.style.css" />
     <Content Include="Static\css\messager.css" />
     <Content Include="Static\css\sa.icon.css" />
@@ -153,6 +154,7 @@
     <Content Include="Static\script\controller\database.controller.js" />
     <Content Include="Static\script\controller\gui.common.controller.js" />
     <Content Include="Static\script\controller\manage.controller.js" />
+    <Content Include="Static\script\controller\monitor.controller.js" />
     <Content Include="Static\script\controller\query.controller.js" />
     <Content Include="Static\script\controller\report.controller.js" />
     <Content Include="Static\script\directive\sa.directive.js">
@@ -207,6 +209,9 @@
     <Content Include="config\databaseType.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="MonitorType.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\10.1.1.11.pubxml" />
     <Content Include="Views\Manage\Query.cshtml" />
     <Content Include="Static\script\common\event.service.js" />
@@ -218,6 +223,7 @@
     <Content Include="Views\Report\Query.cshtml" />
     <Content Include="Views\Monitor\Index.cshtml" />
     <Content Include="Views\Report\HardDisk.cshtml" />
+    <Content Include="Static\script\services\monitor.service.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

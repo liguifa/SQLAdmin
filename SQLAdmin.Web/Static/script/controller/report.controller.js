@@ -134,6 +134,11 @@
             });
         }
 
+        $scope.vm.query.jump = function (pageIndex) {
+            $scope.vm.query.page.pageIndex = pageIndex;
+            getQueryHistories();
+        }
+
         function getQueryHistories() {
             report.getQueryHistories($scope.vm.query.page).then(function (history) {
                 var historydatas = [];

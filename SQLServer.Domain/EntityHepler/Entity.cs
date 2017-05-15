@@ -20,7 +20,7 @@ namespace SQLServer.Domain
             return properties.Select(d => d.GetCustomAttributes(false).OfType<EntityColumnAttribute>().FirstOrDefault()).Where(d => d != null).Select(d => String.IsNullOrEmpty(d.SelectName) ? d.EntityName : d.SelectName).ToList();
         }
 
-        public static string GetEntityColumnName(this Type type,string propertyName)
+        public static string GetEntityColumnName(this Type type, string propertyName, bool isGetEntityName = false)
         {
             PropertyInfo property = type.GetProperty(propertyName);
             EntityColumnAttribute entity = property?.GetCustomAttributes(false).OfType<EntityColumnAttribute>().FirstOrDefault();
@@ -28,7 +28,7 @@ namespace SQLServer.Domain
             {
                 return null;
             }
-            return String.IsNullOrEmpty(entity.SelectName) ? entity.EntityName : entity.SelectName;
+            return String.IsNullOrEmpty(entity.SelectName) || isGetEntityName ? entity.EntityName : entity.SelectName;
         }
 
         public static List<string> GetEntityColumnNames(this Type type, List<string> propertiesName)
