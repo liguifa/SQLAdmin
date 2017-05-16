@@ -9,6 +9,7 @@ using SQLServer.Dao;
 using SQLAdmin.Utility;
 using SQLServer.Utility;
 using SQLAdmin.Utility.ViewModels;
+using System.Data;
 
 namespace SQLServer.Service
 {
@@ -54,7 +55,17 @@ namespace SQLServer.Service
                     //    PageCount = Convert.ToInt64(Math.Ceiling(((double)count / filter.PageSize))),
                     //    Total = count
                     //};
-                    return new TableDataViewMdoel();
+                    SQLServerDynamicRepertory db = new SQLServerDynamicRepertory();
+                    var dbName = filter.TableName.Split('.').First();
+                    var tbName = filter.TableName.Split('.').Last().Remove(0, 1);
+                    tbName = tbName.Remove(tbName.Length - 1, 1);
+                    int total = 1;
+                    var vm = db.Use(dbName).DbSet(filter.TableName).Filter("1 = 1", filter.SortColumn, out total, filter.PageIndex, filter.PageSize, true).ToViewModel();
+                    vm.Total = total;
+                    vm.PageIndex = filter.PageIndex;
+                    vm.PageSize = filter.PageSize;
+                    vm.PageCount = Convert.ToInt32(Math.Ceiling((double)total / filter.PageSize));
+                    return vm;
                 }
             }
             catch(Exception e)

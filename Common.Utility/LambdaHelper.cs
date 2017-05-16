@@ -80,7 +80,21 @@ namespace Common.Utility
 
         private static string GetConditionForMonocular(Expression expression)
         {
-            return GetMemberExpression(expression).Member.Name;
+            //return GetMemberExpression(expression).Member.Name;
+            MemberExpression memberExpression = GetMemberExpression(expression);
+            if(memberExpression == null)
+            {
+                return String.Empty;
+            }
+            try
+            {
+                var objectMember = Expression.Convert(memberExpression, typeof(object));
+                return $"'{Expression.Lambda<Func<object>>(objectMember).Compile()().ToString()}'";
+            }
+            catch(Exception e)
+            {
+                return memberExpression.Member.Name;
+            }
         }
 
         private static List<string> GetConditionForCall(Expression expression)

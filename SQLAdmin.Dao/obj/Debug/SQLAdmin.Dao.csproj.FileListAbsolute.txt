@@ -10,4 +10,3 @@ D:\SQLAdmin\SQLAdmin.Dao\bin\Debug\SQLAdmin.Domain.dll
 D:\SQLAdmin\SQLAdmin.Dao\bin\Debug\SQLAdmin.Domain.pdb
 D:\SQLAdmin\SQLAdmin.Dao\obj\Debug\SQLAdmin.Dao.dll
 D:\SQLAdmin\SQLAdmin.Dao\obj\Debug\SQLAdmin.Dao.pdb
-D:\SQLAdmin\SQLAdmin.Dao\obj\Debug\SQLAdmin.Dao.csprojResolveAssemblyReference.cache

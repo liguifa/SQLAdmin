@@ -8,7 +8,7 @@ namespace SQLAdmin.Utility
 {
     public class FieldViewModel
     {
-        public string Id { get; set; }
+        public long Id { get; set; }
 
         public string Name { get; set; }
     }

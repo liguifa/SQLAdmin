@@ -10,7 +10,7 @@ namespace SQLServer.Domain
     public class Table
     {
         [EntityColumn("id")]
-        public string Id { get; set; }
+        public long Id { get; set; }
 
         [EntityColumn("name")]
         public string Name { get; set;}

@@ -16,7 +16,7 @@ namespace SQLAdmin.Web.Controllers
 
         protected override JsonResult Json(object data, string contentType, Encoding contentEncoding, JsonRequestBehavior behavior)
         {
-            return base.Json(data, contentType, contentEncoding, behavior);
+            return new JsonResult() { Data = SerializerHelper.SerializerObjectByJsonConvert(data),JsonRequestBehavior = behavior };
         }
 
         protected override void OnException(ExceptionContext filterContext)

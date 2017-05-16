@@ -20,4 +20,3 @@ D:\SQLAdmin\Common.Utility\bin\Debug\Common.Cryptogram.pdb
 D:\SQLAdmin\Common.Utility\bin\Debug\Newtonsoft.Json.xml
 D:\SQLAdmin\Common.Utility\obj\Debug\Common.Utility.dll
 D:\SQLAdmin\Common.Utility\obj\Debug\Common.Utility.pdb
-D:\SQLAdmin\Common.Utility\obj\Debug\Common.Utility.csprojResolveAssemblyReference.cache

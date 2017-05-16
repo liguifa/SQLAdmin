@@ -43,7 +43,7 @@ namespace SQLServer.Dao
             this.mQueryKeys.Add(col);
             if (isAsc)
             {
-                this.mQueryKeys.Add(ESC);
+                this.mQueryKeys.Add(ASC);
             }
             else
             {

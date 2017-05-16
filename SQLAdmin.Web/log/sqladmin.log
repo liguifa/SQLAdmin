@@ -5991,3 +5991,865 @@ Error Number:156,State:1,Class:15
 2017-05-15 22:40:19,670 [4412] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/HardDisk?defaultPageId=31.
 2017-05-15 22:40:19,713 [4412] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Report/GetDiskInfos.
 2017-05-15 22:40:19,911 [4412] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/GetDiskInfos.
+2017-05-16 20:41:21,418 [9512] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 20:41:21,434 [9512] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 20:47:11,252 [9512] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 20:47:11,637 [9512] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 20:47:11,663 [12152] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 20:47:11,759 [12152] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 20:47:14,077 [9512] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 20:47:14,082 [9512] INFO  iisexpress.exe - Start get tables.
+2017-05-16 20:47:36,968 [9512] ERROR iisexpress.exe - An error has occurred in the get tables,error:System.AggregateException: 发生一个或多个错误。 ---> System.ArgumentException: 类型“System.Int32”的对象无法转换为类型“System.String”。
+   在 System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   在 System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   在 System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   在 System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   在 System.Reflection.PropertyInfo.SetValue(Object obj, Object value)
+   在 SQLServer.Domain.TableExt.<>c__DisplayClass0_1`1.<ToList>b__0(PropertyInfo property) 位置 D:\SQLAdmin\SQLServer.Domain\EntityHepler\TableEx.cs:行号 25
+   在 System.Threading.Tasks.Parallel.<>c__DisplayClass30_0`2.<ForEachWorker>b__0(Int32 i)
+   在 System.Threading.Tasks.Parallel.<>c__DisplayClass17_0`1.<ForWorker>b__1()
+   在 System.Threading.Tasks.Task.InnerInvoke()
+   在 System.Threading.Tasks.Task.InnerInvokeWithArg(Task childTask)
+   在 System.Threading.Tasks.Task.<>c__DisplayClass176_0.<ExecuteSelfReplicating>b__0(Object )
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   在 System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   在 System.Threading.Tasks.Task.Wait()
+   在 System.Threading.Tasks.Parallel.ForWorker[TLocal](Int32 fromInclusive, Int32 toExclusive, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Func`4 bodyWithLocal, Func`1 localInit, Action`1 localFinally)
+   在 System.Threading.Tasks.Parallel.ForEachWorker[TSource,TLocal](TSource[] array, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Action`3 bodyWithStateAndIndex, Func`4 bodyWithStateAndLocal, Func`5 bodyWithEverything, Func`1 localInit, Action`1 localFinally)
+   在 System.Threading.Tasks.Parallel.ForEachWorker[TSource,TLocal](IEnumerable`1 source, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Action`3 bodyWithStateAndIndex, Func`4 bodyWithStateAndLocal, Func`5 bodyWithEverything, Func`1 localInit, Action`1 localFinally)
+   在 System.Threading.Tasks.Parallel.ForEach[TSource](IEnumerable`1 source, Action`1 body)
+   在 SQLServer.Domain.TableExt.ToList[T](DataTable table) 位置 D:\SQLAdmin\SQLServer.Domain\EntityHepler\TableEx.cs:行号 19
+   在 SQLServer.Dao.SQLServerDBRepertory.Filter[T,TResult](Expression`1 predicate, Expression`1 orderBy) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 107
+   在 SQLServer.Service.SQLServerDatabaseService.GetTables(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 134
+---> (内部异常 #0) System.ArgumentException: 类型“System.Int32”的对象无法转换为类型“System.String”。
+   在 System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   在 System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   在 System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   在 System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   在 System.Reflection.PropertyInfo.SetValue(Object obj, Object value)
+   在 SQLServer.Domain.TableExt.<>c__DisplayClass0_1`1.<ToList>b__0(PropertyInfo property) 位置 D:\SQLAdmin\SQLServer.Domain\EntityHepler\TableEx.cs:行号 25
+   在 System.Threading.Tasks.Parallel.<>c__DisplayClass30_0`2.<ForEachWorker>b__0(Int32 i)
+   在 System.Threading.Tasks.Parallel.<>c__DisplayClass17_0`1.<ForWorker>b__1()
+   在 System.Threading.Tasks.Task.InnerInvoke()
+   在 System.Threading.Tasks.Task.InnerInvokeWithArg(Task childTask)
+   在 System.Threading.Tasks.Task.<>c__DisplayClass176_0.<ExecuteSelfReplicating>b__0(Object )<---
+
+2017-05-16 20:47:36,971 [9512] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 20:50:19,102 [6612] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 20:50:19,259 [6612] INFO  iisexpress.exe - Start get tables.
+2017-05-16 20:50:31,872 [6612] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 20:50:35,786 [12152] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&SELECT=[object Object].
+2017-05-16 20:50:35,789 [12152] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&SELECT=[object Object].
+2017-05-16 20:50:40,291 [12152] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 20:50:40,389 [2304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 20:50:40,397 [2304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 20:50:40,503 [12152] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.Data.SqlClient.SqlException (0x80131904): 列名 'tableName' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 57
+   在 SQLServer.Dao.SQLServerDBRepertory.Filter[T](Expression`1 predicate) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 92
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 97
+ClientConnectionId:aa6df4b8-74c1-4626-b461-a3cc460b5ccd
+Error Number:207,State:1,Class:16
+2017-05-16 20:50:51,937 [12152] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 20:50:56,243 [11944] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 20:50:56,243 [12152] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 20:50:56,247 [12152] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 20:51:08,923 [11944] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.Data.SqlClient.SqlException (0x80131904): 列名 'tableName' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 57
+   在 SQLServer.Dao.SQLServerDBRepertory.Filter[T](Expression`1 predicate) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 92
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 97
+ClientConnectionId:aa6df4b8-74c1-4626-b461-a3cc460b5ccd
+Error Number:207,State:1,Class:16
+2017-05-16 20:51:08,924 [11944] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 20:53:38,333 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 20:53:38,345 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 20:53:51,064 [11144] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 20:53:51,237 [11144] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 20:53:51,277 [11144] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 20:53:51,356 [11144] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 20:54:07,150 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 20:54:07,150 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 20:54:17,865 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 20:54:17,878 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 20:54:17,920 [7656] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 20:54:17,944 [7656] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 20:54:24,921 [11636] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 20:54:24,925 [11636] INFO  iisexpress.exe - Start get tables.
+2017-05-16 20:54:30,945 [11636] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 20:54:34,167 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&SELECT=[object Object].
+2017-05-16 20:54:34,172 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&SELECT=[object Object].
+2017-05-16 20:54:38,533 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 20:55:07,000 [7236] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 20:55:07,041 [7236] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 20:55:07,112 [10056] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.ArgumentOutOfRangeException: 索引和计数必须引用该字符串内的位置。
+参数名: count
+   在 System.String.Remove(Int32 startIndex, Int32 count)
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 97
+2017-05-16 20:55:09,235 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 20:55:55,083 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 20:55:55,083 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 20:56:10,914 [11636] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 20:56:10,930 [11636] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 20:56:11,022 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 20:56:11,059 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 20:56:15,582 [11636] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 20:56:15,584 [11636] INFO  iisexpress.exe - Start get tables.
+2017-05-16 20:56:15,629 [11636] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 20:56:17,796 [7656] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&SELECT=[object Object].
+2017-05-16 20:56:17,796 [7656] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&SELECT=[object Object].
+2017-05-16 20:56:35,980 [7236] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 20:56:35,994 [7236] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 20:56:36,020 [4956] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 20:56:41,363 [4956] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.ArgumentOutOfRangeException: 索引和计数必须引用该字符串内的位置。
+参数名: count
+   在 System.String.Remove(Int32 startIndex, Int32 count)
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 97
+2017-05-16 20:56:43,237 [4956] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 20:57:20,646 [7236] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 20:57:20,651 [7236] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 20:57:20,654 [11636] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 20:57:24,038 [11636] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.ArgumentOutOfRangeException: 索引和计数必须引用该字符串内的位置。
+参数名: count
+   在 System.String.Remove(Int32 startIndex, Int32 count)
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 97
+2017-05-16 20:57:26,138 [11636] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:01:33,734 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:01:33,735 [11636] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:01:33,743 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:01:36,133 [11636] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.ArgumentOutOfRangeException: 索引和计数必须引用该字符串内的位置。
+参数名: count
+   在 System.String.Remove(Int32 startIndex, Int32 count)
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 97
+2017-05-16 21:01:38,482 [11636] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:04:14,393 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:04:14,393 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:04:24,042 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:04:24,059 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:04:24,084 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:04:24,120 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:04:25,556 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 21:04:25,558 [10056] INFO  iisexpress.exe - Start get tables.
+2017-05-16 21:04:25,594 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 21:04:26,868 [11636] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&SELECT=[object Object].
+2017-05-16 21:04:26,868 [11636] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&SELECT=[object Object].
+2017-05-16 21:04:26,936 [7236] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:04:26,939 [7236] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:04:26,939 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:04:30,811 [10056] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.ArgumentOutOfRangeException: 索引和计数必须引用该字符串内的位置。
+参数名: count
+   在 System.String.Remove(Int32 startIndex, Int32 count)
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 97
+2017-05-16 21:04:32,647 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:04:44,238 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:04:44,238 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:04:53,619 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:04:53,633 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:04:53,672 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:04:53,706 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:04:55,173 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 21:04:55,176 [10056] INFO  iisexpress.exe - Start get tables.
+2017-05-16 21:04:55,207 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 21:04:56,375 [3016] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 21:04:56,378 [3016] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 21:04:56,451 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:04:56,451 [11636] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:05:00,331 [11636] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:05:07,813 [10056] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.Data.SqlClient.SqlException (0x80131904): 列名 'tbName' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 57
+   在 SQLServer.Dao.SQLServerDBRepertory.Filter[T](Expression`1 predicate) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 92
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 100
+ClientConnectionId:d43c2cb6-f7f4-4254-81d2-d8943a0698ef
+Error Number:207,State:1,Class:16
+2017-05-16 21:05:13,018 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:05:15,476 [11636] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:05:15,476 [10056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:05:18,328 [10056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:06:04,154 [11636] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.Data.SqlClient.SqlException (0x80131904): 列名 'tbName' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 57
+   在 SQLServer.Dao.SQLServerDBRepertory.Filter[T](Expression`1 predicate) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 92
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 100
+ClientConnectionId:d43c2cb6-f7f4-4254-81d2-d8943a0698ef
+Error Number:207,State:1,Class:16
+2017-05-16 21:06:04,154 [11636] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:07:01,717 [7848] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:07:01,744 [7848] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:07:14,304 [7848] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:07:14,478 [7848] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:07:14,491 [7848] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:07:14,578 [7848] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:07:22,320 [7848] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:07:22,320 [7848] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:07:32,075 [11008] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:07:32,078 [11008] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:07:32,139 [11008] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:07:32,152 [11008] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:07:33,793 [7848] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 21:07:33,797 [7848] INFO  iisexpress.exe - Start get tables.
+2017-05-16 21:07:43,134 [7848] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 21:07:45,253 [7848] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 21:07:45,258 [7848] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 21:07:49,641 [9044] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:07:49,643 [7848] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:07:49,660 [9044] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:08:02,755 [7848] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.Data.SqlClient.SqlException (0x80131904): 列名 'tbName' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 57
+   在 SQLServer.Dao.SQLServerDBRepertory.Filter[T](Expression`1 predicate) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 92
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 101
+ClientConnectionId:6fa6ff6f-9190-4733-bc36-50adbd8f2bca
+Error Number:207,State:1,Class:16
+2017-05-16 21:15:49,473 [7848] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.Data.SqlClient.SqlException (0x80131904): 列名 'tbName' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 57
+   在 SQLServer.Dao.SQLServerDBRepertory.Filter[T](Expression`1 predicate) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 92
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 101
+ClientConnectionId:d0966543-e24d-4b93-ae8d-d7750c66e8e2
+Error Number:207,State:1,Class:16
+2017-05-16 21:15:49,474 [7848] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:21:50,250 [6020] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:21:50,262 [6020] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:22:03,574 [11344] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:22:03,780 [11344] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:22:03,806 [11344] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:22:03,896 [11344] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:22:06,407 [11344] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 21:22:06,412 [11344] INFO  iisexpress.exe - Start get tables.
+2017-05-16 21:22:28,580 [11344] ERROR iisexpress.exe - An error has occurred in the get tables,error:System.InvalidOperationException: 从作用域“”引用了“SQLServer.Domain.Table”类型的变量“d”，但该变量未定义
+   在 System.Linq.Expressions.Compiler.VariableBinder.Reference(ParameterExpression node, VariableStorageKind storage)
+   在 System.Linq.Expressions.Compiler.VariableBinder.VisitParameter(ParameterExpression node)
+   在 System.Linq.Expressions.ParameterExpression.Accept(ExpressionVisitor visitor)
+   在 System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   在 System.Linq.Expressions.ExpressionVisitor.VisitMember(MemberExpression node)
+   在 System.Linq.Expressions.MemberExpression.Accept(ExpressionVisitor visitor)
+   在 System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   在 System.Linq.Expressions.ExpressionVisitor.Visit(ReadOnlyCollection`1 nodes)
+   在 System.Linq.Expressions.Compiler.VariableBinder.VisitLambda[T](Expression`1 node)
+   在 System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   在 System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   在 System.Linq.Expressions.Compiler.LambdaCompiler.Compile(LambdaExpression lambda, DebugInfoGenerator debugInfoGenerator)
+   在 System.Linq.Expressions.Expression`1.Compile()
+   在 Common.Utility.LambdaHelper.GetConditionForMonocular(Expression expression) 位置 D:\SQLAdmin\Common.Utility\LambdaHelper.cs:行号 89
+   在 Common.Utility.LambdaHelper.GetConditions(Expression expression) 位置 D:\SQLAdmin\Common.Utility\LambdaHelper.cs:行号 62
+   在 Common.Utility.LambdaHelper.GetConditionForBinocular(Expression expression, String operator) 位置 D:\SQLAdmin\Common.Utility\LambdaHelper.cs:行号 72
+   在 Common.Utility.LambdaHelper.GetConditions(Expression expression) 位置 D:\SQLAdmin\Common.Utility\LambdaHelper.cs:行号 60
+   在 Common.Utility.LambdaHelper.GetConditions[T](Expression`1 lambda) 位置 D:\SQLAdmin\Common.Utility\LambdaHelper.cs:行号 19
+   在 SQLServer.Dao.SQLServerDBRepertory.Filter[T,TResult](Expression`1 predicate, Expression`1 orderBy) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 102
+   在 SQLServer.Service.SQLServerDatabaseService.GetTables(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 138
+2017-05-16 21:24:08,572 [11344] ERROR iisexpress.exe - An error has occurred in the get tables,error:System.InvalidOperationException: 从作用域“”引用了“SQLServer.Domain.Table”类型的变量“d”，但该变量未定义
+   在 System.Linq.Expressions.Compiler.VariableBinder.Reference(ParameterExpression node, VariableStorageKind storage)
+   在 System.Linq.Expressions.Compiler.VariableBinder.VisitParameter(ParameterExpression node)
+   在 System.Linq.Expressions.ParameterExpression.Accept(ExpressionVisitor visitor)
+   在 System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   在 System.Linq.Expressions.ExpressionVisitor.VisitMember(MemberExpression node)
+   在 System.Linq.Expressions.MemberExpression.Accept(ExpressionVisitor visitor)
+   在 System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   在 System.Linq.Expressions.ExpressionVisitor.Visit(ReadOnlyCollection`1 nodes)
+   在 System.Linq.Expressions.Compiler.VariableBinder.VisitLambda[T](Expression`1 node)
+   在 System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   在 System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   在 System.Linq.Expressions.Compiler.LambdaCompiler.Compile(LambdaExpression lambda, DebugInfoGenerator debugInfoGenerator)
+   在 System.Linq.Expressions.Expression`1.Compile()
+   在 Common.Utility.LambdaHelper.GetConditionForMonocular(Expression expression) 位置 D:\SQLAdmin\Common.Utility\LambdaHelper.cs:行号 89
+   在 Common.Utility.LambdaHelper.GetConditions(Expression expression) 位置 D:\SQLAdmin\Common.Utility\LambdaHelper.cs:行号 62
+   在 Common.Utility.LambdaHelper.GetConditionForBinocular(Expression expression, String operator) 位置 D:\SQLAdmin\Common.Utility\LambdaHelper.cs:行号 72
+   在 Common.Utility.LambdaHelper.GetConditions(Expression expression) 位置 D:\SQLAdmin\Common.Utility\LambdaHelper.cs:行号 60
+   在 Common.Utility.LambdaHelper.GetConditions[T](Expression`1 lambda) 位置 D:\SQLAdmin\Common.Utility\LambdaHelper.cs:行号 19
+   在 SQLServer.Dao.SQLServerDBRepertory.Filter[T,TResult](Expression`1 predicate, Expression`1 orderBy) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 102
+   在 SQLServer.Service.SQLServerDatabaseService.GetTables(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 138
+2017-05-16 21:25:53,973 [11344] ERROR iisexpress.exe - An error has occurred in the get tables,error:System.InvalidOperationException: 从作用域“”引用了“SQLServer.Domain.Table”类型的变量“d”，但该变量未定义
+   在 System.Linq.Expressions.Compiler.VariableBinder.Reference(ParameterExpression node, VariableStorageKind storage)
+   在 System.Linq.Expressions.Compiler.VariableBinder.VisitParameter(ParameterExpression node)
+   在 System.Linq.Expressions.ParameterExpression.Accept(ExpressionVisitor visitor)
+   在 System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   在 System.Linq.Expressions.ExpressionVisitor.VisitMember(MemberExpression node)
+   在 System.Linq.Expressions.MemberExpression.Accept(ExpressionVisitor visitor)
+   在 System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   在 System.Linq.Expressions.ExpressionVisitor.Visit(ReadOnlyCollection`1 nodes)
+   在 System.Linq.Expressions.Compiler.VariableBinder.VisitLambda[T](Expression`1 node)
+   在 System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   在 System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   在 System.Linq.Expressions.Compiler.LambdaCompiler.Compile(LambdaExpression lambda, DebugInfoGenerator debugInfoGenerator)
+   在 System.Linq.Expressions.Expression`1.Compile()
+   在 Common.Utility.LambdaHelper.GetConditionForMonocular(Expression expression) 位置 D:\SQLAdmin\Common.Utility\LambdaHelper.cs:行号 89
+   在 Common.Utility.LambdaHelper.GetConditions(Expression expression) 位置 D:\SQLAdmin\Common.Utility\LambdaHelper.cs:行号 62
+   在 Common.Utility.LambdaHelper.GetConditionForBinocular(Expression expression, String operator) 位置 D:\SQLAdmin\Common.Utility\LambdaHelper.cs:行号 72
+   在 Common.Utility.LambdaHelper.GetConditions(Expression expression) 位置 D:\SQLAdmin\Common.Utility\LambdaHelper.cs:行号 60
+   在 Common.Utility.LambdaHelper.GetConditions[T](Expression`1 lambda) 位置 D:\SQLAdmin\Common.Utility\LambdaHelper.cs:行号 19
+   在 SQLServer.Dao.SQLServerDBRepertory.Filter[T,TResult](Expression`1 predicate, Expression`1 orderBy) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 102
+   在 SQLServer.Service.SQLServerDatabaseService.GetTables(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 138
+2017-05-16 21:25:53,975 [11344] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 21:28:15,117 [5992] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:28:15,126 [5992] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:28:29,960 [496] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:28:30,157 [496] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:28:30,182 [496] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:28:30,275 [496] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:28:32,221 [11344] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 21:28:32,223 [11344] INFO  iisexpress.exe - Start get tables.
+2017-05-16 21:28:43,088 [11344] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 21:28:45,599 [292] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 21:28:45,613 [292] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 21:28:50,323 [11344] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:28:50,326 [5992] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:28:53,992 [5992] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:29:04,521 [11344] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:29:04,540 [5992] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 21:29:41,903 [5992] ERROR iisexpress.exe - An error has occurred in the get table indexs,error:System.AggregateException: 发生一个或多个错误。 ---> System.ArgumentException: 类型“System.Int32”的对象无法转换为类型“System.String”。
+   在 System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   在 System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   在 System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   在 System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   在 System.Reflection.PropertyInfo.SetValue(Object obj, Object value)
+   在 SQLServer.Domain.TableExt.<>c__DisplayClass0_1`1.<ToList>b__0(PropertyInfo property) 位置 D:\SQLAdmin\SQLServer.Domain\EntityHepler\TableEx.cs:行号 25
+   在 System.Threading.Tasks.Parallel.<>c__DisplayClass30_0`2.<ForEachWorker>b__0(Int32 i)
+   在 System.Threading.Tasks.Parallel.<>c__DisplayClass17_0`1.<ForWorker>b__1()
+   在 System.Threading.Tasks.Task.InnerInvoke()
+   在 System.Threading.Tasks.Task.InnerInvokeWithArg(Task childTask)
+   在 System.Threading.Tasks.Task.<>c__DisplayClass176_0.<ExecuteSelfReplicating>b__0(Object )
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   在 System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   在 System.Threading.Tasks.Task.Wait()
+   在 System.Threading.Tasks.Parallel.ForWorker[TLocal](Int32 fromInclusive, Int32 toExclusive, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Func`4 bodyWithLocal, Func`1 localInit, Action`1 localFinally)
+   在 System.Threading.Tasks.Parallel.ForEachWorker[TSource,TLocal](TSource[] array, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Action`3 bodyWithStateAndIndex, Func`4 bodyWithStateAndLocal, Func`5 bodyWithEverything, Func`1 localInit, Action`1 localFinally)
+   在 System.Threading.Tasks.Parallel.ForEachWorker[TSource,TLocal](IEnumerable`1 source, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Action`3 bodyWithStateAndIndex, Func`4 bodyWithStateAndLocal, Func`5 bodyWithEverything, Func`1 localInit, Action`1 localFinally)
+   在 System.Threading.Tasks.Parallel.ForEach[TSource](IEnumerable`1 source, Action`1 body)
+   在 SQLServer.Domain.TableExt.ToList[T](DataTable table) 位置 D:\SQLAdmin\SQLServer.Domain\EntityHepler\TableEx.cs:行号 19
+   在 SQLServer.Dao.SQLServerDBRepertory.SQLQuery[T](String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 178
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableIndexs(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 121
+---> (内部异常 #0) System.ArgumentException: 类型“System.Int32”的对象无法转换为类型“System.String”。
+   在 System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   在 System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   在 System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   在 System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   在 System.Reflection.PropertyInfo.SetValue(Object obj, Object value)
+   在 SQLServer.Domain.TableExt.<>c__DisplayClass0_1`1.<ToList>b__0(PropertyInfo property) 位置 D:\SQLAdmin\SQLServer.Domain\EntityHepler\TableEx.cs:行号 25
+   在 System.Threading.Tasks.Parallel.<>c__DisplayClass30_0`2.<ForEachWorker>b__0(Int32 i)
+   在 System.Threading.Tasks.Parallel.<>c__DisplayClass17_0`1.<ForWorker>b__1()
+   在 System.Threading.Tasks.Task.InnerInvoke()
+   在 System.Threading.Tasks.Task.InnerInvokeWithArg(Task childTask)
+   在 System.Threading.Tasks.Task.<>c__DisplayClass176_0.<ExecuteSelfReplicating>b__0(Object )<---
+
+---> (内部异常 #1) System.ArgumentException: 列“clname”不属于表 table。
+   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 SQLServer.Domain.TableExt.<>c__DisplayClass0_1`1.<ToList>b__0(PropertyInfo property) 位置 D:\SQLAdmin\SQLServer.Domain\EntityHepler\TableEx.cs:行号 24
+   在 System.Threading.Tasks.Parallel.<>c__DisplayClass30_0`2.<ForEachWorker>b__0(Int32 i)
+   在 System.Threading.Tasks.Parallel.<>c__DisplayClass17_0`1.<ForWorker>b__1()
+   在 System.Threading.Tasks.Task.InnerInvoke()
+   在 System.Threading.Tasks.Task.InnerInvokeWithArg(Task childTask)
+   在 System.Threading.Tasks.Task.<>c__DisplayClass176_0.<ExecuteSelfReplicating>b__0(Object )<---
+
+2017-05-16 21:29:41,904 [5992] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 21:31:33,113 [12152] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:31:33,122 [12152] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:31:54,086 [12152] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:31:54,371 [12152] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:31:54,412 [12152] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:31:54,508 [12152] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:31:57,185 [1884] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 21:31:57,189 [1884] INFO  iisexpress.exe - Start get tables.
+2017-05-16 21:32:07,352 [1884] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 21:32:09,966 [11008] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 21:32:09,971 [11008] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 21:32:14,630 [12152] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:32:14,633 [1884] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:32:19,035 [1884] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:32:19,088 [12152] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:32:19,112 [9904] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 21:32:43,997 [9904] ERROR iisexpress.exe - An error has occurred in the get table indexs,error:System.AggregateException: 发生一个或多个错误。 ---> System.ArgumentException: 类型“System.Int32”的对象无法转换为类型“System.String”。
+   在 System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   在 System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   在 System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   在 System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   在 System.Reflection.PropertyInfo.SetValue(Object obj, Object value)
+   在 SQLServer.Domain.TableExt.<>c__DisplayClass0_1`1.<ToList>b__0(PropertyInfo property) 位置 D:\SQLAdmin\SQLServer.Domain\EntityHepler\TableEx.cs:行号 25
+   在 System.Threading.Tasks.Parallel.<>c__DisplayClass30_0`2.<ForEachWorker>b__0(Int32 i)
+   在 System.Threading.Tasks.Parallel.<>c__DisplayClass17_0`1.<ForWorker>b__1()
+   在 System.Threading.Tasks.Task.InnerInvoke()
+   在 System.Threading.Tasks.Task.InnerInvokeWithArg(Task childTask)
+   在 System.Threading.Tasks.Task.<>c__DisplayClass176_0.<ExecuteSelfReplicating>b__0(Object )
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   在 System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   在 System.Threading.Tasks.Task.Wait()
+   在 System.Threading.Tasks.Parallel.ForWorker[TLocal](Int32 fromInclusive, Int32 toExclusive, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Func`4 bodyWithLocal, Func`1 localInit, Action`1 localFinally)
+   在 System.Threading.Tasks.Parallel.ForEachWorker[TSource,TLocal](TSource[] array, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Action`3 bodyWithStateAndIndex, Func`4 bodyWithStateAndLocal, Func`5 bodyWithEverything, Func`1 localInit, Action`1 localFinally)
+   在 System.Threading.Tasks.Parallel.ForEachWorker[TSource,TLocal](IEnumerable`1 source, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Action`3 bodyWithStateAndIndex, Func`4 bodyWithStateAndLocal, Func`5 bodyWithEverything, Func`1 localInit, Action`1 localFinally)
+   在 System.Threading.Tasks.Parallel.ForEach[TSource](IEnumerable`1 source, Action`1 body)
+   在 SQLServer.Domain.TableExt.ToList[T](DataTable table) 位置 D:\SQLAdmin\SQLServer.Domain\EntityHepler\TableEx.cs:行号 19
+   在 SQLServer.Dao.SQLServerDBRepertory.SQLQuery[T](String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBRepertory.cs:行号 178
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableIndexs(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 120
+---> (内部异常 #0) System.ArgumentException: 类型“System.Int32”的对象无法转换为类型“System.String”。
+   在 System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   在 System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   在 System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   在 System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   在 System.Reflection.PropertyInfo.SetValue(Object obj, Object value)
+   在 SQLServer.Domain.TableExt.<>c__DisplayClass0_1`1.<ToList>b__0(PropertyInfo property) 位置 D:\SQLAdmin\SQLServer.Domain\EntityHepler\TableEx.cs:行号 25
+   在 System.Threading.Tasks.Parallel.<>c__DisplayClass30_0`2.<ForEachWorker>b__0(Int32 i)
+   在 System.Threading.Tasks.Parallel.<>c__DisplayClass17_0`1.<ForWorker>b__1()
+   在 System.Threading.Tasks.Task.InnerInvoke()
+   在 System.Threading.Tasks.Task.InnerInvokeWithArg(Task childTask)
+   在 System.Threading.Tasks.Task.<>c__DisplayClass176_0.<ExecuteSelfReplicating>b__0(Object )<---
+
+2017-05-16 21:32:43,998 [9904] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 21:35:01,378 [12152] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:35:01,378 [1884] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:35:01,609 [12152] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:35:01,788 [1884] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:35:01,800 [12152] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 21:35:02,066 [12152] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 21:35:12,751 [9904] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:35:12,752 [10080] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:35:12,797 [10080] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:35:12,917 [9904] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:35:12,997 [9904] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 21:35:13,022 [9904] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 21:45:48,279 [7500] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:45:48,280 [7500] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 21:46:05,266 [6928] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:46:05,309 [6928] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 21:46:05,336 [4668] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:46:05,373 [4668] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 21:46:08,626 [6928] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 21:46:08,630 [6928] INFO  iisexpress.exe - Start get tables.
+2017-05-16 21:46:14,488 [6928] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 21:46:17,213 [6928] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 21:46:17,216 [6928] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 21:46:21,790 [11548] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:46:21,801 [11548] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:46:21,810 [6928] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:46:21,952 [6928] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:46:21,972 [7500] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 21:46:22,258 [7500] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 21:46:44,328 [11548] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:46:44,329 [6928] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:46:44,430 [6928] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 21:46:44,505 [11548] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 21:46:44,543 [4668] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 21:46:44,566 [4668] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 22:50:14,835 [12456] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 22:50:14,843 [12456] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 22:50:26,697 [9468] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 22:50:26,931 [9468] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 22:50:26,955 [9468] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 22:50:27,040 [9468] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 22:50:28,423 [9468] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 22:50:28,435 [9468] INFO  iisexpress.exe - Start get tables.
+2017-05-16 22:50:31,454 [9468] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 22:50:47,954 [12456] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 22:50:47,960 [12456] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 22:50:52,685 [9468] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 22:50:52,687 [13088] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 22:51:04,028 [9468] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 22:51:13,729 [12456] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 22:51:23,728 [12456] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 22:52:34,399 [13088] ERROR iisexpress.exe - An error has occurred in the select data,error:System.InvalidCastException: 无法将类型为“System.Data.DataColumn”的对象强制转换为类型“System.String”。
+   在 SQLServer.Domain.TableExt.ToList(DataTable table) 位置 D:\SQLAdmin\SQLServer.Domain\EntityHepler\TableEx.cs:行号 40
+   在 SQLServer.Dao.SQLServerDynamicRepertory.Filter(String where, String orderBy, Int32& total, Int32 index, Int32 size, Boolean isAsc) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDynamicRepertory.cs:行号 110
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerManageService.cs:行号 63
+2017-05-16 22:52:34,401 [13088] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 22:54:44,275 [12456] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 22:54:44,284 [12456] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 22:54:58,767 [5144] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 22:54:58,999 [5144] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 22:54:59,025 [5144] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 22:54:59,122 [5144] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 22:55:08,625 [9468] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 22:55:08,625 [9468] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 22:55:18,328 [9468] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 22:55:18,333 [9468] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 22:55:18,370 [5144] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 22:55:18,397 [5144] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 22:55:19,720 [13088] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 22:55:19,725 [13088] INFO  iisexpress.exe - Start get tables.
+2017-05-16 22:55:22,010 [13088] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 22:55:24,021 [9468] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 22:55:24,026 [9468] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 22:55:28,832 [9468] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 22:55:28,833 [13088] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 22:55:32,984 [9468] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 22:55:44,099 [12456] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 22:55:48,042 [12456] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:03:16,358 [13088] ERROR iisexpress.exe - An error has occurred in the select data,error:Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 无法将带 [] 的索引应用于“System.Dynamic.ExpandoObject”类型的表达式
+   在 CallSite.Target(Closure , CallSite , Object , String , Object )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute3[T0,T1,T2,TRet](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   在 SQLServer.Domain.TableExt.ToList(DataTable table)
+   在 SQLServer.Dao.SQLServerDynamicRepertory.Filter(String where, String orderBy, Int32& total, Int32 index, Int32 size, Boolean isAsc)
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter)
+2017-05-16 23:03:16,359 [13088] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:05:16,761 [13216] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:05:16,765 [10796] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:05:31,962 [13216] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:05:39,507 [9572] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:05:59,152 [9572] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:06:00,017 [10796] ERROR iisexpress.exe - An error has occurred in the select data,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Domain.TableExt.ToList(DataTable table)
+   在 SQLServer.Dao.SQLServerDynamicRepertory.Filter(String where, String orderBy, Int32& total, Int32 index, Int32 size, Boolean isAsc)
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter)
+2017-05-16 23:06:43,246 [10796] ERROR iisexpress.exe - An error has occurred in the select data,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Domain.TableExt.ToList(DataTable table)
+   在 SQLServer.Dao.SQLServerDynamicRepertory.Filter(String where, String orderBy, Int32& total, Int32 index, Int32 size, Boolean isAsc)
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter)
+2017-05-16 23:06:43,248 [10796] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:07:15,045 [10796] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:07:15,046 [13216] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:07:23,375 [13216] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:07:58,680 [9572] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:08:10,058 [10796] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:08:10,062 [9572] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:11:18,083 [10796] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 23:11:18,083 [10796] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 23:11:35,473 [12504] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 23:11:35,484 [12504] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 23:11:35,542 [10796] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 23:11:35,608 [10796] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 23:11:41,133 [13216] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 23:11:41,137 [13216] INFO  iisexpress.exe - Start get tables.
+2017-05-16 23:11:45,376 [13216] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 23:12:07,961 [10796] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 23:12:07,984 [10796] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 23:12:13,016 [8928] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:12:13,017 [10796] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:12:18,141 [8928] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:12:18,256 [10796] ERROR iisexpress.exe - An error has occurred in the select data,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter)
+2017-05-16 23:12:23,864 [13216] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:12:31,559 [10796] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:12:31,559 [13216] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:14:03,006 [8928] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:14:05,667 [10796] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:14:06,796 [10796] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:14:08,441 [13216] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:14:09,344 [13216] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:18:32,399 [8928] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:20:54,371 [832] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:20:54,370 [3088] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:22:29,536 [4900] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:22:31,019 [4160] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:23:00,900 [9464] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 23:23:00,910 [9464] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 23:23:18,565 [10092] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 23:23:18,922 [10092] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 23:23:18,994 [10876] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 23:23:19,208 [10876] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 23:23:42,269 [10092] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 23:23:42,275 [10092] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 23:23:42,423 [4916] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 23:23:42,588 [4916] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 23:24:18,780 [10876] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 23:24:18,780 [10876] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 23:24:28,375 [10876] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 23:24:28,378 [10876] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 23:24:28,426 [4916] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 23:24:28,496 [4916] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 23:25:14,144 [4924] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 23:25:14,380 [4924] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 23:25:14,405 [9464] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 23:25:14,625 [9464] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 23:25:16,777 [9464] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 23:25:16,781 [9464] INFO  iisexpress.exe - Start get tables.
+2017-05-16 23:25:21,817 [9464] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 23:25:23,903 [7216] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 23:25:23,908 [7216] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 23:25:28,815 [9464] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:25:28,818 [4916] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:25:34,372 [9464] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:25:34,429 [4924] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:25:34,526 [4916] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:25:34,890 [4924] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:27:00,737 [2524] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:27:00,737 [4916] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:27:01,154 [2524] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:27:01,217 [4916] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:27:09,312 [2804] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:27:09,806 [2804] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:27:41,350 [4916] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:27:41,350 [9464] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:27:50,429 [9464] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:33:51,067 [4916] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:33:51,081 [2804] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:33:51,339 [2804] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:37:34,292 [2804] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-16 23:37:34,300 [2804] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-16 23:37:43,976 [2804] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 23:37:44,179 [2804] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-16 23:37:44,214 [6208] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 23:37:44,299 [6208] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-16 23:37:45,794 [2804] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 23:37:45,798 [2804] INFO  iisexpress.exe - Start get tables.
+2017-05-16 23:37:51,629 [2804] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-16 23:37:53,683 [2804] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 23:37:53,689 [2804] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-16 23:37:58,618 [2804] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:37:58,620 [8016] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:38:07,830 [8016] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:38:28,115 [2804] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:38:28,131 [7744] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:38:28,422 [7744] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:40:32,935 [7744] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:40:32,935 [3652] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:40:33,557 [3652] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName)
+2017-05-16 23:40:46,445 [3652] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:40:46,487 [7744] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:40:50,435 [3652] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:40:50,435 [7744] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:41:03,669 [7744] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:41:17,744 [3652] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName)
+2017-05-16 23:41:17,745 [3652] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:42:11,938 [6312] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:42:11,938 [3652] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:42:31,913 [8448] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:42:31,922 [8456] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:42:46,052 [8456] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:45:56,937 [8448] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:45:56,991 [6128] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:45:57,245 [6128] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:47:56,433 [6312] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:47:56,433 [6128] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:48:03,746 [6312] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:48:04,010 [6128] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:48:04,026 [13080] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:48:04,361 [13080] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:48:08,789 [6128] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:48:08,790 [6312] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:48:20,314 [6312] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:48:20,364 [6128] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:48:20,472 [6312] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:48:20,748 [6312] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:48:44,968 [6312] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:48:44,968 [6128] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:49:31,469 [6128] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:49:31,474 [6312] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:49:31,516 [6312] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:49:31,926 [6312] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:54:04,797 [8104] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:54:04,797 [9868] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:54:10,820 [8104] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:54:24,635 [9868] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:54:24,651 [9868] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:54:24,978 [9868] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:54:29,173 [9868] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:54:29,173 [11348] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:54:29,489 [9868] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:54:29,552 [9868] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:54:29,573 [9868] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:54:29,604 [11348] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:59:19,577 [11852] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:59:19,577 [8104] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:59:28,227 [11852] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:59:28,491 [8104] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:59:33,395 [11852] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:59:33,398 [8104] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:59:33,661 [8104] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-16 23:59:33,803 [11852] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-16 23:59:33,827 [11852] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-16 23:59:34,106 [11852] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:00:19,448 [8104] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:00:19,448 [11852] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:00:21,805 [11852] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:00:59,368 [8104] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:00:59,445 [8104] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:00:59,696 [8104] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:01:34,667 [11852] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:01:34,667 [11056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:01:58,715 [11852] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:02:45,925 [11056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:02:45,957 [11056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:02:46,224 [11056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:04:01,203 [13056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:04:01,203 [9264] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:05:15,542 [9264] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:05:15,567 [13056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:05:15,616 [13056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:05:20,135 [13056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:05:27,036 [240] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:05:27,036 [6200] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:05:30,457 [240] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:06:03,333 [6200] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:06:03,354 [6200] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:06:03,644 [6200] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:06:38,324 [7304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:06:38,331 [6692] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:06:48,275 [7304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:06:54,547 [6692] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:06:54,616 [6692] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:06:54,998 [6692] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:07:11,604 [6692] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:07:11,606 [6200] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:07:11,951 [7304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:07:12,079 [6692] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:07:12,216 [7304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:07:12,442 [6200] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:07:21,876 [6200] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-17 00:07:21,877 [6200] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-17 00:07:41,362 [7304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-17 00:07:41,373 [7304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-17 00:07:41,396 [7304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-17 00:07:41,463 [7304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-17 00:07:46,934 [6200] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-17 00:07:46,942 [6200] INFO  iisexpress.exe - Start get tables.
+2017-05-17 00:07:49,077 [6200] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-17 00:07:54,806 [7304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-17 00:07:54,811 [7304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-17 00:07:59,905 [11668] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:07:59,905 [6200] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:08:00,232 [11668] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:08:00,235 [6200] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:08:00,256 [6200] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:08:00,591 [6200] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:09:05,181 [4832] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:09:05,181 [6692] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:09:39,259 [6692] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:09:46,593 [7068] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:10:10,786 [7068] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:10:10,861 [4832] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:10:40,814 [4832] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:10:40,822 [6692] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:10:50,819 [6692] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-17 00:10:50,829 [4832] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:10:50,929 [6692] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:10:51,490 [6692] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-17 00:10:56,145 [6692] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:10:56,231 [6692] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:10:58,349 [6200] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:10:58,463 [6200] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:10:59,006 [12748] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:10:59,089 [12748] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:10:59,539 [6692] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:10:59,632 [6692] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:00,016 [12748] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:00,084 [12748] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:00,496 [4832] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:00,573 [4832] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:01,103 [5016] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:01,188 [5016] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:01,545 [4832] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:01,596 [4832] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:01,824 [12748] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:01,872 [12748] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:02,104 [4832] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:02,180 [4832] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:02,484 [12748] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:02,569 [12748] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:02,932 [5016] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:03,091 [5016] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:04,205 [6692] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:04,294 [6692] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:04,629 [5016] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-17 00:11:04,712 [5016] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.

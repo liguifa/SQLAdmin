@@ -17,7 +17,7 @@ namespace SQLServer.Utility
 
         public const string DESC = "Desc";
 
-        public const string ESC = "Asc";
+        public const string ASC = "Asc";
 
         public const string CREATE = "Create";
 

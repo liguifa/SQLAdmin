@@ -43,7 +43,7 @@ namespace SQLServer.Service
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.Delete<Database>(d=>d.Name == databaseName);
+                    return db.Use(databaseName).Delete<Database>(d=>d.Name == databaseName);
                 }
             }
             catch (Exception e)
@@ -93,8 +93,13 @@ namespace SQLServer.Service
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
+                    var dbName = tableName.Split('.').First();
+                    var tbName = tableName.Split('.').Last().Remove(0, 1);
+                    tbName = tbName.Remove(tbName.Length - 1, 1);
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.Filter<Field>(d => d.Name == tableName).ToViewModel();
+                    Table table = db.Use(dbName).Find<Table>(d => d.Type == "U" && d.Name == tbName);
+                    long id = table.Id;
+                    return db.Use(dbName).Filter<Field, string>(d => d.Id == id, d => d.Name).ToViewModel();
                 }
             }
             catch(Exception e)

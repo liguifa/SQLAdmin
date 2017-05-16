@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="DBContext.cs" />
     <Compile Include="DBContextScope.cs" />
+    <Compile Include="IDynamicRepertory.cs" />
     <Compile Include="IRepertory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

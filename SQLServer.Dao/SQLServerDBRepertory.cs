@@ -102,7 +102,7 @@ namespace SQLServer.Dao
             string sql = new SQLQuery().Select(String.Join(",", typeof(T).GetEntityColumnNames()))
                                        .From($"{this.mDatabaseName}{typeof(T).GetEntityTableName()}")
                                        .Where(String.Join(" ", typeof(T).GetEntityColumnNames(LambdaHelper.GetConditions(predicate))))
-                                       .OrderBy(typeof(T).GetEntityColumnName(LambdaHelper.GetColumn(orderBy).FirstOrDefault(),true))
+                                       .OrderBy(typeof(T).GetEntityColumnName(LambdaHelper.GetColumn(orderBy).FirstOrDefault(),true),true)
                                        .Qenerate();
             return this.DBContext.SqlReader(sql).ToList<T>();
         }

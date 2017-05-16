@@ -10,9 +10,9 @@ namespace SQLServer.Domain
     public class Index
     {
         [EntityColumn("ID")]
-        public string Id { get; set; }
+        public int Id { get; set; }
 
-        [EntityColumn("clname")]
+        [EntityColumn("colname")]
         public string ColumnName { get; set; }
 
         [EntityColumn("indname")]

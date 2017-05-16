@@ -105,7 +105,7 @@ namespace SQLServer.Utility
                     index.Id = entity.Id;
                     index.ColumnName = entity.ColumnName;
                     index.IndexName = entity.IndexName;
-                    index.Type = entity.Id.Equals("1", StringComparison.OrdinalIgnoreCase) ? IndexType.Primary : IndexType.Foreign;
+                    index.Type = entity.Id == 1 ? IndexType.Primary : IndexType.Foreign;
                     indexs.Add(index);
                 }
             }
@@ -120,7 +120,7 @@ namespace SQLServer.Utility
                 foreach(Table entity in entities)
                 {
                     TableViewModel table = new TableViewModel();
-                    table.Id = entity.Id;
+                    table.Id = entity.Id.ToString();
                     table.Name = entity.Name;
                     table.Fullname = $"[{databaseName}].[dbo].[{entity.Name}]";
                     tables.Add(table);
@@ -152,6 +152,13 @@ namespace SQLServer.Utility
                 viewmodes.Add(databaseDisk);
             }
             return viewmodes;
+        }
+
+        public static TableDataViewMdoel ToViewModel(this List<dynamic> entities)
+        {
+            TableDataViewMdoel vm = new TableDataViewMdoel();
+            vm.Datas = entities;
+            return vm;
         }
     }
 }

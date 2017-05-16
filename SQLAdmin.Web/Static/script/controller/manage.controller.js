@@ -20,7 +20,9 @@
                 var url = config.url;
                 url += "?defaultPageId=" + config.defaultPageId;
                 if (config.args) {
-                    url += "&" + config.name + "=" + args;
+                    for (var name in args) {
+                        url += "&" + name + "=" + args[name];
+                    }
                 }
 
                 var page = {
