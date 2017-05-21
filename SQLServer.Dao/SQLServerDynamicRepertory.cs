@@ -69,7 +69,10 @@ namespace SQLServer.Dao
 
         public bool Delete(string where, bool isSaveChange = false)
         {
-            throw new NotImplementedException();
+            string sql = new SQLQuery().Delete(this.mTableName)
+                                         .Where(where)
+                                         .Qenerate();
+            return this.DBContext.AccessQuery(sql) > 0;
         }
 
         public bool Delete(dynamic t, bool isSaveChange = false)

@@ -161,6 +161,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Static\script\directive\sa.report.directive.js" />
+    <Content Include="Static\script\function\each.js" />
+    <Content Include="Static\script\function\linq.js" />
     <Content Include="Static\script\lib\base64.min.js" />
     <Content Include="Static\script\lib\flotr2.min.js" />
     <Content Include="Static\script\services\common.service.js" />

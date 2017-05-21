@@ -9,7 +9,7 @@ namespace SQLAdmin.Dao
 {
     public abstract class DBContextScope : IDisposable
     {
-        public static DBContext DBContext { get; protected set; }
+        public static DBContext DBContext { get; protected set; }   //TODO 这里有问题 暂时使用静态对象
 
         public DBContextScope(DBConnect dbConnect)
         {

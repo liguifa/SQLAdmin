@@ -305,16 +305,15 @@
             }
             $scope.$watch("pages", function (pages) {
                 $scope.vm.pages = [];
-                for (var i in pages)
-                {
+                pages.forEach(function (item) {
                     var page = {
                         isSelected: false,
-                        url: pages[i].url,
-                        id: pages[i].id,
-                        title:pages[i].title
+                        url: item.url,
+                        id: item.id,
+                        title: item.title
                     }
                     $scope.vm.pages.push(page);
-                }
+                });
                 if ($scope.vm.pages[$scope.vm.pages.length - 1]) {
                     $scope.vm.pages[$scope.vm.pages.length - 1].isSelected = true;
                 }

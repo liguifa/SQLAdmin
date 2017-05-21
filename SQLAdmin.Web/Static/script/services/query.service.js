@@ -20,7 +20,7 @@
 
         function _remove(tableName, selected) {
             var deferred = $q.defer();
-            $http.post("/Manage/Delete", { tableName: tableName, selected: selected }).then(function (data) {
+            $http.post("/Manage/Delete", { TableName: tableName, Selected: selected }).then(function (data) {
                 deferred.resolve(data.data);
             });
             return deferred.promise;

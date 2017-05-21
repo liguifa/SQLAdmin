@@ -9,7 +9,7 @@ namespace SQLServer.Domain
     [EntityTable("..SysColumns")]
     public class Index
     {
-        [EntityColumn("ID")]
+        [EntityColumn("indid")]
         public int Id { get; set; }
 
         [EntityColumn("colname")]

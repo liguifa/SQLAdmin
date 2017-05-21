@@ -14,7 +14,5 @@ namespace SQLServer.Domain
 
         [EntityColumn("name")]
         public string Name { get; set; }
-
-        //public List<Table> Tables { get; set; }
     }
 }

@@ -16,5 +16,5 @@ DEBUG;TRACE
 13-58490494
 Default\Calendar\Calendar.xaml;Default\Connection\Connection.xaml;Default\Edit\Edit.xaml;Default\Explorer\Explorer.xaml;Default\Menu\Menu.xaml;Default\Navigation\Navigation.xaml;Default\Table\Table.xaml;Default\Tabs\Tabs.xaml;Themes\Generic.xaml;Default\Resource\Resource.xaml;Default\Window\Window.xaml;
 
-True
+False
 

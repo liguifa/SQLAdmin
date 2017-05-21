@@ -10,6 +10,7 @@ using SQLAdmin.Utility;
 using SQLServer.Utility;
 using SQLAdmin.Utility.ViewModels;
 using System.Data;
+using SQLServer.Domain;
 
 namespace SQLServer.Service
 {
@@ -26,8 +27,10 @@ namespace SQLServer.Service
             {
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
-                    SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return true;
+                    SQLServerDynamicRepertory db = new SQLServerDynamicRepertory();
+                    List<IndexViewModel> indexs = ServiceFactory.GetInstance().DatabaseService.GetTableIndexs(filter.TableName);
+                    string key = indexs.FirstOrDefault(d => d.Type == IndexType.Primary).ColumnName;
+                    return db.DbSet(filter.TableName).Delete($"{key} in ('{String.Join("','", filter.Selected)}')");
                 }
             }
             catch(Exception e)
