@@ -1,5 +1,5 @@
 ﻿(function () {
-    function query_controller($scope, query) {
+    function query_controller($scope, query, messager, event) {
         $scope.vm = {
             datas: [],
             fields: [],
@@ -58,22 +58,28 @@
                 return item.isSelected
             });
             if (selectDatas.length == 0) {
-
+                messager.alert("请先选择删除的对象！");
             }
             else {
                 var selected = [];
-                var key = $scope.vm.indexs.find(function (index) {
+                //var key = $scope.vm.indexs.find(function (index) {
+                //    return index.Id == 1;
+                //});
+                var key = $scope.vm.indexs.filter(function (index) {
                     return index.Id == 1;
-                });
+                })[0];
                 selected = selectDatas.map(function (item) {
                     return item.rows[key.ColumnName];
                 });
                 query.remove($scope.vm.tableName, selected).then(function (data) {
-                    alert(data);
+                    messager.confirm("删除成功！", function () {
+                        getDatas();
+                    });
+
                 });
             }
         }
     }
 
-    angular.module("admin").controller("query.controller", ["$scope", "query.service", query_controller]);
+    angular.module("admin").controller("query.controller", ["$scope", "query.service", "messager.service","event.service",query_controller]);
 })();

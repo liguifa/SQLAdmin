@@ -372,7 +372,8 @@
                         var t = e.target || e.srcElement; //目标对象
                         var command = t.attributes["command"].value;
                         self.scope.menuCommand({ command: command, args: t.parentElement.parentElement.parentElement.parentElement.childNodes[1].textContent });
-                    },3000);
+                        self.clearMenus();
+                    },300);
                 }
             }
         },
@@ -456,6 +457,14 @@
                     }
                 }
             }
+        },
+        clearMenus: function () {
+            var contextmenus = document.getElementsByClassName("sa-contextmenu");
+            for (var i in contextmenus) {
+                if (contextmenus[i].style) {
+                    contextmenus[i].style.visibility = "";
+                }
+            }
         }
     };
 
@@ -535,17 +544,21 @@
                     contextmenu.style.visibility = "visible";
                 })
             }
-            //var func = document.onmousedown;
-            //document.onmousedown = function()
-            //{
-            //    func();
-            //    var contextmenus = document.getElementsByClassName("sa-contextmenu");
-            //    for (var i in contextmenus) {
-            //        if (contextmenus[i].style) {
-            //            contextmenus[i].style.visibility = "";
-            //        }
-            //    }
-            //}
+            var func = document.onmousedown;
+            document.onmousedown = function(e)
+            {
+                func();
+                e = e || window.event; 　//IE window.event
+                var t = e.target || e.srcElement; //目标对象
+                if (!(t && t.claaName && t.claaName == "sa-contextmenu-title")) {
+                    var contextmenus = document.getElementsByClassName("sa-contextmenu");
+                    for (var i in contextmenus) {
+                        if (contextmenus[i].style) {
+                            contextmenus[i].style.visibility = "";
+                        }
+                    }
+                }
+            }
         }
     }
 })
@@ -1027,8 +1040,8 @@
     var vm = {
         id: guid.newGuid(),
         template: '<div id="{{vm.id}}"  style="width:400px;height:400px"></div>',
-        build: function (points, xAxis) {
-            var container = document.getElementById(this.id);
+        build: function (points, xAxis,id) {
+            var container = document.getElementById(id);
             var option = {
                 HtmlText: false,
                 grid: {
@@ -1063,15 +1076,19 @@
         },
         controller: function ($scope) {
             $scope.vm = {
-                id: vm.id,
+                id: guid.newGuid(),
                 width: "1300px",
                 height:'500px'
             }
             $scope.$watch("points", function (points) {
-                vm.build(points, $scope.xaxis);
+                setTimeout(function () {
+                    vm.build(points, $scope.xaxis, $scope.vm.id);
+                },300);
             }, true);
             $scope.$watch("xaxis", function (xaxis) {
-                vm.build($scope.points, xaxis);
+                setTimeout(function () {
+                    vm.build($scope.points, xaxis, $scope.vm.id);
+                },300);
             }, true);
             //$scope.$watch("_width", function (width) {
             //    $scope.vm.width = width;

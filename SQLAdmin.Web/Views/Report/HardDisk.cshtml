@@ -8,10 +8,13 @@
         </ul>
         <div class="sa-clear"></div>
     </div>
-    <div ng-if="vm.pageId == 31">
-        <ul>
-            <li ng-repeat="info in vm.disk.disks"><sa-pie points="info.diskinfos" _width="200px" _height="200px"></sa-pie></li>
-        </ul>
+    <div ng-if="vm.pageId == 31" class="report-disk-info">
+        <div class="report-disk-info-pie">
+            <ul>
+                <li ng-repeat="info in vm.disk.disks"><sa-pie points="info.diskinfos" _width="200px" _height="200px"></sa-pie></li>
+            </ul>
+            <div class="sa-clear"></div>
+        </div>
         @*<div style="height:400px;">
             <sa-datagrid datas="vm.cpu.cpudatas" fields="vm.cpu.fields"></sa-datagrid>
         </div>*@
