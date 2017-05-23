@@ -370,8 +370,19 @@
                     self.clickCall = setTimeout(function () {
                         e = e || window.event; 　//IE window.event
                         var t = e.target || e.srcElement; //目标对象
-                        var command = t.attributes["command"].value;
-                        self.scope.menuCommand({ command: command, args: t.parentElement.parentElement.parentElement.parentElement.childNodes[1].textContent });
+                        if (t && t.className == "sa-icon-arrow-right") {
+                            var is_load  = t.attributes["is_load"] = true;
+                            var is_spread = t.attributes["is_spread"] = true;
+                            if (is_load) {
+                                var children_Id = t.attributes["children_Id"];
+                                document.getElementById(children_Id).style.visibility = is_spread ? "hidden" : "visible";
+                               document.getElementById(t.id).attributes["is_spread"] = !is_spread;
+                            }
+                        }
+                        else {
+                            var command = t.attributes["command"].value;
+                            self.scope.menuCommand({ command: command, args: t.parentElement.parentElement.parentElement.parentElement.childNodes[1].textContent });
+                        }
                         self.clearMenus();
                     },300);
                 }
@@ -383,6 +394,11 @@
             treeNode.classList.add("sa-tree-li");
             var arrowNode = document.createElement("i");
             arrowNode.classList.add("sa-icon-arrow-right");
+            var childId = self.guid();
+            arrowNode.attributes["children_Id"] = childId;
+            arrowNode.attributes["is_load"] = false;
+            arrowNode.attributes["is_spread"] = false;
+            arrowNode.id = self.guid();
             var contextNode = document.createElement("span");
             contextNode.classList.add("sa-tree-children");
             var iconNode = document.createElement("i");
@@ -392,6 +408,7 @@
             nameNode.attributes["tree-id"] = tree.Id;
             var childrenNode = document.createElement("ul");
             childrenNode.classList.add("sa-tree-ul");
+            childrenNode.id = childId;
             treeNode.appendChild(arrowNode);
             treeNode.appendChild(contextNode);
             contextNode.appendChild(iconNode);
@@ -418,6 +435,8 @@
             if (tree.Children) {
                 if (tree.Children.length > 0) {
                     treeNode.classList.add("sa-tree-li-children");
+                    arrowNode.attributes["is_load"] = true;
+                    arrowNode.attributes["is_spread"] = true;
                 }
                 for (var i in tree.Children) {
                     childrenNode.appendChild(this.buildNode(tree.Children[i]));

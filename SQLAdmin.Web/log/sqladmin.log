@@ -7837,3 +7837,175 @@ Error Number:207,State:1,Class:16
 2017-05-22 23:36:41,674 [8004] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/HardDisk?defaultPageId=31.
 2017-05-22 23:36:46,408 [3612] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Report/GetDiskInfos.
 2017-05-22 23:36:46,635 [3612] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/GetDiskInfos.
+2017-05-23 20:27:43,322 [11220] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Report/HardDisk.
+2017-05-23 20:27:43,538 [11220] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/HardDisk.
+2017-05-23 20:39:46,385 [6720] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 20:39:46,386 [6720] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 20:39:59,281 [6720] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 20:40:00,175 [6720] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 20:40:00,198 [504] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 20:40:00,422 [504] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 20:40:39,377 [7404] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 20:40:39,382 [7404] INFO  iisexpress.exe - Start get tables.
+2017-05-23 20:40:42,932 [7404] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 20:56:04,121 [4456] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 20:56:04,212 [4456] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 20:56:14,632 [4456] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 20:56:14,649 [4456] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 20:56:14,672 [4456] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 20:56:14,703 [4456] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 20:56:16,392 [4456] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 20:56:16,395 [4456] INFO  iisexpress.exe - Start get tables.
+2017-05-23 20:56:16,471 [4456] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 20:56:17,632 [11100] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-23 20:56:17,637 [11100] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-23 20:56:17,788 [3612] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-23 20:56:17,804 [4456] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-23 20:56:18,070 [3612] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-23 20:56:18,082 [4456] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-23 20:56:18,213 [3612] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-23 20:56:18,443 [3612] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-23 21:10:11,569 [8424] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 21:10:11,569 [8424] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 21:10:21,449 [8424] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 21:10:21,468 [8424] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 21:10:21,498 [8424] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 21:10:21,530 [8424] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 21:10:22,758 [3304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 21:10:22,761 [3304] INFO  iisexpress.exe - Start get tables.
+2017-05-23 21:10:22,826 [3304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 21:10:25,034 [3292] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-23 21:10:25,035 [3292] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-05-23 21:10:25,111 [1012] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-23 21:10:25,230 [8424] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-05-23 21:10:25,359 [8424] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-05-23 21:10:25,373 [1012] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-05-23 21:10:25,515 [5300] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-23 21:10:25,722 [5300] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-05-23 21:10:48,521 [1012] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 21:10:48,521 [1012] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 21:11:02,099 [8424] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 21:11:02,125 [8424] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 21:11:02,150 [1012] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 21:11:02,177 [1012] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 21:11:11,999 [3292] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 21:11:12,001 [3292] INFO  iisexpress.exe - Start get tables.
+2017-05-23 21:11:12,066 [3292] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 21:11:34,794 [1012] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 21:11:34,794 [1012] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 21:11:46,096 [3304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 21:11:46,127 [3304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 21:11:46,157 [3304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 21:11:46,185 [3304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 21:20:07,942 [8332] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 21:20:07,942 [8332] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 21:20:17,714 [8332] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 21:20:17,732 [8332] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 21:20:17,757 [8332] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 21:20:17,795 [8332] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 21:20:19,598 [8332] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 21:20:19,602 [8332] INFO  iisexpress.exe - Start get tables.
+2017-05-23 21:20:19,685 [8332] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 21:45:08,663 [7056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 21:45:08,663 [7056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 21:45:21,507 [7056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 21:45:21,544 [7056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 21:45:21,580 [7056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 21:45:21,612 [7056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 21:45:23,012 [7056] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 21:45:23,015 [7056] INFO  iisexpress.exe - Start get tables.
+2017-05-23 21:45:23,078 [7056] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:05:04,164 [5372] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:05:04,164 [5372] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:05:16,241 [7676] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:05:16,652 [7676] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:05:16,679 [5372] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:05:16,770 [5372] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:05:18,493 [7676] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:05:18,497 [7676] INFO  iisexpress.exe - Start get tables.
+2017-05-23 22:05:18,526 [7676] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:05:38,808 [7676] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:05:38,808 [7676] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:05:51,416 [8968] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:05:51,420 [8968] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:05:51,463 [8968] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:05:51,469 [8968] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:05:55,423 [9368] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:05:55,426 [9368] INFO  iisexpress.exe - Start get tables.
+2017-05-23 22:05:55,490 [9368] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:06:43,781 [9368] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:06:43,781 [9368] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:06:53,664 [7676] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:06:53,691 [7676] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:07:00,632 [9840] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:07:00,637 [9840] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:07:00,653 [9368] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:07:00,679 [9368] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:07:03,645 [7676] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:07:03,649 [7676] INFO  iisexpress.exe - Start get tables.
+2017-05-23 22:07:03,667 [7676] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:07:43,525 [6376] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:07:43,525 [6376] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:07:52,793 [9368] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:07:52,800 [9368] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:07:52,825 [9368] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:07:52,842 [9368] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:07:54,461 [6376] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:07:54,465 [6376] INFO  iisexpress.exe - Start get tables.
+2017-05-23 22:07:54,480 [6376] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:09:22,203 [10104] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:09:22,203 [10104] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:09:31,758 [9840] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:09:31,764 [9840] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:09:31,791 [9840] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:09:31,802 [9840] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:09:34,417 [10104] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:09:34,421 [10104] INFO  iisexpress.exe - Start get tables.
+2017-05-23 22:09:34,440 [10104] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:12:31,254 [4164] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:12:31,254 [4164] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:12:40,819 [3404] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:12:40,826 [3404] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:12:40,850 [9368] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:12:40,864 [9368] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:12:42,627 [3404] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:12:42,629 [3404] INFO  iisexpress.exe - Start get tables.
+2017-05-23 22:12:42,644 [3404] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:17:47,178 [12172] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:17:47,178 [12172] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:17:58,874 [3404] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:17:58,900 [3404] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:17:58,915 [3404] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:17:58,962 [3404] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:18:04,997 [3404] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:18:05,001 [3404] INFO  iisexpress.exe - Start get tables.
+2017-05-23 22:18:05,017 [3404] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:19:43,875 [3404] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:19:43,875 [3404] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:19:52,736 [11920] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:19:52,739 [11920] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:19:52,774 [11860] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:19:52,784 [11860] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:19:54,025 [3404] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:19:54,040 [3404] INFO  iisexpress.exe - Start get tables.
+2017-05-23 22:19:54,057 [3404] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:21:00,869 [11920] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:21:00,869 [11920] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:21:11,980 [5928] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:21:11,996 [5928] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:21:12,040 [5928] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:21:12,052 [5928] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:21:13,399 [9224] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:21:13,403 [9224] INFO  iisexpress.exe - Start get tables.
+2017-05-23 22:21:13,418 [9224] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:24:06,271 [1636] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:24:06,271 [1636] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:24:12,697 [3404] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:24:12,697 [3404] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-05-23 22:24:22,205 [9224] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:24:22,212 [9224] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-05-23 22:24:22,245 [9224] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:24:22,255 [9224] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-05-23 22:24:24,337 [3404] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-05-23 22:24:24,338 [3404] INFO  iisexpress.exe - Start get tables.
+2017-05-23 22:24:24,352 [3404] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.

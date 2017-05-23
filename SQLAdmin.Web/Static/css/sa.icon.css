@@ -14,6 +14,14 @@
     padding: 8px;
 }
 
+.sa-icon-arrow-buttom {
+    background: url(../Images/icon_arrow_buttom.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
 .sa-icon-remove {
     background: url(../Images/icon_remove.png);
     background-size: 16px 16px;
