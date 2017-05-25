@@ -113,6 +113,13 @@ namespace SQLServer.Dao
             return this;
         }
 
+        public SQLQuery Exec(string execName)
+        {
+            this.mQueryKeys.Add(EXEC);
+            this.mQueryKeys.Add(execName);
+            return this;
+        }
+
         public string Qenerate()
         {
             return String.Join(" ", this.mQueryKeys.ToArray());

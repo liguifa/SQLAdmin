@@ -1,4 +1,5 @@
-﻿using SQLAdmin.Utility;
+﻿using SQLAdmin.Domain;
+using SQLAdmin.Utility;
 using SQLAdmin.Utility.ViewModels;
 using SQLServer.Domain;
 using System;
@@ -36,12 +37,14 @@ namespace SQLServer.Utility
             return viewmodels;
         }
 
-        public static DatabaseTreeViewModel ToViewModel(this List<Database> entities)
+        public static DatabaseTreeViewModel ToViewModel(this List<Database> entities, DBConnect dbConnect,List<Product> produects)
         {
             DatabaseTreeViewModel databaseTree = new DatabaseTreeViewModel();
             if (entities != null)
             {
-                databaseTree.Name = "SQL Server";
+                string productName = produects.FirstOrDefault(d => d.Name.Equals("ProductName"))?.Value.ToString();
+                string productVersion = produects.FirstOrDefault(d => d.Name.Equals("ProductVersion"))?.Value.ToString();
+                databaseTree.Name = $"{dbConnect.Address}({productName} {productVersion} - {dbConnect.Userename})";
                 databaseTree.NodeType = DBTreeNodeType.Server;
                 databaseTree.Children = new List<DatabaseTreeViewModel>();
                 DatabaseTreeViewModel dbTree = new DatabaseTreeViewModel();

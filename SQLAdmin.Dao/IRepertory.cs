@@ -60,5 +60,12 @@ namespace SQLAdmin.Dao
         bool Exist<T>(T model) where T : class;
 
         List<T> SQLQuery<T>(string sql) where T : class;
+
+        /// <summary>
+        /// 执行存储过程
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        List<T> Exec<T>() where T : class;
     }
 }

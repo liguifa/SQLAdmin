@@ -60,7 +60,8 @@ namespace SQLServer.Service
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.All<Database>().ToViewModel();
+                    List<Product> products = db.Exec<Product>();
+                    return db.All<Database>().ToViewModel(this.mDBConnect, products);
                 }
             }
             catch (Exception e)

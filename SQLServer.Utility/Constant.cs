@@ -46,6 +46,8 @@ namespace SQLServer.Utility
         public const string CROSS = "Cross";
 
         public const string APPLY = "Apply";
+
+        public const string EXEC = "Exec";
         #endregion
     }
 }

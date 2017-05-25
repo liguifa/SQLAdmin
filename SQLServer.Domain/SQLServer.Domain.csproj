@@ -51,6 +51,7 @@
     <Compile Include="Entity\DmOSVolumeStats.cs" />
     <Compile Include="Entity\Field.cs" />
     <Compile Include="Entity\Index.cs" />
+    <Compile Include="Entity\Product.cs" />
     <Compile Include="Entity\QueryHistory.cs" />
     <Compile Include="Entity\FieldType.cs" />
     <Compile Include="Entity\RingBuffer.cs" />

@@ -201,5 +201,11 @@ namespace SQLServer.Dao
                                      .Qenerate();
             return Convert.ToInt32(this.DBContext.SqlScaler(sql));
         }
+
+        public List<T> Exec<T>() where T : class
+        {
+            string sql = new SQLQuery().Exec($"{this.mDatabaseName}{typeof(T).GetEntityTableName()}").Qenerate();
+            return this.DBContext.SqlReader(sql).ToList<T>();
+        }
     }
 }

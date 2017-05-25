@@ -376,7 +376,7 @@
                             if (is_load) {
                                 var children_Id = t.attributes["children_Id"];
                                 document.getElementById(children_Id).style.visibility = is_spread ? "hidden" : "visible";
-                               document.getElementById(t.id).attributes["is_spread"] = !is_spread;
+                                document.getElementById(t.id).attributes["is_spread"] = !is_spread;
                             }
                         }
                         else {
@@ -847,6 +847,35 @@
         },
         controller: function($scope)
         {
+        }
+    }
+})
+
+.directive("saSearch",function(){
+    var vm = {
+        template: '<div class="sa-search">\
+                        <input type="text" class="sa-connect-input sa-search-input" placeholder="{{vm.placeholder}}" ng-model="vm.searchKey" />\
+                        <button class="sa-button sa-search-button"></bitton>\
+                   </div>'
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            placeholder: "=",
+            search:"&"
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+
+            }
+            $scope.$watch("placeholder", function (placeholder) {
+                $scope.vm.placeholder = placeholder;
+            });
+
         }
     }
 })

@@ -525,3 +525,33 @@ body,html,document {
     border-right: #FFECB5 1px solid !important;
 }
 
+.sa-search{
+    width: 315px;
+    padding: 0px;
+    float: left;
+    border: 2px solid #3498db;
+    border-radius: 0px;
+    height:30px;
+}
+
+.sa-search-input{
+    float:left;
+    height:24px;
+    border:none;
+    font-size: 14px;
+    margin: 0;
+    display: table-cell;
+    position: relative;
+    float: left;
+    width: 100%;
+    border-radius: 0;
+}
+
+.sa-search-button {
+    float: left;
+    margin: 0px;
+    height: 27.5px;
+    color: #ffffff;
+    background-color: #3498db;
+    border: 1px solid #3498db;
+}
