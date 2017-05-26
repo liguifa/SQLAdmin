@@ -854,8 +854,11 @@
 .directive("saSearch",function(){
     var vm = {
         template: '<div class="sa-search">\
-                        <input type="text" class="sa-connect-input sa-search-input" placeholder="{{vm.placeholder}}" ng-model="vm.searchKey" />\
-                        <button class="sa-button sa-search-button"></bitton>\
+                        <select class="sa-search-select" ng-model="vm.searchKey.key">\
+                            <option ng-repeat="field in vm.fields" value="{{field.Name}}">{{field.Name}}</option>\
+                        </select>\
+                        <input type="text" class="sa-connect-input sa-search-input" placeholder="{{vm.placeholder}}" ng-model="vm.searchKey.value" />\
+                        <button class="sa-button sa-search-button" ng-click="vm.search()">搜索</bitton>\
                    </div>'
     }
 
@@ -866,19 +869,64 @@
         priority: 1,
         scope: {
             placeholder: "=",
-            search:"&"
+            search: "&",
+            fields: "=",
+           
         },
         controller: function ($scope) {
             $scope.vm = {
-
+                search: function () {
+                    $scope.search({ searchKey: $scope.vm.searchKey });
+                },
+                searchKey: { key:"",value:""}
             }
             $scope.$watch("placeholder", function (placeholder) {
                 $scope.vm.placeholder = placeholder;
             });
-
+            $scope.$watch("fields", function (fields) {
+                $scope.vm.fields = fields;
+                $scope.vm.searchKey.key = fields[0].Name;
+            });
+            $scope.$watch("vm.searchField", function (key) {
+                $scope.searchKey.key = key;
+            });
+            $scope.$watch("vm.searchKey", function (value) {
+                $scope.searchKey.value;
+            })
         }
     }
 })
+
+.directive("saMultiselect", ["guid.service",function (guid) {
+    var  vm = {
+        template:"<div class='sa-multiselect'>\
+                    <input type='text' readonly class='sa-multiselect-text' ng-model='vm.text' />\
+                    <div ng-if='vm.isSelecting'>\
+                        <ul>\
+                            <li repeat='field in vm.fields'><checkbox /><span>{{field.Name}}</span></li>\
+                        </ul>\
+                    </div>\
+                  </div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            fields:"="
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                text: "全部",
+                isSelecting:false
+            }
+            $scope.$watch("fields", function (fields) {
+                $scope.vm.fields = fields;
+            })
+        }
+    }
+}])
 
 .directive("saLines", ["guid.service",function (guid) {
     var vm = {

@@ -17,5 +17,14 @@ namespace SQLAdmin.Domain
         public string SortColumn { get; set; }
 
         public bool IsAsc { get; set; }
+
+        public Search Search { get; set; } = new Search();
+    }
+
+    public class Search
+    {
+        public string Key { get; set; }
+
+        public string Value { get; set; }
     }
 }

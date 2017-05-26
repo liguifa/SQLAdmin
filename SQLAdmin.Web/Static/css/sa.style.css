@@ -528,15 +528,18 @@ body,html,document {
 .sa-search{
     width: 315px;
     padding: 0px;
-    float: left;
-    border: 2px solid #3498db;
+    border: 2px solid #009688;
     border-radius: 0px;
     height:30px;
+    float:right;
+    margin:0px;
+    vertical-align:central;
+    margin-top:-6px;
 }
 
 .sa-search-input{
     float:left;
-    height:24px;
+    height:27px;
     border:none;
     font-size: 14px;
     margin: 0;
@@ -545,13 +548,62 @@ body,html,document {
     float: left;
     width: 100%;
     border-radius: 0;
+    width:215px;
+    outline:none;
 }
 
 .sa-search-button {
-    float: left;
+    float: right;
     margin: 0px;
-    height: 27.5px;
+    height: 30px;
     color: #ffffff;
-    background-color: #3498db;
-    border: 1px solid #3498db;
+    background-color: #009688;
+    border: 1px solid #009688;
+    width:50px;
+}
+
+.sa-search-select{
+    float:left;
+    height:30px;
+    width:50px;
+    border:none;
+    outline:none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #333;
+    text-align: center;
+    display: table-cell;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.sa-multiselect{
+    width:190px;
+    height:30px;
+    float:right;
+}
+
+.sa-multiselect-text{
+    line-height: 38px;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    -webkit-box-sizing: border-box!important;
+    border-radius: 2px;
+    padding-left: 10px;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    font: 13.3333px Arial;
+    height:30px;
+        font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    outline: 0;
 }

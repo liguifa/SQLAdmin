@@ -3,17 +3,20 @@
         $scope.vm = {
             datas: [],
             fields: [],
-            page: {
-                pageIndex: 1,
-                pageSize: 50,
-                totle: 0,
-                pageCount: 0
+            filter:{
+                page: {
+                    pageIndex: 1,
+                    pageSize: 50,
+                    totle: 0,
+                    pageCount: 0,
+                },
+                searchKey: {}
             },
             indexs:[]
         }
 
         function getDatas() {
-            query.filter($scope.vm.tableName, $scope.vm.page).then(function (data) {
+            query.filter($scope.vm.tableName, $scope.vm.filter).then(function (data) {
                 var datas = [];
                 for (var i in data.Datas)
                 {
@@ -49,7 +52,7 @@
         //}, true)
 
         $scope.vm.jump = function (pageIndex) {
-            $scope.vm.page.pageIndex = pageIndex;
+            $scope.vm.filter.page.pageIndex = pageIndex;
             getDatas();
         }
 
@@ -78,6 +81,11 @@
 
                 });
             }
+        }
+
+        $scope.vm.search = function (searchKey) {
+            $scope.vm.filter.searchKey = searchKey;
+            getDatas();
         }
     }
 

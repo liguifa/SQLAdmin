@@ -63,7 +63,8 @@ namespace SQLServer.Service
                     var tbName = filter.TableName.Split('.').Last().Remove(0, 1);
                     tbName = tbName.Remove(tbName.Length - 1, 1);
                     int total = 1;
-                    var vm = db.Use(dbName).DbSet(filter.TableName).Filter("1 = 1", filter.SortColumn, out total, filter.PageIndex, filter.PageSize, true).ToViewModel();
+                    string search = String.IsNullOrEmpty(filter.Search.Key) ? "1=1" : $"{filter.Search.Key} like '%{filter.Search.Value}%'";
+                    var vm = db.Use(dbName).DbSet(filter.TableName).Filter(search, filter.SortColumn, out total, filter.PageIndex, filter.PageSize, true).ToViewModel();
                     vm.Total = total;
                     vm.PageIndex = filter.PageIndex;
                     vm.PageSize = filter.PageSize;
