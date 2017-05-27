@@ -2,7 +2,7 @@
     function query_service($http, $q) {
         function _filter(name,filter) {
             var deferred = $q.defer();
-            $http.post("/Manage/Get", { TableName: name, SortColumn: "Id", IsAsc: true, PageIndex: filter.page.pageIndex, PageSize: filter.page.pageSize, Search: {Key:filter.searchKey.key,Value:filter.searchKey.value} }).then(function (data) {
+            $http.post("/Manage/Get", { TableName: name, SortColumn: "Id", IsAsc: true, PageIndex: filter.page.pageIndex, PageSize: filter.page.pageSize, Search: {Key:filter.searchKey.key,Value:filter.searchKey.value},Selected:filter.selected }).then(function (data) {
                 console.log(data);
                 deferred.resolve(data.data);
             });

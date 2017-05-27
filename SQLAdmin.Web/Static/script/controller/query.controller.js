@@ -10,9 +10,11 @@
                     totle: 0,
                     pageCount: 0,
                 },
-                searchKey: {}
+                searchKey: {},
+                selected:[]
             },
-            indexs:[]
+            indexs: [],
+            showFields:[]
         }
 
         function getDatas() {
@@ -40,6 +42,7 @@
             getDatas();
             query.getTableFields($scope.vm.tableName).then(function (data) {
                 $scope.vm.fields = data;
+                $scope.vm.showFields = data;
                 query.getTableIndexs($scope.vm.tableName).then(function (data) {
                     $scope.vm.indexs = data;
                 });
@@ -86,6 +89,16 @@
         $scope.vm.search = function (searchKey) {
             $scope.vm.filter.searchKey = searchKey;
             getDatas();
+        }
+
+        $scope.vm.select = function (selected) {
+            $scope.vm.filter.selected = selected.map(function (field) {
+                return field.Name;
+            });
+            getDatas();
+            $scope.vm.showFields = $scope.vm.showFields.filter(function (field) {
+                selected.
+            }); 
         }
     }
 

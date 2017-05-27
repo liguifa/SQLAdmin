@@ -19,6 +19,8 @@ namespace SQLAdmin.Domain
         public bool IsAsc { get; set; }
 
         public Search Search { get; set; } = new Search();
+
+        public List<string> Selected { get; set; }
     }
 
     public class Search

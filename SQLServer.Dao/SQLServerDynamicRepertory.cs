@@ -113,6 +113,19 @@ namespace SQLServer.Dao
             return this.DBContext.SqlReader(sql).ToList();
         }
 
+        public List<dynamic> Filter(string selected, string where, string orderBy, out int total, int index = 0, int size = 50, bool isAsc = true)
+        {
+            string sql = new SQLQuery().Select(selected)
+                                       .From(this.mTableName)
+                                       .Where(where)
+                                       .OrderBy(orderBy)
+                                       .Skip((index - 1) * size)
+                                       .Take(size)
+                                       .Qenerate();
+            total = this.Count(where);
+            return this.DBContext.SqlReader(sql).ToList();
+        }
+
         public List<dynamic> FilterSimple(string where)
         {
             throw new NotImplementedException();

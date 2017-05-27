@@ -3,9 +3,9 @@
         <sa-icon type="remove" click="vm.remove()"></sa-icon>
         <sa-icon type="add"></sa-icon>
         <sa-icon type="edit"></sa-icon>
+        <sa-multiselect fields="vm.fields" select="vm.select(fields)"></sa-multiselect>
         <sa-search placeholder="Search" fields="vm.fields" search="vm.search(searchKey)"></sa-search>
-        <sa-multiselect fields="vm.fields"></sa-multiselect>
     </sa-tools>
-    <sa-datagrid datas="vm.datas" fields="vm.fields" indexs="vm.indexs"></sa-datagrid>
+    <sa-datagrid datas="vm.datas" fields="vm.showFields" indexs="vm.indexs"></sa-datagrid>
     <sa-pagination page="vm.page" pageNumber="10" click="vm.jump(pageIndex)"></sa-pagination>
 </div>

@@ -900,11 +900,15 @@
 .directive("saMultiselect", ["guid.service",function (guid) {
     var  vm = {
         template:"<div class='sa-multiselect'>\
-                    <input type='text' readonly class='sa-multiselect-text' ng-model='vm.text' />\
-                    <div ng-if='vm.isSelecting'>\
+                    <input type='text' readonly class='sa-multiselect-text' ng-model='vm.text' ng-click='vm.startSelect()' />\
+                    <div ng-if='vm.isSelecting' class='sa-multiselect-field'>\
                         <ul>\
-                            <li repeat='field in vm.fields'><checkbox /><span>{{field.Name}}</span></li>\
+                            <li ng-repeat='field in vm.fields'><input type='checkbox' ng-model='field.IsSelect'/><span>{{field.Name}}</span></li>\
                         </ul>\
+                        <div>\
+                            <button class='sa-button' ng-click='vm.select()'>确认</button>\
+                            <button class='sa-button' ng-click='vm.cancel()'>取消</button>\
+                        </div>\
                     </div>\
                   </div>"
     }
@@ -914,12 +918,27 @@
         replace: true,
         priority: 1,
         scope: {
-            fields:"="
+            fields: "=",
+            select:"&"
         },
         controller: function ($scope) {
             $scope.vm = {
                 text: "全部",
-                isSelecting:false
+                isSelecting: false,
+                startSelect: function () {
+                    $scope.vm.isSelecting = true;
+                },
+                cancel: function () {
+                    $scope.vm.isSelecting = false;
+                },
+                select: function () {
+                    var selected = $scope.vm.fields.filter(function (field) {
+                        return field.IsSelect;
+                    });
+                    $scope.select({ fields: selected });
+                    $scope.vm.text = "选中" + selected.length + "项";
+                    $scope.vm.isSelecting = false;
+                }
             }
             $scope.$watch("fields", function (fields) {
                 $scope.vm.fields = fields;

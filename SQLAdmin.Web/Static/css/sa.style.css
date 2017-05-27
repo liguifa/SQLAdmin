@@ -230,7 +230,6 @@ body,html,document {
     border: #ACACAC 1px solid;
     border-bottom: none;
     cursor: pointer;
-    z-index: 998;
     font-size: 8px;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -299,6 +298,7 @@ body,html,document {
     border-collapse: collapse;
     text-overflow:ellipsis;
     white-space:nowrap;
+    z-index: 996;
 }
 
     .sa-datagrid thead tr {
@@ -312,6 +312,7 @@ body,html,document {
         border: 1px solid #e2e2e2;
         font-size: 14px;
         text-align: left;
+        z-index: 996;
     }
 
 .sa-datagrid-content {
@@ -322,11 +323,13 @@ body,html,document {
     margin: 0px;
     text-overflow:ellipsis;
     white-space:nowrap;
+    z-index: 996;
 }
 
 .sa-datagrid-content-td {
     vertical-align: top;
     padding: 0px;
+    z-index: 996;
 }
 
 .sa-datagrid-content td {
@@ -337,6 +340,7 @@ body,html,document {
     font-size: 14px;
     text-align: left;
     height: 25%;
+    z-index: 996;
 }
 
 .sa-datagrid-content-header-icon{
@@ -582,14 +586,12 @@ body,html,document {
     width:190px;
     height:30px;
     float:right;
+    z-index:997;
 }
 
 .sa-multiselect-text{
-    line-height: 38px;
-    border: 1px solid #e6e6e6;
+    border: 2px solid #009688;
     background-color: #fff;
-    -webkit-box-sizing: border-box!important;
-    border-radius: 2px;
     padding-left: 10px;
     text-rendering: auto;
     color: initial;
@@ -601,9 +603,34 @@ body,html,document {
     text-align: start;
     font: 13.3333px Arial;
     height:30px;
-        font-family: inherit;
+    font-family: inherit;
     font-size: inherit;
     font-style: inherit;
     font-weight: inherit;
     outline: 0;
+    height:28px;
+    margin-top:-6px;
+    cursor:pointer;
+    margin-left:10px;
+}
+
+.sa-multiselect-field{
+    width:96%;
+    max-height:300px;
+    border: 2px solid #009688;
+    background:#fff;
+    z-index:997;
+    margin-left:10px;
+    margin-top:5px;
+    position:relative;
+}
+
+.sa-multiselect-field ul{
+    margin:0px;
+    padding:0px;
+    list-style:none;
+}
+
+.sa-multiselect-field ul li{
+    z-index:997;
 }
