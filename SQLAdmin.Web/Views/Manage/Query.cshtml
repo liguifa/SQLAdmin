@@ -6,6 +6,6 @@
         <sa-multiselect fields="vm.fields" select="vm.select(fields)"></sa-multiselect>
         <sa-search placeholder="Search" fields="vm.fields" search="vm.search(searchKey)"></sa-search>
     </sa-tools>
-    <sa-datagrid datas="vm.datas" fields="vm.showFields" indexs="vm.indexs"></sa-datagrid>
+    <sa-datagrid datas="vm.datas" fields="vm.showFields" indexs="vm.indexs" sort="vm.sort(name,isAsc)"></sa-datagrid>
     <sa-pagination page="vm.page" pageNumber="10" click="vm.jump(pageIndex)"></sa-pagination>
 </div>

@@ -313,6 +313,7 @@ body,html,document {
         font-size: 14px;
         text-align: left;
         z-index: 996;
+        cursor:pointer;
     }
 
 .sa-datagrid-content {
@@ -629,8 +630,30 @@ body,html,document {
     margin:0px;
     padding:0px;
     list-style:none;
+        overflow-y:auto;
+        max-height:260px;
+}
+
+.sa-multiselect-button{
+    width:100%;
+}
+
+.sa-multiselect-button button{
+    float:left;
+    width:70px;
 }
 
 .sa-multiselect-field ul li{
     z-index:997;
+    padding: 0 10px;
+    line-height: 36px;
+}
+
+.sa-multiselect-field ul li:hover{
+    background:#009688;
+}
+
+.sa-multiselect-field ul li span{
+    margin-left:5px;
+    cursor:pointer
 }

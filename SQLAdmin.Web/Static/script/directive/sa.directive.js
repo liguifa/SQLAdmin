@@ -612,7 +612,7 @@
         <thead>\
       <tr>\
         <th><input type="checkbox" name="" ng-change="vm.globalChecked()" ng-model="vm.isGlobalSelected" lay-skin="primary" lay-filter="allChoose"></th>\
-        <th ng-repeat="field in vm.fields">{{field.name}}<div class="sa-datagrid-content-header-icon" ng-if="field.isPrimary"><img src="/Static/Images/icon_key.png" /></div></th>\
+        <th ng-repeat="field in vm.fields" ng-click="vm.sort(field.name)">{{field.name}}<div class="sa-datagrid-content-header-icon" ng-if="field.isPrimary"><img src="/Static/Images/icon_key.png" /></div></th>\
       </tr> \
     </thead>\
 <tbody>\
@@ -633,7 +633,8 @@
         scope: {
             datas: "=",
             fields: "=",
-            indexs:"=",
+            indexs: "=",
+            sort:"&"
         },
         controller: function ($scope) {
             $scope.vm = {
@@ -643,7 +644,24 @@
                     {
                         $scope.datas[i].isSelected = this.isGlobalSelected;
                     }
-                }
+                },
+                sort: function (name) {
+                    var sortMap = $scope.vm.sortMap.filter(function (map) {
+                        return map.name == name;
+                    })[0];
+                    if (sortMap) {
+                        sortMap.isAsc = !sortMap.isAsc;
+                    }
+                    else {
+                        sortMap = {
+                            name: name,
+                            isAsc: true
+                        }
+                        $scope.vm.sortMap.push(sortMap);
+                    }
+                    $scope.sort({ name: name, isAsc: sortMap.isAsc });
+                },
+                sortMap:[]
             };
 
             $scope.$watch("datas", function (datas) {
@@ -905,9 +923,10 @@
                         <ul>\
                             <li ng-repeat='field in vm.fields'><input type='checkbox' ng-model='field.IsSelect'/><span>{{field.Name}}</span></li>\
                         </ul>\
-                        <div>\
+                        <div class='sa-multiselect-button'>\
                             <button class='sa-button' ng-click='vm.select()'>确认</button>\
                             <button class='sa-button' ng-click='vm.cancel()'>取消</button>\
+                            <div class='sa-clear'></div>\
                         </div>\
                     </div>\
                   </div>"
@@ -941,7 +960,10 @@
                 }
             }
             $scope.$watch("fields", function (fields) {
-                $scope.vm.fields = fields;
+                $scope.vm.fields = fields.map(function (field) {
+                    field.IsSelect = true;
+                    return field;
+                });
             })
         }
     }

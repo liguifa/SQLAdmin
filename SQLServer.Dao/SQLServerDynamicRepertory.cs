@@ -118,7 +118,7 @@ namespace SQLServer.Dao
             string sql = new SQLQuery().Select(selected)
                                        .From(this.mTableName)
                                        .Where(where)
-                                       .OrderBy(orderBy)
+                                       .OrderBy(orderBy, isAsc)
                                        .Skip((index - 1) * size)
                                        .Take(size)
                                        .Qenerate();

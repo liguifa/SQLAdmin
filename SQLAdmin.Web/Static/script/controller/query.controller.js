@@ -11,7 +11,9 @@
                     pageCount: 0,
                 },
                 searchKey: {},
-                selected:[]
+                selected: [],
+                sort: "",
+                isAsc:true,
             },
             indexs: [],
             showFields:[]
@@ -96,9 +98,18 @@
                 return field.Name;
             });
             getDatas();
-            $scope.vm.showFields = $scope.vm.showFields.filter(function (field) {
-                selected.
+            var showFieldIds = selected.map(function(field){
+                return field.Name;
+            });
+            $scope.vm.showFields = $scope.vm.fields.filter(function (field) {
+                return showFieldIds.includes(field.Name);
             }); 
+        }
+
+        $scope.vm.sort = function (name, isAsc) {
+            $scope.vm.filter.sort = name;
+            $scope.vm.filter.isAsc = isAsc;
+            getDatas();
         }
     }
 
