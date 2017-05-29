@@ -612,7 +612,12 @@
         <thead>\
       <tr>\
         <th><input type="checkbox" name="" ng-change="vm.globalChecked()" ng-model="vm.isGlobalSelected" lay-skin="primary" lay-filter="allChoose"></th>\
-        <th ng-repeat="field in vm.fields" ng-click="vm.sort(field.name)">{{field.name}}<div class="sa-datagrid-content-header-icon" ng-if="field.isPrimary"><img src="/Static/Images/icon_key.png" /></div></th>\
+        <th ng-repeat="field in vm.fields" ng-click="vm.sort(field.name)">\
+            {{field.name}}\
+            <div class="sa-datagrid-content-header-icon" ng-if="field.isPrimary"><img src="/Static/Images/icon_key.png" /></div>\
+            <div class="sa-datagrid-content-sort-icon sa-icon-sort-asc" ng-if="field.isSort && field.isAsc"></div>\
+            <div class="sa-datagrid-content-sort-icon sa-icon-sort-desc" ng-if="field.isSort && !field.isAsc"></div>\
+        </th>\
       </tr> \
     </thead>\
 <tbody>\
@@ -660,6 +665,15 @@
                         $scope.vm.sortMap.push(sortMap);
                     }
                     $scope.sort({ name: name, isAsc: sortMap.isAsc });
+                    $scope.vm.fields.forEach(function (field) {
+                        if (field.name == name) {
+                            field.isAsc = sortMap.isAsc;
+                            field.isSort = true;
+                        }
+                        else {
+                            field.isSort = false;
+                        }
+                    });
                 },
                 sortMap:[]
             };
@@ -676,7 +690,8 @@
                     var f = {
                         name: fields[i].Name,
                         isPrimary:false,
-                        isForeign:false
+                        isForeign: false,
+                        isSort:false
                     };
                     $scope.vm.fields.push(f);
                 }

@@ -26,6 +26,7 @@
                 {
                     var d = {
                         isSelected: false,
+                        model:"read",
                         rows:data.Datas[i]
                     }
                     datas.push(d);

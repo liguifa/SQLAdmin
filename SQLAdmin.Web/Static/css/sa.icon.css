@@ -53,3 +53,19 @@
     background-repeat: no-repeat;
     padding: 8px;
 }
+
+.sa-icon-sort-asc {
+    background: url(../Images/icon_sort_asc.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-sort-desc {
+    background: url(../Images/icon_sort_desc.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}

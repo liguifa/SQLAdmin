@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Static\css\sa.connect.css" />
     <Content Include="Static\css\sa.monior.style.css" />
     <Content Include="Static\css\sa.report.style.css" />
     <Content Include="Static\css\messager.css" />
@@ -138,9 +139,12 @@
     <Content Include="Static\Images\icon_error.png" />
     <Content Include="Static\Images\icon_folder.png" />
     <Content Include="Static\Images\icon_arrow-right.png" />
+    <Content Include="Static\Images\icon_key.png" />
     <Content Include="Static\Images\icon_loading.gif" />
     <Content Include="Static\Images\icon_loading.png" />
     <Content Include="Static\Images\icon_remove.png" />
+    <Content Include="Static\Images\icon_sort_asc.png" />
+    <Content Include="Static\Images\icon_sort_desc.png" />
     <Content Include="Static\script\angular-cookies.min.js" />
     <Content Include="Static\script\angular.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

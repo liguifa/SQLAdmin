@@ -291,7 +291,7 @@ body,html,document {
 .sa-datagrid {
     border: 1px solid #e2e2e2;
     width: 100%;
-    height: 77%;
+    /*height: 77%;*/
     margin: 0;
     background-color: #fff;
     line-height: 22px;
@@ -314,6 +314,10 @@ body,html,document {
         text-align: left;
         z-index: 996;
         cursor:pointer;
+    }
+
+    .sa-datagrid tbody tr:hover {
+        background: #f2f2f2;
     }
 
 .sa-datagrid-content {
@@ -353,6 +357,10 @@ body,html,document {
     .sa-datagrid-content-header-icon img {
         width: 16px;
         height: 16px;
+    }
+
+    .sa-datagrid-content-sort-icon{
+        float:right;
     }
 
 .sa-blockquote {
