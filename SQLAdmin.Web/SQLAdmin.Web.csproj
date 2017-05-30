@@ -127,6 +127,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Static\Images\icon_arrow_buttom.png" />
+    <Content Include="Static\Images\icon_calendar.png" />
     <Content Include="Static\Images\icon_edit.png" />
     <Content Include="Static\Images\icon_add.png" />
     <Content Include="Static\Images\displayLogo.ico">

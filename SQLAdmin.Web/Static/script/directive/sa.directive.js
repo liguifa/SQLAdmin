@@ -623,7 +623,8 @@
 <tbody>\
       <tr ng-repeat="row in datas">\
         <td><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
-        <td ng-repeat="(key,val) in row.rows track by $index">{{val}}</td>\
+        <!--<td ng-repeat="(key,val) in row.rows track by $index">{{val}}</td>--!>\
+        <td ng-repeat="(key,val) in row.rows track by $index"><sa-calendar></sa-calendar></td>\
       </tr>\
 </tbody>\
     </table>\
@@ -983,6 +984,50 @@
         }
     }
 }])
+
+.directive("saCalendar", function () {
+    var vm = {
+        template: "<div class='sa-calendar'>\
+                    <div><input class='sa-calendar-text' type='text' readonly value='2012/12/12 12:23:34' /><div class='sa-calendar-icon' ng-click='vm.startSelect()' ><img src='/Static/Images/icon_calendar.png' /></div></div>\
+                    <div class='sa-calendar-select' ng-if='vm.isSelect'>\
+                        <div class='sa-calendar-select-title'></div>\
+                        <div class='sa-calendar-select-context'>\
+                            <div class='sa-calendar-select-fields'>\
+                                <ul><li>日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li></ul>\
+                            </div>\
+                                <table>\
+                                    <tbody>\
+                                        <tr><td>31</td><td>01</td><td>02</td><td>03</td><td>04</td><td>05</td><td>06</td></tr>\
+                                        <tr><td>07</td><td>08</td><td>09</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>\
+                                        <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>\
+                                        <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>\
+                                        <tr><td>28</td><td>29</td><td>30</td><td>31</td><td>01</td><td>03</td><td>03</td></tr>\
+                                    </tbody>\
+                                </table>\
+                        </div>\
+                        <div class='sa-calendar-select-footer'></div>\
+                    </div>\
+                   </div>"
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                startSelect: function () {
+                    $scope.vm.isSelect = !$scope.vm.isSelect;
+                },
+                isSelect:false
+            }
+        }
+    }
+})
 
 .directive("saLines", ["guid.service",function (guid) {
     var vm = {
