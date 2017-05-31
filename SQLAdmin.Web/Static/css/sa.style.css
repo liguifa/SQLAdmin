@@ -668,6 +668,7 @@ body,html,document {
 
 .sa-calendar{
     width:182px;
+    height:30px;
 }
 
 .sa-calendar-text {
@@ -719,10 +720,10 @@ body,html,document {
     box-sizing: border-box !important;
     border-radius: 2px 2px 2px 2px;
     border: 1px solid #e6e6e6;
-    position: absolute;
-    margin-top: 40px;
-    float: left;
-    z-index:996;
+    position:relative;
+    top:40px;
+    background:#ffffff;
+    opacity:1;
 }
 
 .sa-calendar-select-title{
@@ -743,6 +744,8 @@ body,html,document {
     font-weight: 400;
     font-size: 12px;
     text-align: center;
+
+     
 }
 
 .sa-calendar-select-fields{
@@ -775,7 +778,6 @@ body,html,document {
     border:none;
     width:220px;
     margin-top:5px;
-        position:relative;
 }
 
 .sa-calendar-select-context table tr{
@@ -809,4 +811,17 @@ body,html,document {
     background:#FBFBFB;
     border-top: 1px solid #e6e6e6;
     margin-top:6px;
+}
+
+.sa-calendar-select-footer-button{
+    width:51px;
+    height:20px;
+    margin:2px;
+    border: 1px solid #C9C9C9;
+    background-color: #fff;
+    color: #555;
+}
+
+.sa-calendar-select-footer-time{
+    width:10px;
 }

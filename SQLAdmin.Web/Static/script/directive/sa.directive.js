@@ -1005,7 +1005,13 @@
                                     </tbody>\
                                 </table>\
                         </div>\
-                        <div class='sa-calendar-select-footer'></div>\
+                        <div class='sa-calendar-select-footer'>\
+                            <div class='sa-calendar-select-footer-time'>\
+                                \
+                            </div>\
+                            <button class='sa-button sa-calendar-select-footer-button'>确定</button>\
+                            <button class='sa-button sa-calendar-select-footer-button'>取消</button>\
+                        </div>\
                     </div>\
                    </div>"
     }
@@ -1026,6 +1032,15 @@
                 isSelect:false
             }
         }
+    }
+})
+
+.directive("saNumber", function () {
+    var vm = {
+        template: "<div>\
+                    <input class='sa-input sa-number-input' readonly type='text'>\
+                    <div></div>\
+                   </div>"
     }
 })
 
