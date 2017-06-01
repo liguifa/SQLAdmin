@@ -1006,11 +1006,17 @@
                                 </table>\
                         </div>\
                         <div class='sa-calendar-select-footer'>\
-                            <div class='sa-calendar-select-footer-time'>\
-                                \
-                            </div>\
-                            <button class='sa-button sa-calendar-select-footer-button'>确定</button>\
-                            <button class='sa-button sa-calendar-select-footer-button'>取消</button>\
+                            <table>\
+                                <tr>\
+                                    <td class='sa-calendar-select-footer-time'><sa-number></sa-number></td>\
+                                    <td class='sa-calendar-select-footer-time'>:</td>\
+                                    <td class='sa-calendar-select-footer-time'><sa-number></sa-number></td>\
+                                    <td class='sa-calendar-select-footer-time'>:</td>\
+                                    <td class='sa-calendar-select-footer-time'><sa-number></sa-number></td>\
+                                    <td><button class='sa-button sa-calendar-select-footer-button'>确定</button></td>\
+                                    <td><button class='sa-button sa-calendar-select-footer-button'>取消</button></td>\
+                                </tr>\
+                            </table>\
                         </div>\
                     </div>\
                    </div>"
@@ -1038,9 +1044,30 @@
 .directive("saNumber", function () {
     var vm = {
         template: "<div>\
-                    <input class='sa-input sa-number-input' readonly type='text'>\
+                    <input class='sa-input sa-number-input' readonly ng-model='vm.value' type='text'>\
                     <div></div>\
                    </div>"
+    }
+
+    return {
+        restrict: "E",
+        replace: true,
+        template: vm.template,
+        priority: 1,
+        scope: {
+            value: "=",
+            min: "=",
+            max:"="
+        },
+        controller:function($scope) {
+            $scope.vm = {
+                value:0
+            }
+
+            $scope.$watch("value", function (value) {
+                $scope.vm.value = value;
+            })
+        }
     }
 })
 
