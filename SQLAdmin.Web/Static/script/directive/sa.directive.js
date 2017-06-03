@@ -988,38 +988,65 @@
 .directive("saCalendar", function () {
     var vm = {
         template: "<div class='sa-calendar'>\
-                    <div><input class='sa-calendar-text' type='text' readonly value='2012/12/12 12:23:34' /><div class='sa-calendar-icon' ng-click='vm.startSelect()' ><img src='/Static/Images/icon_calendar.png' /></div></div>\
+                    <div><input class='sa-calendar-text' type='text' readonly ng-model='vm.time' /><div class='sa-calendar-icon' ng-click='vm.startSelect()' ><img src='/Static/Images/icon_calendar.png' /></div></div>\
                     <div class='sa-calendar-select' ng-if='vm.isSelect'>\
-                        <div class='sa-calendar-select-title'></div>\
+                        <div class='sa-calendar-select-title'><div class='sa-calendar-select-title-span'><div class='sa-icon-left sa-calendar-select-title-span-left' ng-click='vm.bottomMonth()'></div><div class='sa-calendar-select-title-text'>{{vm.year}}年 {{vm.month}}月</div><div class='sa-icon-right sa-calendar-select-title-span-right' ng-click='vm.topMonth()'></div></div></div>\
                         <div class='sa-calendar-select-context'>\
                             <div class='sa-calendar-select-fields'>\
                                 <ul><li>日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li></ul>\
                             </div>\
                                 <table>\
                                     <tbody>\
-                                        <tr><td>31</td><td>01</td><td>02</td><td>03</td><td>04</td><td>05</td><td>06</td></tr>\
-                                        <tr><td>07</td><td>08</td><td>09</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>\
-                                        <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>\
-                                        <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>\
-                                        <tr><td>28</td><td>29</td><td>30</td><td>31</td><td>01</td><td>03</td><td>03</td></tr>\
+                                        <tr ng-repeat='calendar in vm.calendars'><td ng-repeat='day in  calendar track  by $index'>{{day}}</td></tr>\
                                     </tbody>\
                                 </table>\
                         </div>\
                         <div class='sa-calendar-select-footer'>\
                             <table>\
                                 <tr>\
-                                    <td class='sa-calendar-select-footer-time'><sa-number></sa-number></td>\
+                                    <td class='sa-calendar-select-footer-time'><sa-number value='16'></sa-number></td>\
                                     <td class='sa-calendar-select-footer-time'>:</td>\
-                                    <td class='sa-calendar-select-footer-time'><sa-number></sa-number></td>\
+                                    <td class='sa-calendar-select-footer-time'><sa-number value='17'></sa-number></td>\
                                     <td class='sa-calendar-select-footer-time'>:</td>\
-                                    <td class='sa-calendar-select-footer-time'><sa-number></sa-number></td>\
+                                    <td class='sa-calendar-select-footer-time'><sa-number value='22'></sa-number></td>\
                                     <td><button class='sa-button sa-calendar-select-footer-button'>确定</button></td>\
                                     <td><button class='sa-button sa-calendar-select-footer-button'>取消</button></td>\
                                 </tr>\
                             </table>\
                         </div>\
                     </div>\
-                   </div>"
+                   </div>",
+        getDateCalendar: function (year, month) {
+            var date =new Date();
+            date.setFullYear(year, month, 1);
+            var start = date.getDay();
+            var startDay = 1 - start;
+            var calendars = [];
+            var weekDayCount = 7;
+            var currentWeekDay = 0
+            var currentWeek = [];
+            for (var i = 1; i <= 35; i++) {
+                if (currentWeekDay == 0) {
+                    currentWeek = [];
+                }
+                if (startDay > 0) {
+                    currentWeek.push(i - start);
+                }
+                else {
+                    currentWeek.push("");
+                }
+                if (currentWeekDay == weekDayCount - 1) {
+                    calendars.push(currentWeek);
+                }
+                currentWeekDay++;
+                if (currentWeekDay == weekDayCount)
+                {
+                    currentWeekDay = 0;
+                }
+                startDay++;
+            }
+            return calendars;
+        }
     }
 
     return {
@@ -1031,21 +1058,61 @@
 
         },
         controller: function ($scope) {
+            var date = new Date();
             $scope.vm = {
                 startSelect: function () {
                     $scope.vm.isSelect = !$scope.vm.isSelect;
                 },
-                isSelect:false
+                isSelect: false,
+                calendars: vm.getDateCalendar(date.getFullYear(), date.getMonth()),
+                year: date.getFullYear(),
+                month: date.getMonth() + 1,
+                time: date.toString(),
+                topMonth: function () {
+                    var month = $scope.vm.month + 1;
+                    var year = $scope.vm.year;
+                    if (month == 13) {
+                        year = year + 1;
+                        month = 1;
+                    }
+                    $scope.vm.year = year;
+                    $scope.vm.month = month;
+                },
+                bottomMonth: function () {
+                    var month = $scope.vm.month - 1;
+                    var year = $scope.vm.year;
+                    if (month == 0) {
+                        year = year - 1;
+                        month = 12;
+                    }
+                    $scope.vm.year = year;
+                    $scope.vm.month = month;
+                }
             }
+
+            $scope.$watch("vm.year", function (year) {
+                $scope.vm.calendars = vm.getDateCalendar(year, $scope.vm.month - 1);
+            })
+
+            $scope.$watch("vm.month", function (month) {
+                $scope.vm.calendars = vm.getDateCalendar($scope.vm.year, month - 1);
+            })
         }
     }
 })
 
 .directive("saNumber", function () {
     var vm = {
-        template: "<div>\
-                    <input class='sa-input sa-number-input' readonly ng-model='vm.value' type='text'>\
-                    <div></div>\
+        template: "<div class='sa-number'>\
+                    <table><tbody>\
+                        <tr>\
+                            <td rowspan='2'><input class='sa-input sa-number-input' readonly ng-model='vm.value' type='text'></td>\
+                            <td><button class='sa-number-top sa-icon-top'></button></td>\
+                        </tr>\
+                        <tr>\
+                            <td><button class='sa-number-bottom sa-icon-bottom'></button></td>\
+                        </tr>\
+                    </tbody></table>\
                    </div>"
     }
 

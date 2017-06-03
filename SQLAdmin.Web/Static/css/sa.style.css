@@ -731,6 +731,34 @@ body,html,document {
     height:26px;
     background:#FBFBFB;
     border-bottom: 1px solid #e6e6e6;
+    text-align:center;
+}
+
+.sa-calendar-select-title-span{
+    text-align:center;
+}
+
+.sa-calendar-select-title-span-left {
+    width: 20px;
+    position: relative;
+    left: 0px;
+    top: 5px;
+    cursor:pointer;
+    z-index:995;
+}
+
+.sa-calendar-select-title-span-right {
+    width: 20px;
+    position: relative;
+    left: 208px;
+    top: -30px;
+    cursor:pointer;
+}
+
+.sa-calendar-select-title-text{
+   position:relative;
+   left:-66px;
+   top:-12px;
 }
 
 .sa-calendar-select-context {
@@ -814,7 +842,7 @@ body,html,document {
 }
 
 .sa-calendar-select-footer-button{
-    width:51px;
+    width:38px;
     height:20px;
     margin:2px;
     border: 1px solid #C9C9C9;
@@ -850,6 +878,39 @@ body,html,document {
 .sa-calendar-select-footer-number{
     width:30px;
     padding:0px;
+    height:20px;
+}
+
+.sa-calendar-select-footer-time .sa-number{
+    height:20px !important;
+}
+
+.sa-calendar-select-footer-time table{
+    height:20px !important;
+    line-height:10px;
+}
+
+.sa-number{
+
+}
+
+.sa-number table{
+    width:100%;
+    height:100%;
+}
+
+    .sa-number table tr td {
+        padding: 0px;
+        text-align: center;
+        line-height: 2px;
+        text-align: center;
+    }
+        .sa-number table tr td:hover {
+            background: #FBFBFB;
+        }
+
+.sa-number table tr td div{
+    padding:0px;
 }
 
 .sa-number-input{
@@ -859,6 +920,7 @@ body,html,document {
     height:20px;
     padding:0px;
     border: 1px solid #e6e6e6;
+     border-right:none;
     background-color: #fff;
     outline: 0;
     -webkit-transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
@@ -866,5 +928,36 @@ body,html,document {
     -webkit-box-sizing: border-box !important;
     -moz-box-sizing: border-box !important;
     box-sizing: border-box !important;
-   
+   text-align:center;
+   margin-top:1px;
+}
+
+.sa-number-top {
+    border: 1px solid #e6e6e6;
+    border-bottom: none;
+    border-left: none;
+    height: 40%;
+    padding: 4px !important;
+    cursor: pointer;
+    -webkit-transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+    transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    text-align: center;
+}
+
+.sa-number-bottom {
+    border: 1px solid #e6e6e6;
+    border-left: none;
+    border-top: none;
+    height: 40%;
+    padding: 4px !important;
+    cursor: pointer;
+    -webkit-transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+    transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    text-align: center;
 }

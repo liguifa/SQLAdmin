@@ -127,6 +127,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Static\Images\icon_arrow_buttom.png" />
+    <Content Include="Static\Images\icon_bottom.png" />
     <Content Include="Static\Images\icon_calendar.png" />
     <Content Include="Static\Images\icon_edit.png" />
     <Content Include="Static\Images\icon_add.png" />
@@ -141,11 +142,14 @@
     <Content Include="Static\Images\icon_folder.png" />
     <Content Include="Static\Images\icon_arrow-right.png" />
     <Content Include="Static\Images\icon_key.png" />
+    <Content Include="Static\Images\icon_left.png" />
     <Content Include="Static\Images\icon_loading.gif" />
     <Content Include="Static\Images\icon_loading.png" />
     <Content Include="Static\Images\icon_remove.png" />
+    <Content Include="Static\Images\icon_right.png" />
     <Content Include="Static\Images\icon_sort_asc.png" />
     <Content Include="Static\Images\icon_sort_desc.png" />
+    <Content Include="Static\Images\icon_top.png" />
     <Content Include="Static\script\angular-cookies.min.js" />
     <Content Include="Static\script\angular.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

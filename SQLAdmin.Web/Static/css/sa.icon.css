@@ -73,3 +73,35 @@
 .sa-icon-save{
 
 }
+
+.sa-icon-top {
+    background: url(../Images/icon_top.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-bottom {
+    background: url(../Images/icon_bottom.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-left {
+    background: url(../Images/icon_left.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-right {
+    background: url(../Images/icon_right.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
