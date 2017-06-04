@@ -624,7 +624,7 @@
       <tr ng-repeat="row in datas">\
         <td><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
         <!--<td ng-repeat="(key,val) in row.rows track by $index">{{val}}</td>--!>\
-        <td ng-repeat="(key,val) in row.rows track by $index"><sa-calendar></sa-calendar></td>\
+        <td ng-repeat="(key,val) in row.rows track by $index"><sa-switch></sa-switch></td>\
       </tr>\
 </tbody>\
     </table>\
@@ -997,20 +997,20 @@
                             </div>\
                                 <table>\
                                     <tbody>\
-                                        <tr ng-repeat='calendar in vm.calendars'><td ng-repeat='day in  calendar track  by $index'>{{day}}</td></tr>\
+                                        <tr ng-repeat='calendar in vm.calendars'><td ng-repeat='day in  calendar track  by $index' ng-class='{\"true\":\"sa-calendar-select-context-active\",\"false\":\"\" }[day == vm.day]' ng-click='vm.selectDay(day)'>{{day}}</td></tr>\
                                     </tbody>\
                                 </table>\
                         </div>\
                         <div class='sa-calendar-select-footer'>\
                             <table>\
                                 <tr>\
-                                    <td class='sa-calendar-select-footer-time'><sa-number value='16'></sa-number></td>\
+                                    <td class='sa-calendar-select-footer-time'><sa-number value='vm.hour'></sa-number></td>\
                                     <td class='sa-calendar-select-footer-time'>:</td>\
-                                    <td class='sa-calendar-select-footer-time'><sa-number value='17'></sa-number></td>\
+                                    <td class='sa-calendar-select-footer-time'><sa-number value='vm.minute'></sa-number></td>\
                                     <td class='sa-calendar-select-footer-time'>:</td>\
-                                    <td class='sa-calendar-select-footer-time'><sa-number value='22'></sa-number></td>\
-                                    <td><button class='sa-button sa-calendar-select-footer-button'>确定</button></td>\
-                                    <td><button class='sa-button sa-calendar-select-footer-button'>取消</button></td>\
+                                    <td class='sa-calendar-select-footer-time'><sa-number value='vm.second'></sa-number></td>\
+                                    <td><button class='sa-button sa-calendar-select-footer-button' ng-click='vm.updateDate()'>确定</button></td>\
+                                    <td><button class='sa-button sa-calendar-select-footer-button' ng-click='vm.cancel()'>取消</button></td>\
                                 </tr>\
                             </table>\
                         </div>\
@@ -1029,7 +1029,7 @@
                 if (currentWeekDay == 0) {
                     currentWeek = [];
                 }
-                if (startDay > 0) {
+                if (startDay > 0 && i <= 31) {
                     currentWeek.push(i - start);
                 }
                 else {
@@ -1067,6 +1067,10 @@
                 calendars: vm.getDateCalendar(date.getFullYear(), date.getMonth()),
                 year: date.getFullYear(),
                 month: date.getMonth() + 1,
+                day: date.getDate(),
+                hour: date.getHours(),
+                minute: date.getMinutes(),
+                second: date.getSeconds(),
                 time: date.toString(),
                 topMonth: function () {
                     var month = $scope.vm.month + 1;
@@ -1087,6 +1091,17 @@
                     }
                     $scope.vm.year = year;
                     $scope.vm.month = month;
+                },
+                updateDate:function(){
+                    var date = new Date($scope.vm.year, $scope.vm.month, $scope.vm.day, $scope.vm.hour, $scope.vm.minute, $scope.vm.second);
+                    $scope.vm.time = date.toString();
+                    $scope.vm.isSelect = false;
+                },
+                cancel: function () {
+                    $scope.vm.isSelect = false;
+                },
+                selectDay: function (day) {
+                    $scope.vm.day = day;
                 }
             }
 
@@ -1133,6 +1148,44 @@
 
             $scope.$watch("value", function (value) {
                 $scope.vm.value = value;
+            })
+        }
+    }
+})
+
+.directive("saSwitch", function () {
+    var vm = {
+        template:"<div class='sa-switch' ng-click='vm.check()'>\
+                    <input type='checkbox' readonly value='vm.isCheck' class='sa-switch-input' />\
+                    <div ng-class='{\"true\":\"sa-switch-checkbox sa-switch-checkbox-true\",\"false\":\"sa-switch-checkbox sa-switch-checkbox-false\" }[vm.isCheck]'>\
+                        <div class='sa-switch-checkbox-dot'></div>\
+                        <div class='sa-switch-checkbox-text'>{{vm.displayText}}<div>\
+                    </div>\
+                  </div>"
+    }
+
+    return {
+        restrict: "E",
+        replace: true,
+        template: vm.template,
+        priority: 1,
+        scope: {
+            falseText: "=",
+            trueText: "="
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                isCheck: false,
+                check: function () {
+                    $scope.vm.isCheck = !$scope.vm.isCheck;
+                },
+                falseText: "False",
+                trueText: "True",
+                displayText: "False",
+            };
+
+            $scope.$watch("vm.isCheck", function (isCheck) {
+                $scope.vm.displayText = isCheck ? $scope.vm.trueText : $scope.vm.falseText;
             })
         }
     }
