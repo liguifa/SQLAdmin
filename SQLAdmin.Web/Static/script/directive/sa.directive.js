@@ -621,10 +621,10 @@
       </tr> \
     </thead>\
 <tbody>\
-      <tr ng-repeat="row in datas">\
+      <tr ng-repeat="row in datas trace by $index">\
         <td><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
-        <!--<td ng-repeat="(key,val) in row.rows track by $index">{{val}}</td>--!>\
-        <td ng-repeat="(key,val) in row.rows track by $index"><sa-switch></sa-switch></td>\
+        <!--<td ng-repeat="(key,val) in row.rows track by $index" ng-if="vm.model==0">{{val}}</td>--!>\
+        <td ng-repeat="(key,val) in row.rows track by $index" ng-if="vm.model==1"><sa-field type="vm.fields[$index].type"></sa-field></td>\
       </tr>\
 </tbody>\
     </table>\
@@ -1187,6 +1187,50 @@
             $scope.$watch("vm.isCheck", function (isCheck) {
                 $scope.vm.displayText = isCheck ? $scope.vm.trueText : $scope.vm.falseText;
             })
+        }
+    }
+})
+
+.directive("saText", function () {
+    var vm = {
+        template:"<div class='sa-text'><input type='text' class='sa-input' ng-model='vm.text' /></div>"
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            text:"="
+        },
+        contoller: function ($scope) {
+            $scope.vm = {
+                text: ""
+            };
+            $scope.$watch("text", function (text) {
+                $scope.vm.text = text;
+            })
+        }
+    }
+})
+
+.directive("saField", function () {
+    var vm = {
+        template:"<div ng-switch='vm.type'>\
+                  </div>"
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+
+        },
+        controller: function ($scope) {
+
         }
     }
 })

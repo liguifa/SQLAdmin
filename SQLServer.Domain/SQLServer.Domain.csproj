@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityProxy\NavPropertyAttribute.cs" />
     <Compile Include="Entity\Database.cs" />
     <Compile Include="EntityHepler\Entity.cs" />
     <Compile Include="EntityHepler\EntityColumnAttribute.cs" />

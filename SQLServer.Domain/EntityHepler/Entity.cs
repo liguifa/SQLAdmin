@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace SQLServer.Domain
 {
-    public static class Entity
+    public class Entity: MarshalByRefObject
+    {
+
+    }
+
+    public static class EntityHelper
     {
         public static string GetEntityTableName(this Type type)
         {
