@@ -16,8 +16,8 @@ namespace SQLServer.Domain
         [EntityColumn("name")]
         public string Name { get; set; }
 
-        //[EntityColumn("system_type_id")]
-        //public string TypeId { get; set; }
+        [EntityColumn("xtype")]
+        public int TypeId { get; set; }
 
         //[NavProperty(nameof(TypeId))]
         //public virtual FieldType Type { get; set; }

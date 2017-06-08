@@ -66,7 +66,8 @@ namespace SQLServer.Service
                     string search = String.IsNullOrEmpty(filter.Search.Key) ? "1=1" : $"{filter.Search.Key} like '%{filter.Search.Value}%'";
                     string select = filter.Selected == null || !filter.Selected.Any() ? "*" : String.Join(",", filter.Selected);
                     string orderBy = String.IsNullOrEmpty(filter.SortColumn) ? "1" : filter.SortColumn;
-                    var vm = db.Use(dbName).DbSet(filter.TableName).Filter(select, search, orderBy, out total, filter.PageIndex, filter.PageSize, filter.IsAsc).ToViewModel();
+                    List<FieldViewModel> fileds = ServiceFactory.GetInstance().DatabaseService.GetTableFields(tbName);
+                    var vm = db.Use(dbName).DbSet(filter.TableName).Filter(select, search, orderBy, out total, filter.PageIndex, filter.PageSize, filter.IsAsc).ToViewModel(fileds);
                     vm.Total = total;
                     vm.PageIndex = filter.PageIndex;
                     vm.PageSize = filter.PageSize;

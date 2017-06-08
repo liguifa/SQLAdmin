@@ -64,17 +64,18 @@ namespace SQLServer.Utility
             return databaseTree;
         }
 
-        public static List<FieldTypeViewModel> ToViewModel(this List<FieldType> entities)
+        public static List<FieldTypeViewModel> ToViewModel(this List<Domain.FieldType> entities)
         {
             List<FieldTypeViewModel> fields = new List<FieldTypeViewModel>();
             if(entities != null)
             {
-                foreach(FieldType entity in entities)
+                foreach(var entity in entities)
                 {
                     FieldTypeViewModel field = new FieldTypeViewModel();
                     field.DisplayName = entity.DisplayName;
                     field.IsNullable = entity.IsNullable;
                     field.MaxLength = entity.MaxLength;
+                    field.Type = FieldTypeHelper.GetFieldTypeBySQLServerTypeId(entity.);
                     fields.Add(field);
                 }
             }
@@ -91,6 +92,7 @@ namespace SQLServer.Utility
                     FieldViewModel field = new FieldViewModel();
                     field.Id = entity.Id;
                     field.Name = entity.Name;
+                    field.Type =
                     fields.Add(field);
                 }
             }
@@ -157,10 +159,20 @@ namespace SQLServer.Utility
             return viewmodes;
         }
 
-        public static TableDataViewMdoel ToViewModel(this List<dynamic> entities)
+        public static TableDataViewMdoel ToViewModel(this List<dynamic> entities, List<FieldViewModel> fileds)
         {
             TableDataViewMdoel vm = new TableDataViewMdoel();
             vm.Datas = entities;
+            foreach (var data in vm.Datas)
+            {
+                foreach (var field in fileds)
+                {
+                    if (data[field.Name] != null)
+                    {
+                        data[field.Name] = new { Value = data[field.Name], Type = field.Type };
+                    }
+                }
+            }
             return vm;
         }
     }

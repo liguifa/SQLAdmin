@@ -13,5 +13,27 @@ namespace SQLAdmin.Utility
         public int MaxLength { get; set; }
 
         public int IsNullable { get; set; }
+
+        public FieldType Type { get; set; }
+    }
+
+    public enum FieldType
+    {
+        Text,
+        Image,
+        Guid,
+        Date,
+        DateTime,
+        Number,
+        Money,
+        Float,
+        Bool,
+        Binary,
+        Char,
+        Time,
+        Xml,
+        Tree,
+        Datagrid,
+        Json
     }
 }
