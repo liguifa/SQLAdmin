@@ -37,3 +37,4 @@ D:\SQLAdmin\SQLServer.Dao\bin\Debug\Logger.pdb
 D:\SQLAdmin\SQLServer.Dao\obj\Debug\SQLServer.Dao.csprojResolveAssemblyReference.cache
 D:\SQLAdmin\SQLServer.Dao\obj\Debug\SQLServer.Dao.dll
 D:\SQLAdmin\SQLServer.Dao\obj\Debug\SQLServer.Dao.pdb
+D:\SQLAdmin\SQLServer.Dao\bin\Debug\SQLServerConfig\SQLServer_TypeMapping.config

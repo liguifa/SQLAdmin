@@ -1,4 +1,5 @@
-﻿using MMS.Config;
+﻿using Common.Utility;
+using MMS.Config;
 using SQLAdmin.Utility;
 using System;
 using System.Collections.Generic;
@@ -12,8 +13,9 @@ namespace SQLServer.Utility
     {
         public static FieldType GetFieldTypeBySQLServerTypeId(int typeId)
         {
-            Config<TypeMapping> config = new Config<TypeMapping>();
-            List<TypeMapping> mappings = config.GetAll();
+            List<TypeMapping> mappings = SerializerHelper.DeserializeObjectFormFile<List<TypeMapping>>(Constant.SQLSERVER_TYPE_MAPPING_CONFIG);
+            //Config<TypeMapping> config = new Config<TypeMapping>();
+            //List<TypeMapping> mappings = config.GetAll();
             var type = mappings.FirstOrDefault(d => d.SQLServerTypeId == typeId);
             return type == null ? FieldType.Text : (FieldType)type.ViewTypeId;
         }

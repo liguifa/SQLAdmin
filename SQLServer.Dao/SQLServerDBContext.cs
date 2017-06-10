@@ -1,9 +1,11 @@
-﻿using SQLAdmin.Dao;
+﻿using Common.Logger;
+using SQLAdmin.Dao;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +14,7 @@ namespace SQLServer.Dao
     public class SQLServerDBContext : DBContext
     {
         private readonly string mConnString = String.Empty;
+        private static readonly Logger mLog = Logger.GetInstance(MethodBase.GetCurrentMethod().DeclaringType);
 
         private SqlConnection mSQLConnection
         {
@@ -50,6 +53,7 @@ namespace SQLServer.Dao
         /// <returns></returns>
         public DataTable SqlReader(string sql)
         {
+            mLog.Error($"Start exec sql:{sql}");
             using (SqlConnection conn = this.GetConnect())
             {
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);

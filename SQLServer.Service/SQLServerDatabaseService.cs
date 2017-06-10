@@ -78,7 +78,7 @@ namespace SQLServer.Service
                 using (var scope = new SQLServerDBContextScope(this.mDBConnect))
                 {
                     SQLServerDBRepertory db = new SQLServerDBRepertory();
-                    return db.All<FieldType>().ToViewModel();
+                    return db.All<Domain.FieldType>().ToViewModel();
                 }
             }
             catch (Exception e)

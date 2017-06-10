@@ -12,6 +12,7 @@ namespace SQLAdmin.Utility
 
         public string Name { get; set; }
 
-        public FieldTypeViewModel Type { get; set; }
+        //public FieldTypeViewModel Type { get; set; }
+        public FieldType Type { get; set; }
     }
 }

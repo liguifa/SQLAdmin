@@ -15,7 +15,7 @@ namespace SQLServer.Domain
         [EntityColumn("max_length")]
         public int MaxLength { get; set; }
 
-        [EntityColumn("is+nullable")]
+        [EntityColumn("is_nullable")]
         public int IsNullable { get; set; }
     }
 }

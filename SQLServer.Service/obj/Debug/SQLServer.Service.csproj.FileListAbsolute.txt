@@ -68,3 +68,4 @@ D:\SQLAdmin\SQLServer.Service\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 D:\SQLAdmin\SQLServer.Service\obj\Debug\SQLServer.Service.csprojResolveAssemblyReference.cache
 D:\SQLAdmin\SQLServer.Service\obj\Debug\SQLServer.Service.dll
 D:\SQLAdmin\SQLServer.Service\obj\Debug\SQLServer.Service.pdb
+D:\SQLAdmin\SQLServer.Service\bin\Debug\SQLServerConfig\SQLServer_TypeMapping.config

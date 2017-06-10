@@ -49,6 +49,10 @@
     <Compile Include="SQLServerDBRepertory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common.Logger\Common.Logger.csproj">
+      <Project>{c2c92005-3adc-49e2-85a2-8bd031190485}</Project>
+      <Name>Common.Logger</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common.Utility\Common.Utility.csproj">
       <Project>{7272f819-4cff-4b74-bff4-ac9a61dbf215}</Project>
       <Name>Common.Utility</Name>

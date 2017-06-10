@@ -236,6 +236,7 @@
     <Content Include="Views\Monitor\Index.cshtml" />
     <Content Include="Views\Report\HardDisk.cshtml" />
     <Content Include="Static\script\services\monitor.service.js" />
+    <Content Include="SQLServerConfig\SQLServer_TypeMapping.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

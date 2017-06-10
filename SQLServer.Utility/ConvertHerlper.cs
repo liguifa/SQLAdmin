@@ -75,7 +75,6 @@ namespace SQLServer.Utility
                     field.DisplayName = entity.DisplayName;
                     field.IsNullable = entity.IsNullable;
                     field.MaxLength = entity.MaxLength;
-                    field.Type = FieldTypeHelper.GetFieldTypeBySQLServerTypeId(entity.);
                     fields.Add(field);
                 }
             }
@@ -92,7 +91,7 @@ namespace SQLServer.Utility
                     FieldViewModel field = new FieldViewModel();
                     field.Id = entity.Id;
                     field.Name = entity.Name;
-                    field.Type =
+                    field.Type = FieldTypeHelper.GetFieldTypeBySQLServerTypeId(entity.TypeId);
                     fields.Add(field);
                 }
             }
@@ -167,9 +166,9 @@ namespace SQLServer.Utility
             {
                 foreach (var field in fileds)
                 {
-                    if (data[field.Name] != null)
+                    if ((data as IDictionary<string, object>)[field.Name] != null)
                     {
-                        data[field.Name] = new { Value = data[field.Name], Type = field.Type };
+                        (data as IDictionary<string, object>)[field.Name] = new { Value = (data as IDictionary<string, object>)[field.Name], Type = field.Type };
                     }
                 }
             }

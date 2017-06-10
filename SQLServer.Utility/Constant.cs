@@ -49,5 +49,7 @@ namespace SQLServer.Utility
 
         public const string EXEC = "Exec";
         #endregion
+
+        public const string SQLSERVER_TYPE_MAPPING_CONFIG = "SQLServerConfig/SQLServer_TypeMapping.config";
     }
 }

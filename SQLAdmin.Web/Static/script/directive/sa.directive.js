@@ -621,10 +621,9 @@
       </tr> \
     </thead>\
 <tbody>\
-      <tr ng-repeat="row in datas trace by $index">\
+      <tr ng-repeat="row in datas">\
         <td><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
-        <!--<td ng-repeat="(key,val) in row.rows track by $index" ng-if="vm.model==0">{{val}}</td>--!>\
-        <td ng-repeat="(key,val) in row.rows track by $index" ng-if="vm.model==1"><sa-field type="vm.fields[$index].type"></sa-field></td>\
+        <td ng-repeat="(key,val) in row.rows track by $index"><sa-field type="val.Type" value="val.Value"></sa-field></td>\
       </tr>\
 </tbody>\
     </table>\
@@ -1171,7 +1170,8 @@
         priority: 1,
         scope: {
             falseText: "=",
-            trueText: "="
+            trueText: "=",
+            value:"=",
         },
         controller: function ($scope) {
             $scope.vm = {
@@ -1186,7 +1186,11 @@
 
             $scope.$watch("vm.isCheck", function (isCheck) {
                 $scope.vm.displayText = isCheck ? $scope.vm.trueText : $scope.vm.falseText;
-            })
+            });
+
+            $scope.$watch("value",function(value){
+                $scope.vm.isCheck = value;
+            });
         }
     }
 })
@@ -1218,6 +1222,8 @@
 .directive("saField", function () {
     var vm = {
         template:"<div ng-switch='vm.type'>\
+                    <sa-text ng-if='type == 0' text='value'></sa-text>\
+                    <sa-switch ng-if='type == 8' value='value'></sa-switch>\
                   </div>"
     }
 
@@ -1227,10 +1233,11 @@
         replace: true,
         priority: 1,
         scope: {
-
+            value: "=",
+            type:"=",
         },
         controller: function ($scope) {
-
+            console.log($scope.type + ":" + $scope.value)
         }
     }
 })
