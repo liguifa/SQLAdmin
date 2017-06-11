@@ -1033,3 +1033,50 @@ body,html,document {
 .sa-switch-checkbox-true .sa-switch-checkbox-dot{
     background:#fff !important;
 }
+
+.sa-guid{
+ width:300px;
+ text-align:center;
+}
+
+.sa-guid .sa-guid-text{
+    float:left;
+    width:42px;
+    text-align:center;
+}
+
+.sa-guid .sa-guid-text .sa-guid-text-context{
+    float:left;
+    width:32px;
+}
+
+.sa-guid .sa-guid-text .sa-guid-text-context div{
+    width:100%;
+}
+
+.sa-guid .sa-guid-text .sa-guid-text-context input{
+     width:100%;
+     text-align:center;
+}
+
+.sa-guid .sa-guid-text-long{
+    width:69px !important;
+}
+
+    .sa-guid .sa-guid-text-long .sa-guid-text-context {
+        width: 59px;
+    }
+
+    .sa-guid .sa-guid-text-maxlong{
+    width:99px !important;
+}
+
+    .sa-guid .sa-guid-text-maxlong .sa-guid-text-context {
+        width: 89px;
+    }
+
+.sa-guid .sa-guid-text .sa-guid-text-symbol{
+    float:left;
+    text-align:center;
+    margin-left:4.2px;
+}

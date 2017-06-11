@@ -1208,7 +1208,7 @@
         scope: {
             text:"="
         },
-        contoller: function ($scope) {
+        controller: function ($scope) {
             $scope.vm = {
                 text: ""
             };
@@ -1219,11 +1219,54 @@
     }
 })
 
+.directive("saGuid", function () {
+    var vm = {
+        template: "<div class='sa-guid'>\
+                    <div class='sa-guid-text sa-guid-text-long'><sa-text class='sa-guid-text-context' text='vm.guid_one'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
+                    <div class='sa-guid-text'><sa-text class='sa-guid-text-context' text='vm.guid_two'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
+                    <div class='sa-guid-text'><sa-text class='sa-guid-text-context' text='vm.guid_three'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
+                    <div class='sa-guid-text'><sa-text class='sa-guid-text-context' text='vm.guid_four'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
+                    <div class='sa-guid-text sa-guid-text-maxlong'><sa-text class='sa-guid-text-context' text='vm.guid_five'></sa-text></div>\
+                  </div>"
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            value:"="
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                guid_one: "",
+                guid_two: "",
+                guid_three: "",
+                guid_four: "",
+                guid_five: ""
+            };
+
+            $scope.$watch("value", function (value) {
+                var str = value.split("-");
+                $scope.vm.guid_one = str[0];
+                $scope.vm.guid_two = str[1];
+                $scope.vm.guid_three = str[2];
+                $scope.vm.guid_four = str[3];
+                $scope.vm.guid_five = str[4];
+            });
+        }
+    }
+})
+
 .directive("saField", function () {
     var vm = {
         template:"<div ng-switch='vm.type'>\
                     <sa-text ng-if='type == 0' text='value'></sa-text>\
+                    <sa-guid ng-if='type == 2' value='value'></sa-guid>\
                     <sa-switch ng-if='type == 8' value='value'></sa-switch>\
+                    <sa-number ng-if='type == 5' value='value'></sa-number>\
+                    <sa-Calendar ng-if='type == 4'></sa-Calendar>\
                   </div>"
     }
 
