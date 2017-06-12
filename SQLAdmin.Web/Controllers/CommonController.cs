@@ -34,5 +34,11 @@ namespace SQLAdmin.Web.Controllers
         {
             return Json(DatabaseTypeHelper.GetDatabseTypes(), JsonRequestBehavior.AllowGet);
         }
+
+        [HttpGet]
+        public ActionResult About()
+        {
+            return PartialView();
+        }
     }
 }

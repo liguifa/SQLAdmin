@@ -160,6 +160,7 @@
     <Content Include="Static\script\common\cryptogram.service.js" />
     <Content Include="Static\script\common\grid.service.js" />
     <Content Include="Static\script\common\messager.service.js" />
+    <Content Include="Static\script\controller\about.controller.js" />
     <Content Include="Static\script\controller\connect.controller.js" />
     <Content Include="Static\script\controller\database.controller.js" />
     <Content Include="Static\script\controller\gui.common.controller.js" />
@@ -237,6 +238,7 @@
     <Content Include="Views\Report\HardDisk.cshtml" />
     <Content Include="Static\script\services\monitor.service.js" />
     <Content Include="SQLServerConfig\SQLServer_TypeMapping.config" />
+    <Content Include="Views\Common\About.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

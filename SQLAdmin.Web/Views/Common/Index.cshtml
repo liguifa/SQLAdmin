@@ -67,6 +67,11 @@
                 @*<div data-view-id="123">@Html.Action("Query", "Manage")</div>*@
             </sa-tabs>
         </div>
+        <div>
+            <sa-footer>
+                <span>&copy;@DateTime.Now.Year SQLAdmin <a href="https://www.giuhub.com/liguifa/sqladmin">GIT 仓库</a></span>
+            </sa-footer>
+        </div>
     </div>
     <div ng-include src="vm.window"></div>
 </div>
@@ -78,6 +83,7 @@
 <script src="~/Static/script/controller/database.controller.js"></script>
 <script src="~/Static/script/lib/base64.min.js"></script>
 <script src="~/Static/script/common/cryptogram.service.js"></script>
+<script src="~/Static/script/controller/about.controller.js"></script>
 <script src="~/Static/script/services/connect.service.js"></script>
 <script src="~/Static/script/controller/connect.controller.js"></script>
 <script src="~/Static/script/services/manage.service.js"></script>

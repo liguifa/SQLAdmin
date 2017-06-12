@@ -9,7 +9,9 @@
                 messager.alert();
             },
             getTables: _getTables,
-            contextMenuCommand: _contextMenuCommand
+            contextMenuCommand: _contextMenuCommand,
+            icon: "/Static/Images/displayLogo.ico",
+            name:"SQLAdmin"
         }
 
         function select(menu) {

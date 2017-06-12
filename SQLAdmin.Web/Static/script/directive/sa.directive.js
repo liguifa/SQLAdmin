@@ -1197,7 +1197,7 @@
 
 .directive("saText", function () {
     var vm = {
-        template:"<div class='sa-text'><input type='text' class='sa-input' ng-model='vm.text' /></div>"
+        template:"<div class='sa-text'><input type='text' class='sa-input sa-text-input' ng-model='vm.text' /></div>"
     }
 
     return {
@@ -1281,6 +1281,58 @@
         },
         controller: function ($scope) {
             console.log($scope.type + ":" + $scope.value)
+        }
+    }
+})
+
+.directive("saFooter", function () {
+    var vm = {
+        template: "<div class='sa-footer' ng-transclude></div>"
+    }
+
+    return {
+        restrict: "E",
+        replace: true,
+        template: vm.template,
+        priority: 1,
+        transclude: true,
+        scope: {
+
+        },
+        controller: function ($scope) {
+
+        }
+    }
+})
+
+.directive("saAbout", function () { 
+    var vm = {
+        template: "<div class='sa-about'>\
+                    <div class='sa-about-header'>\
+                        <div class='sa-about-header-icon'>\
+                            <img src='{{icon}}' />\
+                        </div>\
+                        <div class='sa-about-header-name'>{{name}}</div>\
+                    </div>\
+                    <div class='sa-about-footer' ng-transclude></div>\
+                   <div>"
+    }
+
+    return {
+        restrict: "E",
+        replace: true,
+        template: vm.template,
+        priority: 1,
+        transclude: true,
+        scope: {
+            icon: "=",
+            name:"="
+        },
+        controller: function ($scope) {
+            for(var i=0;i<100;i++)
+            {
+
+            }
         }
     }
 })

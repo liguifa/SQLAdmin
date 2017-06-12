@@ -323,7 +323,7 @@ body,html,document {
 .sa-datagrid-content {
     overflow-y: scroll;
     overflow-x:auto;
-    height: 77%;
+    height: 81%;
     width:100%;
     margin: 0px;
     text-overflow:ellipsis;
@@ -1079,4 +1079,79 @@ body,html,document {
     float:left;
     text-align:center;
     margin-left:4.2px;
+}
+
+.sa-text-input {
+    line-height: 24px;
+    padding-left:2px;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    border-radius: 2px;
+    outline: 0;
+    -webkit-transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+    transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+.sa-footer{
+    height:24.8px;
+    position:fixed;
+    bottom:0px;
+    width:100%;
+    background:#F0F0F0;
+    text-align:center;
+    padding-top:4px;
+}
+
+.sa-footer a{
+    text-decoration:none;
+    color:#000;
+}
+
+.sa-about{
+    width:400px;
+    height:500px;
+    z-index:997;
+    position:fixed;
+    top:40%;
+    left:45%;
+}
+
+.sa-about-header{
+    width:100%;
+    height:200px;
+    background-color:#009688;
+    text-align:center;
+}
+
+.sa-about-header-icon{
+    width:300px;
+    height:120px;
+    text-align:center;
+    
+}
+
+.sa-about-header-icon img{
+    width:44%;
+    border-radius:50%;
+    margin-left:34%;
+    margin-top:20px;
+}
+
+.sa-about-header-name{
+    margin-top:44px;
+}
+
+.sa-about-footer{
+    height:24px;
+    background:#fff;
+    text-align:center;
+    padding-left:4px;
+}
+
+.sa-about-footer a{
+    text-decoration:none;
+    color:#000;
 }

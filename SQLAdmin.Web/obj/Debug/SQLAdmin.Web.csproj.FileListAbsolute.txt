@@ -184,3 +184,4 @@ D:\SQLAdmin\SQLAdmin.Web\bin\zh-Hans\System.Web.Helpers.resources.dll
 D:\SQLAdmin\SQLAdmin.Web\bin\zh-Hans\System.Web.Mvc.resources.dll
 D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.dll
 D:\SQLAdmin\SQLAdmin.Web\obj\Debug\SQLAdmin.Web.pdb
+D:\SQLAdmin\SQLAdmin.Web\bin\SQLServerConfig\SQLServer_TypeMapping.config
