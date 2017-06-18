@@ -1,7 +1,7 @@
 ﻿(function () {
     function manage_controller($scope, manage, event, constant, guid) {
         $scope.vm = {
-            pages: []
+            pages: [],
         }
 
         var pageConfiguration = [

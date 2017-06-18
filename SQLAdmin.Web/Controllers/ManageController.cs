@@ -34,9 +34,9 @@ namespace SQLAdmin.Web.Controllers
 
         [HttpPost]
         [Inject]
-        public JsonResult Update()
+        public JsonResult Update(UpdateFilter filter)
         {
-            return null;
+            return Json(ServiceFactory.GetInstance().DBManageService.Update(filter), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

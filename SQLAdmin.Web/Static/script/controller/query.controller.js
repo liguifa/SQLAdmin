@@ -16,7 +16,8 @@
                 isAsc:true,
             },
             indexs: [],
-            showFields:[]
+            showFields: [],
+            isNeedSave:false
         }
 
         function getDatas() {
@@ -26,7 +27,7 @@
                 {
                     var d = {
                         isSelected: false,
-                        model:"read",
+                        model: "readonly",
                         rows:data.Datas[i]
                     }
                     datas.push(d);
@@ -111,6 +112,25 @@
             $scope.vm.filter.sort = name;
             $scope.vm.filter.isAsc = isAsc;
             getDatas();
+        }
+
+        $scope.vm.edit = function () {
+            var selectDatas = $scope.vm.datas.filter(function (item) {
+                return item.isSelected
+            });
+            var selectDatas = $scope.vm.datas.forEach(function (item) {
+                if (item.isSelected) {
+                    item.model = "edit";
+                }
+            });
+            $scope.vm.isNeedSave = true;
+        }
+
+        $scope.vm.save = function () {
+            var selectDatas = $scope.vm.datas.filter(function (item) {
+                return item.isSelected
+            });
+            query.upldate(selectDatas);
         }
     }
 

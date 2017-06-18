@@ -81,5 +81,24 @@ namespace SQLServer.Service
                 throw;
             }
         }
+
+        public bool Update(UpdateFilter filter)
+        {
+            try
+            {
+                using (var scope = new SQLServerDBContextScope(this.mDBConnect))
+                {
+                    SQLServerDynamicRepertory db = new SQLServerDynamicRepertory();
+                    var dbName = filter.TableName.Split('.').First();
+                    var tbName = filter.TableName.Split('.').Last().Remove(0, 1);
+                    tbName = tbName.Remove(tbName.Length - 1, 1);
+                }
+            }
+            catch(Exception e)
+            {
+                mLog.Error($"An error has occurred in the update data,error:{e.ToString()}");
+                throw;
+            }
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace SQLServer.Dao
         {
             get
             {
-                return SQLServerDBContextScope.DBContext as SQLServerDBContext;
+                return SQLServerDBContextScope.GetDBContext() as SQLServerDBContext;
             }
         }
 

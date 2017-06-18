@@ -13,5 +13,7 @@ namespace SQLAdmin.IService
         TableDataViewMdoel Select(DataFilter filter);
 
         bool Delete(RemoveFilter filter);
+
+        bool Update(UpdateFilter filter);
     }
 }

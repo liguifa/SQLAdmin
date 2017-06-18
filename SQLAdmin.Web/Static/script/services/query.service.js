@@ -35,6 +35,14 @@
             return deferred.promise;
         }
 
+        function _update(tableName, datas) {
+            var deferred = $q.defer();
+            $http.post("/Manage/Update", { tableName: tableName, Datas: datas }).then(function (data) {
+                deferred.resolve(data.data);
+            });
+            return deferred.promise;
+        }
+
         return {
             filter: _filter,
             remove: _remove,

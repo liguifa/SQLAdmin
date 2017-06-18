@@ -13,10 +13,10 @@ namespace SQLServer.Dao
         {
         }
 
-        protected override void Initialize(SQLAdmin.Domain.DBConnect dbConnect)
+        protected override DBContext Initialize(SQLAdmin.Domain.DBConnect dbConnect)
         {
             string connectStr = $"Data Source={dbConnect.Address};Initial Catalog=master;User Id={dbConnect.Userename};Password={dbConnect.Password};";
-            DBContext = new SQLServerDBContext(connectStr);
+            return new SQLServerDBContext(connectStr);
         }
 
 

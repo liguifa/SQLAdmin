@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,23 +10,24 @@ namespace SQLAdmin.Dao
 {
     public abstract class DBContextScope : IDisposable
     {
-        public static DBContext DBContext { get; protected set; }   //TODO 这里有问题 暂时使用静态对象
+        private static readonly string mDBContextName = "DBContext";
 
         public DBContextScope(DBConnect dbConnect)
         {
-            this.Initialize(dbConnect);
+            var dbContext = this.Initialize(dbConnect);
+            CallContext.SetData(mDBContextName, dbContext);
         }
 
-        protected abstract void Initialize(DBConnect dbConnect);
+        protected abstract DBContext Initialize(DBConnect dbConnect);
 
-        public T GetDBContext<T>() where T : DBContext
+        public static DBContext GetDBContext()
         {
-            return DBContext as T;
+            return CallContext.GetData(mDBContextName) as DBContext;
         }
 
         public void Dispose()
         {
-            
+            CallContext.FreeNamedDataSlot(mDBContextName);
         }
     }
 }

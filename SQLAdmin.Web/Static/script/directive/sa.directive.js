@@ -623,7 +623,7 @@
 <tbody>\
       <tr ng-repeat="row in datas">\
         <td><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
-        <td ng-repeat="(key,val) in row.rows track by $index"><sa-field type="val.Type" value="val.Value"></sa-field></td>\
+        <td ng-repeat="(key,val) in row.rows track by $index"><sa-field type="val.Type" value="val.Value" model="row.model"></sa-field></td>\
       </tr>\
 </tbody>\
     </table>\
@@ -1117,7 +1117,7 @@
 
 .directive("saNumber", function () {
     var vm = {
-        template: "<div class='sa-number'>\
+        template: "<div class='sa-number' ng-readonly='vm.readonly'>\
                     <table><tbody>\
                         <tr>\
                             <td rowspan='2'><input class='sa-input sa-number-input' readonly ng-model='vm.value' type='text'></td>\
@@ -1138,7 +1138,8 @@
         scope: {
             value: "=",
             min: "=",
-            max:"="
+            max: "=",
+            readonly: "="
         },
         controller:function($scope) {
             $scope.vm = {
@@ -1148,13 +1149,16 @@
             $scope.$watch("value", function (value) {
                 $scope.vm.value = value;
             })
+            $scope.$watch("readonly", function (readonly) {
+                $scope.vm.readonly = readonly;
+            })
         }
     }
 })
 
 .directive("saSwitch", function () {
     var vm = {
-        template:"<div class='sa-switch' ng-click='vm.check()'>\
+        template: "<div class='sa-switch' ng-click='vm.check()' ng-readonly='vm.readonly'>\
                     <input type='checkbox' readonly value='vm.isCheck' class='sa-switch-input' />\
                     <div ng-class='{\"true\":\"sa-switch-checkbox sa-switch-checkbox-true\",\"false\":\"sa-switch-checkbox sa-switch-checkbox-false\" }[vm.isCheck]'>\
                         <div class='sa-switch-checkbox-dot'></div>\
@@ -1171,7 +1175,8 @@
         scope: {
             falseText: "=",
             trueText: "=",
-            value:"=",
+            value: "=",
+            readonly: "="
         },
         controller: function ($scope) {
             $scope.vm = {
@@ -1191,13 +1196,16 @@
             $scope.$watch("value",function(value){
                 $scope.vm.isCheck = value;
             });
+            $scope.$watch("readonly", function (readonly) {
+                $scope.vm.readonly = readonly;
+            })
         }
     }
 })
 
 .directive("saText", function () {
     var vm = {
-        template:"<div class='sa-text'><input type='text' class='sa-input sa-text-input' ng-model='vm.text' /></div>"
+        template:"<div class='sa-text'><input type='text' class='sa-input sa-text-input' ng-model='vm.text' ng-readonly='vm.readonly' /></div>"
     }
 
     return {
@@ -1206,14 +1214,19 @@
         replace: true,
         priority: 1,
         scope: {
-            text:"="
+            text: "=",
+            readonly:"="
         },
         controller: function ($scope) {
             $scope.vm = {
-                text: ""
+                text: "",
+                readonly:true
             };
             $scope.$watch("text", function (text) {
                 $scope.vm.text = text;
+            })
+            $scope.$watch("readonly", function (readonly) {
+                $scope.vm.readonly = readonly;
             })
         }
     }
@@ -1221,12 +1234,12 @@
 
 .directive("saGuid", function () {
     var vm = {
-        template: "<div class='sa-guid'>\
-                    <div class='sa-guid-text sa-guid-text-long'><sa-text class='sa-guid-text-context' text='vm.guid_one'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
-                    <div class='sa-guid-text'><sa-text class='sa-guid-text-context' text='vm.guid_two'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
-                    <div class='sa-guid-text'><sa-text class='sa-guid-text-context' text='vm.guid_three'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
-                    <div class='sa-guid-text'><sa-text class='sa-guid-text-context' text='vm.guid_four'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
-                    <div class='sa-guid-text sa-guid-text-maxlong'><sa-text class='sa-guid-text-context' text='vm.guid_five'></sa-text></div>\
+        template: "<div class='sa-guid' ng-readonly='vm.readonly'>\
+                    <div class='sa-guid-text sa-guid-text-long'><sa-text readonly='vm.readonly' class='sa-guid-text-context' text='vm.guid_one'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
+                    <div class='sa-guid-text'><sa-text class='sa-guid-text-context' readonly='vm.readonly' text='vm.guid_two'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
+                    <div class='sa-guid-text'><sa-text class='sa-guid-text-context' readonly='vm.readonly' text='vm.guid_three'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
+                    <div class='sa-guid-text'><sa-text class='sa-guid-text-context' readonly='vm.readonly' text='vm.guid_four'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
+                    <div class='sa-guid-text sa-guid-text-maxlong'><sa-text readonly='vm.readonly' class='sa-guid-text-context' text='vm.guid_five'></sa-text></div>\
                   </div>"
     }
 
@@ -1236,7 +1249,8 @@
         replace: true,
         priority: 1,
         scope: {
-            value:"="
+            value: "=",
+            readonly: "="
         },
         controller: function ($scope) {
             $scope.vm = {
@@ -1255,6 +1269,10 @@
                 $scope.vm.guid_four = str[3];
                 $scope.vm.guid_five = str[4];
             });
+
+            $scope.$watch("readonly", function (readonly) {
+                $scope.vm.readonly = readonly;
+            });
         }
     }
 })
@@ -1262,11 +1280,11 @@
 .directive("saField", function () {
     var vm = {
         template:"<div ng-switch='vm.type'>\
-                    <sa-text ng-if='type == 0' text='value'></sa-text>\
-                    <sa-guid ng-if='type == 2' value='value'></sa-guid>\
-                    <sa-switch ng-if='type == 8' value='value'></sa-switch>\
-                    <sa-number ng-if='type == 5' value='value'></sa-number>\
-                    <sa-Calendar ng-if='type == 4'></sa-Calendar>\
+                    <sa-text ng-if='type == 0' text='value' readonly='vm.readonly'></sa-text>\
+                    <sa-guid ng-if='type == 2' value='value' readonly='vm.readonlyvm.readonly'></sa-guid>\
+                    <sa-switch ng-if='type == 8' value='value' readonly='vm.readonly'></sa-switch>\
+                    <sa-number ng-if='type == 5' value='value' readonly='vm.readonly'></sa-number>\
+                    <sa-Calendar ng-if='type == 4' readonly='vm.readonly'></sa-Calendar>\
                   </div>"
     }
 
@@ -1277,10 +1295,19 @@
         priority: 1,
         scope: {
             value: "=",
-            type:"=",
+            type: "=",
+            model:"="
         },
         controller: function ($scope) {
-            console.log($scope.type + ":" + $scope.value)
+            console.log($scope.type + ":" + $scope.value);
+
+            $scope.vm = {
+                readonly: true
+            };
+
+            $scope.$watch("model", function (model) {
+                $scope.vm.readonly = model == "readonly";
+            })
         }
     }
 })
