@@ -11,11 +11,16 @@ namespace SQLAdmin.Dao
     public abstract class DBContextScope : IDisposable
     {
         private static readonly string mDBContextName = "DBContext";
+        private static readonly string mDBContextRecord = "DBContextRecord";
 
         public DBContextScope(DBConnect dbConnect)
         {
             var dbContext = this.Initialize(dbConnect);
-            CallContext.SetData(mDBContextName, dbContext);
+            if(!this.IsContextExist())
+            {
+                this.RegisterContext(dbContext);
+            }
+            this.AppendRecord();
         }
 
         protected abstract DBContext Initialize(DBConnect dbConnect);
@@ -27,7 +32,59 @@ namespace SQLAdmin.Dao
 
         public void Dispose()
         {
+            if(this.IsCanUnRegisterContext())
+            {
+                this.UnRegisterContext();
+            }
+            this.FreeRecord();
+        }
+
+        private bool IsContextExist()
+        {
+            var obj = CallContext.GetData(mDBContextName);
+            return obj != null;
+        }
+
+        private void RegisterContext(DBContext dbContext)
+        {
+            CallContext.SetData(mDBContextName, dbContext);
+        }
+
+        private void UnRegisterContext()
+        {
             CallContext.FreeNamedDataSlot(mDBContextName);
+        }
+
+        private void AppendRecord()
+        {
+            var record = CallContext.GetData(mDBContextRecord);
+            if(record == null)
+            {
+                CallContext.SetData(mDBContextRecord, 1);
+            }
+            else
+            {
+                CallContext.SetData(mDBContextRecord, ((int)record) + 1);
+            }
+        }
+
+        private void FreeRecord()
+        {
+            var record = CallContext.GetData(mDBContextRecord);
+            if(record != null)
+            {
+                CallContext.SetData(mDBContextRecord, ((int)record) - 1);
+            }
+        }
+
+        public bool IsCanUnRegisterContext()
+        {
+            var record = CallContext.GetData(mDBContextRecord);
+            if(record != null)
+            {
+                return (int)record <= 1;
+            }
+            return false;
         }
     }
 }

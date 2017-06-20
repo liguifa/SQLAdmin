@@ -92,6 +92,11 @@ namespace SQLServer.Service
                     var dbName = filter.TableName.Split('.').First();
                     var tbName = filter.TableName.Split('.').Last().Remove(0, 1);
                     tbName = tbName.Remove(tbName.Length - 1, 1);
+                    foreach(var data in filter.Datas)
+                    {
+                        db.Update(data);
+                    }
+                    return true;
                 }
             }
             catch(Exception e)

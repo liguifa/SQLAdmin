@@ -23,10 +23,22 @@ namespace SQLServer.Dao
             return this;
         }
 
+        public SQLQuery Update(string table)
+        {
+            this.mQueryKeys.Insert(0, table);
+            this.mQueryKeys.Insert(0, UPDATE);
+            return this;
+        }
+
         public SQLQuery From(string table)
         {
             this.mQueryKeys.Add(FORM);
             this.mQueryKeys.Add(table);
+            return this;
+        }
+
+        public SQLQuery Set(Dictionary<string,string> datas)
+        {
             return this;
         }
 

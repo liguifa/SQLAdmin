@@ -158,7 +158,7 @@ namespace SQLServer.Dao
 
         public bool Update(dynamic t, string key = "ID", bool isSaveChange = false)
         {
-            throw new NotImplementedException();
+            new SQLQuery().
         }
 
         public bool UpdateRange(IEnumerable<dynamic> dynamicObjects, string key = "ID", bool isSaveChange = false)

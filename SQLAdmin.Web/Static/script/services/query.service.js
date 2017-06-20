@@ -37,7 +37,7 @@
 
         function _update(tableName, datas) {
             var deferred = $q.defer();
-            $http.post("/Manage/Update", { tableName: tableName, Datas: datas }).then(function (data) {
+            $http.post("/Manage/Update", { TableName: tableName, Datas: datas }).then(function (data) {
                 deferred.resolve(data.data);
             });
             return deferred.promise;
@@ -48,6 +48,7 @@
             remove: _remove,
             getTableFields: _getTableFields,
             getTableIndexs: _getTableIndexs,
+            update: _update,
         }
     }
 

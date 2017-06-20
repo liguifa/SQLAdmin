@@ -130,7 +130,7 @@
             var selectDatas = $scope.vm.datas.filter(function (item) {
                 return item.isSelected
             });
-            query.upldate(selectDatas);
+            query.update($scope.vm.tableName,selectDatas);
         }
     }
 
