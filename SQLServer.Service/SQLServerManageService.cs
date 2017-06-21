@@ -21,6 +21,7 @@ namespace SQLServer.Service
 
         }
 
+        [LogInterecpor]
         public bool Delete(RemoveFilter filter)
         {
             try
@@ -40,6 +41,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         [DBScopeInterecpor]
         public TableDataViewMdoel Select(DataFilter filter)
         {
@@ -82,6 +84,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public bool Update(UpdateFilter filter)
         {
             try

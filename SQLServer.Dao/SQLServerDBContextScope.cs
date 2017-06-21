@@ -1,4 +1,5 @@
-﻿using SQLAdmin.Dao;
+﻿using Common.Interceptor;
+using SQLAdmin.Dao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace SQLServer.Dao
         protected override DBContext Initialize(SQLAdmin.Domain.DBConnect dbConnect)
         {
             string connectStr = $"Data Source={dbConnect.Address};Initial Catalog=master;User Id={dbConnect.Userename};Password={dbConnect.Password};";
-            return new SQLServerDBContext(connectStr);
+            return InterceptorFactory.GetInstance<SQLServerDBContext>(new SQLServerDBContext(connectStr));
         }
 
 

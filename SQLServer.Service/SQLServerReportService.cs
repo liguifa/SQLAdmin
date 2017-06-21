@@ -21,6 +21,7 @@ namespace SQLServer.Service
 
         }
 
+        [LogInterecpor]
         public QueryHistoryViewModel GetQueryHistories(DataFilter filter)
         {
             try
@@ -45,6 +46,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public List<ConnectedViewModel> GetConnectedInfos()
         {
             try
@@ -62,6 +64,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public List<ConnectedSummaryViewModel> GetConnectedSummary()
         {
             try
@@ -79,6 +82,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public List<CPUViewModel> GetCPUInfos()
         {
             try
@@ -103,6 +107,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public List<MemoryViewModel> GetMemoryInfos()
         {
             try
@@ -130,6 +135,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public List<DiskViewModel> GetDiskInfos()
         {
             try
@@ -148,6 +154,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public List<ExceptionViewModel> GetExceptionInfos()
         {
             try
@@ -164,6 +171,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public QueryProportionViewModel GetAllQueryProportionInfo()
         {
             try

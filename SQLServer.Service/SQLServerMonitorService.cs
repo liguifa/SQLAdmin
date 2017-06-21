@@ -21,6 +21,7 @@ namespace SQLServer.Service
 
         }
 
+        [LogInterecpor]
         public bool AddSchedule(SQLAdmin.Domain.Schedule schedule)
         {
             using (ChannelFactory<IScheduleService> channelFactory = new ChannelFactory<IScheduleService>("SQLAdmin.Timer"))
@@ -46,6 +47,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public List<SQLAdmin.Domain.Schedule> GetAllSchedule()
         {
             using (ChannelFactory<IScheduleService> channelFactory = new ChannelFactory<IScheduleService>("SQLAdmin.Timer"))
@@ -62,6 +64,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public dynamic GetMonitorTypes()
         {
             var monitorTypes = typeof(MonitorType).GetFields(BindingFlags.Static | BindingFlags.Public).Select(d => new { Index = d.GetValue(null), DisplayName = d.Name });

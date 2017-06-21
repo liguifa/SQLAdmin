@@ -19,6 +19,7 @@ namespace SQLServer.Service
 
         }
 
+        [LogInterecpor]
         public bool CreateTable(TableViewModel table)
         {
             try
@@ -36,6 +37,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public bool DeleteDatabase(string databaseName)
         {
             try
@@ -53,6 +55,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public DatabaseTreeViewModel GetDatabases()
         {
             try
@@ -71,6 +74,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public List<FieldTypeViewModel> GetFieldTypes()
         {
             try
@@ -88,6 +92,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public List<FieldViewModel> GetTableFields(string tableName)
         {
             try
@@ -110,6 +115,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public List<IndexViewModel> GetTableIndexs(string tableName)
         {
             try
@@ -130,6 +136,7 @@ namespace SQLServer.Service
             }
         }
 
+        [LogInterecpor]
         public List<TableViewModel> GetTables(string tableName)
         {
             try

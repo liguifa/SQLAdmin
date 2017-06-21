@@ -9,6 +9,7 @@ using Common.Logger;
 using System.Reflection;
 using SQLServer.Dao;
 using SQLAdmin.Dao;
+using SQLServer.Utility;
 
 namespace SQLServer.Service
 {
@@ -21,6 +22,7 @@ namespace SQLServer.Service
 
         }
 
+        [LogInterecpor]
         public bool Connect()
         {
             try

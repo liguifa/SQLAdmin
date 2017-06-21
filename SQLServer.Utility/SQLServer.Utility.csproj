@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Constant.cs" />
     <Compile Include="ConvertHerlper.cs" />
+    <Compile Include="SQLInterecpor.cs" />
+    <Compile Include="LogInterecpor .cs" />
     <Compile Include="DBScopeInterecpor.cs" />
     <Compile Include="FieldTypeHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,6 +55,10 @@
     <ProjectReference Include="..\Common.Interceptor\Common.Interceptor.csproj">
       <Project>{dc36606a-80ce-4222-8cb6-65f6d39bcf83}</Project>
       <Name>Common.Interceptor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Logger\Common.Logger.csproj">
+      <Project>{c2c92005-3adc-49e2-85a2-8bd031190485}</Project>
+      <Name>Common.Logger</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common.Utility\Common.Utility.csproj">
       <Project>{7272f819-4cff-4b74-bff4-ac9a61dbf215}</Project>
