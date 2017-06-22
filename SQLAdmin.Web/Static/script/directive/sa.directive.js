@@ -1120,7 +1120,7 @@
         template: "<div class='sa-number' ng-readonly='vm.readonly'>\
                     <table><tbody>\
                         <tr>\
-                            <td rowspan='2'><input class='sa-input sa-number-input' readonly ng-model='vm.value' type='text'></td>\
+                            <td rowspan='2'><input class='sa-input sa-number-input' readonly ng-model='value' type='text'></td>\
                             <td><button class='sa-number-top sa-icon-top'></button></td>\
                         </tr>\
                         <tr>\
@@ -1142,13 +1142,6 @@
             readonly: "="
         },
         controller:function($scope) {
-            $scope.vm = {
-                value:0
-            }
-
-            $scope.$watch("value", function (value) {
-                $scope.vm.value = value;
-            })
             $scope.$watch("readonly", function (readonly) {
                 $scope.vm.readonly = readonly;
             })
@@ -1205,7 +1198,7 @@
 
 .directive("saText", function () {
     var vm = {
-        template:"<div class='sa-text'><input type='text' class='sa-input sa-text-input' ng-model='vm.text' ng-readonly='vm.readonly' /></div>"
+        template:"<div class='sa-text'><input type='text' class='sa-input sa-text-input' ng-model='text' ng-readonly='vm.readonly' /></div>"
     }
 
     return {
@@ -1222,9 +1215,6 @@
                 text: "",
                 readonly:true
             };
-            $scope.$watch("text", function (text) {
-                $scope.vm.text = text;
-            })
             $scope.$watch("readonly", function (readonly) {
                 $scope.vm.readonly = readonly;
             })
@@ -1272,6 +1262,10 @@
 
             $scope.$watch("readonly", function (readonly) {
                 $scope.vm.readonly = readonly;
+            });
+
+            $scope.$watch("vm.guid_one", function (value) {
+
             });
         }
     }

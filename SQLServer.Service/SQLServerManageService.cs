@@ -42,7 +42,7 @@ namespace SQLServer.Service
         }
 
         [LogInterecpor]
-        [DBScopeInterecpor]
+        //[DBScopeInterecpor]
         public TableDataViewMdoel Select(DataFilter filter)
         {
             try
@@ -95,9 +95,10 @@ namespace SQLServer.Service
                     var dbName = filter.TableName.Split('.').First();
                     var tbName = filter.TableName.Split('.').Last().Remove(0, 1);
                     tbName = tbName.Remove(tbName.Length - 1, 1);
-                    foreach(var data in filter.Datas)
+                    List<IndexViewModel>  indexs = ServiceFactory.GetInstance().DatabaseService.GetTableIndexs(filter.TableName);
+                    foreach (var data in filter.Datas)
                     {
-                        db.Update(data);
+                        db.Update(data, indexs.FirstOrDefault(d => d.Type == IndexType.Primary).ColumnName);
                     }
                     return true;
                 }

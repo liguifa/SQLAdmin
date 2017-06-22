@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Dynamic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -50,6 +51,18 @@ namespace SQLServer.Domain
                 entities.Add(entity);
             }
             return entities;
+        }
+
+        public static Dictionary<string,object> ToDictionary(this object t)
+        {
+            Dictionary<string, object> dics = new Dictionary<string, object>();
+            PropertyInfo[] properties = t.GetType().GetProperties();
+            Parallel.ForEach(properties, property =>
+            {
+                var value = property.GetValue(t);
+                dics.Add(property.Name, value);
+            });
+            return dics;
         }
     }
 }

@@ -158,7 +158,11 @@ namespace SQLServer.Dao
 
         public bool Update(dynamic t, string key = "ID", bool isSaveChange = false)
         {
-            new SQLQuery().
+            string sql = new SQLQuery().Update(this.mTableName)
+                          .Set(t.ToDictionary())
+                          .Where($"{key}='{t.ToDictionary()[key]}'")
+                          .Qenerate();
+            return this.DBContext.AccessQuery(sql) > 0;
         }
 
         public bool UpdateRange(IEnumerable<dynamic> dynamicObjects, string key = "ID", bool isSaveChange = false)
