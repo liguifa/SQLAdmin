@@ -53,14 +53,14 @@ namespace SQLServer.Domain
             return entities;
         }
 
-        public static Dictionary<string,object> ToDictionary(this object t)
+        public static Dictionary<string,string> ToDictionary(this object t)
         {
-            Dictionary<string, object> dics = new Dictionary<string, object>();
+            Dictionary<string, string> dics = new Dictionary<string, string>();
             PropertyInfo[] properties = t.GetType().GetProperties();
             Parallel.ForEach(properties, property =>
             {
                 var value = property.GetValue(t);
-                dics.Add(property.Name, value);
+                dics.Add(property.Name, value.ToString());
             });
             return dics;
         }

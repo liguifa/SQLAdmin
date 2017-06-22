@@ -710,6 +710,10 @@
                     }
                 }
             })
+
+            $scope.$watch("datas", function (datas) {
+                console.log(datas);
+            },true)
         }
     }
 }])
@@ -1141,7 +1145,11 @@
             max: "=",
             readonly: "="
         },
-        controller:function($scope) {
+        controller: function ($scope) {
+            $scope.vm = {
+
+            }
+
             $scope.$watch("readonly", function (readonly) {
                 $scope.vm.readonly = readonly;
             })
@@ -1218,6 +1226,10 @@
             $scope.$watch("readonly", function (readonly) {
                 $scope.vm.readonly = readonly;
             })
+
+            $scope.$watch("text", function (text) {
+                console.log(text);
+            })
         }
     }
 })
@@ -1274,10 +1286,10 @@
 .directive("saField", function () {
     var vm = {
         template:"<div ng-switch='vm.type'>\
-                    <sa-text ng-if='type == 0' text='value' readonly='vm.readonly'></sa-text>\
-                    <sa-guid ng-if='type == 2' value='value' readonly='vm.readonlyvm.readonly'></sa-guid>\
-                    <sa-switch ng-if='type == 8' value='value' readonly='vm.readonly'></sa-switch>\
-                    <sa-number ng-if='type == 5' value='value' readonly='vm.readonly'></sa-number>\
+                    <sa-text ng-if='type == 0' text='vm.value' readonly='vm.readonly'></sa-text>\
+                    <sa-guid ng-if='type == 2' value='vm.value' readonly='vm.readonlyvm.readonly'></sa-guid>\
+                    <sa-switch ng-if='type == 8' value='vm.value' readonly='vm.readonly'></sa-switch>\
+                    <sa-number ng-if='type == 5' value='vm.value' readonly='vm.readonly'></sa-number>\
                     <sa-Calendar ng-if='type == 4' readonly='vm.readonly'></sa-Calendar>\
                   </div>"
     }
@@ -1296,11 +1308,21 @@
             console.log($scope.type + ":" + $scope.value);
 
             $scope.vm = {
-                readonly: true
+                readonly: true,
+                value:"",
             };
 
             $scope.$watch("model", function (model) {
                 $scope.vm.readonly = model == "readonly";
+            })
+
+            $scope.$watch("value", function (value) {
+                console.log(value);
+                $scope.vm.value = value;
+            })
+
+            $scope.$watch("vm.value", function (value) {
+                $scope.value = value;
             })
         }
     }

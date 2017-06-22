@@ -188,6 +188,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\DynamicModelBinder.cs" />
     <Compile Include="App_Start\ExceptionHandler.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\InjectAttribute.cs" />

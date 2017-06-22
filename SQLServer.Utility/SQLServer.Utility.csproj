@@ -44,7 +44,7 @@
     <Compile Include="Constant.cs" />
     <Compile Include="ConvertHerlper.cs" />
     <Compile Include="SQLInterecpor.cs" />
-    <Compile Include="LogInterecpor .cs" />
+    <Compile Include="LogInterecpor.cs" />
     <Compile Include="DBScopeInterecpor.cs" />
     <Compile Include="FieldTypeHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

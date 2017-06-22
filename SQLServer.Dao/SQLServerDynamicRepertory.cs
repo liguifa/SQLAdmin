@@ -159,7 +159,7 @@ namespace SQLServer.Dao
         public bool Update(dynamic t, string key = "ID", bool isSaveChange = false)
         {
             string sql = new SQLQuery().Update(this.mTableName)
-                          .Set(t.ToDictionary())
+                          .Set((t as object).ToDictionary())
                           .Where($"{key}='{t.ToDictionary()[key]}'")
                           .Qenerate();
             return this.DBContext.AccessQuery(sql) > 0;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SQLAdmin.Dao
 {
-    public abstract class DBContext 
+    public abstract class DBContext : MarshalByRefObject
     {
         public DBConnect ConnectSetting { get; set; }
     }

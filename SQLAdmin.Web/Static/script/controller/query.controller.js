@@ -130,7 +130,15 @@
             var selectDatas = $scope.vm.datas.filter(function (item) {
                 return item.isSelected
             });
-            query.update($scope.vm.tableName,selectDatas);
+            var datas = selectDatas.map(function (item) {
+                var temp = {};
+                for(var i in item.rows)
+                {
+                    temp[i] = item.rows[i].Value;
+                }
+                return temp;
+            });
+            query.update($scope.vm.tableName, datas);
         }
     }
 
