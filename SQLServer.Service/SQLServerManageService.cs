@@ -98,7 +98,7 @@ namespace SQLServer.Service
                     List<IndexViewModel>  indexs = ServiceFactory.GetInstance().DatabaseService.GetTableIndexs(filter.TableName);
                     foreach (var data in filter.Datas)
                     {
-                        db.Update(data, indexs.FirstOrDefault(d => d.Type == IndexType.Primary).ColumnName);
+                        db.DbSet(filter.TableName).Update(data, indexs.FirstOrDefault(d => d.Type == IndexType.Primary).ColumnName);
                     }
                     return true;
                 }

@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Constant.cs" />
     <Compile Include="DateTimeHelper.cs" />
+    <Compile Include="DynamicHelper.cs" />
     <Compile Include="EmailHelper.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="LambdaHelper.cs" />

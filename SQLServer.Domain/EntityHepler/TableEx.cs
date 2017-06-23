@@ -52,17 +52,5 @@ namespace SQLServer.Domain
             }
             return entities;
         }
-
-        public static Dictionary<string,string> ToDictionary(this object t)
-        {
-            Dictionary<string, string> dics = new Dictionary<string, string>();
-            PropertyInfo[] properties = t.GetType().GetProperties();
-            Parallel.ForEach(properties, property =>
-            {
-                var value = property.GetValue(t);
-                dics.Add(property.Name, value.ToString());
-            });
-            return dics;
-        }
     }
 }

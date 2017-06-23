@@ -50,6 +50,8 @@ namespace SQLServer.Utility
         public const string EXEC = "Exec";
 
         public const string UPDATE = "Update";
+
+        public const string SET = "Set";
         #endregion
 
         public const string SQLSERVER_TYPE_MAPPING_CONFIG = "SQLServerConfig/SQLServer_TypeMapping.config";

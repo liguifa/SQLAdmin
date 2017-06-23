@@ -1,4 +1,5 @@
-﻿using SQLAdmin.Dao;
+﻿using Common.Utility;
+using SQLAdmin.Dao;
 using SQLServer.Domain;
 using System;
 using System.Collections.Generic;
@@ -158,9 +159,12 @@ namespace SQLServer.Dao
 
         public bool Update(dynamic t, string key = "ID", bool isSaveChange = false)
         {
+            var field = (t as object).ToDictionary();
+            var indexValue = field[key];
+            field.Remove(key);
             string sql = new SQLQuery().Update(this.mTableName)
-                          .Set((t as object).ToDictionary())
-                          .Where($"{key}='{t.ToDictionary()[key]}'")
+                          .Set(field)
+                          .Where($"{key}='{indexValue}'")
                           .Qenerate();
             return this.DBContext.AccessQuery(sql) > 0;
         }

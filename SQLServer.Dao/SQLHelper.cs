@@ -39,6 +39,14 @@ namespace SQLServer.Dao
 
         public SQLQuery Set(Dictionary<string,string> datas)
         {
+            string setValue = String.Empty;
+            foreach(var data in datas)
+            {
+                setValue += $"{data.Key}='{data.Value}',";
+            }
+            setValue = setValue.Remove(setValue.Length - 1, 1);
+            this.mQueryKeys.Add(SET);
+            this.mQueryKeys.Add(setValue);
             return this;
         }
 

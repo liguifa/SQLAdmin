@@ -34,7 +34,7 @@ namespace SQLAdmin.Web.Controllers
 
         [HttpPost]
         [Inject]
-        public JsonResult Update(UpdateFilter filter)
+        public JsonResult Update([ModelBinder(typeof(UpdateFilterModelBinder))] UpdateFilter filter)
         {
             return Json(ServiceFactory.GetInstance().DBManageService.Update(filter), JsonRequestBehavior.AllowGet);
         }

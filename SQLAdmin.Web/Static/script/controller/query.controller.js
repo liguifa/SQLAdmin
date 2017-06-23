@@ -138,7 +138,13 @@
                 }
                 return temp;
             });
-            query.update($scope.vm.tableName, datas);
+            query.update($scope.vm.tableName, datas).then(function ()
+            {
+                messager.confirm("更新成功！", function () {
+                    getDatas();
+                });
+            });
+            $scope.vm.isNeedSave = false;
         }
     }
 
