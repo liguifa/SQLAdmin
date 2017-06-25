@@ -895,37 +895,47 @@ body,html,document {
     line-height:10px;
 }
 
-.sa-number{
-
+.sa-number {
+    border: 1px solid #e6e6e6;
+    border-radius: 2px 0px 0px 2px;
+    background: #fff;
 }
 
-.sa-number table{
-    width:100%;
-    height:100%;
-}
+    .sa-number:hover {
+        background: #fff;
+    }
+
+    .sa-number table {
+        width: 100%;
+        height: 100%;
+    }
 
     .sa-number table tr td {
         padding: 0px;
         text-align: center;
         line-height: 2px;
         text-align: center;
+        border: none;
+        margin: 0px;
     }
-        .sa-number table tr td:hover {
-            background: #FBFBFB;
-        }
+    .sa-number table tr:hover {
+        background: #fff;
+    }
+    .sa-number table tr td:hover {
+        background: #fff;
+    }
 
-.sa-number table tr td div{
-    padding:0px;
-}
+    .sa-number table tr td div {
+        padding: 0px;
+    }
 
-.sa-number-input{
-    border-radius: 2px 0px 0px 2px;
+.sa-number-input {
     display: block;
-    width:30px;
-    height:20px;
-    padding:0px;
-    border: 1px solid #e6e6e6;
-     border-right:none;
+    width: 30px;
+    height: 100%;
+    padding: 0px;
+    border: none;
+    border-right: none;
     background-color: #fff;
     outline: 0;
     -webkit-transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
@@ -933,15 +943,12 @@ body,html,document {
     -webkit-box-sizing: border-box !important;
     -moz-box-sizing: border-box !important;
     box-sizing: border-box !important;
-   text-align:center;
-   margin-top:1px;
+    text-align: center;
+    background: #fff;
 }
 
 .sa-number-top {
-    border: 1px solid #e6e6e6;
-    border-bottom: none;
-    border-left: none;
-    height: 40%;
+    border: none;
     padding: 4px !important;
     cursor: pointer;
     -webkit-transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
@@ -950,13 +957,12 @@ body,html,document {
     -moz-box-sizing: border-box !important;
     box-sizing: border-box !important;
     text-align: center;
+    background: #fff;
+    outline: none;
 }
 
 .sa-number-bottom {
-    border: 1px solid #e6e6e6;
-    border-left: none;
-    border-top: none;
-    height: 40%;
+    border: none;
     padding: 4px !important;
     cursor: pointer;
     -webkit-transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
@@ -965,6 +971,9 @@ body,html,document {
     -moz-box-sizing: border-box !important;
     box-sizing: border-box !important;
     text-align: center;
+    float: left;
+    background: #fff;
+    outline: none;
 }
 
 .sa-switch{
@@ -1035,19 +1044,19 @@ body,html,document {
 }
 
 .sa-guid{
- width:300px;
+ width:380px;
  text-align:center;
 }
 
 .sa-guid .sa-guid-text{
     float:left;
-    width:42px;
+    width:48px;
     text-align:center;
 }
 
 .sa-guid .sa-guid-text .sa-guid-text-context{
     float:left;
-    width:32px;
+    width:38px;
 }
 
 .sa-guid .sa-guid-text .sa-guid-text-context div{
@@ -1060,25 +1069,39 @@ body,html,document {
 }
 
 .sa-guid .sa-guid-text-long{
-    width:69px !important;
+    width:75px !important;
 }
 
     .sa-guid .sa-guid-text-long .sa-guid-text-context {
-        width: 59px;
+        width: 65px;
     }
 
     .sa-guid .sa-guid-text-maxlong{
-    width:99px !important;
+    width:105px !important;
 }
 
     .sa-guid .sa-guid-text-maxlong .sa-guid-text-context {
-        width: 89px;
+        width: 105px;
     }
 
 .sa-guid .sa-guid-text .sa-guid-text-symbol{
     float:left;
     text-align:center;
-    margin-left:4.2px;
+    margin-top:3px;
+    margin-left:2.2px;
+}
+
+.sa-guid-copy{
+    border: 1px solid #e6e6e6;
+    border-radius: 2px 0px 0px 2px;
+    background: #fff;
+    height:28px;
+    width:28px;
+    background:url(/Static/Images/icon_copy.png) no-repeat;
+    background-size:24px;
+    background-position:center;
+    cursor:pointer;
+    outline:none;
 }
 
 .sa-text-input {
@@ -1154,4 +1177,16 @@ body,html,document {
 .sa-about-footer a{
     text-decoration:none;
     color:#000;
+}
+
+.sa-tooltip{
+    position:absolute;
+}
+
+.sa-tooltip-context {
+    min-height: 23px;
+    min-width: 100px;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px 0px 0px 2px;
+    background: #fff;
 }

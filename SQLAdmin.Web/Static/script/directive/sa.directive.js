@@ -1125,10 +1125,10 @@
                     <table><tbody>\
                         <tr>\
                             <td rowspan='2'><input class='sa-input sa-number-input' readonly ng-model='value' type='text'></td>\
-                            <td><button class='sa-number-top sa-icon-top'></button></td>\
+                            <td><button class='sa-number-top sa-icon-top' ng-click='vm.top()'></button></td>\
                         </tr>\
                         <tr>\
-                            <td><button class='sa-number-bottom sa-icon-bottom'></button></td>\
+                            <td><button class='sa-number-bottom sa-icon-bottom' ng-click='vm.bottom()'></button></td>\
                         </tr>\
                     </tbody></table>\
                    </div>"
@@ -1147,7 +1147,24 @@
         },
         controller: function ($scope) {
             $scope.vm = {
-
+                top: function () {
+                    if (!$scope.readonly) {
+                        var intValue = $scope.value = parseInt($scope.value);
+                        var minValue = parseInt($scope.min);
+                        var maxValue = parseInt($scope.max);
+                        var newValue = intValue + 1;
+                        $scope.value = newValue > maxValue ? minValue : newValue;
+                    }
+                },
+                bottom: function () {
+                    if (!$scope.readonly) {
+                        var intValue = $scope.value = parseInt($scope.value);
+                        var minValue = parseInt($scope.min);
+                        var maxValue = parseInt($scope.max);
+                        var newValue = intValue - 1;
+                        $scope.value = newValue < minValue ? maxValue : newValue;
+                    }
+                }
             }
 
             $scope.$watch("readonly", function (readonly) {
@@ -1242,6 +1259,7 @@
                     <div class='sa-guid-text'><sa-text class='sa-guid-text-context' readonly='vm.readonly' text='vm.guid_three'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
                     <div class='sa-guid-text'><sa-text class='sa-guid-text-context' readonly='vm.readonly' text='vm.guid_four'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
                     <div class='sa-guid-text sa-guid-text-maxlong'><sa-text readonly='vm.readonly' class='sa-guid-text-context' text='vm.guid_five'></sa-text></div>\
+                    <div class='sa-guid-text'><button class='sa-guid-copy' ng-click='vm.copy()'></button><sa-tooltip ng-if='vm.showTooltip' text='vm.copyMessage'></sa-tooltip></div>\
                   </div>"
     }
 
@@ -1260,7 +1278,13 @@
                 guid_two: "",
                 guid_three: "",
                 guid_four: "",
-                guid_five: ""
+                guid_five: "",
+                showTooltip: false,
+                copyMessage: "Copy成功",
+                copy: function () {
+                    this.showTooltip = true;
+                },
+                showTooltipTimer:0
             };
 
             $scope.$watch("value", function (value) {
@@ -1279,6 +1303,20 @@
             $scope.$watch("vm.guid_one", function (value) {
 
             });
+
+            $scope.$watch("vm.showTooltip", function (value) {
+                if (value) {
+                    setTimeout(function () {
+                        if ($scope.vm.showTooltipTimer <= 1) {
+                            $scope.$apply(function () {
+                                $scope.vm.showTooltip = false;
+                            });
+                        }
+                        $scope.vm.showTooltipTimer -= 1;
+                    }, 3000);
+                    $scope.vm.showTooltipTimer += 1;
+                }
+            })
         }
     }
 })
@@ -1324,6 +1362,28 @@
             $scope.$watch("vm.value", function (value) {
                 $scope.value = value;
             })
+        }
+    }
+})
+
+.directive("saTooltip", function () {
+    var vm = {
+        template:"<div class='sa-tooltip'>\
+                    <div class='sa-tooltip-context'>{{text}}</div>\
+                    <div class='sa-tooltip-arrow'></div>\
+                  </div>"
+    }
+
+    return {
+        restrict: "E",
+        replace: true,
+        template: vm.template,
+        priority: 1,
+        scope: {
+            text:"=",
+        },
+        controller: function ($scope) {
+
         }
     }
 })
