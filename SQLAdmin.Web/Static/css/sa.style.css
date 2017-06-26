@@ -1184,9 +1184,35 @@ body,html,document {
 }
 
 .sa-tooltip-context {
-    min-height: 23px;
-    min-width: 100px;
-    border: 1px solid #e6e6e6;
-    border-radius: 2px 0px 0px 2px;
-    background: #fff;
+    width:240px;
+    height:60px;
+    line-height:60px;
+    background:#E9FBE4;
+    box-shadow:1px 2px 3px #E9FBE4;
+    border:1px solid #C9E9C0;
+    border-radius:4px;
+    text-align:center;
+    color:#0C7823;
+     position:relative;
+}
+
+.sa-tooltip-arrow {
+    position:absolute;
+    left:24px;
+    overflow:hidden;
+    width:0;
+    height:0;
+    border-width:10px;
+    border-style:dashed dashed solid dashed;
+
+}
+
+.sa-tooltip-arrow-border {
+    top:-20px;
+    border-color: transparent transparent #C9E9C0 transparent;
+}
+
+.sa-tooltip-arrow-bacground {
+    top: -19px;
+    border-color: transparent transparent #E9FBE4 transparent;
 }

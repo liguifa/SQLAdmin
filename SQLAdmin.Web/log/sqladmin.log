@@ -14816,3 +14816,439 @@ Error Number:156,State:1,Class:15
 2017-06-25 22:17:47,747 [10300] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
 2017-06-25 22:17:47,749 [10300] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
 2017-06-25 22:17:47,978 [10300] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 20:06:53,147 [8724] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-06-26 20:06:53,157 [8724] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-06-26 20:07:11,253 [8840] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 20:07:12,524 [8840] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 20:07:12,554 [5304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 20:07:12,658 [5304] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-06-26 20:07:12,767 [5304] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-06-26 20:07:12,797 [5304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 20:07:14,373 [608] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 20:07:14,377 [608] INFO  iisexpress.exe - Start get tables.
+2017-06-26 20:07:14,474 [608] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-06-26 20:07:14,517 [608] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 20:07:16,394 [8724] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 20:07:16,399 [8724] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 20:07:16,543 [8840] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 20:07:16,557 [8724] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 20:07:16,674 [8840] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 20:07:16,787 [8724] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 20:07:16,839 [8840] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 20:07:16,901 [8724] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 20:07:16,957 [8840] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 20:07:16,970 [608] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 20:07:16,971 [8724] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 20:07:16,987 [608] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 20:07:17,031 [8724] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 20:07:26,274 [608] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 20:10:17,781 [5304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-06-26 20:10:17,781 [5304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-06-26 20:10:30,878 [5304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 20:10:30,908 [5304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 20:10:30,952 [5304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 20:10:30,956 [5304] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-06-26 20:10:30,984 [5304] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-06-26 20:10:31,009 [5304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 20:10:32,455 [5304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 20:10:32,457 [5304] INFO  iisexpress.exe - Start get tables.
+2017-06-26 20:10:32,492 [5304] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-06-26 20:10:32,511 [5304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 20:10:33,602 [5304] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 20:10:33,602 [5304] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 20:10:33,696 [8984] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 20:10:33,703 [11272] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 20:10:33,902 [11272] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 20:10:33,902 [8984] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 20:10:34,024 [11272] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 20:10:34,072 [8984] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 20:10:34,098 [11272] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 20:10:34,112 [7844] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 20:10:34,144 [7844] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 20:10:34,165 [8984] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 20:10:34,188 [8984] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 20:10:34,419 [7844] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 20:25:39,443 [1796] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-06-26 20:25:39,443 [1796] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-06-26 20:25:53,704 [5612] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 20:25:53,720 [5612] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 20:25:53,750 [5612] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 20:25:53,753 [5612] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-06-26 20:25:53,781 [5612] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-06-26 20:25:53,817 [5612] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 20:26:03,106 [5612] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-06-26 20:26:03,106 [5612] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-06-26 20:26:12,391 [408] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 20:26:12,394 [408] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 20:26:12,427 [11844] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 20:26:12,430 [11844] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-06-26 20:26:12,464 [11844] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-06-26 20:26:12,487 [11844] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 20:26:13,619 [1796] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 20:26:13,621 [1796] INFO  iisexpress.exe - Start get tables.
+2017-06-26 20:26:13,682 [1796] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-06-26 20:26:13,719 [1796] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 20:26:14,790 [408] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 20:26:14,790 [408] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 20:26:14,927 [5612] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 20:26:15,018 [5612] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 20:26:15,037 [1796] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 20:26:15,181 [1796] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 20:26:15,198 [5612] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 20:26:15,265 [1796] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 20:26:15,305 [5612] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 20:26:15,331 [11844] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 20:26:15,334 [11844] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 20:26:15,362 [1796] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 20:26:15,382 [1796] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 20:26:15,614 [11844] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 20:36:25,477 [11128] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-06-26 20:36:25,477 [11128] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-06-26 20:36:41,069 [988] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 20:36:41,081 [988] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 20:36:41,107 [988] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 20:36:41,127 [988] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-06-26 20:36:41,145 [988] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-06-26 20:36:41,187 [988] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 20:36:42,473 [988] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 20:36:42,476 [988] INFO  iisexpress.exe - Start get tables.
+2017-06-26 20:36:42,522 [988] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-06-26 20:36:42,542 [988] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 20:36:43,719 [988] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 20:36:43,719 [988] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 20:36:43,812 [11524] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 20:36:43,929 [11524] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 20:36:43,929 [7752] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 20:36:44,057 [7752] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 20:36:44,076 [11524] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 20:36:44,116 [7752] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 20:36:44,155 [7752] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 20:36:44,190 [11524] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 20:36:44,212 [988] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 20:36:44,213 [11524] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 20:36:44,216 [988] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 20:36:44,455 [988] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 20:43:07,386 [2444] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-06-26 20:43:07,386 [2444] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-06-26 20:43:15,790 [2444] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 20:43:15,822 [2444] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 20:43:15,847 [11516] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 20:43:15,851 [11516] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-06-26 20:43:15,885 [11516] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-06-26 20:43:15,902 [11516] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 20:43:16,895 [2160] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 20:43:16,897 [2160] INFO  iisexpress.exe - Start get tables.
+2017-06-26 20:43:16,937 [2160] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-06-26 20:43:16,958 [2160] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 20:43:17,992 [2444] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 20:43:17,993 [2444] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 20:43:18,063 [2160] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 20:43:18,158 [2160] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 20:43:18,182 [6444] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 20:43:18,351 [6444] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 20:43:18,351 [2160] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 20:43:18,439 [6444] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 20:43:18,471 [2160] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 20:43:18,518 [11872] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 20:43:18,580 [6444] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 20:43:18,580 [11872] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 20:43:18,606 [6444] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 20:43:18,820 [11872] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 20:58:00,724 [2316] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-06-26 20:58:00,724 [2316] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-06-26 20:58:14,593 [5020] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 20:58:14,608 [5020] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 20:58:14,637 [5020] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 20:58:14,640 [5020] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-06-26 20:58:14,674 [5020] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-06-26 20:58:14,707 [5020] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 20:58:15,920 [5020] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 20:58:15,922 [5020] INFO  iisexpress.exe - Start get tables.
+2017-06-26 20:58:15,958 [5020] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-06-26 20:58:15,991 [5020] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 20:58:17,004 [5020] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 20:58:17,004 [5020] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 20:58:17,111 [5652] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 20:58:17,111 [5020] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 20:58:17,203 [5652] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 20:58:17,338 [5020] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 20:58:17,338 [5652] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 20:58:17,427 [5020] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 20:58:17,454 [5020] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 20:58:17,482 [5912] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 20:58:17,484 [5652] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 20:58:17,499 [5912] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 20:58:17,514 [5652] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 20:58:17,731 [5912] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:17:08,289 [6680] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-06-26 21:17:08,289 [6680] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-06-26 21:17:20,277 [10484] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:17:20,316 [10484] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:17:20,339 [10844] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 21:17:20,343 [10844] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-06-26 21:17:20,384 [10844] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-06-26 21:17:20,422 [10844] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 21:17:21,624 [10484] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 21:17:21,626 [10484] INFO  iisexpress.exe - Start get tables.
+2017-06-26 21:17:21,662 [10484] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-06-26 21:17:21,684 [10484] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 21:17:22,534 [748] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 21:17:22,534 [748] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 21:17:22,626 [6680] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:17:22,743 [6680] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:17:22,751 [10484] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:17:22,881 [10484] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:17:22,912 [6680] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:17:22,971 [10484] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:17:23,005 [6680] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:17:23,033 [2380] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:17:23,034 [10484] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 21:17:23,074 [2380] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 21:17:23,094 [10484] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:17:23,330 [2380] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:18:09,074 [2380] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:18:09,075 [2148] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:18:09,236 [2380] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:18:09,247 [2148] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:18:09,325 [2380] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:18:09,355 [2148] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:18:09,398 [2380] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:18:09,434 [10484] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:18:09,439 [10484] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 21:18:09,454 [2148] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 21:18:09,476 [2148] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:18:09,767 [10484] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:21:28,157 [2380] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-06-26 21:21:28,157 [2380] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-06-26 21:21:38,119 [2380] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:21:38,136 [2380] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:21:38,174 [2380] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 21:21:38,177 [2380] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-06-26 21:21:38,220 [2380] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-06-26 21:21:38,243 [2380] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 21:21:40,040 [2380] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 21:21:40,043 [2380] INFO  iisexpress.exe - Start get tables.
+2017-06-26 21:21:40,083 [2380] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-06-26 21:21:40,116 [2380] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 21:21:41,001 [7188] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 21:21:41,001 [7188] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 21:21:41,089 [4464] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:21:41,188 [4464] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:21:41,188 [2380] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:21:41,327 [2380] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:21:41,369 [4464] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:21:41,428 [2380] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:21:41,464 [2380] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:21:41,488 [4464] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 21:21:41,507 [4588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:21:41,508 [4464] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:21:41,508 [4588] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 21:21:41,765 [4588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:22:15,905 [2380] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:22:15,905 [4744] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:22:16,032 [2380] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:22:16,160 [4744] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:22:16,171 [2380] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:22:16,253 [4744] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:22:16,266 [2380] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:22:16,296 [2380] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:22:16,296 [4744] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 21:22:16,327 [2380] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 21:22:16,346 [4744] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:22:16,672 [2380] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:27:27,942 [9036] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-06-26 21:27:27,942 [9036] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-06-26 21:27:41,625 [6228] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:27:41,644 [6228] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:27:41,670 [5572] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 21:27:41,674 [5572] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-06-26 21:27:41,712 [5572] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-06-26 21:27:41,756 [5572] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 21:27:43,366 [9036] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 21:27:43,369 [9036] INFO  iisexpress.exe - Start get tables.
+2017-06-26 21:27:43,418 [9036] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-06-26 21:27:43,448 [9036] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 21:27:45,209 [6228] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 21:27:45,209 [6228] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 21:27:45,278 [5572] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:27:45,419 [5572] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:27:45,433 [9036] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:27:45,569 [9036] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:27:45,595 [5572] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:27:45,673 [9036] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:27:45,714 [9036] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:27:45,727 [9036] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:27:45,727 [5572] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 21:27:45,776 [9036] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 21:27:45,793 [5572] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:27:46,004 [9036] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:28:11,578 [4608] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Update.
+2017-06-26 21:28:11,585 [4608] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 21:28:42,036 [4608] ERROR iisexpress.exe - An error has occurred in the update data,error:System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.SqlClient.SqlException: 从字符串转换日期和/或时间时，转换失败。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 SQLServer.Dao.SQLServerDBContext.AccessQuery(String sql)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   在 System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 Common.Interceptor.InterceptorProxy`1.Invoke(IMessage msg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SQLServer.Dao.SQLServerDBContext.AccessQuery(String sql)
+   在 SQLServer.Dao.SQLServerDynamicRepertory.Update(Object t, String key, Boolean isSaveChange)
+   在 CallSite.Target(Closure , CallSite , SQLServerDynamicRepertory , Object , String )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   在 SQLServer.Service.SQLServerManageService.Update(UpdateFilter filter)
+2017-06-26 21:28:46,084 [4608] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Update.
+2017-06-26 21:28:54,109 [2180] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:28:54,110 [4608] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:28:54,296 [2180] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:28:54,298 [4608] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:28:54,395 [2180] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:28:54,426 [4608] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:28:54,463 [2180] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:28:54,529 [4608] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 21:28:54,529 [6228] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:28:54,550 [6228] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 21:28:54,566 [4608] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:28:54,926 [6228] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:33:15,853 [2180] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-06-26 21:33:15,853 [2180] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-06-26 21:33:28,192 [11824] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:33:28,260 [11824] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:33:39,118 [1520] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:33:39,121 [1520] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:33:39,165 [11824] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 21:33:39,169 [11824] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-06-26 21:33:39,210 [11824] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-06-26 21:33:39,261 [11824] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 21:33:40,601 [2180] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 21:33:40,603 [2180] INFO  iisexpress.exe - Start get tables.
+2017-06-26 21:33:40,645 [2180] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-06-26 21:33:40,670 [2180] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 21:33:42,324 [6396] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 21:33:42,324 [6396] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 21:33:42,442 [2180] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:33:42,553 [2180] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:33:42,562 [1520] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:33:42,717 [1520] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:33:42,731 [2180] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:33:42,787 [1520] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:33:42,814 [2180] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:33:42,860 [11824] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:33:42,862 [11824] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 21:33:42,876 [1520] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 21:33:42,896 [1520] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:33:43,083 [11824] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:35:56,442 [1520] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:35:56,442 [9712] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:35:56,648 [1520] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:35:56,648 [9712] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:35:56,758 [1520] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:35:56,758 [9712] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:35:56,788 [1520] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:35:56,825 [9712] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 21:35:56,860 [2180] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:35:56,862 [9712] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:35:56,869 [2180] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 21:35:57,271 [2180] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:36:24,122 [2180] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Update.
+2017-06-26 21:36:24,124 [2180] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 21:36:24,371 [2180] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Update.
+2017-06-26 21:36:26,592 [2180] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:36:26,729 [2180] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:36:26,785 [2180] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:36:26,826 [2180] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 21:36:26,846 [2180] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:40:38,595 [1520] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-06-26 21:40:38,595 [1520] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-06-26 21:41:31,439 [1520] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:41:31,447 [1520] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:41:31,494 [10112] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 21:41:31,505 [10112] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-06-26 21:41:31,540 [10112] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-06-26 21:41:31,588 [10112] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 21:41:32,940 [1372] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 21:41:32,943 [1372] INFO  iisexpress.exe - Start get tables.
+2017-06-26 21:41:32,989 [1372] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-06-26 21:41:33,008 [1372] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 21:41:34,573 [1520] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 21:41:34,573 [1520] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 21:41:34,653 [1520] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:41:34,653 [6412] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:41:34,751 [1520] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:41:34,899 [6412] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:41:34,899 [1520] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:41:34,986 [6412] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:41:35,011 [1520] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:41:35,050 [6412] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 21:41:35,064 [9464] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:41:35,067 [9464] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 21:41:35,080 [6412] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:41:35,295 [9464] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:42:51,218 [10428] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-06-26 21:42:51,218 [10428] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-06-26 21:43:00,801 [9464] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:43:00,817 [9464] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:43:00,877 [10428] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 21:43:00,879 [10428] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-06-26 21:43:00,900 [10428] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-06-26 21:43:00,945 [10428] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 21:43:02,786 [10428] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 21:43:02,789 [10428] INFO  iisexpress.exe - Start get tables.
+2017-06-26 21:43:02,832 [10428] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-06-26 21:43:02,874 [10428] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 21:43:03,726 [5136] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 21:43:03,726 [5136] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 21:43:03,816 [9464] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:43:03,816 [6412] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:43:03,935 [9464] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:43:04,009 [6412] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:43:04,073 [9464] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:43:04,124 [6412] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:43:04,152 [9464] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:43:04,202 [10428] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:43:04,202 [6412] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 21:43:04,216 [10428] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 21:43:04,231 [6412] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:43:04,471 [10428] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:43:32,324 [5136] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Update.
+2017-06-26 21:43:32,326 [5136] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 21:43:32,370 [5136] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Update.
+2017-06-26 21:43:35,088 [5136] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:43:35,222 [5136] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:43:35,288 [5136] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:43:35,318 [5136] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 21:43:35,339 [5136] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:44:50,286 [5504] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-06-26 21:44:50,286 [5504] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-06-26 21:45:00,157 [5504] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:45:00,173 [5504] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-06-26 21:45:00,196 [224] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 21:45:00,199 [224] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-06-26 21:45:00,229 [224] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-06-26 21:45:00,247 [224] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-06-26 21:45:01,501 [5504] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 21:45:01,504 [5504] INFO  iisexpress.exe - Start get tables.
+2017-06-26 21:45:01,547 [5504] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-06-26 21:45:01,563 [5504] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-06-26 21:45:02,786 [6800] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 21:45:02,786 [6800] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-06-26 21:45:02,878 [7828] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:45:02,879 [6800] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:45:02,977 [7828] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:45:03,097 [6800] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-06-26 21:45:03,144 [7828] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:45:03,201 [6800] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-06-26 21:45:03,225 [7828] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-06-26 21:45:03,250 [5504] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-06-26 21:45:03,253 [5504] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-06-26 21:45:03,276 [6800] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-06-26 21:45:03,301 [6800] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-06-26 21:45:03,497 [5504] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.

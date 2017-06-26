@@ -1020,7 +1020,7 @@
                     </div>\
                    </div>",
         getDateCalendar: function (year, month) {
-            var date =new Date();
+            var date = new Date();
             date.setFullYear(year, month, 1);
             var start = date.getDay();
             var startDay = 1 - start;
@@ -1042,13 +1042,18 @@
                     calendars.push(currentWeek);
                 }
                 currentWeekDay++;
-                if (currentWeekDay == weekDayCount)
-                {
+                if (currentWeekDay == weekDayCount) {
                     currentWeekDay = 0;
                 }
                 startDay++;
             }
             return calendars;
+        },
+        doubleNumber: function (number) {
+            if (number < 10) {
+                return "0" + number;
+            }
+            return number;
         }
     }
 
@@ -1058,7 +1063,8 @@
         replace: true,
         priority: 1,
         scope: {
-
+            text: "=",
+            readonly:"="
         },
         controller: function ($scope) {
             var date = new Date();
@@ -1095,10 +1101,14 @@
                     $scope.vm.year = year;
                     $scope.vm.month = month;
                 },
-                updateDate:function(){
-                    var date = new Date($scope.vm.year, $scope.vm.month, $scope.vm.day, $scope.vm.hour, $scope.vm.minute, $scope.vm.second);
-                    $scope.vm.time = date.toString();
-                    $scope.vm.isSelect = false;
+                updateDate: function () {
+                    if (!$scope.readonly) {
+                        var date = new Date($scope.vm.year, $scope.vm.month, $scope.vm.day, $scope.vm.hour, $scope.vm.minute, $scope.vm.second);
+                        $scope.vm.time = date.toString();
+                        $scope.vm.isSelect = false;
+                        //2017-06-11T18:48:51
+                        $scope.text = $scope.vm.year + "-" + vm.doubleNumber($scope.vm.month) + "-" + vm.doubleNumber($scope.vm.day) + "T" + vm.doubleNumber($scope.vm.hour) + ":" + vm.doubleNumber($scope.vm.minute) + ":" + vm.doubleNumber($scope.vm.second);
+                    }
                 },
                 cancel: function () {
                     $scope.vm.isSelect = false;
@@ -1114,6 +1124,18 @@
 
             $scope.$watch("vm.month", function (month) {
                 $scope.vm.calendars = vm.getDateCalendar($scope.vm.year, month - 1);
+            })
+
+            $scope.$watch("text", function (text) {
+                var date = new Date(text);
+                $scope.vm.calendars = vm.getDateCalendar(date.getFullYear(), date.getMonth());
+                $scope.vm.year = date.getFullYear();
+                $scope.vm.month = date.getMonth() + 1;
+                $scope.vm.day = date.getDate();
+                $scope.vm.hour = date.getHours();
+                $scope.vm.minute = date.getMinutes();
+                $scope.vm.second = date.getSeconds();
+                $scope.vm.time = date.toString();
             })
         }
     }
@@ -1328,7 +1350,7 @@
                     <sa-guid ng-if='type == 2' value='vm.value' readonly='vm.readonlyvm.readonly'></sa-guid>\
                     <sa-switch ng-if='type == 8' value='vm.value' readonly='vm.readonly'></sa-switch>\
                     <sa-number ng-if='type == 5' value='vm.value' readonly='vm.readonly'></sa-number>\
-                    <sa-Calendar ng-if='type == 4' readonly='vm.readonly'></sa-Calendar>\
+                    <sa-Calendar ng-if='type == 4' text='vm.value' readonly='vm.readonly'></sa-Calendar>\
                   </div>"
     }
 
@@ -1369,8 +1391,10 @@
 .directive("saTooltip", function () {
     var vm = {
         template:"<div class='sa-tooltip'>\
-                    <div class='sa-tooltip-context'>{{text}}</div>\
-                    <div class='sa-tooltip-arrow'></div>\
+                    <div class='sa-tooltip-context'>\
+                        <div class='sa-tooltip-arrow sa-tooltip-arrow-border'></div>\
+                        <div class='sa-tooltip-arrow sa-tooltip-arrow-bacground'></div>\
+                        {{text}}</div>\
                   </div>"
     }
 
