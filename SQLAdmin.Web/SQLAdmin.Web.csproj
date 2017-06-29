@@ -150,16 +150,15 @@
     <Content Include="Static\Images\icon_sort_asc.png" />
     <Content Include="Static\Images\icon_sort_desc.png" />
     <Content Include="Static\Images\icon_top.png" />
-    <Content Include="Static\script\angular-cookies.min.js" />
-    <Content Include="Static\script\angular.min.js">
+    <Content Include="Static\ShinyUI\lib\angular.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Static\script\app.js" />
-    <Content Include="Static\script\common\cache.service.js" />
-    <Content Include="Static\script\common\constant.service.js" />
-    <Content Include="Static\script\common\cryptogram.service.js" />
-    <Content Include="Static\script\common\grid.service.js" />
-    <Content Include="Static\script\common\messager.service.js" />
+    <Content Include="Static\ShinyUI\common\cache.service.js" />
+    <Content Include="Static\ShinyUI\common\constant.service.js" />
+    <Content Include="Static\ShinyUI\common\cryptogram.service.js" />
+    <Content Include="Static\ShinyUI\common\grid.service.js" />
+    <Content Include="Static\ShinyUI\common\messager.service.js" />
     <Content Include="Static\script\controller\about.controller.js" />
     <Content Include="Static\script\controller\connect.controller.js" />
     <Content Include="Static\script\controller\database.controller.js" />
@@ -168,14 +167,14 @@
     <Content Include="Static\script\controller\monitor.controller.js" />
     <Content Include="Static\script\controller\query.controller.js" />
     <Content Include="Static\script\controller\report.controller.js" />
-    <Content Include="Static\script\directive\sa.directive.js">
+    <Content Include="Static\ShinyUI\directive\sa.directive.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Static\script\directive\sa.report.directive.js" />
-    <Content Include="Static\script\function\each.js" />
-    <Content Include="Static\script\function\linq.js" />
-    <Content Include="Static\script\lib\base64.min.js" />
-    <Content Include="Static\script\lib\flotr2.min.js" />
+    <Content Include="Static\ShinyUI\directive\sa.report.directive.js" />
+    <Content Include="Static\script\directive\layout.directive.js" />
+    <Content Include="Static\ShinyUI\lib\base64.min.js" />
+    <Content Include="Static\ShinyUI\lib\flotr2.min.js" />
+    <Content Include="Static\ShinyUI\lib\less.min.js" />
     <Content Include="Static\script\services\common.service.js" />
     <Content Include="Static\script\services\connect.service.js" />
     <Content Include="Static\script\services\database.service.js" />
@@ -228,8 +227,8 @@
     </Content>
     <None Include="Properties\PublishProfiles\10.1.1.11.pubxml" />
     <Content Include="Views\Manage\Query.cshtml" />
-    <Content Include="Static\script\common\event.service.js" />
-    <Content Include="Static\script\common\session.service.js" />
+    <Content Include="Static\ShinyUI\common\event.service.js" />
+    <Content Include="Static\ShinyUI\common\session.service.js" />
     <Content Include="Views\Report\Cpu.cshtml" />
     <Content Include="Views\Report\Memory.cshtml" />
     <Content Include="Views\Report\Connect.cshtml" />
@@ -240,6 +239,7 @@
     <Content Include="Static\script\services\monitor.service.js" />
     <Content Include="SQLServerConfig\SQLServer_TypeMapping.config" />
     <Content Include="Views\Common\About.cshtml" />
+    <Content Include="Static\css\layout.css" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

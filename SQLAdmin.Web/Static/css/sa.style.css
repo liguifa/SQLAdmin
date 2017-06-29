@@ -165,9 +165,9 @@ body,html,document {
     height: 100%;
     border-left: none;
     padding-right: 20px;
-    position: absolute;
+    /*position: absolute;
     top: 33px;
-    left: 0px;
+    left: 0px;*/
     z-index: 666;
 }
 
