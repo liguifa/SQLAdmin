@@ -3,11 +3,40 @@
     margin: 0px;
 }
 
+/*滚动条样式开始*/
+::-webkit-scrollbar {  
+  width: 14px;  
+  height: 14px;  
+}  
+  
+::-webkit-scrollbar-track,  
+::-webkit-scrollbar-thumb {  
+  border-radius: 999px;  
+  border: 5px solid transparent;  
+}  
+  
+::-webkit-scrollbar-track {  
+  box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;  
+}  
+  
+::-webkit-scrollbar-thumb {  
+  min-height: 20px;  
+  background-clip: content-box;  
+  box-shadow: 0 0 0 5px rgba(0,0,0,.2) inset;  
+}  
+  
+::-webkit-scrollbar-corner {  
+  background: transparent;  
+} 
+/*滚动条样式结束*/
+
+/*
 body,html,document {
     background: #293955;
     overflow: hidden;
     height:100%;
 }
+*/
 
 .sa-clear {
     clear: both;
@@ -323,7 +352,7 @@ body,html,document {
 .sa-datagrid-content {
     overflow-y: scroll;
     overflow-x:auto;
-    height: 81%;
+    height: 77%;
     width:100%;
     margin: 0px;
     text-overflow:ellipsis;
@@ -594,13 +623,14 @@ body,html,document {
 .sa-multiselect{
     width:190px;
     height:30px;
-    float:right;
+/*    float:right;*/
     z-index:997;
 }
 
 .sa-multiselect-text{
-    border: 2px solid #009688;
+    border: 1px solid #e6e6e6;
     background-color: #fff;
+    border-radius: 2px;
     padding-left: 10px;
     text-rendering: auto;
     color: initial;
@@ -618,7 +648,7 @@ body,html,document {
     font-weight: inherit;
     outline: 0;
     height:28px;
-    margin-top:-6px;
+    /*margin-top:-6px;*/
     cursor:pointer;
     margin-left:10px;
 }
@@ -626,7 +656,9 @@ body,html,document {
 .sa-multiselect-field{
     width:96%;
     max-height:300px;
-    border: 2px solid #009688;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    border-radius: 2px;
     background:#fff;
     z-index:997;
     margin-left:10px;
@@ -658,7 +690,7 @@ body,html,document {
 }
 
 .sa-multiselect-field ul li:hover{
-    background:#009688;
+    background:#5FB878;
 }
 
 .sa-multiselect-field ul li span{
@@ -1215,4 +1247,244 @@ body,html,document {
 .sa-tooltip-arrow-bacground {
     top: -19px;
     border-color: transparent transparent #E9FBE4 transparent;
+}
+
+.sa-combo{
+    width:190px;
+    height:30px;
+/*    float:right;*/
+    z-index:997;
+}
+
+.sa-combo-text{
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    border-radius: 2px;
+    padding-left: 10px;
+    height: 38px;
+    line-height: 38px;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    font: 13.3333px Arial;
+    height:30px;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    outline: 0;
+/*    margin-top:-6px;*/
+    cursor:pointer;
+    margin-left:10px;
+}
+
+.sa-combo-field{
+    width:96%;
+    max-height:300px;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+    background:#fff;
+    z-index:997;
+    margin-left:10px;
+    margin-top:5px;
+    position:relative;
+}
+
+.sa-combo-field ul{
+    margin:0px;
+    padding:0px;
+    list-style:none;
+    overflow-y:auto;
+    max-height:260px;
+}
+
+.sa-combo-button{
+    width:100%;
+}
+
+.sa-combo-button button{
+    float:left;
+    width:70px;
+}
+
+.sa-combo-field ul li{
+    z-index:997;
+    padding: 0 10px;
+    line-height: 36px;
+}
+
+.sa-combo-field ul li:hover{
+    background:#5FB878;
+}
+
+.sa-combo-field ul li span{
+    margin-left:5px;
+    cursor:pointer
+}
+
+.sa-check ul{
+    list-style: none;
+}
+
+.sa-check ul li{
+    float:left;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.sa-check-select{
+    height: 16px;
+    width: 16px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+    float:left;
+    text-align: center;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.sa-check-select-active{
+    border-color: #5FB878;
+    background-color: #5FB878;
+}
+
+.sa-check-select-span{
+    height: 14px;
+    width: 14px;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+.sa-radio ul{
+    list-style: none;
+}
+
+.sa-radio ul li{
+    float:left;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.sa-radio-select{
+    height: 16px;
+    width: 16px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 50%;
+    float:left;
+    text-align: center;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.sa-radio-select-active{
+       border: 1px solid #5FB878;
+}
+
+.sa-radio-select-span{
+    height: 10px;
+    width: 10px;
+    margin: 3px;
+    font-size: 14px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.sa-radio-select-span-active{
+    border-color: #5FB878;
+    background-color: #5FB878;
+}
+
+.sa-progress{
+    height: 10px;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+}
+
+.sa-progress-value{
+    background-color: #5FB878;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.sa-code{
+    border: 1px solid #ddd;
+    border-bottom-width: 2px;
+    border-left-width: 6px;
+    background-color: #F2F2F2;
+    min-height: 200px;
+}
+
+.sa-code-header{
+    height: 30px;
+    border-bottom: 1px solid #ddd;
+    background-color: #F2F2F2;
+}
+
+.sa-code-body{
+    overflow-y: auto;
+    min-height: 170px;
+}
+
+.sa-code-body-index{
+    background-color: #F2F2F2;
+    width: 44px;
+    border-right: 1px solid #ddd;
+    height: auto;
+    float: left;
+    min-height: 170px;
+}
+
+.sa-code-body-index ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.sa-code-body-index ul li{
+    margin-left: 10px;
+    line-height: 20px;
+    padding: 0 5px;
+    border-left: 1px solid #ddd;
+}
+
+.sa-code-body-context{
+    background: #fff;
+    min-height: 170px;
+    width: 100%;
+}
+
+.sa-code-body-context pre[class*="language-"] {
+    background: #fff;
+    margin: 0px;
+}
+
+.sa-messagebar{
+    height: 25px;
+    width: 100%;
+    background: #DFF0D8;
+    border-radius: 5px;
+    color: #3c763d;
+    font-size: 15px;
+    padding: 8px 10px 0px 10px;
+    border-color: #d6e9c6;
+    border: 1px solid transparent;
+}
+
+.sa-messagebar i{
+    float: right;
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+    margin-right: 20px;
+    margin-top: -5px;
+    cursor: pointer;
 }

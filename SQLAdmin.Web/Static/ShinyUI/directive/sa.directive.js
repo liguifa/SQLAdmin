@@ -621,9 +621,10 @@
       </tr> \
     </thead>\
 <tbody>\
-      <tr ng-repeat="row in datas">\
+      <tr ng-repeat="row in datas trace by $index">\
         <td><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
-        <td ng-repeat="(key,val) in row.rows track by $index"><sa-field type="val.Type" value="val.Value" model="row.model"></sa-field></td>\
+        <!--<td ng-repeat="(key,val) in row.rows track by $index" ng-if="vm.model==0">{{val}}</td>--!>\
+        <td ng-repeat="(key,val) in row.rows track by $index" ng-if="vm.model==1"><sa-field type="vm.fields[$index].type"></sa-field></td>\
       </tr>\
 </tbody>\
     </table>\
@@ -710,10 +711,6 @@
                     }
                 }
             })
-
-            $scope.$watch("datas", function (datas) {
-                console.log(datas);
-            },true)
         }
     }
 }])
@@ -1460,6 +1457,222 @@
             {
 
             }
+        }
+    }
+})
+
+
+.directive("saCombo", function(){
+   var  vm = {
+        template:"<div class='sa-combo'>\
+                    <input type='text' readonly class='sa-combo-text' ng-model='vm.text' ng-click='vm.startSelect()' />\
+                    <div ng-if='vm.isSelecting' class='sa-combo-field'>\
+                        <ul>\
+                            <li ng-repeat='field in vm.fields' ng-click='vm.select(field)'><span>{{field.Name}}</span></li>\
+                        </ul>\
+                    </div>\
+                  </div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            fields: "=",
+            select:"&"
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                text: "全部",
+                isSelecting: false,
+                startSelect: function () {
+                    $scope.vm.isSelecting = !$scope.vm.isSelecting;
+                },
+                select: function (field) {
+                    $scope.vm.text = field.Name;
+                }
+            }
+            $scope.$watch("fields", function (fields) {
+                $scope.vm.fields = fields;
+                $scope.vm.text = fields[0].Name;
+            })
+        }
+    }  
+})
+
+.directive("saCheck", function(){
+   var  vm = {
+        template:"<div class='sa-check'>\
+                    <ul>\
+                        <li ng-repeat='field in vm.fields'  ng-click='vm.select(field)'><div ng-class='{\"true\": \"sa-check-select sa-check-select-active\",\"false\":\"sa-check-select\"}[field.isSelect]'><div class='sa-check-select-span'>√</div></div><span>{{field.name}}</span></li>\
+                    </ul>\
+                  </div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            fields:"="
+        },
+        controller: function ($scope) {
+           $scope.vm = {
+               fields:[], 
+               select:function(field){
+                   field.isSelect = !field.isSelect;
+               }
+           };
+            
+           $scope.$watch("fields",function(fields){
+               $scope.vm.fields = fields.map(function(field){
+                   field.isSelect = false;
+                   return field;
+               })
+           });
+        }
+    }  
+})
+
+.directive("saRadio",function(){
+    var vm = {
+        template:"<div class='sa-radio'>\
+                    <ul>\
+                        <li ng-repeat='field in vm.fields'  ng-click='vm.select(field)'><div ng-class='{\"true\": \"sa-radio-select sa-radio-select-active\",\"false\":\"sa-radio-select\"}[field.isSelect]'><div ng-class='{\"true\": \"sa-radio-select-span sa-radio-select-span-active\",\"false\":\"sa-radio-select-span\"}[field.isSelect]'></div></div><span>{{field.name}}</span></li>\
+                    </ul>\
+                  </div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            fields:"="
+        },
+        controller: function ($scope) {
+           $scope.vm = {
+               fields:[], 
+               select:function(field){
+                   $scope.vm.fields.forEach(function(field){
+                       field.isSelect = false;
+                   })
+                   field.isSelect = !field.isSelect;
+               }
+           };
+            
+           $scope.$watch("fields",function(fields){
+               $scope.vm.fields = fields.map(function(field){
+                   field.isSelect = false;
+                   return field;
+               })
+           });
+        }
+    }
+})
+
+.directive("saProgress",function(){
+    var vm = {
+        template:"<div class='sa-progress'>\
+                    <div class='sa-progress-value' style='width:{{vm.value}}%'></div>\
+                  </div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            value:"="
+        },
+        controller: function ($scope) {
+           $scope.vm = {
+               value:0
+           };
+            
+           $scope.$watch("value",function(value){
+               if(value<=100)
+                   {
+               $scope.vm.value = value;
+                   }
+               else
+                   {
+                       $scope.vm.value = 100;
+}
+           });
+        }
+    }
+})
+
+.directive("saCode",["guid.service",function(guid){
+    var vm = {
+        template:"<div class='sa-code' id='{{vm.boxId}}'>\
+                    <div class='sa-code-header'></div>\
+                    <div class='sa-code-body'>\
+                        <div id='{{vm.indexId}}' class='sa-code-body-index'>\
+                            <ul>\
+                                <li ng-repeat='i in [] | range:vm.index'>{{i}}.</li>\
+                            </ul>\
+                        </div>\
+                        <div id='{{vm.codeId}}' class='sa-code-body-context' ng-transclude></div>\
+                    </div>\
+                  </div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        transclude:true,
+        priority: 1,
+        scope: {
+            code:"="
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                code:"",
+                codeId:guid.newGuid(),
+                indexId:guid.newGuid(),
+                boxId:guid.newGuid(),
+                index:0
+            };
+            $scope.$watch("code",function(code){
+                $scope.vm.code = Prism.highlight(code, Prism.languages.javascript);
+            })
+            setTimeout(function(){
+                $scope.$apply(function(){
+                        var context = document.getElementById($scope.vm.codeId);
+                        var box = document.getElementById($scope.vm.boxId);
+                        var index = document.getElementById($scope.vm.indexId);
+                        context.style.height = box.clientHeight-30+"px";
+                        index.style.height =  box.clientHeight-30+"px";
+                        $scope.vm.index = context.clientHeight/20;
+                    });
+            },1000);
+            
+        }
+    }
+}])
+
+.directive("saMessagebar",function(){
+    var vm = {
+        template:"<div class='sa-messagebar'><span>{{vm.message}}</span><i>×</i></div>"
+    }
+    return {
+        restrict:"E",
+        template:vm.template,
+        replace:true,
+        priority:1,
+        scope:{
+            message:"="
+        },
+        controller:function($scope){
+            $scope.vm = {
+                message:"",
+            }
+            $scope.$watch("message",function(message){
+                $scope.vm.message = message;
+            })
         }
     }
 })
