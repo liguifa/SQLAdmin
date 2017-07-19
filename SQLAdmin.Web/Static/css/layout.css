@@ -1,5 +1,15 @@
-﻿.sa-layout-body-explorer{
+﻿html, body {
+    overflow: hidden !important;
+    height: 100% !important;
+}
+
+.sa-layout-body-explorer{
     height:100%;
     margin-top:2px;
     margin-bottom:5px;
+}
+
+.sa-sqlfield {
+    float: right;
+    margin-top:-5px;
 }

@@ -120,12 +120,7 @@
     <Content Include="Global.asax" />
     <Content Include="Static\css\sa.connect.css" />
     <Content Include="Static\css\sa.monior.style.css" />
-    <Content Include="Static\css\sa.report.style.css" />
-    <Content Include="Static\css\messager.css" />
     <Content Include="Static\css\sa.icon.css" />
-    <Content Include="Static\css\sa.style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Static\Images\icon_arrow_buttom.png" />
     <Content Include="Static\Images\icon_bottom.png" />
     <Content Include="Static\Images\icon_calendar.png" />
@@ -150,15 +145,33 @@
     <Content Include="Static\Images\icon_sort_asc.png" />
     <Content Include="Static\Images\icon_sort_desc.png" />
     <Content Include="Static\Images\icon_top.png" />
+    <Content Include="Static\ShinyUI\css\messager.css" />
+    <Content Include="Static\ShinyUI\css\prism.css" />
+    <Content Include="Static\ShinyUI\css\sa.icon.css" />
+    <Content Include="Static\ShinyUI\css\sa.report.style.css" />
+    <Content Include="Static\ShinyUI\css\sa.style.css" />
+    <Content Include="Static\ShinyUI\Images\icon_add.png" />
+    <Content Include="Static\ShinyUI\Images\icon_arrow-right.png" />
+    <Content Include="Static\ShinyUI\Images\icon_arrow_buttom.png" />
+    <Content Include="Static\ShinyUI\Images\icon_bottom.png" />
+    <Content Include="Static\ShinyUI\Images\icon_calendar.png" />
+    <Content Include="Static\ShinyUI\Images\icon_edit.png" />
+    <Content Include="Static\ShinyUI\Images\icon_error.png" />
+    <Content Include="Static\ShinyUI\Images\icon_folder.png" />
+    <Content Include="Static\ShinyUI\Images\icon_key.png" />
+    <Content Include="Static\ShinyUI\Images\icon_left.png" />
+    <Content Include="Static\ShinyUI\Images\icon_loading.gif" />
+    <Content Include="Static\ShinyUI\Images\icon_loading.png" />
+    <Content Include="Static\ShinyUI\Images\icon_remove.png" />
+    <Content Include="Static\ShinyUI\Images\icon_right.png" />
+    <Content Include="Static\ShinyUI\Images\icon_sort_asc.png" />
+    <Content Include="Static\ShinyUI\Images\icon_sort_desc.png" />
+    <Content Include="Static\ShinyUI\Images\icon_top.png" />
+    <Content Include="Static\ShinyUI\Images\new_connect.png" />
     <Content Include="Static\ShinyUI\lib\angular.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Static\script\app.js" />
-    <Content Include="Static\ShinyUI\common\cache.service.js" />
-    <Content Include="Static\ShinyUI\common\constant.service.js" />
-    <Content Include="Static\ShinyUI\common\cryptogram.service.js" />
-    <Content Include="Static\ShinyUI\common\grid.service.js" />
-    <Content Include="Static\ShinyUI\common\messager.service.js" />
     <Content Include="Static\script\controller\about.controller.js" />
     <Content Include="Static\script\controller\connect.controller.js" />
     <Content Include="Static\script\controller\database.controller.js" />
@@ -167,10 +180,6 @@
     <Content Include="Static\script\controller\monitor.controller.js" />
     <Content Include="Static\script\controller\query.controller.js" />
     <Content Include="Static\script\controller\report.controller.js" />
-    <Content Include="Static\ShinyUI\directive\sa.directive.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Static\ShinyUI\directive\sa.report.directive.js" />
     <Content Include="Static\script\directive\layout.directive.js" />
     <Content Include="Static\ShinyUI\lib\base64.min.js" />
     <Content Include="Static\ShinyUI\lib\flotr2.min.js" />
@@ -182,6 +191,21 @@
     <Content Include="Static\script\services\query.service.js" />
     <Content Include="Static\script\services\report.service.js" />
     <Content Include="Static\script\services\wrapper.service.js" />
+    <Content Include="Static\ShinyUI\script\common\cache.service.js" />
+    <Content Include="Static\ShinyUI\script\common\constant.service.js" />
+    <Content Include="Static\ShinyUI\script\common\cryptogram.service.js" />
+    <Content Include="Static\ShinyUI\script\common\event.service.js" />
+    <Content Include="Static\ShinyUI\script\common\grid.service.js" />
+    <Content Include="Static\ShinyUI\script\common\messager.service.js" />
+    <Content Include="Static\ShinyUI\script\common\session.service.js" />
+    <Content Include="Static\ShinyUI\script\common\wrapper.service.js" />
+    <Content Include="Static\ShinyUI\script\directive\sa.directive.js" />
+    <Content Include="Static\ShinyUI\script\directive\sa.filter.js" />
+    <Content Include="Static\ShinyUI\script\directive\sa.report.directive.js" />
+    <Content Include="Static\ShinyUI\script\lib\angular.min.js" />
+    <Content Include="Static\ShinyUI\script\lib\base64.min.js" />
+    <Content Include="Static\ShinyUI\script\lib\flotr2.min.js" />
+    <Content Include="Static\ShinyUI\script\lib\prism.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -227,8 +251,6 @@
     </Content>
     <None Include="Properties\PublishProfiles\10.1.1.11.pubxml" />
     <Content Include="Views\Manage\Query.cshtml" />
-    <Content Include="Static\ShinyUI\common\event.service.js" />
-    <Content Include="Static\ShinyUI\common\session.service.js" />
     <Content Include="Views\Report\Cpu.cshtml" />
     <Content Include="Views\Report\Memory.cshtml" />
     <Content Include="Views\Report\Connect.cshtml" />

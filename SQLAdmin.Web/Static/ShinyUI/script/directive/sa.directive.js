@@ -1,4 +1,4 @@
-﻿angular.module("sqladmin", [])
+angular.module("sqladmin", [])
 
 .directive("saConnect", function ()
 {
@@ -718,7 +718,7 @@
 .directive("saBlockquote", function ()
 {
     var vm = {
-        template: '<blockquote class="sa-blockquote"  ng-transclude></blockquote>'
+        template: '<blockquote class="sa-blockquote {{vm.type}}"  ng-transclude></blockquote>'
     }
 
     return {
@@ -728,10 +728,16 @@
         transclude: true,
         priority: 1,
         scope: {
+            type:"="
         },
-        controller: function ($scope)
-        {
+        controller: function ($scope) {
+            $scope.vm = {
+                type: "sa-blockquote-default",
+            };
 
+            $scope.$watch("type", function (type) {
+                $scope.vm.type = "sa-blockquote-" + type;
+            });
         }
     }
 })
@@ -888,9 +894,7 @@
 .directive("saSearch",function(){
     var vm = {
         template: '<div class="sa-search">\
-                        <select class="sa-search-select" ng-model="vm.searchKey.key">\
-                            <option ng-repeat="field in vm.fields" value="{{field.Name}}">{{field.Name}}</option>\
-                        </select>\
+                        <sa-combo fields="vm.fields" class="sa-search-combo"></sa-combo>\
                         <input type="text" class="sa-connect-input sa-search-input" placeholder="{{vm.placeholder}}" ng-model="vm.searchKey.value" />\
                         <button class="sa-button sa-search-button" ng-click="vm.search()">搜索</bitton>\
                    </div>'
@@ -940,8 +944,8 @@
                             <li ng-repeat='field in vm.fields'><input type='checkbox' ng-model='field.IsSelect'/><span>{{field.Name}}</span></li>\
                         </ul>\
                         <div class='sa-multiselect-button'>\
-                            <button class='sa-button' ng-click='vm.select()'>确认</button>\
-                            <button class='sa-button' ng-click='vm.cancel()'>取消</button>\
+                            <sa-button size='vm.size' text='vm.ok_btn_text' click='vm.select()' class='sa-multiselect-button-ok'></sa-button>\
+                            <sa-button size='vm.size' text='vm.cancel_btn_text' click='vm.cancel()' class='sa-multiselect-button-cancel'></sa-button>\
                             <div class='sa-clear'></div>\
                         </div>\
                     </div>\
@@ -973,7 +977,10 @@
                     $scope.select({ fields: selected });
                     $scope.vm.text = "选中" + selected.length + "项";
                     $scope.vm.isSelecting = false;
-                }
+                },
+                size: "small",
+                ok_btn_text: "确认",
+                cancel_btn_text: "取消"
             }
             $scope.$watch("fields", function (fields) {
                 $scope.vm.fields = fields.map(function (field) {
@@ -1164,7 +1171,7 @@
             max: "=",
             readonly: "="
         },
-        controller: function ($scope) {
+        controller:function($scope) {
             $scope.vm = {
                 top: function () {
                     if (!$scope.readonly) {
@@ -1463,7 +1470,7 @@
 
 
 .directive("saCombo", function(){
-   var  vm = {
+    var  vm = {
         template:"<div class='sa-combo'>\
                     <input type='text' readonly class='sa-combo-text' ng-model='vm.text' ng-click='vm.startSelect()' />\
                     <div ng-if='vm.isSelecting' class='sa-combo-field'>\
@@ -1502,7 +1509,7 @@
 })
 
 .directive("saCheck", function(){
-   var  vm = {
+    var  vm = {
         template:"<div class='sa-check'>\
                     <ul>\
                         <li ng-repeat='field in vm.fields'  ng-click='vm.select(field)'><div ng-class='{\"true\": \"sa-check-select sa-check-select-active\",\"false\":\"sa-check-select\"}[field.isSelect]'><div class='sa-check-select-span'>√</div></div><span>{{field.name}}</span></li>\
@@ -1518,19 +1525,19 @@
             fields:"="
         },
         controller: function ($scope) {
-           $scope.vm = {
-               fields:[], 
-               select:function(field){
-                   field.isSelect = !field.isSelect;
-               }
-           };
+            $scope.vm = {
+                fields:[], 
+                select:function(field){
+                    field.isSelect = !field.isSelect;
+                }
+            };
             
-           $scope.$watch("fields",function(fields){
-               $scope.vm.fields = fields.map(function(field){
-                   field.isSelect = false;
-                   return field;
-               })
-           });
+            $scope.$watch("fields",function(fields){
+                $scope.vm.fields = fields.map(function(field){
+                    field.isSelect = false;
+                    return field;
+                })
+            });
         }
     }  
 })
@@ -1552,22 +1559,22 @@
             fields:"="
         },
         controller: function ($scope) {
-           $scope.vm = {
-               fields:[], 
-               select:function(field){
-                   $scope.vm.fields.forEach(function(field){
-                       field.isSelect = false;
-                   })
-                   field.isSelect = !field.isSelect;
-               }
-           };
+            $scope.vm = {
+                fields:[], 
+                select:function(field){
+                    $scope.vm.fields.forEach(function(field){
+                        field.isSelect = false;
+                    })
+                    field.isSelect = !field.isSelect;
+                }
+            };
             
-           $scope.$watch("fields",function(fields){
-               $scope.vm.fields = fields.map(function(field){
-                   field.isSelect = false;
-                   return field;
-               })
-           });
+            $scope.$watch("fields",function(fields){
+                $scope.vm.fields = fields.map(function(field){
+                    field.isSelect = false;
+                    return field;
+                })
+            });
         }
     }
 })
@@ -1587,20 +1594,20 @@
             value:"="
         },
         controller: function ($scope) {
-           $scope.vm = {
-               value:0
-           };
+            $scope.vm = {
+                value:0
+            };
             
-           $scope.$watch("value",function(value){
-               if(value<=100)
-                   {
-               $scope.vm.value = value;
-                   }
-               else
-                   {
-                       $scope.vm.value = 100;
-}
-           });
+            $scope.$watch("value",function(value){
+                if(value<=100)
+                {
+                    $scope.vm.value = value;
+                }
+                else
+                {
+                    $scope.vm.value = 100;
+                }
+            });
         }
     }
 })
@@ -1641,13 +1648,13 @@
             })
             setTimeout(function(){
                 $scope.$apply(function(){
-                        var context = document.getElementById($scope.vm.codeId);
-                        var box = document.getElementById($scope.vm.boxId);
-                        var index = document.getElementById($scope.vm.indexId);
-                        context.style.height = box.clientHeight-30+"px";
-                        index.style.height =  box.clientHeight-30+"px";
-                        $scope.vm.index = context.clientHeight/20;
-                    });
+                    var context = document.getElementById($scope.vm.codeId);
+                    var box = document.getElementById($scope.vm.boxId);
+                    var index = document.getElementById($scope.vm.indexId);
+                    context.style.height = box.clientHeight-30+"px";
+                    index.style.height =  box.clientHeight-30+"px";
+                    $scope.vm.index = context.clientHeight/20;
+                });
             },1000);
             
         }
@@ -1656,7 +1663,145 @@
 
 .directive("saMessagebar",function(){
     var vm = {
-        template:"<div class='sa-messagebar'><span>{{vm.message}}</span><i>×</i></div>"
+        template: "<div class='sa-messagebar'><span>{{vm.message}}</span><i>×</i></div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            message: "="
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                message: "",
+            }
+            $scope.$watch("message", function (message) {
+                $scope.vm.message = message;
+            })
+        }
+    }
+})
+
+.directive("saButton", function () {
+    var vm = {
+        template: "<button class='sa-button {{vm.type}} {{vm.size}}' ng-click='vm.btn_click()'>{{vm.text}}</button>"
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            text: "=",
+            type: "=",
+            disabled: "=",
+            size: "=",
+            href: "=",
+            click:"&"
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                text: "",
+                type: "default",
+                size: "defaule",
+                btn_click: function () {
+                    if ($scope.href && $scope.href != "") {
+                        window.open($scope.href);
+                    }
+                    $scope.click();
+                }
+            };
+
+            $scope.$watch("text", function (text) {
+                $scope.vm.text = text;
+            });
+            $scope.$watch("type", function (type) {
+                $scope.vm.type = "sa-button-" + type;
+            });
+            $scope.$watch("disabled", function (disabled) {
+                setTimeout(function () {
+                    $scope.$apply(function () {
+                        $scope.vm.type = disabled ? "sa-button-disabled" : "sa-button-" + $scope.type || "sa-button-default";
+                    });
+                }, 100);
+            });
+            $scope.$watch("size", function (size) {
+                $scope.vm.size = "sa-button-" + size;
+            });
+        }
+    }
+})
+
+.directive("saNav", function () {
+    var vm = {
+        template: "<div class='sa-nav'>\
+                    <img class='sa-nav-icon' src='{{vm.icon}}' />\
+                    <ul class='sa-nav-list'>\
+                        <li class='sa-nav-item' ng-repeat='nav in vm.navs'><a href='{{nav.url}}' target='_blank'>{{nav.title}}</a></li>\
+                    </ul>\
+                   </div>"
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            navs: "=",
+            icon: "=",
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                navs:[]
+            }
+            $scope.$watch("navs", function (navs) {
+                $scope.vm.navs = navs;
+            }, true);
+            $scope.$watch("icon", function (icon) {
+                $scope.vm.icon = icon;
+            });
+        }
+    }
+})
+
+.directive("saCrumbs", function () {
+    var vm = {
+        template: "<div class='sa-crumbs'>\
+                    <ul class='sa-crumbs-list'><li class='sa-crumbs-item' ng-repeat='item in vm.items'><a class='sa-crumbs-text' href='{{item.url}}'>{{item.title}}</a></li></ul>\
+                   </div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            items:"=",
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                items: []
+            };
+            $scope.$watch("items", function (items) {
+                $scope.vm.items = items;
+            }, true);
+        }
+    }
+})
+
+.directive("saSidebar",function(){
+    var vm = {
+        template: "<div class='sa-sidebar'>\
+                    <ul class='sa-sidebar-list'>\
+                        <li ng-repeat='item in vm.items'>\
+                            <a class='sa-sidebar-text' href='{{item.url}}' ng-if='item.subs == undefined'>{{item.title}}</a>\
+                            <div class='sa-sidebar-subtitle' ng-if='item.subs != undefined' >{{item.title}}</div><ul ng-if='item.subs != undefined' class='sa-sidebar-list-sub'><li class='sa-sidebar-item' ng-repeat='sub in item.subs'><a class='sa-sidebar-text' href='{{sub.url}}' target='{{sub.target}}'>{{sub.title}}</a></li></ul>\
+                        </li></ul>\
+                   </div>"
     }
     return {
         restrict:"E",
@@ -1664,14 +1809,67 @@
         replace:true,
         priority:1,
         scope:{
-            message:"="
+            items:"=",
+            position:"=",
+            fixed:"="
         },
         controller:function($scope){
             $scope.vm = {
-                message:"",
-            }
-            $scope.$watch("message",function(message){
-                $scope.vm.message = message;
+                items: []
+            };
+            $scope.$watch("items", function (items) {
+                $scope.vm.items = items;
+            }, true);
+        }
+    }
+})
+
+.directive("saPage",function(){
+    var vm = {
+        template:"<iframe src='{{vm.url}}' name='{{vm.name}}'></iframe>"
+    }
+    return {
+        restrict:"E",
+        template:vm.template,
+        replace:true,
+        priority:1,
+        scope:{
+            url:"=",
+            id:"="
+        },
+        controller:function($scope){
+            $scope.vm = {
+                url:"",
+                name:""
+            };
+            $scope.$watch("url",function(url){
+                $scope.vm.url = url;
+            })
+            $scope.$watch("id",function(id){
+                $scope.vm.name = id;
+            })
+        }
+    }
+})
+
+.directive("saLine",function(){
+    var vm = {
+        template: "<div class='sa-line'><fieldset class='sa-line-context'><legend class='sa-line-context-text'>{{vm.title}}</legend></fieldset></div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            title: "="
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                title: "",
+            };
+            $scope.$watch("title", function (title) {
+                $scope.vm.title = title;
             })
         }
     }

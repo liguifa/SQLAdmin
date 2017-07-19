@@ -1,4 +1,4 @@
-﻿* {
+* {
     font-family: 'Segoe UI';
     margin: 0px;
 }
@@ -103,15 +103,84 @@ body,html,document {
 }
 
 .sa-button {
-    background: #065999;
-    border: none;
+    display: inline-block;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 18px;
+    background-color: #009688;
     color: #fff;
-    width: 78px;
-    height: 24px;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
     cursor: pointer;
+    opacity: .9;
+    min-width:98px;
+    outline: 0;
+    -webkit-transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+    transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+    -webkit-box-sizing: border-box!important;
+    -moz-box-sizing: border-box!important;
+    box-sizing: border-box!important;
+}
+
+.sa-button-primary{
+    border: 1px solid #C9C9C9;
+    background-color: #fff;
+    color: #555;
+}
+
+.sa-button-default{
+    background-color: #009688;
+    color: #fff;
+}
+
+.sa-button-normal{
+    background-color: #1E9FFF;
+    color: #fff;
+}
+
+.sa-button-warm{
+    background-color: #F7B824;
+    color: #fff;
+}
+
+.sa-button-danger {
+    background-color: #FF5722;
+    color: #fff;
+}
+
+.sa-button-big {
+    height: 44px;
+    line-height: 44px;
+    padding: 0 25px;
+    font-size: 16px;
+    min-width:116px;
+}
+
+.sa-button-small {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
     font-size: 12px;
-    margin: 10px;
-    margin-top: 8px;
+    min-width:70px;
+}
+
+.sa-button-mini {
+    height: 22px;
+    line-height: 22px;
+    padding: 0 5px;
+    font-size: 12px;
+    min-width:60px;
+}
+
+.sa-button-disabled{
+    border: 1px solid #e6e6e6;
+    background-color: #FBFBFB;
+    color: #C9C9C9;
+    cursor: not-allowed;
+    opacity: 1;
 }
 
 .sa-menu {
@@ -398,8 +467,20 @@ body,html,document {
     line-height: 22px;
     border-left: 5px solid #009688;
     border-radius: 0 2px 2px 0;
-    background-color: #f2f2f2;
+  
     height: 15px;
+}
+
+.sa-blockquote-default{
+      background-color: #f2f2f2;
+        border-left: 5px solid #009688;
+}
+
+.sa-blockquote-normal{
+    background:#fff;
+
+     border:1px solid #E2E2E2;
+    border-left:5px solid #E2E2E2;
 }
 
 .sa-pagination {
@@ -579,6 +660,26 @@ body,html,document {
     margin-top:-6px;
 }
 
+.sa-search-combo {
+     width:60px !important;
+     float:left;
+      height:18px !important;
+}
+
+.sa-search-combo .sa-combo-text{
+        background-color: #FBFBFB !important;
+            border: 1px solid #e6e6e6 !important;
+    border-radius: 2px 0 0 2px !important;
+    margin:0px;
+    width:60px !important;
+    height:100% !important;
+}
+
+.sa-search-combo .sa-combo-field{
+    width:200px !important;
+    margin-left:0px !important;
+}
+
 .sa-search-input{
     float:left;
     height:27px;
@@ -681,6 +782,7 @@ body,html,document {
 .sa-multiselect-button button{
     float:left;
     width:70px;
+    margin:5px 10px;
 }
 
 .sa-multiselect-field ul li{
@@ -937,10 +1039,10 @@ body,html,document {
         background: #fff;
     }
 
-    .sa-number table {
-        width: 100%;
-        height: 100%;
-    }
+.sa-number table{
+    width:100%;
+    height:100%;
+}
 
     .sa-number table tr td {
         padding: 0px;
@@ -957,9 +1059,9 @@ body,html,document {
         background: #fff;
     }
 
-    .sa-number table tr td div {
-        padding: 0px;
-    }
+.sa-number table tr td div{
+    padding:0px;
+}
 
 .sa-number-input {
     display: block;
@@ -1488,3 +1590,137 @@ body,html,document {
     margin-top: -5px;
     cursor: pointer;
 }
+
+.sa-nav{
+    position: relative;
+    padding: 0 20px;
+    background-color: #393D49;
+    color: #c2c2c2;
+    /*border-radius: 2px;*/
+    font-size: 0;
+    box-sizing: border-box!important;
+    height:55px;
+       
+}
+
+.sa-nav-icon{
+    width:82px;
+    height:31px;
+    margin-top:12px;
+    float:left;
+    margin-right:10px;
+}
+
+.sa-nav-list{
+    list-style:none;
+    margin:0px;
+}
+
+.sa-nav-item{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 50px;
+    border-bottom: solid 5px #393D49;
+        
+}
+
+    .sa-nav-item:hover {
+        border-bottom: solid 5px #5FB878;
+    }
+
+    
+    .sa-nav-item:hover a {
+     color:#fff;
+    }
+
+    .sa-nav-item a {
+        display: block;
+        padding: 0 20px;
+         color: #c2c2c2;
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .sa-sidebar{
+        width:200px;
+        height:100%;
+        background:#393D49;
+        position:fixed;
+        left:0px;
+    }
+
+    .sa-sidebar-list{
+        list-style:none;
+        margin:0px;
+        padding-left:0px;
+    }
+
+    .sa-sidebar-item{
+        width:200px;
+        height:40px;
+           border-left:5px solid #393D49;
+    }
+
+    .sa-sidebar-item:hover{
+        border-left:5px solid #009688;
+    }
+
+    .sa-sidebar-text{
+        text-decoration:none;
+        color:#c2c2c2;
+        padding-left:15px;
+       line-height:40px;
+       cursor:pointer;
+         font-size: 14px;
+    }
+
+    .sa-sidebar-text:hover{
+        color:#fff;
+    }
+
+    .sa-sidebar-list-sub{
+        list-style:none;
+        margin:0px;
+        padding:0px;
+        background:#393D49;
+    }
+
+    .sa-sidebar-subtitle{
+ background:#2B2E37;
+ line-height:40px;
+ height:40px;
+ width:180px;
+     font-size: 14px;
+     color:#fff;
+     padding-left:20px;
+     cursor:default;
+      moz-user-select:-moz-none; 
+  -moz-user-select:none; 
+  -o-user-select:none; 
+  -khtml-user-select:none; 
+  -webkit-user-select:none;
+  -ms-user-select:none; 
+  user-select:none;
+    }
+
+    .sa-line{
+        padding:0px;
+        margin:0px;
+    }
+
+    .sa-line-context{
+           
+                margin: 0px 0 0px;
+    border: none;
+    border-top: 1px solid #e2e2e2;
+    }
+
+    .sa-line-context-text{
+         margin-left: 20px;
+    padding: 0 10px;
+    font-size: 20px;
+    font-weight: 300;
+    }

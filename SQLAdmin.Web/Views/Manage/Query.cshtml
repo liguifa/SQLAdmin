@@ -4,7 +4,7 @@
         <sa-icon type="add" click="vm.add()"></sa-icon>
         <sa-icon type="edit" click="vm.edit()"></sa-icon>
         <sa-icon type="save" click="vm.save()" ng-if="vm.isNeedSave"></sa-icon>
-        <sa-multiselect fields="vm.fields" select="vm.select(fields)"></sa-multiselect>
+        <sa-multiselect fields="vm.fields" select="vm.select(fields)" class="sa-sqlfield"></sa-multiselect>
         <sa-search placeholder="Search" fields="vm.fields" search="vm.search(searchKey)"></sa-search>
     </sa-tools>
     <sa-datagrid datas="vm.datas" fields="vm.showFields" indexs="vm.indexs" sort="vm.sort(name,isAsc)"></sa-datagrid>

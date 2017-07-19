@@ -1,0 +1,107 @@
+﻿.sa-icon-folder {
+    background: url(../Images/icon_folder.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-arrow-right {
+    background: url(../Images/icon_arrow-right.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-arrow-buttom {
+    background: url(../Images/icon_arrow_buttom.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-remove {
+    background: url(../Images/icon_remove.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-add {
+    background: url(../Images/icon_add.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-edit {
+    background: url(../Images/icon_edit.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-loading {
+    background: url(../Images/icon_loading.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-sort-asc {
+    background: url(../Images/icon_sort_asc.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-sort-desc {
+    background: url(../Images/icon_sort_desc.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-save{
+
+}
+
+.sa-icon-top {
+    background: url(../Images/icon_top.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-bottom {
+    background: url(../Images/icon_bottom.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-left {
+    background: url(../Images/icon_left.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
+
+.sa-icon-right {
+    background: url(../Images/icon_right.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
+}
