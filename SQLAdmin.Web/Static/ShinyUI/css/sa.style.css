@@ -649,9 +649,9 @@ body,html,document {
 }
 
 .sa-search{
-    width: 315px;
+    width: 380px;
     padding: 0px;
-    border: 2px solid #009688;
+     border: 1px solid #e6e6e6 !important;
     border-radius: 0px;
     height:30px;
     float:right;
@@ -663,16 +663,19 @@ body,html,document {
 .sa-search-combo {
      width:60px !important;
      float:left;
-      height:18px !important;
+      height:28px !important;
+      border:none;
+          border-right: 1px solid #e6e6e6 !important;
 }
 
 .sa-search-combo .sa-combo-text{
         background-color: #FBFBFB !important;
-            border: 1px solid #e6e6e6 !important;
-    border-radius: 2px 0 0 2px !important;
+            border: none;
+    /*border-radius: 2px 0 0 2px !important;*/
     margin:0px;
     width:60px !important;
     height:100% !important;
+    border:none;
 }
 
 .sa-search-combo .sa-combo-field{
@@ -693,16 +696,20 @@ body,html,document {
     border-radius: 0;
     width:215px;
     outline:none;
+    padding-left:5px;
 }
 
 .sa-search-button {
     float: right;
     margin: 0px;
-    height: 30px;
+    height: 31px;
     color: #ffffff;
     background-color: #009688;
-    border: 1px solid #009688;
+    border: 1px solid #009688 !important;
     width:50px;
+    border-radius:0 !important;
+    line-height: 25px; 
+    margin-top:-1px !important;
 }
 
 .sa-search-select{

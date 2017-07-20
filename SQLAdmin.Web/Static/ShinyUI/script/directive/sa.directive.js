@@ -621,10 +621,9 @@ angular.module("sqladmin", [])
       </tr> \
     </thead>\
 <tbody>\
-      <tr ng-repeat="row in datas trace by $index">\
+      <tr ng-repeat="row in datas">\
         <td><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
-        <!--<td ng-repeat="(key,val) in row.rows track by $index" ng-if="vm.model==0">{{val}}</td>--!>\
-        <td ng-repeat="(key,val) in row.rows track by $index" ng-if="vm.model==1"><sa-field type="vm.fields[$index].type"></sa-field></td>\
+        <td ng-repeat="(key,val) in row.rows track by $index"><sa-field type="vm.fields[$index].type" value="row.rows[key].Value"></sa-field></td>\
       </tr>\
 </tbody>\
     </table>\
@@ -692,7 +691,8 @@ angular.module("sqladmin", [])
                         name: fields[i].Name,
                         isPrimary:false,
                         isForeign: false,
-                        isSort:false
+                        isSort: false,
+                        type: fields[i].Type,
                     };
                     $scope.vm.fields.push(f);
                 }
@@ -736,7 +736,9 @@ angular.module("sqladmin", [])
             };
 
             $scope.$watch("type", function (type) {
-                $scope.vm.type = "sa-blockquote-" + type;
+                if (type) {
+                    $scope.vm.type = "sa-blockquote-" + type;
+                }
             });
         }
     }
@@ -745,7 +747,7 @@ angular.module("sqladmin", [])
 .directive("saTools", function ()
 {
     var vm = {
-        template: '<div><sa-blockquote>\
+        template: '<div><sa-blockquote type="vm.type">\
                     <div clas="sa-tools-icon" ng-transclude>\
                     </div>\
                    </sa-blockquote></div>'
@@ -756,12 +758,14 @@ angular.module("sqladmin", [])
         template: vm.template,
         replace: true,
         transclude: true,
-        priority: 0,
+        priority: 1,
         scope: {
         },
         controller: function ($scope)
         {
-
+            $scope.vm = {
+                type:"default"
+            }
         }
     }
 })
@@ -895,7 +899,7 @@ angular.module("sqladmin", [])
     var vm = {
         template: '<div class="sa-search">\
                         <sa-combo fields="vm.fields" class="sa-search-combo"></sa-combo>\
-                        <input type="text" class="sa-connect-input sa-search-input" placeholder="{{vm.placeholder}}" ng-model="vm.searchKey.value" />\
+                        <input type="text" class="sa-connect-input sa-search-input" placeholder="{{vm.placeholder}}" ng-model="vm.searchKey.value" placeholder="{{vm.placeholder}}" />\
                         <button class="sa-button sa-search-button" ng-click="vm.search()">搜索</bitton>\
                    </div>'
     }
