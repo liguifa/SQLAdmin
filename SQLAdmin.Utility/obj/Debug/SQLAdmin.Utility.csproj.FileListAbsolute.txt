@@ -24,6 +24,5 @@ D:\SQLAdmin\SQLAdmin.Utility\bin\Debug\SQLAdmin.TimerContract.pdb
 D:\SQLAdmin\SQLAdmin.Utility\bin\Debug\Newtonsoft.Json.xml
 D:\SQLAdmin\SQLAdmin.Utility\bin\Debug\Common.Cryptogram.pdb
 D:\SQLAdmin\SQLAdmin.Utility\bin\Debug\Logger.pdb
-D:\SQLAdmin\SQLAdmin.Utility\obj\Debug\SQLAdmin.Utility.csprojResolveAssemblyReference.cache
 D:\SQLAdmin\SQLAdmin.Utility\obj\Debug\SQLAdmin.Utility.dll
 D:\SQLAdmin\SQLAdmin.Utility\obj\Debug\SQLAdmin.Utility.pdb

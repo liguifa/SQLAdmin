@@ -30,7 +30,7 @@ namespace MMS.Client
     /// </summary>
     public partial class MainWindow : MMS.UI.Default.Window
     {
-        private GrammarAnalysis ga = new GrammarAnalysis();
+        //private GrammarAnalysis ga = new GrammarAnalysis();
 
         public MainWindow()
         {
@@ -59,7 +59,7 @@ namespace MMS.Client
                 };
                 if (type == "MongoDB")
                 {
-                    ServiceFactory.DBConnectService.Connect(setting);
+                    //ServiceFactory.DBConnectService.Connect(setting);
                     GetDatabases(setting);
                 }
             }
@@ -71,7 +71,7 @@ namespace MMS.Client
 
         private async void GetDatabases(DBConnect setting)
         {
-            DatabaseTree dbTree = ServiceFactory.DatabaseService.GetDatabases();
+            //DatabaseTree dbTree = ServiceFactory.DatabaseService.GetDatabases();
             List<ExplorerItem> items = new List<ExplorerItem>();
             items.Add(this.ParseMongoDBTree(dbTree));
             this.explorer.UpdateSource(items);
