@@ -81,8 +81,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Analysis", "Common.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLAdmin.TimerTest", "SQLAdmin.TimerTest\SQLAdmin.TimerTest.csproj", "{7FBE6000-A552-4EC5-81D0-E231463E6A71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLAdmin.WebClient", "SQLAdminWebClient\SQLAdmin.WebClient.csproj", "{8CFFDC88-4A13-48FF-B725-B7E3961B027A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
