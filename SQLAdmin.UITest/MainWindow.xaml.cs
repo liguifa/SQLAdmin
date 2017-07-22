@@ -22,7 +22,7 @@ namespace MMS.UITest
     {
         public MainWindow()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
     }
 }

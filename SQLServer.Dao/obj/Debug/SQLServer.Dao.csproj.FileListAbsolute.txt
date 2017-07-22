@@ -45,7 +45,6 @@ D:\admin\sqladmin\SQLServer.Dao\bin\Debug\SQLServer.Dao.pdb
 D:\admin\sqladmin\SQLServer.Dao\bin\Debug\Common.Interceptor.dll
 D:\admin\sqladmin\SQLServer.Dao\bin\Debug\Common.Utility.dll
 D:\admin\sqladmin\SQLServer.Dao\bin\Debug\Logger.dll
-D:\admin\sqladmin\SQLServer.Dao\bin\Debug\SQLAdmin.Dao.dll
 D:\admin\sqladmin\SQLServer.Dao\bin\Debug\SQLAdmin.Domain.dll
 D:\admin\sqladmin\SQLServer.Dao\bin\Debug\SQLServer.Domain.dll
 D:\admin\sqladmin\SQLServer.Dao\bin\Debug\SQLServer.Utility.dll
@@ -56,7 +55,6 @@ D:\admin\sqladmin\SQLServer.Dao\bin\Debug\MMS.Config.dll
 D:\admin\sqladmin\SQLServer.Dao\bin\Debug\Common.Interceptor.pdb
 D:\admin\sqladmin\SQLServer.Dao\bin\Debug\Logger.pdb
 D:\admin\sqladmin\SQLServer.Dao\bin\Debug\Common.Utility.pdb
-D:\admin\sqladmin\SQLServer.Dao\bin\Debug\SQLAdmin.Dao.pdb
 D:\admin\sqladmin\SQLServer.Dao\bin\Debug\SQLAdmin.Domain.pdb
 D:\admin\sqladmin\SQLServer.Dao\bin\Debug\SQLServer.Domain.pdb
 D:\admin\sqladmin\SQLServer.Dao\bin\Debug\SQLServer.Utility.pdb

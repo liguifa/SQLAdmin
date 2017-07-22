@@ -35,63 +35,63 @@ namespace MMS.Client
         public MainWindow()
         {
             InitializeComponent();
-            this.Loaded += MainWindow_Loaded;
+            //this.Loaded += MainWindow_Loaded;
         }
 
-        void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            this.menu.MenuItems = MainWindowViewModel.GetInstance().MenuItems;
-            Connection window = new Connection();
-            window.OKButton_Click += ConnectDB;
-            window.ShowDialog();
-        }
+        //void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    this.menu.MenuItems = MainWindowViewModel.GetInstance().MenuItems;
+        //    Connection window = new Connection();
+        //    window.OKButton_Click += ConnectDB;
+        //    window.ShowDialog();
+        //}
 
-        private void ConnectDB(string type, string address, string port, string username, string password)
-        {
-            try
-            {
-                DBConnect setting = new DBConnect()
-                {
-                    Address = address,
-                    Port = Convert.ToInt32(port),
-                    Password = password,
-                    Userename = username
-                };
-                if (type == "MongoDB")
-                {
-                    //ServiceFactory.DBConnectService.Connect(setting);
-                    GetDatabases(setting);
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-        }
+        //private void ConnectDB(string type, string address, string port, string username, string password)
+        //{
+        //    try
+        //    {
+        //        DBConnect setting = new DBConnect()
+        //        {
+        //            Address = address,
+        //            Port = Convert.ToInt32(port),
+        //            Password = password,
+        //            Userename = username
+        //        };
+        //        if (type == "MongoDB")
+        //        {
+        //            //ServiceFactory.DBConnectService.Connect(setting);
+        //            GetDatabases(setting);
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        MessageBox.Show(e.Message);
+        //    }
+        //}
 
-        private async void GetDatabases(DBConnect setting)
-        {
-            //DatabaseTree dbTree = ServiceFactory.DatabaseService.GetDatabases();
-            List<ExplorerItem> items = new List<ExplorerItem>();
-            items.Add(this.ParseMongoDBTree(dbTree));
-            this.explorer.UpdateSource(items);
-        }
+        //private async void GetDatabases(DBConnect setting)
+        //{
+        //    //DatabaseTree dbTree = ServiceFactory.DatabaseService.GetDatabases();
+        //    List<ExplorerItem> items = new List<ExplorerItem>();
+        //    items.Add(this.ParseMongoDBTree(dbTree));
+        //    this.explorer.UpdateSource(items);
+        //}
 
-        public ExplorerItem ParseMongoDBTree(DatabaseTree dbTree)
-        {
-            ExplorerItem m = new ExplorerItem();
-            m.Text = dbTree.Name;
-            m.Type = (ExplorerItemType)((int)dbTree.NodeType);
-            m.ContextMenu = MMS.Client.ContextMenu.ServerContextMenu;
-            if (dbTree.Children != null && dbTree.Children.Count > 0)
-            {
-                m.Children = new List<ExplorerItem>();
-                foreach (var t in dbTree.Children)
-                {
-                    m.Children.Add(this.ParseMongoDBTree(t));
-                }
-            }
-            return m;
-        }
+        //public ExplorerItem ParseMongoDBTree(DatabaseTree dbTree)
+        //{
+        //    ExplorerItem m = new ExplorerItem();
+        //    m.Text = dbTree.Name;
+        //    m.Type = (ExplorerItemType)((int)dbTree.NodeType);
+        //    m.ContextMenu = MMS.Client.ContextMenu.ServerContextMenu;
+        //    if (dbTree.Children != null && dbTree.Children.Count > 0)
+        //    {
+        //        m.Children = new List<ExplorerItem>();
+        //        foreach (var t in dbTree.Children)
+        //        {
+        //            m.Children.Add(this.ParseMongoDBTree(t));
+        //        }
+        //    }
+        //    return m;
+        //}
     }
 }

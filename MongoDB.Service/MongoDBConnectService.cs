@@ -23,22 +23,22 @@ namespace MongoDB.Service
             throw new NotImplementedException();
         }
 
-        public bool Connect(DBConnect connectSetting)
-        {
-            try
-            {
-                using (var scope = new MongoDBContextScope(connectSetting))
-                {
-                    IRepertory db = new MognoDBRepertory();
-                    db.GetDatabases().ToList();
-                }
-                return true;
-            }
-            catch (Exception e)
-            {
-                mLog.Warn($"An error has occurred in the connect mongodb,error:{e.ToString()}");
-            }
-            return false;
-        }
+        //public bool Connect(DBConnect connectSetting)
+        //{
+        //    try
+        //    {
+        //        using (var scope = new MongoDBContextScope(connectSetting))
+        //        {
+        //            IRepertory db = new MognoDBRepertory();
+        //            db.GetDatabases().ToList();
+        //        }
+        //        return true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        mLog.Warn($"An error has occurred in the connect mongodb,error:{e.ToString()}");
+        //    }
+        //    return false;
+        //}
     }
 }

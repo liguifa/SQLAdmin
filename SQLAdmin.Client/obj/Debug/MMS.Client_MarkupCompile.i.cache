@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\SQLAdmin\SQLAdmin.Client\obj\Debug\
+D:\admin\sqladmin\SQLAdmin.Client\obj\Debug\
 MMS.Client
 none
 false
 DEBUG;TRACE
-D:\SQLAdmin\SQLAdmin.Client\App.xaml
+D:\admin\sqladmin\SQLAdmin.Client\App.xaml
 2-1509573300
 
 13-1864982051
-18-535274828
+18990934119
 MainWindow.xaml;Window\MongoDBBackupWindow.xaml;
 
 False
