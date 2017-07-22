@@ -154,6 +154,10 @@
       <Project>{c2c92005-3adc-49e2-85a2-8bd031190485}</Project>
       <Name>Common.Logger</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MMS.UI\MMS.UI.csproj">
+      <Project>{b461142d-ed6d-4a55-a3d5-612d6e58eea5}</Project>
+      <Name>MMS.UI</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\header.png" />

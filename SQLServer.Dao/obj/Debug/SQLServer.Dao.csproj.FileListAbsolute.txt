@@ -67,3 +67,5 @@ D:\admin\sqladmin\SQLServer.Dao\obj\Debug\SQLServer.Dao.dll
 D:\admin\sqladmin\SQLServer.Dao\obj\Debug\SQLServer.Dao.pdb
 D:\admin\sqladmin\SQLServer.Dao\bin\Debug\SQLAdmin.TimerContract.dll
 D:\admin\sqladmin\SQLServer.Dao\bin\Debug\SQLAdmin.TimerContract.pdb
+D:\admin\sqladmin\SQLServer.Dao\bin\Debug\SQLAdmin.Dao.dll
+D:\admin\sqladmin\SQLServer.Dao\bin\Debug\SQLAdmin.Dao.pdb

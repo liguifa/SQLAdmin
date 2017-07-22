@@ -6,3 +6,4 @@ D:\admin\sqladmin\Common.Interceptor\bin\Debug\Common.Interceptor.dll
 D:\admin\sqladmin\Common.Interceptor\bin\Debug\Common.Interceptor.pdb
 D:\admin\sqladmin\Common.Interceptor\obj\Debug\Common.Interceptor.dll
 D:\admin\sqladmin\Common.Interceptor\obj\Debug\Common.Interceptor.pdb
+D:\admin\sqladmin\Common.Interceptor\obj\Debug\Common.Interceptor.csprojResolveAssemblyReference.cache

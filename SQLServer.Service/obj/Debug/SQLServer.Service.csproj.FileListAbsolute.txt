@@ -104,3 +104,12 @@ D:\admin\sqladmin\SQLServer.Service\bin\Debug\SQLServer.Utility.pdb
 D:\admin\sqladmin\SQLServer.Service\bin\Debug\Newtonsoft.Json.xml
 D:\admin\sqladmin\SQLServer.Service\bin\Debug\Common.Cryptogram.pdb
 D:\admin\sqladmin\SQLServer.Service\bin\Debug\MMS.Config.pdb
+D:\admin\sqladmin\SQLServer.Service\bin\Debug\SQLAdmin.IService.dll
+D:\admin\sqladmin\SQLServer.Service\bin\Debug\Microsoft.Practices.Unity.dll
+D:\admin\sqladmin\SQLServer.Service\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+D:\admin\sqladmin\SQLServer.Service\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\admin\sqladmin\SQLServer.Service\bin\Debug\SQLAdmin.IService.pdb
+D:\admin\sqladmin\SQLServer.Service\bin\Debug\Microsoft.Practices.Unity.xml
+D:\admin\sqladmin\SQLServer.Service\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+D:\admin\sqladmin\SQLServer.Service\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+D:\admin\sqladmin\SQLServer.Service\bin\Debug\Microsoft.Practices.ServiceLocation.xml
