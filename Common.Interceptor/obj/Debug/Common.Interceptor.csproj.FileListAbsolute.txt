@@ -2,3 +2,4 @@ D:\SQLAdmin\Common.Interceptor\bin\Debug\Common.Interceptor.dll
 D:\SQLAdmin\Common.Interceptor\bin\Debug\Common.Interceptor.pdb
 D:\SQLAdmin\Common.Interceptor\obj\Debug\Common.Interceptor.dll
 D:\SQLAdmin\Common.Interceptor\obj\Debug\Common.Interceptor.pdb
+D:\SQLAdmin\Common.Interceptor\obj\Debug\Common.Interceptor.csprojResolveAssemblyReference.cache
