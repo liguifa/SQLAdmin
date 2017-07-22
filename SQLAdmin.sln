@@ -41,8 +41,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Command", "MongoDB.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLAdmin.UITest", "SQLAdmin.UITest\SQLAdmin.UITest.csproj", "{F6D2450D-AB6E-4EA7-98D5-40D4B76A269C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLAdmin.TimrServiceTest", "SQLAdmin.TimrServiceTest\SQLAdmin.TimrServiceTest.csproj", "{16351447-D519-4055-BEF4-EC679B73B0F4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLAdmin.TimerService", "SQLAdmin.TimerService\SQLAdmin.TimerService.csproj", "{1B917038-86DF-4150-A679-BC70C04B1152}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMS.UI", "MMS.UI\MMS.UI.csproj", "{B461142D-ED6D-4A55-A3D5-612D6E58EEA5}"
