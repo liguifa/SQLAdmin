@@ -100,10 +100,7 @@ D:\SQLAdmin\SQLAdmin.Web\bin\roslyn\vbc.exe
 D:\SQLAdmin\SQLAdmin.Web\bin\roslyn\VBCSCompiler.exe
 D:\SQLAdmin\SQLAdmin.Web\bin\roslyn\VBCSCompiler.exe.config
 D:\SQLAdmin\SQLAdmin.Web\bin\log4net.dll
-D:\SQLAdmin\SQLAdmin.Web\bin\Static\css\sa.style.css
 D:\SQLAdmin\SQLAdmin.Web\bin\Static\Images\displayLogo.ico
-D:\SQLAdmin\SQLAdmin.Web\bin\Static\script\angular.min.js
-D:\SQLAdmin\SQLAdmin.Web\bin\Static\script\directive\sa.directive.js
 D:\SQLAdmin\SQLAdmin.Web\bin\log4net.config
 D:\SQLAdmin\SQLAdmin.Web\bin\config\databaseType.config
 D:\SQLAdmin\SQLAdmin.Web\bin\MonitorType.config

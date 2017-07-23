@@ -164,13 +164,11 @@
     <Content Include="Static\ShinyUI\Images\icon_loading.png" />
     <Content Include="Static\ShinyUI\Images\icon_remove.png" />
     <Content Include="Static\ShinyUI\Images\icon_right.png" />
+    <Content Include="Static\ShinyUI\Images\icon_save.png" />
     <Content Include="Static\ShinyUI\Images\icon_sort_asc.png" />
     <Content Include="Static\ShinyUI\Images\icon_sort_desc.png" />
     <Content Include="Static\ShinyUI\Images\icon_top.png" />
     <Content Include="Static\ShinyUI\Images\new_connect.png" />
-    <Content Include="Static\ShinyUI\lib\angular.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Static\script\app.js" />
     <Content Include="Static\script\controller\about.controller.js" />
     <Content Include="Static\script\controller\connect.controller.js" />
@@ -181,9 +179,6 @@
     <Content Include="Static\script\controller\query.controller.js" />
     <Content Include="Static\script\controller\report.controller.js" />
     <Content Include="Static\script\directive\layout.directive.js" />
-    <Content Include="Static\ShinyUI\lib\base64.min.js" />
-    <Content Include="Static\ShinyUI\lib\flotr2.min.js" />
-    <Content Include="Static\ShinyUI\lib\less.min.js" />
     <Content Include="Static\script\services\common.service.js" />
     <Content Include="Static\script\services\connect.service.js" />
     <Content Include="Static\script\services\database.service.js" />

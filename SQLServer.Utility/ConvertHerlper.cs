@@ -166,7 +166,7 @@ namespace SQLServer.Utility
             {
                 foreach (var field in fileds)
                 {
-                    if ((data as IDictionary<string, object>)[field.Name] != null)
+                    if ((data as IDictionary<string, object>).Keys.Contains(field.Name))
                     {
                         (data as IDictionary<string, object>)[field.Name] = new { Value = (data as IDictionary<string, object>)[field.Name], Type = field.Type };
                     }

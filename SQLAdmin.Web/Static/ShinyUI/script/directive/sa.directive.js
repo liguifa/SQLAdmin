@@ -37,8 +37,8 @@ angular.module("sqladmin", [])
                                       </div>\
                                   </div>\
                                   <div class='sa-connect-footer'>\
-                                      <button class='sa-button' ng-click='vm.determine()'>确定</button>\
-                                      <button class='sa-button'  ng-click='vm.cancel()'>取消</button>\
+                                      <button class='sa-button sa-button-small' style='margin-top:4px;' ng-click='vm.determine()'>确定</button>\
+                                      <button class='sa-button sa-button-small' style='margin-top:4px;' ng-click='vm.cancel()'>取消</button>\
                                   </div>\
                             </div>\
                         </div>\
@@ -47,8 +47,10 @@ angular.module("sqladmin", [])
 
         mousedown: function ($event)
         {
-            stamp.isMove = true;
-            stamp.mouse = { left: $event.clientX, top: $event.clientY };
+            if ($event.target.className == "sa-border") {
+                stamp.isMove = true;
+                stamp.mouse = { left: $event.clientX, top: $event.clientY };
+            }
         },
 
         mouseup: function ($event)
@@ -898,8 +900,8 @@ angular.module("sqladmin", [])
 .directive("saSearch",function(){
     var vm = {
         template: '<div class="sa-search">\
-                        <sa-combo fields="vm.fields" class="sa-search-combo"></sa-combo>\
-                        <input type="text" class="sa-connect-input sa-search-input" placeholder="{{vm.placeholder}}" ng-model="vm.searchKey.value" placeholder="{{vm.placeholder}}" />\
+                        <sa-combo fields="vm.fields" class="sa-search-combo" select="vm.select(field)"></sa-combo>\
+                        <input type="text" class="sa-connect-input sa-search-input" ng-model="vm.searchKey.value" placeholder="{{vm.placeholder}}" />\
                         <button class="sa-button sa-search-button" ng-click="vm.search()">搜索</bitton>\
                    </div>'
     }
@@ -920,6 +922,9 @@ angular.module("sqladmin", [])
                 search: function () {
                     $scope.search({ searchKey: $scope.vm.searchKey });
                 },
+                select: function (field) {
+                    $scope.vm.searchKey.key = field.Name;
+                },
                 searchKey: { key:"",value:""}
             }
             $scope.$watch("placeholder", function (placeholder) {
@@ -933,7 +938,7 @@ angular.module("sqladmin", [])
                 $scope.searchKey.key = key;
             });
             $scope.$watch("vm.searchKey", function (value) {
-                $scope.searchKey.value;
+               // $scope.searchKey.value;
             })
         }
     }
@@ -1502,6 +1507,7 @@ angular.module("sqladmin", [])
                 },
                 select: function (field) {
                     $scope.vm.text = field.Name;
+                    $scope.select({ field: field });
                 }
             }
             $scope.$watch("fields", function (fields) {
