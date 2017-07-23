@@ -17,16 +17,21 @@ namespace MMS.MongoDB
 
         }
 
-        protected override void Initialize(DBConnect dbConnect)
-        {
-            string strconn = "mongodb://127.0.0.1:27017";
-            MongoClient mongoClient = new MongoClient(strconn);
-            DBContext = new MongoDBContext()
-            {
-                ConnectSetting = dbConnect,
-                MongoClient = mongoClient
-            };
+        //protected override DBConnect Initialize(DBConnect dbConnect)
+        //{
+        //    //string strconn = "mongodb://127.0.0.1:27017";
+        //    //MongoClient mongoClient = new MongoClient(strconn);
+        //    //DBContext = new MongoDBContext()
+        //    //{
+        //    //    ConnectSetting = dbConnect,
+        //    //    MongoClient = mongoClient
+        //    //};
+        //    return new DBConnect();
+        //}
 
+        protected override DBContext Initialize(DBConnect dbConnect)
+        {
+            throw new NotImplementedException();
         }
     }
 }

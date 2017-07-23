@@ -9,7 +9,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using MMS.UI.Default;
 using System;
 using System.Diagnostics;
 using System.Windows;
