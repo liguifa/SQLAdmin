@@ -126,7 +126,7 @@
                     exceptiondatas.push({
                         rows: {
                             EventTime: infos[i].EventTime,
-                            Message: infos[i].Message
+                            Messuige: infos[i].Messuige
                         }
                     });
                 }

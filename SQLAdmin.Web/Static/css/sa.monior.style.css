@@ -1,18 +1,18 @@
-﻿.sa-add-monitor{
+﻿.sui-add-monitor{
     position:fixed;
     top:200px;
     left:600px;
 } 
-.sa-monitor {
+.sui-monitor {
     height:340px;
 }
-.sa-monitor .sa-border{
+.sui-monitor .sui-border{
     height:300px;
 }
-.sa-monitor .sa-content{
+.sui-monitor .sui-content{
     height:300px;
     padding-top:0px;
 }
-.sa-monitor-form{
+.sui-monitor-form{
     height:auto;
 }

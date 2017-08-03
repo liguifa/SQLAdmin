@@ -1,17 +1,17 @@
-﻿<link href="~/Static/css/sa.report.style.css" rel="stylesheet" />
+﻿<link href="~/Static/css/sui.report.style.css" rel="stylesheet" />
 
 <div ng-controller="report.controller" ng-init="vm.pageId = @ViewBag.DefaultPageId">
     <div class="cpuinfo-nav">
         <ul>
-            <li><button class="sa-button">CPU 使用率</button></li>
-            @*<li><button class="sa-button">CPU 异常</button></li>*@
+            <li><button class="sui-button">CPU 使用率</button></li>
+            @*<li><button class="sui-button">CPU 异常</button></li>*@
         </ul>
-        <div class="sa-clear"></div>
+        <div class="sui-clear"></div>
     </div>
     <div>
-        <sa-lines points="vm.memory.memoryinfos" xaxis="vm.memory.xaxis"></sa-lines>
+        <sui-lines points="vm.memory.memoryinfos" xaxis="vm.memory.xaxis"></sui-lines>
         <div style="height:400px;">
-            <sa-datagrid datas="vm.memory.memorydatas" fields="vm.memory.fields"></sa-datagrid>
+            <sui-datagrid datas="vm.memory.memorydatas" fields="vm.memory.fields"></sui-datagrid>
         </div>
     </div>
 </div>

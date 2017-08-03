@@ -126,7 +126,7 @@
             $scope.vm.isNeedSave = true;
         }
 
-        $scope.vm.save = function () {
+        $scope.vm.suive = function () {
             var selectDatas = $scope.vm.datas.filter(function (item) {
                 return item.isSelected
             });

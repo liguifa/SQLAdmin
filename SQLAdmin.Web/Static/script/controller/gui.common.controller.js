@@ -15,7 +15,7 @@
         }
 
         function select(menu) {
-            $scope.vm.window = menu.Href;
+            $scope.vm.window = menu.href;
         }
 
         function _getTables(tree) {
@@ -34,7 +34,20 @@
         }
 
         common.getMenus().then(function (data) {
-            $scope.vm.menus = data;
+            var mapItem = function (item) {
+                var newItem = {
+                    title: item.Title,
+                    id: item.Id,
+                    icon: item.Icon,
+                    href:item.Href,
+                    subs: []
+                };
+                if(item.Subs && item.Subs.length > 0){
+                    newItem.subs = item.Subs.map(mapItem)
+                }
+                return newItem;
+            }
+            $scope.vm.menus = data.map(mapItem);
         });
 
         event.register("connect", function () {

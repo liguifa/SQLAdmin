@@ -1,4 +1,4 @@
-﻿.sa-icon-folder {
+﻿.sui-icon-folder {
     background: url(../Images/icon_folder.png);
     background-size: 16px 16px;
     background-position: center;
@@ -6,7 +6,7 @@
     padding: 8px;
 }
 
-.sa-icon-arrow-right {
+.sui-icon-arrow-right {
     background: url(../Images/icon_arrow-right.png);
     background-size: 16px 16px;
     background-position: center;
@@ -14,7 +14,7 @@
     padding: 8px;
 }
 
-.sa-icon-arrow-buttom {
+.sui-icon-arrow-buttom {
     background: url(../Images/icon_arrow_buttom.png);
     background-size: 16px 16px;
     background-position: center;
@@ -22,7 +22,7 @@
     padding: 8px;
 }
 
-.sa-icon-remove {
+.sui-icon-remove {
     background: url(../Images/icon_remove.png);
     background-size: 16px 16px;
     background-position: center;
@@ -30,7 +30,7 @@
     padding: 8px;
 }
 
-.sa-icon-add {
+.sui-icon-add {
     background: url(../Images/icon_add.png);
     background-size: 16px 16px;
     background-position: center;
@@ -38,7 +38,7 @@
     padding: 8px;
 }
 
-.sa-icon-edit {
+.sui-icon-edit {
     background: url(../Images/icon_edit.png);
     background-size: 16px 16px;
     background-position: center;
@@ -46,7 +46,7 @@
     padding: 8px;
 }
 
-.sa-icon-loading {
+.sui-icon-loading {
     background: url(../Images/icon_loading.png);
     background-size: 16px 16px;
     background-position: center;
@@ -54,7 +54,7 @@
     padding: 8px;
 }
 
-.sa-icon-sort-asc {
+.sui-icon-sort-asc {
     background: url(../Images/icon_sort_asc.png);
     background-size: 16px 16px;
     background-position: center;
@@ -62,7 +62,7 @@
     padding: 8px;
 }
 
-.sa-icon-sort-desc {
+.sui-icon-sort-desc {
     background: url(../Images/icon_sort_desc.png);
     background-size: 16px 16px;
     background-position: center;
@@ -70,15 +70,11 @@
     padding: 8px;
 }
 
-.sa-icon-save{
-    background: url(../Images/icon_save.png);
-    background-size: 16px 16px;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 8px;
+.sui-icon-suive{
+
 }
 
-.sa-icon-top {
+.sui-icon-top {
     background: url(../Images/icon_top.png);
     background-size: 16px 16px;
     background-position: center;
@@ -86,7 +82,7 @@
     padding: 8px;
 }
 
-.sa-icon-bottom {
+.sui-icon-bottom {
     background: url(../Images/icon_bottom.png);
     background-size: 16px 16px;
     background-position: center;
@@ -94,7 +90,7 @@
     padding: 8px;
 }
 
-.sa-icon-left {
+.sui-icon-left {
     background: url(../Images/icon_left.png);
     background-size: 16px 16px;
     background-position: center;
@@ -102,7 +98,7 @@
     padding: 8px;
 }
 
-.sa-icon-right {
+.sui-icon-right {
     background: url(../Images/icon_right.png);
     background-size: 16px 16px;
     background-position: center;

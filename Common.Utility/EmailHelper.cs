@@ -12,7 +12,7 @@ namespace Common.Utility
     {
         public static bool SendEmail(Email email)
         {
-            MailMessage message = email.ToMailMessage();
+            MailMessage messuige = email.ToMailMessuige();
             SmtpClient smtp = new SmtpClient();
             smtp.Host = "smtp.163.com";
             smtp.Port = 25;
@@ -20,7 +20,7 @@ namespace Common.Utility
             smtp.EnableSsl = true; //Gmail要求SSL连接
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network; //Gmail的发送方式是通过网络的方式，需要指定
             ServicePointManager.ServerCertificateValidationCallback = (s, c, cc, ss) => true;
-            smtp.Send(message);
+            smtp.Send(messuige);
             return true;
         }
     }
@@ -45,20 +45,20 @@ namespace Common.Utility
             }
         }
 
-        public static MailMessage ToMailMessage(this Email email)
+        public static MailMessage ToMailMessuige(this Email email)
         {
-            MailMessage message = new MailMessage();
-            message.To.AddRange(email.To);
-            message.CC.AddRange(email.CC);
-            message.To.AddRange(email.To);
-            message.IsBodyHtml = true;
-            message.Subject = email.Subject;
-            message.SubjectEncoding = Encoding.UTF8;
-            message.Body = email.Body;
-            message.From = new MailAddress("18840848462@163.com");
-            message.Sender = new MailAddress("18840848462@163.com");
+            MailMessage messuige = new MailMessage();
+            messuige.To.AddRange(email.To);
+            messuige.CC.AddRange(email.CC);
+            messuige.To.AddRange(email.To);
+            messuige.IsBodyHtml = true;
+            messuige.Subject = email.Subject;
+            messuige.SubjectEncoding = Encoding.UTF8;
+            messuige.Body = email.Body;
+            messuige.From = new MailAddress("18840848462@163.com");
+            messuige.Sender = new MailAddress("18840848462@163.com");
           
-            return message;
+            return messuige;
         }
     }
 

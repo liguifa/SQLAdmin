@@ -1,23 +1,23 @@
-﻿<link href="~/Static/css/sa.report.style.css" rel="stylesheet" />
+﻿<link href="~/Static/css/sui.report.style.css" rel="stylesheet" />
 <div ng-controller="report.controller" ng-init="vm.pageId = @ViewBag.DefaultPageId" class="query-panel">
     <div class="cpuinfo-nav">
         <ul>
-            <li><button class="sa-button" ng-click="vm.switchTo(61)">全部查询</button></li>
-            <li><button class="sa-button" ng-click="vm.switchTo(62)">查询比例</button></li>
-            <li><button class="sa-button" ng-click="vm.switchTo(63)">表查询比例</button></li>
+            <li><button class="sui-button" ng-click="vm.switchTo(61)">全部查询</button></li>
+            <li><button class="sui-button" ng-click="vm.switchTo(62)">查询比例</button></li>
+            <li><button class="sui-button" ng-click="vm.switchTo(63)">表查询比例</button></li>
         </ul>
-        <div class="sa-clear"></div>
+        <div class="sui-clear"></div>
     </div>
     <div ng-if="vm.pageId == 61" class="query-panel-all">
-        <sa-datagrid datas="vm.query.historydatas" fields="vm.query.fields"></sa-datagrid>
-        <sa-pagination page="vm.query.page" pageNumber="10" click="vm.query.jump(pageIndex)"></sa-pagination>
+        <sui-datagrid datas="vm.query.historydatas" fields="vm.query.fields"></sui-datagrid>
+        <sui-pagination page="vm.query.page" pageNumber="10" click="vm.query.jump(pageIndex)"></sui-pagination>
     </div>
     <div ng-if="vm.pageId == 62">
-        <sa-bars points="vm.query.queryProportionInfo" fields="vm.query.xaxis"></sa-bars>
+        <sui-bars points="vm.query.queryProportionInfo" fields="vm.query.xaxis"></sui-bars>
     </div>
     <div ng-if="vm.pageId == 63">
-        <sa-bars></sa-bars>
-        <sa-datagrid datas="vm.query.historydatas" fields="vm.query.fields"></sa-datagrid>
+        <sui-bars></sui-bars>
+        <sui-datagrid datas="vm.query.historydatas" fields="vm.query.fields"></sui-datagrid>
     </div>
 </div>
 

@@ -1,6 +1,6 @@
 angular.module("sqladmin", [])
 
-.directive("saConnect", function ()
+.directive("suiConnect", function ()
 {
     var stamp = {
         isMove: false,
@@ -8,46 +8,46 @@ angular.module("sqladmin", [])
     }
 
     var vm = {
-        template: "<div><div class='sa-window sa-connect'>\
-                        <div class='sa-border' ng-mousedown='vm.mousedown($event)' ng-mousemove='vm.move($event)' ng-mouseup='vm.mouseup($event)'>\
-                              <div class='sa-content' ng-mousedown='retun false;'  ng-mousemove='retun false;'>\
-                                  <div class='sa-title'>Database Connection</div>\
-                                  <div class='sa-form'>\
+        template: "<div><div class='sui-window sui-connect'>\
+                        <div class='sui-border' ng-mousedown='vm.mousedown($event)' ng-mousemove='vm.move($event)' ng-mouseup='vm.mouseup($event)'>\
+                              <div class='sui-content' ng-mousedown='retun false;'  ng-mousemove='retun false;'>\
+                                  <div class='sui-title'>Database Connection</div>\
+                                  <div class='sui-form'>\
                                       <div>\
                                           <label>类别:</label>\
-                                          <select class='sa-connect-input'>\
+                                          <select class='sui-connect-input'>\
                                           <option ng-repeat='type in vm.types' value='type.id'>{{type.displayName}}</option>\
                                           </select>\
                                       </div>\
                                       <div>\
                                           <label>地址:</label>\
-                                          <input type='text' class='sa-connect-input' ng-model='info.address'/>\
+                                          <input type='text' class='sui-connect-input' ng-model='info.address'/>\
                                       </div>\
                                       <div>\
                                           <label>端口:</label>\
-                                          <input type='text' class='sa-connect-input' ng-model='info.port'/>\
+                                          <input type='text' class='sui-connect-input' ng-model='info.port'/>\
                                       </div>\
                                       <div>\
                                           <label>账号:</label>\
-                                          <input type='text' class='sa-connect-input' ng-model='info.username'/>\
+                                          <input type='text' class='sui-connect-input' ng-model='info.username'/>\
                                       </div>\
                                       <div>\
                                           <label>密码:</label>\
-                                          <input type='password' class='sa-connect-input' ng-model='info.password'/>\
+                                          <input type='password' class='sui-connect-input' ng-model='info.password'/>\
                                       </div>\
                                   </div>\
-                                  <div class='sa-connect-footer'>\
-                                      <button class='sa-button sa-button-small' style='margin-top:4px;' ng-click='vm.determine()'>确定</button>\
-                                      <button class='sa-button sa-button-small' style='margin-top:4px;' ng-click='vm.cancel()'>取消</button>\
+                                  <div class='sui-connect-footer'>\
+                                      <button class='sui-button sui-button-small' ng-click='vm.determine()' style='margin-top:4px;'>确定</button>\
+                                      <button class='sui-button sui-button-small'  ng-click='vm.cancel()' style='margin-top:4px;'>取消</button>\
                                   </div>\
                             </div>\
                         </div>\
                  </div>\
-                 <div class='sa-mask'></div></div>",
+                 <div class='sui-mask'></div></div>",
 
         mousedown: function ($event)
         {
-            if ($event.target.className == "sa-border") {
+            if ($event.target.className == 'sui-border') {
                 stamp.isMove = true;
                 stamp.mouse = { left: $event.clientX, top: $event.clientY };
             }
@@ -62,11 +62,11 @@ angular.module("sqladmin", [])
         {
             if (stamp.isMove)
             {
-                var saWindow = document.getElementsByClassName('sa-window')[0];
+                var suiWindow = document.getElementsByClassName('sui-window')[0];
                 var x = $event.clientX - stamp.mouse.left;
                 var y = $event.clientY - stamp.mouse.top;
-                saWindow.style.left = saWindow.offsetLeft + x + 'px';
-                saWindow.style.top = saWindow.offsetTop + y + 'px';
+                suiWindow.style.left = suiWindow.offsetLeft + x + 'px';
+                suiWindow.style.top = suiWindow.offsetTop + y + 'px';
                 stamp.mouse = { left: $event.clientX, top: $event.clientY };
             }
         }
@@ -120,16 +120,16 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saMenu", ["$http", "$compile", function ($http, $compile)
+.directive("suiMenu", ["$http", "$compile", function ($http, $compile)
 {
     var self = null;
     var vm = {
-        template: "<div class='sa-menu'>\
-                        <ul class='sa-menu-list'>\
-                            <li class='sa-menu-item' ng-repeat='menu in vm.menus'>\
-                                <div class='sa-menu-item-title' ng-click='vm.select(menu.Id)'>{{menu.Title}}</div>\
-                                <ul ng-if='menu.IsSelect' class='sa-menu-subs' style='left:{{$index*56.5+\"px\"}}'>\
-                                    <li ng-repeat='sub in menu.Subs'><img class='sa-menu-item-subs-icon' ng-src='{{sub.Icon}}' /><span class='sa-menu-item-subs-title' ng-click='vm.Command(sub)'>{{sub.Title}}</span><div class='sa-clear'></div></li>\
+        template: "<div class='sui-menu'>\
+                        <ul class='sui-menu-list'>\
+                            <li class='sui-menu-item' ng-repeat='menu in vm.menus'>\
+                                <div class='sui-menu-item-title' ng-click='vm.select(menu.id)'>{{menu.title}}</div><br />\
+                                <ul ng-if='menu.isSelect' class='sui-menu-subs' style='left:{{$index*56.5+\"px\"}}'>\
+                                    <li ng-repeat='sub in menu.subs'><img class='sui-menu-item-subs-icon' ng-src='{{sub.icon}}' /><span class='sui-menu-item-subs-title' ng-click='vm.Command(sub)'>{{sub.title}}</span><div class='sui-clear'></div></li>\
                                 </ul>\
                             </li>\
                         </ul>\
@@ -138,14 +138,14 @@ angular.module("sqladmin", [])
         {
             for (var i in self.vm.menus)
             {
-                if (self.vm.menus[i].Id == id)
+                if (self.vm.menus[i].id == id)
                 {
-                    self.vm.menus[i].IsSelect = true;
+                    self.vm.menus[i].isSelect = true;
                     self.vm.isViewMenu = true;
                 }
                 else
                 {
-                    self.vm.menus[i].IsSelect = false;
+                    self.vm.menus[i].isSelect = false;
                 }
             }
         },
@@ -159,7 +159,7 @@ angular.module("sqladmin", [])
                     {
                         for (var i in self.vm.menus)
                         {
-                            self.vm.menus[i].IsSelect = false;
+                            self.vm.menus[i].isSelect = false;
                         }
                     });
                 }
@@ -205,7 +205,10 @@ angular.module("sqladmin", [])
             self = $scope;
 
             $scope.$watch("menus", function (menus) {
-                $scope.vm.menus = menus;
+                $scope.vm.menus = menus.map(function(item){
+                	item.isSelect = false;
+                	return item;
+                });
             });
 
             $scope.$watch("vm.isViewMenu", vm.clearSubMenus)
@@ -213,14 +216,14 @@ angular.module("sqladmin", [])
     }
 }])
 
-.directive('saExplorer', function ()
+.directive('suiExplorer', function ()
 {
     var vm = {
-        template: "<div class='sa-explorer'>\
-                        <div class='sa-explorer-title'></div>\
-                        <div class='sa-explorer-tool'></div>\
-                        <div class='sa-explorer-panel'>\
-                            <div class='sa-explorer-content'>\
+        template: "<div class='sui-explorer'>\
+                        <div class='sui-explorer-title'></div>\
+                        <div class='sui-explorer-tool'></div>\
+                        <div class='sui-explorer-panel'>\
+                            <div class='sui-explorer-content'>\
                                 <div ng-transclude></div>\
                             </div>\
                         </div>\
@@ -240,14 +243,16 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive('saTabs', ["guid.service", "$http", "$compile", function (guid, $http, $compile)
+.directive('suiTabs', ["guid.service", "$http", "$compile", function (guid, $http, $compile)
 {
     var vm = {
         id: guid.newGuid(),
-        template: "<div class='sa-tabs' id='{{vm.id}}'>\
-                    <div class='sa-tabs-tab' ng-repeat='page in vm.pages' id='{{page.id}}' style='z-index:{{page.isSelected?990:989}}'>\
-                        <div class='sa-tabs-title' style='left:{{$index*210}}px' ng-click='vm.click_title(page.id)'>{{page.title}}</div>\
-                        <div class='sa-tabs-panel' ng-if='page.isSelected'><div class='sa-tabs-panel-include' ng-include src='page.url'></div></div>\
+        template: "<div class='sui-tabs' id='{{vm.id}}'>\
+                    <div class='sui-tabs-title-div'><ul class='sui-tabs-titlt-list'>\
+                        <li ng-class='{\"true\":\"sui-tabs-titlt-item sui-tabs-title-active\",\"false\":\"sui-tabs-titlt-item\"}[page.isSelected]' ng-repeat='page in vm.pages'><div class='sui-tabs-title'><span ng-click='vm.clickTitle(page.id)'>{{page.title}}</span><i ng-click='vm.deletePage(page)' class='sui-icon-remove sui-tabs-delete'></i></div></li>\
+                    </ul></div>\
+                    <div class='sui-tabs-tab' ng-repeat='page in vm.pages' id='{{page.id}}' ng-if='page.isSelected'>\
+                        <div class='sui-tabs-panel' ng-if='page.isSelected'><div class='sui-tabs-panel-include' ng-include src='page.url'></div></div>\
                     </div>\
                    </div>",
         build: function ($scope,pages) {
@@ -257,14 +262,14 @@ angular.module("sqladmin", [])
                 $http.get(pages[i].url).then(function (data) {
                     var tabs = document.getElementById(self.id);
                     var tab = document.createElement("div");
-                    tab.classList.add("sa-tabs-tab");
+                    tab.classList.add("sui-tabs-tab");
                     tab.attributes["data-tab-id"] = pages[i].id;
                     var title = document.createElement("div");
-                    title.classList.add("sa-tabs-title");
-                    title.style.left = (i * 90) + "px";
+                    title.classList.add("sui-tabs-title");
+                    title.style.left = (i * 100) + "px";
                     var panel = document.createElement("div");
                     panel.appendChild($compile(data.data)($scope)[0]);
-                    panel.classList.add("sa-tabs-panel");
+                    panel.classList.add("sui-tabs-panel");
                     tab.appendChild(title);
                     tab.appendChild(panel);
                     tabs.appendChild(tab);
@@ -284,9 +289,9 @@ angular.module("sqladmin", [])
         {
             $scope.vm = {
                 id: vm.id,
-                click_title:function(panel_id)
+                clickTitle:function(panel_id)
                 {
-                    //var panels = document.getElementsByClassName("sa-tabs-tab");
+                    //var panels = document.getElementsByClassName("sui-tabs-tab");
                     //for (var i = 0; i < panels.length; i++)
                     //{
                     //    panels[i].style.zIndex = 997;
@@ -303,6 +308,17 @@ angular.module("sqladmin", [])
                             $scope.vm.pages[i].isSelected = false;
                         }
                     }
+                },
+                deletePage:function(page){
+                     $scope.vm.pages =  $scope.vm.pages.filter(function(p){
+                         return p.id != page.id;
+                     });
+                     var selectPage = $scope.vm.pages.find(function(p){
+                        return p.isSelected;
+                     });
+                     if(!selectPage){
+                        $scope.vm.pages[$scope.vm.pages.length - 1].isSelected = true;
+                     }
                 }
             }
             $scope.$watch("pages", function (pages) {
@@ -324,7 +340,7 @@ angular.module("sqladmin", [])
     }
 }])
 
-.directive('saTree', function ()
+.directive('suiTree', function ()
 {
     var vm = {
         scope:null,
@@ -337,7 +353,7 @@ angular.module("sqladmin", [])
             var treeElement = document.getElementById(this.id);
             if (treeElement) {
                 var rootElement = document.createElement("ul");
-                rootElement.classList.add("sa-tree-ul");
+                rootElement.classList.add("sui-tree-ul");
                 if (tree != null) {
                     rootElement.appendChild(this.buildNode(tree));
                 }
@@ -347,7 +363,7 @@ angular.module("sqladmin", [])
                     e = e || window.event; 　//IE window.event
                     var t = e.target || e.srcElement; //目标对象
                     if (e.type == "contextmenu") {
-                        var contextmenus = document.getElementsByClassName("sa-contextmenu");
+                        var contextmenus = document.getElementsByClassName("sui-contextmenu");
                         for (var i in contextmenus) {
                             if (contextmenus[i].style) {
                                 contextmenus[i].style.visibility = "";
@@ -372,7 +388,7 @@ angular.module("sqladmin", [])
                     self.clickCall = setTimeout(function () {
                         e = e || window.event; 　//IE window.event
                         var t = e.target || e.srcElement; //目标对象
-                        if (t && t.className == "sa-icon-arrow-right") {
+                        if (t && t.className == "sui-icon-arrow-right") {
                             var is_load  = t.attributes["is_load"] = true;
                             var is_spread = t.attributes["is_spread"] = true;
                             if (is_load) {
@@ -393,23 +409,23 @@ angular.module("sqladmin", [])
         buildNode: function (tree) {
             var self = this;
             var treeNode = document.createElement("li");
-            treeNode.classList.add("sa-tree-li");
+            treeNode.classList.add("sui-tree-li");
             var arrowNode = document.createElement("i");
-            arrowNode.classList.add("sa-icon-arrow-right");
+            arrowNode.classList.add("sui-icon-arrow-right");
             var childId = self.guid();
             arrowNode.attributes["children_Id"] = childId;
             arrowNode.attributes["is_load"] = false;
             arrowNode.attributes["is_spread"] = false;
             arrowNode.id = self.guid();
             var contextNode = document.createElement("span");
-            contextNode.classList.add("sa-tree-children");
+            contextNode.classList.add("sui-tree-children");
             var iconNode = document.createElement("i");
-            iconNode.classList.add("sa-icon-folder");
+            iconNode.classList.add("sui-icon-folder");
             var nameNode = document.createElement("span");
             nameNode.textContent = tree.Name;
             nameNode.attributes["tree-id"] = tree.Id;
             var childrenNode = document.createElement("ul");
-            childrenNode.classList.add("sa-tree-ul");
+            childrenNode.classList.add("sui-tree-ul");
             childrenNode.id = childId;
             treeNode.appendChild(arrowNode);
             treeNode.appendChild(contextNode);
@@ -426,7 +442,7 @@ angular.module("sqladmin", [])
                         var contextmenuId = self.guid();
                         nameNode.id = contextmenuId;
                         newContextmenu.id = "contextmenu-" + contextmenuId;
-                        newContextmenu.classList.add("sa-contextmenu");
+                        newContextmenu.classList.add("sui-contextmenu");
                         this.push(contextmenu);
                     }
                 }
@@ -436,7 +452,7 @@ angular.module("sqladmin", [])
             this.contextmenus = outContextmenus;
             if (tree.Children) {
                 if (tree.Children.length > 0) {
-                    treeNode.classList.add("sa-tree-li-children");
+                    treeNode.classList.add("sui-tree-li-children");
                     arrowNode.attributes["is_load"] = true;
                     arrowNode.attributes["is_spread"] = true;
                 }
@@ -448,7 +464,7 @@ angular.module("sqladmin", [])
         },
         contextmenus: [],
         contextmenuClick: function () {
-            var contextmenus = document.getElementsByClassName("sa-contextmenu");
+            var contextmenus = document.getElementsByClassName("sui-contextmenu");
             for (var i in contextmenus) {
                 if (contextmenus[i].style) {
                     contextmenus[i].style.visibility = "";
@@ -480,7 +496,7 @@ angular.module("sqladmin", [])
             }
         },
         clearMenus: function () {
-            var contextmenus = document.getElementsByClassName("sa-contextmenu");
+            var contextmenus = document.getElementsByClassName("sui-contextmenu");
             for (var i in contextmenus) {
                 if (contextmenus[i].style) {
                     contextmenus[i].style.visibility = "";
@@ -518,12 +534,12 @@ angular.module("sqladmin", [])
             vm.scope = $scope;
         },
         link: function ($scope, element) {
-            vm.contextmenus = element[0].getElementsByClassName("sa-contextmenu");
+            vm.contextmenus = element[0].getElementsByClassName("sui-contextmenu");
         }
     }
 })
 
-.directive("saContextmenu", function ()
+.directive("suiContextmenu", function ()
 {
     var vm = {
         template: "<div ng-click='vm.command(e)' ng-transclude></div>",
@@ -554,7 +570,7 @@ angular.module("sqladmin", [])
         link: function ($scope, element, attrs) {
             element.contextmenu = function (event) {
                 $scope.$apply(function () {
-                    var contextmenus = document.getElementsByClassName("sa-contextmenu");
+                    var contextmenus = document.getElementsByClassName("sui-contextmenu");
                     for (var i in contextmenus)
                     {
                         if (contextmenus[i].style) {
@@ -571,8 +587,8 @@ angular.module("sqladmin", [])
                 func();
                 e = e || window.event; 　//IE window.event
                 var t = e.target || e.srcElement; //目标对象
-                if (!(t && t.claaName && t.claaName == "sa-contextmenu-title")) {
-                    var contextmenus = document.getElementsByClassName("sa-contextmenu");
+                if (!(t && t.claaName && t.claaName == "sui-contextmenu-title")) {
+                    var contextmenus = document.getElementsByClassName("sui-contextmenu");
                     for (var i in contextmenus) {
                         if (contextmenus[i].style) {
                             contextmenus[i].style.visibility = "";
@@ -584,11 +600,11 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive('saQueryPanel', function ()
+.directive('suiQueryPanel', function ()
 {
     var vm = {
         template: "<div>\
-                    <sa-datagrid></sa-datagrid>\
+                    <sui-datagrid></sui-datagrid>\
                    </div>"
     }
 
@@ -606,26 +622,26 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive('saDatagrid', ["guid.service",function (guid)
+.directive('suiDatagrid', ["guid.service",function (guid)
 {
     var vm = {
-        template: '<div class="sa-datagrid-content">\
-    <table class="sa-datagrid">\
+        template: '<div class="sui-datagrid-content">\
+    <table class="sui-datagrid">\
         <thead>\
       <tr>\
         <th><input type="checkbox" name="" ng-change="vm.globalChecked()" ng-model="vm.isGlobalSelected" lay-skin="primary" lay-filter="allChoose"></th>\
         <th ng-repeat="field in vm.fields" ng-click="vm.sort(field.name)">\
             {{field.name}}\
-            <div class="sa-datagrid-content-header-icon" ng-if="field.isPrimary"><img src="/Static/Images/icon_key.png" /></div>\
-            <div class="sa-datagrid-content-sort-icon sa-icon-sort-asc" ng-if="field.isSort && field.isAsc"></div>\
-            <div class="sa-datagrid-content-sort-icon sa-icon-sort-desc" ng-if="field.isSort && !field.isAsc"></div>\
+            <div class="sui-datagrid-content-header-icon" ng-if="field.isPrimary"><img src="/Static/Images/icon_key.png" /></div>\
+            <div class="sui-datagrid-content-sort-icon sui-icon-sort-asc" ng-if="field.isSort && field.isuisc"></div>\
+            <div class="sui-datagrid-content-sort-icon sui-icon-sort-desc" ng-if="field.isSort && !field.isuisc"></div>\
         </th>\
       </tr> \
     </thead>\
 <tbody>\
       <tr ng-repeat="row in datas">\
         <td><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
-        <td ng-repeat="(key,val) in row.rows track by $index"><sa-field type="vm.fields[$index].type" value="row.rows[key].Value"></sa-field></td>\
+        <td ng-repeat="(key,val) in row.rows track by $index"><sui-field type="vm.fields[$index].type" value="row.rows[key].Value"></sui-field></td>\
       </tr>\
 </tbody>\
     </table>\
@@ -657,19 +673,19 @@ angular.module("sqladmin", [])
                         return map.name == name;
                     })[0];
                     if (sortMap) {
-                        sortMap.isAsc = !sortMap.isAsc;
+                        sortMap.isuisc = !sortMap.isuisc;
                     }
                     else {
                         sortMap = {
                             name: name,
-                            isAsc: true
+                            isuisc: true
                         }
                         $scope.vm.sortMap.push(sortMap);
                     }
-                    $scope.sort({ name: name, isAsc: sortMap.isAsc });
+                    $scope.sort({ name: name, isuisc: sortMap.isuisc });
                     $scope.vm.fields.forEach(function (field) {
                         if (field.name == name) {
-                            field.isAsc = sortMap.isAsc;
+                            field.isuisc = sortMap.isuisc;
                             field.isSort = true;
                         }
                         else {
@@ -717,10 +733,10 @@ angular.module("sqladmin", [])
     }
 }])
 
-.directive("saBlockquote", function ()
+.directive("suiBlockquote", function ()
 {
     var vm = {
-        template: '<blockquote class="sa-blockquote {{vm.type}}"  ng-transclude></blockquote>'
+        template: '<blockquote class="sui-blockquote {{vm.type}}"  ng-transclude></blockquote>'
     }
 
     return {
@@ -734,25 +750,25 @@ angular.module("sqladmin", [])
         },
         controller: function ($scope) {
             $scope.vm = {
-                type: "sa-blockquote-default",
+                type: "sui-blockquote-default",
             };
 
             $scope.$watch("type", function (type) {
                 if (type) {
-                    $scope.vm.type = "sa-blockquote-" + type;
+                    $scope.vm.type = "sui-blockquote-" + type;
                 }
             });
         }
     }
 })
 
-.directive("saTools", function ()
+.directive("suiTools", function ()
 {
     var vm = {
-        template: '<div><sa-blockquote type="vm.type">\
-                    <div clas="sa-tools-icon" ng-transclude>\
+        template: '<div><sui-blockquote type="vm.type">\
+                    <div clas="sui-tools-icon" ng-transclude>\
                     </div>\
-                   </sa-blockquote></div>'
+                   </sui-blockquote></div>'
     }
 
     return {
@@ -773,10 +789,10 @@ angular.module("sqladmin", [])
 })
 
 
-.directive("saIcon", ["messager.service",function (messager)
+.directive("suiIcon", ["messager.service",function (messager)
 {
     var vm = {
-        template: '<i class="{{icon_class}} sa-tool-icon" ng-click="vm.icon_click()"></i> '
+        template: '<i class="{{icon_class}} sui-tool-icon" ng-click="vm.icon_click()"></i> '
     }
 
     return {
@@ -790,7 +806,7 @@ angular.module("sqladmin", [])
         },
         controller: function ($scope)
         {
-            $scope.icon_class = "sa-icon-" + $scope.type;
+            $scope.icon_class = "sui-icon-" + $scope.type;
             $scope.vm = {
                 icon_click:function()
                 {
@@ -801,10 +817,10 @@ angular.module("sqladmin", [])
     }
 }])
 
-.directive("saPagination", function ()
+.directive("suiPagination", function ()
 {
     var vm = {
-        template: '<div class="sa-pagination">\
+        template: '<div class="sui-pagination">\
                     <ul>\
                         <li ng-repeat="page in vm.pages"><a href="{{page.url}}" data-page="2" class="{{page._class}}" ng-click="vm.jump(page.index)">{{page.text}}</a></li>\
                     </ul>\
@@ -828,7 +844,7 @@ angular.module("sqladmin", [])
                 var inPage = {
                     url: "javascripe:#",
                     text: i,
-                    _class: i == page.pageIndex ? "sa-pagination-active" : "",
+                    _class: i == page.pageIndex ? "sui-pagination-active" : "",
                     index: i
                 };
                 pages.push(inPage);
@@ -874,13 +890,13 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saAlert", function (messager)
+.directive("suiAlert", function (messager)
 {
     var vm = {
-        template: '<div class="sa-alert">\
-                    <div class="sa-alert-title">信息</div>\
-                    <div class="sa-alert-content">居中弹出</div>\
-                    <button class="sa-alert-ok">确定</button>\
+        template: '<div class="sui-alert">\
+                    <div class="sui-alert-title">信息</div>\
+                    <div class="sui-alert-content">居中弹出</div>\
+                    <button class="sui-alert-ok">确定</button>\
                   </div>'
     }
 
@@ -897,12 +913,12 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saSearch",function(){
+.directive("suiSearch",function(){
     var vm = {
-        template: '<div class="sa-search">\
-                        <sa-combo fields="vm.fields" class="sa-search-combo" select="vm.select(field)"></sa-combo>\
-                        <input type="text" class="sa-connect-input sa-search-input" ng-model="vm.searchKey.value" placeholder="{{vm.placeholder}}" />\
-                        <button class="sa-button sa-search-button" ng-click="vm.search()">搜索</bitton>\
+        template: '<div class="sui-search">\
+                        <sui-combo fields="vm.fields" class="sui-search-combo"></sui-combo>\
+                        <input type="text" class="sui-connect-input sui-search-input" placeholder="{{vm.placeholder}}" ng-model="vm.searchKey.value" placeholder="{{vm.placeholder}}" />\
+                        <button class="sui-button sui-search-button" ng-click="vm.search()">搜索</bitton>\
                    </div>'
     }
 
@@ -922,9 +938,6 @@ angular.module("sqladmin", [])
                 search: function () {
                     $scope.search({ searchKey: $scope.vm.searchKey });
                 },
-                select: function (field) {
-                    $scope.vm.searchKey.key = field.Name;
-                },
                 searchKey: { key:"",value:""}
             }
             $scope.$watch("placeholder", function (placeholder) {
@@ -938,24 +951,24 @@ angular.module("sqladmin", [])
                 $scope.searchKey.key = key;
             });
             $scope.$watch("vm.searchKey", function (value) {
-               // $scope.searchKey.value;
+                $scope.searchKey.value;
             })
         }
     }
 })
 
-.directive("saMultiselect", ["guid.service",function (guid) {
+.directive("suiMultiselect", ["guid.service",function (guid) {
     var  vm = {
-        template:"<div class='sa-multiselect'>\
-                    <input type='text' readonly class='sa-multiselect-text' ng-model='vm.text' ng-click='vm.startSelect()' />\
-                    <div ng-if='vm.isSelecting' class='sa-multiselect-field'>\
+        template:"<div class='sui-multiselect'>\
+                    <input type='text' readonly class='sui-multiselect-text' ng-model='vm.text' ng-click='vm.startSelect()' />\
+                    <div ng-if='vm.isSelecting' class='sui-multiselect-field'>\
                         <ul>\
                             <li ng-repeat='field in vm.fields'><input type='checkbox' ng-model='field.IsSelect'/><span>{{field.Name}}</span></li>\
                         </ul>\
-                        <div class='sa-multiselect-button'>\
-                            <sa-button size='vm.size' text='vm.ok_btn_text' click='vm.select()' class='sa-multiselect-button-ok'></sa-button>\
-                            <sa-button size='vm.size' text='vm.cancel_btn_text' click='vm.cancel()' class='sa-multiselect-button-cancel'></sa-button>\
-                            <div class='sa-clear'></div>\
+                        <div class='sui-multiselect-button'>\
+                            <sui-button size='vm.size' text='vm.ok_btn_text' click='vm.select()' class='sui-multiselect-button-ok'></sui-button>\
+                            <sui-button size='vm.size' text='vm.cancel_btn_text' click='vm.cancel()' class='sui-multiselect-button-cancel'></sui-button>\
+                            <div class='sui-clear'></div>\
                         </div>\
                     </div>\
                   </div>"
@@ -1001,32 +1014,32 @@ angular.module("sqladmin", [])
     }
 }])
 
-.directive("saCalendar", function () {
+.directive("suiCalendar", function () {
     var vm = {
-        template: "<div class='sa-calendar'>\
-                    <div><input class='sa-calendar-text' type='text' readonly ng-model='vm.time' /><div class='sa-calendar-icon' ng-click='vm.startSelect()' ><img src='/Static/Images/icon_calendar.png' /></div></div>\
-                    <div class='sa-calendar-select' ng-if='vm.isSelect'>\
-                        <div class='sa-calendar-select-title'><div class='sa-calendar-select-title-span'><div class='sa-icon-left sa-calendar-select-title-span-left' ng-click='vm.bottomMonth()'></div><div class='sa-calendar-select-title-text'>{{vm.year}}年 {{vm.month}}月</div><div class='sa-icon-right sa-calendar-select-title-span-right' ng-click='vm.topMonth()'></div></div></div>\
-                        <div class='sa-calendar-select-context'>\
-                            <div class='sa-calendar-select-fields'>\
+        template: "<div class='sui-calendar'>\
+                    <div><input class='sui-calendar-text' type='text' readonly ng-model='vm.time' /><div class='sui-calendar-icon' ng-click='vm.startSelect()' ><img src='/Static/Images/icon_calendar.png' /></div></div>\
+                    <div class='sui-calendar-select' ng-if='vm.isSelect'>\
+                        <div class='sui-calendar-select-title'><div class='sui-calendar-select-title-span'><div class='sui-icon-left sui-calendar-select-title-span-left' ng-click='vm.bottomMonth()'></div><div class='sui-calendar-select-title-text'>{{vm.year}}年 {{vm.month}}月</div><div class='sui-icon-right sui-calendar-select-title-span-right' ng-click='vm.topMonth()'></div></div></div>\
+                        <div class='sui-calendar-select-context'>\
+                            <div class='sui-calendar-select-fields'>\
                                 <ul><li>日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li></ul>\
                             </div>\
                                 <table>\
                                     <tbody>\
-                                        <tr ng-repeat='calendar in vm.calendars'><td ng-repeat='day in  calendar track  by $index' ng-class='{\"true\":\"sa-calendar-select-context-active\",\"false\":\"\" }[day == vm.day]' ng-click='vm.selectDay(day)'>{{day}}</td></tr>\
+                                        <tr ng-repeat='calendar in vm.calendars'><td ng-repeat='day in  calendar track  by $index' ng-class='{\"true\":\"sui-calendar-select-context-active\",\"false\":\"\" }[day == vm.day]' ng-click='vm.selectDay(day)'>{{day}}</td></tr>\
                                     </tbody>\
                                 </table>\
                         </div>\
-                        <div class='sa-calendar-select-footer'>\
+                        <div class='sui-calendar-select-footer'>\
                             <table>\
                                 <tr>\
-                                    <td class='sa-calendar-select-footer-time'><sa-number value='vm.hour'></sa-number></td>\
-                                    <td class='sa-calendar-select-footer-time'>:</td>\
-                                    <td class='sa-calendar-select-footer-time'><sa-number value='vm.minute'></sa-number></td>\
-                                    <td class='sa-calendar-select-footer-time'>:</td>\
-                                    <td class='sa-calendar-select-footer-time'><sa-number value='vm.second'></sa-number></td>\
-                                    <td><button class='sa-button sa-calendar-select-footer-button' ng-click='vm.updateDate()'>确定</button></td>\
-                                    <td><button class='sa-button sa-calendar-select-footer-button' ng-click='vm.cancel()'>取消</button></td>\
+                                    <td class='sui-calendar-select-footer-time'><sui-number value='vm.hour'></sui-number></td>\
+                                    <td class='sui-calendar-select-footer-time'>:</td>\
+                                    <td class='sui-calendar-select-footer-time'><sui-number value='vm.minute'></sui-number></td>\
+                                    <td class='sui-calendar-select-footer-time'>:</td>\
+                                    <td class='sui-calendar-select-footer-time'><sui-number value='vm.second'></sui-number></td>\
+                                    <td><button class='sui-button sui-calendar-select-footer-button' ng-click='vm.updateDate()'>确定</button></td>\
+                                    <td><button class='sui-button sui-calendar-select-footer-button' ng-click='vm.cancel()'>取消</button></td>\
                                 </tr>\
                             </table>\
                         </div>\
@@ -1154,16 +1167,16 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saNumber", function () {
+.directive("suiNumber", function () {
     var vm = {
-        template: "<div class='sa-number' ng-readonly='vm.readonly'>\
+        template: "<div class='sui-number' ng-readonly='vm.readonly'>\
                     <table><tbody>\
                         <tr>\
-                            <td rowspan='2'><input class='sa-input sa-number-input' readonly ng-model='value' type='text'></td>\
-                            <td><button class='sa-number-top sa-icon-top' ng-click='vm.top()'></button></td>\
+                            <td rowspan='2'><input class='sui-input sui-number-input' readonly ng-model='value' type='text'></td>\
+                            <td><button class='sui-number-top sui-icon-top' ng-click='vm.top()'></button></td>\
                         </tr>\
                         <tr>\
-                            <td><button class='sa-number-bottom sa-icon-bottom' ng-click='vm.bottom()'></button></td>\
+                            <td><button class='sui-number-bottom sui-icon-bottom' ng-click='vm.bottom()'></button></td>\
                         </tr>\
                     </tbody></table>\
                    </div>"
@@ -1209,13 +1222,13 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saSwitch", function () {
+.directive("suiSwitch", function () {
     var vm = {
-        template: "<div class='sa-switch' ng-click='vm.check()' ng-readonly='vm.readonly'>\
-                    <input type='checkbox' readonly value='vm.isCheck' class='sa-switch-input' />\
-                    <div ng-class='{\"true\":\"sa-switch-checkbox sa-switch-checkbox-true\",\"false\":\"sa-switch-checkbox sa-switch-checkbox-false\" }[vm.isCheck]'>\
-                        <div class='sa-switch-checkbox-dot'></div>\
-                        <div class='sa-switch-checkbox-text'>{{vm.displayText}}<div>\
+        template: "<div class='sui-switch' ng-click='vm.check()' ng-readonly='vm.readonly'>\
+                    <input type='checkbox' readonly value='vm.isCheck' class='sui-switch-input' />\
+                    <div ng-class='{\"true\":\"sui-switch-checkbox sui-switch-checkbox-true\",\"false\":\"sui-switch-checkbox sui-switch-checkbox-false\" }[vm.isCheck]'>\
+                        <div class='sui-switch-checkbox-dot'></div>\
+                        <div class='sui-switch-checkbox-text'>{{vm.displayText}}<div>\
                     </div>\
                   </div>"
     }
@@ -1256,9 +1269,9 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saText", function () {
+.directive("suiText", function () {
     var vm = {
-        template:"<div class='sa-text'><input type='text' class='sa-input sa-text-input' ng-model='text' ng-readonly='vm.readonly' /></div>"
+        template:"<div class='sui-text'><input type='text' class='sui-input sui-text-input' ng-model='text' ng-readonly='vm.readonly' /></div>"
     }
 
     return {
@@ -1286,15 +1299,15 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saGuid", function () {
+.directive("suiGuid", function () {
     var vm = {
-        template: "<div class='sa-guid' ng-readonly='vm.readonly'>\
-                    <div class='sa-guid-text sa-guid-text-long'><sa-text readonly='vm.readonly' class='sa-guid-text-context' text='vm.guid_one'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
-                    <div class='sa-guid-text'><sa-text class='sa-guid-text-context' readonly='vm.readonly' text='vm.guid_two'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
-                    <div class='sa-guid-text'><sa-text class='sa-guid-text-context' readonly='vm.readonly' text='vm.guid_three'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
-                    <div class='sa-guid-text'><sa-text class='sa-guid-text-context' readonly='vm.readonly' text='vm.guid_four'></sa-text><span class='sa-guid-text-symbol'>-</span></div>\
-                    <div class='sa-guid-text sa-guid-text-maxlong'><sa-text readonly='vm.readonly' class='sa-guid-text-context' text='vm.guid_five'></sa-text></div>\
-                    <div class='sa-guid-text'><button class='sa-guid-copy' ng-click='vm.copy()'></button><sa-tooltip ng-if='vm.showTooltip' text='vm.copyMessage'></sa-tooltip></div>\
+        template: "<div class='sui-guid' ng-readonly='vm.readonly'>\
+                    <div class='sui-guid-text sui-guid-text-long'><sui-text readonly='vm.readonly' class='sui-guid-text-context' text='vm.guid_one'></sui-text><span class='sui-guid-text-symbol'>-</span></div>\
+                    <div class='sui-guid-text'><sui-text class='sui-guid-text-context' readonly='vm.readonly' text='vm.guid_two'></sui-text><span class='sui-guid-text-symbol'>-</span></div>\
+                    <div class='sui-guid-text'><sui-text class='sui-guid-text-context' readonly='vm.readonly' text='vm.guid_three'></sui-text><span class='sui-guid-text-symbol'>-</span></div>\
+                    <div class='sui-guid-text'><sui-text class='sui-guid-text-context' readonly='vm.readonly' text='vm.guid_four'></sui-text><span class='sui-guid-text-symbol'>-</span></div>\
+                    <div class='sui-guid-text sui-guid-text-maxlong'><sui-text readonly='vm.readonly' class='sui-guid-text-context' text='vm.guid_five'></sui-text></div>\
+                    <div class='sui-guid-text'><button class='sui-guid-copy' ng-click='vm.copy()'></button><sui-tooltip ng-if='vm.showTooltip' text='vm.copyMessuige'></sui-tooltip></div>\
                   </div>"
     }
 
@@ -1315,7 +1328,7 @@ angular.module("sqladmin", [])
                 guid_four: "",
                 guid_five: "",
                 showTooltip: false,
-                copyMessage: "Copy成功",
+                copyMessuige: "Copy成功",
                 copy: function () {
                     this.showTooltip = true;
                 },
@@ -1356,14 +1369,14 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saField", function () {
+.directive("suiField", function () {
     var vm = {
         template:"<div ng-switch='vm.type'>\
-                    <sa-text ng-if='type == 0' text='vm.value' readonly='vm.readonly'></sa-text>\
-                    <sa-guid ng-if='type == 2' value='vm.value' readonly='vm.readonlyvm.readonly'></sa-guid>\
-                    <sa-switch ng-if='type == 8' value='vm.value' readonly='vm.readonly'></sa-switch>\
-                    <sa-number ng-if='type == 5' value='vm.value' readonly='vm.readonly'></sa-number>\
-                    <sa-Calendar ng-if='type == 4' text='vm.value' readonly='vm.readonly'></sa-Calendar>\
+                    <sui-text ng-if='type == 0' text='vm.value' readonly='vm.readonly'></sui-text>\
+                    <sui-guid ng-if='type == 2' value='vm.value' readonly='vm.readonlyvm.readonly'></sui-guid>\
+                    <sui-switch ng-if='type == 8' value='vm.value' readonly='vm.readonly'></sui-switch>\
+                    <sui-number ng-if='type == 5' value='vm.value' readonly='vm.readonly'></sui-number>\
+                    <sui-Calendar ng-if='type == 4' text='vm.value' readonly='vm.readonly'></sui-Calendar>\
                   </div>"
     }
 
@@ -1401,12 +1414,12 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saTooltip", function () {
+.directive("suiTooltip", function () {
     var vm = {
-        template:"<div class='sa-tooltip'>\
-                    <div class='sa-tooltip-context'>\
-                        <div class='sa-tooltip-arrow sa-tooltip-arrow-border'></div>\
-                        <div class='sa-tooltip-arrow sa-tooltip-arrow-bacground'></div>\
+        template:"<div class='sui-tooltip'>\
+                    <div class='sui-tooltip-context'>\
+                        <div class='sui-tooltip-arrow sui-tooltip-arrow-border'></div>\
+                        <div class='sui-tooltip-arrow sui-tooltip-arrow-bacground'></div>\
                         {{text}}</div>\
                   </div>"
     }
@@ -1425,9 +1438,9 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saFooter", function () {
+.directive("suiFooter", function () {
     var vm = {
-        template: "<div class='sa-footer' ng-transclude></div>"
+        template: "<div class='sui-footer' ng-transclude></div>"
     }
 
     return {
@@ -1445,16 +1458,16 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saAbout", function () { 
+.directive("suiAbout", function () { 
     var vm = {
-        template: "<div class='sa-about'>\
-                    <div class='sa-about-header'>\
-                        <div class='sa-about-header-icon'>\
+        template: "<div class='sui-about'>\
+                    <div class='sui-about-header'>\
+                        <div class='sui-about-header-icon'>\
                             <img src='{{icon}}' />\
                         </div>\
-                        <div class='sa-about-header-name'>{{name}}</div>\
+                        <div class='sui-about-header-name'>{{name}}</div>\
                     </div>\
-                    <div class='sa-about-footer' ng-transclude></div>\
+                    <div class='sui-about-footer' ng-transclude></div>\
                    <div>"
     }
 
@@ -1478,11 +1491,11 @@ angular.module("sqladmin", [])
 })
 
 
-.directive("saCombo", function(){
+.directive("suiCombo", function(){
     var  vm = {
-        template:"<div class='sa-combo'>\
-                    <input type='text' readonly class='sa-combo-text' ng-model='vm.text' ng-click='vm.startSelect()' />\
-                    <div ng-if='vm.isSelecting' class='sa-combo-field'>\
+        template:"<div class='sui-combo'>\
+                    <input type='text' readonly class='sui-combo-text' ng-model='vm.text' ng-click='vm.startSelect()' />\
+                    <div ng-if='vm.isSelecting' class='sui-combo-field'>\
                         <ul>\
                             <li ng-repeat='field in vm.fields' ng-click='vm.select(field)'><span>{{field.Name}}</span></li>\
                         </ul>\
@@ -1508,6 +1521,7 @@ angular.module("sqladmin", [])
                 select: function (field) {
                     $scope.vm.text = field.Name;
                     $scope.select({ field: field });
+                    $scope.vm.startSelect();
                 }
             }
             $scope.$watch("fields", function (fields) {
@@ -1518,11 +1532,11 @@ angular.module("sqladmin", [])
     }  
 })
 
-.directive("saCheck", function(){
+.directive("suiCheck", function(){
     var  vm = {
-        template:"<div class='sa-check'>\
+        template:"<div class='sui-check'>\
                     <ul>\
-                        <li ng-repeat='field in vm.fields'  ng-click='vm.select(field)'><div ng-class='{\"true\": \"sa-check-select sa-check-select-active\",\"false\":\"sa-check-select\"}[field.isSelect]'><div class='sa-check-select-span'>√</div></div><span>{{field.name}}</span></li>\
+                        <li ng-repeat='field in vm.fields'  ng-click='vm.select(field)'><div ng-class='{\"true\": \"sui-check-select sui-check-select-active\",\"false\":\"sui-check-select\"}[field.isSelect]'><div class='sui-check-select-span'>√</div></div><span>{{field.name}}</span></li>\
                     </ul>\
                   </div>"
     }
@@ -1552,11 +1566,11 @@ angular.module("sqladmin", [])
     }  
 })
 
-.directive("saRadio",function(){
+.directive("suiRadio",function(){
     var vm = {
-        template:"<div class='sa-radio'>\
+        template:"<div class='sui-radio'>\
                     <ul>\
-                        <li ng-repeat='field in vm.fields'  ng-click='vm.select(field)'><div ng-class='{\"true\": \"sa-radio-select sa-radio-select-active\",\"false\":\"sa-radio-select\"}[field.isSelect]'><div ng-class='{\"true\": \"sa-radio-select-span sa-radio-select-span-active\",\"false\":\"sa-radio-select-span\"}[field.isSelect]'></div></div><span>{{field.name}}</span></li>\
+                        <li ng-repeat='field in vm.fields'  ng-click='vm.select(field)'><div ng-class='{\"true\": \"sui-radio-select sui-radio-select-active\",\"false\":\"sui-radio-select\"}[field.isSelect]'><div ng-class='{\"true\": \"sui-radio-select-span sui-radio-select-span-active\",\"false\":\"sui-radio-select-span\"}[field.isSelect]'></div></div><span>{{field.name}}</span></li>\
                     </ul>\
                   </div>"
     }
@@ -1589,10 +1603,10 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saProgress",function(){
+.directive("suiProgress",function(){
     var vm = {
-        template:"<div class='sa-progress'>\
-                    <div class='sa-progress-value' style='width:{{vm.value}}%'></div>\
+        template:"<div class='sui-progress'>\
+                    <div class='sui-progress-value' style='width:{{vm.value}}%'></div>\
                   </div>"
     }
     return {
@@ -1622,17 +1636,17 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saCode",["guid.service",function(guid){
+.directive("suiCode",["guid.service",function(guid){
     var vm = {
-        template:"<div class='sa-code' id='{{vm.boxId}}'>\
-                    <div class='sa-code-header'></div>\
-                    <div class='sa-code-body'>\
-                        <div id='{{vm.indexId}}' class='sa-code-body-index'>\
+        template:"<div class='sui-code' id='{{vm.boxId}}'>\
+                    <div class='sui-code-header'></div>\
+                    <div class='sui-code-body'>\
+                        <div id='{{vm.indexId}}' class='sui-code-body-index'>\
                             <ul>\
                                 <li ng-repeat='i in [] | range:vm.index'>{{i}}.</li>\
                             </ul>\
                         </div>\
-                        <div id='{{vm.codeId}}' class='sa-code-body-context' ng-transclude></div>\
+                        <div id='{{vm.codeId}}' class='sui-code-body-context' ng-transclude></div>\
                     </div>\
                   </div>"
     }
@@ -1671,9 +1685,9 @@ angular.module("sqladmin", [])
     }
 }])
 
-.directive("saMessagebar",function(){
+.directive("suiMessuigebar",function(){
     var vm = {
-        template: "<div class='sa-messagebar'><span>{{vm.message}}</span><i>×</i></div>"
+        template: "<div class='sui-messuigebar'><span>{{vm.messuige}}</span><i>×</i></div>"
     }
     return {
         restrict: "E",
@@ -1681,22 +1695,22 @@ angular.module("sqladmin", [])
         replace: true,
         priority: 1,
         scope: {
-            message: "="
+            messuige: "="
         },
         controller: function ($scope) {
             $scope.vm = {
-                message: "",
+                messuige: "",
             }
-            $scope.$watch("message", function (message) {
-                $scope.vm.message = message;
+            $scope.$watch("messuige", function (messuige) {
+                $scope.vm.messuige = messuige;
             })
         }
     }
 })
 
-.directive("saButton", function () {
+.directive("suiButton", function () {
     var vm = {
-        template: "<button class='sa-button {{vm.type}} {{vm.size}}' ng-click='vm.btn_click()'>{{vm.text}}</button>"
+        template: "<button class='sui-button {{vm.type}} {{vm.size}}' ng-click='vm.btn_click()'>{{vm.text}}</button>"
     }
 
     return {
@@ -1707,7 +1721,7 @@ angular.module("sqladmin", [])
         scope: {
             text: "=",
             type: "=",
-            disabled: "=",
+            disuibled: "=",
             size: "=",
             href: "=",
             click:"&"
@@ -1729,28 +1743,28 @@ angular.module("sqladmin", [])
                 $scope.vm.text = text;
             });
             $scope.$watch("type", function (type) {
-                $scope.vm.type = "sa-button-" + type;
+                $scope.vm.type = "sui-button-" + type;
             });
-            $scope.$watch("disabled", function (disabled) {
+            $scope.$watch("disuibled", function (disuibled) {
                 setTimeout(function () {
                     $scope.$apply(function () {
-                        $scope.vm.type = disabled ? "sa-button-disabled" : "sa-button-" + $scope.type || "sa-button-default";
+                        $scope.vm.type = disuibled ? "sui-button-disuibled" : "sui-button-" + $scope.type || "sui-button-default";
                     });
                 }, 100);
             });
             $scope.$watch("size", function (size) {
-                $scope.vm.size = "sa-button-" + size;
+                $scope.vm.size = "sui-button-" + size;
             });
         }
     }
 })
 
-.directive("saNav", function () {
+.directive("suiNav", function () {
     var vm = {
-        template: "<div class='sa-nav'>\
-                    <img class='sa-nav-icon' src='{{vm.icon}}' />\
-                    <ul class='sa-nav-list'>\
-                        <li class='sa-nav-item' ng-repeat='nav in vm.navs'><a href='{{nav.url}}' target='_blank'>{{nav.title}}</a></li>\
+        template: "<div class='sui-nav'>\
+                    <img class='sui-nav-icon' src='{{vm.icon}}' />\
+                    <ul class='sui-nav-list'>\
+                        <li class='sui-nav-item' ng-repeat='nav in vm.navs'><a href='{{nav.url}}' target='_blank'>{{nav.title}}</a></li>\
                     </ul>\
                    </div>"
     }
@@ -1778,10 +1792,10 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saCrumbs", function () {
+.directive("suiCrumbs", function () {
     var vm = {
-        template: "<div class='sa-crumbs'>\
-                    <ul class='sa-crumbs-list'><li class='sa-crumbs-item' ng-repeat='item in vm.items'><a class='sa-crumbs-text' href='{{item.url}}'>{{item.title}}</a></li></ul>\
+        template: "<div class='sui-crumbs'>\
+                    <ul class='sui-crumbs-list'><li class='sui-crumbs-item' ng-repeat='item in vm.items'><a class='sui-crumbs-text' href='{{item.url}}'>{{item.title}}</a></li></ul>\
                    </div>"
     }
     return {
@@ -1803,13 +1817,13 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saSidebar",function(){
+.directive("suiSidebar",function(){
     var vm = {
-        template: "<div class='sa-sidebar'>\
-                    <ul class='sa-sidebar-list'>\
+        template: "<div class='sui-sidebar'>\
+                    <ul class='sui-sidebar-list'>\
                         <li ng-repeat='item in vm.items'>\
-                            <a class='sa-sidebar-text' href='{{item.url}}' ng-if='item.subs == undefined'>{{item.title}}</a>\
-                            <div class='sa-sidebar-subtitle' ng-if='item.subs != undefined' >{{item.title}}</div><ul ng-if='item.subs != undefined' class='sa-sidebar-list-sub'><li class='sa-sidebar-item' ng-repeat='sub in item.subs'><a class='sa-sidebar-text' href='{{sub.url}}' target='{{sub.target}}'>{{sub.title}}</a></li></ul>\
+                            <a class='sui-sidebar-text' href='{{item.url}}' ng-if='item.subs == undefined'>{{item.title}}</a>\
+                            <div class='sui-sidebar-subtitle' ng-if='item.subs != undefined' >{{item.title}}</div><ul ng-if='item.subs != undefined' class='sui-sidebar-list-sub'><li ng-class='{\"true\":\"sui-sidebar-item sui-sidebar-item-active\",\"false\":\"sui-sidebar-item\"}[sub.isActive]'  ng-repeat='sub in item.subs'><a class='sui-sidebar-text' href='{{sub.url}}' target='{{sub.target}}' ng-click='vm.navClick(sub)'>{{sub.title}}</a></li></ul>\
                         </li></ul>\
                    </div>"
     }
@@ -1825,7 +1839,16 @@ angular.module("sqladmin", [])
         },
         controller:function($scope){
             $scope.vm = {
-                items: []
+                items: [],
+                navClick:function(item){
+                    $scope.vm.items.forEach(function(nav){
+                        nav.isActive = false;
+                        nav.subs.forEach(function(sub){
+                            sub.isActive = false;
+                        })
+                    })
+                    item.isActive = true;
+                }
             };
             $scope.$watch("items", function (items) {
                 $scope.vm.items = items;
@@ -1834,7 +1857,7 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saPage",function(){
+.directive("suiPage",function(){
     var vm = {
         template:"<iframe src='{{vm.url}}' name='{{vm.name}}'></iframe>"
     }
@@ -1862,9 +1885,9 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saLine",function(){
+.directive("suiLine",function(){
     var vm = {
-        template: "<div class='sa-line'><fieldset class='sa-line-context'><legend class='sa-line-context-text'>{{vm.title}}</legend></fieldset></div>"
+        template: "<div class='sui-line'><fieldset class='sui-line-context'><legend class='sui-line-context-text'>{{vm.title}}</legend></fieldset></div>"
     }
     return {
         restrict: "E",
@@ -1885,7 +1908,7 @@ angular.module("sqladmin", [])
     }
 })
 
-.directive("saLines", ["guid.service",function (guid) {
+.directive("suiLines", ["guid.service",function (guid) {
     var vm = {
         id:guid.newGuid(),
         template: '<div id="{{vm.id}}" style="width:1300px;height:500px"></div>',
@@ -1909,7 +1932,7 @@ angular.module("sqladmin", [])
                     minorTicks: null,
                     showLabels: true,                             // 是否显示X轴刻度
                     showMinorLabels: false,
-                    labelsAngle: 15,                              //x轴文字倾斜角度
+                    labelsuingle: 15,                              //x轴文字倾斜角度
                     title: '时间',                                 //x轴标题
                     titleAngle: 0,                                //x轴标题倾斜角度
                     noTicks: 12,                                   //当使用自动增长时,x轴刻度的个数
@@ -1938,7 +1961,7 @@ angular.module("sqladmin", [])
                     minorTicks: null,      // =>  format: either [1, 3] or [[1, 'a'], 3]
                     showLabels: true,      // =>  setting to true will show the axis ticks labels, hide otherwise
                     showMinorLabels: false,// =>  true to show the axis minor ticks labels, false to hide
-                    labelsAngle: 0,        // =>  labels' angle, in degrees
+                    labelsuingle: 0,        // =>  labels' angle, in degrees
                     title: '使用率',           // =>  axis title
                     titleAngle: 90,        // =>  axis title's angle, in degrees
                     noTicks: null,            // =>  number of ticks for automagically generated ticks
@@ -2014,7 +2037,7 @@ angular.module("sqladmin", [])
     }
 }])
 
-.directive("saBars", ["guid.service", function (guid) {
+.directive("suiBars", ["guid.service", function (guid) {
     var vm = {
         id: guid.newGuid(),
         template: '<div id="{{vm.id}}" style="width:1300px;height:500px"></div>',
@@ -2037,7 +2060,7 @@ angular.module("sqladmin", [])
                     minorTicks: null,
                     showLabels: true,                             // 是否显示X轴刻度
                     showMinorLabels: false,
-                    labelsAngle: 15,                              //x轴文字倾斜角度
+                    labelsuingle: 15,                              //x轴文字倾斜角度
                     title: '时间',                                 //x轴标题
                     titleAngle: 0,                                //x轴标题倾斜角度
                     noTicks: 12,                                   //当使用自动增长时,x轴刻度的个数
@@ -2089,7 +2112,7 @@ angular.module("sqladmin", [])
     }
 }])
 
-.directive("saPie", ["guid.service", function (guid) {
+.directive("suiPie", ["guid.service", function (guid) {
     var vm = {
         id: guid.newGuid(),
         template: '<div id="{{vm.id}}"  style="width:400px;height:400px"></div>',

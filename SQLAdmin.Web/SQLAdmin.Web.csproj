@@ -147,14 +147,15 @@
     <Content Include="Static\Images\icon_top.png" />
     <Content Include="Static\ShinyUI\css\messager.css" />
     <Content Include="Static\ShinyUI\css\prism.css" />
-    <Content Include="Static\ShinyUI\css\sa.icon.css" />
-    <Content Include="Static\ShinyUI\css\sa.report.style.css" />
-    <Content Include="Static\ShinyUI\css\sa.style.css" />
+    <Content Include="Static\ShinyUI\css\sui.default.css" />
+    <Content Include="Static\ShinyUI\css\sui.icon.css" />
+    <Content Include="Static\ShinyUI\css\sui.report.style.css" />
     <Content Include="Static\ShinyUI\Images\icon_add.png" />
     <Content Include="Static\ShinyUI\Images\icon_arrow-right.png" />
     <Content Include="Static\ShinyUI\Images\icon_arrow_buttom.png" />
     <Content Include="Static\ShinyUI\Images\icon_bottom.png" />
     <Content Include="Static\ShinyUI\Images\icon_calendar.png" />
+    <Content Include="Static\ShinyUI\Images\icon_copy.png" />
     <Content Include="Static\ShinyUI\Images\icon_edit.png" />
     <Content Include="Static\ShinyUI\Images\icon_error.png" />
     <Content Include="Static\ShinyUI\Images\icon_folder.png" />
@@ -194,9 +195,9 @@
     <Content Include="Static\ShinyUI\script\common\messager.service.js" />
     <Content Include="Static\ShinyUI\script\common\session.service.js" />
     <Content Include="Static\ShinyUI\script\common\wrapper.service.js" />
-    <Content Include="Static\ShinyUI\script\directive\sa.directive.js" />
-    <Content Include="Static\ShinyUI\script\directive\sa.filter.js" />
-    <Content Include="Static\ShinyUI\script\directive\sa.report.directive.js" />
+    <Content Include="Static\ShinyUI\script\directive\sui.directive.js" />
+    <Content Include="Static\ShinyUI\script\directive\sui.filter.js" />
+    <Content Include="Static\ShinyUI\script\directive\sui.report.directive.js" />
     <Content Include="Static\ShinyUI\script\lib\angular.min.js" />
     <Content Include="Static\ShinyUI\script\lib\base64.min.js" />
     <Content Include="Static\ShinyUI\script\lib\flotr2.min.js" />
@@ -257,6 +258,7 @@
     <Content Include="SQLServerConfig\SQLServer_TypeMapping.config" />
     <Content Include="Views\Common\About.cshtml" />
     <Content Include="Static\css\layout.css" />
+    <None Include="Properties\PublishProfiles\SA.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -7,6 +7,18 @@
     height:100%;
     margin-top:2px;
     margin-bottom:5px;
+    width:16%;
+    float:left;
+}
+
+.sa-layout-body-manage{
+    height:107%;
+    width:82%;
+    float:right;
+    margin:0px;
+    margin-left:25px;
+    margin-top:10px;
+    overflow:hidden;
 }
 
 .sa-sqlfield {

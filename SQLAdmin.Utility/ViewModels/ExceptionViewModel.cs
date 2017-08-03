@@ -10,6 +10,6 @@ namespace SQLAdmin.Utility
     {
         public string EventTime { get; set; }
 
-        public string Message { get; set; }
+        public string Messuige { get; set; }
     }
 }

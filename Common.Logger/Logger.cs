@@ -44,12 +44,12 @@ namespace Common.Logger
         {
             if (IsWriteError)
             {
-                string message = format;
+                string messuige = format;
                 if (args.Count() > 0)
                 {
-                    message = string.Format(format, args);
+                    messuige = string.Format(format, args);
                 }
-                loggerImp.WriteEntry(message, LogLevel.ERROR, 0, 0, string.Empty);
+                loggerImp.WriteEntry(messuige, LogLevel.ERROR, 0, 0, string.Empty);
             }
         }
 
@@ -57,12 +57,12 @@ namespace Common.Logger
         {
             if (IsWriteInfo)
             {
-                string message = format;
+                string messuige = format;
                 if (args.Count() > 0)
                 {
-                    message = string.Format(format, args);
+                    messuige = string.Format(format, args);
                 }
-                loggerImp.WriteEntry(message, LogLevel.INFO, 0, 0, string.Empty);
+                loggerImp.WriteEntry(messuige, LogLevel.INFO, 0, 0, string.Empty);
             }
         }
 
@@ -70,12 +70,12 @@ namespace Common.Logger
         {
             if (IsWriteWarn)
             {
-                string message = format;
+                string messuige = format;
                 if (args.Count() > 0)
                 {
-                    message = string.Format(format, args);
+                    messuige = string.Format(format, args);
                 }
-                loggerImp.WriteEntry(message, LogLevel.WARN, 0, 0, string.Empty);
+                loggerImp.WriteEntry(messuige, LogLevel.WARN, 0, 0, string.Empty);
             }
         }
 
@@ -83,12 +83,12 @@ namespace Common.Logger
         {
             if (IsWriteDebug)
             {
-                string message = format;
+                string messuige = format;
                 if (args.Count() > 0)
                 {
-                    message = string.Format(format, args);
+                    messuige = string.Format(format, args);
                 }
-                loggerImp.WriteEntry(message, LogLevel.DEBUG, 0, 0, string.Empty);
+                loggerImp.WriteEntry(messuige, LogLevel.DEBUG, 0, 0, string.Empty);
             }
         }
     }

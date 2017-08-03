@@ -29,7 +29,7 @@
                 }
                 if (config.data.IsSuccess != undefined && !config.data.IsSuccess)
                 {
-                    messager.error(config.data.Message);
+                    messager.error(config.data.Messuige);
                 }
                 else
                 {

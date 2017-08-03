@@ -19,8 +19,8 @@ namespace Common.Interceptor
 
         public override IMessage Invoke(IMessage msg)
         {
-            IMethodCallMessage methodMessage = msg as IMethodCallMessage;
-            List<InterceptorAttribute> interceptors = methodMessage.MethodBase.GetCustomAttributes(true).OfType<InterceptorAttribute>().ToList();
+            IMethodCallMessage methodMessuige = msg as IMethodCallMessage;
+            List<InterceptorAttribute> interceptors = methodMessuige.MethodBase.GetCustomAttributes(true).OfType<InterceptorAttribute>().ToList();
             try
             {
                 bool isPreExec = true;
@@ -31,7 +31,7 @@ namespace Common.Interceptor
                     {
                         if (isPreExec)
                         {
-                            isPreExec = interceptor.PreHandler(this.mProxyInstance, methodMessage.MethodBase);
+                            isPreExec = interceptor.PreHandler(this.mProxyInstance, methodMessuige.MethodBase);
                         }
                         if (!isPreExec)
                         {
@@ -41,22 +41,22 @@ namespace Common.Interceptor
                 }
                 if (isPreExec)
                 {
-                    returnValue = methodMessage.MethodBase.Invoke(this.mProxyInstance, methodMessage.Args);
+                    returnValue = methodMessuige.MethodBase.Invoke(this.mProxyInstance, methodMessuige.Args);
                 }
                 if (isPreExec)
                 {
                     foreach (InterceptorAttribute interceptor in interceptors)
                     {
-                        interceptor.PostHanler(this.mProxyInstance, methodMessage.MethodBase);
+                        interceptor.PostHanler(this.mProxyInstance, methodMessuige.MethodBase);
                     }
                 }
-                return new ReturnMessage(returnValue, new object[0], 0, null, methodMessage);
+                return new ReturnMessage(returnValue, new object[0], 0, null, methodMessuige);
             }
             catch(Exception e)
             {
                 foreach(var interceptor in interceptors)
                 {
-                    interceptor.ErrorHandler(this.mProxyInstance, methodMessage.MethodBase, e);
+                    interceptor.ErrorHandler(this.mProxyInstance, methodMessuige.MethodBase, e);
                 }
                 throw;
             }

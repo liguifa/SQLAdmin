@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="SQLAdmin.Web.MvcApplication" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asuix.cs" Inherits="SQLAdmin.Web.MvcApplication" Language="C#" %>

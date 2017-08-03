@@ -1,55 +1,55 @@
-﻿<link href="~/Static/css/sa.monior.style.css" rel="stylesheet" />
+﻿<link href="~/Static/css/sui.monior.style.css" rel="stylesheet" />
 <div ng-controller="monitor.controller">
     <div>
-        <sa-tools>
-            <sa-icon type="add"  click="vm.add()"></sa-icon>
-        </sa-tools>
-        <sa-datagrid datas="vm.schedules" fields="vm.fields"></sa-datagrid>
+        <sui-tools>
+            <sui-icon type="add"  click="vm.add()"></sui-icon>
+        </sui-tools>
+        <sui-datagrid datas="vm.schedules" fields="vm.fields"></sui-datagrid>
     </div>
-            <div class='sa-window sa-connect sa-monitor sa-add-monitor' ng-if="vm.isAdd">
-                <div class='sa-border'>
-                    <div class="sa-content">
-                        <div class='sa-form sa-monitor-form'>
+            <div class='sui-window sui-connect sui-monitor sui-add-monitor' ng-if="vm.isAdd">
+                <div class='sui-border'>
+                    <div class="sui-content">
+                        <div class='sui-form sui-monitor-form'>
                             <div>
                                 <label>监视名称:</label>
-                                <input type='text' class='sa-connect-input' ng-model="vm.monitor.name" />
+                                <input type='text' class='sui-connect-input' ng-model="vm.monitor.name" />
                             </div>
                             <div>
                                 <label>监视类别:</label>
-                                <select class='sa-connect-input' ng-model="vm.monitor.type" >
+                                <select class='sui-connect-input' ng-model="vm.monitor.type" >
                                     <option ng-repeat='type in vm.monitorTypes' value='{{type.Index}}'>{{type.DisplayName}}</option>
                                 </select>
                             </div>
                             <div>
                                 <label>区间类别:</label>
-                                <select class='sa-connect-input' ng-model="vm.monitor.interval_type" >
+                                <select class='sui-connect-input' ng-model="vm.monitor.interval_type" >
                                     <option ng-repeat='type in vm.intervalTypes' value='{{type.Index}}'>{{type.DisplayName}}</option>
                                 </select>
                             </div>
                             <div>
                                 <label>区间间隔:</label>
-                                <input type='text' class='sa-connect-input' ng-model='vm.monitor.interval' />
+                                <input type='text' class='sui-connect-input' ng-model='vm.monitor.interval' />
                             </div>
                             <div>
                                 <label>开始时间:</label>
-                                <input type='text' class='sa-connect-input' ng-model='vm.monitor.start_time' />
+                                <input type='text' class='sui-connect-input' ng-model='vm.monitor.start_time' />
                             </div>
                             <div>
                                 <label>结束时间:</label>
-                                <input type='text' class='sa-connect-input' ng-model='vm.monitor.end_time' />
+                                <input type='text' class='sui-connect-input' ng-model='vm.monitor.end_time' />
                             </div>
                             <div>
                                 <label>阀&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;值:</label>
-                                <input type='text' class='sa-connect-input' ng-model='vm.monitor.threshold' />
+                                <input type='text' class='sui-connect-input' ng-model='vm.monitor.threshold' />
                             </div>
                             <div>
                                 <label>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:</label>
-                                <input type='text' class='sa-connect-input' ng-model='vm.monitor.mail' />
+                                <input type='text' class='sui-connect-input' ng-model='vm.monitor.mail' />
                             </div>
                         </div>
-                        <div class='sa-connect-footer'>
-                            <button class='sa-button' ng-click='vm.addMonitor()'>确定</button>
-                            <button class='sa-button' ng-click='vm.cancel()'>取消</button>
+                        <div class='sui-connect-footer'>
+                            <button class='sui-button' ng-click='vm.addMonitor()'>确定</button>
+                            <button class='sui-button' ng-click='vm.cancel()'>取消</button>
                         </div>
                     </div>
                 </div>

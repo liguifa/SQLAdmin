@@ -1,12 +1,12 @@
-﻿<div class="sa-query" ng-controller="query.controller" ng-init="vm.tableName='@ViewBag.Name'">
-    <sa-tools>
-        <sa-icon type="remove" click="vm.remove()"></sa-icon>
-        <sa-icon type="add" click="vm.add()"></sa-icon>
-        <sa-icon type="edit" click="vm.edit()"></sa-icon>
-        <sa-icon type="save" click="vm.save()" ng-if="vm.isNeedSave"></sa-icon>
-        <sa-multiselect fields="vm.fields" select="vm.select(fields)" class="sa-sqlfield"></sa-multiselect>
-        <sa-search placeholder="'Search'" fields="vm.fields" search="vm.search(searchKey)"></sa-search>
-    </sa-tools>
-    <sa-datagrid datas="vm.datas" fields="vm.showFields" indexs="vm.indexs" sort="vm.sort(name,isAsc)"></sa-datagrid>
-    <sa-pagination page="vm.page" pageNumber="10" click="vm.jump(pageIndex)"></sa-pagination>
+﻿<div class="sui-query" ng-controller="query.controller" ng-init="vm.tableName='@ViewBag.Name'">
+    <sui-tools>
+        <sui-icon type="remove" click="vm.remove()"></sui-icon>
+        <sui-icon type="add" click="vm.add()"></sui-icon>
+        <sui-icon type="edit" click="vm.edit()"></sui-icon>
+        <sui-icon type="suive" click="vm.suive()" ng-if="vm.isNeedSave"></sui-icon>
+        <sui-multiselect fields="vm.fields" select="vm.select(fields)" class="sui-sqlfield"></sui-multiselect>
+        <sui-search placeholder="'Search'" fields="vm.fields" search="vm.search(searchKey)"></sui-search>
+    </sui-tools>
+    <sui-datagrid datas="vm.datas" fields="vm.showFields" indexs="vm.indexs" sort="vm.sort(name,isAsc)"></sui-datagrid>
+    <sui-pagination page="vm.page" pageNumber="10" click="vm.jump(pageIndex)"></sui-pagination>
 </div>

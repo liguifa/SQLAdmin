@@ -1,22 +1,22 @@
-﻿<link href="~/Static/css/sa.report.style.css" rel="stylesheet" />
+﻿<link href="~/Static/css/sui.report.style.css" rel="stylesheet" />
 
 <div ng-controller="report.controller" ng-init="vm.pageId = @ViewBag.DefaultPageId">
     <div class="cpuinfo-nav">
         <ul>
-            <li><button class="sa-button">磁盘使用率</button></li>
-            @*<li><button class="sa-button">CPU 异常</button></li>*@
+            <li><button class="sui-button">磁盘使用率</button></li>
+            @*<li><button class="sui-button">CPU 异常</button></li>*@
         </ul>
-        <div class="sa-clear"></div>
+        <div class="sui-clear"></div>
     </div>
     <div ng-if="vm.pageId == 31" class="report-disk-info">
         <div class="report-disk-info-pie">
             <ul>
-                <li ng-repeat="info in vm.disk.disks"><sa-pie points="info.diskinfos" _width="200px" _height="200px"></sa-pie></li>
+                <li ng-repeat="info in vm.disk.disks"><sui-pie points="info.diskinfos" _width="200px" _height="200px"></sui-pie></li>
             </ul>
-            <div class="sa-clear"></div>
+            <div class="sui-clear"></div>
         </div>
         @*<div style="height:400px;">
-            <sa-datagrid datas="vm.cpu.cpudatas" fields="vm.cpu.fields"></sa-datagrid>
+            <sui-datagrid datas="vm.cpu.cpudatas" fields="vm.cpu.fields"></sui-datagrid>
         </div>*@
     </div>
 </div>

@@ -3,15 +3,15 @@
 <div ng-controller="report.controller" ng-init="vm.pageId = @ViewBag.DefaultPageId">
     <div class="cpuinfo-nav">
         <ul>
-            <li><button class="sa-button">CPU 使用率</button></li>
-            <li><button class="sa-button">CPU 异常</button></li>
+            <li><button class="sui-button">CPU 使用率</button></li>
+            <li><button class="sui-button">CPU 异常</button></li>
         </ul>
-        <div class="sa-clear"></div>
+        <div class="sui-clear"></div>
     </div>
     <div>
-        <sa-bars points="vm.connected.connectedSummary" xaxis="vm.connected.xaxis"></sa-bars>
+        <sui-bars points="vm.connected.connectedSummary" xaxis="vm.connected.xaxis"></sui-bars>
         <div style="height:400px;">
-            <sa-datagrid datas="vm.connected.connecteddatas" fields="vm.connected.fields"></sa-datagrid>
+            <sui-datagrid datas="vm.connected.connecteddatas" fields="vm.connected.fields"></sui-datagrid>
         </div>
     </div>
 </div>

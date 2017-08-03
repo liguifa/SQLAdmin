@@ -14,6 +14,6 @@ namespace Common.Logger
 
         void InitImp();
 
-        void WriteEntry(string message, LogLevel level, int eventId, ushort taskCategory, string eventSource);
+        void WriteEntry(string messuige, LogLevel level, int eventId, ushort taskCategory, string eventSource);
     }
 }

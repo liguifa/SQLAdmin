@@ -22,19 +22,19 @@ namespace SQLServer.Dao
 
         public override IMessage Invoke(IMessage msg)
         {
-            IMethodCallMessage methodMessage = msg as IMethodCallMessage;
-            NavPropertyAttribute navProperty = methodMessage.MethodBase.GetCustomAttributes(false).OfType<NavPropertyAttribute>().FirstOrDefault();
+            IMethodCallMessage methodMessuige = msg as IMethodCallMessage;
+            NavPropertyAttribute navProperty = methodMessuige.MethodBase.GetCustomAttributes(false).OfType<NavPropertyAttribute>().FirstOrDefault();
             object returnValue = null;
             if (navProperty == null)
             {
-                returnValue = methodMessage.MethodBase.Invoke(this.mProxyInstance, methodMessage.Args);
+                returnValue = methodMessuige.MethodBase.Invoke(this.mProxyInstance, methodMessuige.Args);
             }
             else
             {
                
-               // mRepertory.GetType().GetMethod("Find").MakeGenericMethod(methodMessage.)
+               // mRepertory.GetType().GetMethod("Find").MakeGenericMethod(methodMessuige.)
             }
-            return new ReturnMessage(returnValue, new object[0], 0, null, methodMessage);
+            return new ReturnMessage(returnValue, new object[0], 0, null, methodMessuige);
         }
     }
 }

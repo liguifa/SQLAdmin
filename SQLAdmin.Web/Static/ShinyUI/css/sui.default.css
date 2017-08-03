@@ -38,11 +38,11 @@ body,html,document {
 }
 */
 
-.sa-clear {
+.sui-clear {
     clear: both;
 }
 
-.sa-window {
+.sui-window {
     width: 420px;
     height: 315px;
     border: 1px solid #636363;
@@ -56,20 +56,20 @@ body,html,document {
     z-index: 888;
 }
 
-.sa-border {
+.sui-border {
     border: 10px solid #B6B6B6;
     border-top: 30px solid #B6B6B6;
     width: 400px;
     height: 275px;
 }
 
-.sa-content {
+.sui-content {
     border: 1px solid #636363;
     width: 400px;
     height: 275px;
 }
 
-.sa-title {
+.sui-title {
     width: 385px;
     height: 50px;
     background: #E0E0E0;
@@ -79,30 +79,30 @@ body,html,document {
     padding-left: 15px;
 }
 
-.sa-form {
+.sui-form {
     margin: auto;
     height: 157px;
     text-align: center;
 }
 
-    .sa-form div {
+    .sui-form div {
         margin: 8px;
     }
 
-.sa-connect-input {
+.sui-connect-input {
     width: 240px;
     height: 20px;
     border: 1px solid #ABABAB;
 }
 
-.sa-connect-footer {
+.sui-connect-footer {
     border-top: 3px #CFCFCF solid;
     height: 58px;
     align-content: center;
     text-align: center;
 }
 
-.sa-button {
+.sui-button {
     display: inline-block;
     height: 38px;
     line-height: 38px;
@@ -120,38 +120,38 @@ body,html,document {
     outline: 0;
     -webkit-transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
     transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
-    -webkit-box-sizing: border-box!important;
-    -moz-box-sizing: border-box!important;
-    box-sizing: border-box!important;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
 }
 
-.sa-button-primary{
+.sui-button-primary{
     border: 1px solid #C9C9C9;
     background-color: #fff;
     color: #555;
 }
 
-.sa-button-default{
+.sui-button-default{
     background-color: #009688;
     color: #fff;
 }
 
-.sa-button-normal{
+.sui-button-normal{
     background-color: #1E9FFF;
     color: #fff;
 }
 
-.sa-button-warm{
+.sui-button-warm{
     background-color: #F7B824;
     color: #fff;
 }
 
-.sa-button-danger {
+.sui-button-danger {
     background-color: #FF5722;
     color: #fff;
 }
 
-.sa-button-big {
+.sui-button-big {
     height: 44px;
     line-height: 44px;
     padding: 0 25px;
@@ -159,7 +159,7 @@ body,html,document {
     min-width:116px;
 }
 
-.sa-button-small {
+.sui-button-small {
     height: 30px;
     line-height: 30px;
     padding: 0 10px;
@@ -167,7 +167,7 @@ body,html,document {
     min-width:70px;
 }
 
-.sa-button-mini {
+.sui-button-mini {
     height: 22px;
     line-height: 22px;
     padding: 0 5px;
@@ -175,7 +175,7 @@ body,html,document {
     min-width:60px;
 }
 
-.sa-button-disabled{
+.sui-button-disuibled{
     border: 1px solid #e6e6e6;
     background-color: #FBFBFB;
     color: #C9C9C9;
@@ -183,62 +183,68 @@ body,html,document {
     opacity: 1;
 }
 
-.sa-menu {
+.sui-menu {
     background: #F0F0F0;
     height: 30px;
     width: 100%;
 }
 
-.sa-menu-list {
+.sui-menu-list {
     list-style: none;
     padding: 0px;
     margin: 0px;
 }
 
-.sa-menu-item {
+.sui-menu-item {
     float: left;
     cursor: pointer;
     margin: 2px;
     margin-top: 4px;
     font-size: 14px;
-    width: 50px;
+   /* width: 50px; */
     height: 22px;
     text-align: center;
     vertical-align: central;
     border: #F0F0F0 solid 1px;
+    
 }
 
-.sa-menu-item-title {
+.sui-menu-item-title {
     border: #F0F0F0 solid 1px;
     width: 50px;
     height: 22px;
+    float:left;
+
 }
 
-    .sa-menu-item-title:hover {
+    .sui-menu-item-title:hover {
         background: #1ea2e5;
         border: #065999 solid 1px;
     }
 
-.sa-menu-item-select {
+.sui-menu-item-select {
     border: 1px solid #828790;
     border-bottom: none;
 }
 
-.sa-menu-subs {
+.sui-menu-subs {
     background: #F0F0F0;
-    position: absolute;
-    top: 30px;
-    left: 0px;
+  
+    left:0px !important;
     z-index: 998;
-    border: 1px solid #828790;
+    float:left;
+    /*border: 1px solid #828790;*/
     border-top: none;
     list-style: none;
     padding: 0px;
     margin: 0px;
+    margin-left:-3px;
     padding: 8px;
+    width:200px;
+    position:relative;
 }
 
-.sa-menu-item-subs-icon {
+.sui-menu-item-subs-icon {
     width: 16px;
     height: 16px;
     padding: 2px;
@@ -247,19 +253,19 @@ body,html,document {
     padding-right: 6px;
 }
 
-.sa-menu-item-subs-title {
+.sui-menu-item-subs-title {
     float: left;
     margin-left: 8px;
     border: #F0F0F0 solid 1px;
 }
 
-    .sa-menu-item-subs-title:hover {
+    .sui-menu-item-subs-title:hover {
         background: #1ea2e5;
         border: #065999 solid 1px;
     }
 
-.sa-explorer {
-    width: 20%;
+.sui-explorer {
+    width: 100%;
     height: 100%;
     border-left: none;
     padding-right: 20px;
@@ -269,21 +275,21 @@ body,html,document {
     z-index: 666;
 }
 
-.sa-explorer-title {
+.sui-explorer-title {
     background: #FFF3CD;
     width: 100%;
     height: 22px;
     padding-right: 20px;
 }
 
-.sa-explorer-tool {
+.sui-explorer-tool {
     background: #BCC7D8;
     width: 100%;
     height: 30px;
     padding-right: 20px;
 }
 
-.sa-explorer-panel {
+.sui-explorer-panel {
     background: #F0F0F0;
     width: 100%;
     height: 84%;
@@ -291,7 +297,7 @@ body,html,document {
     padding-left: 0px;
 }
 
-.sa-explorer-content {
+.sui-explorer-content {
     background: #FFFFFF;
     height: 100%;
     width: 100%;
@@ -300,66 +306,112 @@ body,html,document {
     overflow: auto;
 }
 
-.sa-tabs {
-    background: #293955;
+.sui-tabs {
+    background: #fff;
     height: 100%;
-    width: 78.5%;
-    border: 3px solid #293955;
-    position: absolute;
-    top: 30px;
-    right: 3px;
+    width: 100%;
+    margin: 0px;
+    /*position: relative;*/
 }
 
-.sa-tabs-tab{
+.sui-tabs-tab{
     height:100%;
     width:100%;
-    position:absolute;
-    top:0px;
-    left:0px;
+    /*position:absolute;*/
+    /*top:36px;
+    left: 0px;*/
 }
 
-.sa-tabs-title {
-    width: 210px;
-    height: 23px;
-    position: absolute;
+.sui-tabs-title {
+    width: 100px;
+    height: 30px;
     left: 0px;
     top: 0px;
-    background: #F2F2F2;
-    border: #ACACAC 1px solid;
-    border-bottom: none;
+    background: #fff;
     cursor: pointer;
     font-size: 8px;
     text-overflow: ellipsis;
     white-space: nowrap;
+        vertical-align: middle;
+    font-size: 14px;
+        line-height: 35px;
+        text-align: center;
+        cursor: pointer;
+        z-index: 998;
 }
 
-.sa-tabs-panel {
+.sui-tabs-title-active{
+    border: #e6e6e6 1px solid;
+       border-bottom-color: #fff;
+       /*border-bottom: solid 5px red;*/
+       /*height: 30px !important;*/
+           padding-bottom: 4px;
+}
+
+.sui-tabs-delete{
+    width: 10px;
+    height: 10px;
+        background-size: 12px 12px;
+    margin-right: 4px;
+    margin-top:4px;
+    float: right;
+}
+
+.sui-tabs-title-div{
+    width: 100%;
+}
+
+.sui-tabs-titlt-list{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 35px;
+    max-height: 35px;
+    /*overflow-x: hidden;*/
+    /*overflow-y: auto;*/
+     border-bottom: #e6e6e6 1px solid;
+     /*border-bottom: 5px solid #1160E1;*/
+}
+
+.sui-tabs-titlt-item{
+    /*float: left;*/
+    margin: 0px;
+    /*padding-bottom: 5px;*/
+     /*border: 5px solid #000;*/
+     width: 100px;
+     display: inline-block;
+}
+
+.sui-tabs-panel {
     width: 100%;
     height: 91%;
     background: #ffffff;
-    margin-top: 23px;
-    border: #ACACAC 1px solid;
+    margin-top: 0px;
+    /*border-top: #e6e6e6 1px solid;*/
+    padding-top:10px;
+    z-index: 1px !important;
 }
 
-.sa-tabs-panel-include{
+.sui-tabs-panel-include{
     height:100%;
     width:100%;
 }
 
-.sa-table-panel-iframe{
+.sui-table-panel-iframe{
     border:none;
     width:100%;
     height:100%;
 }
 
-.sa-tree-ul {
+.sui-tree-ul {
     list-style: none;
     padding: 0px;
     margin: 0px;
     background: #ffffff;
 }
 
-.sa-tree-li {
+.sui-tree-li {
     padding-left: 20px;
     height: 26px;
     cursor: pointer;
@@ -367,26 +419,26 @@ body,html,document {
     color: #333;
 }
 
-.sa-tree-li-children{
+.sui-tree-li-children{
     height: auto;
     margin-bottom:-26px;
 }
 
-.sa-tree-children {
+.sui-tree-children {
     margin-left: 2px;
 }
 
-.sa-tree-li:hover {
+.sui-tree-li:hover {
     color: #999;
 }
 
-.sa-tree-li span {
+.sui-tree-li span {
     padding-left: 5px;
     font-size: 14px;
     font-style: normal;
 }
 
-.sa-datagrid {
+.sui-datagrid {
     border: 1px solid #e2e2e2;
     width: 100%;
     /*height: 77%;*/
@@ -399,11 +451,11 @@ body,html,document {
     z-index: 996;
 }
 
-    .sa-datagrid thead tr {
+    .sui-datagrid thead tr {
         background-color: #f2f2f2;
     }
 
-    .sa-datagrid th {
+    .sui-datagrid th {
         padding: 9px 15px;
         min-height: 20px;
         line-height: 20px;
@@ -414,14 +466,14 @@ body,html,document {
         cursor:pointer;
     }
 
-    .sa-datagrid tbody tr:hover {
+    .sui-datagrid tbody tr:hover {
         background: #f2f2f2;
     }
 
-.sa-datagrid-content {
+.sui-datagrid-content {
     overflow-y: scroll;
     overflow-x:auto;
-    height: 77%;
+    height: 80%;
     width:100%;
     margin: 0px;
     text-overflow:ellipsis;
@@ -429,13 +481,13 @@ body,html,document {
     z-index: 996;
 }
 
-.sa-datagrid-content-td {
+.sui-datagrid-content-td {
     vertical-align: top;
     padding: 0px;
     z-index: 996;
 }
 
-.sa-datagrid-content td {
+.sui-datagrid-content td {
     padding: 9px 15px;
     min-height: 20px;
     line-height: 20px;
@@ -446,22 +498,22 @@ body,html,document {
     z-index: 996;
 }
 
-.sa-datagrid-content-header-icon{
+.sui-datagrid-content-header-icon{
     float:right;
     width:16px;
     height:16px;
 }
 
-    .sa-datagrid-content-header-icon img {
+    .sui-datagrid-content-header-icon img {
         width: 16px;
         height: 16px;
     }
 
-    .sa-datagrid-content-sort-icon{
+    .sui-datagrid-content-sort-icon{
         float:right;
     }
 
-.sa-blockquote {
+.sui-blockquote {
     margin-bottom: 0px;
     padding: 15px;
     line-height: 22px;
@@ -471,19 +523,19 @@ body,html,document {
     height: 15px;
 }
 
-.sa-blockquote-default{
+.sui-blockquote-default{
       background-color: #f2f2f2;
         border-left: 5px solid #009688;
 }
 
-.sa-blockquote-normal{
+.sui-blockquote-normal{
     background:#fff;
 
      border:1px solid #E2E2E2;
     border-left:5px solid #E2E2E2;
 }
 
-.sa-pagination {
+.sui-pagination {
     display: inline-block;
     vertical-align: middle;
     margin: 10px 0;
@@ -491,17 +543,17 @@ body,html,document {
     float: right;
 }
 
-    .sa-pagination ul {
+    .sui-pagination ul {
         padding: 0px;
         margin: 0px;
         list-style: none;
     }
 
-        .sa-pagination ul li {
+        .sui-pagination ul li {
             float: left;
         }
 
-    .sa-pagination a {
+    .sui-pagination a {
         display: inline-block;
         vertical-align: middle;
         padding: 0 15px;
@@ -515,7 +567,7 @@ body,html,document {
         text-decoration: none;
     }
 
-.sa-pagination-active {
+.sui-pagination-active {
     left: -1px;
     top: -1px;
     padding: 1px;
@@ -525,7 +577,7 @@ body,html,document {
     background-color: #009688 !important;
 }
 
-.sa-tool-icon {
+.sui-tool-icon {
     height: 20px;
     width: 20px;
     border-radius: 100%;
@@ -537,18 +589,18 @@ body,html,document {
     cursor: pointer;
 }
 
-.sa-tool-icon {
+.sui-tool-icon {
     float: left;
 }
 
-.sa-query {
+.sui-query {
     height:100%;
     width: 100%;
-    position: absolute;
+    /*position: absolute;*/
 }
 
 /*Common*/
-.sa-mask {
+.sui-mask {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -559,7 +611,7 @@ body,html,document {
     left: 0px;
 }
 
-.sa-contextmenu {
+.sui-contextmenu {
     position: fixed;
     visibility: hidden;
     z-index:999;
@@ -568,18 +620,18 @@ body,html,document {
     border:#E5C365 1px solid;
 }
 
-.sa-contextmenu ul{
+.sui-contextmenu ul{
     list-style:none;
     margin:0px;
     padding:0px;
 }
 
-    .sa-contextmenu ul li {
+    .sui-contextmenu ul li {
         height: 30px;
         width: 185px;
     }
 
-        .sa-contextmenu ul li .sa-contextmenu-title {
+        .sui-contextmenu ul li .sui-contextmenu-title {
             padding-left: 10px;
             width: 147px;
             height: 28px;
@@ -588,7 +640,7 @@ body,html,document {
             border-left: none;
         }
 
-        .sa-contextmenu ul li:hover .sa-contextmenu-title {
+        .sui-contextmenu ul li:hover .sui-contextmenu-title {
             background: #FFECB5;
             border: #E5C365 1px solid;
             float: right;
@@ -596,7 +648,7 @@ body,html,document {
             width: 147px;
         }
 
-        .sa-contextmenu ul li:hover .sa-contextmenu-i {
+        .sui-contextmenu ul li:hover .sui-contextmenu-i {
             background: #FFECB5;
             border: none;
             height: 18px;
@@ -604,7 +656,7 @@ body,html,document {
             border-right:  #FFECB5 1px solid;
         }
 
-    .sa-contextmenu .sa-contextmenu-i {
+    .sui-contextmenu .sui-contextmenu-i {
         width: 25px;
         height: 18px;
         padding: 5px 0px;
@@ -613,26 +665,26 @@ body,html,document {
         border: #F0F0F0 1px solid;
     }
 
-.sa-contextmenu-sub {
+.sui-contextmenu-sub {
     margin-left: 185px;
 }
 
-.sa-contextmenu ul li:hover .sa-contextmenu-sub {
+.sui-contextmenu ul li:hover .sui-contextmenu-sub {
     visibility: visible;
 }
 
-.sa-contextmenu ul li:hover .sa-contextmenu-title-sub {
+.sui-contextmenu ul li:hover .sui-contextmenu-title-sub {
     background: #fff !important;
     border: #ffffff 1px solid !important;
     border-left: none !important;
 }
 
-.sa-contextmenu ul li:hover .sa-contextmenu-i-sub {
+.sui-contextmenu ul li:hover .sui-contextmenu-i-sub {
     background: #F0F0F0 !important;
     border: #F0F0F0 1px solid !important;
 }
 
-.sa-contextmenu-sub ul li:hover .sa-contextmenu-title {
+.sui-contextmenu-sub ul li:hover .sui-contextmenu-title {
     background: #FFECB5 !important;
     border: #E5C365 1px solid !important;
     float: right !important;
@@ -640,7 +692,7 @@ body,html,document {
     width: 147px !important;
 }
 
-.sa-contextmenu-sub ul li:hover .sa-contextmenu-i {
+.sui-contextmenu-sub ul li:hover .sui-contextmenu-i {
     background: #FFECB5 !important;
     border: none !important;
     height: 18px !important;
@@ -648,7 +700,7 @@ body,html,document {
     border-right: #FFECB5 1px solid !important;
 }
 
-.sa-search{
+.sui-search{
     width: 380px;
     padding: 0px;
      border: 1px solid #e6e6e6 !important;
@@ -660,7 +712,7 @@ body,html,document {
     margin-top:-6px;
 }
 
-.sa-search-combo {
+.sui-search-combo {
      width:60px !important;
      float:left;
       height:28px !important;
@@ -668,7 +720,7 @@ body,html,document {
           border-right: 1px solid #e6e6e6 !important;
 }
 
-.sa-search-combo .sa-combo-text{
+.sui-search-combo .sui-combo-text{
         background-color: #FBFBFB !important;
             border: none;
     /*border-radius: 2px 0 0 2px !important;*/
@@ -678,12 +730,12 @@ body,html,document {
     border:none;
 }
 
-.sa-search-combo .sa-combo-field{
+.sui-search-combo .sui-combo-field{
     width:200px !important;
     margin-left:0px !important;
 }
 
-.sa-search-input{
+.sui-search-input{
     float:left;
     height:27px;
     border:none;
@@ -699,7 +751,7 @@ body,html,document {
     padding-left:5px;
 }
 
-.sa-search-button {
+.sui-search-button {
     float: right;
     margin: 0px;
     height: 31px;
@@ -712,7 +764,7 @@ body,html,document {
     margin-top:-1px !important;
 }
 
-.sa-search-select{
+.sui-search-select{
     float:left;
     height:30px;
     width:50px;
@@ -728,14 +780,15 @@ body,html,document {
     vertical-align: middle;
 }
 
-.sa-multiselect{
+.sui-multiselect{
     width:190px;
     height:30px;
-/*    float:right;*/
+    float:right;
     z-index:997;
+    margin-top:-6px;
 }
 
-.sa-multiselect-text{
+.sui-multiselect-text{
     border: 1px solid #e6e6e6;
     background-color: #fff;
     border-radius: 2px;
@@ -761,7 +814,7 @@ body,html,document {
     margin-left:10px;
 }
 
-.sa-multiselect-field{
+.sui-multiselect-field{
     width:96%;
     max-height:300px;
     border: 1px solid #e6e6e6;
@@ -774,7 +827,7 @@ body,html,document {
     position:relative;
 }
 
-.sa-multiselect-field ul{
+.sui-multiselect-field ul{
     margin:0px;
     padding:0px;
     list-style:none;
@@ -782,37 +835,37 @@ body,html,document {
         max-height:260px;
 }
 
-.sa-multiselect-button{
+.sui-multiselect-button{
     width:100%;
 }
 
-.sa-multiselect-button button{
+.sui-multiselect-button button{
     float:left;
     width:70px;
     margin:5px 10px;
 }
 
-.sa-multiselect-field ul li{
+.sui-multiselect-field ul li{
     z-index:997;
     padding: 0 10px;
     line-height: 36px;
 }
 
-.sa-multiselect-field ul li:hover{
+.sui-multiselect-field ul li:hover{
     background:#5FB878;
 }
 
-.sa-multiselect-field ul li span{
+.sui-multiselect-field ul li span{
     margin-left:5px;
     cursor:pointer
 }
 
-.sa-calendar{
+.sui-calendar{
     width:182px;
     height:30px;
 }
 
-.sa-calendar-text {
+.sui-calendar-text {
     border-radius: 2px 0px 0px 2px;
     display: block;
     width:150px;
@@ -829,7 +882,7 @@ body,html,document {
     float:left;
 }
 
-.sa-calendar-icon{
+.sui-calendar-icon{
    width:32px;
    height:30px;
     border: 1px solid #e6e6e6;
@@ -846,14 +899,14 @@ body,html,document {
     float:right;
 }
 
-.sa-calendar-icon img{
+.sui-calendar-icon img{
     width:16px;
     height:16px;
    vertical-align:central;
    margin-top:7px;
 }
 
-.sa-calendar-select {
+.sui-calendar-select {
     width: 240px;
     height: 224px;
     -webkit-box-sizing: border-box !important;
@@ -867,7 +920,7 @@ body,html,document {
     opacity:1;
 }
 
-.sa-calendar-select-title{
+.sui-calendar-select-title{
     width:100%;
     height:26px;
     background:#FBFBFB;
@@ -875,11 +928,11 @@ body,html,document {
     text-align:center;
 }
 
-.sa-calendar-select-title-span{
+.sui-calendar-select-title-span{
     text-align:center;
 }
 
-.sa-calendar-select-title-span-left {
+.sui-calendar-select-title-span-left {
     width: 20px;
     position: relative;
     left: 0px;
@@ -888,7 +941,7 @@ body,html,document {
     z-index:995;
 }
 
-.sa-calendar-select-title-span-right {
+.sui-calendar-select-title-span-right {
     width: 20px;
     position: relative;
     left: 208px;
@@ -896,13 +949,13 @@ body,html,document {
     cursor:pointer;
 }
 
-.sa-calendar-select-title-text{
+.sui-calendar-select-title-text{
    position:relative;
    left:-66px;
    top:-12px;
 }
 
-.sa-calendar-select-context {
+.sui-calendar-select-context {
     width: 220px;
     height: 154px;
     margin-top: 6px;
@@ -917,14 +970,14 @@ body,html,document {
      
 }
 
-.sa-calendar-select-fields{
+.sui-calendar-select-fields{
     width:100%;
     height:22px;
     border-bottom:1px solid #e6e6e6;
     background:#FBFBFB;
 }
 
-.sa-calendar-select-fields ul {
+.sui-calendar-select-fields ul {
     margin:0px;
     padding:0px;
     width:100%;
@@ -932,7 +985,7 @@ body,html,document {
     list-style:none;
 }
 
-.sa-calendar-select-fields ul li{
+.sui-calendar-select-fields ul li{
     float:left;
     width:31.2px;
     vertical-align:central;
@@ -940,7 +993,7 @@ body,html,document {
     padding-top:2px;
 }
 
-.sa-calendar-select-context table{
+.sui-calendar-select-context table{
     border-collapse: collapse;
     text-overflow:ellipsis;
     white-space:nowrap;
@@ -949,17 +1002,17 @@ body,html,document {
     margin-top:5px;
 }
 
-.sa-calendar-select-context table tr{
+.sui-calendar-select-context table tr{
      border:none;
      padding:0px;
      margin:0px;
 }
 
-.sa-calendar-select-context table tr:hover{
+.sui-calendar-select-context table tr:hover{
     background:#fff;
 }
 
-.sa-calendar-select-context table tr td{
+.sui-calendar-select-context table tr td{
     border:none;
     padding:0px;
     margin:0px;
@@ -969,17 +1022,17 @@ body,html,document {
     cursor:pointer;
 }
 
-.sa-calendar-select-context table tr td:hover{
+.sui-calendar-select-context table tr td:hover{
     background:#FBFBFB;
     border: 1px solid #e6e6e6;
 }
 
-.sa-calendar-select-context-active {
+.sui-calendar-select-context-active {
     background: #FBFBFB;
     border: 1px solid #e6e6e6;
 }
 
-.sa-calendar-select-footer{
+.sui-calendar-select-footer{
     width:100%;
     height:26px;
     background:#FBFBFB;
@@ -987,7 +1040,7 @@ body,html,document {
     margin-top:6px;
 }
 
-.sa-calendar-select-footer-button{
+.sui-calendar-select-footer-button{
     width:38px;
     height:20px;
     margin:2px;
@@ -996,12 +1049,12 @@ body,html,document {
     color: #555;
 }
 
-.sa-calendar-select-footer-time{
+.sui-calendar-select-footer-time{
     width:110px;
     
 }
 
-.sa-calendar-select-footer table{
+.sui-calendar-select-footer table{
     border-collapse: collapse;
     text-overflow:ellipsis;
     white-space:nowrap;
@@ -1009,11 +1062,11 @@ body,html,document {
     width:220px;
 }
 
-.sa-calendar-select-footer table tr{
+.sui-calendar-select-footer table tr{
     border:none;
 }
 
-.sa-calendar-select-footer table tr td{
+.sui-calendar-select-footer table tr td{
     border:none;
     text-align:center;
     padding:0px;
@@ -1021,37 +1074,37 @@ body,html,document {
     margin:0px;
 }
 
-.sa-calendar-select-footer-number{
+.sui-calendar-select-footer-number{
     width:30px;
     padding:0px;
     height:20px;
 }
 
-.sa-calendar-select-footer-time .sa-number{
+.sui-calendar-select-footer-time .sui-number{
     height:20px !important;
 }
 
-.sa-calendar-select-footer-time table{
+.sui-calendar-select-footer-time table{
     height:20px !important;
     line-height:10px;
 }
 
-.sa-number {
+.sui-number {
     border: 1px solid #e6e6e6;
     border-radius: 2px 0px 0px 2px;
     background: #fff;
 }
 
-    .sa-number:hover {
+    .sui-number:hover {
         background: #fff;
     }
 
-.sa-number table{
+.sui-number table{
     width:100%;
     height:100%;
 }
 
-    .sa-number table tr td {
+    .sui-number table tr td {
         padding: 0px;
         text-align: center;
         line-height: 2px;
@@ -1059,18 +1112,18 @@ body,html,document {
         border: none;
         margin: 0px;
     }
-    .sa-number table tr:hover {
+    .sui-number table tr:hover {
         background: #fff;
     }
-    .sa-number table tr td:hover {
+    .sui-number table tr td:hover {
         background: #fff;
     }
 
-.sa-number table tr td div{
+.sui-number table tr td div{
     padding:0px;
 }
 
-.sa-number-input {
+.sui-number-input {
     display: block;
     width: 30px;
     height: 100%;
@@ -1088,7 +1141,7 @@ body,html,document {
     background: #fff;
 }
 
-.sa-number-top {
+.sui-number-top {
     border: none;
     padding: 4px !important;
     cursor: pointer;
@@ -1102,7 +1155,7 @@ body,html,document {
     outline: none;
 }
 
-.sa-number-bottom {
+.sui-number-bottom {
     border: none;
     padding: 4px !important;
     cursor: pointer;
@@ -1117,17 +1170,17 @@ body,html,document {
     outline: none;
 }
 
-.sa-switch{
+.sui-switch{
     height:24px;
     width:54px;
 }
 
-.sa-switch-input{
+.sui-switch-input{
     opacity:0;
     height:0px;
 }
 
-.sa-switch-checkbox {
+.sui-switch-checkbox {
     border: 1px solid #d2d2d2;
     border-radius: 20px;
     width: 100%;
@@ -1137,15 +1190,15 @@ body,html,document {
     margin-top:-20px;
 }
 
-.sa-switch-checkbox-false div {
+.sui-switch-checkbox-false div {
     float: left;
 }
 
-.sa-switch-checkbox-true div {
+.sui-switch-checkbox-true div {
     float: right;
 }
 
-.sa-switch-checkbox-text{
+.sui-switch-checkbox-text{
     padding: 0 !important;
     text-align: center !important;
     font-style: normal !important;
@@ -1155,20 +1208,20 @@ body,html,document {
     margin-left:0px;
 }
 
-.sa-switch-checkbox-true{
+.sui-switch-checkbox-true{
     border-color: #5FB878;
     background-color: #5FB878;
 }
 
-.sa-switch-checkbox-false .sa-switch-checkbox-text{
+.sui-switch-checkbox-false .sui-switch-checkbox-text{
     color: #999 !important;
 }
 
-.sa-switch-checkbox-true .sa-switch-checkbox-text{
+.sui-switch-checkbox-true .sui-switch-checkbox-text{
     color:#fff !important;
 }
 
-.sa-switch-checkbox-dot{
+.sui-switch-checkbox-dot{
     width:16px;
     height:16px;
     border-radius:50%;
@@ -1176,63 +1229,63 @@ body,html,document {
     margin:4px;
 }
 
-.sa-switch-checkbox-false .sa-switch-checkbox-dot{
+.sui-switch-checkbox-false .sui-switch-checkbox-dot{
     background:#d2d2d2 !important;
 }
 
-.sa-switch-checkbox-true .sa-switch-checkbox-dot{
+.sui-switch-checkbox-true .sui-switch-checkbox-dot{
     background:#fff !important;
 }
 
-.sa-guid{
+.sui-guid{
  width:380px;
  text-align:center;
 }
 
-.sa-guid .sa-guid-text{
+.sui-guid .sui-guid-text{
     float:left;
     width:48px;
     text-align:center;
 }
 
-.sa-guid .sa-guid-text .sa-guid-text-context{
+.sui-guid .sui-guid-text .sui-guid-text-context{
     float:left;
     width:38px;
 }
 
-.sa-guid .sa-guid-text .sa-guid-text-context div{
+.sui-guid .sui-guid-text .sui-guid-text-context div{
     width:100%;
 }
 
-.sa-guid .sa-guid-text .sa-guid-text-context input{
+.sui-guid .sui-guid-text .sui-guid-text-context input{
      width:100%;
      text-align:center;
 }
 
-.sa-guid .sa-guid-text-long{
+.sui-guid .sui-guid-text-long{
     width:75px !important;
 }
 
-    .sa-guid .sa-guid-text-long .sa-guid-text-context {
+    .sui-guid .sui-guid-text-long .sui-guid-text-context {
         width: 65px;
     }
 
-    .sa-guid .sa-guid-text-maxlong{
+    .sui-guid .sui-guid-text-maxlong{
     width:105px !important;
 }
 
-    .sa-guid .sa-guid-text-maxlong .sa-guid-text-context {
+    .sui-guid .sui-guid-text-maxlong .sui-guid-text-context {
         width: 105px;
     }
 
-.sa-guid .sa-guid-text .sa-guid-text-symbol{
+.sui-guid .sui-guid-text .sui-guid-text-symbol{
     float:left;
     text-align:center;
     margin-top:3px;
     margin-left:2.2px;
 }
 
-.sa-guid-copy{
+.sui-guid-copy{
     border: 1px solid #e6e6e6;
     border-radius: 2px 0px 0px 2px;
     background: #fff;
@@ -1245,7 +1298,7 @@ body,html,document {
     outline:none;
 }
 
-.sa-text-input {
+.sui-text-input {
     line-height: 24px;
     padding-left:2px;
     border: 1px solid #e6e6e6;
@@ -1259,7 +1312,7 @@ body,html,document {
     box-sizing: border-box !important;
 }
 
-.sa-footer{
+.sui-footer{
     height:24.8px;
     position:fixed;
     bottom:0px;
@@ -1269,12 +1322,12 @@ body,html,document {
     padding-top:4px;
 }
 
-.sa-footer a{
+.sui-footer a{
     text-decoration:none;
     color:#000;
 }
 
-.sa-about{
+.sui-about{
     width:400px;
     height:500px;
     z-index:997;
@@ -1283,48 +1336,48 @@ body,html,document {
     left:45%;
 }
 
-.sa-about-header{
+.sui-about-header{
     width:100%;
     height:200px;
     background-color:#009688;
     text-align:center;
 }
 
-.sa-about-header-icon{
+.sui-about-header-icon{
     width:300px;
     height:120px;
     text-align:center;
     
 }
 
-.sa-about-header-icon img{
+.sui-about-header-icon img{
     width:44%;
     border-radius:50%;
     margin-left:34%;
     margin-top:20px;
 }
 
-.sa-about-header-name{
+.sui-about-header-name{
     margin-top:44px;
 }
 
-.sa-about-footer{
+.sui-about-footer{
     height:24px;
     background:#fff;
     text-align:center;
     padding-left:4px;
 }
 
-.sa-about-footer a{
+.sui-about-footer a{
     text-decoration:none;
     color:#000;
 }
 
-.sa-tooltip{
+.sui-tooltip{
     position:absolute;
 }
 
-.sa-tooltip-context {
+.sui-tooltip-context {
     width:240px;
     height:60px;
     line-height:60px;
@@ -1337,7 +1390,7 @@ body,html,document {
      position:relative;
 }
 
-.sa-tooltip-arrow {
+.sui-tooltip-arrow {
     position:absolute;
     left:24px;
     overflow:hidden;
@@ -1348,24 +1401,24 @@ body,html,document {
 
 }
 
-.sa-tooltip-arrow-border {
+.sui-tooltip-arrow-border {
     top:-20px;
     border-color: transparent transparent #C9E9C0 transparent;
 }
 
-.sa-tooltip-arrow-bacground {
+.sui-tooltip-arrow-bacground {
     top: -19px;
     border-color: transparent transparent #E9FBE4 transparent;
 }
 
-.sa-combo{
+.sui-combo{
     width:190px;
     height:30px;
 /*    float:right;*/
     z-index:997;
 }
 
-.sa-combo-text{
+.sui-combo-text{
     border: 1px solid #e6e6e6;
     background-color: #fff;
     border-radius: 2px;
@@ -1392,7 +1445,7 @@ body,html,document {
     margin-left:10px;
 }
 
-.sa-combo-field{
+.sui-combo-field{
     width:96%;
     max-height:300px;
     border: 1px solid #e6e6e6;
@@ -1404,7 +1457,7 @@ body,html,document {
     position:relative;
 }
 
-.sa-combo-field ul{
+.sui-combo-field ul{
     margin:0px;
     padding:0px;
     list-style:none;
@@ -1412,41 +1465,41 @@ body,html,document {
     max-height:260px;
 }
 
-.sa-combo-button{
+.sui-combo-button{
     width:100%;
 }
 
-.sa-combo-button button{
+.sui-combo-button button{
     float:left;
     width:70px;
 }
 
-.sa-combo-field ul li{
+.sui-combo-field ul li{
     z-index:997;
     padding: 0 10px;
     line-height: 36px;
 }
 
-.sa-combo-field ul li:hover{
+.sui-combo-field ul li:hover{
     background:#5FB878;
 }
 
-.sa-combo-field ul li span{
+.sui-combo-field ul li span{
     margin-left:5px;
     cursor:pointer
 }
 
-.sa-check ul{
+.sui-check ul{
     list-style: none;
 }
 
-.sa-check ul li{
+.sui-check ul li{
     float:left;
     cursor: pointer;
     margin-right: 20px;
 }
 
-.sa-check-select{
+.sui-check-select{
     height: 16px;
     width: 16px;
     background: #fff;
@@ -1458,29 +1511,29 @@ body,html,document {
     margin-right: 10px;
 }
 
-.sa-check-select-active{
+.sui-check-select-active{
     border-color: #5FB878;
     background-color: #5FB878;
 }
 
-.sa-check-select-span{
+.sui-check-select-span{
     height: 14px;
     width: 14px;
     margin-bottom: 2px;
     font-size: 14px;
 }
 
-.sa-radio ul{
+.sui-radio ul{
     list-style: none;
 }
 
-.sa-radio ul li{
+.sui-radio ul li{
     float:left;
     cursor: pointer;
     margin-right: 20px;
 }
 
-.sa-radio-select{
+.sui-radio-select{
     height: 16px;
     width: 16px;
     background: #fff;
@@ -1492,11 +1545,11 @@ body,html,document {
     margin-right: 10px;
 }
 
-.sa-radio-select-active{
+.sui-radio-select-active{
        border: 1px solid #5FB878;
 }
 
-.sa-radio-select-span{
+.sui-radio-select-span{
     height: 10px;
     width: 10px;
     margin: 3px;
@@ -1505,12 +1558,12 @@ body,html,document {
     background-color: #fff;
 }
 
-.sa-radio-select-span-active{
+.sui-radio-select-span-active{
     border-color: #5FB878;
     background-color: #5FB878;
 }
 
-.sa-progress{
+.sui-progress{
     height: 10px;
     width: 100%;
     background: #fff;
@@ -1518,13 +1571,13 @@ body,html,document {
     border-radius: 10px;
 }
 
-.sa-progress-value{
+.sui-progress-value{
     background-color: #5FB878;
     border-radius: 10px;
     height: 100%;
 }
 
-.sa-code{
+.sui-code{
     border: 1px solid #ddd;
     border-bottom-width: 2px;
     border-left-width: 6px;
@@ -1532,18 +1585,18 @@ body,html,document {
     min-height: 200px;
 }
 
-.sa-code-header{
+.sui-code-header{
     height: 30px;
     border-bottom: 1px solid #ddd;
     background-color: #F2F2F2;
 }
 
-.sa-code-body{
+.sui-code-body{
     overflow-y: auto;
     min-height: 170px;
 }
 
-.sa-code-body-index{
+.sui-code-body-index{
     background-color: #F2F2F2;
     width: 44px;
     border-right: 1px solid #ddd;
@@ -1552,31 +1605,31 @@ body,html,document {
     min-height: 170px;
 }
 
-.sa-code-body-index ul{
+.sui-code-body-index ul{
     list-style: none;
     padding: 0px;
     margin: 0px;
 }
 
-.sa-code-body-index ul li{
+.sui-code-body-index ul li{
     margin-left: 10px;
     line-height: 20px;
     padding: 0 5px;
     border-left: 1px solid #ddd;
 }
 
-.sa-code-body-context{
+.sui-code-body-context{
     background: #fff;
     min-height: 170px;
     width: 100%;
 }
 
-.sa-code-body-context pre[class*="language-"] {
+.sui-code-body-context pre[class*="language-"] {
     background: #fff;
     margin: 0px;
 }
 
-.sa-messagebar{
+.sui-messuigebar{
     height: 25px;
     width: 100%;
     background: #DFF0D8;
@@ -1588,7 +1641,7 @@ body,html,document {
     border: 1px solid transparent;
 }
 
-.sa-messagebar i{
+.sui-messuigebar i{
     float: right;
     height: 20px;
     width: 20px;
@@ -1598,7 +1651,7 @@ body,html,document {
     cursor: pointer;
 }
 
-.sa-nav{
+.sui-nav{
     position: relative;
     padding: 0 20px;
     background-color: #393D49;
@@ -1610,7 +1663,7 @@ body,html,document {
        
 }
 
-.sa-nav-icon{
+.sui-nav-icon{
     width:82px;
     height:31px;
     margin-top:12px;
@@ -1618,12 +1671,12 @@ body,html,document {
     margin-right:10px;
 }
 
-.sa-nav-list{
+.sui-nav-list{
     list-style:none;
     margin:0px;
 }
 
-.sa-nav-item{
+.sui-nav-item{
     position: relative;
     display: inline-block;
     vertical-align: middle;
@@ -1632,16 +1685,16 @@ body,html,document {
         
 }
 
-    .sa-nav-item:hover {
+    .sui-nav-item:hover {
         border-bottom: solid 5px #5FB878;
     }
 
     
-    .sa-nav-item:hover a {
+    .sui-nav-item:hover a {
      color:#fff;
     }
 
-    .sa-nav-item a {
+    .sui-nav-item a {
         display: block;
         padding: 0 20px;
          color: #c2c2c2;
@@ -1651,7 +1704,31 @@ body,html,document {
         text-decoration: none;
     }
 
-    .sa-sidebar{
+.sui-crumbs-list {
+    list-style: none;
+}
+
+.sui-crumbs-item {
+    float: left;
+}
+
+.sui-crumbs-text {
+    padding-right: 4px;
+    padding-left:4px;
+    line-height: 22px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+}
+
+.sui-crumbs-text:hover{
+    color:#1E9FFF;
+}
+
+.sui-crumbs-text-last:hover{
+    color: #333;
+}
+    .sui-sidebar{
         width:200px;
         height:100%;
         background:#393D49;
@@ -1659,23 +1736,23 @@ body,html,document {
         left:0px;
     }
 
-    .sa-sidebar-list{
+    .sui-sidebar-list{
         list-style:none;
         margin:0px;
         padding-left:0px;
     }
 
-    .sa-sidebar-item{
+    .sui-sidebar-item{
         width:200px;
         height:40px;
            border-left:5px solid #393D49;
     }
 
-    .sa-sidebar-item:hover{
+    .sui-sidebar-item:hover{
         border-left:5px solid #009688;
     }
 
-    .sa-sidebar-text{
+    .sui-sidebar-text{
         text-decoration:none;
         color:#c2c2c2;
         padding-left:15px;
@@ -1684,18 +1761,18 @@ body,html,document {
          font-size: 14px;
     }
 
-    .sa-sidebar-text:hover{
+    .sui-sidebar-text:hover{
         color:#fff;
     }
 
-    .sa-sidebar-list-sub{
+    .sui-sidebar-list-sub{
         list-style:none;
         margin:0px;
         padding:0px;
         background:#393D49;
     }
 
-    .sa-sidebar-subtitle{
+    .sui-sidebar-subtitle{
  background:#2B2E37;
  line-height:40px;
  height:40px;
@@ -1713,19 +1790,35 @@ body,html,document {
   user-select:none;
     }
 
-    .sa-line{
+.sui-sidebar-item-active{
+    background: #5FB878;
+    color:#fff;
+    cursor: default;
+    /*box-shadow:2px 2px 3px #000;*/
+     border-left:5px solid #5FB878;
+}
+
+.sui-sidebar-item-active .sui-sidebar-text{
+    color:#fff;
+}
+
+.sui-sidebar-item-active:hover{
+    border-left: 5px solid #5FB878 !important;
+}
+
+    .sui-line{
         padding:0px;
         margin:0px;
     }
 
-    .sa-line-context{
+    .sui-line-context{
            
                 margin: 0px 0 0px;
     border: none;
     border-top: 1px solid #e2e2e2;
     }
 
-    .sa-line-context-text{
+    .sui-line-context-text{
          margin-left: 20px;
     padding: 0 10px;
     font-size: 20px;
