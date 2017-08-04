@@ -163,6 +163,8 @@
     <Content Include="Static\ShinyUI\Images\icon_left.png" />
     <Content Include="Static\ShinyUI\Images\icon_loading.gif" />
     <Content Include="Static\ShinyUI\Images\icon_loading.png" />
+    <Content Include="Static\ShinyUI\Images\icon_pool.png" />
+    <Content Include="Static\ShinyUI\Images\icon_refresh.png" />
     <Content Include="Static\ShinyUI\Images\icon_remove.png" />
     <Content Include="Static\ShinyUI\Images\icon_right.png" />
     <Content Include="Static\ShinyUI\Images\icon_save.png" />
@@ -187,6 +189,7 @@
     <Content Include="Static\script\services\query.service.js" />
     <Content Include="Static\script\services\report.service.js" />
     <Content Include="Static\script\services\wrapper.service.js" />
+    <Content Include="Static\ShinyUI\Images\un_connect.png" />
     <Content Include="Static\ShinyUI\script\common\cache.service.js" />
     <Content Include="Static\ShinyUI\script\common\constant.service.js" />
     <Content Include="Static\ShinyUI\script\common\cryptogram.service.js" />
@@ -259,6 +262,7 @@
     <Content Include="Views\Common\About.cshtml" />
     <Content Include="Static\css\layout.css" />
     <None Include="Properties\PublishProfiles\SA.pubxml" />
+    <Content Include="Views\Common\ManagePool.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

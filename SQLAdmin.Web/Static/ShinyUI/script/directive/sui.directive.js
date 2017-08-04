@@ -220,8 +220,10 @@ angular.module("sqladmin", [])
 {
     var vm = {
         template: "<div class='sui-explorer'>\
-                        <div class='sui-explorer-title'></div>\
-                        <div class='sui-explorer-tool'></div>\
+                        <div class='sui-explorer-title'>{{vm.title}}</div>\
+                        <div class='sui-explorer-tool'>\
+                            <ul class='sui-explorer-tool-list'><li class='sui-explorer-tool-item' ng-repeat='tool in vm.tools' ng-click='vm.toolClick(tool)'><i class='sui-icon-{{tool.type}} sui-explorer-tool-icon'></i></li></ul>\
+                        </div>\
                         <div class='sui-explorer-panel'>\
                             <div class='sui-explorer-content'>\
                                 <div ng-transclude></div>\
@@ -236,9 +238,26 @@ angular.module("sqladmin", [])
         priority: 1,
         transclude: true,
         scope: {
+            title: "=",
+            tools:"="
         },
         controller: function ($scope)
         {
+            $scope.vm = {
+                title: "",
+                tools: "",
+                toolClick: function (tool) {
+                    tool.command();
+                }
+            };
+
+            $scope.$watch("title", function (title) {
+                $scope.vm.title = title;
+            });
+
+            $scope.$watch("tools", function (tools) {
+                $scope.vm.tools = tools;
+            }, true);
         }
     }
 })

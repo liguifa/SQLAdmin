@@ -11,7 +11,16 @@
             getTables: _getTables,
             contextMenuCommand: _contextMenuCommand,
             icon: "/Static/Images/displayLogo.ico",
-            name:"SQLAdmin"
+            name: "SQLAdmin",
+            refreshDatabase: function () {
+                event.trigger("connect");
+            },
+            newConnect: function () {
+                $scope.vm.window = "/Connect/Index";
+            },
+            unConnect: function () {
+                $scope.vm.database = null
+            }
         }
 
         function select(menu) {

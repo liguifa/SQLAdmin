@@ -37,7 +37,7 @@
                     pageIndex: data.PageIndex,
                     pageSize: data.PageSize,
                     pageCount: data.PageCount,
-                    totle: data.Totle
+                    total: data.Total
                 }
             });
         }
@@ -126,7 +126,7 @@
             $scope.vm.isNeedSave = true;
         }
 
-        $scope.vm.suive = function () {
+        $scope.vm.save = function () {
             var selectDatas = $scope.vm.datas.filter(function (item) {
                 return item.isSelected
             });

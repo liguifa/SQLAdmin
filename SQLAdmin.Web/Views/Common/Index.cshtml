@@ -4,10 +4,10 @@
 }
 <div ng-controller="gui.common.controller" ontext-menu  data-target="menu">
     <div>
-        <sui-menu select="vm.select(menu)" menus="vm.menus"></sui-menu>
+        <sui-nav select="vm.select(menu)" navs="vm.menus" icon="'/Static/Images/logo.png'"></sui-nav>
         <sa-layout>
             <div ng-controller="database.controller" class="sa-layout-body-explorer" >
-                <sui-explorer>
+                <sui-explorer title="'对象资源管理器'" tools="[{type:'connect',command:vm.newConnect},{type:'unconnect',command:vm.unConnect},{type:'refresh',command:vm.refreshDatabase},{type:'pool',command:vm.managePool}]">
                     <sui-tree tree="vm.database" doubleclick="vm.getTables(tree)" menu-command="vm.contextMenuCommand(command,args)">
                         <sui-contextmenu contextmenu-type='table' class='sui-contextmenu'>
                             <ul>

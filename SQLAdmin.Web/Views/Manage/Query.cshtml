@@ -3,10 +3,11 @@
         <sui-icon type="remove" click="vm.remove()"></sui-icon>
         <sui-icon type="add" click="vm.add()"></sui-icon>
         <sui-icon type="edit" click="vm.edit()"></sui-icon>
-        <sui-icon type="suive" click="vm.suive()" ng-if="vm.isNeedSave"></sui-icon>
+        <sui-icon type="suive" click="vm.save()" ng-if="vm.isNeedSave"></sui-icon>
         <sui-multiselect fields="vm.fields" select="vm.select(fields)" class="sui-sqlfield"></sui-multiselect>
         <sui-search placeholder="'Search'" fields="vm.fields" search="vm.search(searchKey)"></sui-search>
     </sui-tools>
     <sui-datagrid datas="vm.datas" fields="vm.showFields" indexs="vm.indexs" sort="vm.sort(name,isAsc)"></sui-datagrid>
     <sui-pagination page="vm.page" pageNumber="10" click="vm.jump(pageIndex)"></sui-pagination>
+    <span class="sa-query-data-info">共 {{vm.page.total}} 行 {{vm.page.pageCount}} 页，当前显示 {{(vm.page.pageIndex-1)*vm.page.pageSize+1}}-{{vm.page.pageIndex == vm.page.pageCount ? vm.page.total : vm.page.pageIndex*vm.page.pageSize}} 行</span>
 </div>

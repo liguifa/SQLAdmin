@@ -280,6 +280,9 @@ body,html,document {
     width: 100%;
     height: 22px;
     padding-right: 20px;
+    font-size:13px;
+    vertical-align:central;
+    line-height:22px;
 }
 
 .sui-explorer-tool {
@@ -287,6 +290,20 @@ body,html,document {
     width: 100%;
     height: 30px;
     padding-right: 20px;
+}
+
+.sui-explorer-tool-list {
+    list-style:none;
+    padding:0px;
+    margin:0px;
+}
+
+.sui-explorer-tool-item {
+    display:inline-block;
+    line-height:30px;
+    vertical-align:central;
+    width:20px;
+    cursor:pointer;
 }
 
 .sui-explorer-panel {
@@ -1664,8 +1681,8 @@ body,html,document {
 }
 
 .sui-nav-icon{
-    width:82px;
-    height:31px;
+    width:116px;
+    height:35px;
     margin-top:12px;
     float:left;
     margin-right:10px;

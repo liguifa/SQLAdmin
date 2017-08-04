@@ -40,5 +40,11 @@ namespace SQLAdmin.Web.Controllers
         {
             return PartialView();
         }
+
+        [HttpGet]
+        public ActionResult  ManagePool()
+        {
+            return View();
+        }
     }
 }

@@ -105,3 +105,35 @@
     background-repeat: no-repeat;
     padding: 8px;
 }
+
+.sui-icon-connect {
+    background:url(../Images/new_connect.png);
+    background-size:16px 16px;
+    background-position:center;
+    background-repeat:no-repeat;
+    padding:8px;
+}
+
+.sui-icon-unconnect {
+    background:url(../Images/un_connect.png);
+    background-size:16px 16px;
+    background-position:center;
+    background-repeat:no-repeat;
+    padding:8px;
+}
+
+.sui-icon-refresh {
+    background:url(../Images/icon_refresh.png);
+    background-size:16px 16px;
+    background-position:center;
+    background-repeat:no-repeat;
+    padding:8px;
+}
+
+.sui-icon-pool {
+    background:url(../Images/icon_pool.png);
+    background-size:16px 16px;
+    background-position:center;
+    background-repeat:no-repeat;
+    padding:8px;
+}
