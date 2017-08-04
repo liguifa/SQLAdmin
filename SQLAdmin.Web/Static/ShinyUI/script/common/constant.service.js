@@ -10,7 +10,8 @@
             EXCEPTION: "geterrorinfo",
             MONITOR: "monitor",
             QUERYHISTORY: "query_history",
-            DISK:"getdiskinfo"
+            DISK: "getdiskinfo",
+            NEWQUERY: "newquery"
         }
     }
 

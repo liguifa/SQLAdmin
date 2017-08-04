@@ -53,5 +53,11 @@ namespace SQLAdmin.Web.Controllers
             return null;
         }
 
+        [HttpGet]
+        [Inject]
+        public ActionResult NewQuery()
+        {
+            return View();
+        }
     }
 }

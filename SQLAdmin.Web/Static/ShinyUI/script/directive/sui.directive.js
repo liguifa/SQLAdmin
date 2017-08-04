@@ -600,21 +600,23 @@ angular.module("sqladmin", [])
                     contextmenu.style.visibility = "visible";
                 })
             }
-            var func = document.onmousedown;
-            document.onmousedown = function(e)
-            {
-                func();
-                e = e || window.event; 　//IE window.event
-                var t = e.target || e.srcElement; //目标对象
-                if (!(t && t.claaName && t.claaName == "sui-contextmenu-title")) {
-                    var contextmenus = document.getElementsByClassName("sui-contextmenu");
-                    for (var i in contextmenus) {
-                        if (contextmenus[i].style) {
-                            contextmenus[i].style.visibility = "";
-                        }
-                    }
-                }
-            }
+            //var func = document.onmousedown;
+            //document.onmousedown = function(e)
+            //{
+            //    //if (func) {
+            //    //    func();
+            //    //}
+            //    //e = e || window.event; 　//IE window.event
+            //    //var t = e.target || e.srcElement; //目标对象
+            //    //if (!(t && t.claaName && t.claaName == "sui-contextmenu-title")) {
+            //    //    var contextmenus = document.getElementsByClassName("sui-contextmenu");
+            //    //    for (var i in contextmenus) {
+            //    //        if (contextmenus[i].style) {
+            //    //            contextmenus[i].style.visibility = "";
+            //    //        }
+            //    //    }
+            //    //}
+            //}
         }
     }
 })
@@ -1922,6 +1924,87 @@ angular.module("sqladmin", [])
             };
             $scope.$watch("title", function (title) {
                 $scope.vm.title = title;
+            })
+        }
+    }
+})
+
+.directive('contenteditable', function() {
+    return {
+        require: 'ngModel',
+        link: function (scope, element, attrs, ctrl) {
+            //定位div(contenteditable = "true")
+            function po_Last_Div(obj) {
+                if (window.getSelection) {//ie11 10 9 ff safari
+                    //obj.focus(); //解决ff不获取焦点无法定位问题
+                    var range = window.getSelection();//创建range
+                    range.selectAllChildren(obj[0]);//range 选择obj下所有子内容
+                    range.collapseToEnd();//光标移至最后
+                }
+                else if (document.selection) {//ie10 9 8 7 6 5
+                    var range = document.selection.createRange();//创建选择对象
+                    //var range = document.body.createTextRange();
+                    range.moveToElementText(obj[0]);//range定位到obj
+                    range.collapse(false);//光标移至最后
+                    range.select();
+                }
+            }
+
+            element.bind('focus', function () {
+                scope.timer = setInterval(function () {
+                    ctrl.$setViewValue(element.html());
+                },300);
+            })
+
+            // view -> model
+            element.bind('blur', function() {
+                scope.$apply(function() {
+                    ctrl.$setViewValue(element.html());
+                });
+                clearInterval(scope.timer);
+            });
+            // model -> view
+            ctrl.$render = function() {
+                element.html(ctrl.$viewValue);
+                po_Last_Div(element);
+            };
+            // load init value from DOM
+            ctrl.$render();
+        }
+    };
+})
+
+.directive("suiCodeEdit", function () {
+    var vm = {
+        template: "<div class='sui-code-edit'>\
+                    <div class='sui-code-edit-tools'>\
+                        <ul class='sui-code-edit-tools-list'>\
+                            <li class='sui-code-edit-tools-item'><sui-combo fields='vm.languages'></sui-combo></li>\
+                            <li class='sui-code-edit-tools-item'><div class='sui-icon-exec sui-code-edit-exec'></div></li>\
+                        </ul>\
+                    </div>\
+                    <div contenteditable ng-model='vm.text' class='sui-code-edit-textrea'></div>\
+                  </div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                languages: [{ Name: "T-SQL" }, { Name: "JavaScript" }],
+                text: ""
+            }
+            $scope.$watch("vm.text", function (text) {
+                setTimeout(function () {
+                    var div = document.createElement("div");
+                    div.innerHTML = text;
+                    $scope.vm.text = Prism.highlight(div.innerText, Prism.languages.sql);
+                }, 0)
             })
         }
     }

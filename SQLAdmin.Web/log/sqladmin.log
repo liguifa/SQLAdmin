@@ -18204,3 +18204,558 @@ Error Number:156,State:1,Class:15
 2017-08-04 16:13:43,716 [13760] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
 2017-08-04 16:13:43,731 [15792] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
 2017-08-04 16:13:43,732 [15792] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [RP_DB]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [RP_DB]..sysindexkeys as t_key inner join [RP_DB]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [RP_DB]..sysobjects where Name = 'Common_StudentLO')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-08-04 21:09:52,479 [9508] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:09:52,487 [9508] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:19:08,406 [5316] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:19:08,406 [5316] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:19:25,550 [9488] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:19:25,827 [9488] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:19:25,873 [9488] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:19:25,890 [9488] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 21:19:25,998 [9488] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 21:19:26,038 [9488] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:19:29,322 [9960] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 21:19:29,327 [9960] INFO  iisexpress.exe - Start get tables.
+2017-08-04 21:19:29,401 [9960] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-08-04 21:19:29,466 [9960] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 21:19:31,839 [9960] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-08-04 21:19:31,844 [9960] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-08-04 21:19:35,465 [9960] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-04 21:19:35,624 [9960] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-08-04 21:19:35,649 [5876] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-08-04 21:19:35,689 [9960] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-08-04 21:19:35,815 [5876] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-08-04 21:19:35,876 [5876] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-08-04 21:19:35,926 [9960] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-04 21:19:35,939 [5316] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-08-04 21:19:35,941 [5876] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-08-04 21:19:35,958 [5316] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-08-04 21:19:36,017 [5876] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-08-04 21:19:43,747 [5316] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-08-04 21:36:11,265 [9964] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:36:11,277 [9964] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:36:28,283 [9964] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:36:28,776 [9964] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:36:28,800 [9708] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:36:28,875 [9708] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 21:36:28,910 [9708] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 21:36:28,982 [9708] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:36:31,342 [9964] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 21:36:31,345 [9964] INFO  iisexpress.exe - Start get tables.
+2017-08-04 21:36:31,405 [9964] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-08-04 21:36:31,419 [9964] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 21:36:54,282 [9964] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:36:54,282 [9964] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:37:08,806 [9964] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:37:08,821 [9964] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:37:08,852 [9708] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:37:08,856 [9708] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 21:37:08,889 [9708] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 21:37:08,911 [9708] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:37:10,671 [9964] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 21:37:10,674 [9964] INFO  iisexpress.exe - Start get tables.
+2017-08-04 21:37:10,716 [9964] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-08-04 21:37:10,743 [9964] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 21:38:22,596 [3340] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:38:22,596 [3340] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:38:32,790 [3340] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:38:32,802 [3340] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:38:32,836 [3340] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:38:32,839 [3340] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 21:38:32,880 [3340] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 21:38:32,895 [3340] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:38:34,430 [3340] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 21:38:34,432 [3340] INFO  iisexpress.exe - Start get tables.
+2017-08-04 21:38:34,469 [3340] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-08-04 21:38:34,489 [3340] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 21:40:00,625 [7896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:40:00,625 [7896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:40:12,432 [7624] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:40:12,443 [7624] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:40:12,476 [7624] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:40:12,480 [7624] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 21:40:12,507 [7624] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 21:40:12,527 [7624] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:40:14,509 [7624] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 21:40:14,512 [7624] INFO  iisexpress.exe - Start get tables.
+2017-08-04 21:40:14,538 [7624] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-08-04 21:40:14,559 [7624] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 21:40:15,644 [6808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-08-04 21:40:15,652 [6808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-08-04 21:40:15,756 [7624] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-04 21:40:15,864 [7624] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-08-04 21:40:15,890 [7896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-08-04 21:40:15,939 [7624] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-08-04 21:40:16,047 [7896] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-08-04 21:40:16,118 [7896] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-08-04 21:40:16,154 [7624] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-04 21:40:16,217 [8100] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-08-04 21:40:16,223 [8100] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-08-04 21:40:19,309 [7896] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-08-04 21:40:19,342 [8100] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-08-04 21:40:19,394 [7896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-08-04 21:41:38,336 [7896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:41:38,336 [7896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:41:49,517 [4672] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:41:49,531 [4672] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:41:49,565 [4672] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:41:49,570 [4672] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 21:41:49,592 [4672] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 21:41:49,633 [4672] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:43:56,729 [5704] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:43:56,729 [5704] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:44:10,457 [5704] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:44:10,486 [5704] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:44:10,522 [5704] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:44:10,526 [5704] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 21:44:10,558 [5704] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 21:44:10,576 [5704] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:44:12,651 [5704] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 21:44:12,655 [5704] INFO  iisexpress.exe - Start get tables.
+2017-08-04 21:44:12,697 [5704] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-08-04 21:44:12,729 [5704] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 21:45:49,617 [5180] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:45:49,617 [5180] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:46:07,805 [5180] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:46:07,857 [5180] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:46:07,909 [6960] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:46:07,918 [6960] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 21:46:07,945 [6960] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 21:46:07,966 [6960] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:47:28,832 [2228] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:47:28,839 [2228] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:47:40,697 [10312] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:47:40,873 [10312] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:47:40,903 [10312] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:47:40,918 [10312] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 21:47:40,966 [10312] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 21:47:40,991 [10312] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:47:51,374 [2228] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Report/Cpu?defaultPageId=11.
+2017-08-04 21:47:51,381 [2228] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/Cpu?defaultPageId=11.
+2017-08-04 21:47:55,435 [10496] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Report/GetCPUInfos.
+2017-08-04 21:47:55,598 [10496] ERROR iisexpress.exe - Start exec sql:Select ring_buffer_type,DATEADD(ms, -1 * ((SELECT cpu_ticks/(cpu_ticks/ms_ticks) FROM sys.dm_os_sys_info)- [timestamp]), GETDATE()) as timestamp,record From sys.dm_os_ring_buffers Where ring_buffer_type = 'RING_BUFFER_SCHEDULER_MONITOR' And record like '%<SystemHealth>%' Order By timestamp Asc
+2017-08-04 21:47:55,743 [10496] INFO  iisexpress.exe - End request,url:http://localhost:12165/Report/GetCPUInfos.
+2017-08-04 21:48:25,879 [1436] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:48:25,879 [1436] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:48:38,024 [10496] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:48:38,035 [10496] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:48:38,080 [1436] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:48:38,083 [1436] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 21:48:38,109 [1436] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 21:48:38,134 [1436] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:48:39,595 [10496] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 21:48:39,598 [10496] INFO  iisexpress.exe - Start get tables.
+2017-08-04 21:48:39,647 [10496] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-08-04 21:48:39,676 [10496] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 21:48:41,986 [4024] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 21:48:41,991 [4024] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 21:53:12,582 [4024] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:53:12,582 [4024] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:53:24,782 [10616] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:53:24,786 [10616] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:53:24,820 [9972] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:53:24,823 [9972] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 21:53:24,858 [9972] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 21:53:24,880 [9972] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:53:27,524 [4024] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 21:53:27,534 [4024] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 21:55:16,511 [4024] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:55:16,511 [4024] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 21:55:28,032 [10436] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:55:59,615 [10436] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:56:06,615 [10436] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:56:06,618 [10436] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 21:56:06,649 [10436] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:56:06,664 [10436] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 21:56:06,697 [10436] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 21:56:06,729 [10436] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 21:56:09,471 [10436] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 21:56:09,476 [10436] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:00:25,593 [2348] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:00:25,593 [2348] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:00:38,172 [11124] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:00:38,189 [11124] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:00:38,224 [2348] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:00:38,230 [2348] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:00:38,271 [2348] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:00:38,294 [2348] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:00:40,915 [4340] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:00:40,921 [4340] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:05:02,916 [2748] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:05:02,917 [2748] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:05:13,664 [7380] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:05:13,723 [7380] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:05:21,063 [2748] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:05:21,070 [2748] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:05:21,105 [2748] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:05:21,108 [2748] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:05:21,143 [2748] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:05:21,164 [2748] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:05:22,678 [2748] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 22:05:22,680 [2748] INFO  iisexpress.exe - Start get tables.
+2017-08-04 22:05:22,719 [2748] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-08-04 22:05:22,768 [2748] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 22:05:25,462 [9820] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:05:25,468 [9820] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:06:23,140 [5360] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:06:23,140 [5360] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:06:38,119 [9732] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:06:38,125 [9732] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:06:38,165 [9732] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:06:38,175 [9732] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:06:38,202 [9732] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:06:38,224 [9732] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:06:41,097 [5656] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:06:41,101 [5656] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:17:01,270 [9332] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:17:01,270 [9332] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:17:12,406 [10700] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:17:12,423 [10700] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:17:12,455 [10700] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:17:12,459 [10700] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:17:12,487 [10700] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:17:12,511 [10700] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:17:14,234 [9776] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 22:17:14,237 [9776] INFO  iisexpress.exe - Start get tables.
+2017-08-04 22:17:14,284 [9776] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-08-04 22:17:14,305 [9776] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 22:17:16,839 [9776] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:17:16,844 [9776] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:19:41,709 [9776] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:19:41,709 [9776] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:19:56,990 [9332] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:19:57,003 [9332] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:19:57,057 [9332] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:19:57,077 [9332] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:19:57,101 [9332] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:19:57,138 [9332] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:19:59,893 [9332] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:19:59,898 [9332] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:20:25,930 [9744] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:20:25,930 [9744] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:20:35,054 [9332] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:20:35,064 [9332] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:20:35,107 [9332] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:20:35,113 [9332] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:20:35,147 [9332] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:20:35,173 [9332] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:20:37,814 [9332] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:20:37,820 [9332] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:24:48,478 [5436] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:24:48,478 [5436] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:25:03,474 [292] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:25:03,489 [292] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:25:03,539 [292] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:25:03,542 [292] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:25:03,581 [292] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:25:03,600 [292] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:25:05,924 [7216] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:25:05,928 [7216] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:26:16,605 [6040] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:26:16,605 [6040] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:26:25,609 [11192] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:26:25,624 [11192] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:26:25,639 [11192] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:26:25,650 [11192] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:26:25,681 [11192] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:26:25,709 [11192] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:26:28,279 [11192] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:26:28,285 [11192] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:36:46,555 [6692] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:36:46,555 [6692] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:36:58,771 [5808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:36:58,787 [5808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:36:58,815 [5808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:36:58,820 [5808] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:36:58,852 [5808] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:36:58,875 [5808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:37:01,431 [9568] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:37:01,436 [9568] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:40:44,234 [7776] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:40:44,234 [7776] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:40:55,591 [10076] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:40:55,604 [10076] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:40:55,647 [10076] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:40:55,653 [10076] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:40:55,685 [10076] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:40:55,706 [10076] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:40:58,397 [10076] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:40:58,400 [10076] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:42:52,527 [10076] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:42:52,527 [10076] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:43:05,332 [10076] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:43:05,411 [10076] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:43:13,399 [11588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:43:13,442 [11588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:43:13,496 [11588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:43:13,502 [11588] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:43:13,534 [11588] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:43:13,559 [11588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:43:15,751 [11588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:43:15,754 [11588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:45:25,977 [10076] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:45:25,977 [10076] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:45:39,504 [12016] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:45:39,510 [12016] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:45:39,555 [12176] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:45:39,558 [12176] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:45:39,587 [12176] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:45:39,611 [12176] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:45:41,489 [11592] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:45:41,492 [11592] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:46:41,168 [12016] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:46:41,168 [12016] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:46:51,150 [12016] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:46:51,157 [12016] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:46:51,198 [11820] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:46:51,205 [11820] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:46:51,234 [11820] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:46:51,261 [11820] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:46:53,229 [12016] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:46:53,235 [12016] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:48:59,810 [10740] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:48:59,810 [10740] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:49:09,412 [12016] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:49:09,421 [12016] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:49:09,469 [12016] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:49:09,472 [12016] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:49:09,509 [12016] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:49:09,532 [12016] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:49:12,096 [6804] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:49:12,100 [6804] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:52:13,290 [10740] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:52:13,290 [10740] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:52:21,882 [11064] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:52:21,906 [11064] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:52:21,946 [11064] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:52:21,955 [11064] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:52:21,995 [11064] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:52:22,020 [11064] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:52:23,917 [10740] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:52:23,922 [10740] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:53:32,127 [4012] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:53:32,127 [4012] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:53:45,357 [9164] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:53:45,374 [9164] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:53:45,421 [10596] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:53:45,426 [10596] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:53:45,460 [10596] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:53:45,490 [10596] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:53:47,838 [3212] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:53:47,841 [3212] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:55:26,816 [11928] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:55:26,816 [11928] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:55:37,055 [9164] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:55:37,059 [9164] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:55:37,094 [11928] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:55:37,099 [11928] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:55:37,135 [11928] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:55:37,194 [11928] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:55:39,827 [9164] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:55:39,831 [9164] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:56:19,825 [9164] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:56:19,825 [9164] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 22:56:27,091 [8064] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:56:27,158 [8064] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:56:31,712 [3212] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:56:31,717 [3212] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 22:56:31,753 [5664] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:56:31,757 [5664] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 22:56:31,794 [5664] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 22:56:31,821 [5664] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 22:56:33,913 [9164] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 22:56:33,917 [9164] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:01:51,395 [6268] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:01:51,395 [6268] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:02:01,480 [11392] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:02:01,496 [11392] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:02:01,531 [11392] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:02:01,535 [11392] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:02:01,580 [11392] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:02:01,600 [11392] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:02:02,714 [1236] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 23:02:02,719 [1236] INFO  iisexpress.exe - Start get tables.
+2017-08-04 23:02:02,760 [1236] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-08-04 23:02:02,782 [1236] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-08-04 23:02:04,186 [5108] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:02:04,189 [5108] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:04:30,011 [5108] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:04:30,011 [5108] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:04:41,022 [5108] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:04:41,036 [5108] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:04:41,069 [5108] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:04:41,075 [5108] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:04:41,139 [5108] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:04:41,167 [5108] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:04:49,100 [5108] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:04:49,106 [5108] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:07:23,753 [5108] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:07:23,753 [5108] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:07:33,876 [5108] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:07:33,892 [5108] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:07:33,948 [4376] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:07:33,951 [4376] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:07:33,983 [4376] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:07:34,014 [4376] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:07:37,967 [5108] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:07:37,973 [5108] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:12:01,934 [1992] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:12:01,934 [1992] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:12:14,154 [8580] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:12:14,211 [8580] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:12:14,244 [8580] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:12:14,249 [8580] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:12:14,310 [8580] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:12:14,341 [8580] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:12:17,176 [8580] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:12:17,182 [8580] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:16:26,933 [9380] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:16:26,933 [9380] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:16:36,989 [11276] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:16:37,027 [11276] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:16:37,059 [11276] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:16:37,065 [11276] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:16:37,112 [11276] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:16:37,154 [11276] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:16:39,750 [11700] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:16:39,754 [11700] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:19:31,831 [4424] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:19:31,831 [4424] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:19:43,105 [7652] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:19:43,114 [7652] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:19:43,153 [11724] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:19:43,157 [11724] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:19:43,191 [11724] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:19:43,232 [11724] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:19:46,471 [9432] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:19:46,477 [9432] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:21:40,397 [7972] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:21:40,397 [7972] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:21:50,883 [11724] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:21:50,895 [11724] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:21:50,932 [11724] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:21:50,936 [11724] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:21:50,976 [11724] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:21:51,003 [11724] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:21:52,829 [4424] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:21:52,833 [4424] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:22:52,339 [4424] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:22:52,339 [4424] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:23:05,512 [4424] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:23:05,525 [4424] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:23:05,563 [4424] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:23:05,567 [4424] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:23:05,605 [4424] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:23:05,647 [4424] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:23:08,244 [4424] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:23:08,250 [4424] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:24:11,367 [4424] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:24:11,367 [4424] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:24:21,334 [11724] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:24:21,352 [11724] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:24:21,397 [7972] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:24:21,402 [7972] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:24:21,468 [7972] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:24:21,498 [7972] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:24:23,309 [4424] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:24:23,314 [4424] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:24:55,942 [11724] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:24:55,943 [11724] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:25:05,701 [11724] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:25:05,737 [11724] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:25:05,789 [8764] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:25:05,793 [8764] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:25:05,831 [8764] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:25:05,865 [8764] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:25:08,610 [11724] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:25:08,614 [11724] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:30:00,426 [9772] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:30:00,426 [9772] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:30:10,682 [12024] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:30:10,704 [12024] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:30:10,732 [12024] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:30:10,738 [12024] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:30:10,779 [12024] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:30:10,806 [12024] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:30:12,977 [9772] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:30:12,989 [9772] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:38:10,727 [9800] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:38:10,727 [9800] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:38:21,149 [9800] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:38:21,169 [9800] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:38:21,201 [9800] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:38:21,206 [9800] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:38:21,259 [9800] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:38:21,280 [9800] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:38:24,192 [9384] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:38:24,198 [9384] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:39:39,815 [8256] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:39:39,816 [8256] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:39:49,405 [4652] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:39:49,419 [4652] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:39:49,461 [4652] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:39:49,465 [4652] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:39:49,499 [4652] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:39:49,531 [4652] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:39:52,632 [9800] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:39:52,637 [9800] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:40:35,835 [9800] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:40:35,835 [9800] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:40:46,035 [10888] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:40:46,045 [10888] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:40:46,075 [9800] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:40:46,079 [9800] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:40:46,107 [9800] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:40:46,127 [9800] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:40:49,488 [4652] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:40:49,494 [4652] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:42:15,605 [9800] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:42:15,614 [9800] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:42:25,647 [9800] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:42:26,195 [9800] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:42:26,227 [8256] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:42:26,283 [8256] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:42:26,334 [8256] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:42:26,362 [8256] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:42:28,725 [11772] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:42:28,730 [11772] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:43:27,415 [10244] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:43:27,415 [10244] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:43:37,936 [9800] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:43:37,946 [9800] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:43:37,983 [9800] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:43:37,989 [9800] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:43:38,016 [9800] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:43:38,047 [9800] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:43:40,861 [9532] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:43:40,865 [9532] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:44:10,399 [9800] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:44:10,399 [9800] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:44:19,878 [9800] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:44:19,889 [9800] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:44:19,934 [10244] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:44:19,938 [10244] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:44:19,967 [10244] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:44:19,998 [10244] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:44:22,694 [9800] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:44:22,706 [9800] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:45:16,068 [10244] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:45:16,068 [10244] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:45:24,988 [10244] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:45:24,999 [10244] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:45:25,034 [10244] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:45:25,038 [10244] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:45:25,069 [10244] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:45:25,106 [10244] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:45:27,252 [8456] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:45:27,257 [8456] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:45:53,556 [8456] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:45:53,557 [8456] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-04 23:46:03,526 [9488] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:46:03,540 [9488] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-04 23:46:03,584 [12048] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:46:03,589 [12048] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-04 23:46:03,612 [12048] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-04 23:46:03,631 [12048] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-04 23:46:05,667 [10244] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-04 23:46:05,671 [10244] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.

@@ -13,6 +13,7 @@
             { name: constant.EXCEPTION, url: "/Report/Exception", args: null, title: "异常统计", defaultPageId: 81 },
             { name: constant.MONITOR, url: "Monitor/Index", args: null, title: "监视", defaultPageId: 111 },
             { name: constant.QUERYHISTORY, url: "Report/Query", args: null, title: "查询统计", defaultPageId: 61 },
+            { name: constant.NEWQUERY, url: "/Manage/NewQuery", args: null, title: "新疆查询", defaultPageId: 41 }
         ]
 
         function _addPage(config, args) {

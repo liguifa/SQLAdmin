@@ -13,7 +13,7 @@
                     resize: function () {
                         var height = document.body.clientHeight;
                         var layout = document.getElementById($scope.vm.id);
-                        layout.style.height = height + "px";
+                        layout.style.height = height - 30 + "px";
                     }
                 },
                 window.onresize = $scope.vm.resize;

@@ -158,6 +158,7 @@
     <Content Include="Static\ShinyUI\Images\icon_copy.png" />
     <Content Include="Static\ShinyUI\Images\icon_edit.png" />
     <Content Include="Static\ShinyUI\Images\icon_error.png" />
+    <Content Include="Static\ShinyUI\Images\icon_exec.png" />
     <Content Include="Static\ShinyUI\Images\icon_folder.png" />
     <Content Include="Static\ShinyUI\Images\icon_key.png" />
     <Content Include="Static\ShinyUI\Images\icon_left.png" />
@@ -263,6 +264,7 @@
     <Content Include="Static\css\layout.css" />
     <None Include="Properties\PublishProfiles\SA.pubxml" />
     <Content Include="Views\Common\ManagePool.cshtml" />
+    <Content Include="Views\Manage\NewQuery.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

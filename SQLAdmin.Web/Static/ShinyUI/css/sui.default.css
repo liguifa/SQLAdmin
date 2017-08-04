@@ -1841,3 +1841,48 @@ body,html,document {
     font-size: 20px;
     font-weight: 300;
     }
+
+.sui-code-edit {
+    width: 100%;
+    height: 460px;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+    padding-bottom:40px;
+}
+
+.sui-code-edit-tools {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: central;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.sui-code-edit-textrea {
+    width:100%;
+    height:100%;
+    border:none;
+    outline:none;
+    padding:5px;
+    font-size:12px;
+}
+
+.sui-code-edit-tools-list{
+    list-style:none;
+    margin:0px;
+    padding:0px;
+}
+
+.sui-code-edit-tools-item{
+    display:inline-block;
+    float:left;
+}
+
+.sui-code-edit-exec{
+    background-size:35px !important;
+    width:35px;
+    height:35px;
+    float:left;
+    margin-top:-5px;
+    cursor:pointer;
+}
