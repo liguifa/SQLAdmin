@@ -154,7 +154,7 @@ namespace SQLServer.Dao
 
         public List<dynamic> SQLQuery(string sql)
         {
-            throw new NotImplementedException();
+            return this.DBContext.SqlReader(sql).ToList();
         }
 
         public bool Update(dynamic t, string key = "ID", bool isSaveChange = false)

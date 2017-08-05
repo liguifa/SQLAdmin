@@ -1,2 +1,8 @@
-﻿<sui-code-edit></sui-code-edit>
-<sui-line title="'查询结果'"></sui-line>
+﻿<div ng-controller="query.controller">
+    <sui-code-edit exec="vm.exec(code,language)"></sui-code-edit>
+    <sui-line title="'查询结果'"></sui-line>
+    <div>
+        <sui-datagrid ng-if="vm.execResult.ResultType == 0" datas="vm.execResult.Result" is-show-thead="false" is-can-select="false"></sui-datagrid>
+        <span ng-if="vm.execResult.ResultType == 1">{{vm.execResult.Result}}</span>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 ﻿using SQLAdmin.Domain;
 using SQLAdmin.IService;
+using SQLAdmin.Utility.ViewModels;
 using SQLAdmin.Web.App_Start;
 using System;
 using System.Collections.Generic;
@@ -58,6 +59,13 @@ namespace SQLAdmin.Web.Controllers
         public ActionResult NewQuery()
         {
             return View();
+        }
+
+        [HttpPost]
+        [Inject]
+        public ActionResult Exec(ExecViewModel vm)
+        {
+            return Json(ServiceFactory.GetInstance().DBManageService.Exec(vm.Code, vm.Language));
         }
     }
 }

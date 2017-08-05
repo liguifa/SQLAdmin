@@ -1886,3 +1886,23 @@ body,html,document {
     margin-top:-5px;
     cursor:pointer;
 }
+
+.sui-code-edit-isHighlight {
+    display: inline-block;
+    margin-left:5px;
+}
+.sui-code-edit-isHighlight  .sui-switch-input{
+   float:left;
+}
+
+.sui-code-edit-isHighlight  .sui-switch-checkbox{
+    float:left;
+    margin-top:5px;
+}
+
+.sui-code-edit-isHighlight .sui-switch-checkbox-text{
+    margin-top:-8px;
+}
+
+.sui-code-edit-isHighlight-label{
+}

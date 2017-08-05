@@ -15,5 +15,7 @@ namespace SQLAdmin.IService
         bool Delete(RemoveFilter filter);
 
         bool Update(UpdateFilter filter);
+
+        ExecViewModel Exec(string code, Language language);
     }
 }

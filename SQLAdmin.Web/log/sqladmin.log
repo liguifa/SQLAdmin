@@ -18759,3 +18759,583 @@ Error Number:156,State:1,Class:15
 2017-08-04 23:46:03,631 [12048] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
 2017-08-04 23:46:05,667 [10244] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
 2017-08-04 23:46:05,671 [10244] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 14:43:52,490 [10036] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 14:43:52,498 [10036] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 14:44:45,577 [804] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 14:44:46,818 [804] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 14:44:46,840 [10036] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 14:44:46,939 [10036] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 14:44:47,035 [10036] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 14:44:47,060 [10036] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 14:44:51,055 [10012] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 14:44:51,058 [10012] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 14:48:32,301 [8624] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 14:48:32,301 [8624] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 14:48:48,698 [804] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 14:48:48,708 [804] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 14:48:48,738 [804] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 14:48:48,747 [804] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 14:48:48,777 [804] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 14:48:48,789 [804] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 14:48:51,162 [804] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 14:48:51,166 [804] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 14:55:50,105 [9060] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 14:55:50,106 [9060] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 14:56:04,865 [9060] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 14:56:04,885 [9060] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 14:56:04,918 [9060] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 14:56:04,921 [9060] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 14:56:04,949 [9060] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 14:56:04,966 [9060] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 14:56:07,005 [9060] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 14:56:07,010 [9060] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 14:56:19,948 [9060] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 14:56:19,948 [9060] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 14:56:29,768 [1072] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 14:56:29,771 [1072] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 14:56:29,803 [1072] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 14:56:29,812 [1072] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 14:56:29,844 [1072] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 14:56:29,866 [1072] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 14:56:32,009 [9060] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 14:56:32,012 [9060] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 14:57:28,654 [9060] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 14:57:28,654 [9060] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 14:57:38,504 [9060] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 14:57:38,516 [9060] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 14:57:38,551 [6276] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 14:57:38,556 [6276] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 14:57:38,582 [6276] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 14:57:38,587 [6276] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 14:57:40,914 [212] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 14:57:40,918 [212] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 14:59:33,107 [6032] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 14:59:33,107 [6032] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 14:59:42,131 [9060] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 14:59:42,141 [9060] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 14:59:42,171 [9060] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 14:59:42,174 [9060] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 14:59:42,199 [9060] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 14:59:42,208 [9060] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 14:59:44,583 [9060] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 14:59:44,587 [9060] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 15:04:44,742 [292] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 15:04:44,742 [292] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 15:04:47,247 [292] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 15:04:47,248 [292] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 15:04:57,644 [292] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 15:04:57,652 [292] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 15:04:57,681 [292] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 15:04:57,685 [292] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 15:04:57,718 [292] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 15:04:57,737 [292] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 15:04:59,925 [292] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 15:04:59,931 [292] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 15:12:02,458 [6788] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 15:12:02,459 [6788] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 15:12:14,675 [4016] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 15:12:14,689 [4016] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 15:12:14,717 [6788] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 15:12:14,720 [6788] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 15:12:14,747 [6788] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 15:12:14,753 [6788] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 15:12:16,975 [6788] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 15:12:16,979 [6788] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 15:12:43,888 [4016] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 15:12:43,888 [4016] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 15:12:56,540 [6788] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 15:12:56,556 [6788] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 15:12:56,593 [4604] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 15:12:56,597 [4604] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 15:12:56,632 [4604] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 15:12:56,647 [4604] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 15:13:42,633 [6788] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 15:13:42,637 [6788] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 15:15:04,486 [6788] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 15:15:04,486 [6788] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 15:15:14,953 [4604] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 15:15:14,964 [4604] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 15:15:14,994 [8576] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 15:15:14,998 [8576] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 15:15:15,023 [8576] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 15:15:15,036 [8576] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 15:15:17,273 [4604] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 15:15:17,280 [4604] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 15:19:23,610 [8628] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-08-05 15:19:23,617 [8628] INFO  iisexpress.exe - Start get tables.
+2017-08-05 15:19:23,716 [8628] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-08-05 15:19:23,756 [8628] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-08-05 15:19:26,764 [8628] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-08-05 15:19:26,769 [8628] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-08-05 15:19:26,868 [8628] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 15:19:26,909 [924] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-08-05 15:19:27,007 [8628] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-08-05 15:19:27,155 [924] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-08-05 15:19:27,230 [8628] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-08-05 15:19:27,304 [924] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-08-05 15:19:27,357 [8628] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 15:19:27,371 [8460] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-08-05 15:19:27,372 [924] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-08-05 15:19:27,400 [8460] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-08-05 15:19:27,448 [924] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-08-05 15:19:31,103 [8460] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-08-05 20:47:20,487 [12996] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery.
+2017-08-05 20:47:50,283 [12996] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery.
+2017-08-05 20:49:38,350 [12996] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 20:49:42,345 [12996] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 20:50:53,275 [12996] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 20:50:53,275 [12996] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 20:51:22,079 [12996] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 20:51:49,192 [12996] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 20:51:57,418 [12996] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 20:51:57,444 [12996] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 20:51:57,471 [12996] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 20:51:57,508 [12996] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 20:51:57,548 [12996] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 20:51:57,584 [12996] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 20:51:59,442 [9176] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTables.
+2017-08-05 20:51:59,446 [9176] INFO  iisexpress.exe - Start get tables.
+2017-08-05 20:51:59,491 [9176] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From test..SysObjects Where xtype = 'U' Order By name Asc
+2017-08-05 20:51:59,517 [9176] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTables.
+2017-08-05 20:52:00,876 [12368] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-08-05 20:52:00,876 [12368] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Query?defaultPageId=101&name=[test].[dbo].[User].
+2017-08-05 20:52:07,102 [12996] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-08-05 20:52:07,138 [11424] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 20:52:07,268 [12996] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-08-05 20:52:07,403 [11424] ERROR iisexpress.exe - Start exec sql:Select  top 1 id,name,xtype From [test]..SysObjects Where xtype = 'U' And name = 'User'
+2017-08-05 20:52:07,461 [12996] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-08-05 20:52:07,517 [11424] ERROR iisexpress.exe - Start exec sql:Select id,name,xtype From [test]..SysColumns Where id = '565577053' Order By name Asc
+2017-08-05 20:52:07,545 [11424] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 20:52:07,591 [13200] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-08-05 20:52:07,594 [13200] ERROR iisexpress.exe - Start exec sql:select _index.id as id,_index.indid as indid,_index.name as indname,_col.name as colname from [test]..SysColumns as _col join (select t_key.id, t_key.indid,t_key.colid,t_index.name from [test]..sysindexkeys as t_key inner join [test]..sysindexes as t_index on t_key.indid = t_index.indid  where t_key.id = t_index.id and t_key.id=(select id from [test]..sysobjects where Name = 'User')) as _index on _index.colid = _col.colid where _col.id = _index.id
+2017-08-05 20:52:07,597 [12996] ERROR iisexpress.exe - Start exec sql:Select * From [test].[dbo].[User] Where 1=1 Order By 1 Asc Offset 0 Rows Fetch Next 50 Rows Only
+2017-08-05 20:52:07,648 [12996] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-08-05 20:52:13,185 [13200] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableIndexs.
+2017-08-05 21:00:18,690 [336] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 21:00:18,695 [336] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 21:57:00,175 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 21:57:00,192 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 21:57:14,467 [10140] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 21:57:14,626 [10140] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 21:57:14,656 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 21:57:14,676 [4896] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 21:57:14,739 [4896] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 21:57:14,784 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 21:57:17,701 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 21:57:17,705 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 21:59:01,083 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 21:59:01,090 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 21:59:13,863 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 21:59:14,051 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 21:59:14,084 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 21:59:14,098 [4896] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 21:59:14,165 [4896] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 21:59:14,196 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 21:59:16,481 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 21:59:16,498 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:01:33,503 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:01:33,523 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:01:50,112 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:01:50,248 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:01:50,276 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:01:50,293 [4896] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 22:01:50,335 [4896] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 22:01:50,383 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:01:52,300 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:01:52,304 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:06:40,262 [11456] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:06:40,262 [11456] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:06:52,774 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:07:07,841 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:07:18,705 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:07:18,720 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:07:18,762 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:07:18,772 [4896] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 22:07:18,799 [4896] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 22:07:18,814 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:07:21,480 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:07:21,485 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:07:25,309 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:07:25,319 [11472] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:07:25,358 [4896] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 102
+2017-08-05 22:07:34,614 [11472] ERROR iisexpress.exe - An error has occurred in the select data,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerManageService.cs:行号 88
+2017-08-05 22:07:37,183 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:07:38,229 [11472] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:08:47,145 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:08:47,145 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:08:57,898 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:08:57,908 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:08:57,942 [12768] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:08:57,946 [12768] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 22:08:57,971 [12768] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 22:08:57,992 [12768] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:09:00,567 [11456] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:09:00,571 [11456] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:09:00,640 [3396] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:09:00,640 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:09:00,680 [3396] ERROR iisexpress.exe - An error has occurred in the select data,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerManageService.cs:行号 88
+2017-08-05 22:09:03,725 [4896] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerDatabaseService.cs:行号 102
+2017-08-05 22:09:05,669 [3396] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:09:06,600 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:09:58,138 [9816] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:10:36,448 [9816] ERROR iisexpress.exe - Start exec sql:use test;select * from User
+2017-08-05 22:11:04,419 [9816] ERROR iisexpress.exe - An error has occurred in the exec sql, error:System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.SqlClient.SqlException: 关键字 'User' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 61
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   在 System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 Common.Interceptor.InterceptorProxy`1.Invoke(IMessage msg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql)
+   在 SQLServer.Dao.SQLServerDynamicRepertory.SQLQuery(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDynamicRepertory.cs:行号 157
+   在 SQLServer.Service.SQLServerManageService.Exec(String code, Language language) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerManageService.cs:行号 57
+2017-08-05 22:11:20,087 [9816] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:11:52,812 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:11:55,536 [4896] ERROR iisexpress.exe - Start exec sql:use test;select * from [User}
+2017-08-05 22:12:00,268 [4896] ERROR iisexpress.exe - An error has occurred in the exec sql, error:System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.SqlClient.SqlException: 字符串 'User}' 后的引号不完整。
+“User}”附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDBContext.cs:行号 61
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   在 System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 Common.Interceptor.InterceptorProxy`1.Invoke(IMessage msg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql)
+   在 SQLServer.Dao.SQLServerDynamicRepertory.SQLQuery(String sql) 位置 D:\SQLAdmin\SQLServer.Dao\SQLServerDynamicRepertory.cs:行号 157
+   在 SQLServer.Service.SQLServerManageService.Exec(String code, Language language) 位置 D:\SQLAdmin\SQLServer.Service\SQLServerManageService.cs:行号 57
+2017-08-05 22:12:00,269 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:12:05,059 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:12:06,480 [4896] ERROR iisexpress.exe - Start exec sql:use test;select * from [User]
+2017-08-05 22:12:06,986 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:12:38,475 [4896] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:12:41,264 [4896] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 22:12:41,289 [4896] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:36:58,258 [12668] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery.
+2017-08-05 22:37:05,259 [12668] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery.
+2017-08-05 22:37:16,822 [10764] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:37:16,822 [10764] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:37:36,066 [10764] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:37:36,197 [10764] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:37:36,233 [10764] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:37:36,256 [10764] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 22:37:36,299 [10764] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 22:37:36,330 [10764] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:37:40,238 [5476] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:37:40,242 [5476] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:37:43,915 [5476] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:37:43,975 [5476] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName)
+2017-08-05 22:37:46,846 [5476] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:37:46,848 [10764] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:37:46,905 [10764] ERROR iisexpress.exe - An error has occurred in the select data,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter)
+2017-08-05 22:37:50,402 [10764] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:38:12,222 [10764] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:38:12,226 [10764] ERROR iisexpress.exe - Start exec sql:use test;select * from User
+2017-08-05 22:38:15,950 [10764] ERROR iisexpress.exe - An error has occurred in the exec sql, error:System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.SqlClient.SqlException: 关键字 'User' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   在 System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 Common.Interceptor.InterceptorProxy`1.Invoke(IMessage msg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql)
+   在 SQLServer.Dao.SQLServerDynamicRepertory.SQLQuery(String sql)
+   在 SQLServer.Service.SQLServerManageService.Exec(String code, Language language)
+2017-08-05 22:38:15,966 [10764] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:38:27,256 [6744] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:38:27,265 [6744] ERROR iisexpress.exe - Start exec sql:use test;select * from User
+2017-08-05 22:38:29,519 [6744] ERROR iisexpress.exe - An error has occurred in the exec sql, error:System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Data.SqlClient.SqlException: 关键字 'User' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   在 System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 Common.Interceptor.InterceptorProxy`1.Invoke(IMessage msg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 SQLServer.Dao.SQLServerDBContext.SqlReader(String sql)
+   在 SQLServer.Dao.SQLServerDynamicRepertory.SQLQuery(String sql)
+   在 SQLServer.Service.SQLServerManageService.Exec(String code, Language language)
+2017-08-05 22:38:29,519 [6744] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:38:50,502 [6744] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:38:50,502 [6744] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:39:10,649 [8152] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:39:10,654 [8152] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:39:10,684 [8152] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:39:10,689 [8152] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 22:39:10,724 [8152] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 22:39:10,748 [8152] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:39:25,221 [10764] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:39:25,225 [10764] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:39:29,078 [6744] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:39:29,139 [10764] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:39:29,185 [10764] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName)
+2017-08-05 22:39:29,185 [6744] ERROR iisexpress.exe - An error has occurred in the select data,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter)
+2017-08-05 22:39:33,706 [10764] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:39:34,667 [6744] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:39:55,455 [10764] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:39:55,457 [10764] ERROR iisexpress.exe - Start exec sql:use test;select * from [User]
+2017-08-05 22:39:55,921 [10764] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:40:08,212 [10764] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:40:08,225 [10764] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 22:40:08,250 [10764] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:40:15,224 [10764] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:40:15,227 [10764] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 22:40:15,350 [10764] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:40:22,850 [10764] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:40:22,850 [10764] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:40:33,702 [10764] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:40:33,707 [10764] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:40:33,741 [13008] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:40:33,746 [13008] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 22:40:33,775 [13008] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 22:40:33,799 [13008] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:40:36,390 [5392] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:40:36,394 [5392] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:40:36,442 [6744] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:40:36,442 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:40:36,488 [6744] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName)
+2017-08-05 22:40:38,975 [9588] ERROR iisexpress.exe - An error has occurred in the select data,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter)
+2017-08-05 22:40:40,993 [6744] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:40:41,971 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:41:06,826 [13008] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:41:06,829 [13008] ERROR iisexpress.exe - Start exec sql:use test;select * from [User]
+2017-08-05 22:41:07,270 [13008] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:41:14,561 [6744] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:41:14,587 [6744] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 22:41:14,605 [6744] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:41:19,944 [6744] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:41:19,951 [6744] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 22:41:19,980 [6744] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:41:39,018 [6744] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:41:39,022 [6744] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 22:41:39,041 [6744] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:42:03,373 [6744] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:42:03,373 [6744] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:42:13,119 [13008] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:42:13,137 [13008] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:42:13,168 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:42:13,172 [9588] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 22:42:13,199 [9588] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 22:42:13,222 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:42:15,671 [6744] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:42:15,674 [6744] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:42:15,739 [6744] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:42:15,741 [2732] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:42:15,778 [6744] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName)
+2017-08-05 22:42:18,982 [2732] ERROR iisexpress.exe - An error has occurred in the select data,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter)
+2017-08-05 22:42:20,866 [6744] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:42:21,630 [2732] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:42:39,106 [2732] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:42:39,111 [2732] ERROR iisexpress.exe - Start exec sql:use test;select * from [User]
+2017-08-05 22:42:39,651 [2732] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:42:49,419 [2732] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:42:49,447 [2732] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 22:42:49,448 [2732] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:43:13,625 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:43:13,628 [9588] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 22:43:13,646 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:43:44,122 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:43:44,130 [9588] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 22:43:44,152 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:43:53,645 [2732] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:43:53,651 [2732] ERROR iisexpress.exe - Start exec sql:use test;select top 51 * from [User]
+2017-08-05 22:43:53,676 [2732] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:46:03,408 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:46:03,408 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:46:15,744 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:46:15,759 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:46:15,794 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:46:15,797 [9588] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 22:46:15,830 [9588] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 22:46:15,880 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:46:18,840 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:46:18,843 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:46:18,900 [7180] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:46:18,908 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:46:18,952 [7180] ERROR iisexpress.exe - An error has occurred in the select data,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter)
+2017-08-05 22:46:21,003 [9588] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName)
+2017-08-05 22:46:22,823 [7180] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:46:23,706 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:46:43,553 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:46:43,556 [9588] ERROR iisexpress.exe - Start exec sql:use test;select * from [User]
+2017-08-05 22:46:44,017 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:46:54,240 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:46:54,249 [9588] ERROR iisexpress.exe - Start exec sql:use test;select ?top 50 * from [User]
+2017-08-05 22:46:54,268 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:56:59,361 [2440] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:56:59,361 [2440] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:57:12,969 [9808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:57:12,977 [9808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 22:57:13,010 [12268] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:57:13,020 [12268] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 22:57:13,067 [12268] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 22:57:13,114 [12268] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 22:57:15,855 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:57:15,861 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 22:57:19,749 [9808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:57:19,749 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:57:19,802 [9808] ERROR iisexpress.exe - An error has occurred in the select data,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter)
+2017-08-05 22:57:22,984 [9588] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName)
+2017-08-05 22:57:24,813 [9808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-08-05 22:57:25,586 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 22:57:53,315 [7656] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:57:53,317 [7656] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 22:57:53,339 [7656] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:57:55,268 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:57:55,278 [9588] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 22:57:55,293 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:57:59,408 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:57:59,414 [9588] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 22:57:59,437 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:58:33,640 [2440] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:58:33,642 [2440] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 22:58:33,669 [2440] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:58:42,970 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:58:42,979 [9588] ERROR iisexpress.exe - Start exec sql:use test;select top 51 * from [User]
+2017-08-05 22:58:43,005 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 22:59:55,247 [2440] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 22:59:55,247 [2440] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 23:00:13,774 [9808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 23:00:13,778 [9808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 23:00:13,821 [2440] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 23:00:13,835 [2440] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 23:00:13,892 [2440] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 23:00:13,922 [2440] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 23:00:17,197 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 23:00:17,200 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 23:00:21,080 [9808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-08-05 23:00:21,081 [9588] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 23:00:21,115 [9808] ERROR iisexpress.exe - An error has occurred in the select data,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter)
+2017-08-05 23:00:23,628 [9588] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName)
+2017-08-05 23:00:25,641 [9808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-08-05 23:00:26,528 [9588] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 23:00:53,549 [7656] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 23:00:53,552 [7656] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 23:00:53,573 [7656] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 23:00:55,783 [2440] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 23:00:55,795 [2440] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 23:00:55,814 [2440] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 23:01:01,898 [9808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 23:01:01,900 [9808] ERROR iisexpress.exe - Start exec sql:use test;select top 51 * from [User]
+2017-08-05 23:01:01,925 [9808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 23:02:22,632 [9808] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/Index.
+2017-08-05 23:02:22,632 [9808] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/Index.
+2017-08-05 23:02:34,391 [12356] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 23:02:34,396 [12356] INFO  iisexpress.exe - End request,url:http://localhost:12165/Connect/LoginDb.
+2017-08-05 23:02:34,425 [4592] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 23:02:34,434 [4592] ERROR iisexpress.exe - Start exec sql:Exec [sys].[xp_msver]
+2017-08-05 23:02:34,457 [4592] ERROR iisexpress.exe - Start exec sql:Select dbid,name From ..SysDatabases
+2017-08-05 23:02:34,498 [4592] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetDatabases.
+2017-08-05 23:02:37,946 [12356] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 23:02:37,952 [12356] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/NewQuery?defaultPageId=41.
+2017-08-05 23:02:41,826 [12356] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 23:02:41,826 [7656] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Get.
+2017-08-05 23:02:41,873 [12356] ERROR iisexpress.exe - An error has occurred in the get table fields,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerDatabaseService.GetTableFields(String tableName)
+2017-08-05 23:02:44,285 [7656] ERROR iisexpress.exe - An error has occurred in the select data,error:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SQLServer.Service.SQLServerManageService.Select(DataFilter filter)
+2017-08-05 23:02:46,057 [12356] INFO  iisexpress.exe - End request,url:http://localhost:12165/Database/GetTableFields.
+2017-08-05 23:02:46,966 [7656] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Get.
+2017-08-05 23:03:10,353 [12356] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 23:03:10,356 [12356] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 23:03:10,379 [12356] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 23:03:12,234 [12356] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 23:03:12,245 [12356] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 23:03:12,259 [12356] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 23:03:14,599 [7656] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 23:03:14,601 [7656] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 23:03:14,619 [7656] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 23:04:12,466 [12356] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 23:04:12,469 [12356] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 23:04:12,502 [12356] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 23:05:20,572 [12356] INFO  iisexpress.exe - Start request,url:http://localhost:12165/Manage/Exec.
+2017-08-05 23:05:20,581 [12356] ERROR iisexpress.exe - Start exec sql:use test;select top 50 * from [User]
+2017-08-05 23:05:20,609 [12356] INFO  iisexpress.exe - End request,url:http://localhost:12165/Manage/Exec.

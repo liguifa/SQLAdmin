@@ -55,6 +55,7 @@
     <Compile Include="ViewModels\DatabaseConfigViewModel.cs" />
     <Compile Include="ViewModels\DiskViewModel.cs" />
     <Compile Include="ViewModels\ExceptionViewModel.cs" />
+    <Compile Include="ViewModels\ExecViewModel.cs" />
     <Compile Include="ViewModels\FieldViewModel.cs" />
     <Compile Include="ViewModels\FieldTypeViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />

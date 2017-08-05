@@ -648,9 +648,9 @@ angular.module("sqladmin", [])
     var vm = {
         template: '<div class="sui-datagrid-content">\
     <table class="sui-datagrid">\
-        <thead>\
+        <thead ng-if="isShowThead">\
       <tr>\
-        <th><input type="checkbox" name="" ng-change="vm.globalChecked()" ng-model="vm.isGlobalSelected" lay-skin="primary" lay-filter="allChoose"></th>\
+        <th ng-if="isCanSelect"><input type="checkbox" name="" ng-change="vm.globalChecked()" ng-model="vm.isGlobalSelected" lay-skin="primary" lay-filter="allChoose"></th>\
         <th ng-repeat="field in vm.fields" ng-click="vm.sort(field.name)">\
             {{field.name}}\
             <div class="sui-datagrid-content-header-icon" ng-if="field.isPrimary"><img src="/Static/Images/icon_key.png" /></div>\
@@ -661,7 +661,7 @@ angular.module("sqladmin", [])
     </thead>\
 <tbody>\
       <tr ng-repeat="row in datas">\
-        <td><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
+        <td ng-if="isCanSelect"><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
         <td ng-repeat="(key,val) in row.rows track by $index"><sui-field type="vm.fields[$index].type" value="row.rows[key].Value"></sui-field></td>\
       </tr>\
 </tbody>\
@@ -678,6 +678,8 @@ angular.module("sqladmin", [])
             datas: "=",
             fields: "=",
             indexs: "=",
+            isCanSelect: '=',
+            isShowThead:'=',
             sort:"&"
         },
         controller: function ($scope) {
@@ -1278,6 +1280,7 @@ angular.module("sqladmin", [])
 
             $scope.$watch("vm.isCheck", function (isCheck) {
                 $scope.vm.displayText = isCheck ? $scope.vm.trueText : $scope.vm.falseText;
+                $scope.value = isCheck;
             });
 
             $scope.$watch("value",function(value){
@@ -1980,7 +1983,8 @@ angular.module("sqladmin", [])
                     <div class='sui-code-edit-tools'>\
                         <ul class='sui-code-edit-tools-list'>\
                             <li class='sui-code-edit-tools-item'><sui-combo fields='vm.languages'></sui-combo></li>\
-                            <li class='sui-code-edit-tools-item'><div class='sui-icon-exec sui-code-edit-exec'></div></li>\
+                            <li class='sui-code-edit-tools-item' ng-click='vm.exec()'><div class='sui-icon-exec sui-code-edit-exec'></div></li>\
+                            <li class='sui-code-edit-tools-item'><label class='sui-code-edit-isHighlight-label'>语法高亮:</label><sui-switch value='vm.isHighlight' class='sui-code-edit-isHighlight'></sui-switch></li>\
                         </ul>\
                     </div>\
                     <div contenteditable ng-model='vm.text' class='sui-code-edit-textrea'></div>\
@@ -1992,19 +1996,27 @@ angular.module("sqladmin", [])
         replace: true,
         priority: 1,
         scope: {
-
+            exec:"&"
         },
         controller: function ($scope) {
             $scope.vm = {
                 languages: [{ Name: "T-SQL" }, { Name: "JavaScript" }],
-                text: ""
+                text: "",
+                isHighlight: true,
+                exec: function () {
+                    var div = document.createElement("div");
+                    div.innerHTML = $scope.vm.text;
+                    $scope.exec({ code: div.innerText, language:0 });
+                }
             }
             $scope.$watch("vm.text", function (text) {
-                setTimeout(function () {
-                    var div = document.createElement("div");
-                    div.innerHTML = text;
-                    $scope.vm.text = Prism.highlight(div.innerText, Prism.languages.sql);
-                }, 0)
+                if ($scope.vm.isHighlight) {
+                    setTimeout(function () {
+                        var div = document.createElement("div");
+                        div.innerHTML = text;
+                        $scope.vm.text = Prism.highlight(div.innerText, Prism.languages.sql);
+                    }, 0)
+                }
             })
         }
     }

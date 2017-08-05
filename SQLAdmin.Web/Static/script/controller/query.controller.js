@@ -17,7 +17,8 @@
             },
             indexs: [],
             showFields: [],
-            isNeedSave:false
+            isNeedSave: false,
+            execResult: "",
         }
 
         function getDatas() {
@@ -145,6 +146,15 @@
                 });
             });
             $scope.vm.isNeedSave = false;
+        }
+
+        $scope.vm.exec = function (code, language) {
+            query.exec(code, language).then(function (data) {
+                if (data.ResultType == 0) {
+                    data.Result = JSON.parse(data.Result);
+                }
+                $scope.vm.execResult = data;
+            })
         }
     }
 

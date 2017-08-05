@@ -43,12 +43,21 @@
             return deferred.promise;
         }
 
+        function _exec(code, language) {
+            var deferred = $q.defer();
+            $http.post("/Manage/Exec", { Code: code, Language: language }).then(function (data) {
+                deferred.resolve(data.data);
+            });
+            return deferred.promise;
+        }
+
         return {
             filter: _filter,
             remove: _remove,
             getTableFields: _getTableFields,
             getTableIndexs: _getTableIndexs,
             update: _update,
+            exec: _exec
         }
     }
 

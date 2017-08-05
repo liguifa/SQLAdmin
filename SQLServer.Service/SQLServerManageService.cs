@@ -11,6 +11,7 @@ using SQLServer.Utility;
 using SQLAdmin.Utility.ViewModels;
 using System.Data;
 using SQLServer.Domain;
+using Common.Utility;
 
 namespace SQLServer.Service
 {
@@ -39,6 +40,31 @@ namespace SQLServer.Service
                 mLog.Error($"An error has occurred in the delete,error:{e.ToString()}");
                 throw;
             }
+        }
+
+        public ExecViewModel Exec(string code, Language language)
+        {
+            if(language != Language.TSQL)
+            {
+                throw new NotSupportedException();
+            }
+            string result = String.Empty;
+            ResultType type = ResultType.Data;
+            try
+            {
+                using (var scope = new SQLServerDBContextScope(this.mDBConnect))
+                {
+                    SQLServerDynamicRepertory db = new SQLServerDynamicRepertory();
+                    result = SerializerHelper.SerializerObjectByJsonConvert(db.SQLQuery(code));
+                }
+            }
+            catch(Exception e)
+            {
+                mLog.Error($"An error has occurred in the exec sql, error:{e.ToString()}");
+                result = SerializerHelper.SerializerObjectByJsonConvert(e);
+                type = ResultType.Error;
+            }
+            return new ExecViewModel() { Result = result, ResultType = type };
         }
 
         [LogInterecpor]
