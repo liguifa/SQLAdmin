@@ -14,10 +14,10 @@
 .sa-layout-body-manage{
     height:107%;
     width:82%;
-    float:right;
+    float:left;
     margin:0px;
-    margin-left:25px;
     margin-top:10px;
+    margin-left:25px;
     overflow:hidden;
 }
 
@@ -30,4 +30,14 @@
     float: right;
     margin-top:15px;
     margin-right:10px;
+}
+
+.sa-newquery-result{
+    width:100%;
+    height:340px;
+    overflow:auto;
+}
+
+.sa-newquery-result-error{
+    color:red;
 }

@@ -61,7 +61,8 @@ namespace SQLServer.Service
             catch(Exception e)
             {
                 mLog.Error($"An error has occurred in the exec sql, error:{e.ToString()}");
-                result = SerializerHelper.SerializerObjectByJsonConvert(e);
+                Exception exception = e.InnerException == null ? e : e.InnerException;
+                result = exception.Message;
                 type = ResultType.Error;
             }
             return new ExecViewModel() { Result = result, ResultType = type };

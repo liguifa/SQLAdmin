@@ -151,7 +151,14 @@
         $scope.vm.exec = function (code, language) {
             query.exec(code, language).then(function (data) {
                 if (data.ResultType == 0) {
-                    data.Result = JSON.parse(data.Result);
+                    let dataTemp = JSON.parse(data.Result);
+                    data.Result = dataTemp.map(function (item) {
+                        item.rows = [];
+                        for (var keyValue in item) {
+                            item.rows.push(item[keyValue]);
+                        }
+                        return item;
+                    });
                 }
                 $scope.vm.execResult = data;
             })

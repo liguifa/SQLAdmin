@@ -662,7 +662,8 @@ angular.module("sqladmin", [])
 <tbody>\
       <tr ng-repeat="row in datas">\
         <td ng-if="isCanSelect"><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
-        <td ng-repeat="(key,val) in row.rows track by $index"><sui-field type="vm.fields[$index].type" value="row.rows[key].Value"></sui-field></td>\
+        <td ng-if="isEdit" ng-repeat="(key,val) in row.rows track by $index"><sui-field type="vm.fields[$index].type" value="row.rows[key].Value"></sui-field></td>\
+        <td ng-if="!isEdit" ng-repeat="(key,val) in row.rows track by $index">{{val}}</td>\
       </tr>\
 </tbody>\
     </table>\
@@ -679,7 +680,8 @@ angular.module("sqladmin", [])
             fields: "=",
             indexs: "=",
             isCanSelect: '=',
-            isShowThead:'=',
+            isShowThead: '=',
+            isEdit:"=",
             sort:"&"
         },
         controller: function ($scope) {
@@ -740,18 +742,19 @@ angular.module("sqladmin", [])
             });
 
             $scope.$watch("indexs", function (indexs) {
-                for (var i in $scope.fields)
-                {
-                    for (var j in indexs)
-                    {
-                        if(indexs[j].ColumnName == $scope.vm.fields[i].name)
-                        {
+                for (var i in $scope.fields) {
+                    for (var j in indexs) {
+                        if (indexs[j].ColumnName == $scope.vm.fields[i].name) {
                             $scope.vm.fields[i].isPrimary = indexs[j].Type == 0;
                             $scope.vm.fields[i].isForeign = indexs[j].Type == 1;
                         }
                     }
                 }
-            })
+            });
+
+            $scope.isEdit = $scope.isEdit == undefined ? true : $scope.isEdit;
+            $scope.isCanSelect = $scope.isCanSelect == undefined ? true : $scope.isCanSelect;
+            $scope.isShowThead = $scope.isShowThead == undefined ? true : $scope.isShowThead;
         }
     }
 }])
