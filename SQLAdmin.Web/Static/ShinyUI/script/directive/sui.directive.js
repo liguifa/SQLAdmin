@@ -1791,7 +1791,18 @@ angular.module("sqladmin", [])
         template: "<div class='sui-nav'>\
                     <img class='sui-nav-icon' src='{{vm.icon}}' />\
                     <ul class='sui-nav-list'>\
-                        <li class='sui-nav-item' ng-repeat='nav in vm.navs'><a href='{{nav.url}}' target='_blank'>{{nav.title}}</a></li>\
+                        <li class='sui-nav-item' ng-repeat='nav in vm.navs'>\
+                            <a ng-if='nav.isLink' href='{{nav.url}}' target='_blank'>{{nav.title}}</a>\
+                            <a ng-if='!nav.isLink' ng-click='vm.showSubs(nav)'>{{nav.title}}</a>\
+                            <div ng-if='nav.isShowSubs' class='sui-nav-subnav'>\
+                                <ul class='sui-nav-subnav-list'>\
+                                    <li class='sui-nav-subnav-item' ng-repeat='subnav in nav.subs'>\
+                                        <span ng-if='!subnav.isLink' ng-click='vm.subClick(subnav,nav)'>{{subnav.title}}</span>\
+                                        <a ng-if='subnav.isLink' href='{{subnav.url}}' target='_blank'>{{subnav.title}}</a>\
+                                    </li>\
+                                </ul>\
+                            </div>\
+                        </li>\
                     </ul>\
                    </div>"
     }
@@ -1807,10 +1818,32 @@ angular.module("sqladmin", [])
         },
         controller: function ($scope) {
             $scope.vm = {
-                navs:[]
+                navs: [],
+                showSubs: function (nav) {
+                    $scope.vm.navs = $scope.vm.navs.map(function (nav) {
+                        nav.isShowSubs = false;
+                        nav.subs = nav.subs.map(function (sub) {
+                            sub.isShowSubs = false;
+                            return sub;
+                        });
+                        return nav;
+                    });
+                    nav.isShowSubs = !nav.isShowSubs;
+                },
+                subClick: function (sub,parentNav) {
+                    sub.click();
+                    parentNav.isShowSubs = false;
+                }
             }
             $scope.$watch("navs", function (navs) {
-                $scope.vm.navs = navs;
+                $scope.vm.navs = navs.map(function (nav) {
+                    nav.isShowSubs = nav.isShowSubs ? true : false;
+                    nav.subs = nav.subs.map(function (sub) {
+                        sub.isShowSubs = sub.isShowSubs ? true : false
+                        return sub;
+                    });
+                    return nav;
+                });
             }, true);
             $scope.$watch("icon", function (icon) {
                 $scope.vm.icon = icon;

@@ -1696,30 +1696,65 @@ body,html,document {
 .sui-nav-item{
     position: relative;
     display: inline-block;
-    vertical-align: middle;
+    /*vertical-align: middle;*/
     line-height: 50px;
-    border-bottom: solid 5px #393D49;
-        
+    height:50px;
+    width:80px;
+   
 }
 
     .sui-nav-item:hover {
-        border-bottom: solid 5px #5FB878;
+      
     }
 
-    
-    .sui-nav-item:hover a {
-     color:#fff;
-    }
+        .sui-nav-item:hover a {
+            color: #fff;
+              border-bottom: solid 5px #5FB878;
+        }
 
     .sui-nav-item a {
         display: block;
         padding: 0 20px;
-         color: #c2c2c2;
+        color: #c2c2c2;
         transition: all .3s;
         -webkit-transition: all .3s;
         font-size: 14px;
         text-decoration: none;
+        cursor: pointer;
+         border-bottom: solid 5px #393D49; 
     }
+
+.sui-nav-subnav {
+    width: 200px;
+    height: auto;
+    border: #e6e6e6;
+    background: #fff;
+    float: left;
+    margin-top: 0px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.12);
+    border: 1px solid #d2d2d2;
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+.sui-nav-subnav-list{
+    margin:0px;
+    list-style:none;
+    padding:0px;
+}
+
+.sui-nav-subnav-item:hover{
+    background:#e2e2e2;
+}
+
+.sui-nav-subnav-item{
+    color:#000;
+    font-size:14px;
+    line-height:36px;
+    vertical-align:central;
+        padding: 0 20px;
+        cursor:pointer;
+}
 
 .sui-crumbs-list {
     list-style: none;

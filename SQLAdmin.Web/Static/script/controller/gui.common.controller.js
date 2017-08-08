@@ -49,10 +49,14 @@
                     id: item.Id,
                     icon: item.Icon,
                     href:item.Href,
-                    subs: []
+                    subs: [],
+                    isLink: false,
+                    click : function () {
+                        $scope.vm.window = item.Href;
+                    }
                 };
                 if(item.Subs && item.Subs.length > 0){
-                    newItem.subs = item.Subs.map(mapItem)
+                    newItem.subs = item.Subs.map(mapItem);                    
                 }
                 return newItem;
             }
