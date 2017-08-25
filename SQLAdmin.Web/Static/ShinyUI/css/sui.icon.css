@@ -70,8 +70,12 @@
     padding: 8px;
 }
 
-.sui-icon-suive{
-
+.sui-icon-save{
+    background: url(../Images/icon_save.png);
+    background-size: 16px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px;
 }
 
 .sui-icon-top {

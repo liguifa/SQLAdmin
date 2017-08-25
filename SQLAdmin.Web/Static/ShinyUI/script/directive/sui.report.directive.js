@@ -1,128 +1,378 @@
-﻿//angular.module("sqladmin", [])
+﻿angular.module("shinyui", [])
 
-//.directive("saLines", function () {
-//    var vm = {
-//         template: '<div id="container"></div>' 
-//    }
+.directive("suiHistogram", function () {
+    var vm = {
+        template: "<div><svg class='sui-report sui-report-histogram' width='{{vm.w}}px' height='{{vm.h}}px'>\
+                    <text class='sui-report-histogram-text' x='{{vm.h/2}}' y='10'>{{vm.title}}</text>\
+                    <line class='sui-report-histogram-dot' x1='0' y1='{{-30+vm.h-$index*50}}' x2='-2' y2='{{-30+vm.h-$index*50}}' ng-repeat='dot in vm.dotY' />\
+                    <text class='sui-report-histogram-text' x='-16' y='{{-24+vm.h-$index*50}}' ng-repeat='dot in vm.dotY'>{{dot}}</text>\
+                    <line class='sui-report-histogram-y' x1='0' y1='0' x2='0' y2='{{vm.h}}' />\
+                    <rect class='sui-report-histogram-item' ng-repeat='point in vm.points' x='{{$index*50+10}}' y='{{500-point.y}}' width='40' height='{{point.y}}' />\
+                    <line class='sui-report-histogram-x' x1='0' y1='{{vm.h}}' x2='{{vm.w}}' y2='{{vm.h}}' />\
+                    <line class='sui-report-histogram-dot' x1='{{30+$index*50}}' y1='{{vm.h}}' x2='{{30+$index*50}}' y2='{{vm.h+2}}' ng-repeat='dot in vm.dotX' />\
+                    <text class='sui-report-histogram-text' x='{{22+$index*50}}' y='{{vm.h+14}}' ng-repeat='dot in vm.dotX'>{{dot}}</text>\
+                   </svg></div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            points:"=",
+            dotX:"=",
+            dotY:"=",
+            width:"=",
+            height:"=",
+            title:"=",
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                points: [],
+                dotX:[],
+                dotY:[],
+                w:500,
+                h:500,
+                title:"",
+            };
 
-//    return {
-//        restrict: "E",
-//        template: vm.template,
-//        replace: true,
-//        scope: {
+            $scope.$watch("points", function (points) {
+                $scope.vm.points = points;
+            });
             
-//        },
-//        controller: function ($scope) {
-//        },
-//        link: function ($scope, element) {
-//            var container = element;
-//            function drawChart(data) {
-//                var option = {
-//                    colors: ['#00A8F0', '#C0D800', '#CB4B4B', '#4DA74D', '#9440ED'],  //线条的颜色
-//                    ieBackgroundColor: '#3ec5ff',                    //选中时的背景颜色
-//                    title: '北京 深圳2012年平均温度情况',               //标题
-//                    subtitle: '我是副标题',                           //子标题
-//                    shadowSize: 5,                                 //线条阴影
-//                    defaultType: 'lines',                           //图表类型,可选值:bars,bubbles,candles,gantt,lines,markers,pie,points,radar
-//                    HtmlText: false,                                //是使用html或者canvas显示 true:使用html  false:使用canvas
-//                    fontColor: '#ff3ec5',                           //字体颜色
-//                    fontSize: 7.5,                                  //字体大小
-//                    resolution: 1,                                  //分辨率 数字越大越模糊
-//                    parseFloat: true,                               //是否将数据转化为浮点型
-//                    xaxis: {
-//                        ticks: [[1, "一月"], [2, "二月"], [3, "三月"], [4, "四月"], [5, "五月"], [6, "六月"], [7, "七月"], [8, "八月"], [9, "九月"], [10, "十月"], [11, "十一月"], [12, "十二月"]], // 自定义X轴
-//                        minorTicks: null,
-//                        showLabels: true,                             // 是否显示X轴刻度
-//                        showMinorLabels: false,
-//                        labelsAngle: 15,                              //x轴文字倾斜角度
-//                        title: '月份',                                 //x轴标题
-//                        titleAngle: 0,                                //x轴标题倾斜角度
-//                        noTicks: 12,                                   //当使用自动增长时,x轴刻度的个数
-//                        minorTickFreq: null,                           //
-//                        tickFormatter: Flotr.defaultTickFormatter,   //刻度的格式化方式
-//                        tickDecimals: 0,                              //刻度小数点后的位数
-//                        min: null,                                    //刻度最小值  X轴起点的值
-//                        max: null,                                    //刻度最大值
-//                        autoscale: true,
-//                        autoscaleMargin: 0,
-//                        color: null,                             //x轴刻度的颜色
-//                        mode: 'normal',
-//                        timeFormat: null,
-//                        timeMode: 'UTC',                               //For UTC time ('local' for local time).
-//                        timeUnit: 'year',                             //时间单位 (millisecond, second, minute, hour, day, month, year) 
-//                        scaling: 'linear',                            //linear or logarithmic
-//                        base: Math.E,
-//                        titleAlign: 'center',                         //标题对齐方式
-//                        margin: true
-//                    },
-//                    x2axis: {
-//                    },
-//                    yaxis: {
-//                        //// =>  Y轴配置与X轴类似
-//                        ticks: [[-10, "-10"], [0, "0"], [10, "10"], [20, "20"], [30, "30"], [40, "40"]],
-//                        minorTicks: null,      // =>  format: either [1, 3] or [[1, 'a'], 3]
-//                        showLabels: true,      // =>  setting to true will show the axis ticks labels, hide otherwise
-//                        showMinorLabels: false,// =>  true to show the axis minor ticks labels, false to hide
-//                        labelsAngle: 0,        // =>  labels' angle, in degrees
-//                        title: '温度',           // =>  axis title
-//                        titleAngle: 90,        // =>  axis title's angle, in degrees
-//                        noTicks: null,            // =>  number of ticks for automagically generated ticks
-//                        minorTickFreq: null,   // =>  number of minor ticks between major ticks for autogenerated ticks
-//                        tickFormatter: Flotr.defaultTickFormatter, // =>  fn: number, Object ->  string
-//                        tickDecimals: 'no',    // =>  no. of decimals, null means auto
-//                        min: -10,             // =>  min. value to show, null means set automatically
-//                        max: 40,             // =>  max. value to show, null means set automatically
-//                        autoscale: false,      // =>  Turns autoscaling on with true
-//                        autoscaleMargin: 0,    // =>  margin in % to add if auto-setting min/max
-//                        color: null,           // =>  The color of the ticks
-//                        scaling: 'linear',     // =>  Scaling, can be 'linear' or 'logarithmic'
-//                        base: Math.E,
-//                        titleAlign: 'center',
-//                        margin: true           // =>  Turn off margins with false
-//                    },
-//                    y2axis: {
-//                    },
-//                    grid: {
-//                        color: '#545454',      // =>  表格外边框和标题以及所有刻度的颜色
-//                        backgroundColor: null, // =>  表格背景颜色
-//                        backgroundImage: null, // =>  表格背景图片
-//                        watermarkAlpha: 0.4,   // =>  水印透明度
-//                        tickColor: '#DDDDDD',  // =>  表格内部线条的颜色
-//                        labelMargin: 1,        // =>  margin in pixels
-//                        verticalLines: true,   // =>  表格内部是否显示垂直线条
-//                        minorVerticalLines: null, // =>  whether to show gridlines for minor ticks in vertical dir.
-//                        horizontalLines: true, // =>  表格内部是否显示水平线条
-//                        minorHorizontalLines: null, // =>  whether to show gridlines for minor ticks in horizontal dir.
-//                        outlineWidth: 1,       // =>  表格外边框的粗细
-//                        outline: 'nsew',      // =>  超出显示范围后的显示方式
-//                        circular: false        // =>  是否以环形的方式显示
-//                    },
-//                    mouse: {
-//                        track: true,          // =>  为true时,当鼠标移动到每个折点时,会显示折点的坐标
-//                        trackAll: true,       // =>  为true时,当鼠标在线条上移动时,显示所在点的坐标
-//                        position: 'se',        // =>  鼠标事件显示数据的位置 (default south-east)
-//                        relative: false,       // =>  当为true时,鼠标移动时,即使不在线条上,也会显示相应点的数据
-//                        trackFormatter: Flotr.defaultTrackFormatter, // =>  formats the values in the value box
-//                        margin: 5,             // =>  margin in pixels of the valuebox
-//                        lineColor: '#FF3F19',  // =>  鼠标移动到线条上时,点的颜色
-//                        trackDecimals: 0,      // =>  数值小数点后的位数
-//                        sensibility: 2,        // =>  值越小,鼠标事件越精确
-//                        trackY: true,          // =>  whether or not to track the mouse in the y axis
-//                        radius: 3,             // =>  radius of the track point
-//                        fillColor: null,       // =>  color to fill our select bar with only applies to bar and similar graphs (only bars for now)
-//                        fillOpacity: 0.4       // =>  o
-//                    }
-//                };
-//                // Draw Graph
-//                Flotr.draw(container, data, option);
-//            }
-//            var bj = [[1, -9], [2, 1], [3, 12], [4, 20], [5, 26], [6, 30], [7, 32], [8, 29], [9, 22], [10, 12], [11, 0], [12, -6]],// First data series
-//               sz = [[1, 15], [2, 16], [3, 19], [4, 22], [5, 26], [6, 27], [7, 28], [8, 28], [9, 27], [10, 25], [11, 20], [12, 16]]; //Second data series
-//            var data = [
-//               { data: bj, label: '北京', lines: { show: true }, points: { show: true } },
-//               { data: sz, label: '深圳', lines: { show: true }, points: { show: true } }
-//            ];
-//            drawChart(data);
-//        }
-//    }
-//})
+            $scope.$watch("dotX",function(x){
+                $scope.vm.dotX = x;
+            });
+            
+            $scope.$watch("dotY",function(y){
+                $scope.vm.dotY = y;
+            });
+
+            $scope.$watch("width",function(width){
+                $scope.vm.w = width;
+            });
+
+            $scope.$watch("height",function(height){
+                $scope.vm.h = height;
+            });
+
+            $scope.$watch("title",function(title){
+                $scope.vm.title = title;
+            })
+        }
+    }
+})
+
+.directive("suiLine", function () {
+    var vm = {
+        template: "<div><svg class='sui-report sui-report-histogram' width='{{vm.w}}px' height='{{vm.h}}px'>\
+                    <text class='sui-report-histogram-text' x='{{vm.h/2}}' y='10'>{{vm.title}}</text>\
+                    <line class='sui-report-histogram-dot' x1='0' y1='{{-30+vm.h-$index*50}}' x2='-2' y2='{{-30+vm.h-$index*50}}' ng-repeat='dot in vm.dotY' />\
+                    <text class='sui-report-histogram-text' x='-16' y='{{-24+vm.h-$index*50}}' ng-repeat='dot in vm.dotY'>{{dot}}</text>\
+                    <line class='sui-report-histogram-y' x1='0' y1='0' x2='0' y2='{{vm.h}}' />\
+                    <line class='sui-report-histogram-dot' ng-repeat='point in vm.points' x1='{{($index)*50}}' x2='{{($index+1)*50}}' y1='{{vm.h-vm.points[$index-1].y}}' y2='{{vm.h-point.y}}'/>\
+                    <line class='sui-report-histogram-x' x1='0' y1='{{vm.h}}' x2='{{vm.w}}' y2='{{vm.h}}' />\
+                    <line class='sui-report-histogram-dot' x1='{{30+$index*50}}' y1='{{vm.h}}' x2='{{30+$index*50}}' y2='{{vm.h+2}}' ng-repeat='dot in vm.dotX' />\
+                    <text class='sui-report-histogram-text' x='{{22+$index*50}}' y='{{vm.h+14}}' ng-repeat='dot in vm.dotX'>{{dot}}</text>\
+                   </svg></div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            points:"=",
+            dotX:"=",
+            dotY:"=",
+            width:"=",
+            height:"=",
+            title:"=",
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                points: [],
+                dotX:[],
+                dotY:[],
+                w:500,
+                h:500,
+                title:"",
+            };
+
+            $scope.$watch("points", function (points) {
+                $scope.vm.points = points;
+            });
+            
+            $scope.$watch("dotX",function(x){
+                $scope.vm.dotX = x;
+            });
+            
+            $scope.$watch("dotY",function(y){
+                $scope.vm.dotY = y;
+            });
+
+            $scope.$watch("width",function(width){
+                $scope.vm.w = width;
+            });
+
+            $scope.$watch("height",function(height){
+                $scope.vm.h = height;
+            });
+
+            $scope.$watch("title",function(title){
+                $scope.vm.title = title;
+            })
+        }
+    }
+})
+
+.directive("suiFan", function () {
+    var vm = {
+        template: "<div><svg class='sui-report sui-report-fan' width='{{vm.r}}px' height='{{vm.r+30}}px'>\
+                    <path class='sui-report-fan-path' fill='{{point.c}}' d='{{point.d}}' ng-mouseenter='vm.showWeight(point)'  ng-repeat='point in vm.points'></path>\
+                    <circle cx='{{vm.r/2}}' cy='{{vm.r/2}}' r='90' fill='#ffffff' />\
+                    <text class='sui-report-weight' x='{{vm.r/2}}' y='{{vm.r/2}}' fill='{{point.c}}' ng-if='point.is_show_weight' ng-repeat='point in vm.points'>{{point.weight}}</text>\
+                    <text class='sui-report-weight-title' x='{{vm.r/2}}' y='{{vm.r/2+20}}' ng-if='point.is_show_weight' ng-repeat='point in vm.points'>{{point.title}}</text>\
+                    <circle ng-if='false' cx='{{$index*108+7}}' cy='{{vm.r+17}}' r='7' fill='{{point.c}}' ng-repeat='point in vm.points'/>\
+                    <text ng-if='false' x='{{$index*108+22}}' y='{{vm.r+24}}' fill='rgb(102, 102, 102);' ng-repeat='point in vm.points'>{{point.title}}</text>\
+                   </svg></div>",
+        build:function(points,r){
+            var center = "M"+r/2+","+r/2;
+            var front = {x:r/2,y:0};
+            var frontWeight = 0;
+            var newPoints = [];
+            for(var i in points){
+                var newPoint = this.Calculation(360 * points[i].weight,front,r,frontWeight);
+                newPoints.push({
+                    title:points[i].title,
+                    d:center+"L"+front.x+","+front.y+"A"+r/2+","+r/2+",0,0,1,"+newPoint.x+","+newPoint.y+"Z",
+                    c:this.GenerateColor(),
+                    weight:points[i].weight * 100 + "%",
+                    is_show_weight:false
+                });
+                front = newPoint;
+                frontWeight += 360 * points[i].weight;
+            }
+            return newPoints;
+        },
+        Calculation:function(weight,front,r,frontWeight){
+            var quadrant = (frontWeight + weight) / 90;
+            if((frontWeight + weight) % 90 == 0){
+                switch(quadrant){
+                    case 0: return {x:r/2, y:0};
+                    case 1: return {x:r, y:r/2};
+                    case 2: return {x:r/2, y:r};
+                    case 3: return {x:0, y:r/2};
+                    case 4: return {x:r/2, y:0};
+                }
+            } else {
+                switch(parseInt(quadrant)){
+                    case 0:return this.CalculationForOneQuadrant(weight,front,r,frontWeight);
+                    case 1:return this.CalculationForTwoQuadrant(weight,front,r,frontWeight);
+                    case 2:return this.CalculationForThreeQuadrant(weight,front,r,frontWeight);
+                    case 3:return this.CalculationForFourQuadrant(weight,front,r,frontWeight);
+                }
+            }
+        },
+        CalculationForOneQuadrant:function(weight,front,r,frontWeight){
+            var weightY = 90 - (weight + frontWeight);
+            var lengthY = Math.sin(weightY * 0.017453293) * r/2;
+            var newY = r/2 - lengthY;
+            var weightX = frontWeight + weight;
+            var lengthX = Math.sin(weightX * 0.017453293) * r/2;
+            var newX = r/2 + lengthX;
+            return {x:newX, y:newY};
+        },
+        CalculationForTwoQuadrant:function(weight,front,r,frontWeight){
+            var weightY = (weight + frontWeight) - 90;
+            var lengthY = Math.sin(weightY * 0.017453293) * r/2;
+            var newY = r/2 + lengthY;
+            var weightX = 180 - (frontWeight + weight);
+            var lengthX = Math.sin(weightX * 0.017453293) * r/2;
+            var newX = r/2 + lengthX;
+            return {x:newX, y:newY};
+        },
+        CalculationForThreeQuadrant:function(weight,front,r,frontWeight){
+            var weightY = 270 - (weight + frontWeight);
+            var lengthY = Math.sin(weightY * 0.017453293) * r/2;
+            var newY = r/2 + lengthY;
+            var weightX = (frontWeight + weight) - 180;
+            var lengthX = Math.sin(weightX * 0.017453293) * r/2;
+            var newX = r/2 - lengthX;
+            return {x:newX, y:newY};
+        },
+        CalculationForFourQuadrant:function(weight,front,r,frontWeight){
+            var weightY = (weight + frontWeight) - 270;
+            var lengthY = Math.sin(weightY * 0.017453293) * r/2;
+            var newY = r/2 - lengthY;
+            var weightX = 360 - (frontWeight + weight);
+            var lengthX = Math.sin(weightX * 0.017453293) * r/2;
+            var newX = r/2 - lengthX;
+            return {x:newX, y:newY};
+        },
+        GenerateColor:function(){
+            return "#"+parseInt(Math.random()*1000000);
+        }
+    };
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            points: "=",
+            dotX: "=",
+            dotY: "=",
+            r:"=",
+            title: "=",
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                points: [],
+                dotX: [],
+                dotY: [],
+                r: 600,
+                title: "",
+                showWeight:function(point){
+                    $scope.vm.points.forEach(function(item) {
+                        item.is_show_weight = false;
+                    }, this);
+                    point.is_show_weight = true;
+                }
+            };
+
+            $scope.$watch("points", function (points) {
+                $scope.vm.points = vm.build(points,$scope.vm.w);
+            });
+
+            $scope.$watch("dotX", function (x) {
+                $scope.vm.dotX = x;
+            });
+
+            $scope.$watch("dotY", function (y) {
+                $scope.vm.dotY = y;
+               
+            });
+
+            $scope.$watch("r", function (r) {
+                $scope.vm.r = r;
+                $scope.vm.points = vm.build($scope.points,r);
+            });
+
+            $scope.$watch("title", function (title) {
+                $scope.vm.title = title;
+            })
+        }
+    }
+})
+
+.directive("suiRadar",function(){
+    var vm = {
+        template:"<div><svg id='sui-report-radar' class='sui-report sui-report-radar' width='{{vm.r}}px' height='{{vm.r}}px'>\
+                     <circle cx='{{vm.r/2}}' cy='{{vm.r/2}}' r='550'  stroke='#ffffff' stroke-width='1' />\
+                     <circle cx='{{vm.r/2}}' cy='{{vm.r/2}}' r='500'  stroke='#ffffff' stroke-width='1' />\
+                     <circle cx='{{vm.r/2}}' cy='{{vm.r/2}}' r='450'  stroke='#ffffff' stroke-width='1' />\
+                     <circle cx='{{vm.r/2}}' cy='{{vm.r/2}}' r='400'  stroke='#ffffff' stroke-width='1' />\
+                     <circle cx='{{vm.r/2}}' cy='{{vm.r/2}}' r='350'  stroke='#ffffff' stroke-width='1' />\
+                     <circle cx='{{vm.r/2}}' cy='{{vm.r/2}}' r='300'  stroke='#ffffff' stroke-width='1' />\
+                     <circle cx='{{vm.r/2}}' cy='{{vm.r/2}}' r='250'  stroke='#ffffff' stroke-width='1' />\
+                     <circle cx='{{vm.r/2}}' cy='{{vm.r/2}}' r='200'  stroke='#ffffff' stroke-width='1' />\
+                     <circle cx='{{vm.r/2}}' cy='{{vm.r/2}}' r='150'  stroke='#ffffff' stroke-width='1' />\
+                     <circle cx='{{vm.r/2}}' cy='{{vm.r/2}}' r='100'  stroke='#ffffff' stroke-width='1' />\
+                     <circle cx='{{vm.r/2}}' cy='{{vm.r/2}}' r='50'  stroke='#ffffff' stroke-width='1' />\
+                   </svg></div>",
+        Calculation:function(weight,front,r,frontWeight){
+            var quadrant = (frontWeight + weight) / 90;
+            if((frontWeight + weight) % 90 == 0){
+                switch(quadrant){
+                    case 0: return {x:r/2, y:0};
+                    case 1: return {x:r, y:r/2};
+                    case 2: return {x:r/2, y:r};
+                    case 3: return {x:0, y:r/2};
+                    case 4: return {x:r/2, y:0};
+                }
+            } else {
+                switch(parseInt(quadrant)){
+                    case 0:return this.CalculationForOneQuadrant(weight,front,r,frontWeight);
+                    case 1:return this.CalculationForTwoQuadrant(weight,front,r,frontWeight);
+                    case 2:return this.CalculationForThreeQuadrant(weight,front,r,frontWeight);
+                    case 3:return this.CalculationForFourQuadrant(weight,front,r,frontWeight);
+                }
+            }
+        },
+        CalculationForOneQuadrant:function(weight,front,r,frontWeight){
+            var weightY = 90 - (weight + frontWeight);
+            var lengthY = Math.sin(weightY * 0.017453293) * r/2;
+            var newY = r/2 - lengthY;
+            var weightX = frontWeight + weight;
+            var lengthX = Math.sin(weightX * 0.017453293) * r/2;
+            var newX = r/2 + lengthX;
+            return {x:newX, y:newY};
+        },
+        CalculationForTwoQuadrant:function(weight,front,r,frontWeight){
+            var weightY = (weight + frontWeight) - 90;
+            var lengthY = Math.sin(weightY * 0.017453293) * r/2;
+            var newY = r/2 + lengthY;
+            var weightX = 180 - (frontWeight + weight);
+            var lengthX = Math.sin(weightX * 0.017453293) * r/2;
+            var newX = r/2 + lengthX;
+            return {x:newX, y:newY};
+        },
+        CalculationForThreeQuadrant:function(weight,front,r,frontWeight){
+            var weightY = 270 - (weight + frontWeight);
+            var lengthY = Math.sin(weightY * 0.017453293) * r/2;
+            var newY = r/2 + lengthY;
+            var weightX = (frontWeight + weight) - 180;
+            var lengthX = Math.sin(weightX * 0.017453293) * r/2;
+            var newX = r/2 - lengthX;
+            return {x:newX, y:newY};
+        },
+        CalculationForFourQuadrant:function(weight,front,r,frontWeight){
+            var weightY = (weight + frontWeight) - 270;
+            var lengthY = Math.sin(weightY * 0.017453293) * r/2;
+            var newY = r/2 - lengthY;
+            var weightX = 360 - (frontWeight + weight);
+            var lengthX = Math.sin(weightX * 0.017453293) * r/2;
+            var newX = r/2 - lengthX;
+            return {x:newX, y:newY};
+        },
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            r:"=",
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                r: 600,
+                weight:0.01,
+                point: {x:300,y:0}
+            };
+
+            $scope.$watch("r", function (r) {
+                $scope.vm.r = r;
+            });
+
+            for(var i = 0;i<100;i++) {
+                // <line x1='{{vm.r/2}}' y1='{{vm.r/2}}' x2='{{vm.point.x}}' y2='{{vm.point.y}}' stroke='#ffffff' stroke-width='1' />\
+                var line = document.createElement("line");
+                line.setAttribute("x1",$scope.vm.r/2);
+                line.setAttribute("y1",$scope.vm.r/2);
+                var point = vm.Calculation($scope.vm.weight * 360, {x:$scope.vm.r/2,y:0},$scope.vm.r,0);
+            }
+
+            window.setInterval(function(){
+                $scope.$apply(function(){
+                    $scope.vm.point = vm.Calculation($scope.vm.weight * 360, {x:$scope.vm.r/2,y:0},$scope.vm.r,0);
+                    $scope.vm.weight+=0.01;
+                    if($scope.vm.weight>1){
+                        $scope.vm.weight = 0;
+                    }
+                });
+            },100);
+        }
+    }
+})

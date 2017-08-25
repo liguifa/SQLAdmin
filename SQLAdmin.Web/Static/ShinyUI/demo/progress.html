@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>下拉框</title>
+        <link href="../css/sui.default.css" rel="stylesheet" />
+    </head>
+    <body ng-app="check" ng-controller="check.controller">
+        <sui-progress value="vm.value"></sui-progress>
+    </body>
+</html>
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script>
+(function(){
+    function check_controller($scope){
+        $scope.vm = {
+            value:0
+        }
+        function appendFields(){
+            setInterval(function(){
+                $scope.$apply(function(){
+              $scope.vm.value += 2;  
+                    });
+            },3000);
+        }
+        appendFields();
+    }
+    angular.module("check",["sqladmin"]).controller("check.controller",check_controller);
+})();
+</script>

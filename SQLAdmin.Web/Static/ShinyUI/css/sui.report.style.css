@@ -1,4 +1,6 @@
-﻿.cpuinfo-nav {
+/*---------------------------------------------------------*/
+
+.cpuinfo-nav {
     border-bottom: 1px solid #808080;
 }
 
@@ -42,4 +44,77 @@
 .report-disk-info ul li{
     float:left;
     margin-right:10px;
+}
+
+/*---------------------------------------------------------*/
+
+.sui-report{
+    border:1px solid #D9D9D9;
+    padding:18px;
+}
+
+.sui-report-histogram{
+    
+}
+
+.sui-report-histogram-y{
+    stroke:#D9D9D9;
+    stroke-width:1
+}
+
+.sui-report-histogram-x{
+    stroke:#D9D9D9;
+    stroke-width:1
+}
+
+.sui-report-histogram-dot{
+    stroke:#D9D9D9;
+    stroke-width:1
+}
+
+.sui-report-histogram-item{
+    fill:#4472C4;
+    stroke-width:1;
+    stroke:#ffffff;
+}
+
+.sui-report-histogram-item:hover{
+    fill:#5FB554;
+}
+
+.sui-report-histogram-text{
+    fill: #000000;
+    font-size: 12px;
+}
+
+.sui-report-fan{
+    padding:0px;
+    border: none;
+}
+
+.sui-report-fan-path{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+    opacity: 1; 
+    fill-opacity: 1;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.sui-report-fan-path:hover{
+    fill-opacity: 0.9;
+    opacity: 0.9;
+}
+
+.sui-report-weight{
+    font-size:42px;
+    text-anchor:middle;
+}
+
+.sui-report-weight-title{
+    fill:rgb(102, 102, 102);
+    text-anchor:middle;
+}
+
+.sui-report-radar{
+    border-radius: 50%;
+    background: #000000;
 }

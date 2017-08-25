@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="../css/sui.report.style.css" rel="stylesheet" />
+</head>
+<body ng-app="demo" ng-controller="histogram.controller">
+    <sui-fan points="vm.points" r="600" title="'2017年大连平均温度'" dot-x="vm.dotX" dot-y="vm.dotY"></sui-fan>
+</body>
+</html>
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.report.directive.js"></script>
+<script>
+    (function () {
+        function histogram_controller($scope) {
+            $scope.vm = {
+                points: [{title:"Guifa LI",weight:0.4},{title:"Huazhu Wang", weight:0.21},{title:"Huan Qi",weight:0.18},{title:"Ye Qiu",weight:0.1},{title:"Qiang Cheng",weight:0.09},{title:"XianHe Liu",weight:0.02}],
+                dotX:["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],
+                dotY:[-10,-5,0,5,10,15,20,25,30,35],
+            };
+        }
+
+        angular.module("demo", ["shinyui"]).controller("histogram.controller", histogram_controller);
+    })();
+</script>

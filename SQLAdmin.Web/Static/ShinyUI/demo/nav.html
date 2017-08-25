@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../css/sui.default.css" rel="stylesheet" />
+</head>
+<body ng-app="check" ng-controller="check.controller">
+    <sui-line title="'水平导航菜单'"></sui-line>
+    <sui-nav navs="vm.navs" icon="vm.icon"></sui-nav>
+    <sui-line title="'桌面风格菜单'"></sui-line>
+    <sui-menu menus="vm.menus"></sui-menu>
+</body>
+</html>
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script>
+    (function () {
+        function check_controller($scope) {
+            $scope.vm = {
+                navs: [
+                    {title:"Modules",url:"https://www.baidu.com",isuictive:false},
+                    {title:"Bank",url:"https://www.baidu.com",isuictive:false},
+                    {title:"Survey",url:"https://www.baidu.com",isuictive:false},
+                    {title:"Summary",url:"https://www.baidu.com",isuictive:false},
+                    {title:"Archives",url:"https://www.baidu.com",isuictive:false},
+                    { title: "Admin", url: "https://www.baidu.com" ,isuictive:false}
+                ],
+                icon:"images/logo.png",
+                menus: [
+                    {id:1,title:"文件",subs:[{id:11,title:"新建",icon:"images/logo.png"},{id:12,title:"打开",icon:"images/logo.png"},]},
+                    {id:2,title:"Bank",subs:[{id:11,title:"新建",icon:"images/logo.png"},{id:12,title:"打开",icon:"images/logo.png"},]},
+                    {id:3,title:"Survey",url:"https://www.baidu.com",isuictive:false},
+                    {id:4,title:"Summary",url:"https://www.baidu.com",isuictive:false},
+                    {id:5,title:"Archives",url:"https://www.baidu.com",isuictive:false},
+                    {id:6,title: "Admin", url: "https://www.baidu.com" ,isuictive:false}
+                ],
+            }
+        }
+        angular.module("check", ["sqladmin"]).controller("check.controller", check_controller);
+    })();
+</script>

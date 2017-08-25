@@ -46,7 +46,7 @@
         $scope.$watch("vm.tableName", function () {
             getDatas();
             query.getTableFields($scope.vm.tableName).then(function (data) {
-                $scope.vm.fields = data;
+                $scope.vm.fields = data.map(function (item) { item.name = item.Name; return item;});
                 $scope.vm.showFields = data;
                 query.getTableIndexs($scope.vm.tableName).then(function (data) {
                     $scope.vm.indexs = data;

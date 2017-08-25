@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../css/sa.style.css" rel="stylesheet" />
+</head>
+<body ng-app="check" ng-controller="check.controller">
+    <sa-crumbs items="vm.items"></sa-crumbs>
+</body>
+</html>
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sa.directive.js"></script>
+<script>
+    (function () {
+        function check_controller($scope) {
+            $scope.vm = {
+                items: [
+                    {title:"Modules",url:"https://www.baidu.com"},
+                    {title:"Bank",url:"https://www.baidu.com"},
+                    {title:"Survey",url:"https://www.baidu.com"},
+                    {title:"Summary",url:"https://www.baidu.com"},
+                    {title:"Archives",url:"https://www.baidu.com"},
+                    { title: "Admin", url: "https://www.baidu.com" }
+                ],
+            }
+        }
+        angular.module("check", ["sqladmin"]).controller("check.controller", check_controller);
+    })();
+</script>

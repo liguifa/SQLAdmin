@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="../css/sui.default.css" rel="stylesheet" />
+    <link href="../css/prism.css" rel="stylesheet" />
+</head>
+<body ng-app="index" ng-controller="index.controller" style="overflow-x:hidden;">
+        <sui-line title="'引用区块-默认风格'"></sui-line>
+        <sui-blockquote type="'default'">孤帆远影碧空尽，唯见长江天际流。</sui-blockquote>
+        <sui-line title="'引用区块-一般风格'"></sui-line>
+        <sui-blockquote type="'normal'">毕竟西湖六月中，风光不与四时同。</sui-blockquote>
+         <sui-code code='vm.code' style="height:400px;width:100%;margin-top: 10px;margin-bottom: 10px;">
+            <pre><code class="language-html">
+ <sui-blockquote type="'default'">孤帆远影碧空尽，唯见长江天际流。</sui-blockquote>
+            </code></pre>
+        </sui-code>
+</body>
+</html>
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script src="../script/common/grid.service.js"></script>
+<script src="../script/directive/sui.filter.js" type="text/javascript"></script>
+<script src="../script/lib/prism.js"></script>
+<script>
+    (function () {
+        function index_controller($scope) {
+        }
+        angular.module("index", ["sqladmin"]).controller("index.controller", index_controller);
+    })();
+</script>

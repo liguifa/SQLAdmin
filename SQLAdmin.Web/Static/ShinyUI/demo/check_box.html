@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>下拉框</title>
+        <link href="../css/sui.default.css" rel="stylesheet" />
+    </head>
+    <body ng-app="check" ng-controller="check.controller">
+        <sui-check fields="vm.fields"></sui-check>
+    </body>
+</html>
+<script src="../script/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script>
+(function(){
+    function check_controller($scope){
+        $scope.vm = {
+            fields:[]
+        }
+        function appendFields(){
+            $scope.vm.fields.push({name:"C#"});
+            $scope.vm.fields.push({name:"Java"});
+            $scope.vm.fields.push({name:"C"});
+            $scope.vm.fields.push({name:"C++"});
+            $scope.vm.fields.push({name:"PHP"});
+            $scope.vm.fields.push({name:"JavaScript"});
+        }
+        appendFields();
+    }
+    angular.module("check",["sqladmin"]).controller("check.controller",check_controller);
+})();
+</script>

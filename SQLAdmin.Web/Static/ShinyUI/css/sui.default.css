@@ -458,14 +458,88 @@ body,html,document {
 .sui-datagrid {
     border: 1px solid #e2e2e2;
     width: 100%;
-    /*height: 77%;*/
     margin: 0;
     background-color: #fff;
     line-height: 22px;
     border-collapse: collapse;
     text-overflow:ellipsis;
     white-space:nowrap;
+    overflow:hidden;
     z-index: 996;
+    border-right:none;
+    table-layout:fixed
+}
+
+.sui-datagrid-tool{
+    height:40px;
+    border-top:2px solid #009688;
+    border-left:1px solid #e2e2e2;
+    border-right:1px solid #e2e2e2;
+}
+
+.sui-datagrid-tool-list{
+    list-style:none;
+    margin:0px;
+    padding:0px;
+    margin-left:10px;
+}
+
+.sui-datagrid-tool-item{
+    float:left;
+    margin-top:11px;
+}
+
+.sui-datagrid-tool-column{
+    float:right;
+    margin-top:10px;
+    margin-right:10px;
+}
+
+.sui-datagrid-data{
+    overflow:hidden;
+    width:100%;
+}
+
+.sui-datagrid-data th:last-child{
+    border-right:none;
+}
+
+.sui-datagrid-data td:last-child{
+    border-right:none;
+}
+
+.sui-datagrid-data-header{
+    height:39px;
+    margin:0px;
+    border-right:1px solid #e2e2e2;
+    background:#f2f2f2;
+     border-right:1px solid #e2e2e2;
+    border-left:1px solid #e2e2e2;
+}
+
+.sui-datagrid-data-header table {
+    border-left:none;
+}
+
+.sui-datagrid-data-body{
+    height:100%;
+    overflow-y:auto;
+    margin:0px;
+    border-right:1px solid #e2e2e2;
+    border-left:1px solid #e2e2e2;
+}
+
+.sui-datagrid-data-body table{
+    border-left:none;
+
+}
+
+.sui-datagrid-data-body hr{
+    color:#e2e2e2;
+    background:#e2e2e2;
+    height:1px;
+    border:none;
+    margin:0px;
 }
 
     .sui-datagrid thead tr {
@@ -477,6 +551,7 @@ body,html,document {
         min-height: 20px;
         line-height: 20px;
         border: 1px solid #e2e2e2;
+        border-left:none;
         font-size: 14px;
         text-align: left;
         z-index: 996;
@@ -488,9 +563,9 @@ body,html,document {
     }
 
 .sui-datagrid-content {
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x:auto;
-    height: 80%;
+    height: 100%;
     width:100%;
     margin: 0px;
     text-overflow:ellipsis;
@@ -505,15 +580,23 @@ body,html,document {
 }
 
 .sui-datagrid-content td {
-    padding: 9px 15px;
+    padding: 9px 15px 9px;
     min-height: 20px;
     line-height: 20px;
     border: 1px solid #e2e2e2;
+    border-left:none;
     font-size: 14px;
     text-align: left;
     height: 25%;
     z-index: 996;
+    height:20px;
+    text-overflow:ellipsis;
+overflow:hidden;
+white-space: nowrap;
+max-height:20px;
 }
+
+
 
 .sui-datagrid-content-header-icon{
     float:right;
@@ -529,6 +612,26 @@ body,html,document {
     .sui-datagrid-content-sort-icon{
         float:right;
     }
+
+.sui-datagrid-footer {
+    height:40px;
+    border-bottom:2px solid #e2e2e2;
+    border-left:1px solid #e2e2e2;
+    border-right:1px solid #e2e2e2;
+    background:#f2f2f2;
+}
+
+.sui-datagrid-footer-page {
+    margin-top: 5px !important;
+    margin-right: 10px !important;
+    float: right;
+}
+
+.sui-datagrid-footer-info {
+    float: right;
+    margin-top:10px;
+    margin-right:5px;
+}
 
 .sui-blockquote {
     margin-bottom: 0px;

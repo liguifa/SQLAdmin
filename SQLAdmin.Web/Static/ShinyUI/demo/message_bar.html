@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>下拉框</title>
+        <link href="../css/sui.default.css" rel="stylesheet" />
+    </head>
+    <body ng-app="check" ng-controller="check.controller">
+        <sui-messuigebar messuige="vm.messuige"></sui-messuigebar>
+    </body>
+</html>
+<script src="../script/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script>
+(function(){
+    function check_controller($scope){
+        $scope.vm = {
+            messuige:"Well done! You successfully read this important alert messuige."
+        }
+    }
+    angular.module("check",["sqladmin"]).controller("check.controller",check_controller);
+})();
+</script>

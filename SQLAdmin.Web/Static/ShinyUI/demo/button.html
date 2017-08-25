@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../css/sui.default.css" rel="stylesheet" />
+</head>
+<body ng-app="check" ng-controller="check.controller">
+    <sui-line title="'六种按钮主题'"></sui-line>
+    <sui-button text="vm.primary" ng-bind="primary='primary'" type="primary"></sui-button>
+    <sui-button text="vm.default" ng-bind="default='default'" type="default"></sui-button>
+    <sui-button text="vm.normal" ng-bind="normal='normal'" type="normal"></sui-button>
+    <sui-button text="vm.warm" ng-bind="warm='warm'" type="warm"></sui-button>
+    <sui-button text="vm.danger" ng-bind="danger='danger'" type="danger" ></sui-button>
+    <sui-button text="vm.disuibled" ng-bind="disuibled='disuibled'" type="disuibled"></sui-button>
+    <br /><br /><br />
+    <sui-line title="'四种按钮尺寸'"></sui-line>
+    <sui-button text="vm.default" ng-bind="big='big'" size="big"></sui-button>
+    <sui-button text="vm.default" ng-bind="defaule='defaule'" size="defaule"></sui-button>
+    <sui-button text="vm.default" ng-bind="small='small'" size="small"></sui-button>
+    <sui-button text="vm.default" ng-bind="mini='mini'" size="mini"></sui-button>
+
+    <!-- <sui-button text="vm.default" href="vm.href"></sui-button> -->
+</body>
+</html>
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script>
+    (function () {
+        function check_controller($scope) {
+            $scope.vm = {
+                primary: "原始按钮",
+                default: "默认按钮",
+                normal: "百搭按钮",
+                warm:"暖色按钮",
+                danger:"警告按钮",
+                disuibled: "禁用按钮",
+                disuibled: true,
+                href:"https://www.baidu.com"
+            }
+        }
+        angular.module("check", ["sqladmin"]).controller("check.controller", check_controller);
+    })();
+</script>

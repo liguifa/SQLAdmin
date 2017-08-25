@@ -12,7 +12,7 @@
 }
 
 .sa-layout-body-manage{
-    height:107%;
+    height:100%;
     width:82%;
     float:left;
     margin:0px;
@@ -40,4 +40,8 @@
 
 .sa-newquery-result-error{
     color:red;
+}
+
+.sui-query{
+    height: 96.7%;
 }

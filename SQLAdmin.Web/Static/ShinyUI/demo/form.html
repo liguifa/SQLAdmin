@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>下拉框</title>
+        <link href="../css/sui.default.css" rel="stylesheet" />
+        <link href="../css/prism.css" rel="stylesheet" />
+    </head>
+    <body ng-app="combo" ng-controller="combo.controller">
+        <sui-line title="'表单集合'"></sui-line>
+        <label style="float: left;">单行输入框:</label><sui-text style="float: left;"></sui-text>
+         <label style="float: left;">输入框:</label><sui-number style="float: left;"></sui-number>
+        <sui-combo fields="vm.fields"></sui-combo>
+    </body>
+</html>
+    <script src="../script/lib/prism.js" ></script>
+<script src="../script/lib/angular.min.js"></script>
+
+<script src="../script/directive/sui.directive.js"></script>
+<script src="../script/directive/sui.filter.js"></script>
+    <script src="../script/common/grid.service.js"></script>
+<script>
+(function(){
+    function combo_controller($scope){
+        $scope.vm = {
+            fields:[],
+            code:" <sui-combo fields='vm.fields'></sui-combo>\
+                   (function(){\
+                        function combo_controller($scope){\
+                            $scope.vm = {\
+                                fields:[],\
+                            }\
+                            function appendFields(){\
+                                for(var i=0;i<=100;i++){\
+                                    $scope.vm.fields.push({Name:i});\
+                                }\
+                            }\
+                            appendFields();\
+                        }\
+                        angular.module('combo',['sqladmin']).controller('combo.controller',combo_controller);\
+                    })();"
+        }
+        function appendFields(){
+            for(var i=0;i<=100;i++){
+                $scope.vm.fields.push({Name:i});
+            }
+        }
+        appendFields();
+    }
+    angular.module("combo",["sqladmin"]).controller("combo.controller",combo_controller);
+})();
+</script>

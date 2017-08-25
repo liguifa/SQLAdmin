@@ -647,27 +647,48 @@ angular.module("sqladmin", [])
 {
     var vm = {
         template: '<div class="sui-datagrid-content">\
-    <table class="sui-datagrid">\
-        <thead ng-if="isShowThead">\
-      <tr>\
-        <th ng-if="isCanSelect"><input type="checkbox" name="" ng-change="vm.globalChecked()" ng-model="vm.isGlobalSelected" lay-skin="primary" lay-filter="allChoose"></th>\
-        <th ng-repeat="field in vm.fields" ng-click="vm.sort(field.name)">\
-            {{field.name}}\
-            <div class="sui-datagrid-content-header-icon" ng-if="field.isPrimary"><img src="/Static/Images/icon_key.png" /></div>\
-            <div class="sui-datagrid-content-sort-icon sui-icon-sort-asc" ng-if="field.isSort && field.isuisc"></div>\
-            <div class="sui-datagrid-content-sort-icon sui-icon-sort-desc" ng-if="field.isSort && !field.isuisc"></div>\
-        </th>\
-      </tr> \
-    </thead>\
-<tbody>\
-      <tr ng-repeat="row in datas">\
-        <td ng-if="isCanSelect"><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
-        <td ng-if="isEdit" ng-repeat="(key,val) in row.rows track by $index"><sui-field type="vm.fields[$index].type" value="row.rows[key].Value"></sui-field></td>\
-        <td ng-if="!isEdit" ng-repeat="(key,val) in row.rows track by $index">{{val}}</td>\
-      </tr>\
-</tbody>\
-    </table>\
-</div>',
+                    <div class="sui-datagrid-tool" ng-if="isShowTool"><ul class="sui-datagrid-tool-list">\
+                        <li class="sui-datagrid-tool-item"><sui-icon type="remove"></sui-icon></li>\
+                        <li class="sui-datagrid-tool-item"><sui-icon type="add"></sui-icon></li>\
+                        <li class="sui-datagrid-tool-item"><sui-icon type="edit"></sui-icon></li>\
+                        <li class="sui-datagrid-tool-item"><sui-icon type="save"></sui-icon>\
+                        <li class="sui-datagrid-tool-item sui-datagrid-tool-column"><sui-multiselect fields="vm.fields"></sui-multiselect></li>\
+                        <li class="sui-datagrid-tool-item sui-datagrid-tool-column"><sui-search placeholder="vm.placeholder" fields="vm.fields"></sui-sui-search></li>\
+                    </ul></div>\
+                    <div class="sui-datagrid-data">\
+                        <div class="sui-datagrid-data-header" style="padding-right:{{tableHeaderPadding}}px">\
+                            <table class="sui-datagrid">\
+                                <thead ng-if="isShowThead">\
+                                  <tr>\
+                                    <th ng-if="isCanSelect"><input type="checkbox" name="" ng-change="vm.globalChecked()" ng-model="vm.isGlobalSelected" lay-skin="primary" lay-filter="allChoose"></th>\
+                                    <th ng-repeat="field in vm.fields" ng-click="vm.sort(field.name)">\
+                                        {{field.name}}\
+                                        <div class="sui-datagrid-content-header-icon" ng-if="field.isPrimary"><img src="/Static/Images/icon_key.png" /></div>\
+                                        <div class="sui-datagrid-content-sort-icon sui-icon-sort-asc" ng-if="field.isSort && field.isuisc"></div>\
+                                        <div class="sui-datagrid-content-sort-icon sui-icon-sort-desc" ng-if="field.isSort && !field.isuisc"></div>\
+                                    </th>\
+                                  </tr> \
+                                </thead>\
+                            </table>\
+                        </div>\
+                        <div class="sui-datagrid-data-body">\
+                            <table class="sui-datagrid" height="{{tableHeight}}px">\
+                                <tbody>\
+                                      <tr ng-repeat="row in datas">\
+                                        <td ng-if="isCanSelect"><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
+                                        <td ng-if="isEdit" ng-repeat="(key,val) in row.rows track by $index"><sui-field type="vm.fields[$index].type" value="row.rows[key].Value"></sui-field></td>\
+                                        <td ng-if="!isEdit" ng-repeat="(key,val) in row.rows track by $index">{{val}}</td>\
+                                      </tr>\
+                                </tbody>\
+                            </table>\
+                            <hr />\
+                        </div>\
+                    </div>\
+                    <div class="sui-datagrid-footer" ng-if="isShowFooter">\
+                        <sui-pagination class="sui-datagrid-footer-page" page="vm.page" pageNumber="10"></sui-pagination>\
+                        <span class="sui-datagrid-footer-info">共 {{vm.page.total}} 行 {{vm.page.pageCount}} 页，当前显示 {{(vm.page.pageIndex-1)*vm.page.pageSize+1}}-{{vm.page.pageIndex == vm.page.pageCount ? vm.page.total : vm.page.pageIndex*vm.page.pageSize}} 行</span>\
+                    </div>\
+                  </div>',
     }
 
     return {
@@ -681,12 +702,22 @@ angular.module("sqladmin", [])
             indexs: "=",
             isCanSelect: '=',
             isShowThead: '=',
+            isShowTool: "=",
+            isShowFooter:"=",
             isEdit:"=",
             sort:"&"
         },
         controller: function ($scope) {
             $scope.vm = {
                 isGlobalSelected: false,
+                page: {
+                    pageIndex: 1,
+                    pageSize: 50,
+                    total: 560,
+                    pageCount: 8,
+                },
+                tableHeaderPadding:0,
+                placeholder:"Search",
                 globalChecked: function () {
                     for (var i in $scope.datas)
                     {
@@ -724,6 +755,13 @@ angular.module("sqladmin", [])
             $scope.$watch("datas", function (datas) {
                 $scope.vm.isGlobalSelected = false;
                 $scope.vm.globalChecked();
+                if (datas && datas.length > 0) {
+                    if ($scope.tableHeight > datas.length * 39) {
+                        $scope.tableHeight = datas.length * 39;
+                    } else {
+                        $scope.tableHeaderPadding = 14;
+                    }
+                };
             });
 
             $scope.$watch("fields", function (fields) {
@@ -731,7 +769,7 @@ angular.module("sqladmin", [])
                 for (var i in fields)
                 {
                     var f = {
-                        name: fields[i].Name,
+                        name: fields[i].name,
                         isPrimary:false,
                         isForeign: false,
                         isSort: false,
@@ -755,6 +793,15 @@ angular.module("sqladmin", [])
             $scope.isEdit = $scope.isEdit == undefined ? true : $scope.isEdit;
             $scope.isCanSelect = $scope.isCanSelect == undefined ? true : $scope.isCanSelect;
             $scope.isShowThead = $scope.isShowThead == undefined ? true : $scope.isShowThead;
+            $scope.isShowTool = $scope.isShowTool == undefined ? true : $scope.isShowTool;
+            $scope.isShowFooter = $scope.isShowFooter == undefined ? true : $scope.isShowFooter;
+        },
+        link: function ($scope, element, attrs) {
+            var height = element[0].scrollHeight;
+            var tableHeight = height - 42 - 42 - 8;
+            element[0].children[0].style.height = tableHeight + "px";
+            //element[0].children[1].children[1].style.height = tableHeight - 39 + "px";
+            $scope.tableHeight = tableHeight - 39;
         }
     }
 }])
@@ -815,7 +862,7 @@ angular.module("sqladmin", [])
 })
 
 
-.directive("suiIcon", ["messager.service",function (messager)
+.directive("suiIcon",function ()
 {
     var vm = {
         template: '<i class="{{icon_class}} sui-tool-icon" ng-click="vm.icon_click()"></i> '
@@ -841,7 +888,7 @@ angular.module("sqladmin", [])
             }
         }
     }
-}])
+})
 
 .directive("suiPagination", function ()
 {
@@ -989,7 +1036,7 @@ angular.module("sqladmin", [])
                     <input type='text' readonly class='sui-multiselect-text' ng-model='vm.text' ng-click='vm.startSelect()' />\
                     <div ng-if='vm.isSelecting' class='sui-multiselect-field'>\
                         <ul>\
-                            <li ng-repeat='field in vm.fields'><input type='checkbox' ng-model='field.IsSelect'/><span>{{field.Name}}</span></li>\
+                            <li ng-repeat='field in vm.fields'><input type='checkbox' ng-model='field.IsSelect'/><span>{{field.name}}</span></li>\
                         </ul>\
                         <div class='sui-multiselect-button'>\
                             <sui-button size='vm.size' text='vm.ok_btn_text' click='vm.select()' class='sui-multiselect-button-ok'></sui-button>\
@@ -1524,7 +1571,7 @@ angular.module("sqladmin", [])
                     <input type='text' readonly class='sui-combo-text' ng-model='vm.text' ng-click='vm.startSelect()' />\
                     <div ng-if='vm.isSelecting' class='sui-combo-field'>\
                         <ul>\
-                            <li ng-repeat='field in vm.fields' ng-click='vm.select(field)'><span>{{field.Name}}</span></li>\
+                            <li ng-repeat='field in vm.fields' ng-click='vm.select(field)'><span>{{field.name}}</span></li>\
                         </ul>\
                     </div>\
                   </div>"
@@ -1546,14 +1593,14 @@ angular.module("sqladmin", [])
                     $scope.vm.isSelecting = !$scope.vm.isSelecting;
                 },
                 select: function (field) {
-                    $scope.vm.text = field.Name;
+                    $scope.vm.text = field.name;
                     $scope.select({ field: field });
                     $scope.vm.startSelect();
                 }
             }
             $scope.$watch("fields", function (fields) {
                 $scope.vm.fields = fields;
-                $scope.vm.text = fields[0].Name;
+                $scope.vm.text = fields[0].name;
             })
         }
     }  
@@ -1838,10 +1885,16 @@ angular.module("sqladmin", [])
             $scope.$watch("navs", function (navs) {
                 $scope.vm.navs = navs.map(function (nav) {
                     nav.isShowSubs = nav.isShowSubs ? true : false;
-                    nav.subs = nav.subs.map(function (sub) {
-                        sub.isShowSubs = sub.isShowSubs ? true : false
-                        return sub;
-                    });
+                    if (nav.subs) {
+                        nav.subs = nav.subs.map(function (sub) {
+                            sub.isShowSubs = sub.isShowSubs ? true : false
+                            return sub;
+                        });
+                    }
+                    else
+                    {
+                        nav.subs = [];
+                    }
                     return nav;
                 });
             }, true);
