@@ -1,29 +1,41 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>下拉框</title>
         <link href="../css/sui.default.css" rel="stylesheet" />
         <link href="../css/prism.css" rel="stylesheet" />
+         <link href="css/style.css" rel="stylesheet" />
     </head>
-    <body ng-app="combo" ng-controller="combo.controller">
-        <sui-multiselect fields="vm.fields"></sui-multiselect>
-        <sui-code code='vm.code' style="height:400px;width:90%">
-            <pre><code class="language-css">
-                   (function(){
-                        function combo_controller($scope){
-                            $scope.vm = {
-                                fields:[],
-                            }
-                            function appendFields(){
-                                for(var i=0;i<=100;i++){
-                                    $scope.vm.fields.push({Name:i});
-                                }
-                            }
-                            appendFields();
-                        }
-                        angular.module('combo',['sqladmin']).controller('combo.controller',combo_controller);
-                    })();
-        </code></pre>
-        </sui-code>
+    <body ng-app="demo" ng-controller="demo.controller">
+        <div class="demo-block">
+            <sui-line title="'示例'"></sui-line>
+            <sui-multiselect fields="vm.fields" style="float:left;"></sui-multiselect>
+            <div class="sui-clear"></div>
+        </div>
+
+        <div class="demo-block">
+        <sui-line title="'代码'"></sui-line>
+        <div class='demo-code'><xmp><sui-multiselect fields="vm.fields"></sui-multiselect></xmp></div>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'依赖'"></sui-line>
+       <div class='demo-code'><xmp>
+<link href="../css/sui.default.css" rel="stylesheet" />
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+        </xmp></div>
+   </div>
+
+     <div class="demo-block">
+        <sui-line title="'属性'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.property.fields" is-can-select="false" is-edit="false" datas="vm.property.datas"></sui-datagrid>
+     </div>
+
+    <div class="demo-block">
+        <sui-line title="'方法'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.functions.fields" is-can-select="false" is-edit="false" datas="vm.functions.datas"></sui-datagrid>
+   </div>
     </body>
 </html>
     <script src="../script/lib/prism.js" ></script>
@@ -31,35 +43,22 @@
 
 <script src="../script/directive/sui.directive.js"></script>
 <script src="../script/directive/sui.filter.js"></script>
-    <script src="../script/common/grid.service.js"></script>
+    <script src="../script/common/guid.service.js"></script>
 <script>
 (function(){
-    function combo_controller($scope){
+    function demo_controller($scope){
         $scope.vm = {
-            fields:[],
-            code:" <sui-combo fields='vm.fields'></sui-combo>\
-                   (function(){\
-                        function combo_controller($scope){\
-                            $scope.vm = {\
-                                fields:[],\
-                            }\
-                            function appendFields(){\
-                                for(var i=0;i<=100;i++){\
-                                    $scope.vm.fields.push({Name:i});\
-                                }\
-                            }\
-                            appendFields();\
-                        }\
-                        angular.module('combo',['sqladmin']).controller('combo.controller',combo_controller);\
-                    })();"
+            fields:[{name:"海城市"},{name:"台安县"},{name:"岫岩县"},{name:"铁东区"},{name:"铁西区"},{name:"立山区"},{name:"千山区"}],
+            property: {
+                    fields: [{ name: "名称" }, { name: "类型" }, { name: "可选值" }, { name: "示例" }, { name: "默认值" }, { name: "意义" }],
+                    datas: [{ rows: { name: "fields", type: "object", choose: "*", example: "", default: "", commnet: "下拉选项" } }]
+                },
+                functions:{
+                    fields:[{name:"名称"},{name:"参数"},{name:"意义"}],
+                    datas:[]
+                }
         }
-        function appendFields(){
-            for(var i=0;i<=100;i++){
-                $scope.vm.fields.push({Name:i});
-            }
-        }
-        appendFields();
     }
-    angular.module("combo",["sqladmin"]).controller("combo.controller",combo_controller);
+    angular.module("demo",["shinyui"]).controller("demo.controller",demo_controller);
 })();
 </script>

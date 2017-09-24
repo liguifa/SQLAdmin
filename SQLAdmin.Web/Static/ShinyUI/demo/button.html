@@ -1,44 +1,105 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>ShinyUI-按钮</title>
     <meta charset="utf-8" />
+    <link href="../css/prism.css" rel="stylesheet" />
+    <link href="../css/sui.icon.css" rel="stylesheet" />
     <link href="../css/sui.default.css" rel="stylesheet" />
+     <link href="../css/sui.icon.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+        ul{
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        li{
+            float: left;
+            margin: 0px 5px;
+            height: 55px;
+        }
+    </style>
 </head>
-<body ng-app="check" ng-controller="check.controller">
-    <sui-line title="'六种按钮主题'"></sui-line>
-    <sui-button text="vm.primary" ng-bind="primary='primary'" type="primary"></sui-button>
-    <sui-button text="vm.default" ng-bind="default='default'" type="default"></sui-button>
-    <sui-button text="vm.normal" ng-bind="normal='normal'" type="normal"></sui-button>
-    <sui-button text="vm.warm" ng-bind="warm='warm'" type="warm"></sui-button>
-    <sui-button text="vm.danger" ng-bind="danger='danger'" type="danger" ></sui-button>
-    <sui-button text="vm.disuibled" ng-bind="disuibled='disuibled'" type="disuibled"></sui-button>
-    <br /><br /><br />
-    <sui-line title="'四种按钮尺寸'"></sui-line>
-    <sui-button text="vm.default" ng-bind="big='big'" size="big"></sui-button>
-    <sui-button text="vm.default" ng-bind="defaule='defaule'" size="defaule"></sui-button>
-    <sui-button text="vm.default" ng-bind="small='small'" size="small"></sui-button>
-    <sui-button text="vm.default" ng-bind="mini='mini'" size="mini"></sui-button>
+<body ng-app="demo" ng-controller="demo.controller">
+    <div class="demo-block">
+        <sui-line title="'示例'"></sui-line>
+        <ul>
+            <li><sui-button text="vm.primary" type="'primary'"></sui-button></li>
+            <li><sui-button text="vm.default" type="'default'"></sui-button></li>
+            <li><sui-button text="vm.normal" type="'normal'"></sui-button></li>
+            <li><sui-button text="vm.warm" type="'warm'"></sui-button></li>
+            <li><sui-button text="vm.danger" type="'danger'" ></sui-button></li>
+            <li><sui-button text="vm.disabled_text" type="'disabled'"></sui-button></li>
+            <li><sui-button text="'big'" size="'big'"></sui-button></li>
+            <li><sui-button text="'default'" size="'default'"></sui-button></li>
+            <li><sui-button text="'small'" size="'small'"></sui-button></li>
+            <li><sui-button text="'mini'" size="'mini'"></sui-button></li>
+            <li><sui-button text="'下载'" icon="'download'" type="'default'"></sui-button></li>
+        </ul>
+        <div class="sui-clear"></div>
+    </div>
 
-    <!-- <sui-button text="vm.default" href="vm.href"></sui-button> -->
-</body>
-</html>
+    <div class="demo-block">
+        <sui-line title="'代码'"></sui-line>
+        <div class='demo-code'><xmp><sui-button text="'primary'" type="'primary'"></sui-button></xmp></div>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'依赖'"></sui-line>
+       <div class='demo-code'><xmp>
+<link href="../css/sui.default.css" rel="stylesheet" />
 <script src="../script/lib/angular.min.js"></script>
 <script src="../script/directive/sui.directive.js"></script>
+        </xmp></div>
+   </div>
+
+     <div class="demo-block">
+        <sui-line title="'属性'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.property.fields" is-can-select="false" is-edit="false" datas="vm.property.datas"></sui-datagrid>
+     </div>
+
+    <div class="demo-block">
+        <sui-line title="'方法'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.functions.fields" is-can-select="false" is-edit="false" datas="vm.functions.datas"></sui-datagrid>
+   </div>
+
+   <sui-top></sui-top>
+</body>
+</html>
+<script src="../script/lib/prism.js"></script>
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script src="../script/directive/sui.icon.directive.js"></script>
+<script src="../script/common/guid.service.js"></script>
+<script src="../script/common/sui.icon.js"></script>
 <script>
     (function () {
-        function check_controller($scope) {
+        function demo_controller($scope) {
             $scope.vm = {
                 primary: "原始按钮",
                 default: "默认按钮",
                 normal: "百搭按钮",
                 warm:"暖色按钮",
                 danger:"警告按钮",
-                disuibled: "禁用按钮",
-                disuibled: true,
-                href:"https://www.baidu.com"
+                disabled_text: "禁用按钮",
+                disabled: true,
+                c: "https://www.baidu.com",
+                property: {
+                    fields: [{ name: "名称" }, { name: "类型" }, { name: "可选值" }, { name: "示例" }, { name: "默认值" }, { name: "意义" }],
+                    datas: [{ rows: { name: "text", type: "string", choose: "*", example: "原始按钮", default: "", commnet: "按钮标题" } },
+                        { rows: { name: "type", type: "string", choose: "primary:原始按钮,default:默认按钮,normal:百搭按钮,warm:暖色按钮,danger:警告按钮,disabled:禁用按钮", example: "default", default: "default", commnet: "按钮类型" } },
+                        { rows: { name: "size", type: "string", choose: "big:大,defaule:默认,small:小,mini:很小", example: "default", default: "default", commnet: "按钮大小" } },
+                        { rows: { name: "href", type: "string", choose: "*", example: "https://www.baidu.com", default: "", commnet: "点击按钮之后跳转的页面" } },
+                        { rows: { name: "disabled", type: "bool", choose: "true:可用,false:不可用", example: "true", default: "true", commnet: "按钮状态" } },
+                    ]
+                },
+                functions:{
+                    fields:[{name:"名称"},{name:"参数"},{name:"意义"}],
+                    datas:[{rows:{name:"click",args:"",comment:""}}]
+                }
             }
         }
-        angular.module("check", ["sqladmin"]).controller("check.controller", check_controller);
+        angular.module("demo", ["shinyui","shinyui.icon"]).controller("demo.controller", demo_controller);
     })();
 </script>

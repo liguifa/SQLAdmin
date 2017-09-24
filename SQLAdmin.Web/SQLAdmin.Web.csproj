@@ -121,6 +121,7 @@
     <Content Include="Static\css\sa.connect.css" />
     <Content Include="Static\css\sa.monior.style.css" />
     <Content Include="Static\css\sa.icon.css" />
+    <Content Include="Static\css\style.css" />
     <Content Include="Static\Images\icon_arrow_buttom.png" />
     <Content Include="Static\Images\icon_bottom.png" />
     <Content Include="Static\Images\icon_calendar.png" />
@@ -145,11 +146,14 @@
     <Content Include="Static\Images\icon_sort_asc.png" />
     <Content Include="Static\Images\icon_sort_desc.png" />
     <Content Include="Static\Images\icon_top.png" />
-    <Content Include="Static\ShinyUI\css\messager.css" />
     <Content Include="Static\ShinyUI\css\prism.css" />
     <Content Include="Static\ShinyUI\css\sui.default.css" />
     <Content Include="Static\ShinyUI\css\sui.icon.css" />
+    <Content Include="Static\ShinyUI\css\sui.media.style.css" />
+    <Content Include="Static\ShinyUI\css\sui.pop.style.css" />
     <Content Include="Static\ShinyUI\css\sui.report.style.css" />
+    <Content Include="Static\ShinyUI\font\fontello.svg" />
+    <Content Include="Static\ShinyUI\font\LICENSE.txt" />
     <Content Include="Static\ShinyUI\Images\icon_add.png" />
     <Content Include="Static\ShinyUI\Images\icon_arrow-right.png" />
     <Content Include="Static\ShinyUI\Images\icon_arrow_buttom.png" />
@@ -195,12 +199,15 @@
     <Content Include="Static\ShinyUI\script\common\constant.service.js" />
     <Content Include="Static\ShinyUI\script\common\cryptogram.service.js" />
     <Content Include="Static\ShinyUI\script\common\event.service.js" />
-    <Content Include="Static\ShinyUI\script\common\grid.service.js" />
-    <Content Include="Static\ShinyUI\script\common\messager.service.js" />
+    <Content Include="Static\ShinyUI\script\common\guid.service.js" />
+    <Content Include="Static\ShinyUI\script\common\pop.service.js" />
     <Content Include="Static\ShinyUI\script\common\session.service.js" />
+    <Content Include="Static\ShinyUI\script\common\sui.icon.js" />
     <Content Include="Static\ShinyUI\script\common\wrapper.service.js" />
     <Content Include="Static\ShinyUI\script\directive\sui.directive.js" />
     <Content Include="Static\ShinyUI\script\directive\sui.filter.js" />
+    <Content Include="Static\ShinyUI\script\directive\sui.icon.directive.js" />
+    <Content Include="Static\ShinyUI\script\directive\sui.media.directive.js" />
     <Content Include="Static\ShinyUI\script\directive\sui.report.directive.js" />
     <Content Include="Static\ShinyUI\script\lib\angular.min.js" />
     <Content Include="Static\ShinyUI\script\lib\base64.min.js" />
@@ -265,6 +272,11 @@
     <None Include="Properties\PublishProfiles\SA.pubxml" />
     <Content Include="Views\Common\ManagePool.cshtml" />
     <Content Include="Views\Manage\NewQuery.cshtml" />
+    <Content Include="Static\ShinyUI\font\fontello.eot" />
+    <Content Include="Static\ShinyUI\font\fontello.ttf" />
+    <Content Include="Static\ShinyUI\font\fontello.woff" />
+    <Content Include="Static\ShinyUI\font\fontello.woff2" />
+    <Content Include="Views\Common\Explorer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

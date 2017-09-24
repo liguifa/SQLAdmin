@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../css/prism.css" rel="stylesheet" />
+    <link href="../css/sui.default.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+</head>
+<body ng-app="demo" ng-controller="demo.controller">
+    <div class="demo-block">
+        <sui-line title="'示例'"></sui-line>
+        <sui-avatar src="'http://liguifa.wang/Themes/Images/me.png'" number="10"></sui-avatar>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'代码'"></sui-line>
+        <div class='demo-code'><xmp><sui-uploader upload="vm.upload(filename)" progress="vm.progress" title="'普通上传'" file-types="['mp3','docx','doc','mp4']" file-size="65535"></sui-uploader></xmp></div>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'依赖'"></sui-line>
+       <div class='demo-code'><xmp>
+<link href="../css/sui.default.css" rel="stylesheet" />
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+        </xmp></div>
+   </div>
+
+     <div class="demo-block">
+        <sui-line title="'属性'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.property.fields" is-can-select="false" is-edit="false" datas="vm.property.datas"></sui-datagrid>
+     </div>
+
+    <div class="demo-block">
+        <sui-line title="'方法'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.functions.fields" is-can-select="false" is-edit="false" datas="vm.functions.datas"></sui-datagrid>
+   </div>
+</body>
+</html>
+<script src="../script/lib/prism.js"></script>
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script src="../script/common/guid.service.js"></script>
+<script>
+    (function () {
+        function demo_controller($scope) {
+            $scope.vm = {
+                property: {
+                    fields: [{ name: "名称" }, { name: "类型" }, { name: "可选值" }, { name: "示例" }, { name: "默认值" }, { name: "意义" }],
+                    datas: [{ rows: { name: "text", type: "string", choose: "*", example: "原始按钮", default: "", commnet: "按钮标题" } },
+                        { rows: { name: "type", type: "string", choose: "primary:原始按钮,default:默认按钮,normal:百搭按钮,warm:暖色按钮,danger:警告按钮,disabled:禁用按钮", example: "default", default: "default", commnet: "按钮类型" } },
+                        { rows: { name: "size", type: "string", choose: "big:大,defaule:默认,small:小,mini:很小", example: "default", default: "default", commnet: "按钮大小" } },
+                        { rows: { name: "href", type: "string", choose: "*", example: "https://www.baidu.com", default: "", commnet: "点击按钮之后跳转的页面" } },
+                        { rows: { name: "disabled", type: "bool", choose: "true:可用,false:不可用", example: "true", default: "true", commnet: "按钮状态" } },
+                    ]
+                },
+                functions:{
+                    fields:[{name:"名称"},{name:"参数"},{name:"意义"}],
+                    datas:[{rows:{name:"click",args:"",comment:""}}]
+                }
+            }
+        }
+        angular.module("demo", ["shinyui"]).controller("demo.controller", demo_controller);
+    })();
+</script>

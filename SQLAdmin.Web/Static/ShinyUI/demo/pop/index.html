@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 	<meta charset=utf-8 />
+	<title>弹出</title>
+    	<link href="../../css/sui.icon.css" rel="stylesheet" />
+	<link href="../../css/sui.default.css" rel="stylesheet" />
+	<style>
+		html,body{
+			width:100%;
+			height:100%;
+			overflow: hidden;
+		}
+		iframe{
+			border:none;
+            padding:15px;
+		}
+	</style>
+</head>
+<body ng-app="index" ng-controller="index.controller">
+	<sui-nav navs="vm.navs" icon="vm.icon">
+        <sui-avatar src="'http://liguifa.wang/Themes/Images/me.png'" href="'https://www.github.com/liguifa/shinyui'" style="height:42px;width:42px;margin-top:7px;"></sui-avatar>
+    </sui-nav>
+	<sui-sidebar items="vm.sidenavs" style="z-index:999"></sui-sidebar>
+	<!--<sa-page url="vm.url" id="vm.name" style="margin-left:200px;height:100%;width:100%"></sa-page>-->
+     <iframe src="{{vm.url}}" name="index_view" url="vm.url" id="vm.name" style="margin-left:200px;height:{{vm.iframeHeight}}px;width:{{vm.iframeWidth}}px;overflow-y: auto;overflow-x: hiddens;position:absolute;top:55px;" class="ng-isolate-scope"></iframe>
+     <sui-footer><span>ShinyUI</span></sui-footer>
+</body>
+</html>
+<script	src="../../script/lib/angular.min.js"></script>
+<script src="../../script/directive/sui.directive.js"></script>
+<script>
+    (function () {
+        function index_controller($scope) {
+            $scope.vm = {
+                navs: [
+                    {title:"控件",url:"https://www.baidu.com",isActive:true},
+                    {title:"方法",url:"https://www.baidu.com",isActive:false},
+                    {title:"弹出",url:"https://www.baidu.com",isActive:false}
+                ], 
+                icon: "../../demo/images/logo.png",
+                name: "index_view",
+                sidenavs: [
+                	 {title:"消息提示",subs:[{title:"警告提示", url: "alert.html", target: "index_view", isActive: true },{title:"通知提示",url:"notify.html",target:"index_view",isActive:false},{title:"全局提示",url:"global.html",target:"index_view",isActive:false}]},
+                ],
+                url: "alert.html",
+            }
+
+            $scope.vm.iframeWidth = document.getElementsByTagName("body")[0].scrollWidth - 230;
+            $scope.vm.iframeHeight = document.getElementsByTagName("body")[0].scrollHeight - 100;
+        }
+        angular.module("index", ["shinyui"]).controller("index.controller", index_controller);
+    })();
+</script>

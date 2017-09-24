@@ -15,5 +15,5 @@
 			get:_getSession
 		}
 	}
-	angular.module("sqladmin").factory("session.service", ["$cacheFactory", session_service]);
+	angular.module("shinyui").factory("session.service", ["$cacheFactory", session_service]);
 })();

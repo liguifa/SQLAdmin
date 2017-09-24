@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>下拉框</title>
+        <link href="../css/sui.icon.css" rel="stylesheet" />
+        <link href="../css/sui.default.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body ng-app="demo" ng-controller="demo.controller">
+        <div class="demo-block">
+            <sui-line title="'示例'"></sui-line>
+            <sui-number></sui-number>
+        </div>
+
+         <div class="demo-block">
+        <sui-line title="'代码'"></sui-line>
+        <div class='demo-code'><xmp><sui-combo fields="vm.fields"></sui-combo></xmp></div>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'依赖'"></sui-line>
+       <div class='demo-code'><xmp>
+<link href="../css/sui.default.css" rel="stylesheet" />
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+        </xmp></div>
+   </div>
+
+     <div class="demo-block">
+        <sui-line title="'属性'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.property.fields" is-can-select="false" is-edit="false" datas="vm.property.datas"></sui-datagrid>
+     </div>
+
+    <div class="demo-block">
+        <sui-line title="'方法'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.functions.fields" is-can-select="false" is-edit="false" datas="vm.functions.datas"></sui-datagrid>
+   </div>
+    </body>
+</html>
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script src="../script/common/guid.service.js"></script>
+<script>
+(function(){
+    function demo_controller($scope){
+        $scope.vm = {
+            fields:[],
+            property: {
+                    fields: [{ name: "名称" }, { name: "类型" }, { name: "可选值" }, { name: "示例" }, { name: "默认值" }, { name: "意义" }],
+                    datas: [{ rows: { name: "fields", type: "object", choose: "*", example: "", default: "", commnet: "下拉选项" } }]
+                },
+                functions:{
+                    fields:[{name:"名称"},{name:"参数"},{name:"意义"}],
+                    datas:[]
+                }
+        }
+        function appendFields(){
+            $scope.vm.fields.push({name:"C#"});
+            $scope.vm.fields.push({name:"Java"});
+            $scope.vm.fields.push({name:"C"});
+            $scope.vm.fields.push({name:"C++"});
+            $scope.vm.fields.push({name:"PHP"});
+            $scope.vm.fields.push({name:"JavaScript"});
+        }
+        appendFields();
+    }
+    angular.module("demo",["shinyui"]).controller("demo.controller",demo_controller);
+})();
+</script>

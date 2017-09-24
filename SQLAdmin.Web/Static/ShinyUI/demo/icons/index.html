@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../../css/sui.icon.css" rel="stylesheet" />
+    <link href="../../css/sui.default.css" rel="stylesheet" />
+        <link href="../css/style.css" rel="stylesheet" />
+</head>
+<body ng-app="demo" ng-controller="demo.controller">
+    <sui-nav navs="vm.navs" icon="vm.icon">
+        <sui-avatar src="'http://liguifa.wang/Themes/Images/me.png'" href="'https://www.github.com/liguifa/shinyui'" style="height:42px;width:42px;margin-top:7px;"></sui-avatar>
+    </sui-nav>
+    <div class="demo-block">
+        <sui-line title="'代码'"></sui-line>
+        <div class='demo-code'><xmp><sui-icon type="i.text"></sui-icon></xmp></div>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'通用图标'"></sui-line>
+        <ul style="margin:0px;padding:0px;list-style:none;text-align: center;margin:auto;">
+            <li ng-repeat="i in vm.icons" style="float:left;height:50px;width:100px;line-height:50px;margin-bottom:20px;"><sui-icon type="i.text"></sui-icon>
+            <div style="margin-top:-20px;">{{i.text}}</div></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script src="../../script/lib/angular.min.js"></script>
+<script src="../../script/directive/sui.directive.js"></script>
+<script src="../../script/directive/sui.icon.directive.js"></script>
+<script src="../../script/common/sui.icon.js"></script>
+<script>
+    (function () {
+        function demo_controller($scope,icon) {
+            $scope.vm = {
+                navs: [
+                    {title:"控件",url:"",isActive:true,isLink:true},
+                    {title:"图标",url:"demo/icons/index.html",isActive:false,isLink:true},
+                    {title:"弹出",url:"demo/pop/index.html",isActive:false,isLink:true},
+                    {title:"方法",url:"functions/index.html",isActive:false,isLink:true},
+                ], 
+                icon: "../../demo/images/logo.png",
+                icons:[]
+            }
+
+            for(var i in icon){
+                var type = i.substring(5,i.length);
+                $scope.vm.icons.push({text:type});
+            }
+        }
+        angular.module("demo", ["shinyui","shinyui.icon"]).controller("demo.controller", ["$scope","icon.service",demo_controller]);
+    })();
+</script>

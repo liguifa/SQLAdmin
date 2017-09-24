@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="../css/sui.default.css" rel="stylesheet" />
+    <link href="../css/prism.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body ng-app="demo" ng-controller="demo.controller">
+    <div class="demo-block">
+        <sui-line title="'示例'"></sui-line>
+        <span>就在右下角,仔细找找吧！亲</span>
+        <sui-top></sui-top>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'代码'"></sui-line>
+        <div class='demo-code'><xmp><sui-line title="'既然喊姐夫，来日...你便是国舅爷,也仅是个国舅爷.'"></sui-line></xmp></div>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'依赖'"></sui-line>
+       <div class='demo-code'><xmp>
+<link href="../css/sui.default.css" rel="stylesheet" />
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+        </xmp></div>
+   </div>
+
+     <div class="demo-block">
+        <sui-line title="'属性'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.property.fields" is-can-select="false" is-edit="false" datas="vm.property.datas"></sui-datagrid>
+     </div>
+
+    <div class="demo-block">
+        <sui-line title="'方法'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.functions.fields" is-can-select="false" is-edit="false" datas="vm.functions.datas"></sui-datagrid>
+   </div>
+</body>
+</html>
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script src="../script/common/guid.service.js"></script>
+<script src="../script/directive/sui.filter.js" type="text/javascript"></script>
+<script>
+    (function () {
+        function demo_controller($scope) {
+            $scope.vm = {
+                property: {
+                    fields: [{ name: "名称" }, { name: "类型" }, { name: "可选值" }, { name: "示例" }, { name: "默认值" }, { name: "意义" }],
+                    datas: [{ rows: { name: "type", type: "string", choose: "default:默认风格，normal：一般风格", example: "default", default: "default", commnet: "区块类型" } },
+                    ]
+                },
+                functions:{
+                    fields:[{name:"名称"},{name:"参数"},{name:"意义"}],
+                    datas:[{rows:{name:"click",args:"",comment:""}}]
+                }
+            }
+        }
+        angular.module("demo", ["shinyui"]).controller("demo.controller", demo_controller);
+    })();
+</script>

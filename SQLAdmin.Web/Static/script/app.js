@@ -29,7 +29,7 @@
                 }
                 if (config.data.IsSuccess != undefined && !config.data.IsSuccess)
                 {
-                    messager.error(config.data.Messuige);
+                    messager.error(config.data.Message);
                 }
                 else
                 {
@@ -41,7 +41,7 @@
         return _interceptor;
     }
 
-    angular.module("admin", ['sqladmin']).factory("session.interceptor", ["$q", "session.service", "messager.service", session_interceptor]);
+    angular.module("admin", ['shinyui','shinyui.pop','shinyui.icon']).factory("session.interceptor", ["$q", "session.service", "pop.service", session_interceptor]);
 
     angular.module("admin").config(function ($httpProvider) {
         $httpProvider.interceptors.push("session.interceptor");

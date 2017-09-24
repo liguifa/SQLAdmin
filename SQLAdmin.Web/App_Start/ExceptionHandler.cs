@@ -12,11 +12,14 @@ namespace SQLAdmin.Web.App_Start
         {
             var request = HttpContext.Current.Request;
             var response = HttpContext.Current.Response;
-            Exception exception = e.InnerException == null ? e : e.InnerException;
+            var message = e.Message;
+            if(e.InnerException != null)
+            {
+                message += e.InnerException.Message;
+            }
             if (request["X-Requested-With"] != "XMLHttpRequest" && request.Headers["X-Requested-With"] != "XMLHttpRequest")
             {
-
-                response.Write(SerializerHelper.SerializerObjectByJsonConvert(new ErroeMessuige() { Messuige = exception.Message }));
+                response.Write(SerializerHelper.SerializerObjectByJsonConvert(new ErroeMessage() { Message = message }));
             }
             else
             {
@@ -27,10 +30,10 @@ namespace SQLAdmin.Web.App_Start
         }
     }
 
-    public class ErroeMessuige
+    public class ErroeMessage
     {
         public bool IsSuccess { get; set; } = false;
 
-        public string Messuige { get; set; } = String.Empty;
+        public string Message { get; set; } = String.Empty;
     }
 }

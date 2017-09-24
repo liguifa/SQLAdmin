@@ -58,7 +58,7 @@ namespace Common.Interceptor
                 {
                     interceptor.ErrorHandler(this.mProxyInstance, methodMessuige.MethodBase, e);
                 }
-                throw;
+                throw e.InnerException;
             }
         }
     }

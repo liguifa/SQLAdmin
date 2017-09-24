@@ -31,5 +31,5 @@
             loginDatabase: _loginDatabase
         }
     }
-    angular.module("admin").factory("connect.service", ["$http", "cryptogram.service", "messager.service", "event.service", "session.service", connect_service]);
+    angular.module("admin").factory("connect.service", ["$http", "cryptogram.service", "pop.service", "event.service", "session.service", connect_service]);
 })();

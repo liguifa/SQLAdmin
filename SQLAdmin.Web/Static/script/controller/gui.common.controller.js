@@ -70,5 +70,5 @@
         });
     }
 
-    angular.module("admin").controller("gui.common.controller", ["$scope", "$http", "messager.service", "event.service", "database.service", "common.service", "constant.service", gui_common_controller]);
+    angular.module("admin").controller("gui.common.controller", ["$scope", "$http", "pop.service", "event.service", "database.service", "common.service", "constant.service", gui_common_controller]);
 })();

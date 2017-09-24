@@ -1,4 +1,4 @@
-angular.module("sqladmin", [])
+angular.module("shinyui", [])
 
 .directive("suiConnect", function ()
 {
@@ -648,19 +648,19 @@ angular.module("sqladmin", [])
     var vm = {
         template: '<div class="sui-datagrid-content">\
                     <div class="sui-datagrid-tool" ng-if="isShowTool"><ul class="sui-datagrid-tool-list">\
-                        <li class="sui-datagrid-tool-item"><sui-icon type="remove"></sui-icon></li>\
-                        <li class="sui-datagrid-tool-item"><sui-icon type="add"></sui-icon></li>\
-                        <li class="sui-datagrid-tool-item"><sui-icon type="edit"></sui-icon></li>\
-                        <li class="sui-datagrid-tool-item"><sui-icon type="save"></sui-icon>\
-                        <li class="sui-datagrid-tool-item sui-datagrid-tool-column"><sui-multiselect fields="vm.fields"></sui-multiselect></li>\
-                        <li class="sui-datagrid-tool-item sui-datagrid-tool-column"><sui-search placeholder="vm.placeholder" fields="vm.fields"></sui-sui-search></li>\
+                        <li class="sui-datagrid-tool-item"><sui-icon type="\'trash_empty\'" click="vm.remove()"></sui-icon></li>\
+                        <li class="sui-datagrid-tool-item"><sui-icon type="\'plus_circle\'"></sui-icon></li>\
+                        <li class="sui-datagrid-tool-item"><sui-icon type="\'edit\'"></sui-icon></li>\
+                        <li class="sui-datagrid-tool-item"><sui-icon type="\'flopp\'"></sui-icon>\
+                        <li class="sui-datagrid-tool-item sui-datagrid-tool-column"><sui-multiselect fields="vm.fields" select="vm.selectColumns(fields)"></sui-multiselect></li>\
+                        <li class="sui-datagrid-tool-item sui-datagrid-tool-column"><sui-search placeholder="vm.placeholder" fields="vm.fields" search="vm.search(key,value)"></sui-sui-search></li>\
                     </ul></div>\
                     <div class="sui-datagrid-data">\
                         <div class="sui-datagrid-data-header" style="padding-right:{{tableHeaderPadding}}px">\
                             <table class="sui-datagrid">\
                                 <thead ng-if="isShowThead">\
                                   <tr>\
-                                    <th ng-if="isCanSelect"><input type="checkbox" name="" ng-change="vm.globalChecked()" ng-model="vm.isGlobalSelected" lay-skin="primary" lay-filter="allChoose"></th>\
+                                    <th class="sui-datagrid-data-index" ng-if="isCanSelect"><input type="checkbox" name="" ng-change="vm.globalChecked()" ng-model="vm.isGlobalSelected" lay-skin="primary" lay-filter="allChoose"></th>\
                                     <th ng-repeat="field in vm.fields" ng-click="vm.sort(field.name)">\
                                         {{field.name}}\
                                         <div class="sui-datagrid-content-header-icon" ng-if="field.isPrimary"><img src="/Static/Images/icon_key.png" /></div>\
@@ -671,11 +671,11 @@ angular.module("sqladmin", [])
                                 </thead>\
                             </table>\
                         </div>\
-                        <div class="sui-datagrid-data-body">\
-                            <table class="sui-datagrid" height="{{tableHeight}}px">\
+                        <div class="sui-datagrid-data-body"  style="height:{{tableHeight}}px;">\
+                            <table class="sui-datagrid">\
                                 <tbody>\
                                       <tr ng-repeat="row in datas">\
-                                        <td ng-if="isCanSelect"><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
+                                        <td class="sui-datagrid-data-index" ng-if="isCanSelect"><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
                                         <td ng-if="isEdit" ng-repeat="(key,val) in row.rows track by $index"><sui-field type="vm.fields[$index].type" value="row.rows[key].Value"></sui-field></td>\
                                         <td ng-if="!isEdit" ng-repeat="(key,val) in row.rows track by $index">{{val}}</td>\
                                       </tr>\
@@ -685,7 +685,7 @@ angular.module("sqladmin", [])
                         </div>\
                     </div>\
                     <div class="sui-datagrid-footer" ng-if="isShowFooter">\
-                        <sui-pagination class="sui-datagrid-footer-page" page="vm.page" pageNumber="10"></sui-pagination>\
+                        <sui-pagination class="sui-datagrid-footer-page" page="vm.page" pageNumber="10" click="vm.jump(pageIndex)"></sui-pagination>\
                         <span class="sui-datagrid-footer-info">共 {{vm.page.total}} 行 {{vm.page.pageCount}} 页，当前显示 {{(vm.page.pageIndex-1)*vm.page.pageSize+1}}-{{vm.page.pageIndex == vm.page.pageCount ? vm.page.total : vm.page.pageIndex*vm.page.pageSize}} 行</span>\
                     </div>\
                   </div>',
@@ -704,17 +704,22 @@ angular.module("sqladmin", [])
             isShowThead: '=',
             isShowTool: "=",
             isShowFooter:"=",
-            isEdit:"=",
-            sort:"&"
+            isEdit: "=",
+            page:"=",
+            sort:"&",
+            remove: "&",
+            search: "&",
+            jump: "&",
+            selectColumns:"&"
         },
         controller: function ($scope) {
             $scope.vm = {
                 isGlobalSelected: false,
                 page: {
-                    pageIndex: 1,
-                    pageSize: 50,
-                    total: 560,
-                    pageCount: 8,
+                    pageIndex: 0,
+                    pageSize: 0,
+                    total: 0,
+                    pageCount: 0,
                 },
                 tableHeaderPadding:0,
                 placeholder:"Search",
@@ -749,7 +754,22 @@ angular.module("sqladmin", [])
                         }
                     });
                 },
-                sortMap:[]
+                sortMap:[],
+                remove:function(){
+                    var items = $scope.datas.filter(function(item){
+                        return item.isSelected;
+                    });
+                    $scope.remove({items:items});
+                },
+                search: function (key, value) {
+                    $scope.search({ key: key, value: value });
+                },
+                jump: function (pageIndex) {
+                    $scope.jump({ pageIndex: pageIndex });
+                },
+                selectColumns: function (fields) {
+                    $scope.selectColumns({ fields: fields });
+                }
             };
 
             $scope.$watch("datas", function (datas) {
@@ -761,7 +781,7 @@ angular.module("sqladmin", [])
                     } else {
                         $scope.tableHeaderPadding = 14;
                     }
-                };
+                }
             });
 
             $scope.$watch("fields", function (fields) {
@@ -790,6 +810,10 @@ angular.module("sqladmin", [])
                 }
             });
 
+            $scope.$watch("page", function (page) {
+                $scope.vm.page = page;
+            },true)
+
             $scope.isEdit = $scope.isEdit == undefined ? true : $scope.isEdit;
             $scope.isCanSelect = $scope.isCanSelect == undefined ? true : $scope.isCanSelect;
             $scope.isShowThead = $scope.isShowThead == undefined ? true : $scope.isShowThead;
@@ -798,7 +822,7 @@ angular.module("sqladmin", [])
         },
         link: function ($scope, element, attrs) {
             var height = element[0].scrollHeight;
-            var tableHeight = height - 42 - 42 - 8;
+            var tableHeight = height - 42 - 42;
             element[0].children[0].style.height = tableHeight + "px";
             //element[0].children[1].children[1].style.height = tableHeight - 39 + "px";
             $scope.tableHeight = tableHeight - 39;
@@ -856,35 +880,6 @@ angular.module("sqladmin", [])
         {
             $scope.vm = {
                 type:"default"
-            }
-        }
-    }
-})
-
-
-.directive("suiIcon",function ()
-{
-    var vm = {
-        template: '<i class="{{icon_class}} sui-tool-icon" ng-click="vm.icon_click()"></i> '
-    }
-
-    return {
-        restrict: "E",
-        template: vm.template,
-        replace: true,
-        priority: 2,
-        scope: {
-            type: "@",
-            click:"&",
-        },
-        controller: function ($scope)
-        {
-            $scope.icon_class = "sui-icon-" + $scope.type;
-            $scope.vm = {
-                icon_click:function()
-                {
-                    $scope.click();
-                }
             }
         }
     }
@@ -989,7 +984,7 @@ angular.module("sqladmin", [])
 .directive("suiSearch",function(){
     var vm = {
         template: '<div class="sui-search">\
-                        <sui-combo fields="vm.fields" class="sui-search-combo"></sui-combo>\
+                        <sui-combo fields="vm.fields" class="sui-search-combo" select="vm.select(field)"></sui-combo>\
                         <input type="text" class="sui-connect-input sui-search-input" placeholder="{{vm.placeholder}}" ng-model="vm.searchKey.value" placeholder="{{vm.placeholder}}" />\
                         <button class="sui-button sui-search-button" ng-click="vm.search()">搜索</bitton>\
                    </div>'
@@ -1004,14 +999,17 @@ angular.module("sqladmin", [])
             placeholder: "=",
             search: "&",
             fields: "=",
-           
+            search:"&"
         },
         controller: function ($scope) {
             $scope.vm = {
                 search: function () {
-                    $scope.search({ searchKey: $scope.vm.searchKey });
+                    $scope.search({ key: $scope.vm.searchKey.key, value: $scope.vm.searchKey.value });
                 },
-                searchKey: { key:"",value:""}
+                searchKey: { key: "", value: "" },
+                select: function (field) {
+                    $scope.vm.searchKey.key = field.name;
+                }
             }
             $scope.$watch("placeholder", function (placeholder) {
                 $scope.vm.placeholder = placeholder;
@@ -1090,7 +1088,7 @@ angular.module("sqladmin", [])
 .directive("suiCalendar", function () {
     var vm = {
         template: "<div class='sui-calendar'>\
-                    <div><input class='sui-calendar-text' type='text' readonly ng-model='vm.time' /><div class='sui-calendar-icon' ng-click='vm.startSelect()' ><img src='/Static/Images/icon_calendar.png' /></div></div>\
+                    <div><input class='sui-calendar-text' type='text' readonly ng-model='vm.time' /><div class='sui-calendar-icon' ng-click='vm.startSelect()' ><img src='../Images/icon_calendar.png' /></div></div>\
                     <div class='sui-calendar-select' ng-if='vm.isSelect'>\
                         <div class='sui-calendar-select-title'><div class='sui-calendar-select-title-span'><div class='sui-icon-left sui-calendar-select-title-span-left' ng-click='vm.bottomMonth()'></div><div class='sui-calendar-select-title-text'>{{vm.year}}年 {{vm.month}}月</div><div class='sui-icon-right sui-calendar-select-title-span-right' ng-click='vm.topMonth()'></div></div></div>\
                         <div class='sui-calendar-select-context'>\
@@ -1226,15 +1224,17 @@ angular.module("sqladmin", [])
             })
 
             $scope.$watch("text", function (text) {
-                var date = new Date(text);
-                $scope.vm.calendars = vm.getDateCalendar(date.getFullYear(), date.getMonth());
-                $scope.vm.year = date.getFullYear();
-                $scope.vm.month = date.getMonth() + 1;
-                $scope.vm.day = date.getDate();
-                $scope.vm.hour = date.getHours();
-                $scope.vm.minute = date.getMinutes();
-                $scope.vm.second = date.getSeconds();
-                $scope.vm.time = date.toString();
+                if(text){
+                    var date = new Date(text);
+                    $scope.vm.calendars = vm.getDateCalendar(date.getFullYear(), date.getMonth());
+                    $scope.vm.year = date.getFullYear();
+                    $scope.vm.month = date.getMonth() + 1;
+                    $scope.vm.day = date.getDate();
+                    $scope.vm.hour = date.getHours();
+                    $scope.vm.minute = date.getMinutes();
+                    $scope.vm.second = date.getSeconds();
+                    $scope.vm.time = date.toString();
+                }
             })
         }
     }
@@ -1297,7 +1297,7 @@ angular.module("sqladmin", [])
 
 .directive("suiSwitch", function () {
     var vm = {
-        template: "<div class='sui-switch' ng-click='vm.check()' ng-readonly='vm.readonly'>\
+        template: "<div class='sui-switch sui-noselect' ng-click='vm.check()' ng-readonly='vm.readonly'>\
                     <input type='checkbox' readonly value='vm.isCheck' class='sui-switch-input' />\
                     <div ng-class='{\"true\":\"sui-switch-checkbox sui-switch-checkbox-true\",\"false\":\"sui-switch-checkbox sui-switch-checkbox-false\" }[vm.isCheck]'>\
                         <div class='sui-switch-checkbox-dot'></div>\
@@ -1326,6 +1326,7 @@ angular.module("sqladmin", [])
                 falseText: "False",
                 trueText: "True",
                 displayText: "False",
+                readonly:false,
             };
 
             $scope.$watch("vm.isCheck", function (isCheck) {
@@ -1334,11 +1335,20 @@ angular.module("sqladmin", [])
             });
 
             $scope.$watch("value",function(value){
-                $scope.vm.isCheck = value;
+                if(value != undefined){
+                    $scope.vm.isCheck = value;
+                }
             });
             $scope.$watch("readonly", function (readonly) {
                 $scope.vm.readonly = readonly;
-            })
+            });
+            $scope.$watch("falseText",function(falseText){
+                $scope.vm.falseText = falseText;
+                $scope.vm.displayText = falseText;
+            });
+            $scope.$watch("trueText",function(trueText){
+                $scope.vm.trueText = trueText;
+            });
         }
     }
 })
@@ -1759,9 +1769,9 @@ angular.module("sqladmin", [])
     }
 }])
 
-.directive("suiMessuigebar",function(){
+.directive("suiMessagebar",function(){
     var vm = {
-        template: "<div class='sui-messuigebar'><span>{{vm.messuige}}</span><i>×</i></div>"
+        template: "<div class='sui-messagebar'><span>{{vm.message}}</span><i>×</i></div>"
     }
     return {
         restrict: "E",
@@ -1769,14 +1779,14 @@ angular.module("sqladmin", [])
         replace: true,
         priority: 1,
         scope: {
-            messuige: "="
+            message: "="
         },
         controller: function ($scope) {
             $scope.vm = {
-                messuige: "",
+                message: "",
             }
-            $scope.$watch("messuige", function (messuige) {
-                $scope.vm.messuige = messuige;
+            $scope.$watch("message", function (message) {
+                $scope.vm.message = message;
             })
         }
     }
@@ -1784,7 +1794,9 @@ angular.module("sqladmin", [])
 
 .directive("suiButton", function () {
     var vm = {
-        template: "<button class='sui-button {{vm.type}} {{vm.size}}' ng-click='vm.btn_click()'>{{vm.text}}</button>"
+        template: "<div class='sui-button-div'>\
+                    <button class='sui-button {{vm.type}} {{vm.size}}' ng-click='vm.btn_click()'><sui-icon class='sui-button-icon' ng-if='vm.icon' type='vm.icon'></sui-icon><span>{{vm.text}}</span></button>\
+                   </div>"
     }
 
     return {
@@ -1795,16 +1807,18 @@ angular.module("sqladmin", [])
         scope: {
             text: "=",
             type: "=",
-            disuibled: "=",
+            disabled: "=",
             size: "=",
             href: "=",
-            click:"&"
+            click:"&",
+            icon:"="
         },
         controller: function ($scope) {
             $scope.vm = {
                 text: "",
                 type: "default",
                 size: "defaule",
+                icon:false,
                 btn_click: function () {
                     if ($scope.href && $scope.href != "") {
                         window.open($scope.href);
@@ -1819,15 +1833,18 @@ angular.module("sqladmin", [])
             $scope.$watch("type", function (type) {
                 $scope.vm.type = "sui-button-" + type;
             });
-            $scope.$watch("disuibled", function (disuibled) {
+            $scope.$watch("disabled", function (disabled) {
                 setTimeout(function () {
                     $scope.$apply(function () {
-                        $scope.vm.type = disuibled ? "sui-button-disuibled" : "sui-button-" + $scope.type || "sui-button-default";
+                        $scope.vm.type = disabled ? "sui-button-disabled" : "sui-button-" + $scope.type || "sui-button-default";
                     });
                 }, 100);
             });
             $scope.$watch("size", function (size) {
                 $scope.vm.size = "sui-button-" + size;
+            });
+            $scope.$watch("icon",function(icon){
+                $scope.vm.icon = icon;
             });
         }
     }
@@ -1851,6 +1868,7 @@ angular.module("sqladmin", [])
                             </div>\
                         </li>\
                     </ul>\
+                    <div class='sui-nav-custom' ng-transclude></div>\
                    </div>"
     }
 
@@ -1859,6 +1877,7 @@ angular.module("sqladmin", [])
         template: vm.template,
         replace: true,
         priority: 1,
+        transclude:true,
         scope: {
             navs: "=",
             icon: "=",
@@ -1908,7 +1927,14 @@ angular.module("sqladmin", [])
 .directive("suiCrumbs", function () {
     var vm = {
         template: "<div class='sui-crumbs'>\
-                    <ul class='sui-crumbs-list'><li class='sui-crumbs-item' ng-repeat='item in vm.items'><a class='sui-crumbs-text' href='{{item.url}}'>{{item.title}}</a></li></ul>\
+                    <ul class='sui-crumbs-list'>\
+                        <li class='sui-crumbs-item' ng-repeat='item in vm.items'>\
+                            <a class='sui-crumbs-text' href='{{item.url}}' ng-if='!$last'>{{item.title}}</a>\
+                            <span class='sui-crumbs-text' ng-if='$last'>{{item.title}}</span>\
+                            <i ng-if='!$last'>{{vm.separator}}</i>\
+                        </li>\
+                    </ul>\
+                    <div class='sui-clear'></div>\
                    </div>"
     }
     return {
@@ -1918,14 +1944,20 @@ angular.module("sqladmin", [])
         priority: 1,
         scope: {
             items:"=",
+            separator:"="
         },
         controller: function ($scope) {
             $scope.vm = {
-                items: []
+                items: [],
+                separator:">"
             };
             $scope.$watch("items", function (items) {
                 $scope.vm.items = items;
             }, true);
+
+            $scope.$watch("separator",function(separator){
+                $scope.vm.separator = separator;
+            });
         }
     }
 })
@@ -1936,7 +1968,16 @@ angular.module("sqladmin", [])
                     <ul class='sui-sidebar-list'>\
                         <li ng-repeat='item in vm.items'>\
                             <a class='sui-sidebar-text' href='{{item.url}}' ng-if='item.subs == undefined'>{{item.title}}</a>\
-                            <div class='sui-sidebar-subtitle' ng-if='item.subs != undefined' >{{item.title}}</div><ul ng-if='item.subs != undefined' class='sui-sidebar-list-sub'><li ng-class='{\"true\":\"sui-sidebar-item sui-sidebar-item-active\",\"false\":\"sui-sidebar-item\"}[sub.isActive]'  ng-repeat='sub in item.subs'><a class='sui-sidebar-text' href='{{sub.url}}' target='{{sub.target}}' ng-click='vm.navClick(sub)'>{{sub.title}}</a></li></ul>\
+                            <div class='sui-sidebar-subtitle' ng-if='item.subs != undefined' ng-click='vm.open(item)'>\
+                                <span>{{item.title}}</span>\
+                                <sui-icon class='sui-sidebar-subtitle-icon' type='\"angle_down\"' ng-if='item.subs != undefined && !item.isOpen' /></sui-icon>\
+                                <sui-icon class='sui-sidebar-subtitle-icon' type='\"angle_up\"' ng-if='item.subs != undefined && item.isOpen' /></sui-icon>\
+                            </div>\
+                            <ul ng-if='item.subs != undefined && item.isOpen' class='sui-sidebar-list-sub'>\
+                                <li ng-class='{\"true\":\"sui-sidebar-item sui-sidebar-item-active\",\"false\":\"sui-sidebar-item\"}[sub.isActive]'  ng-repeat='sub in item.subs'>\
+                                    <a class='sui-sidebar-text' href='{{sub.url}}' target='{{sub.target}}' ng-click='vm.navClick(sub)'>{{sub.title}}</a>\
+                                </li>\
+                            </ul>\
                         </li></ul>\
                    </div>"
     }
@@ -1961,6 +2002,12 @@ angular.module("sqladmin", [])
                         })
                     })
                     item.isActive = true;
+                },
+                open:function(item){
+                    $scope.vm.items.forEach(function(nav){
+                        nav.isOpen = false;
+                    });
+                    item.isOpen = !item.isOpen;
                 }
             };
             $scope.$watch("items", function (items) {
@@ -2107,6 +2154,654 @@ angular.module("sqladmin", [])
                     }, 0)
                 }
             })
+        }
+    }
+})
+
+.directive("suiUploader",function(){
+    var vm = {
+        template:"<div class='sui-uploader'>\
+                    <div><sui-progress value='vm.progress' ng-if='vm.inprogress'></sui-progress><span ng-if='!vm.inprogress'>{{vm.filename}}</span></div>\
+                    <sui-button class='sui-uploader-button' text='vm.title' click='vm.openUpload()'></sui-button>\
+                    <input class='sui-uploader-input' type='file' onchange='angular.element(this).scope().vm.change()'/>\
+                    <span>{{vm.fileTypes.join(',')}} ({{vm.fileSize / 1024}} K)</span>\
+                  </div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        scope: {
+            upload:"&",
+            title:"=",
+            fileTypes:"=",
+            fileSize:"=",
+            progress:"="
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                title:"",
+                fileInput:null,
+                fileTypes:[],
+                filename:"",
+                progress:0,
+                inprogress:false,
+                openUpload:function(){
+                    $scope.vm.fileInput.click();
+                },
+                change:function(){
+                    $scope.upload({filename:$scope.vm.fileInput.value});
+                    $scope.vm.filename = $scope.vm.fileInput.value;
+                    $scope.vm.inprogress = true;
+                }
+            }
+
+            $scope.$watch("title",function(title){
+                $scope.vm.title = title;
+            });
+
+            $scope.$watch("fileTypes",function(types){
+                $scope.vm.fileTypes = types;
+            });
+
+            $scope.$watch("progress",function(progress){
+                $scope.vm.progress = progress;
+                if(progress == 100){
+                    $scope.vm.inprogress = false;
+                }
+            });
+
+            $scope.$watch("fileSize",function(fileSize){
+                $scope.vm.fileSize = fileSize;
+            })
+        },
+        link:function($scope,element,attrs){
+            $scope.vm.fileInput = element[0].children[2];
+        }
+    }
+})
+
+.directive("suiWindow",function(){
+    var vm = {
+        template:"<div class='sui-window-div'>\
+                    <div class='sui-window-title'>\
+                        <span class='sui-window-title-span'>{{vm.title}}</span>\
+                        <ui class='sui-window-icons'>\
+                            <li class='sui-window-icon sui-window-icon-close'></li>\
+                            <li class='sui-window-icon sui-window-icon-max' ng-click='vm.max()'></li>\
+                            <li class='sui-window-icon sui-window-icon-min'></li>\
+                        </ui>\
+                    </div>\
+                    <div class='sui-window-context'><div ng-transclude></div>\</div>\
+                  </div>",
+        mousedown: function ($event)
+        {
+            if ($event.target.className == 'sui-border') {
+                stamp.isMove = true;
+                stamp.mouse = { left: $event.clientX, top: $event.clientY };
+            }
+        },
+
+        mouseup: function ($event)
+        {
+            stamp.isMove = false;
+        },
+
+        move: function ($event)
+        {
+            if (stamp.isMove)
+            {
+                var suiWindow = document.getElementsByClassName('sui-window')[0];
+                var x = $event.clientX - stamp.mouse.left;
+                var y = $event.clientY - stamp.mouse.top;
+                suiWindow.style.left = suiWindow.offsetLeft + x + 'px';
+                suiWindow.style.top = suiWindow.offsetTop + y + 'px';
+                stamp.mouse = { left: $event.clientX, top: $event.clientY };
+            }
+        }
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        transclude:true,
+        scope: {
+            close:"&",
+        },
+        controller: function ($scope) {
+            $scope.vm = {
+                title:"Test",
+                content:"Test"
+            }
+        },
+        link:function($scope,element,attrs){
+            $scope.vm.max = function(){
+                 var height = document.body.clientHeight;
+                 var width = document.body.clientWidth-20;
+                 element[0].style.height = height + "px";
+                 element[0].style.width = width + "px";
+            }
+        }
+    }
+})
+
+.directive("suiPanel",function(){
+    var vm = {
+        template:"<div class='sui-panel'>\
+                    <div class='sui-panel-title' ng-click='vm.fold()'><span>{{vm.title}}</span><sui-icon class='sui-panel-title-icon' type='vm.icon'></sui-icon></div>\
+                    <div class='sui-panel-content' ng-if='vm.isShowContent'><div class='sui-panel-content-div' ng-transclude></div></div>\
+                  </div>"
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        transclude:true,
+        scope: {
+           title:"="
+        },
+        controller:function($scope){
+            $scope.vm = {
+                title:"",
+                isShowContent:false,
+                icon:"fold-bottom",
+                fold:function(){
+                    $scope.vm.isShowContent = !$scope.vm.isShowContent;
+                    $scope.vm.icon = $scope.vm.isShowContent?"fold-top":"fold-bottom";
+                }
+            }
+
+            $scope.$watch("title",function(title){
+                $scope.vm.title = title;
+            })
+        }
+    }
+})
+
+.directive("suiAvatar",function(){
+    var vm = {
+        template:"<div class='sui-avatar' ng-click='vm.click()'>\
+                    <img class='sui-avatar-image' src='{{vm.src}}' />\
+                    <div ng-if='vm.number>0' class='sui-avatar-number'>{{vm.number}}</div>\
+                  </div>"
+    }
+
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        transclude:true,
+        scope: {
+           src:"=",
+           number:"=",
+           href:"=",
+        },
+        controller:function($scope){
+            $scope.vm = {
+                src:"",
+                number:0,
+                click:function(){
+                    window.open($scope.href);
+                }
+            }
+
+            $scope.$watch("src",function(src){
+                $scope.vm.src = src;
+            });
+
+            $scope.$watch("number",function(number){
+                $scope.vm.number = number;
+            });
+        }
+    }
+})
+
+.directive("suiCard",function(){
+    var stamp = {
+        isMove: false,
+        mouse: { left: 0, top: 0 },
+        card:null
+    }
+    var vm = {
+        template:"<div class='sui-card'>\
+                    <div class='sui-card-title sui-noselect' ng-mousedown='vm.mousedown($event)' ng-mousemove='vm.move($event)' ng-mouseup='vm.mouseup($event)'><span>{{vm.title}}</span></div>\
+                    <div class='sui-card-content' ng-transclude></div>\
+                  </div>",
+        mousedown: function ($event)
+        {
+                stamp.isMove = true;
+                stamp.mouse = { left: $event.clientX, top: $event.clientY };
+        },
+
+        mouseup: function ($event)
+        {
+            stamp.isMove = false;
+        },
+
+        move: function ($event,suiWindow)
+        {
+            if (stamp.isMove)
+            {
+                var x = $event.clientX - stamp.mouse.left;
+                var y = $event.clientY - stamp.mouse.top;
+                suiWindow.style.left = suiWindow.offsetLeft + x + 'px';
+                suiWindow.style.top = suiWindow.offsetTop + y + 'px';
+                stamp.mouse = { left: $event.clientX, top: $event.clientY };
+            }
+        }
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        transclude:true,
+        scope: {
+           title:"="
+        },
+        controller:function($scope){
+            $scope.vm = {
+                title:"",
+                mousedown: vm.mousedown,
+                move: function($event){
+                    vm.move($event,$scope.vm.card);
+                },
+                mouseup: vm.mouseup,
+            }
+
+            $scope.$watch("title",function(title){
+                $scope.vm.title = title;
+            })
+        },
+        link:function($scope,element,attrs){
+            $scope.vm.card = element[0];
+        }
+    }
+})
+
+.directive("suiFixed",function(){
+    var vm = {
+        template:"<div class='sui-fixed' style='{{vm.position}}' ng-transclude>\</div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        transclude:true,
+        scope: {
+            fixedTop:"=",
+            fixedBottom:"=",
+            fixedLeft:"=",
+            fixedRight:"="
+        },
+        controller:function($scope){
+            $scope.vm = {
+                position:"",
+            }
+
+            function buildPosition(){
+                var position = "";
+                if($scope.fixedTop != undefined){
+                    position += "top:"+$scope.fixedTop+"px;";
+                }
+                if($scope.fixedBottom != undefined){
+                    position += "bottom:"+$scope.fixedBottom+"px;";
+                }
+                if($scope.fixedLeft != undefined){
+                    position += "left:"+$scope.fixedLeft+"px;";
+                }
+                if($scope.fixedRight != undefined){
+                    position += "right:"+$scope.fixedRight+"px;";
+                }
+                $scope.vm.position = position;
+            }
+
+            $scope.$watch("fixedTop",buildPosition);
+            $scope.$watch("fixedBottom",buildPosition);
+            $scope.$watch("fixedLeft",buildPosition);
+            $scope.$watch("fixedRight",buildPosition);
+        }
+    }
+})
+
+.directive("suiTop",function(){
+    var vm  = {
+        template:"<div class='sui-top'>\
+                    <sui-fixed fixed-bottom='50' fixed-right='50'><sui-icon click='vm.top()' class='sui-top-content' type='vm.icon'></sui-icon></sui-fixed>\
+                  </div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        transclude:true,
+        scope: {
+        },
+        controller:function($scope){
+            $scope.vm = {
+                icon:"up_han",
+                scroll:(function(){
+                    var interval = window.setInterval(function(){
+                        var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                        if(currentScroll>0){
+                             window.scrollTo( 0, currentScroll - 10);
+                        } else {
+                            window.clearInterval(interval);
+                        }
+                    },24);
+                }),
+                top:function(){
+                    var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                    if(currentScroll>0){
+                        $scope.vm.scroll();
+                    }
+
+                }
+            }
+        }
+    }
+})
+
+.directive("suiCarousel",function(){
+    var vm = {
+        template:"<div class='sui-carousel'>\
+                    <ul class='sui-carousel-list' style='width:{{vm.width*2*vm.items.length}}px;left:{{vm.left}}px;'>\
+                        <li class='sui-carousel-list-item' style='width:{{vm.width}}px;' ng-repeat='item in vm.items'><img class='sui-carousel-list-item-img' title='{{item.title}}' src='{{item.src}}' /></li>\
+                        <li class='sui-carousel-list-item' style='width:{{vm.width}}px;' ng-repeat='item in vm.items'><img class='sui-carousel-list-item-img' title='{{item.title}}' src='{{item.src}}' /></li>\
+                    </ul>\
+                    <div class='sui-carousel-title'></div>\
+                    <ul class='sui-carousel-points'>\
+                        <li class='sui-carousel-points-point' ng-repeat='item in vm.items' ng-click='vm.switch(item)'><div ng-class='{\"sui-carousel-points-point-dot-active\":vm.active == item.index}' class='sui-carousel-points-point-dot'></div></li>\
+                    </ul>\
+                  </div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        transclude:true,
+        scope: {
+            items:"=",
+            speed:"="
+        },
+        controller:function($scope){
+            $scope.vm = {
+                items:[],
+                width:0,
+                left:0,
+                speed:6,
+                active:0,
+                switch_interval:false,
+                clear_move:function(){
+                    if($scope.vm.switch_interval){
+                        clearInterval($scope.vm.switch_interval);
+                        $scope.vm.switch_interval = false;
+                    }
+                },
+                start_move:function(){
+                    $scope.vm.clear_move();
+                    $scope.vm.switch_interval = window.setInterval(function(){
+                        var move_width = 0;
+                        var move_interval = window.setInterval(function(){
+                            $scope.$apply(function(){
+                                var list_width = $scope.vm.width * $scope.vm.items.length;
+                                if(move_width >= $scope.vm.width){
+                                    clearInterval(move_interval);
+                                    move_width = 0;
+                                    $scope.vm.active ++;
+                                    if($scope.vm.active >= $scope.vm.items.length){
+                                        $scope.vm.active = 0;
+                                    }
+                                    //纠正偏差
+                                    var current_left = $scope.vm.active * $scope.vm.width;
+                                    $scope.vm.left = 0 - current_left;
+                                } else {
+                                    $scope.vm.left -= 1;
+                                    move_width += 1;
+                                }
+                                if(0-list_width > $scope.vm.left){
+                                    $scope.vm.left = 0;
+                                }
+                            });
+                        },1)
+                    },$scope.vm.speed * 1000);
+                },
+                switch:function(item){
+                    var target_left = 0 - item.index * $scope.vm.width;
+                    $scope.vm.active = item.index;
+                    $scope.vm.clear_move();
+                    var move_interval = window.setInterval(function(){
+                        $scope.$apply(function(){
+                            if(target_left == $scope.vm.left){
+                                clearInterval(move_interval);
+                            } else {
+                                $scope.vm.left = $scope.vm.left > target_left ? $scope.vm.left - 1 : $scope.vm.left + 1;
+                            }
+                        });
+                    },0.5);
+                    $scope.vm.start_move();
+                }
+            }
+
+            $scope.$watch("speed",function(speed){
+                if(speed){
+                    $scope.vm.speed = speed;
+                }
+            });
+
+            $scope.$watch("items",function(items){
+                var index = 0;
+                $scope.vm.items = items.map(function(item){
+                    item.index = index++; 
+                    return item;
+                });
+                $scope.vm.start_move();
+            });
+        },
+        link:function($scope,elements,attrs){
+            $scope.vm.width = elements[0].clientWidth;
+        }
+    }
+})
+
+.directive("suiTimeline",function(){
+    var vm = {
+        template:"<div class='sui-timeline'>\
+                    <ul class='sui-timeline-list'>\
+                        <li class='sui-timeline-list-item' ng-repeat='item in vm.items'>\
+                            <div class='sui-timeline-list-item-title'><div class='{{item.style}}'><sui-icon ng-if='item.isIcon' type='item.icon'></sui-icon></div><span>{{item.title}}<span></div>\
+                            <div class='sui-timeline-list-item-detailed'>{{item.detailed}}</div>\
+                        </li>\
+                    </ul>\
+                  </div>",
+        getStyle: function (status) {
+            switch (status) {
+                case 0: return "sui-timeline-list-item-title-icon"; 
+                case 1: return "sui-timeline-list-item-title-icon sui-timeline-list-item-title-icon-success";
+                case 2: return "sui-timeline-list-item-title-icon sui-timeline-list-item-title-icon-error";
+            }
+        }
+    }   
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        transclude:true,
+        scope: {
+            items:"=",
+        },
+        controller:function($scope){
+            $scope.vm = {
+                items: [],
+            }
+
+            $scope.$watch("items",function(items){
+                $scope.vm.items = items.map(function (item) {
+                    item.style = vm.getStyle(0);
+                    if(item.isSuccess){
+                        item.isIcon = true;
+                        item.icon = 'o';
+                        item.style = vm.getStyle(1);
+                    } 
+                    if(item.isError){
+                        item.isIcon = true;
+                        item.icon = 'cance';
+                        item.style = vm.getStyle(2);
+                    }
+                    return item;
+                });
+            },true);
+        }
+    }
+})
+
+.directive("suiSteps",function(){
+    var vm = {
+        template:"<div class='sui-steps'>\
+                    <ul class='sui-steps-list'>\
+                        <li class='sui-steps-list-step' ng-repeat='item in vm.items'>\
+                            <div class='sui-steps-list-step-icon'><span>{{item.index}}</span></div>\
+                            <fieldset class='sui-steps-list-step-line'><legend class='sui-steps-list-step-line-title'>{{item.title}}</legend></fieldset>\
+                            <div class='sui-steps-list-step-description'>{{item.description}}</div>\
+                        </li>\
+                    </ul>\
+                    <div class='sui-clear'></div>\
+                  </div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        transclude:true,
+        scope: {
+            items:"=",
+        },
+        controller:function($scope){
+            $scope.vm = {
+                items:[],
+            }
+
+            $scope.$watch("items",function(items){
+                var index = 1;
+                $scope.vm.items = items.map(function(item){
+                    item.index = index ++ ;
+                    return item;
+                });
+            },true);
+        }
+    }
+})
+
+.directive("suiButtonGroup",function(){
+    var vm = {
+        template:"<div class='sui-button-group' ng-transclude></div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        transclude:true,
+        scope: false
+    }
+})
+
+.directive("suiSlider",function(){
+    var vm = {
+        template:"<div class='sui-slider' ng-class='{\"sui-slider-vertical\":vm.direction==\"vertical\"}'>\
+                    <div class='sui-slider-line'>\
+                        <div class='sui-slider-line-active' style='width:{{vm.value}}%'></div>\
+                    </div>\
+                    <div class='sui-slider-line-point' style='left:{{vm.value}}%;' ng-mousedown='vm.startSetValue($event)'></div>\
+                  </div>"
+    }
+    return {
+        restrict: "E",
+        template: vm.template,
+        replace: true,
+        priority: 1,
+        transclude:true,
+        scope: {
+            value:"=",
+            min:"=",
+            max:"=",
+            type:"=",
+            direction:"=",
+        },
+        controller:function($scope){
+            $scope.vm = {
+                value:0,
+                isStartSetValue:false,
+                startValue:0,
+                isWatch:true,
+                with:0,
+                direction:"horizontal",
+                startSetValue:function($event){
+                    $scope.vm.isStartSetValue = true;
+                    $scope.vm.startValue = $scope.vm.direction == 'vertical' ? $event.clientY : $event.clientX;
+                },
+                endSetValue:function(){
+                    $scope.vm.isStartSetValue = false;
+                },
+                setValue:function($event){
+                    $scope.$apply(function(){
+                        if($scope.vm.isStartSetValue){
+                            var ratio = 1/$scope.vm.width;
+                            var pos = $scope.vm.direction == 'vertical' ? $event.clientY : $event.clientX;
+                            var addValue = (pos - $scope.vm.startValue)*ratio*100;
+                            $scope.vm.startValue = pos;
+                            if($scope.vm.direction == 'vertical'){
+                                addValue = 0 - addValue;
+                            }
+                            var newValue = $scope.vm.value + addValue;
+                            if(newValue>100){
+                                newValue = 100;
+                            }
+                            if(newValue<0){
+                                newValue = 0;
+                            }
+                            $scope.vm.value = newValue;
+                            
+                            console.log("add:"+addValue+"   "+ $scope.vm.value);
+                        }
+                    });
+                }
+            }
+
+            $scope.$watch("value",function(value){
+                if($scope.vm.isWatch){
+                    var ratio = 1/($scope.max-$scope.min);
+                    $scope.vm.value = value * ratio * 100;
+                }
+            });
+            $scope.$watch("vm.value",function(value){
+                $scope.vm.isWatch = false;
+                var ratio = 1/($scope.max-$scope.min);
+                var newValue = value / ratio / 100;
+                $scope.value = $scope.type=='int'?parseInt(newValue):newValue;
+                console.log(value);
+                //$scope.vm.isWatch = true;
+            });
+            $scope.$watch("direction",function(direction){
+                if(direction){
+                    $scope.vm.direction = direction;
+                }
+            });
+        },
+        link:function($scope,elements,attrs){
+            document.addEventListener("mouseup",$scope.vm.endSetValue);
+            document.addEventListener("mousemove",$scope.vm.setValue);
+            $scope.vm.width = elements[0].clientWidth;
         }
     }
 })

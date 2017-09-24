@@ -1,0 +1,522 @@
+.sui-video{
+    margin: auto;
+    /*border:1px solid #e2e2e2;*/
+     -moz-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    -khtml-user-select:none;
+    user-select:none;
+    position: relative;
+}
+
+.sui-video-item{
+    background: #000000;
+     border:1px solid #000000;
+     width: 100%;
+}
+
+.sui-video-controls{
+    height: 30px;
+    width: 100%;
+    background: #ffffff;
+    margin: 0px;
+    color: #99A2AA;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    -khtml-user-select:none;
+    user-select:none;
+     border:1px solid #e2e2e2;
+     border-bottom: none;
+     border-top: none;
+     padding: 0px;
+     margin-top: -4px;
+     width: 100%;
+}
+
+.sui-video-controls-list{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+     height: 100%;
+}
+
+.sui-video-controls-list-item{
+    cursor: pointer;
+    float: left;
+    line-height: 30px;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+
+.sui-video-controls-list-item-hover:hover{
+    background: #eeeeee;
+}
+
+.sui-video-controls-list-item-play{
+    font-size: 20px;
+    width: 25px;
+    display: block;
+    height: 30px;
+    margin-top:4px;
+}
+
+.sui-video-controls-list-item-progress{
+    margin-top:2px; 
+}
+
+.sui-video-controls-list-item-progress-line{
+    background: #e5e9ef;
+    height: 6px;
+    border-radius: 2px;
+    margin: 10px 2px;
+    float: left;
+}
+
+.sui-video-controls-list-item-progress-line-load{
+    background: #8adced;
+    height: 100%;
+    border-radius: 2px;
+}
+
+.sui-video-controls-list-item-progress-line-load-play{
+    background: #00a1d6;
+    height: 100%;
+    border-radius: 2px;
+    margin-top: -6px;
+}
+
+.sui-video-controls-list-item-progress-line-dot{
+    height: 14px;
+    width: 14px;
+    border:solid 2px #00a1d6;
+    background: #fff;
+    border-radius: 50%;
+    margin-top: -12px;
+    margin-left: -6px;
+    position: relative;
+}
+
+.sui-video-controls-list-item-progress-time{
+    float: right;
+    width: 30px;
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 28px;
+}
+
+.sui-video-controls-list-item-volume{
+    margin-left: 60px;
+    width: 30px;
+    text-align: center;
+}
+
+.sui-video-controls-list-item-volume-icon{
+    font-size: 18px;
+}
+
+.sui-video-controls-list-item-volume-control{
+    height: 122px;
+    width: 32px;
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    position: relative;
+    bottom: 154px;
+    margin-left: -2px;
+    cursor: default;
+    z-index: 998;
+}
+
+.sui-video-controls-list-item-volume-control-number{
+    height: 24px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.sui-video-controls-list-item-volume-control-progress{
+    height: 15px;
+    width: 75px;
+    text-align: center;
+    margin-left:-18px; 
+    margin-top: 48px;
+}
+
+/*.sui-video-controls-list-item-volume-control-progress-line{
+    width: 6px;
+    height: 60px;
+    background: #00a1d6;
+    border-radius: 2px;
+    margin-left: 12px;
+    cursor: default;
+}
+
+.sui-video-controls-list-item-volume-control-progress-line-actvie{
+    width: 6px;
+    height: 24px;
+    background: #e5e9ef;
+}
+
+.sui-video-controls-list-item-volume-control-progress-line-dot{
+    height: 14px;
+    width: 14px;
+    border:solid 2px #00a1d6;
+    background: #fff;
+    border-radius: 50%;
+    margin-left: -6px;
+    position: relative;
+    cursor: pointer;
+}*/
+
+.sui-video-controls-list-item-clarity{
+    height: 30px;
+    width: 45px;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+}
+
+.sui-video-controls-list-item-download{
+    height: 30px;
+    width: 40px;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+}
+
+.sui-video-controls-list-item-full{
+    height: 30px;
+    width: 40px;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+}
+
+.sui-video-barrage{
+    height: 38px;
+    width: 100%;
+       border:1px solid #e2e2e2;
+    border-top:1px solid #e2e2e2;
+    border-bottom:1px solid #e2e2e2;
+  
+    background: #ffffff;
+    margin: 0px;
+     color: #99A2AA;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    -khtml-user-select:none;
+    user-select:none;
+    width: 100%;
+}
+
+.sui-video-barrage-list{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+.sui-video-barrage-list-item{
+    cursor: pointer;
+    float: left;
+    line-height: 30px;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    line-height: 45px;
+}
+
+.sui-video-barrage-list-item-hover:hover{
+    background: #eeeeee;
+}
+
+.sui-video-barrage-list-item-text{
+    height: 100%;
+    width: 480px;
+    background: #F4F5F7;
+}
+
+.sui-video-barrage-list-item-text-input{
+    height: 26px;
+    width: 430px;
+    border:none;
+    background: #F4F5F7;
+    outline: none;
+     color: #99A2AA;
+     font-size: 14px;
+}
+
+.sui-video-barrage-list-item-send{
+    display: inline-block;
+    height: 34px;
+    line-height: 38px;
+    width: 50px;
+    padding: 0 18px;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    opacity: .9;
+    min-width:98px;
+    outline: 0;
+    -webkit-transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+    transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    line-height: 38px;
+     border: 1px solid #C9C9C9;
+    background-color: #fff;
+    color: #555;
+    margin: 0px;
+    margin-left: 8px;
+    margin-top: 2px;
+    float: right;
+}
+
+.sui-video-subtitle{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    left: 0px;
+    bottom: 80px;
+    font-size: 18px;
+    color: #ffffff;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    -khtml-user-select:none;
+    user-select:none;
+    cursor:default;
+}
+
+.sui-video-barrage-pool{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 68px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.sui-video-barrage-pool-text{
+    position:absolute;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    -khtml-user-select:none;
+    user-select:none;
+    cursor:default;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: inline-block;
+    white-space: nowrap;
+    pointer-events: none;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.sui-video-barrage-setting{
+    background: #ffffff;
+    border:#e2e2e2 1px solid;
+    height: 200px;
+    width: 300px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left: -150px;
+    margin-top: -100px;
+}
+
+.sui-video-barrage-setting-list{
+    list-style: none;
+    width: 260px;
+    height: 160px;
+    margin-top: 20px;
+    margin: auto;
+    margin-top:20px;
+    padding: 0px;
+}
+
+.sui-video-barrage-setting-list-item{
+    margin: 0px;
+    line-height: 32px;
+}
+
+.sui-video-barrage-setting-list-item .sui-switch{
+    position: relative;
+    top:-12px;
+    left: 10px;
+}
+
+.sui-video-barrage-setting-list-item .sui-slider{
+    width: 140px;
+    position: relative;
+    bottom:-16px;
+    left: 5px;
+}
+
+.sui-video-barrage-setting-list-item-value{
+    float: right;
+}
+
+.sui-video-barrage-setting-toggle{
+
+}
+
+.sui-audio{
+    margin: auto;
+}
+
+.sui-audio-title{
+    width: 100%;
+    height: 120px;
+    margin: 0px;
+    text-align: center;
+}
+
+.sui-audio-tool{
+    height: 50px;
+    width: 100%;
+    background: #2E3639;
+    margin-bottom: -6px;
+}
+
+.sui-audio-tool ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.sui-audio-tool ul li{
+    color:#8adced;
+    float: left;
+    width: 33%;
+    line-height: 50px;
+    text-align: center;
+    margin-bottom: -6px;
+}
+
+.sui-audio-subtitle{
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border:1px solid #e2e2e2;
+    overflow-y: auto;
+}
+
+.sui-aduio-title-icon{
+    font-size: 25px;
+    color: #ffffff;
+    line-height:120px; 
+}
+
+.sui-audio-subtitle-list{
+    list-style: none;
+    margin: 10px;
+    padding: 0px;
+    position: relative;
+    left: 0px;
+}
+
+.sui-audio-subtitle-list-item{
+    text-align: center;
+    line-height: 34px;
+}
+
+.sui-audio-subtitle-list-item-active{
+    color: #FF6C2F;
+}
+
+.sui-audio-subtitle::-webkit-scrollbar{
+    display: none;
+}
+
+.sui-aduio-progress{
+    background: #e5e9ef;
+    height: 6px;
+    width: 100%;
+    margin-top: -6px;
+}
+
+.sui-aduio-progress-load{
+    background: #8adced;
+    height: 6px;
+    width: 100%;
+    margin-top: -6px;
+}
+
+.sui-aduio-progress-play{
+    background: #00a1d6;
+    height: 6px;
+    width: 100%;
+    margin-top: -6px;
+}
+
+.sui-aduio-progress-play-dot{
+    height: 14px;
+    width: 14px;
+    border:solid 2px #00a1d6;
+    background: #fff;
+    border-radius: 50%;
+    float: right;
+    margin-top:-6px;
+    margin-right: -3px;
+}
+
+.sui-video-barrage-color{
+    background: #ffffff;
+    border:#e2e2e2 1px solid;
+    height: 200px;
+    width: 300px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left: -150px;
+    margin-top: -100px;
+    padding: 10px 20px;
+}
+
+.sui-video-barrage-color-list{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.sui-video-barrage-color-list-item{
+    float: left;
+    width: 30px;
+    height: 30px;
+   padding: 2px;
+   cursor: pointer;
+   border:2px solid #ffffff;
+   border-radius: 50%;
+}
+
+.sui-video-barrage-color-list-item-active{
+    border:2px solid red;
+}
+
+.sui-video-barrage-color-list-item-dot{
+    border-radius: 50%;
+     width: 30px;
+    height: 30px;
+    background: #123456;
+}
+
+.sui-video-barrage-color-list-title{
+    line-height: 60px;
+    width: 100%;
+    text-align: center;
+}

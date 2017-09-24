@@ -3,6 +3,7 @@
 <head>
  	<meta charset=utf-8 />
 	<title>ShinyUI</title>
+    	<link href="css/sui.icon.css" rel="stylesheet" />
 	<link href="css/sui.default.css" rel="stylesheet" />
 	<style>
 		html,body{
@@ -17,33 +18,46 @@
 	</style>
 </head>
 <body ng-app="index" ng-controller="index.controller">
-	<sui-nav navs="vm.navs" icon="vm.icon"></sui-nav>
+	<sui-nav navs="vm.navs" icon="vm.icon">
+        <sui-avatar src="'http://liguifa.wang/Themes/Images/me.png'" href="'https://www.github.com/liguifa/shinyui'" style="height:42px;width:42px;margin-top:7px;"></sui-avatar>
+    </sui-nav>
 	<sui-sidebar items="vm.sidenavs" style="z-index:999"></sui-sidebar>
 	<!--<sa-page url="vm.url" id="vm.name" style="margin-left:200px;height:100%;width:100%"></sa-page>-->
-     <iframe src="{{vm.url}}" name="index_view" url="vm.url" id="vm.name" style="margin-left:200px;height:100%;width:100%;overflow-y: auto;overflow-x: hidden;position:absolute;top:55px;" class="ng-isolate-scope"></iframe>
+     <iframe src="{{vm.url}}" name="index_view" url="vm.url" id="vm.name" style="margin-left:200px;height:{{vm.iframeHeight}}px;width:{{vm.iframeWidth}}px;overflow-y: auto;overflow-x: hiddens;position:absolute;top:55px;" class="ng-isolate-scope"></iframe>
      <sui-footer><span>ShinyUI</span></sui-footer>
 </body>
 </html>
 <script	src="script/lib/angular.min.js"></script>
 <script src="script/directive/sui.directive.js"></script>
+<script src="script/directive/sui.icon.directive.js"></script>
+<script src="script/common/sui.icon.js"></script>
 <script>
     (function () {
         function index_controller($scope) {
             $scope.vm = {
                 navs: [
-                    {title:"UI",url:"https://www.baidu.com",isActive:true},
-                    {title:"function",url:"https://www.baidu.com",isActive:false},
-                ],
+                    {title:"控件",url:"",isActive:true,isLink:true},
+                    {title:"图标",url:"demo/icons/index.html",isActive:false,isLink:true},
+                    {title:"弹出",url:"demo/pop/index.html",isActive:false,isLink:true},
+                    {title:"媒体",url:"demo/media/index.html",isActive:false,isLink:true},
+                    {title:"方法",url:"functions/index.html",isActive:false,isLink:true},
+                ], 
                 icon: "demo/images/logo.png",
                 name: "index_view",
                 sidenavs: [
-                	{title:"开发工具",subs:[{title:"调试预览"}]},
-                    { title: "基本元素", subs: [{ title: "按钮组", url: "demo/button.html", target: "index_view", isActive: true }, { title: "导航", url: "demo/nav.html", target: "index_view", isActive: false }, { title: "面包屑", url: "demo/block.html", target: "index_view", isActive: false }, { title: "选项卡", url: "demo/tabs.html", target: "index_view", isActive: false }, { title: "进度条", url: "demo/progress.html", target: "index_view", isActive: false }, { title: "折叠面板", isActive: false }, { url: "demo/datagrid.html", target: "index_view", title: "基本表格", isActive: false }, { title: "表单", url: "demo/form.html", target: "index_view", isActive: false }, { title: "简单铺助元素", url: "demo/block.html", target: "index_view", isActive: false }] },
-                    { title: "表报元素", subs: [{ title: "柱状图", url: "demo/histogram.html", target: "index_view", isActive: true }, { title: "折线图", url: "demo/line.html", target: "index_view", isActive: false }, { title: "扇形图", url: "demo/fan.html", target: "index_view", isActive: false }, { title: "选项卡", url: "demo/tabs.html", target: "index_view", isActive: false }, { title: "进度条", url: "demo/progress.html", target: "index_view", isActive: false }, { title: "折叠面板", isActive: false }, { title: "基本表格", isActive: false }, { title: "表单", url: "demo/form.html", target: "index_view", isActive: false }, { title: "简单铺助元素", url: "demo/block.html", target: "index_view", isActive: false }] },
+                	// {title:"开发工具",subs:[{title:"调试预览"}]},
+                    { title: "基本元素", subs: [{ title: "按钮", url: "demo/button.html", target: "index_view", isActive: true },{ title: "按钮组", url: "demo/button_group.html", target: "index_view", isActive: false }, { title: "导航", url: "demo/nav.html", target: "index_view", isActive: false }, { title: "面包屑", url: "demo/crumbs.html", target: "index_view", isActive: false },{ title: "区块", url: "demo/block.html", target: "index_view", isActive: false }, { title: "选项卡", url: "demo/tabs.html", target: "index_view", isActive: false }, { title: "进度条", url: "demo/progress.html", target: "index_view", isActive: false }, { url:"demo/panel.html", target:"index_view", title: "折叠面板", isActive: false }, { url: "demo/datagrid.html", target: "index_view", title: "基本表格", isActive: false }, { title: "简单铺助元素", url: "demo/basic.html", target: "index_view", isActive: false }] },
+                    { title: "表单元素", subs: [{ title: "下拉框", url: "demo/combo_box.html", target: "index_view", isActive: false },{ title: "多选框", url: "demo/mulselect.html", target: "index_view", isActive: false },{title:"开关",url:"demo/switch.html",target:"index_view",isActive:false},{title:"复选框",url:"demo/check_box.html",target:"index_view",isActive:false},{title:"单选框",url:"demo/radio.html",target:"index_view",isActive:false},{title:"输入框",url:"demo/input.html",target:"index_view",isActive:false},{title:"数字框",url:"demo/number.html",target:"index_view",isActive:false},{title:"日期选择",url:"demo/calendar.html",target:"index_view",isActive:false},{title:"滑动输入条",url:"demo/slider.html",target:"index_view",isActive:false}] },
+                    { title: "组件元素", subs: [{ title: "文件上传", url: "demo/uploader.html", target: "index_view", isActive: false },{ title: "窗口", url: "demo/window.html", target: "index_view", isActive: false },{ title: "搜索框", url: "demo/search.html", target: "index_view", isActive: false },{ title: "头像", url: "demo/avatar.html", target: "index_view", isActive: false },{ title: "卡片", url: "demo/card.html", target: "index_view", isActive: false },{ title: "走马灯", url: "demo/carousel.html", target: "index_view", isActive: false },{ title: "时间线", url: "demo/timeline.html", target: "index_view", isActive: false },{ title: "步骤条", url: "demo/steps.html", target: "index_view", isActive: false }] },
+                    { title: "消息元素", subs: [{title:"消息栏",url:"demo/message_bar.html",target:"index_view",isActive:false},{title:"文字提示",url:"demo/tooltip.html",target:"index_view",isActive:false}]},
+                    { title: "报表元素", subs: [{ title: "柱状图", url: "demo/histogram.html", target: "index_view", isActive: false }, { title: "折线图", url: "demo/line.html", target: "index_view", isActive: false }, { title: "扇形图", url: "demo/fan.html", target: "index_view", isActive: false }, { title: "扇形图", url: "demo/fan.html", target: "index_view", isActive: false }] },
                 ],
                 url: "demo/button.html",
             }
+
+            $scope.vm.iframeWidth = document.getElementsByTagName("body")[0].scrollWidth - 230;
+            $scope.vm.iframeHeight = document.getElementsByTagName("body")[0].scrollHeight - 100;
         }
-        angular.module("index", ["sqladmin"]).controller("index.controller", index_controller);
+        angular.module("index", ["shinyui","shinyui.icon"]).controller("index.controller", index_controller);
     })();
 </script>

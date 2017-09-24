@@ -16,5 +16,5 @@
         }
     }
 
-    angular.module("sqladmin").factory("wrapper.service", wrapper_service);
+    angular.module("shinyui").factory("wrapper.service", wrapper_service);
 })();

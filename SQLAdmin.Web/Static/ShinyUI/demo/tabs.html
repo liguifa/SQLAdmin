@@ -1,32 +1,62 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>下拉框</title>
+        <title>ShinyUI</title>
         <link href="../css/sui.icon.css" rel="stylesheet" />
         <link href="../css/sui.default.css" rel="stylesheet" />
+         <link href="css/style.css" rel="stylesheet" />
     </head>
-    <body ng-app="check" ng-controller="check.controller">
-        <sui-tabs pages="vm.pages"></sui-tabs>
+<body ng-app="demo" ng-controller="demo.controller">
+    <div class="demo-block">
+        <sui-line title="'代码'"></sui-line>
+        <sui-tabs pages="vm.pages"  style="height:250px;"></sui-tabs>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'代码'"></sui-line>
+        <div class='demo-code'><xmp><sui-tabs pages="vm.pages"></sui-tabs></xmp></div>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'依赖'"></sui-line>
+       <div class='demo-code'><xmp>
+<link href="../css/sui.default.css" rel="stylesheet" />
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+        </xmp></div>
+   </div>
+
+     <div class="demo-block">
+        <sui-line title="'属性'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.property.fields" is-can-select="false" is-edit="false" datas="vm.property.datas"></sui-datagrid>
+     </div>
+
+    <div class="demo-block">
+        <sui-line title="'方法'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.functions.fields" is-can-select="false" is-edit="false" datas="vm.functions.datas"></sui-datagrid>
+   </div>
     </body>
 </html>
 <script src="../script/lib/angular.min.js"></script>
 <script src="../script/directive/sui.directive.js"></script>
-<script src="../script/common/grid.service.js"></script>
+<script src="../script/common/guid.service.js"></script>
 <script>
 (function(){
-    function check_controller($scope,guid){
+    function demo_controller($scope,guid){
         $scope.vm = {
             pages:[
-                {url:"radio.html",id:guid.newGuid(),title:"网站设置"},
-                {url:"progress.html",id:guid.newGuid(),title:"用户管理"},
-                  {url:"radio.html",id:guid.newGuid(),title:"网站设置"},
-                {url:"progress.html",id:guid.newGuid(),title:"用户管理"},
-                  {url:"radio.html",id:guid.newGuid(),title:"网站设置"},
-                {url:"progress.html",id:guid.newGuid(),title:"用户管理"},
-                  {url:"radio.html",id:guid.newGuid(),title:"网站设置"},
-                {url:"progress.html",id:guid.newGuid(),title:"用户管理"},
-                ]
+                {url:"subs/1.html",id:guid.newGuid(),title:"鞍山"},
+                {url:"subs/2.html",id:guid.newGuid(),title:"兔子"}],
+            property: {
+                fields: [{ name: "名称" }, { name: "类型" }, { name: "可选值" }, { name: "示例" }, { name: "默认值" }, { name: "意义" }],
+                datas: [{ rows: { name: "pages", type: "object", choose: "*", example: "", default: "", commnet: "页对象" } }]
+            },
+            functions:{
+                fields:[{name:"名称"},{name:"参数"},{name:"意义"}],
+                datas:[]
+            }
         }
     }
-    angular.module("check",["sqladmin"]).controller("check.controller",["$scope","guid.service",check_controller]);
+    angular.module("demo",["shinyui"]).controller("demo.controller",["$scope","guid.service",demo_controller]);
 })();
 </script>

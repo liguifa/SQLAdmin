@@ -36,8 +36,8 @@ namespace SQLServer.Service
             catch (Exception e)
             {
                 mLog.Warn($"An error has occurred in the connect mongodb,error:{e.ToString()}");
+                throw;
             }
-            return false;
         }
     }
 }

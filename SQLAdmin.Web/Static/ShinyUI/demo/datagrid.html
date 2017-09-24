@@ -4,58 +4,55 @@
     <title></title>
     <meta charset="utf-8" />
     <link href="../css/sui.default.css" rel="stylesheet" />
-    <link href="../css/prism.css" rel="stylesheet" />
-    <script src="../script/lib/prism.js"></script>
-    <style>
-        html, body {
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-        }
-
-        iframe {
-            border: none;
-            padding: 15px;
-        }
-    </style>
+    <link href="../css/sui.pop.style.css" rel="stylesheet" />
+    <link href="../css/sui.icon.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
 </head>
-<body ng-app="check" ng-controller="check.controller">
-    <sui-line title="'基本表格示例'"></sui-line>
-    <sui-datagrid is-show-thead="true" fields="vm.fields" is-can-select="true" is-edit="false" datas="vm.datas" is-show-tool="true" is-show-footer="true"></sui-datagrid>
-    <sui-line title="'示例代码'"></sui-line>
-    <sui-code code='vm.code' style="height:400px;width:100%;margin-top: 10px;margin-bottom: 10px;">
-        <pre><code class="language-javascript">
-    (function () {
-        function check_controller($scope) {
-            $scope.vm = {
-                fields: [{ name: "文件名" }, { name: "文件大小" }, { name: "修改日期" }, { name: "文件类别" }, { name: "创建者" }, { name: "权限" }],
-                datas: [{ rows: { name: "123.txt", size: "17K", date: "12/12/2020", type: "txt", createBy: "Guifa Li", p: "读/写" } },
-                { rows: { name: "123.txt", size: "17K", date: "12/12/2020", type: "txt", createBy: "Guifa Li", p: "读/写" } },
-                { rows: { name: "123.txt", size: "17K", date: "12/12/2020", type: "txt", createBy: "Guifa Li", p: "读/写" } },
-                { rows: { name: "123.txt", size: "17K", date: "12/12/2020", type: "txt", createBy: "Guifa Li", p: "读/写" } },
-                { rows: { name: "123.txt", size: "17K", date: "12/12/2020", type: "txt", createBy: "Guifa Li", p: "读/写" } },
-                { rows: { name: "123.txt", size: "17K", date: "12/12/2020", type: "txt", createBy: "Guifa Li", p: "读/写" } },
-                { rows: { name: "123.txt", size: "17K", date: "12/12/2020", type: "txt", createBy: "Guifa Li", p: "读/写" } },
-                { rows: { name: "123.txt", size: "17K", date: "12/12/2020", type: "txt", createBy: "Guifa Li", p: "读/写" } }],
-            }
-        }
-        angular.module("check", ["sqladmin"]).controller("check.controller", check_controller);
-    })();
-            </code></pre>
-    </sui-code>
-    <sui-line title="'基本表格属性'"></sui-line>
-    <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.property.fields" is-can-select="false" is-edit="false" datas="vm.property.datas"></sui-datagrid>
-    <sui-line title="'基本表格方法'"></sui-line>
-    <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.property.fields" is-can-select="false" is-edit="false" datas="vm.property.datas"></sui-datagrid>
+<body ng-app="demo" ng-controller="demo.controller">
+    <div class="demo-block" style="height:500px;">
+        <sui-line title="'基本表格示例'"></sui-line>
+        <sui-datagrid remove="vm.remove(items)" is-show-thead="true" fields="vm.fields" is-can-select="true" is-edit="false" datas="vm.datas" is-show-tool="true" is-show-footer="true"></sui-datagrid>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'代码'"></sui-line>
+       <div class='demo-code'><xmp><sui-datagrid is-show-thead="true" fields="vm.fields" is-can-select="true" is-edit="false" datas="vm.datas" is-show-tool="true" is-show-footer="true"></sui-datagrid></xmp></div> 
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'依赖'"></sui-line>
+        <div class='demo-code'><xmp>
+<link href="../css/sui.icon.css" rel="stylesheet" />
+<link href="../css/sui.default.css" rel="stylesheet" />
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script src="../script/common/guid.service.js"></script>
+        </xmp></div>
+   </div>
+
+    <div class="demo-block">
+        <sui-line title="'属性'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.property.fields" is-can-select="false" is-edit="false" datas="vm.property.datas"></sui-datagrid>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'方法'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.functions.fields" is-can-select="false" is-edit="false" datas="vm.functions.datas"></sui-datagrid>
+    </div>  
+
+    <sui-top></sui-top> 
 </body>
 </html>
 <link href="../css/sui.icon.css" rel="stylesheet" />
 <script src="../script/lib/angular.min.js"></script>
 <script src="../script/directive/sui.directive.js"></script>
-<script src="../script/common/grid.service.js"></script>
+<script src="../script/directive/sui.icon.directive.js"></script>
+<script src="../script/common/guid.service.js"></script>
+<script src="../script/common/pop.service.js"></script>
+<script src="../script/common/sui.icon.js"></script>
 <script>
     (function () {
-        function check_controller($scope) {
+        function demo_controller($scope,pop) {
             $scope.vm = {
                 fields: [{ name: "文件名" }, { name: "文件大小" }, { name: "修改日期" }, { name: "文件类别" }, { name: "创建者" }, { name: "权限" }],
                 datas: [{ rows: { name: "123.txt", size: "17K", date: "12/12/2020", type: "txt", createBy: "Guifa Li", p: "读/写" } },
@@ -75,6 +72,11 @@
                         { rows: { name: "is-can-select", type: "bool", choose: "true:显示 false:隐藏", example: "true", default: "true", commnet: "是否能选择" } },
                         { rows: { name: "is-edit", type: "bool", choose: "true:显示 false:隐藏", example: "true", default: "true", commnet: "是否能编辑" } },
                         ]
+                },
+                remove:function(){
+                    pop.confirm("太阳从西边出来？",function(){
+                        return true;
+                    });
                 }
             }
 
@@ -82,6 +84,6 @@
                 $scope.vm.datas.push({ rows: { name: "123.txt", size: "17K", date: "12/12/2020", type: "txt", createBy: "Guifa Li", p: "读/写" } });
             }
         }
-        angular.module("check", ["sqladmin"]).controller("check.controller", check_controller);
+        angular.module("demo", ["shinyui","shinyui.icon","shinyui.pop"]).controller("demo.controller", ["$scope","pop.service",demo_controller]);
     })();
 </script>

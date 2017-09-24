@@ -39,9 +39,9 @@ namespace SQLServer.Dao
             }
             catch(Exception e)
             {
-                
+                mLog.Error($"An error has occurred in get connect,error:{e.ToString()}");
+                throw;
             }
-            return null;
         }
 
 

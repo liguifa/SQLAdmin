@@ -25,5 +25,5 @@
         }
     }
 
-    angular.module("sqladmin").factory("guid.service", guid_service);
+    angular.module("shinyui").factory("guid.service", guid_service);
 })();

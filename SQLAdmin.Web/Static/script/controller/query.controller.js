@@ -64,11 +64,8 @@
             getDatas();
         }
 
-        $scope.vm.remove = function () {
-            var selectDatas = $scope.vm.datas.filter(function (item) {
-                return item.isSelected
-            });
-            if (selectDatas.length == 0) {
+        $scope.vm.remove = function (items) {
+            if (items.length == 0) {
                 messager.alert("请先选择删除的对象！");
             }
             else {
@@ -79,8 +76,8 @@
                 var key = $scope.vm.indexs.filter(function (index) {
                     return index.Id == 1;
                 })[0];
-                selected = selectDatas.map(function (item) {
-                    return item.rows[key.ColumnName];
+                selected = items.map(function (item) {
+                    return item.rows[key.ColumnName].Value;
                 });
                 query.remove($scope.vm.tableName, selected).then(function (data) {
                     messager.confirm("删除成功！", function () {
@@ -91,21 +88,21 @@
             }
         }
 
-        $scope.vm.search = function (searchKey) {
-            $scope.vm.filter.searchKey = searchKey;
+        $scope.vm.search = function (key,value) {
+            $scope.vm.filter.searchKey = { key: key, value: value };
             getDatas();
         }
 
         $scope.vm.select = function (selected) {
             $scope.vm.filter.selected = selected.map(function (field) {
-                return field.Name;
+                return field.name;
             });
             getDatas();
             var showFieldIds = selected.map(function(field){
-                return field.Name;
+                return field.name;
             });
             $scope.vm.showFields = $scope.vm.fields.filter(function (field) {
-                return showFieldIds.includes(field.Name);
+                return showFieldIds.includes(field.name);
             }); 
         }
 
@@ -165,5 +162,5 @@
         }
     }
 
-    angular.module("admin").controller("query.controller", ["$scope", "query.service", "messager.service","event.service",query_controller]);
+    angular.module("admin").controller("query.controller", ["$scope", "query.service", "pop.service","event.service",query_controller]);
 })();

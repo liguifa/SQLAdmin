@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../css/prism.css" rel="stylesheet" />
+     <link href="../css/sui.icon.css" rel="stylesheet" />
+    <link href="../css/sui.default.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+</head>
+<body ng-app="demo" ng-controller="demo.controller">
+    <div class="demo-block">
+        <sui-line title="'示例'"></sui-line>
+        <sui-timeline items="vm.items"></sui-timeline>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'代码'"></sui-line>
+        <div class='demo-code'><xmp><sui-uploader upload="vm.upload(filename)" progress="vm.progress" title="'普通上传'" file-types="['mp3','docx','doc','mp4']" file-size="65535"></sui-uploader></xmp></div>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'依赖'"></sui-line>
+       <div class='demo-code'><xmp>
+<link href="../css/sui.default.css" rel="stylesheet" />
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+        </xmp></div>
+   </div>
+
+     <div class="demo-block">
+        <sui-line title="'属性'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.property.fields" is-can-select="false" is-edit="false" datas="vm.property.datas"></sui-datagrid>
+     </div>
+
+    <div class="demo-block">
+        <sui-line title="'方法'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.functions.fields" is-can-select="false" is-edit="false" datas="vm.functions.datas"></sui-datagrid>
+   </div>
+</body>
+</html>
+<script src="../script/lib/prism.js"></script>
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.icon.directive.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script src="../script/common/guid.service.js"></script>
+<script src="../script/common/sui.icon.js"></script>
+<script>
+    (function () {
+        function demo_controller($scope) {
+            $scope.vm = {
+                property: {
+                    fields: [{ name: "名称" }, { name: "类型" }, { name: "可选值" }, { name: "示例" }, { name: "默认值" }, { name: "意义" }],
+                    datas: [{ rows: { name: "text", type: "string", choose: "*", example: "原始按钮", default: "", commnet: "按钮标题" } },
+                        { rows: { name: "type", type: "string", choose: "primary:原始按钮,default:默认按钮,normal:百搭按钮,warm:暖色按钮,danger:警告按钮,disabled:禁用按钮", example: "default", default: "default", commnet: "按钮类型" } },
+                        { rows: { name: "size", type: "string", choose: "big:大,defaule:默认,small:小,mini:很小", example: "default", default: "default", commnet: "按钮大小" } },
+                        { rows: { name: "href", type: "string", choose: "*", example: "https://www.baidu.com", default: "", commnet: "点击按钮之后跳转的页面" } },
+                        { rows: { name: "disabled", type: "bool", choose: "true:可用,false:不可用", example: "true", default: "true", commnet: "按钮状态" } },
+                    ]
+                },
+                functions:{
+                    fields:[{name:"名称"},{name:"参数"},{name:"意义"}],
+                    datas:[{rows:{name:"click",args:"",comment:""}}]
+                },
+                items:[
+                    {title:"贞观（27年正月—649年十二月）",isSuccess:true,detailed:"贞观（627年正月—649年十二月）是唐朝君主唐太宗李世民的年号，共23年。唐太宗励精图治开疆拓土，成为中国史上著名的明君。他继承唐高祖李渊制定的尊祖崇道国策,并进一步将其发扬光大,运用道家思想治国平天下，取得天下大治的理想局面。在位期间唐太宗能任人廉能，知人善用；广开言路，尊重生命，自我克制，虚心纳谏；并采取了一些以农为本，厉行节约，休养生息，文教复兴，完善科举制度等政策，使得社会出现了安定的局面；当时并大力平定外患，并尊重边族风俗，稳固边疆。当时年号为“贞观”（627年－649年） ，故史称“贞观之治”。这是唐朝的第一个治世，同时为后来的开元之治奠定了厚实的基础。他爱好文学与书法，有墨宝传世。虚心纳谏，在国内厉行节约，并使百姓能够休养生息，终于使得社会出现了国泰民安的局面，开创了中国历史上著名的贞观之治，为后来唐朝一百多年的盛世奠定重要基础。期间爆发了唐与突厥的战争、唐灭薛延陀之战、唐太宗对西域诸国的战争、唐击吐谷浑之战、唐太宗征讨高句丽等对外战争。"},
+                { title: "嘉靖（公元1522年—公元1566年）", isError:true, detailed: "嘉靖（公元1522年—公元1566年）是明朝第十一位皇帝明世宗朱厚熜的年号，明朝使用嘉靖这个年号一共四十五年，是明朝使用第二长的年号（最长的是明神宗万历帝，一共四十八年）。嘉靖皇帝也是明代实际在位时间最长的皇帝。他的父亲朱祐杬没有做过一天皇帝，是被嘉靖强行追封的，嘉靖的继位也意味着明孝宗一脉断绝。"},
+                {title:"万历（1573年9月4日－1620年8月18日）",detailed:"万历（1573年9月4日－1620年8月18日）是明神宗朱翊钧的年号，明朝使用此年号共48年，为明朝所使用时间最长的年号。万历前期，张居正主导实行了一系列的改革措施，社会经济持续发展，对外军事也接连获胜，朝廷呈现中兴气象，史称万历中兴。"},
+                ]
+            }
+        }
+        angular.module("demo", ["shinyui","shinyui.icon"]).controller("demo.controller", demo_controller);
+    })();
+</script>

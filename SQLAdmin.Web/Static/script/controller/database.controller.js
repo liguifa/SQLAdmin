@@ -8,5 +8,5 @@
             })
         });
     }
-    angular.module("admin").controller("database.controller", ["$scope", "$http", "event.service", "constant.service", "messager.service", "database.service", database_controller]);
+    angular.module("admin").controller("database.controller", ["$scope", "$http", "event.service", "constant.service", "pop.service", "database.service", database_controller]);
 })();

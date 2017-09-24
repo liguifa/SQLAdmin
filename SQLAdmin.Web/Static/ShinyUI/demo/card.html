@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../css/prism.css" rel="stylesheet" />
+    <link href="../css/sui.default.css" rel="stylesheet" />
+     <link href="css/style.css" rel="stylesheet" />
+     <style>
+         ul{
+             padding: 0px;
+             margin: 0px;
+             list-style: none;
+         }
+         .examlp li{
+             float: left;
+         }
+
+         .e4 ul{
+             margin: 34px;
+         }
+
+         .e4 li{
+             float:none;
+             margin-bottom:12px; 
+         }
+
+         .e2 ul{
+             margin-top:5px;
+             height: 180px;
+             overflow-y: auto; 
+         }
+
+         .e2 li{
+             float: none;
+             margin: 5px;
+         }
+    </style>
+</head>
+<body ng-app="demo" ng-controller="demo.controller">
+    <div class="demo-block examlp" style="height:400px;">
+        <sui-line title="'按钮示例'"></sui-line>
+        <ul>
+            <li>
+                <sui-card title="'鞍山'" style="width:238px;height:347px;left:0px;">
+                    <div style="margin:5px;">鞍山，简称鞍，辽宁省省辖市，是辽宁省第三大城市。是国务院批准的具有地方立法权的较大的市，沈阳经济区副中心城市，因市区南部一座形似马鞍的山峰而得名。鞍山地处环渤海经济区腹地，辽东半岛中部，位于沈大黄金经济带的重要支点，是辽宁中部城市群与辽东半岛开放区的重要连接带。[1] 
+鞍山是东北地区最大的钢铁工业城市、新中国钢铁工业的摇篮、中国第一钢铁工业城市。
+</div>
+                </sui-card>
+            </li>
+
+
+        <li class="e2">
+                <sui-card title="'四个女生-心愿'" style="width:238px;height:347px;left:260px;">
+                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=230 height=86 src="//music.163.com/outchain/player?type=2&id=379785&auto=0&height=66"></iframe>
+                    <ul>
+                        <li>湖水是你的眼神</li>
+                        <li>梦想满天星辰</li>
+                        <li>心情是一个传说</li>
+                        <li>亘古不变地等候</li>
+                        <li>成长是一扇树叶的门</li>
+                        <li>童年有一群亲爱的人</li>
+                        <li>春天是一段路程</li>
+                        <li>沧海桑田的拥有</li>
+                        <li>那些我爱的人</li>
+                        <li>那些离逝的风</li>
+                        <li>那些永远的誓言一遍一遍</li>
+                        <li>那些爱我的人</li>
+                        <li>那些沉淀的泪</li>
+                        <li>那些永远的誓言一遍一遍</li>
+                        <li>湖水是你的眼神</li>
+                        <li>梦想满天星辰</li>
+                        <li>心情是一个传说</li>
+                        <li>亘古不变地等候</li>
+                        <li>成长是一扇树叶的门</li>
+                        <li>童年有一群亲爱的人</li>
+                        <li>春天是一段路程</li>
+                        <li>沧海桑田的拥有</li>
+                        <li>那些我爱的人</li>
+                        <li>那些离逝的风</li>
+                        <li>那些永远的誓言一遍一遍</li>
+                        <li>那些爱我的人</li>
+                        <li>那些沉淀的泪</li>
+                        <li>那些永远的誓言一遍一遍</li>
+                        <li>我们都曾有过一张天真而忧伤的脸</li>
+                        <li>手握阳光我们望着遥远</li>
+                        <li>轻轻的一天天一年又一年</li>
+                        <li>长大间我们是否还会再唱起心愿</li>
+                        <li>轻轻的一天天一年又一年</li>
+                        <li>长大间我们是否还会再唱起心愿</li>
+                        <li>长大间我们是否还会再唱起心愿</li>
+                    </ul>
+                </sui-card>
+            </li>
+
+        <li>
+                <sui-card title="'Html 5'" style="width:238px;height:347px;left:520px;">
+                    <embed src='http://player.youku.com/player.php/sid/XNjQ5NjIwNzg0/v.swf' allowFullScreen='true' quality='high' width='238' height='297' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>
+                </sui-card>
+            </li>
+
+        <li class="e4">
+                <sui-card title="'美丽的地方'" style="width:238px;height:347px;left:780px;">
+                    <ul>
+                        <li>1、铁东区</li>
+                        <li>2、铁西区</li>
+                        <li>3、立山区</li>
+                        <li>4、千山区</li>
+                        <li>5、海城</li>
+                        <li>6、台安</li>
+                        <li>7、岫岩满族自治县</li>
+                    </ul>
+                </sui-card>
+            </li>
+        </ul>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'代码'"></sui-line>
+        <div class='demo-code'><xmp><sui-uploader upload="vm.upload(filename)" progress="vm.progress" title="'普通上传'" file-types="['mp3','docx','doc','mp4']" file-size="65535"></sui-uploader></xmp></div>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'依赖'"></sui-line>
+       <div class='demo-code'><xmp>
+<link href="../css/sui.default.css" rel="stylesheet" />
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+        </xmp></div>
+   </div>
+
+     <div class="demo-block">
+        <sui-line title="'属性'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.property.fields" is-can-select="false" is-edit="false" datas="vm.property.datas"></sui-datagrid>
+     </div>
+
+    <div class="demo-block">
+        <sui-line title="'方法'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.functions.fields" is-can-select="false" is-edit="false" datas="vm.functions.datas"></sui-datagrid>
+   </div>
+</body>
+</html>
+<script src="../script/lib/prism.js"></script>
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script src="../script/common/guid.service.js"></script>
+<script>
+    (function () {
+        function demo_controller($scope) {
+            $scope.vm = {
+                primary: "原始按钮",
+                default: "默认按钮",
+                normal: "百搭按钮",
+                warm:"暖色按钮",
+                danger:"警告按钮",
+                disabled: "禁用按钮",
+                disabled: true,
+                c: "https://www.baidu.com",
+                property: {
+                    fields: [{ name: "名称" }, { name: "类型" }, { name: "可选值" }, { name: "示例" }, { name: "默认值" }, { name: "意义" }],
+                    datas: [{ rows: { name: "text", type: "string", choose: "*", example: "原始按钮", default: "", commnet: "按钮标题" } },
+                        { rows: { name: "type", type: "string", choose: "primary:原始按钮,default:默认按钮,normal:百搭按钮,warm:暖色按钮,danger:警告按钮,disabled:禁用按钮", example: "default", default: "default", commnet: "按钮类型" } },
+                        { rows: { name: "size", type: "string", choose: "big:大,defaule:默认,small:小,mini:很小", example: "default", default: "default", commnet: "按钮大小" } },
+                        { rows: { name: "href", type: "string", choose: "*", example: "https://www.baidu.com", default: "", commnet: "点击按钮之后跳转的页面" } },
+                        { rows: { name: "disabled", type: "bool", choose: "true:可用,false:不可用", example: "true", default: "true", commnet: "按钮状态" } },
+                    ]
+                },
+                functions:{
+                    fields:[{name:"名称"},{name:"参数"},{name:"意义"}],
+                    datas:[{rows:{name:"click",args:"",comment:""}}]
+                }
+            }
+        }
+        angular.module("demo", ["shinyui"]).controller("demo.controller", demo_controller);
+    })();
+</script>

@@ -1,0 +1,30 @@
+﻿.sqladmin-explorer{
+    border-right:solid 1px #E6E6E6;
+    padding-right:15px;
+    height:100%;
+}
+
+.sqladmin-explorer-tool{
+    height:43px;
+    background:#ffffff;
+    border-bottom:solid 1px #E6E6E6;
+}
+
+.sqladmin-explorer-panel{
+    height:100%;
+}
+
+.sqladmin-explorer-tool-list{
+    list-style:none;
+    padding:0px;
+    margin:0px;
+}
+
+.sqladmin-explorer-tool-item{
+    display:inline-block;
+    line-height:53px;
+}
+
+.sqladmin-explorer-tool-item i{
+    font-size:18px;
+}

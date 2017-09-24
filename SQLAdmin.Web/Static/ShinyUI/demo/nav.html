@@ -1,22 +1,50 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>ShinyUI-导航</title>
     <meta charset="utf-8" />
     <link href="../css/sui.default.css" rel="stylesheet" />
+     <link href="../css/prism.css" rel="stylesheet" />
+     <link href="css/style.css" rel="stylesheet" />
 </head>
-<body ng-app="check" ng-controller="check.controller">
-    <sui-line title="'水平导航菜单'"></sui-line>
-    <sui-nav navs="vm.navs" icon="vm.icon"></sui-nav>
-    <sui-line title="'桌面风格菜单'"></sui-line>
-    <sui-menu menus="vm.menus"></sui-menu>
-</body>
-</html>
+<body ng-app="demo" ng-controller="demo.controller">
+    <div class="demo-block">
+        <sui-line title="'示例'"></sui-line>
+        <sui-nav navs="vm.menus" icon="vm.icon"></sui-nav>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'代码'"></sui-line>
+       <div class='demo-code'><xmp> <sui-nav navs="vm.menus" icon="vm.icon"></sui-nav></xmp></div> 
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'依赖'"></sui-line>
+        <div class='demo-code'><xmp>
+<link href="../css/sui.default.css" rel="stylesheet" />
 <script src="../script/lib/angular.min.js"></script>
 <script src="../script/directive/sui.directive.js"></script>
+        </xmp></div>
+   </div>
+
+    <div class="demo-block">
+        <sui-line title="'属性'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.property.fields" is-can-select="false" is-edit="false" datas="vm.property.datas"></sui-datagrid>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'方法'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.functions.fields" is-can-select="false" is-edit="false" datas="vm.functions.datas"></sui-datagrid>
+    </div>
+</body>
+</html>
+<script src="../script/lib/prism.js"></script>
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script src="../script/common/guid.service.js"></script>
 <script>
     (function () {
-        function check_controller($scope) {
+        function demo_controller($scope) {
             $scope.vm = {
                 navs: [
                     {title:"Modules",url:"https://www.baidu.com",isuictive:false},
@@ -28,15 +56,26 @@
                 ],
                 icon:"images/logo.png",
                 menus: [
-                    {id:1,title:"文件",subs:[{id:11,title:"新建",icon:"images/logo.png"},{id:12,title:"打开",icon:"images/logo.png"},]},
-                    {id:2,title:"Bank",subs:[{id:11,title:"新建",icon:"images/logo.png"},{id:12,title:"打开",icon:"images/logo.png"},]},
+                    {id:1,title:"Modules",subs:[{id:11,title:"新建",icon:"images/logo.png",isLink:false,url:"https://baidu.com"},{id:12,title:"打开",icon:"images/logo.png",isLink:false,url:"https://baidu.com"}]},
+                    {id:2,title:"Bank",subs:[{id:11,title:"新建",icon:"images/logo.png",isLink:true,url:"https://baidu.com"},{id:12,title:"打开",icon:"images/logo.png",isLink:true,url:"https://baidu.com"}]},
                     {id:3,title:"Survey",url:"https://www.baidu.com",isuictive:false},
                     {id:4,title:"Summary",url:"https://www.baidu.com",isuictive:false},
                     {id:5,title:"Archives",url:"https://www.baidu.com",isuictive:false},
                     {id:6,title: "Admin", url: "https://www.baidu.com" ,isuictive:false}
                 ],
+                property: {
+                    fields: [{ name: "名称" }, { name: "类型" }, { name: "可选值" }, { name: "示例" }, { name: "默认值" }, { name: "意义" }],
+                    datas: [{ rows: { name: "text", type: "string", choose: "*", example: "原始按钮", default: "", commnet: "按钮标题" } },
+                        { rows: { name: "icon", type: "string", choose: "*", example: "default", default: "default", commnet: "按钮类型" } },
+                        { rows: { name: "navs", type: "object", choose: "*", example: "default", default: "default", commnet: "按钮大小" } }
+                    ]
+                },
+                functions:{
+                    fields:[{name:"名称"},{name:"参数"},{name:"意义"}],
+                    datas:[]
+                }
             }
         }
-        angular.module("check", ["sqladmin"]).controller("check.controller", check_controller);
+        angular.module("demo", ["shinyui"]).controller("demo.controller", demo_controller);
     })();
 </script>

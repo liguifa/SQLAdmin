@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>折叠面板</title>
+    <meta charset="utf-8" />
+    <link href="../css/prism.css" rel="stylesheet" />
+    <link href="../css/sui.default.css" rel="stylesheet" />
+    <link href="../css/sui.icon.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body ng-app="demo" ng-controller="demo.controller">
+    <div class="demo-block">
+        <sui-line title="'按钮示例'"></sui-line>
+        <sui-panel title="'折叠面板'" style="width:80%">
+            <p style='word-break:break-all;'>亲，展信佳。<br />最近还好吗？一定有这样那样的难处吧？我也是呢，最近在这个坑道里，都断粮好几天了。不过还好，在下一轮炮火来临前，鹰酱他们应该还不会冲上来。趁着这个时候，赶紧给亲写一封信，聊聊天。亲啊，你说，什么时候才不用打仗呢？之前和脚盆鸡打过，和秃子打过，现在又和鹰酱打。每次都是别人逼着你和他硬刚。你不打，人家就要欺负你。我也想过点太平日子，但是不拿出点骨气来，光靠乞求，是换不来太平日子的。我听几个留样回来的亲们说，鹰酱家那边其实很富有：有很多很多的高楼，有很多很多的工厂，有很多很多的汽车……你说，到你们那代，会有那么多的高楼，那么多的汽车吗？呵呵呵，想太多，我其实在想，种花家外的仗能打完，我就能和其他亲们，一起回家种地……争取，争取，家家种地，顿顿吃饱，过年有新衣服穿，最好，能顿顿都吃上肉……亲，我写这封信给你，没有别的意思。我就想知道，到你们这个时代，是不是能吃饱穿暖，是不是能安安稳稳的过自己的日子，是不是能堂堂正正的走出去，不会被人笑话“东亚病夫”，是不是能实现我们的大国梦呢？要是以后，有这么多有文化的亲，种花家一定也会更快速的发展吧？啊，鹰酱炮火齐射了，就先聊到这里。要是……要是我回不来种花家了，请一定记得我，记得一只为了那个大国梦所奋斗过的我。生命不息，冲锋不止。前进！前进！！前进！！！</p>
+        </sui-panel>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'代码'"></sui-line>
+        <div class='demo-code'><xmp>
+<sui-panel title="'折叠面板'">
+    <p style='word-break:break-all;'>鞍山，简称鞍，辽宁省省辖市，是辽宁省第三大城市。</p>
+</sui-panel></xmp></div>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'依赖'"></sui-line>
+       <div class='demo-code'><xmp>
+<link href="../css/sui.icon.css" rel="stylesheet" />
+<link href="../css/sui.default.css" rel="stylesheet" />
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+        </xmp></div>
+   </div>
+
+    <div class="demo-block">
+        <sui-line title="'属性'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.property.fields" is-can-select="false" is-edit="false" datas="vm.property.datas"></sui-datagrid>
+    </div>
+
+    <div class="demo-block">
+        <sui-line title="'方法'"></sui-line>
+        <sui-datagrid is-show-thead="true" is-show-tool="false" is-show-footer="false" fields="vm.functions.fields" is-can-select="false" is-edit="false" datas="vm.functions.datas"></sui-datagrid>
+    </div>
+</body>
+</html>
+<script src="../script/lib/prism.js"></script>
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script src="../script/common/guid.service.js"></script>
+<script>
+    (function () {
+        function demo_controller($scope) {
+            $scope.vm = {
+                property: {
+                    fields: [{ name: "名称" }, { name: "类型" }, { name: "可选值" }, { name: "示例" }, { name: "默认值" }, { name: "意义" }],
+                    datas: [{ rows: { name: "title", type: "string", choose: "*", example: "", default: "", commnet: "面板标题" } }]
+                },
+                functions:{
+                    fields:[{name:"名称"},{name:"参数"},{name:"意义"}],
+                    datas:[]
+                }
+            }
+        }
+        angular.module("demo", ["shinyui"]).controller("demo.controller", demo_controller);
+    })();
+</script>

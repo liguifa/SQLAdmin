@@ -22,5 +22,5 @@
 		}
 	}
 
-	angular.module("sqladmin").factory("event.service", event_service);
+	angular.module("shinyui").factory("event.service", event_service);
 })();

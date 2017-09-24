@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ShinyUI</title>
+        <link href="../css/sui.icon.css" rel="stylesheet" />
+        <link href="../css/sui.default.css" rel="stylesheet" />
+         <link href="css/style.css" rel="stylesheet" />
+    </head>
+<body ng-app="demo" ng-controller="demo.controller">
+        <sui-tabs pages="vm.pages"  style="height:250px;"></sui-tabs>
+    </body>
+</html>
+<script src="../script/lib/angular.min.js"></script>
+<script src="../script/directive/sui.directive.js"></script>
+<script src="../script/common/guid.service.js"></script>
+<script>
+(function(){
+    function demo_controller($scope,guid){
+        $scope.vm = {
+            pages:[
+                {url:"basic/fixed.html",id:guid.newGuid(),title:"固定"},
+                {url:"basic/line.html",id:guid.newGuid(),title:"线条"},
+                {url:"basic/top.html",id:guid.newGuid(),title:"回到顶部"}],
+        }
+    }
+    angular.module("demo",["shinyui"]).controller("demo.controller",["$scope","guid.service",demo_controller]);
+})();
+</script>

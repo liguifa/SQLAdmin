@@ -46,5 +46,11 @@ namespace SQLAdmin.Web.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Explorer()
+        {
+            return View();
+        }
     }
 }
