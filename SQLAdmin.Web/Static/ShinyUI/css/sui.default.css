@@ -452,7 +452,12 @@ body,html,document {
     text-overflow: ellipsis;
     white-space: normal;
     white-space: nowrap;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sui-tree-ul::-webkit-scrollbar{
+    width:0px;
 }
 
 .sui-tree-li {

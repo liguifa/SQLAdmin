@@ -661,7 +661,7 @@ angular.module("shinyui", [])
                                 <thead ng-if="isShowThead">\
                                   <tr>\
                                     <th class="sui-datagrid-data-index" ng-if="isCanSelect"><input type="checkbox" name="" ng-change="vm.globalChecked()" ng-model="vm.isGlobalSelected" lay-skin="primary" lay-filter="allChoose"></th>\
-                                    <th ng-repeat="field in vm.fields" ng-click="vm.sort(field.name)">\
+                                    <th ng-repeat="field in vm.fields" ng-click="vm.sort(field.name)" style="width:{{vm.getTdWidth(field.type)}};">\
                                         {{field.name}}\
                                         <div class="sui-datagrid-content-header-icon" ng-if="field.isPrimary"><img src="/Static/Images/icon_key.png" /></div>\
                                         <div class="sui-datagrid-content-sort-icon sui-icon-sort-asc" ng-if="field.isSort && field.isuisc"></div>\
@@ -676,8 +676,8 @@ angular.module("shinyui", [])
                                 <tbody>\
                                       <tr ng-repeat="row in datas">\
                                         <td class="sui-datagrid-data-index" ng-if="isCanSelect"><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
-                                        <td ng-if="isEdit" ng-repeat="(key,val) in row.rows track by $index"><sui-field type="vm.fields[$index].type" value="row.rows[key].Value"></sui-field></td>\
-                                        <td ng-if="!isEdit" ng-repeat="(key,val) in row.rows track by $index">{{val}}</td>\
+                                        <td ng-if="isEdit" ng-repeat="(key,val) in row.rows track by $index" style="width:{{vm.getTdWidth(vm.fields[$index].type)}};"><sui-field type="vm.fields[$index].type" value="row.rows[key].Value"></sui-field></td>\
+                                        <td ng-if="!isEdit" ng-repeat="(key,val) in row.rows track by $index" style="width:{{val.length*10}}px;">{{val}}</td>\
                                       </tr>\
                                 </tbody>\
                             </table>\
@@ -689,6 +689,17 @@ angular.module("shinyui", [])
                         <span class="sui-datagrid-footer-info">共 {{vm.page.total}} 行 {{vm.page.pageCount}} 页，当前显示 {{(vm.page.pageIndex-1)*vm.page.pageSize+1}}-{{vm.page.pageIndex == vm.page.pageCount ? vm.page.total : vm.page.pageIndex*vm.page.pageSize}} 行</span>\
                     </div>\
                   </div>',
+        getTdWidth: function (type) {
+            switch (type) {
+                case 0: return "160px";
+                case 1: return "60px";
+                case 2: return "380px";
+                case 4: return "180px";
+                case 5: return "30px";
+                case 8: return "60px";
+                default: return "60px";
+            }
+        }
     }
 
     return {
@@ -714,6 +725,7 @@ angular.module("shinyui", [])
         },
         controller: function ($scope) {
             $scope.vm = {
+                getTdWidth:vm.getTdWidth,
                 isGlobalSelected: false,
                 page: {
                     pageIndex: 0,
