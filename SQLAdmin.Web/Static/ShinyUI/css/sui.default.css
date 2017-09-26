@@ -567,6 +567,12 @@ body,html,document {
     background:#f2f2f2;
      border-right:1px solid #e2e2e2;
     border-left:1px solid #e2e2e2;
+    overflow-x:auto;
+    overflow-y:hidden;
+}
+
+.sui-datagrid-data-header::-webkit-scrollbar{
+    height:0px;
 }
 
 .sui-datagrid-data-header table {
@@ -620,8 +626,8 @@ body,html,document {
     height: 100%;
     width:100%;
     margin: 0px;
-    text-overflow:ellipsis;
-    white-space:nowrap;
+    /*text-overflow:ellipsis;
+    white-space:nowrap;*/
     z-index: 996;
 }
 
@@ -639,10 +645,10 @@ body,html,document {
     border-left: none;
     font-size: 14px;
     text-align: left;
-    z-index: 996;
+    /*z-index: 996;
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap;
+    white-space: nowrap;*/
     max-height: 20px;
 }
 
@@ -1071,16 +1077,15 @@ body,html,document {
     float:right;
 }
 
-.sui-calendar-icon img{
-    width:16px;
-    height:16px;
+.sui-calendar-icon i{
+    font-size:18px;
+    line-height:30px;
    vertical-align:central;
-   margin-top:7px;
 }
 
 .sui-calendar-select {
     width: 240px;
-    height: 224px;
+    height: 230px;
     -webkit-box-sizing: border-box !important;
     -moz-box-sizing: border-box !important;
     box-sizing: border-box !important;
@@ -1089,7 +1094,6 @@ body,html,document {
     position:relative;
     top:40px;
     background:#ffffff;
-    opacity:1;
 }
 
 .sui-calendar-select-title{
@@ -1206,16 +1210,16 @@ body,html,document {
 
 .sui-calendar-select-footer{
     width:100%;
-    height:26px;
+    height:32px;
     background:#FBFBFB;
     border-top: 1px solid #e6e6e6;
     margin-top:6px;
 }
 
 .sui-calendar-select-footer-button{
-    width:38px;
-    height:20px;
+    height:24px;
     margin:2px;
+    margin-top:4px;
     border: 1px solid #C9C9C9;
     background-color: #fff;
     color: #555;
@@ -2599,3 +2603,18 @@ body,html,document {
     margin-left: -4px;
     cursor: pointer;
 }
+
+.sui-checkbox {
+    -webkit-appearance: none;
+    border:1px solid #e6e6e6;
+     height: 13px;
+  width: 13px;
+  outline:none;
+  cursor:pointer;
+}
+
+    .sui-checkbox:checked {
+        border:1px solid  #5FB878;
+        background:#5FB878;
+        padding:2px;
+    }

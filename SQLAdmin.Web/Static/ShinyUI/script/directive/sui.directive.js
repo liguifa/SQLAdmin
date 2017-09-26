@@ -656,11 +656,11 @@ angular.module("shinyui", [])
                         <li class="sui-datagrid-tool-item sui-datagrid-tool-column"><sui-search placeholder="vm.placeholder" fields="vm.fields" search="vm.search(key,value)"></sui-sui-search></li>\
                     </ul></div>\
                     <div class="sui-datagrid-data">\
-                        <div class="sui-datagrid-data-header" style="padding-right:{{tableHeaderPadding}}px">\
+                        <div class="sui-datagrid-data-table sui-datagrid-data-header" style="padding-right:{{tableHeaderPadding}}px">\
                             <table class="sui-datagrid">\
                                 <thead ng-if="isShowThead">\
                                   <tr>\
-                                    <th class="sui-datagrid-data-index" ng-if="isCanSelect"><input type="checkbox" name="" ng-change="vm.globalChecked()" ng-model="vm.isGlobalSelected" lay-skin="primary" lay-filter="allChoose"></th>\
+                                    <th class="sui-datagrid-data-index" ng-if="isCanSelect"><input class="sui-checkbox" type="checkbox" name="" ng-change="vm.globalChecked()" ng-model="vm.isGlobalSelected" lay-skin="primary" lay-filter="allChoose"></th>\
                                     <th ng-repeat="field in vm.fields" ng-click="vm.sort(field.name)" style="width:{{vm.getTdWidth(field.type)}};">\
                                         {{field.name}}\
                                         <div class="sui-datagrid-content-header-icon" ng-if="field.isPrimary"><img src="/Static/Images/icon_key.png" /></div>\
@@ -671,11 +671,11 @@ angular.module("shinyui", [])
                                 </thead>\
                             </table>\
                         </div>\
-                        <div class="sui-datagrid-data-body"  style="height:{{tableHeight}}px;">\
+                        <div class="sui-datagrid-data-table sui-datagrid-data-body"  style="height:{{tableHeight}}px;">\
                             <table class="sui-datagrid">\
                                 <tbody>\
                                       <tr ng-repeat="row in datas">\
-                                        <td class="sui-datagrid-data-index" ng-if="isCanSelect"><input type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
+                                        <td class="sui-datagrid-data-index" ng-if="isCanSelect"><input class="sui-checkbox" type="checkbox" name="" ng-model="row.isSelected" lay-skin="primary"></td>\
                                         <td ng-if="isEdit" ng-repeat="(key,val) in row.rows track by $index" style="width:{{vm.getTdWidth(vm.fields[$index].type)}};"><sui-field type="vm.fields[$index].type" value="row.rows[key].Value"></sui-field></td>\
                                         <td ng-if="!isEdit" ng-repeat="(key,val) in row.rows track by $index" style="width:{{val.length*10}}px;">{{val}}</td>\
                                       </tr>\
@@ -695,7 +695,7 @@ angular.module("shinyui", [])
                 case 1: return "60px";
                 case 2: return "380px";
                 case 4: return "180px";
-                case 5: return "30px";
+                case 5: return "50px";
                 case 8: return "60px";
                 default: return "60px";
             }
@@ -838,6 +838,15 @@ angular.module("shinyui", [])
             element[0].children[0].style.height = tableHeight + "px";
             //element[0].children[1].children[1].style.height = tableHeight - 39 + "px";
             $scope.tableHeight = tableHeight - 39;
+            var tables = element[0].getElementsByClassName("sui-datagrid-data-table");
+            angular.forEach(tables,function (table) {
+                table.addEventListener("scroll", function () {
+                    var left = table.scrollLeft;
+                    angular.forEach(tables,function (item) {
+                        item.scrollLeft = left;
+                    });
+                });
+            });
         }
     }
 }])
@@ -1100,7 +1109,7 @@ angular.module("shinyui", [])
 .directive("suiCalendar", function () {
     var vm = {
         template: "<div class='sui-calendar'>\
-                    <div><input class='sui-calendar-text' type='text' readonly ng-model='vm.time' /><div class='sui-calendar-icon' ng-click='vm.startSelect()' ><img src='../Images/icon_calendar.png' /></div></div>\
+                    <div><input class='sui-calendar-text' type='text' readonly ng-model='vm.time' /><div class='sui-calendar-icon sui-noselect' ng-click='vm.startSelect()' ><i class='sui-icon'>&#xe849;</i></div></div>\
                     <div class='sui-calendar-select' ng-if='vm.isSelect'>\
                         <div class='sui-calendar-select-title'><div class='sui-calendar-select-title-span'><div class='sui-icon-left sui-calendar-select-title-span-left' ng-click='vm.bottomMonth()'></div><div class='sui-calendar-select-title-text'>{{vm.year}}年 {{vm.month}}月</div><div class='sui-icon-right sui-calendar-select-title-span-right' ng-click='vm.topMonth()'></div></div></div>\
                         <div class='sui-calendar-select-context'>\
