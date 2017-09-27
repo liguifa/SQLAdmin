@@ -373,8 +373,9 @@ angular.module("shinyui", [])
             if (treeElement) {
                 var rootElement = document.createElement("ul");
                 rootElement.classList.add("sui-tree-ul");
+                rootElement.classList.add("sui-tree-ul-first");
                 if (tree != null) {
-                    rootElement.appendChild(this.buildNode(tree));
+                    rootElement.appendChild(this.buildNode(tree,true));
                 }
                 treeElement.innerHTML = "";
                 treeElement.appendChild(rootElement);
@@ -425,12 +426,17 @@ angular.module("shinyui", [])
                 }
             }
         },
-        buildNode: function (tree) {
+        buildNode: function (tree,isRoot) {
             var self = this;
             var treeNode = document.createElement("li");
             treeNode.classList.add("sui-tree-li");
+            if (isRoot) {
+                treeNode.classList.add("sui-tree-li-first");
+            }
             var arrowNode = document.createElement("i");
-            arrowNode.classList.add("sui-icon-arrow-right");
+            arrowNode.innerHTML = "&#xf105;";
+            arrowNode.classList.add("sui-tree-icon-arrow");
+            arrowNode.classList.add("sui-icon");
             var childId = self.guid();
             arrowNode.attributes["children_Id"] = childId;
             arrowNode.attributes["is_load"] = false;
@@ -439,7 +445,9 @@ angular.module("shinyui", [])
             var contextNode = document.createElement("span");
             contextNode.classList.add("sui-tree-children");
             var iconNode = document.createElement("i");
-            iconNode.classList.add("sui-icon-folder");
+            iconNode.innerHTML = "&#xe843;";
+            iconNode.classList.add("sui-tree-icon-folder");
+            iconNode.classList.add("sui-icon");
             var nameNode = document.createElement("span");
             nameNode.textContent = tree.Name;
             nameNode.attributes["tree-id"] = tree.Id;
@@ -476,7 +484,7 @@ angular.module("shinyui", [])
                     arrowNode.attributes["is_spread"] = true;
                 }
                 for (var i in tree.Children) {
-                    childrenNode.appendChild(this.buildNode(tree.Children[i]));
+                    childrenNode.appendChild(this.buildNode(tree.Children[i],false));
                 }
             }
             return treeNode;

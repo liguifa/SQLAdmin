@@ -14,6 +14,14 @@
     height:100%;
 }
 
+.sqladmin-explorer-content{
+    height:100%;
+}
+
+.sqladmin-explorer-content div{
+    height:98%;
+}
+
 .sqladmin-explorer-tool-list{
     list-style:none;
     padding:0px;

@@ -453,11 +453,20 @@ body,html,document {
     white-space: normal;
     white-space: nowrap;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .sui-tree-ul::-webkit-scrollbar{
     width:0px;
+}
+
+.sui-tree-ul-first {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.sui-tree-li-first {
+    padding-left:0px !important;
 }
 
 .sui-tree-li {
@@ -471,6 +480,8 @@ body,html,document {
 .sui-tree-li-children{
     height: auto;
     margin-bottom:-26px;
+    padding-left:0px;
+    margin-left:-5px;
 }
 
 .sui-tree-children {
@@ -492,6 +503,14 @@ body,html,document {
     overflow: hidden;
     display: inline;
    
+}
+
+.sui-tree-icon-arrow{
+    font-size:16px !important;
+}
+
+.sui-tree-icon-folder{
+    font-size:16px !important;
 }
 
     /*.sui-tree-children span::after {
@@ -600,21 +619,24 @@ body,html,document {
     margin:0px;
 }
 
-    .sui-datagrid thead tr {
-        background-color: #f2f2f2;
-    }
+.sui-datagrid thead tr {
+    background-color: #f2f2f2;
+}
 
-    .sui-datagrid th {
-        padding: 9px 15px;
-        min-height: 20px;
-        line-height: 20px;
-        border: 1px solid #e2e2e2;
-        border-left:none;
-        font-size: 14px;
-        text-align: left;
-        z-index: 996;
-        cursor:pointer;
-    }
+.sui-datagrid th {
+    padding: 9px 15px;
+    min-height: 20px;
+    line-height: 20px;
+    border: 1px solid #e2e2e2;
+    border-left: none;
+    font-size: 14px;
+    text-align: left;
+    z-index: 996;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
 
     .sui-datagrid tbody tr:hover {
         background: #f2f2f2;
